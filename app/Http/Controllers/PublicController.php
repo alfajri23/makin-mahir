@@ -1,0 +1,136 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Helper\Layout;
+use Illuminate\Http\Request;
+use App\Models\ProdukKonsul;   //! Nanti Dihapus
+use App\Models\ProdukVideo;
+use App\Models\ProdukEvent;
+use App\Models\Kelas;
+use App\Models\Blog;
+use App\Models\Template;
+use App\Models\KonsultasiTipe;
+use App\Models\KonsultasiExpert;
+
+class PublicController extends Controller
+{
+    public function index(){
+        //$konsul = ProdukKonsul::limit(3)->get(); 
+        $konsul = '';
+        $video = ProdukVideo::limit(3)->get(); 
+        $event = ProdukEvent::limit(3)->get(); 
+        $blog = Blog::limit(6)->get();
+
+        return view('pages.public.home',compact('konsul','video','blog','event'));
+    }
+
+    public function produk_detail_konsul(Request $request){
+        $data = KonsultasiExpert::find($request->id);
+        return response()->json([
+            'data' => $data,
+            'message' => 'sukses'
+        ]);
+    }
+
+    public function produk_detail_video($id){
+        $data = ProdukVideo::find($id);
+        return view('pages.public.produk_detail',compact('data'));
+    }
+
+    public function produk_list_konsul(Request $request){
+       
+        $data = KonsultasiTipe::all();
+
+        $layout = Layout::layout_check();
+
+        return view('pages.produk.konsultasi.konsultasi_list',compact('data','layout'));
+    }
+
+    public function produk_list_detail_konsul($id,Request $request){
+        if($request->search != null){
+            $data = KonsultasiExpert::where('nama','like','%'.$request->search.'%')->get();
+
+        }else{
+            $data = KonsultasiExpert::where('id_konsultasi',$id)->get();
+            
+        }
+
+        $layout = Layout::layout_check();
+
+
+        $tipe = 'konsultasi';
+        $route = 'produkListKonsul';
+        return view('pages.produk.konsultasi.konsultasi_list_detail',compact('data','tipe','route','layout'));
+    }
+
+    public function produk_list_event(Request $request){
+        if($request->search != null){
+            $data = ProdukEvent::where('judul','like','%'.$request->search.'%')->get();
+
+        }else{
+            $data = ProdukEvent::all();
+        }
+
+        $layout = Layout::layout_check();
+
+        $tipe = 'event';
+        $route = 'produkListEvent';
+        $riwayat = 'memberEventHistori';
+        return view('pages.public.list_produk',compact('riwayat','data','tipe','route','layout'));
+    }
+
+    public function produk_list_kelas(Request $request){
+        if($request->search != null){
+            $data = Kelas::where('judul','like','%'.$request->search.'%')->get();
+
+        }else{
+            $data = Kelas::all();
+        }
+
+        $layout = Layout::layout_check();
+        
+        $tipe = 'kelas';
+        $route = 'produkListKelas';
+        $riwayat = 'memberKelas';
+        return view('pages.public.list_produk',compact('riwayat','data','tipe','route','layout'));
+    }
+
+    public function produk_list_template(Request $request){
+        $data = Template::latest()->get();
+        $tipe = 'Bundling';
+        $route = 'produkListTemplate';
+        $riwayat = 'memberTemplate';
+
+        $layout = Layout::layout_check();
+
+        return view('pages.public.list_produk',compact('data','tipe','route','layout','riwayat'));
+
+    }
+
+    public function profile(){
+        return view('pages.public.about.profile');
+    }
+
+    public function term_condition(){
+        return view('pages.public.about.term_condition');
+    }
+
+    public function privacy(){
+        return view('pages.public.about.privacy');
+    }
+
+    public function faq(){
+        return view('pages.public.about.faq');
+    }
+
+    public function goes_sekolah(){
+        return view('pages.public.goes-to.sekolah');
+    }
+
+    public function goes_campus(){
+        return view('pages.public.goes-to.campus');
+    }
+
+    
+}
