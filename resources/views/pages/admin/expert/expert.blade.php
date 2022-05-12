@@ -16,7 +16,7 @@
 
     <div class="container d-flex mt-3">
         @forelse ($data as $dt) 
-        <a href="{{route('kelasDetail',$dt->id)}}" class="card mx-2" style="width: 14rem;">
+        <a href="{{route('expertAdminDetail',$dt->id)}}" class="card mx-2" style="width: 14rem;">
             <div class="card-image w-100 mb-3">
                 <img src="{{asset($dt->foto)}}" alt="image" class="w-100">
             </div>

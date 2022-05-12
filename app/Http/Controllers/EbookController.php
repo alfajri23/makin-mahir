@@ -80,6 +80,8 @@ class EbookController extends Controller
         
     }
 
+    //*Admin
+
     public function admin(Request $request){
         if ($request->ajax()) {
             $data = Ebook::latest()->get();
@@ -178,17 +180,24 @@ class EbookController extends Controller
             'gambar'=>$gambar,
             'link' =>$file,
             'harga' => str_replace(",", "", $request->harga),
+            'id_expert' => $request->id_expert,
         ]);
 
         $produk = Produk::updateOrCreate(['id'=>$request->id_produk],[
-            'id_kategori' => 4,
+            'id_kategori' => 5,
             'id_produk' => $data->id,
             'nama' => $request->judul,
             'harga' => str_replace(",", "", $request->harga),
         ]);
 
+        // Cek untuk redirect sebagai admin atau expert
+        if (Auth::guard('admin')->check()){
+            return redirect()->route('ebookAdmin');
+        }else{
+            return redirect()->route('ebookExpert');
+        }
 
-        return redirect()->route('ebookAdmin');
+        
     }
 
     public function ebookDelete($id){

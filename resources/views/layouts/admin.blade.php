@@ -182,11 +182,6 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-            <!-- Heading -->
-            {{-- <div class="sidebar-heading">
-                Addons
-            </div> --}}
-
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
@@ -216,13 +211,6 @@
                     </div>
                 </div>
             </li>
-
-            {{-- <li class="nav-item">
-                <a class="nav-link" href="{{route('memberAdminIndex')}}">
-                    <i class="fa-solid fa-user mx-1"></i>
-                    <span>Member</span>
-                </a>
-            </li> --}}
 
             <li class="nav-item">
                 <a class="nav-link" href="{{route('notifikasiIndex')}}">

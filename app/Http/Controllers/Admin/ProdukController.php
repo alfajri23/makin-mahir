@@ -23,6 +23,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Helper\UploadFile;
 use App\Models\CVCheckerEnroll;
 use App\Models\KelasUjian;
+use Illuminate\Support\Facades\Auth;
 
 class ProdukController extends Controller
 {
@@ -231,6 +232,7 @@ class ProdukController extends Controller
 
     //EVENT
         public function event(Request $request){
+            //dd(ProdukEvent::latest()->get());
             if ($request->ajax()) {
                 $data = ProdukEvent::latest()->get();
                 return datatables()->of($data)
@@ -359,7 +361,7 @@ class ProdukController extends Controller
                 'pemateri' =>$request->pemateri,
                 'poster' => $files,
                 'status' => 1,
-                'id_pemateri' => $request->id_pemateri
+                'id_expert' => $request->id_pemateri
             ]);
 
             $produk = Produk::updateOrCreate(['id'=>$request->id_produk],[
@@ -369,96 +371,102 @@ class ProdukController extends Controller
                 'harga' => $request->harga_promo == null ? str_replace(",", "", $request->harga) : str_replace(",", "", $request->harga_promo)
             ]);
 
+
+            // Cek untuk redirect sebagai admin atau expert
+            if (Auth::guard('admin')->check()){
+                return redirect()->route('eventAdmin');
+            }else{
+                return redirect()->route('eventExpert');
+            }
+
         
-            return redirect()->route('eventAdmin');
         }
     //END EVENT
 
     //TEMPLATE
-    public function template(Request $request){
-        $data = Template::latest()->get();
+        public function template(Request $request){
+            $data = Template::latest()->get();
 
-        return view('pages.admin.produk.template.template',compact('data'));
-    }
+            return view('pages.admin.produk.template.template',compact('data'));
+        }
 
-    public function templateAdd(Request $request){
-        return view('pages.admin.produk.template.template_add');
-    }
+        public function templateAdd(Request $request){
+            return view('pages.admin.produk.template.template_add');
+        }
 
-    public function templateEdit($id){
-        $data = Template::find($id);
-        $id_produk = $data->produk->id;
-        return view('pages.admin.produk.template.template_edit',compact('data','id_produk'));
-    }
+        public function templateEdit($id){
+            $data = Template::find($id);
+            $id_produk = $data->produk->id;
+            return view('pages.admin.produk.template.template_edit',compact('data','id_produk'));
+        }
 
-    public function templateCreate(Request $request){
+        public function templateCreate(Request $request){
 
-        $validator = Validator::make($request->all(), [
-            'gambar' => 'image|mimes:jpeg,png,jpg|max:2048',
-        ]);
+            $validator = Validator::make($request->all(), [
+                'gambar' => 'image|mimes:jpeg,png,jpg|max:2048',
+            ]);
 
-        if ($validator->fails()) {
+            if ($validator->fails()) {
+                return redirect()->back();
+                dd($validator->messages()->first()); 
+            }
+
+            $datas = [
+                'judul' => $request->judul,
+                'harga' => str_replace(",", "", $request->harga),
+                'desc' => $request->desc,
+            ];
+
+            if(!empty($request->poster)){
+                $datas = UploadFile::file($request,'poster','asset/img/produk/template',$datas);
+            }
+
+            $filed = [];
+
+            if(!empty($request->file)){
+                
+                foreach($request->file as $file){
+                    $nama_file = time()."_".$file->getClientOriginalName();
+                    $tujuan_upload_server = public_path('asset/file/template');
+                    $tujuan_upload = 'asset/file/template';
+                    $files = $tujuan_upload . '/'. $nama_file;
+                    $file->move($tujuan_upload_server,$nama_file);
+                    $filed[] = $files;
+                }
+
+                $file_name = implode(",",$filed);
+
+                if($request->id != null){
+                    $file_lama = Template::find($request->id);
+                    $file_name = $file_name . ',' . $file_lama->file;
+                }
+
+                $datas['file'] = $file_name;
+            }
+
+            $data = Template::updateOrCreate(['id'=>$request->id],$datas);
+
+
+            $produk = Produk::updateOrCreate(['id'=>$request->id_produk],[
+                'nama' => $request->judul,
+                'harga' => str_replace(",", "", $request->harga),
+                'id_kategori' => 7,
+                'id_produk' => $request->id,
+            ]);
+
+            return redirect()->route('templateAdmin');
+        }
+
+        public function templateDelete($id){
+            $data = Template::find($id);
+            $produk = Produk::find($data->produk->id);
+
+            $produk->delete();
+            $data->delete();
+
+
             return redirect()->back();
-            dd($validator->messages()->first()); 
         }
-
-        $datas = [
-            'judul' => $request->judul,
-            'harga' => str_replace(",", "", $request->harga),
-            'desc' => $request->desc,
-        ];
-
-        if(!empty($request->poster)){
-            $datas = UploadFile::file($request,'poster','asset/img/produk/template',$datas);
-        }
-
-        $filed = [];
-
-        if(!empty($request->file)){
-            
-            foreach($request->file as $file){
-                $nama_file = time()."_".$file->getClientOriginalName();
-                $tujuan_upload_server = public_path('asset/file/template');
-                $tujuan_upload = 'asset/file/template';
-                $files = $tujuan_upload . '/'. $nama_file;
-                $file->move($tujuan_upload_server,$nama_file);
-                $filed[] = $files;
-            }
-
-            $file_name = implode(",",$filed);
-
-            if($request->id != null){
-                $file_lama = Template::find($request->id);
-                $file_name = $file_name . ',' . $file_lama->file;
-            }
-
-            $datas['file'] = $file_name;
-        }
-
-        $data = Template::updateOrCreate(['id'=>$request->id],$datas);
-
-
-        $produk = Produk::updateOrCreate(['id'=>$request->id_produk],[
-            'nama' => $request->judul,
-            'harga' => str_replace(",", "", $request->harga),
-            'id_kategori' => 7,
-            'id_produk' => $request->id,
-        ]);
-
-        return redirect()->route('templateAdmin');
-    }
-
-    public function templateDelete($id){
-        $data = Template::find($id);
-        $produk = Produk::find($data->produk->id);
-
-        $produk->delete();
-        $data->delete();
-
-
-        return redirect()->back();
-    }
-
 
     //END TEMPLATE
 

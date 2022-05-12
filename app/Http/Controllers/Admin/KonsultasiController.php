@@ -8,7 +8,9 @@ use App\Models\KonsultasiTipe;
 use App\Models\KonsultasiUserEnroll;
 use App\Models\KonsultasiExpert;
 use App\Models\Expert;
+use App\Models\KonsultasiEnroll;
 use App\Models\Produk;
+use Illuminate\Support\Facades\Auth;
 
 class KonsultasiController extends Controller
 {   
@@ -50,7 +52,6 @@ class KonsultasiController extends Controller
 
         return view('pages.admin.produk.konsultasi.konsultasi_expert_edit',compact('data',
                                                                          'expert','id','id_produk'));
-
     }
 
     public function expertStore(Request $request){
@@ -63,7 +64,6 @@ class KonsultasiController extends Controller
             'id_expert' => $request->id_expert,
         ]);
 
-
         $produk = Produk::updateOrCreate(['id'=>$request->id_produk],[
             'id_kategori' => 4,
             'id_produk' => $data->id,
@@ -71,7 +71,14 @@ class KonsultasiController extends Controller
             'harga' => str_replace(",", "", $request->harga),
         ]);
 
-        return redirect()->route('konsultasiExpertIndex',$request->id_konsultasi);
+        // Cek untuk redirect sebagai admin atau expert
+        if (Auth::guard('admin')->check()){
+            return redirect()->route('konsultasiExpertIndex',$request->id_konsultasi);
+        }else{
+            return redirect()->route('konsultasiExperts',$request->id_konsultasi);
+        }
+
+        
     }    
 
     public function expertDelete($id){
@@ -82,7 +89,15 @@ class KonsultasiController extends Controller
         $produk->forceDelete();
 
         return redirect()->back();
+    }
 
+    public function done(Request $request){
+        $data = KonsultasiEnroll::find($request->id);
+        $data->is_done = 1;
+        $data->save();
+        
+
+        return redirect()->back();
     }
 
 

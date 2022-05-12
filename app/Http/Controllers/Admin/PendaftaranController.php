@@ -365,6 +365,17 @@ class PendaftaranController extends Controller
                 ';
                 return $nama;
             })
+            ->addColumn('status', function($row){
+                switch($row->is_done){
+                    case 1:
+                        $nama = '<span class="badge badge-success">selesai</span>';
+                        break;
+                    default:
+                        $nama = '<span class="badge badge-warning">pending</span>';
+                };
+
+                return $nama;
+            })
             ->addColumn('aksi', function($row){
 
                 $actionBtn = '
@@ -376,7 +387,7 @@ class PendaftaranController extends Controller
                 
                 return $actionBtn;
             })
-            ->rawColumns(['judul','email','jadwal','aksi','bayar'])
+            ->rawColumns(['judul','email','jadwal','aksi','bayar','status'])
             ->make(true);
         
         }

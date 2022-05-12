@@ -25,6 +25,7 @@ class LoginAdminController extends Controller
         $credentials = $request->only('email', 'password');
         //dd($credentials);
         if ($this->guard()->attempt($credentials)) {
+            $request->session()->put('auth.id_admin', auth()->guard('admin')->user()->id);
             return redirect()->route('homeAdmin');
         }
   

@@ -14,6 +14,7 @@
                     <th>Email</th>
                     <th>Jadwal</th>
                     <th>Status bayar</th>
+                    <th>Status</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -81,6 +82,7 @@
                 {data: 'email', name: 'email'},
                 {data: 'jadwal', name: 'jadwal'},
                 {data: 'bayar', name: 'bayar',width: "5%"},
+                {data: 'status', name: 'status',width: "5%"},
                 {data: 'aksi', name: 'aksi'},
             ],
             dom: 'Bfrtlip',

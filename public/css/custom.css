@@ -1,0 +1,68 @@
+
+.spacer{
+    height: 100px;
+}
+
+@media screen and (min-width: 576px) {
+    .spacer{
+        height: 50px;
+    }
+}
+
+.item >.card{ 
+    min-height: 320px !important;
+}
+
+.card-image-main > img{
+    height: 200px;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+.card-image > img{
+    height: 160px;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+
+.float{
+    display:none;
+}
+
+@media screen and (min-width: 960px) {
+    .float{
+        display:block;
+        position:fixed;
+        width:190px;
+        height:60px;
+        bottom:40px;
+        right:40px;
+        background-color:#0C9;
+        color:#FFF;
+        border-radius:50px;
+        text-align:center;
+        box-shadow: 2px 2px 3px rgb(216, 216, 216);
+    }
+
+}
+
+.my-float{
+    margin-top: 13px;
+}
+
+.float:hover{
+    background-color:#fff;
+}
+
+.my-float:hover{
+    color: #0C9;
+}
+
+
+/* Kelas */
+
+.banner-kelas{
+    height: 400px;
+    position: absolute;
+}

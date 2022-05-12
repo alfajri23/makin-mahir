@@ -55,7 +55,7 @@
         tabel.DataTable({
             processing: true,
             serverSide: true,
-            ajax: "{{ route('ebookAdmin') }}",
+            ajax: "{{ route('ebookExpert') }}",
             columns: [
                 {
                     data: 'DT_RowIndex', 

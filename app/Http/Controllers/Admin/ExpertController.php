@@ -47,4 +47,19 @@ class ExpertController extends Controller
 
         return redirect()->route('expertAdminIndex');
     }
+
+    public function detail($id){
+        $data = Expert::find($id);
+        return view('pages.admin.expert.expert_detail',compact('data'));
+    }
+
+    public function resetPass(Request $request){
+        $data = Expert::find($request->id);
+        $data->password = Hash::make('12345678');
+        $data->save();
+
+        return response()->json([
+            'data' => 12345678
+        ]);
+    }
 }
