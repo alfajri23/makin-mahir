@@ -5,13 +5,10 @@
     <div class="spacer"></div>
 
     <div>
-        <button type="button" class="btn btn-primary font-weight-bold" data-toggle="modal" data-target="#modalCV">
+        {{-- <button type="button" class="btn btn-primary font-weight-bold" data-toggle="modal" data-target="#modalCV">
             Pilih CV
-        </button>
+        </button> --}}
         <a href="{{route('cvPrint' )}}" type="button" class="btn btn-success font-weight-bold">Download <span id="tipeCV"></span></a>
-        {{-- <a href="{{route('cvPrint',['tipe' => 'basic'])}}" type="button" class="btn btn-sm btn-secondary">Basic</a>
-        <a href="{{route('cvPrint',['tipe' => 'modern'])}}" type="button" class="btn btn-sm btn-secondary">Modern</a>
-        <a href="{{route('cvPrint',['tipe' => 'ats'])}}" type="button" class="btn btn-sm mx-1 btn-info ">ATS</a> --}}
     </div>
 
     <div class="row">
@@ -34,8 +31,7 @@
 
         <div class="col-12 my-2">
             <div class="card shadow-xss border-0 px-5 py-4 rounded-lg">
-                <h2 class="fw-700 font-sm mt-4 mb-3 text-grey-900">Kontak
-                    <a href="#" class="float-right" onclick="btnModalBio()"><i class="feather-edit text-grey-800 fw-700 font-sm"></i></a></h2>
+                <h2 class="fw-700 font-sm mt-4 mb-3 text-grey-900">Kontak</h2>
                     <div class="row">
                         <form action="{{route('editKontak')}}" method="post" style="width:100%">
                             @csrf
@@ -195,7 +191,7 @@
 
 {{-- modalBio --}}
 <div class="modal fade" id="modalBio" tabindex="-1">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Biodata</h5>
@@ -222,7 +218,7 @@
 
 {{-- modalKerja --}}
 <div class="modal fade" id="modalKerja" tabindex="-1">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Pekerjaan</h5>
@@ -233,7 +229,7 @@
         <div class="modal-body">
             <form action="{{route('editWork')}}" method="post">
             @csrf
-            <div class="col-12">
+            <div class="col-12 pb-4">
                 <div class="form-group mb-3">
                     <label for="">Jabatan</label>
                     <input type="hidden" name="id" id="id" class="form-control bg-color-none text-grey-700" value=""> 
@@ -271,7 +267,7 @@
 
 {{-- modalPendidikan --}}
 <div class="modal fade" id="modalEdu" tabindex="-1">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Pendidikan</h5>
@@ -282,7 +278,7 @@
         <div class="modal-body">
             <form action="{{route('editEdu')}}" method="post">
             @csrf
-            <div class="col-12">
+            <div class="col-12 pb-4">
                 <div class="form-group mb-3">
                     <label for="">level</label>
                     <input type="hidden" name="id" id="id_edu" class="form-control bg-color-none text-grey-700" value=""> 
@@ -320,7 +316,7 @@
 
 {{-- modalTraining --}}
 <div class="modal fade" id="modalTrain" tabindex="-1">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Training</h5>
@@ -331,7 +327,7 @@
         <div class="modal-body">
             <form action="{{route('editTrain')}}" method="post">
             @csrf
-            <div class="col-12">
+            <div class="col-12 pb-4">
                 <div class="form-group mb-3">
                     <label for="">program</label>
                     <input type="hidden" name="id" id="id_train" class="form-control bg-color-none text-grey-700" value=""> 
@@ -365,7 +361,7 @@
 
 {{-- modalSkill --}}
 <div class="modal fade" id="modalSkill" tabindex="-1">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Keahlian</h5>
@@ -376,7 +372,7 @@
         <div class="modal-body">
             <form action="{{route('editSkil')}}" method="post">
             @csrf
-            <div class="col-12">
+            <div class="col-12 pb-4">
                 <div class="form-group mb-3 md-mb25">
                     <input type="hidden" id="id_skil" name="id" class="w-100 h125 style2-textarea p-3 form-control"/>
                     <input type="text" id="formSkill" name="skil" class="form-control bg-color-none text-grey-700" value=""/>
@@ -393,7 +389,7 @@
 
 {{-- modalPrestasi --}}
 <div class="modal fade" id="modalAcv" tabindex="-1">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Prestasi</h5>
@@ -404,7 +400,7 @@
         <div class="modal-body">
             <form action="{{route('editAcv')}}" method="post">
             @csrf
-            <div class="col-12">
+            <div class="col-12 pb-4">
                 <div class="form-group mb-3">
                     <label for="">prestasi</label>
                     <input type="hidden" name="id" id="id_acv" class="form-control bg-color-none text-grey-700" value=""> 
@@ -430,7 +426,7 @@
 
 {{-- modalOrganisasi --}}
 <div class="modal fade" id="modalOrg" tabindex="-1">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Organisasi</h5>
@@ -441,7 +437,7 @@
         <div class="modal-body">
             <form action="{{route('editOrg')}}" method="post">
             @csrf
-            <div class="col-12">
+            <div class="col-12 pb-4">
                 <div class="form-group mb-3">
                     <label for="">posisi</label>
                     <input type="hidden" name="id" id="id_org" class="form-control bg-color-none text-grey-700" value=""> 
@@ -496,23 +492,6 @@
                 @empty
                     
                 @endforelse
-
-                {{-- <div class="card shadow-sm m-2" style="width:200px;">
-                    <img src="{{asset('asset/img/cv/cv_modern.png')}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">CV Modern</h5>
-                      <a onclick="setCV(2)" class="btn btn-primary btn-sm text-white">Pilih</a>
-                    </div>
-                </div>
-
-                <div class="card shadow-sm" style="width:200px;">
-                    <img src="{{asset('asset/img/cv/cv_ats.png')}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">CV ATS</h5>
-                      <a onclick="setCV(3)" class="btn btn-primary btn-sm text-white">Pilih</a>
-                    </div>
-                </div> --}}
-
             </div>
         </div>
         </div>

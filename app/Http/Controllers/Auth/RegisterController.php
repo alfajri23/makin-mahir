@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use App\Notifications\WelcomeEmailNotification;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -53,7 +54,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'telepon' => ['required', 'string'],
+            'telepon' => ['required', 'string','regex:/\+?([ -]?\d+)+|\(\d+\)([ -]\d+)/','min:9'],
         ]);
 
         return $data;
@@ -67,12 +68,15 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        //dd("daftar");
-        return User::create([
+        $user =  User::create([
             'nama' => $data['name'],
             'telepon' => $data['telepon'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
+        $user->notify(new WelcomeEmailNotification($user));
+
+        return $user;
     }
 }
