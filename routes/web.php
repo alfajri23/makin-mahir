@@ -3,9 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
 use App\Http\Controllers\Notifications;
-
-
-
+use App\Models\User;
+use App\Notifications\WelcomeEmailNotification;
 
 /*
 |--------------------------------------------------------------------------
@@ -440,3 +439,9 @@ Route::middleware(['expert'])->prefix('exp')->group(function () {
 Route::get('formulir', [Controllers\FormulirController::class,'index'])->name('formIndex');
 Route::get('pembayaran/{id}', [Controllers\TransaksiController::class,'cekForm'])->name('pembayaranCek');
 Route::post('pembayaran', [Controllers\TransaksiController::class,'create'])->name('pembayaranCreate');
+
+
+// Route::get('set-noti', function(){
+//     $user = User::find(8);
+//     $user->notify(new WelcomeEmailNotification($user));
+// });

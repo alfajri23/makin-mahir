@@ -18,7 +18,7 @@ use Illuminate\Http\Request;
 class CVController extends Controller
 {
 
-    public function index(){
+    public function index(Request $request){
         $kerja = CVKerja::where('id_user',auth()->user()->id)->get();
         $skil = CVSkil::where('id_user',auth()->user()->id)->get();
         $edukasi = CVEdukasi::where('id_user',auth()->user()->id)->get();
@@ -32,6 +32,8 @@ class CVController extends Controller
         $cv_user = CVUser::find(auth()->user()->id);
         $cv_user = $cv_user != null ? $cv_user->id : null;
         //dd($cv_user);
+
+        $request->session()->put('cv', 3);
 
         return view('pages.cv.cv_data',compact('user','organisasi','kerja',
                                                 'edukasi','training','skil',
@@ -53,9 +55,6 @@ class CVController extends Controller
         $cvUser = CVUser::updateOrCreate(['id_user' => auth()->user()->id],[
             'id_tema' => $request->session()->get('cv'),
         ]);
-
-        //dd($cvUser);
-
 
         if($request->session()->get('cv') == 1){
             $pdf = PDF::loadview('pages.cv.print.cv_basic1_print',compact('user','organisasi','kerja','edukasi','training','skil','prestasi','image'));
