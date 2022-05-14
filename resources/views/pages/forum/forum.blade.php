@@ -2,8 +2,9 @@
 
 @section('content')
 <style>
-    .spacer{
-        height: 100px;
+    .main-wrap{
+
+        background-color: #f8f8f8;
     }
 
     form{
@@ -24,9 +25,9 @@
     }
 
 </style>
-
+<div class="spacer"></div>
 <div class="container">
-    <div class="spacer"></div>
+    <div class="spacer-sm"></div>
 
     <div class="row flex-column-reverse flex-sm-row">
         <div class="col-12 col-sm-9">
@@ -52,41 +53,49 @@
             <div class="card w-100 p-3 rounded-md border-1 my-3 position-relative">
                 <div class="row ml-1 justify-content-between px-3">
                     <div class="row">
-                        <figure class="avatar mr-2">
-                            <img src="{{asset($dt->user->foto)}}" alt="image" style="width:50px">
+                        <figure class="avatar mr-3">
+                            <img src="{{asset($dt->user->foto)}}" alt="image" class="rounded-circle w40">
                         </figure>
                         <div>
-                            <h5 class="font-xsss mb-0">{{$dt->user->nama}}</h5>
-                            <div class="font-xsss">{{date_format(date_create($dt->created_at),"d M Y")}} </div>
+                            <h5 class="font-xsss mb-0 fw-700">{{$dt->user->nama}}</h5>
+                            <div class="font-xssss">{{date_format(date_create($dt->created_at),"d M Y")}} </div>
                         </div>
                     </div>
                 </div>
 
-                @if ($dt->id_user == auth()->user()->id)
+                @if ($dt->id_user == Session::get('auth.id_user'))
                 <span class="edit">
                     <i onclick="edit({{$dt->id}})" class="fas fa-pencil"></i>
                 </span>
                 @endif
 
-                <a href="{{route('forumDetail',$dt->id)}}" class="text-decoration-none">
-                    <h6 class="font-sm fw-700 lh-3 mb-0">{{$dt->judul}}</h6>
-                </a>
                 <small>{{$dt->kategori->nama}}</small>
+                <a href="{{route('forumDetail',$dt->id)}}" class="text-decoration-none">
+                    <h6 class="font-sm fw-600 lh-3 mb-0">{{$dt->judul}}</h6>
+                </a>
 
-                <p class="font-xss fw-600 lh-3 mb-3">{!!$dt->isi!!}</p>
+                {!!$dt->isi!!}
+                {{-- <p class="font-xss fw-600 lh-3 mb-3">{!!$dt->isi!!}</p> --}}
 
-                <div class="row px-3">
+                <div class="row px-3 mt-3">
+                    
                     <div class="clearfix">
-                        <i class="fas fa-eye"></i>{{$dt->lihat}}  View
+                        <small>
+                        <i class="fas fa-eye mr-1 text-success"></i>{{$dt->lihat}}  View
+                        </small>
                     </div>
                     <div class="clearfix mx-4">
-                        <i class="fas fa-thumbs-up"></i> Like
+                        <small>
+                        <i class="fas fa-thumbs-up text-danger"></i> Like
+                        </small>
                     </div>
                     <div class="clearfix">
-                        <i class="fas fa-comment-alt"></i>
+                        <small>
+                        <i class="fas fa-comment-alt text-info"></i>
                         <a href="{{route('forumDetail',$dt->id)}}" class="text-decoration-none">{{count($dt->jawaban)}} Comment</a>
+                        </small>
                     </div>
-
+                    
                 </div>
               
             </div>
@@ -98,12 +107,12 @@
 
         <div class="col-12 col-sm-3 mb-5">
             <h5 class="font-sm fw-500">Kategori</h5>
-            <div class="mb-2">
+            
                 <button type="button" class="btn btn-light" data-toggle="modal" data-target="#kategoriModal">
                     <i class="fa-solid fa-plus"></i>
                     Tambah kategori
                 </button>
-            </div>
+            
             @forelse ($kategori as $kat)
             <a href="{{route('forumIndex',['kategori'=> $kat->nama])}}" class="d-flex align-items-center btn btn-light my-1">  
                 <p class="ml-2 mb-0">{{$kat->nama}}</p>

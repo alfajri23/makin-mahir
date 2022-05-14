@@ -10,6 +10,7 @@
         cursor: pointer;
     }
 </style>
+<div class="spacer"></div>
 <div class="container">
     <div class="spacer"></div>
     <a href="{{route('forumIndex')}}" class="mb-3">
@@ -74,7 +75,7 @@
                         </div>
                     </div>
 
-                    @if ($km->id_user == auth()->user()->id)
+                    @if ($km->id_user == Session::get('auth.id_user'))
                     <span class="trash">
                         <i onclick="deleteKomentar({{$km->id}})" class="fas fa-trash-alt"></i>
                     </span>
