@@ -25,7 +25,7 @@ class ForumPertanyaaan extends Model
 
     public function user()
     {
-        return $this->belongsTo(USer::class, 'id_user', 'id');
+        return $this->belongsTo(User::class, 'id_user', 'id');
     }
 
 }
