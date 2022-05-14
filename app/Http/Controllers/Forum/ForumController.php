@@ -28,6 +28,7 @@ class ForumController extends Controller
 
         $kategori = ForumKategori::all();
         $layout = Layout::layout_check();
+        //dd($data);
 
         return view('pages.forum.forum',compact('data','layout','kategori'));
 

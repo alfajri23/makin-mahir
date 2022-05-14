@@ -3,10 +3,14 @@
     height: 100px;
 }
 
+.spacer-sm{
+    height: 50px;
+}
+
 @media screen and (min-width: 576px) {
-    .spacer{
-        height: 50px;
-    }
+    /* .spacer-sm{
+        height: 100px;
+    } */
 }
 
 .item >.card{ 

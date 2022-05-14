@@ -40,8 +40,9 @@
                     </div>
                 </form>
             </div>
-
+            @if(\Auth::check())
             <a href="{{route('memberEbook')}}" class="text-grey-900 font-xsss fw-600 mt-2 d-block text-center">Ebook saya</a>
+            @endif
         </div>
     </div>
 </div>
