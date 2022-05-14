@@ -16,6 +16,10 @@ use Illuminate\Support\Facades\Validator;
 
 class TransaksiController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
     public function cekForm(Request $request){
         $data = Produk::find($request->id);
 

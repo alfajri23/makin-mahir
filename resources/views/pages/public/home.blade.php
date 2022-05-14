@@ -78,7 +78,7 @@
                 <div class="col-lg-12">
                     <div class="owl-carousel category-card owl-theme overflow-hidden overflow-visible-xl nav-none">
                         {{-- items loop --}}
-                        {{-- @forelse ($event as $env)
+                        @forelse ($event as $env)
                         <div class="item">
                             <div class="card w300 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1 mb-4">
                                 <div class="card-image w-100 mb-3">
@@ -90,7 +90,7 @@
                                     <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-success d-inline-block text-success mr-1">{{$env->tipe}}</span>
                                     <span class="font-xss fw-700 pl-3 pr-3 ls-2 lh-32 d-inline-block text-success float-right"><span class="font-xsssss"></span> {{$env->harga == 0 ? 'Gratis' : 'Rp.'.number_format($env->harga) }}</span>
                                     <h4 class="fw-700 font-xss mt-3 lh-20 mt-0">
-                                        <a href="{{route('memberProdukDetail',['tipe' => $env->tipe , 'id' => $env->id])}}" class="text-dark text-grey-900">{{$env->judul}}</a>
+                                        <a href="{{route('memberProdukDetail',$env->produk->id)}}" class="text-dark text-grey-900">{{$env->judul}}</a>
                                     </h4>  
                                 </div>
                             </div>
@@ -98,7 +98,7 @@
                             
                         @empty
                             
-                        @endforelse --}}
+                        @endforelse
                         {{-- end items loop --}}
                     </div>
 
@@ -121,21 +121,15 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="owl-carousel category-card owl-theme overflow-hidden overflow-visible-xl nav-none">
+                    <div class="mx-auto owl-carousel category-card owl-theme overflow-hidden overflow-visible-xl nav-none">
                         {{-- items loop --}}
-                        {{-- @forelse ($konsul as $env)
+                        @forelse ($konsuls as $env)
                         <div class="item">
-                            <div class="card w300 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1 mb-4">
-                                <div class="card-image w-100 mb-3">
-                                    <a class="video-bttn position-relative d-block">
-                                        <img src="{{asset($env->poster)}}" alt="image" class="w-100">
-                                    </a>
-                                </div>
+                            <div class="w280 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1 mb-4">
                                 <div class="card-body pt-0">
-                                    <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-success d-inline-block text-success mr-1">{{$env->tipe}}</span>
-                                    <span class="font-xss fw-700 pl-3 pr-3 ls-2 lh-32 d-inline-block text-success float-right"><span class="font-xsssss"></span> {{$env->harga == 0 ? 'Gratis' : 'Rp.'.number_format($env->harga) }}</span>
-                                    <h4 class="fw-700 font-xss mt-3 lh-28 mt-0">
-                                        <a href="{{route('memberProdukDetail',['tipe' => 'konsultasi', 'id' => $env->id])}}" class="text-dark text-grey-900">{{$env->judul}}</a>
+                                    <div class="font-xsss fw-500 mt-3 text-success"><span class="font-xsssss"></span> {{$env->harga == 0 ? 'Gratis' : 'Rp.'.number_format($env->harga) }}</div>
+                                    <h4 class="fw-700 font-xss lh-28 mt-0">
+                                        <a href="{{route('produkListDetailKonsul',$env->id)}}" class="text-dark text-grey-900">{{$env->nama}}</a>
                                     </h4>  
                                 </div>
                             </div>
@@ -143,7 +137,7 @@
                             
                         @empty
                             
-                        @endforelse --}}
+                        @endforelse
                         {{-- end items loop --}}
                     </div>
 
@@ -168,7 +162,7 @@
                 <div class="col-lg-12">
                     <div class="owl-carousel category-card owl-theme overflow-hidden overflow-visible-xl nav-none">
                         {{-- items loop --}}
-                        {{-- @forelse ($video as $env)
+                        @forelse ($kelas as $env)
                         <div class="item">
                             <div class="card w300 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1 mb-4">
                                 <div class="card-image w-100 mb-3">
@@ -180,7 +174,7 @@
                                     <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-success d-inline-block text-success mr-1">{{$env->tipe}}</span>
                                     <span class="font-xss fw-700 pl-3 pr-3 ls-2 lh-32 d-inline-block text-success float-right"><span class="font-xsssss"></span> {{$env->harga == 0 ? 'Gratis' : 'Rp.'.number_format($env->harga) }}</span>
                                     <h4 class="fw-700 font-xss mt-3 lh-28 mt-0">
-                                        <a href="{{route('memberProdukDetail',['tipe' => 'video', 'id' => $env->id])}}" class="text-dark text-grey-900">{{$env->judul}}</a>
+                                        <a href="{{route('memberProdukDetail',$env->produk->id)}}" class="text-dark text-grey-900">{{$env->judul}}</a>
                                     </h4>  
                                 </div>
                             </div>
@@ -188,7 +182,7 @@
                             
                         @empty
                             
-                        @endforelse --}}
+                        @endforelse
                         {{-- end items loop --}}
                     </div>
                 </div>

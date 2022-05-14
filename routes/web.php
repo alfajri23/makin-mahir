@@ -144,8 +144,6 @@ Route::middleware(['auth'])->group(function () {
     Route::post('daftar/konsultasi', [Controllers\DaftarController::class,'pendaftaran_konsultasi'])->name('daftarKonsultasi');
     Route::post('daftar/video', [Controllers\DaftarController::class,'pendaftaran_video'])->name('daftarVideo');
 
-    Route::get('event', [Controllers\PublicController::class,'produk_list_event'])->name('produkListEvent');
-
 
     //*Profile dan sudah enrool
     Route::prefix('my')->group(function(){

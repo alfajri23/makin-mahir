@@ -19,9 +19,11 @@
 
 <div class="spacer"></div>
 <div class="container mt-5 mt-sm-0">
+    @if(\Auth::check()) 
     <a href="{{route($riwayat)}}" class="float-right mt-2">
         <span class="badge badge-dark p-2">Riwayat</span>  
     </a>
+    @endif
     <div class="row align-items-center flex-column pt-4">
         <div class="page-title style1 col-xl-6 col-lg-6 col-md-10 text-center">
             <h2 class="text-grey-900 fw-700 display1-size display2-md-size pb-3 mb-0 d-block">{{$tipe}}</h2>
