@@ -2,6 +2,7 @@
 @section('content')
 
 <div class="spacer"></div>
+<div class="spacer"></div>
 <div class="container mt-5 mt-sm-0">
     <div class="row align-items-center flex-column pt-4">
         <div class="page-title style1 col-xl-6 col-lg-6 col-md-10 text-center">

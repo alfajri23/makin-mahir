@@ -27,7 +27,7 @@
 
 <body class="color-theme-blue mont-font">
     <div class="main-wrap">
-        <div class="header-wrapper pt-3 pb-3 shadow-none pos-fixed position-absolute">
+        <div class="header-wrapper pt-3 pb-3 shadow-sm pos-fixed position-absolute">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 navbar pt-0 pb-0">
@@ -37,15 +37,6 @@
                         </button>
                         <div class="collapse navbar-collapse" id="navbarNavDropdown">
                             <ul class="navbar-nav nav-menu float-none text-center">
-                                {{-- <li class="nav-item dropdown"><a class="nav-link  dropdown-toggle" data-toggle="dropdown" href="#">Produk <i class="ti-angle-down"></i></a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="./about.html">About</a>
-                                        <a class="dropdown-item" href="./contact.html">Contact</a>
-                                        <a class="dropdown-item" href="./contact-two.html">Contact 2</a>
-                                        <a class="dropdown-item" href="./404.html">404</a>
-                                    </div>
-                                </li> --}}
-                                {{-- <li class="nav-item"><a class="nav-link" href="{{route('blog')}}">Blog</a></li> --}}
 
                                 <li class="nav-item"><a class="nav-link" href="{{route('ebook')}}">Ebook</a></li>
                                 

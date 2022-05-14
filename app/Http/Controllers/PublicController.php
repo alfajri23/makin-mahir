@@ -16,13 +16,14 @@ use App\Models\KonsultasiExpert;
 class PublicController extends Controller
 {
     public function index(){
-        //$konsul = ProdukKonsul::limit(3)->get(); 
-        $konsul = '';
-        $video = ProdukVideo::limit(3)->get(); 
+        $kelas = Kelas::limit(6)->get();
         $event = ProdukEvent::limit(3)->get(); 
         $blog = Blog::limit(6)->get();
+        $konsuls = KonsultasiTipe::limit(4)->get();
 
-        return view('pages.public.home',compact('konsul','video','blog','event'));
+        //dd($event);
+
+        return view('pages.public.home',compact('kelas','blog','event','konsuls'));
     }
 
     public function produk_detail_konsul(Request $request){

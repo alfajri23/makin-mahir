@@ -2,9 +2,10 @@
 
 @section('content')
     <div class="spacer"></div>
+    <div class="spacer"></div>
     <div class="container-fluid">
+        <div class="spacer"></div>
         <div class="col-12">
-            <div class="spacer"></div>
             <h2 class="text-grey-900 fw-700 display1-size display2-md-size pb-3 mb-5 d-block text-center">{{$data->produk->nama}}</h2>
         </div>
     
@@ -23,7 +24,7 @@
             </div>
             <div class="spacer"></div>
         </div>
-
+        <div class="spacer"></div>
     </div>
     
 
