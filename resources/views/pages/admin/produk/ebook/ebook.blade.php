@@ -49,13 +49,21 @@
 
 
 <script>
+
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+            'Authorization': `Bearer {{Session::get('token')}}`
+        }
+	});
+
     $(function (){
         let tabel = $('.tableEbook');
 
         tabel.DataTable({
             processing: true,
             serverSide: true,
-            ajax: "{{ route('ebookExpert') }}",
+            ajax: "{{ route('ebookAdmin') }}",
             columns: [
                 {
                     data: 'DT_RowIndex', 

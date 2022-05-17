@@ -93,7 +93,7 @@
 
                                 <div class="mb-3">
                                     <label for="exampleInputFile">Foto</label><br>
-                                    <input type="file" class="" name="file" id="logo">
+                                    <input type="file" class="" name="foto" id="logo">
                                 </div>
 
                                 <div class="form-group">

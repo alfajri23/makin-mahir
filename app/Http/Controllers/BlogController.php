@@ -7,6 +7,7 @@ use App\Models\Blog;
 use App\Models\BlogKategori;
 use App\Models\KomentarBlog;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use App\Helper\Layout;
 
 
@@ -48,12 +49,10 @@ class BlogController extends Controller
         $datas = Blog::limit(6)->get();
         $data = Blog::where('judul',$request->judul)->first();
         
-        $data->pengunjung = $data->pengunjung+1;
+        $data->pengunjung = empty($data->pengunjung) ? 1 : $data->pengunjung+1;
         $data->save();
         $komentar = KomentarBlog::where('id_blog',$data->id)->get();
         $layout = '';
-
-        
 
         if (Auth::check()) {
             $layout = 'layouts.member';
@@ -164,18 +163,24 @@ class BlogController extends Controller
 		]);
 		// menyimpan data file yang diupload ke variabel $file
 		$file = $request->file('file');
+        $datas = [
+
+        ];
 
         if(empty($request->file)){
             $foto = Blog::find($request->id);
             $files = $foto->gambar;
         }else{
-            $nama_file = time()."_".$file->getClientOriginalName();
-            // isi dengan nama folder tempat kemana file diuploadpublic_path('\img\uploads')
+            $nama_file = $file->getClientOriginalName();
             $tujuan_upload_server = public_path('asset/img/blog'); //untuk dihosting
             $tujuan_upload = 'asset/img/blog';                     //untuk local
             $files = $tujuan_upload . '/'. $nama_file;
             $file->move($tujuan_upload_server,$nama_file);
-            //$file->move($tujuan_upload,$nama_file);
+
+            $foto = Blog::find($request->id);
+            if(isset($foto)){
+                File::delete($foto->gambar);
+            }
         }
 
         //Kategori ditambah manually uploaded
@@ -229,6 +234,7 @@ class BlogController extends Controller
 
     public function delete(Request $request){
         $data = Blog::onlyTrashed()->find($request->id);
+        File::delete($data->gambar);
         $data->forceDelete();
 
         return response()->json([

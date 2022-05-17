@@ -1,4 +1,5 @@
 @extends($layout)
+@section('meta_title', $meta_title)
 @section('content')
 <style>
     .spacer{
