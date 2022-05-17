@@ -1,6 +1,7 @@
 @extends($layout)
-@section('content')
+@section('meta_title', $meta_title)
 
+@section('content')
 
 <div class="spacer"></div>
 <div class="spacer"></div>

@@ -7,9 +7,14 @@
     <title>Makin Mahir</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <meta name="title" content="{{isset($meta_title)? $meta_title : ''}}">
-    <meta name="description" content="{{isset($meta_desc)? $meta_desc : ''}}">
-    <meta name="keywords" content="{{isset($meta_keyword)? $meta_keyword : ''}}">
+    <meta name="title" content="@yield('meta_title','Belajar Online | Kursus Online | Makin Mahir ID')">
+    <meta name="keywords" content="@yield('meta_keywords','belajar online, pelatihan online, pelatihan kerja, skill, training, soft skill adalah, training kerja, kursus online, belajar online gratis, kursus online gratis, cara belajar online, trainer to train, webinar, webinar online')">
+    <meta name="description" content="@yield('meta_description','MakinMahir.ID adalah situs belajar online. Kami ingin membuat Anda menjadi mahir sesuai bidang Anda. Yuk, belajar dan menjadi semakin mahir bersama MakinMahir.ID.')">
+    <meta name="copyright" content="makinmahir.id">
+    <meta name="geo.placename" content="indonesia">
+    <meta name="geo.country" content="id">
+    <meta name="content-language" content="id">
+    <meta name="google-site-verification" content="imSOUh01H0EyYu2As8-Hvs2P30TnEhiAkPayXp_ySfk">
 
     <link rel="stylesheet" href="{{ asset('css/themify-icons.css') }}">
 

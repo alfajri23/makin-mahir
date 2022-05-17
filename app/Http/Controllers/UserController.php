@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Helper\UploadFile;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\File;
 
 class UserController extends Controller
 {
@@ -14,45 +16,39 @@ class UserController extends Controller
 
     public function update(Request $request){
         $this->validate($request, [
-			'file' => 'image|mimes:jpeg,png,jpg|max:2048',
+			'foto' => 'image|mimes:jpeg,png,jpg|max:2048',
 		]);
 		// menyimpan data file yang diupload ke variabel $file
-		$file = $request->file('file');
 
-        if(empty($request->file)){
+        $datas = [
+            'nama' => $request->nama,
+            'email' => $request->email,
+            'desc' => $request->desc,
+            'tgl_lahir' => $request->tgl_lahir,
+            'telepon' => $request->telepon,
+            'ig' => $request->ig,
+            'facebook' => $request->facebook,
+            'linkedin' => $request->linkedin,
+            'twitter' => $request->twitter,
+            'alamat' => $request->alamat,
+            'pekerjaan' => $request->pekerjaan,
+            'pendidikan' => $request->pendidikan,
+        ];
+
+        if(!empty($request->file)){
+            $datas = UploadFile::file($request,'foto','asset/img/foto',$datas);
+
             $foto = User::find($request->id);
-            $files = $foto->foto;
-        }else{
-            $nama_file = time()."_".$file->getClientOriginalName();
-            // isi dengan nama folder tempat kemana file diupload
-            $tujuan_upload = 'asset/img/foto';
-            $files = $tujuan_upload . '/'. $nama_file;
-            $file->move($tujuan_upload,$nama_file);
+            if(isset($foto)){
+                File::delete($foto->foto);
+            }
         }
 
-        if(empty($request->password)){
-            $foto = User::find($request->id);
-            $password = $foto->password;
-        }else{
-            $password = bcrypt($request->password);
+        if(!empty($request->password)){
+            $datas['password'] = bcrypt($request->password);
         }
 
-        $data = User::find($request->id);
-        $data->nama = $request->nama; 
-        $data->password = $password; 
-        $data->email = $request->email;
-        $data->desc = $request->desc;
-        $data->telepon = $request->telepon;
-        $data->foto = $files;
-        $data->tgl_lahir = $request->tgl_lahir;
-        $data->ig = $request->ig;
-        $data->facebook = $request->facebook;
-        $data->linkedin = $request->linkedin;
-        $data->twitter = $request->twitter;
-        $data->alamat = $request->alamat;
-        $data->pekerjaan = $request->pekerjaan;
-        $data->pendidikan = $request->pendidikan;
-        $data->save();
+        $data = User::updateOrCreate(['id'=>$request->id],$datas);
 
         return redirect()->back();  
     }

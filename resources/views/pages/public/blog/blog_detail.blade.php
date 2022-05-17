@@ -1,5 +1,9 @@
 @extends($layout)
 
+@section('meta_title', $data->meta_title)
+@section('meta_keywords', $data->meta_keyword)
+@section('meta_description', $data->meta_description)
+
 @section('content')
 <style>
     .spacer{
@@ -20,6 +24,25 @@
         left: 15px;
         top: 8px;
     }
+
+    h5{
+        font-weight: bold;
+    }
+
+    .post-body img {
+        width: calc(100% + 32px);
+        height: auto;
+        margin: 0px -16px;
+        margin-bottom: 16px;
+    }
+
+    /* ol,ul{
+        margin-left: 10%;
+    }
+
+    li {
+        list-style: auto;
+    } */
 </style>
 
 <div class="spacer"></div>
@@ -73,7 +96,7 @@
         {{-- <span class="dot ml-2 mr-2 d-inline-block btn-round-xss bg-grey">{{$data->created_at}}</span> --}}
     </div>
 
-    <div class="p-1 mt-4">
+    <div class="post-body p-1 mt-4">
         <p class="font-xs fw-500 lh-28 text-grey-700 mb-0">{!!$data->isi!!}</p>
     </div>
 

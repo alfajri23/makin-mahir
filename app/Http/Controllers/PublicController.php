@@ -42,10 +42,10 @@ class PublicController extends Controller
     public function produk_list_konsul(Request $request){
        
         $data = KonsultasiTipe::all();
-
+        $meta_title = "Konsultasi Makin Mahir | MakinMahir.id";
         $layout = Layout::layout_check();
 
-        return view('pages.produk.konsultasi.konsultasi_list',compact('data','layout'));
+        return view('pages.produk.konsultasi.konsultasi_list',compact('data','layout','meta_title'));
     }
 
     public function produk_list_detail_konsul($id,Request $request){
@@ -74,11 +74,13 @@ class PublicController extends Controller
         }
 
         $layout = Layout::layout_check();
-
+        $meta_title = "Event Makin Mahir | MakinMahir.id";
         $tipe = 'event';
         $route = 'produkListEvent';
         $riwayat = 'memberEventHistori';
-        return view('pages.public.list_produk',compact('riwayat','data','tipe','route','layout'));
+        return view('pages.public.list_produk',compact('riwayat','data',
+                                                        'tipe','route',
+                                                        'meta_title','layout'));
     }
 
     public function produk_list_kelas(Request $request){
@@ -90,11 +92,13 @@ class PublicController extends Controller
         }
 
         $layout = Layout::layout_check();
-        
+        $meta_title = "Kelas Makin Mahir | MakinMahir.id";
         $tipe = 'kelas';
         $route = 'produkListKelas';
         $riwayat = 'memberKelas';
-        return view('pages.public.list_produk',compact('riwayat','data','tipe','route','layout'));
+        return view('pages.public.list_produk',compact('riwayat','data',
+                                                        'tipe','route',
+                                                        'meta_title','layout'));
     }
 
     public function produk_list_template(Request $request){
@@ -102,10 +106,12 @@ class PublicController extends Controller
         $tipe = 'Bundling';
         $route = 'produkListTemplate';
         $riwayat = 'memberTemplate';
-
+        $meta_title = "Paket CV Makin Mahir | MakinMahir.id";
         $layout = Layout::layout_check();
 
-        return view('pages.public.list_produk',compact('data','tipe','route','layout','riwayat'));
+        return view('pages.public.list_produk',compact('data','tipe',
+                                                        'route','layout',
+                                                        'meta_title','riwayat'));
 
     }
 

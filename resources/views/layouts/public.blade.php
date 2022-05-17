@@ -7,9 +7,15 @@
     <title>Makin Mahir</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <meta name="title" content="{{isset($meta_title)? $meta_title : ''}}">
-    <meta name="description" content="{{isset($meta_desc)? $meta_desc : ''}}">
-    <meta name="keywords" content="{{isset($meta_keyword)? $meta_keyword : ''}}">
+    <meta name="title" content="@yield('meta_title','Belajar Online | Kursus Online | Makin Mahir ID')">
+    <meta name="keywords" content="@yield('meta_keywords','belajar online, pelatihan online, pelatihan kerja, skill, training, soft skill adalah, training kerja, kursus online, belajar online gratis, kursus online gratis, cara belajar online, trainer to train, webinar, webinar online')">
+    <meta name="description" content="@yield('meta_description','MakinMahir.ID adalah situs belajar online. Kami ingin membuat Anda menjadi mahir sesuai bidang Anda. Yuk, belajar dan menjadi semakin mahir bersama MakinMahir.ID.')">
+    <meta name="copyright" content="makinmahir.id">
+    <meta name="geo.placename" content="indonesia">
+    <meta name="geo.country" content="id">
+    <meta name="content-language" content="id">
+    <meta name="google-site-verification" content="imSOUh01H0EyYu2As8-Hvs2P30TnEhiAkPayXp_ySfk">
+
 
     <link rel="stylesheet" href="{{ asset('css/themify-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
@@ -38,8 +44,15 @@
                         <div class="collapse navbar-collapse" id="navbarNavDropdown">
                             <ul class="navbar-nav nav-menu float-none text-center">
 
-                                <li class="nav-item"><a class="nav-link" href="{{route('ebook')}}">Ebook</a></li>
-                                
+                                {{-- <li class="nav-item"><a class="nav-link" href="{{route('ebook')}}">Ebook</a></li> --}}
+                                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Fitur<i class="ti-angle-down"></i></a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="{{route('blog')}}">Blog</a>
+                                        <a class="dropdown-item" href="{{route('ebook')}}">Ebook</a>
+                                        <a class="dropdown-item" href="{{route('forumIndex')}}">Forum</a>
+                                    </div>
+                                </li>
+
                                 <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Tes <i class="ti-angle-down"></i></a>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="{{route('mbtiTest')}}">Tes kepribadian</a>
@@ -61,7 +74,6 @@
                                         <a class="dropdown-item" href="{{route('faq')}}">FAQ</a>
                                         <a class="dropdown-item" href="{{route('term')}}">Syarat dan ketentuan</a>
                                         <a class="dropdown-item" href="{{route('privacy')}}">Kebijakan privasi</a>
-                                        <a href="{{ route('login') }}" class="header-btn bg-dark fw-500 text-white font-xssss lh-32 w100 text-center d-inline-block rounded-xl mt-1">Login</a>
                                     </div>
                                 </li>
 
