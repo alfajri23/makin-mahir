@@ -46,7 +46,12 @@
         {{-- About Me --}}
         <div class="tab-pane fade show active" id="navtabs0">
             <div class="card d-block w-100 border-0 shadow-xss rounded-lg overflow-hidden p-4">
-                <div class="card-body mb-3 pb-0"><h2 class="fw-400 font-lg d-block">  <b>About Me</b> <a href="#" class="float-right"><i class="feather-edit text-grey-500 font-xs"></i></a></h2></div>
+                <div class="card-body mb-3 pb-0">
+                    <h2 class="fw-400 font-lg d-block">  
+                        <b>About Me</b> 
+                        {{-- <a href="#" class="float-right"><i class="feather-edit text-grey-500 font-xs"></i></a> --}}
+                    </h2>
+                </div>
                 <div class="card-body pb-0">
                     <div class="row">
                         <div class="col-xl-12">
