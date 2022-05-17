@@ -381,7 +381,6 @@ class HomeController extends Controller
             $datas = SubProdukVideo::where('id_produk', $id)->get();
 
             return view('pages.member.produk_detail_sub_video',compact('data','datas'));
-
         }
     }
 
@@ -389,7 +388,6 @@ class HomeController extends Controller
 
     public function profile(){
         $user = User::find(auth()->user()->id);
-
         return view('pages.member.profile',compact('user'));
     }
 }

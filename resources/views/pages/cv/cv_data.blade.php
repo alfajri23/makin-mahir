@@ -17,7 +17,19 @@
                 <span class="btn-round-xxxl alert-success">
                     <img src="{{asset($user->foto)}}" alt="image" class="float-right p-1 bg-white rounded-circle w-100">
                 </span>
-                <h2 class="fw-700 font-lg mt-4 mb-3 text-grey-900">{{$user->nama}}</h2>
+
+                <div class="mt-3">
+                    <span class="float-right"><i class="fa-solid fa-pencil" onclick="changeName()"></i></span>
+                    <h2 class="fw-700 font-lg text-grey-900" id="showNama">{{$user->nama}}</h2>                           
+                    <div id="inputNama" style="display: none">
+                        <form class="form-inline" action="{{route('memberUpdateNama')}}" method="post">
+                            @csrf
+                            <input type="text" name="id" value="{{$user->id}}" hidden>
+                            <input type="text" name="nama" value="{{$user->nama}}" class="">
+                            <button type="submit" class="btn btn-primary btn-sm">Save</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -38,7 +50,7 @@
                         <div class="my-2">
                             <span style="width:80%">
                                 <label for="Nomor">Nomor</label>
-                                <input type="text" name="nomor" id="nomor" value="{{$user->telepon}}" class="form-control bg-color-none text-grey-700" placeholder="nomor">
+                                <input type="text" name="telepon" id="telepon" value="{{$user->telepon}}" class="form-control bg-color-none text-grey-700" placeholder="nomor">
                             </span>
                         </div>
 
@@ -182,7 +194,6 @@
             </div>
         </div>
 
-
     </div>
 
     <div class="spacer"></div>
@@ -207,7 +218,7 @@
                     <textarea id="formBio" name="bio" class="w-100 h125 style2-textarea p-3 form-control"></textarea>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="rounded-lg btn-sm float-right bg-current text-white text-center font-xsss fw-500 border-2 border-0 w100">Edit</button>
+                    <button type="submit" class="rounded-lg btn-sm float-right bg-current text-white text-center font-xsss fw-500 border-2 border-0 w100">Save</button>
                 </div>
             </div>
             </form>
@@ -256,7 +267,7 @@
                     <input type="text" name="desc" id="desc" class="form-control bg-color-none text-grey-700" value="">                        
                 </div> 
                 <div class="form-group">
-                    <button type="submit" class="rounded-lg btn-sm float-right bg-current text-white text-center font-xsss fw-500 border-2 border-0 w100">Edit</button>
+                    <button type="submit" class="rounded-lg btn-sm float-right bg-current text-white text-center font-xsss fw-500 border-2 border-0 w100">Save</button>
                 </div>
             </div>
             </form>
@@ -305,7 +316,7 @@
                     <input type="number" name="gpa" id="gpa" class="form-control bg-color-none text-grey-700" value="">                        
                 </div> 
                 <div class="form-group">
-                    <button type="submit" class="rounded-lg btn-sm float-right bg-current text-white text-center font-xsss fw-500 border-2 border-0 w100">Edit</button>
+                    <button type="submit" class="rounded-lg btn-sm float-right bg-current text-white text-center font-xsss fw-500 border-2 border-0 w100">Save</button>
                 </div>
             </div>
             </form>
@@ -350,7 +361,7 @@
                     <input type="text" name="desc" id="desc_train" class="form-control bg-color-none text-grey-700" value="">                        
                 </div> 
                 <div class="form-group">
-                    <button type="submit" class="rounded-lg btn-sm float-right bg-current text-white text-center font-xsss fw-500 border-2 border-0 w100">Edit</button>
+                    <button type="submit" class="rounded-lg btn-sm float-right bg-current text-white text-center font-xsss fw-500 border-2 border-0 w100">Save</button>
                 </div>
             </div>
             </form>
@@ -378,7 +389,7 @@
                     <input type="text" id="formSkill" name="skil" class="form-control bg-color-none text-grey-700" value=""/>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="rounded-lg btn-sm float-right bg-current text-white text-center font-xsss fw-500 border-2 border-0 w100">Edit</button>
+                    <button type="submit" class="rounded-lg btn-sm float-right bg-current text-white text-center font-xsss fw-500 border-2 border-0 w100">Save</button>
                 </div>
             </div>
             </form>
@@ -415,7 +426,7 @@
                     <input type="number" name="tahun" id="tahun_acv" min="1900" max="2099" step="1" class="form-control bg-color-none text-grey-700" value="" />                        
                 </div> 
                 <div class="form-group">
-                    <button type="submit" class="rounded-lg btn-sm float-right bg-current text-white text-center font-xsss fw-500 border-2 border-0 w100">Edit</button>
+                    <button type="submit" class="rounded-lg btn-sm float-right bg-current text-white text-center font-xsss fw-500 border-2 border-0 w100">Save</button>
                 </div>
             </div>
             </form>
@@ -460,7 +471,7 @@
                     <input type="text" name="desc" id="desc_org" class="form-control bg-color-none text-grey-700" value="">                        
                 </div> 
                 <div class="form-group">
-                    <button type="submit" class="rounded-lg btn-sm float-right bg-current text-white text-center font-xsss fw-500 border-2 border-0 w100">Edit</button>
+                    <button type="submit" class="rounded-lg btn-sm float-right bg-current text-white text-center font-xsss fw-500 border-2 border-0 w100">Save</button>
                 </div>
             </div>
             </form>
@@ -509,6 +520,12 @@
 	      }
 	});
 
+    function changeName(){
+        $('#showNama').toggle();
+        $('#inputNama').toggle();
+
+    }
+
     function setCV(id){
         $.ajax({
 			type : 'GET',
@@ -524,7 +541,6 @@
             }
         });
     }
-
 
     function btnModalBio(){
         $('#formBio').text($('#bioText').text()) ;

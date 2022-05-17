@@ -47,6 +47,7 @@
                                 {{-- <li class="nav-item"><a class="nav-link" href="{{route('ebook')}}">Ebook</a></li> --}}
                                 <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Fitur<i class="ti-angle-down"></i></a>
                                     <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="{{route('cvIndex')}}">CV Maker</a>
                                         <a class="dropdown-item" href="{{route('blog')}}">Blog</a>
                                         <a class="dropdown-item" href="{{route('ebook')}}">Ebook</a>
                                         <a class="dropdown-item" href="{{route('forumIndex')}}">Forum</a>

@@ -11,7 +11,7 @@ class UserController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('admin')->except('update');
+        $this->middleware('admin')->except(['update','updateNama']);
     }
 
     public function update(Request $request){
@@ -51,6 +51,15 @@ class UserController extends Controller
         $data = User::updateOrCreate(['id'=>$request->id],$datas);
 
         return redirect()->back();  
+    }
+
+    public function updateNama(Request $request){
+        //dd($request->id);
+        $data = User::updateOrCreate(['id'=>$request->id],[
+            'nama'=>$request->nama
+        ]);
+
+        return redirect()->back();
     }
 
     public function admin(Request $request){
