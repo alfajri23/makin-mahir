@@ -15,8 +15,8 @@
                     <h4 class="fw-700 font-md text-white mt-3 mb-1">{{$user->nama}}<i class="ti-check font-xssss btn-round-xs bg-success text-white ml-1"></i></h4>
                     <span class="font-xssss fw-600 text-grey-500 d-inline-block ml-0">{{$user->email}}</span>
                     <span class="dot ml-2 mr-2 d-inline-block btn-round-xss bg-grey"></span>
-                    <span class="font-xssss fw-600 text-grey-500 d-inline-block ml-1">{{$user->pendidikan}}</span>
-                    <span class="font-xssss fw-600 text-grey-500 d-inline-block ml-1">{{$user->pekerjaan}}</span>
+                    <span class="font-xssss fw-600 text-grey-500 d-inline-block">{{$user->pendidikan}}</span>
+                    <span class="font-xssss fw-600 text-grey-500 d-inline-block"> | {{$user->pekerjaan}}</span>
                     
                 </div>
                 <div class="col-xl-4 col-lg-6 d-block">

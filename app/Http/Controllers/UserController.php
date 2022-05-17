@@ -35,7 +35,7 @@ class UserController extends Controller
             'pendidikan' => $request->pendidikan,
         ];
 
-        if(!empty($request->file)){
+        if(!empty($request->foto)){
             $datas = UploadFile::file($request,'foto','asset/img/foto',$datas);
 
             $foto = User::find($request->id);
