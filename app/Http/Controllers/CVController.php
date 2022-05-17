@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
 use App\Models\CVSkil;
 use App\Models\CVKerja;
 use App\Models\CVEdukasi;
@@ -18,6 +19,10 @@ use Illuminate\Http\Request;
 class CVController extends Controller
 {
 
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
     public function index(Request $request){
         $kerja = CVKerja::where('id_user',auth()->user()->id)->get();
         $skil = CVSkil::where('id_user',auth()->user()->id)->get();
@@ -31,9 +36,12 @@ class CVController extends Controller
         $cvs = CVTema::latest()->get();
         $cv_user = CVUser::find(auth()->user()->id);
         $cv_user = $cv_user != null ? $cv_user->id : null;
-        //dd($cv_user);
 
         $request->session()->put('cv', 3);
+
+        if(Auth::check()){
+
+        }
 
         return view('pages.cv.cv_data',compact('user','organisasi','kerja',
                                                 'edukasi','training','skil',

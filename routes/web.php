@@ -149,6 +149,7 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('my')->group(function(){
         Route::get('/', [Controllers\Member\HomeController::class,'profile'])->name('memberProfile');
         Route::post('update', [Controllers\UserController::class,'update'])->name('memberUpdate');
+        Route::post('update/nama', [Controllers\UserController::class,'updateNama'])->name('memberUpdateNama');
         
         Route::get('event', [Controllers\Member\HomeController::class,'riwayat_event'])->name('memberEventHistori');
         Route::get('event/detail', [Controllers\Member\HomeController::class,'detail_riwayat'])->name('memberEventDetail');
