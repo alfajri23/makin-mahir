@@ -183,6 +183,22 @@ class ProdukController extends Controller
 
                         return $datas;
                     })
+                    ->addColumn('status_bayar', function($row){
+                        switch ($row->transaksi->status){
+                            case 'pending':
+                                $datas = '
+                                    <span class="badge badge-danger">Belum bayar</span>
+                                ';
+                                break;
+                            case 'lunas':
+                                $datas = '
+                                    <span class="badge badge-success">Lunas</span>
+                                ';
+                                break;
+                        }
+
+                        return $datas;
+                    })
                     ->addColumn('action', function($row){
                         $actionBtn = '
                         <div class="">
@@ -191,7 +207,7 @@ class ProdukController extends Controller
                         ';
                         return $actionBtn;
                     })
-                    ->rawColumns(['action','nama','tanggal','keterangan','status'])
+                    ->rawColumns(['action','nama','tanggal','keterangan','status','status_bayar'])
                     ->make(true);
             }
 

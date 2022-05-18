@@ -442,6 +442,7 @@ Route::middleware(['expert'])->prefix('exp')->group(function () {
 Route::get('formulir', [Controllers\FormulirController::class,'index'])->name('formIndex');
 Route::get('pembayaran/{id}', [Controllers\TransaksiController::class,'cekForm'])->name('pembayaranCek');
 Route::post('pembayaran', [Controllers\TransaksiController::class,'create'])->name('pembayaranCreate');
+Route::post('pembayaran/cv-checker', [Controllers\TransaksiController::class,'pembayaranCvChecker'])->name('pembayaranCvChecker');
 
 
 // Route::get('set-noti', function(){
