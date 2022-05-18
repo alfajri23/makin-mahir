@@ -34,6 +34,7 @@ class SettingFormController extends Controller
         $data = FormSetting::updateOrCreate(['id'=>$request->id],[
             'id_produk_kategori' => $request->id_produk_kategori,
             'pertanyaan' => $request->pertanyaan,
+            'tipe' => $request->tipe,
         ]);
 
         return redirect()->route('formSetting');

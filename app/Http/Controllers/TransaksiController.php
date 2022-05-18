@@ -24,14 +24,20 @@ class TransaksiController extends Controller
         $data = Produk::find($request->id);
 
         $ceks = FormSetting::where('id_produk_kategori',$data->id_kategori)->first();
+        //dd($ceks);
         
         if($ceks != null){
-            $ceks = strip_tags($ceks->pertanyaan);
-            $ceks = explode("\r\n",$ceks);
-            $ceks = array_slice($ceks,1);
-            array_pop($ceks);
+            $pertanyaans = strip_tags($ceks->pertanyaan);
+            $pertanyaans = explode("\r\n",$pertanyaans);
+            $pertanyaans = array_slice($pertanyaans,1);   //hapus depan
+            array_pop($pertanyaans);               //hapus belakang
 
-            return view('pages.member.daftar',compact('ceks','data'));
+            $tipes = strip_tags($ceks->tipe);
+            $tipes = explode("\r\n",$tipes);
+            $tipes = array_slice($tipes,1);   //hapus depan
+            array_pop($tipes);    
+
+            return view('pages.member.daftar',compact('tipes','pertanyaans','data'));
 
         }elseif($data->harga == null){
 

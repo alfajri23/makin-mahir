@@ -25,12 +25,47 @@
             </select>
         </div>
 
-        <div class="mb-3">
-            <label class="fw-700 text-grey-800 display2-md-size">Pertanyaan</label>
-            <textarea name="pertanyaan" class="form-control"> 
-                {{isset($data) ? $data->pertanyaan : null}}
-            </textarea>
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">Petunjuk pengisian</h4>
+            <p>Setiap menambah pertanyaan harus didahului urutan angka</p>
+            <ol>
+                <li>Pertanyaan 1</li>
+                <li>Pertanyaan 2</li>
+            </ol>
+            <p>Setiap pertanyaan (kiri) akan memiliki tipe input yang berbeda, maka setiap pertanyaan harus disertakan 
+                tipe input untuk user (kanan).
+            </p>
+            <p>Contoh pertanyaan pertama, "1.Berapa umur anda" maka ditipe Anda tulis "1.number".</p>
+            <hr>
+            <p>Daftar aturan</p>
+            <ol>
+                <li>Text biasa = text</li>
+                <li>Tanggal    = date</li>
+                <li>Angka      = number</li>
+            </ol>
+            <p class="text-danger"><strong>*Jumlah pertanyaan dan tipe harus sama</strong></p>
         </div>
+
+        <div class="row">
+            <div class="col-8">
+                <div class="mb-3">
+                    <label class="fw-700 text-grey-800 display2-md-size">Pertanyaan</label>
+                    <textarea name="pertanyaan" class="form-control"> 
+                        {{isset($data) ? $data->pertanyaan : null}}
+                    </textarea>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="mb-3">
+                    <label class="fw-700 text-grey-800 display2-md-size">Tipe</label>
+                    <textarea name="tipe" class="form-control"> 
+                        {{isset($data) ? $data->tipe : null}}
+                    </textarea>
+                </div>
+            </div>
+        </div>
+
+        
 
         <button type="submit" class="btn btn-primary ml-3">Tambah</button>
         </form>
@@ -52,11 +87,11 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	            width: "100%",
 	            height: "400",
 	            plugins: [
-	                "advlist autolink lists charmap print preview anchor",
-	                "searchreplace visualblocks code fullscreen",
-	                "paste wordcount"
+	                "advlist autolink lists",
+	                "searchreplace",
+	                "paste"
 	            ],
-	            toolbar: "undo redo | bold italic | bullist numlist outdent indent "
+	            toolbar: "undo redo | bold italic | numlist "
 	      
 	    });
     });

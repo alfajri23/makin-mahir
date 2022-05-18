@@ -19,7 +19,7 @@ class PublicController extends Controller
         $kelas = Kelas::limit(6)->get();
         $event = ProdukEvent::limit(3)->get(); 
         $blog = Blog::limit(6)->get();
-        $konsuls = KonsultasiTipe::limit(4)->get();
+        $konsuls = KonsultasiExpert::limit(4)->get();
 
         //dd($event);
 
