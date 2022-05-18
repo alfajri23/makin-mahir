@@ -35,6 +35,7 @@
                     <th>Nama</th>
                     <th>Member</th>
                     <th>Nominal</th>
+                    <th>Tanggal</th>
                     <th>Status bayar</th>
                     <th>Aksi</th>
                 </tr>
@@ -94,6 +95,7 @@
     $(function (){
 
         tabel.DataTable({
+            order: [[6, 'desc']],
             processing: true,
             serverSide: true,
             ajax: {
@@ -117,8 +119,9 @@
                 {data: 'name', name: 'name',width: "40%"},
                 {data: 'user', name: 'user',width: "10%"},
                 {data: 'nominal', name: 'nominal'},
+                {data: 'tanggal_bayar', name: 'tanggal_bayar'},
                 {data: 'bayar', name: 'bayar',width: "5%"},
-                {data: 'aksi', name: 'aksi',width: "10%"},
+                {data: 'aksi', name: 'aksi',width: "12%"},
             ]
         })
     })
