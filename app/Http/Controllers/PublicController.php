@@ -26,7 +26,7 @@ class PublicController extends Controller
         return view('pages.public.home',compact('kelas','blog','event','konsuls'));
     }
 
-    public function produk_detail_konsul(Request $request){
+    public function produk_detail_konsul(Request $request){         //! JSON Ajax
         $data = KonsultasiExpert::find($request->id);
         return response()->json([
             'data' => $data,
@@ -39,6 +39,7 @@ class PublicController extends Controller
         return view('pages.public.produk_detail',compact('data'));
     }
 
+    //!Sementara ini tidak terpakai
     public function produk_list_konsul(Request $request){
        
         $data = KonsultasiTipe::all();
@@ -48,21 +49,24 @@ class PublicController extends Controller
         return view('pages.produk.konsultasi.konsultasi_list',compact('data','layout','meta_title'));
     }
 
-    public function produk_list_detail_konsul($id,Request $request){
+    //* Unutk sementara konsultasi ditampilkan semua tidak pertipe 
+    //public function produk_list_detail_konsul($id,Request $request){  
+    public function produk_list_detail_konsul(Request $request){  
         if($request->search != null){
             $data = KonsultasiExpert::where('nama','like','%'.$request->search.'%')->get();
 
         }else{
-            $data = KonsultasiExpert::where('id_konsultasi',$id)->get();
-            
+            //$data = KonsultasiExpert::where('id_konsultasi',$id)->get();
+            $data = KonsultasiExpert::latest()->get();
         }
 
         $layout = Layout::layout_check();
 
-
+        $meta_title = "Konsultasi Makin Mahir | MakinMahir.id";
         $tipe = 'konsultasi';
         $route = 'produkListKonsul';
-        return view('pages.produk.konsultasi.konsultasi_list_detail',compact('data','tipe','route','layout'));
+        return view('pages.produk.konsultasi.konsultasi_list_detail',compact('data','tipe','meta_title',
+                                                                            'route','layout'));
     }
 
     public function produk_list_event(Request $request){

@@ -73,10 +73,6 @@
         <form method="post" action="{{route('konsultasiExpertStore')}}">
         @csrf
         <div class="modal-body">
-            {{-- <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Nama</label>
-                <input type="text" name="nama" class="form-control">
-            </div> --}}
             <div class="mb-3">
                 <label for="exampleFormControlSelect1">Pemateri</label>
                 <select name="id_expert" class="form-select">
@@ -137,24 +133,6 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	    });
 	});
 
-    function details(id){
-        console.log("data");
-        $.ajax({
-            type : 'GET',
-            url  : "{{ route('konsultasiTipeIndex') }}",
-            data : {
-                id : id,
-            },
-            dataType: 'json',
-            success : (data)=>{
-                console.log(data);
-                // $('#exampleModal').modal('show');
-                // $('#id').val(data.id);
-            }
-        });
-        console.log("data end");
-         $('#exampleModal').modal('show');
-    }
 </script>
 
 

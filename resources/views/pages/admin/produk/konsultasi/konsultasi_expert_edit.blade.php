@@ -7,12 +7,20 @@
     </div>
 
     <div class="row">
-        <form method="post" action="{{route('konsultasiExpertStore')}}">
+        <form method="post" action="{{route('konsultasiExpertStore')}}" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <label for="exampleFormControlSelect1">Pemateri</label>
             <input type="text" value="{{$data->expert->nama}}" class="form-control" disabled>
             <input type="hidden" name="id_expert" value="{{$data->id_expert}}" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Poster</label><br>
+            <input type="file" name="poster" class="" id="exampleFormControlInput1" >
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlSelect1">Judul</label>
+            <input type="text" name="judul" value="{{$data->judul}}" class="form-control">
         </div>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Harga</label>
@@ -20,10 +28,6 @@
             <input type="hidden" name="id_konsultasi" value="{{$data->id_konsultasi}}" class="form-control">
             <input type="hidden" name="id" value="{{$data->id}}" class="form-control">
             <input type="hidden" name="id_produk" value="{{$id_produk}}" class="form-control">
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Waktu</label>
-            <input type="text" name="waktu" id="waktu" value="{{$data->waktu}}" class="form-control">
         </div>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Jadwal</label>

@@ -11,9 +11,18 @@ use App\Models\Expert;
 use App\Models\KonsultasiEnroll;
 use App\Models\Produk;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\File;
+use App\Helper\UploadFile;
 
 class KonsultasiController extends Controller
 {   
+    public function index(){
+        $data = KonsultasiExpert::latest()->get();
+        $expert = Expert::latest()->get();
+        $tipe = KonsultasiTipe::latest()->get();
+        return view('pages.admin.produk.konsultasi.konsultasi',compact('data','expert','tipe'));
+    }
 
 //Tipe
     public function tipeIndex(){
@@ -55,25 +64,47 @@ class KonsultasiController extends Controller
     }
 
     public function expertStore(Request $request){
-        $data = KonsultasiExpert::updateOrCreate(['id'=>$request->id],[
-            // 'nama' => $request->nama,
+        $validator = Validator::make($request->all(), [
+            'poster' => 'image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+
+        if ($validator->fails()) {
+            dd($validator->messages()->first()); 
+            return redirect()->back();
+        }
+
+        $datas = [
+            'judul' => $request->judul,
             'harga' => str_replace(",", "", $request->harga),
-            'waktu' => $request->waktu,
             'jadwal' => $request->jadwal,
             'id_konsultasi' => $request->id_konsultasi,
             'id_expert' => $request->id_expert,
-        ]);
+            'poster' => ''
+        ];
+
+        if(!empty($request->poster)){
+            $datas = UploadFile::file($request,'poster','asset/img/produk/konsul',$datas);
+        
+            $foto = KonsultasiExpert::find($request->id);
+            if(isset($foto)){
+                File::delete($foto->poster);
+            }
+        }
+
+        $data = KonsultasiExpert::updateOrCreate(['id'=>$request->id],$datas);
 
         $produk = Produk::updateOrCreate(['id'=>$request->id_produk],[
             'id_kategori' => 4,
             'id_produk' => $data->id,
-            'nama' => "Konsultasi " . $data->tipe->nama . " oleh " . $data->expert->nama,
+            'nama' => $request->judul,
+            // 'nama' => "Konsultasi " . $data->tipe->nama . " oleh " . $data->expert->nama,
             'harga' => str_replace(",", "", $request->harga),
+            'poster' => $datas['poster'],
         ]);
 
         // Cek untuk redirect sebagai admin atau expert
         if (Auth::guard('admin')->check()){
-            return redirect()->route('konsultasiExpertIndex',$request->id_konsultasi);
+            return redirect()->route('konsultasiIndex');
         }else{
             return redirect()->route('konsultasiExperts',$request->id_konsultasi);
         }

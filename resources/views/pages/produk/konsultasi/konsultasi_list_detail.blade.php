@@ -1,4 +1,5 @@
 @extends($layout)
+@section('meta_title', $meta_title)
 @section('content')
 
 <div class="spacer"></div>
@@ -19,13 +20,13 @@
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 mb-4">
                     <div onclick="details({{$dt->id}})" class="card w-100 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1">
                         <div class="card-image-main w-100 mb-3">                
-                            <img src="{{asset($dt->expert->foto)}}" alt="image" class="w-100">
+                            <img src="{{asset($dt->poster)}}" alt="image" class="w-100">
                         </div>
                         <div class="card-body pt-0">
-                            <span class="font-xss fw-700 pl-3 pr-3 ls-2 lh-32 d-inline-block text-success float-right"><span class="font-xsssss">Rp.</span> {{number_format($dt->harga)}}</span>
+                            <span class="font-xsss fw-700 pl-3 pr-3 ls-2 lh-32 d-inline-block text-success float-right">{{number_format($dt->harga)}}</span>
                             <h4 class="fw-700 font-xss mt-3 lh-20 mt-0">
                                 {{-- beri pembeda route --}}
-                                <a href="{{route('memberProdukDetail',$dt->produk->id)}}" class="text-dark text-grey-900">{{$dt->expert->nama}}</a>
+                                <a href="{{route('memberProdukDetail',$dt->produk->id)}}" class="text-dark text-grey-900">{{$dt->judul}}</a>
                             </h4>
                             <h6 class="font-xsss text-grey-700 fw-600 ml-0 mt-2 mb-0">
                                 @if (!empty($dt->tanggal))

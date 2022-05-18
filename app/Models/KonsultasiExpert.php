@@ -13,7 +13,7 @@ class KonsultasiExpert extends Model
 
     protected $guarded =[];
 
-    public function tipe()
+    public function tipes()
     {
         return $this->belongsTo(KonsultasiTipe::class, 'id_konsultasi', 'id');
     }
