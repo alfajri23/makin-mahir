@@ -55,7 +55,7 @@
                     @forelse ($ceks as $cek)
                     <div class="form-group my-4">
                         <label for="exampleInputEmail1" class="fw-600 mb-0">{{$cek}}</label>
-                        <input type="text" name="jawaban[]" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input type="{{$loop->first ? 'date' : 'text'}}" name="jawaban[]" class="form-control">
                     </div>
                         
                     @empty

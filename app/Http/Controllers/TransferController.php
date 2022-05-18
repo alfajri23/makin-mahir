@@ -40,7 +40,6 @@ class TransferController extends Controller
     }
 
     public function transaksi(Request $request){
-        
 
         if ($request->ajax()) {
             //dd($request->tipe);
@@ -56,8 +55,7 @@ class TransferController extends Controller
                 $data = Transaksi::latest()->get();
             }
 
-            //dd($data);
-
+            // dd($data);
 
             return datatables()->of($data)
                 ->addIndexColumn()
@@ -125,7 +123,7 @@ class TransferController extends Controller
                     }
 
                     $actionBtn = '
-                    <div class="class="btn-group"">
+                    <div class="btn-group"">
                         <a onclick="detail('.$row['id'].')" class="btn btn-secondary btn-sm"><i class="fa-solid fa-circle-info"></i></a>
                         <a href="https://wa.me/'.$tel.'" target="_blank" class="btn btn-success btn-sm"><i class="fa-brands fa-whatsapp"></i></a>
                         '.$btnDel.'
