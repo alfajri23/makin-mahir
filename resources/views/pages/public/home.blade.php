@@ -110,44 +110,6 @@
         </div>
     </div>
 
-    {{-- Konsultasi --}}
-    <div class="brand-wrapper pt-5 pb-7">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="page-title style1 col-xl-6 col-lg-6 col-md-10 text-center mb-5">
-                    <h2 class="text-grey-900 fw-700 display1-size display2-md-size pb-3 mb-0 d-block">Layanan konsultasi</h2>
-                </div>  
-            </div>
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="mx-auto owl-carousel category-card owl-theme overflow-hidden overflow-visible-xl nav-none">
-                        {{-- items loop --}}
-                        @forelse ($konsuls as $env)
-                        <div class="item">
-                            <div class="w280 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1 mb-4">
-                                <div class="card-body pt-0">
-                                    <div class="font-xsss fw-500 mt-3 text-success"><span class="font-xsssss"></span> {{$env->harga == 0 ? 'Gratis' : 'Rp.'.number_format($env->harga) }}</div>
-                                    <h4 class="fw-700 font-xss lh-28 mt-0">
-                                        <a href="{{route('produkListDetailKonsul',$env->id)}}" class="text-dark text-grey-900">{{$env->nama}}</a>
-                                    </h4>  
-                                </div>
-                            </div>
-                        </div>
-                            
-                        @empty
-                            
-                        @endforelse
-                        {{-- end items loop --}}
-                    </div>
-
-                </div>
-                <div class="col-10 col-sm-3 mx-auto">
-                    <a href="{{route('produkListKonsul')}}" class="btn btn-block border-0 w-100 text-dark p-3 fw-600 rounded-lg d-inline-block font-xssss btn-light">Kelas selengkapnya</a>
-                </div>
-            </div>
-        </div>
-    </div>
 
      {{-- Video --}}
      <div class="brand-wrapper pt-5 pb-7">
