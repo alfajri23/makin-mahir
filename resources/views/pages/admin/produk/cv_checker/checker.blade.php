@@ -16,6 +16,7 @@
                     <th>Nama</th>
                     <th>Tanggal</th>
                     <th>Keterangan</th>
+                    <th>Status bayar</th>
                     <th>Status</th>
                     <th>Aksi</th>
                 </tr>
@@ -47,6 +48,7 @@
                 {data: 'nama', name: 'nama',width: '15%'},
                 {data: 'tanggal', name: 'tanggal',width: '15%'},
                 {data: 'keterangan', name: 'keterangan'},
+                {data: 'status_bayar', name: 'status_bayar',width: '5%'},
                 {data: 'status', name: 'status',width: '5%'},
                 {data: 'action', name: 'action',width: '12%'},
             ]

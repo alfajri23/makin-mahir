@@ -71,7 +71,7 @@
         </div>
 
         <div class="col-10 col-md-6 mx-auto mb-4">
-            <form action="{{route('pembayaranCreate')}}" method="post" class="payment-form" enctype="multipart/form-data">
+            <form action="{{route('pembayaranCvChecker')}}" method="post" class="payment-form" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group my-4">
                     <label for="exampleInputPassword1" class="font-lg fw-700">Upload Bukti Pembayaran</label>
@@ -86,8 +86,20 @@
 
 
                     <div class="custom-file mt-3">
-                        <label class="custom-file-label" for="customFile">Bukti file</label>
-                        <input type="file" name="bukti" class="custom-file-input" id="customFile">
+                        <label class="font-weight-bold" for="customFile">Bukti file</label><br>
+                        <input type="file" name="bukti" class="" id="customFile" required>
+                    </div>
+
+                    <div class="custom-file mt-3">
+                        <label class="font-weight-bold" for="customFile">CV</label><br>
+                        <input type="file" name="cv_user" class="" required>
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <label for="exampleInputnama1">Pesan review</label>
+                        <textarea name="pesan" class="form-control p-1 py-0">
+                            
+                        </textarea>
                     </div>
 
                     <div>

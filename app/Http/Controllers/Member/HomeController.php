@@ -237,6 +237,7 @@ class HomeController extends Controller
         // 2 = expert sudah review
 
         $data = CVCheckerEnroll::where('id_user',$request->session()->get('auth.id_user'))
+        ->latest()
         ->first();
 
         return view('pages.produk.checker.cv_checker',compact('data'));

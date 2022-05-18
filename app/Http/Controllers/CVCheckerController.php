@@ -36,7 +36,7 @@ class CVCheckerController extends Controller
     }
 
     public function adminCheck(Request $request){
-        $data = 
+        $data = '$data';
     }
 
 

@@ -17,27 +17,11 @@
         <div class="d-flex flex-column justify-content-center mt-4">
             @if (isset($data))
                 @switch($data->status)
-                    @case(0)
-                        <form action="{{route('saveChecker')}}" method="post" enctype="multipart/form-data">
-                            @csrf
-        
-        
-                            <div class="custom-file">
-                                <label class="" for="customFile">CV</label><br>
-                                <input type="file" name="cv_user" class="" required>
-                            </div>
-        
-                            <div class="form-group mt-3">
-                                <label for="exampleInputnama1">Pesan</label>
-                                <textarea name="pesan" class="form-control p-1 py-0">
-                                    
-                                </textarea>
-                            </div>
-        
-                            <button type="submit" class="btn btn-primary">Upload Sekarang</button>
-                        </form>
-                        @break
+                    
                     @case(1)
+                        <div>   
+                            <a href="{{asset($data->cv_user)}}"  type="button" class="btn btn-primary btn-sm">CV Anda</a>
+                        </div>
                         <h2 class="text-grey-800 fw-600 font-sm text-center pb-3 mb-0 d-block">Menunggu review</h2>
                         @break
 
