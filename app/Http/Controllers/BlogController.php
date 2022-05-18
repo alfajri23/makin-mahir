@@ -170,7 +170,7 @@ class BlogController extends Controller
         if(empty($request->file)){
             $foto = Blog::find($request->id);
             $files = $foto->gambar;
-        }else{
+        }else{ //! Nanti lewat helper aja
             $nama_file = $file->getClientOriginalName();
             $tujuan_upload_server = public_path('asset/img/blog'); //untuk dihosting
             $tujuan_upload = 'asset/img/blog';                     //untuk local

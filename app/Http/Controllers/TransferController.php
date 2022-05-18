@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helper\Telepon;
 use App\Models\CVCheckerEnroll;
 use App\Models\EbookEnroll;
 use Illuminate\Http\Request;
@@ -54,8 +55,6 @@ class TransferController extends Controller
             }elseif($request->tipe == 'semua'){
                 $data = Transaksi::latest()->get();
             }
-
-            // dd($data);
 
             return datatables()->of($data)
                 ->addIndexColumn()
@@ -113,7 +112,10 @@ class TransferController extends Controller
                     return $actionBtn;
                 })
                 ->addColumn('aksi', function($row){
-                    $tel='';
+
+
+                    $tel = $row->user->telepon;
+                    $tel = Telepon::changeTo62($tel);
 
                     $btnDel = '
                         <a onclick="deletes('.$row['id'].')" class="delete btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></a>

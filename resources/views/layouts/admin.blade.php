@@ -102,7 +102,8 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Daftar produk</h6>
                         <a class="collapse-item" href="{{route('kelasIndex')}}">Kelas</a>
-                        <a class="collapse-item" href="{{route('konsultasiTipeIndex')}}">Konsultasi</a>
+                        <a class="collapse-item" href="{{route('konsultasiIndex')}}">Konsultasi</a>
+                        {{-- <a class="collapse-item" href="{{route('konsultasiTipeIndex')}}">Konsultasi Tipe</a> --}}
                         <a class="collapse-item" href="{{route('eventAdmin')}}">Event</a>
                         <a class="collapse-item" href="{{route('templateAdmin')}}">Template</a>
                     </div>

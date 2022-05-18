@@ -1,5 +1,6 @@
 <?php
 
+use App\Helper\Telepon;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
 use App\Http\Controllers\Notifications;
@@ -29,12 +30,12 @@ Route::get('/homes', [App\Http\Controllers\HomeController::class, 'indexs'])->na
 //PUBLIC AREA
 Route::get('/', [Controllers\PublicController::class,'index'])->name('publicIndex');
 Route::get('event', [Controllers\PublicController::class,'produk_list_event'])->name('produkListEvent');
-Route::get('konsul', [Controllers\PublicController::class,'produk_list_konsul'])->name('produkListKonsul');
-Route::get('konsul/detail', [Controllers\PublicController::class,'produk_detail_konsul'])->name('produkDetailKonsul');
-Route::get('konsul/tipe/{id}', [Controllers\PublicController::class,'produk_list_detail_konsul'])->name('produkListDetailKonsul');
+Route::get('konsul', [Controllers\PublicController::class,'produk_list_detail_konsul'])->name('produkListKonsul');
+// Route::get('konsul/detail', [Controllers\PublicController::class,'produk_detail_konsul'])->name('produkDetailKonsul');
+//Route::get('konsul/tipe/{id}', [Controllers\PublicController::class,'produk_list_detail_konsul'])->name('produkListDetailKonsul');
 Route::get('kelas', [Controllers\PublicController::class,'produk_list_kelas'])->name('produkListKelas');
 Route::get('template', [Controllers\PublicController::class,'produk_list_template'])->name('produkListTemplate');
-Route::get('video/{id}', [Controllers\PublicController::class,'produk_detail_video'])->name('produkDetailVideo');
+// Route::get('video/{id}', [Controllers\PublicController::class,'produk_detail_video'])->name('produkDetailVideo');
 
 
 
@@ -205,7 +206,7 @@ Route::middleware(['auth'])->group(function () {
 
         //Konsultasi
             Route::post('/', [Controllers\Admin\KonsultasiController::class,'expertStore'])->name('konsultasiExpertStore');
-            Route::get('/delete/{id}', [Controllers\Admin\KonsultasiController::class,'expertDelete'])->name('konsultasiExpertDelete');
+            Route::get('/delete/konsultasi/{id}', [Controllers\Admin\KonsultasiController::class,'expertDelete'])->name('konsultasiExpertDelete');
             Route::get('done', [Controllers\Admin\KonsultasiController::class,'done'])->name('konsultasiDone');
         //end konsultasi
 
@@ -260,6 +261,9 @@ Route::middleware(['admin'])->prefix('adm')->group(function () {
         });
 
         Route::prefix('konsultasi')->group(function(){
+
+            Route::get('/', [Controllers\Admin\KonsultasiController::class,'index'])->name('konsultasiIndex');
+
             Route::prefix('tipe')->group(function(){
                 Route::get('/', [Controllers\Admin\KonsultasiController::class,'tipeIndex'])->name('konsultasiTipeIndex');
                 Route::post('/', [Controllers\Admin\KonsultasiController::class,'tipeStore'])->name('konsultasiTipeStore');
@@ -444,3 +448,4 @@ Route::post('pembayaran', [Controllers\TransaksiController::class,'create'])->na
 //     $user = User::find(8);
 //     $user->notify(new WelcomeEmailNotification($user));
 // });
+

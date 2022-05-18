@@ -121,7 +121,7 @@
                 {data: 'nominal', name: 'nominal'},
                 {data: 'tanggal_bayar', name: 'tanggal_bayar'},
                 {data: 'bayar', name: 'bayar',width: "5%"},
-                {data: 'aksi', name: 'aksi',width: "12%"},
+                {data: 'aksi', name: 'aksi',width: "15%"},
             ]
         })
     })

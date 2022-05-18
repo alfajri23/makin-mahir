@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Helper\Layout;
+use App\Models\KonsultasiExpert;
 use Illuminate\Http\Request;
 use App\Models\MbtiQuestion;
 use App\Models\MbtiResult;
@@ -29,7 +30,6 @@ class TestController extends Controller
 
         //ambil data test user sebelumnya
         $cek = MbtiResult::where('id_user',$id_user)->first();
-        //dd($cek);
 
         //jika user login dan ingin mengulang tes
         if($request->filled('ulang')){
@@ -40,14 +40,14 @@ class TestController extends Controller
         
         //cek apakah ada data tes sebelumnya
         if($cek){
-            $data = ProdukKonsul::latest()->limit(3)->get();
+            $data = KonsultasiExpert::latest()->limit(3)->get();
             $title = 'produk pilihan';
             $tipe = 'konsultasi';
 
             $layout = Layout::layout_check();
             $datas = MbtiType::where('code',$cek->result)->first();
             $history = $cek;
-            //dd($datas);
+            //dd($data);
             return view('pages.public.mbti.mbti_result',compact('datas','layout','data','title','tipe','history'));
         }else{
             //* Tes MBTI Baru

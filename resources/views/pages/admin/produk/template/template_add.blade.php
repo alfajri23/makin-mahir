@@ -21,7 +21,7 @@
 
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Gambar</label><br>
-                    <input type="file" name="poster" class="" id="exampleFormControlInput1" placeholder="">
+                    <input type="file" name="poster" class="" id="exampleFormControlInput1" >
                 </div>
 
                 <div class="d-none">
