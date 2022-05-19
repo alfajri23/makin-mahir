@@ -137,8 +137,8 @@ class PembayaranController extends Controller
 		$file = $request->file('file');
 
         $nama_file = time()."_".$file->getClientOriginalName();
-        $tujuan_upload_server = public_path('asset/img/transfer');
-        $tujuan_upload = 'asset/img/transfer';
+        $tujuan_upload_server = public_path('storage/transaksi');
+        $tujuan_upload = 'storage/transaksi';
 
         $files = $tujuan_upload . '/'. $nama_file;
         //$file->move($tujuan_upload,$nama_file);  //local

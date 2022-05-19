@@ -167,26 +167,9 @@ class TestController extends Controller
 
         foreach($json as $key => $value){
             $hasil[$datas[$key]] = $value;
-            // echo $value;
-            // echo $datas[$key];
-            // echo "<br>";
         }
 
-        //dd($hasil);
-
         arsort($hasil);
-        //sort($hasil);
-
-        
-        // var_dump(array_values($hasil)[0]);
-        // var_dump(array_values($hasil)[1]);
-        //var_dump($hasil);
-        //var_dump($hasil[0]);
-        //dd($prior);// 0 => i, 1 => r
-        //dd($hasil); 
-        //dd(array_keys($hasil)[0]);  //key = 'r'
-        //dd(array_slice($hasil, 1, 1, true));
-        //dd(array_search(array_keys($hasil)[0],$prior)); //posisi r di prior
 
 
         if(array_slice($hasil, 0, 1, true) == array_slice($hasil, 1, 1, true)){

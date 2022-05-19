@@ -27,7 +27,7 @@ class CVCheckerController extends Controller
 
 
         if(!empty($request->cv_user)){
-            $datas = UploadFile::file($request,'cv_user','asset/file/cv_review/member',$datas);
+            $datas = UploadFile::file($request,'cv_user','storage/cv_review/member',$datas);
         }
 
         $data = CVCheckerEnroll::create($datas);

@@ -440,7 +440,6 @@ class ProdukController extends Controller
             $filed = [];
 
             if(!empty($request->file)){
-                
                 foreach($request->file as $file){
                     $nama_file = time()."_".$file->getClientOriginalName();
                     $tujuan_upload_server = public_path('asset/file/template');
