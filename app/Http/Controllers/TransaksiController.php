@@ -24,28 +24,40 @@ class TransaksiController extends Controller
     public function cekForm(Request $request){
         $data = Produk::find($request->id);
         $ceks = FormSetting::where('id_produk_kategori',$data->id_kategori)->first(); //Cek apakah ada pertanyaan
-        
         if($ceks != null){
-            $pertanyaans = strip_tags($ceks->pertanyaan);
-            $pertanyaans = explode("\r\n",$pertanyaans);
-            $pertanyaans = array_slice($pertanyaans,1);   //hapus depan
-            array_pop($pertanyaans);               //hapus belakang
+            // $pertanyaans = strip_tags($ceks->pertanyaan);
+            // $pertanyaans = explode("\r\n",$pertanyaans);
+            // $pertanyaans = array_slice($pertanyaans,1);     //hapus depan
+            // array_pop($pertanyaans);                        //hapus belakang
 
-            $tipes = strip_tags($ceks->tipe);
-            $tipes = explode("\r\n",$tipes);
-            $tipes = array_slice($tipes,1);   //hapus depan
-            array_pop($tipes);    
+            // $tipes = strip_tags($ceks->tipe);
+            // $tipes = explode("\r\n",$tipes);
+            // $tipes = array_slice($tipes,1);                 //hapus depan
+            // array_pop($tipes);  
 
-            return view('pages.member.daftar',compact('tipes','pertanyaans','data'));
+            $pertanyaans = explode(",",$ceks->pertanyaan);
+            $tipes = explode(",",$ceks->tipe);
+            $files = explode(",",$ceks->file);
+
+            // dd($files);
+
+
+
+            if($data->id_kategori == 2){                    // Jika beduk
+                return view('pages.pembayaran.pembayaran_beduk',compact('tipes','pertanyaans','data','files'));
+            }
+
+            return view('pages.member.daftar',compact('tipes','pertanyaans','data','files'));
 
         }elseif($data->harga == null){
-            if($data->id_kategori == 2){        //Jika gratis
+            if($data->id_kategori == 2){                                        //gratis
                 $enroll = EventEnroll::create([
                     'id_user' => $request->session()->get('auth.id_user'),
                     'id_event' => $data->id_produk,
                     'id_expert' => $data->event->id_expert
                 ]);
-            }else if($data->id_kategori == 5){
+
+            }else if($data->id_kategori == 5){                                 //ebook
                 $enroll = EbookEnroll::create([
                     'id_user' => $request->session()->get('auth.id_user'),
                     'id_event' => $data->id_produk,
@@ -89,8 +101,9 @@ class TransaksiController extends Controller
             'jawaban' => $jawaban,
         ];
 
+
         if(!empty($request->bukti)){
-            $datas = UploadFile::file($request,'bukti','asset/img/bukti',$datas);
+            $datas = UploadFile::file($request,'bukti','storage/transaksi',$datas);
         }
 
         $data = Transaksi::updateOrCreate(['id'=>$request->id],$datas);
@@ -119,7 +132,7 @@ class TransaksiController extends Controller
             'tanggal_bayar' => now(),
         ];
 
-        $datas = UploadFile::file($request,'bukti','asset/img/bukti',$datas);
+        $datas = UploadFile::file($request,'bukti','storage/transaksi',$datas);
         $data_transaksi = Transaksi::updateOrCreate(['id'=>$request->id],$datas);
 
         $data_cv = [
@@ -129,11 +142,69 @@ class TransaksiController extends Controller
             'id_transaksi' => $data_transaksi->id
         ];
 
-        $data_cv = UploadFile::file($request,'cv_user','asset/file/cv_review/member',$data_cv);
+        $data_cv = UploadFile::file($request,'cv_user','storage/cv_review/member',$data_cv);
         $datas_cv = CVCheckerEnroll::create($data_cv);
 
         return redirect()->route('memberChecker');
 
+    }
+
+    public function pembayaranBeduk(Request $request){
+        $buktis = $request->bukti;
+
+        for($i=0;$i<count($request->bukti);$i++){
+            $rules['bukti.' . $i] = 'file|mimes:jpeg,png,jpg,pdf|max:2048';
+        }
+
+        $validator = Validator::make($request->all(),$rules);
+
+        if ($validator->fails()) {
+            dd($validator->messages()->first()); 
+            return redirect()->back();
+        }
+
+        $datas = [
+            'id_produk' => $request->id_produk,
+            'nama' => $request->nama,
+            'harga' => $request->harga,
+            'status' => 'pending',
+            'id_user' => $request->session()->get('auth.id_user'),
+            'tanggal_bayar' => now(),
+        ];
+
+        $filed = [];
+
+        if(!empty($request->bukti)){    
+            foreach($request->bukti as $key => $file){
+                if ($key === array_key_first($request->bukti)) {
+                    $nama_file = time()."_".$file->getClientOriginalName();
+                    $tujuan_upload_server = public_path('storage/transaksi');
+                    $tujuan_upload = 'storage/transaksi';
+                    $files = $tujuan_upload . '/'. $nama_file;
+                    $file->move($tujuan_upload_server,$nama_file);
+                    $datas['bukti'] = $files;
+                }else{
+                    $nama_file = time()."_".$file->getClientOriginalName();
+                    $tujuan_upload_server = public_path('storage/beduk');
+                    $tujuan_upload = 'storage/beduk';
+                    $files = $tujuan_upload . '/'. $nama_file;
+                    $file->move($tujuan_upload_server,$nama_file);
+                    $filed[] = $files;
+                }
+
+            }
+
+            $file_name = implode(",",$filed);
+
+            $datas['file_tambahan'] = $file_name;
+        }
+
+        //dd($datas);
+
+        $data_transaksi = Transaksi::create($datas);
+
+        return redirect()->route('transferIndex');
 
     }
+
 }

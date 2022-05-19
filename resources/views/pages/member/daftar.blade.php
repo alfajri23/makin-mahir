@@ -52,14 +52,25 @@
             <div class="col-12 col-sm-7">
                 <form action="{{route('pembayaranCreate')}}" method="post" enctype="multipart/form-data">
                 @csrf
-                    @empty(!$pertanyaans)
+                @empty(!$pertanyaans)
                         @for ($i=0;$i<count($pertanyaans);$i++)
+                            @empty(!$files[$i])
+                            <img class="w-100" src="{{asset($files[$i])}}"/>
+                            @endempty
                             <div class="form-group my-4">
                                 <label for="exampleInputEmail1" class="fw-600 mb-0">{{$pertanyaans[$i]}}</label>
                                 <input type="{{$tipes[$i]}}" name="jawaban[]" class="form-control">
                             </div>
                         @endfor
                     @endempty
+                    {{-- @empty(!$pertanyaans)
+                        @for ($i=0;$i<count($pertanyaans);$i++)
+                            <div class="form-group my-4">
+                                <label for="exampleInputEmail1" class="fw-600 mb-0">{{$pertanyaans[$i]}}</label>
+                                <input type="{{$tipes[$i]}}" name="jawaban[]" class="form-control">
+                            </div>
+                        @endfor
+                    @endempty --}}
 
                     {{-- @forelse ($tanya as $cek => $key)
                     <div class="form-group my-4">

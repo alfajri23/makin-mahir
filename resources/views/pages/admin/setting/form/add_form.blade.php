@@ -9,6 +9,23 @@
             <h2 class="text-grey-800 fw-700 font-lg">Setting</h2>
         </div>
     </div>
+
+    <div class="d-none">
+        <div class="row" id="formInit">
+            <div class="col-6">
+              <label>Pertanyaan</label>
+              <input type="text" class="form-control" name="pertanyaan[]" placeholder="">
+            </div>
+            <div class="col-2">
+              <label>Tipe</label>
+              <input type="text" class="form-control" name="tipe[]" placeholder="">
+            </div>
+            <div class="col-4">
+              <label>File</label>
+              <input type="file" class="form-control" name="file[]" placeholder="">
+            </div>
+        </div>
+    </div>
     
     <div class="container">
         <form action="{{route('formSettingStore')}}" method="post" enctype="multipart/form-data">
@@ -47,7 +64,7 @@
         </div>
 
         <div class="row">
-            <div class="col-8">
+            {{-- <div class="col-8">
                 <div class="mb-3">
                     <label class="fw-700 text-grey-800 display2-md-size">Pertanyaan</label>
                     <textarea name="pertanyaan" class="form-control"> 
@@ -62,12 +79,55 @@
                         {{isset($data) ? $data->tipe : null}}
                     </textarea>
                 </div>
+            </div> --}}
+
+            <div id="form">
+                @php
+                    $pertanyaan = explode(",",$data->pertanyaan);
+                    $tipe = explode(",",$data->tipe);
+                @endphp
+
+                @for ($i=0;$i<count($pertanyaan);$i++)
+                <div class="row">
+                    <div class="col-6">
+                      <label>Pertanyaan</label>
+                      <input type="text" class="form-control" name="pertanyaan[]" value="{{$pertanyaan[$i]}}">
+                    </div>
+                    <div class="col-2">
+                      <label>Tipe</label>
+                      <input type="text" class="form-control" name="tipe[]" value="{{$tipe[$i]}}">
+                    </div>
+                    <div class="col-4">
+                      <label>File</label>
+                      <input type="file" class="form-control" name="file[]">
+                    </div>
+                </div>
+                @endfor
+
+                {{-- <div class="row">
+                    <div class="col-6">
+                      <label>Pertanyaan</label>
+                      <input type="text" class="form-control" name="pertanyaan[]" placeholder="">
+                    </div>
+                    <div class="col-2">
+                      <label>Tipe</label>
+                      <input type="text" class="form-control" name="tipe[]" placeholder="">
+                    </div>
+                    <div class="col-4">
+                      <label>File</label>
+                      <input type="file" class="form-control" name="file[]" placeholder="">
+                    </div>
+                </div> --}}
+            </div>
+
+            <div>
+                <a onclick="addForm()" class="btn btn-primary btn-sm">Tambah</a>
             </div>
         </div>
 
         
 
-        <button type="submit" class="btn btn-primary ml-3">Tambah</button>
+        <button type="submit" class="btn btn-success mt-3">Tambah</button>
         </form>
 
     </div>
@@ -95,6 +155,11 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	      
 	    });
     });
+
+    function addForm(){
+        console.log("data");
+        $( "#formInit" ).clone().appendTo( "#form" );
+    }
 
 </script>
 

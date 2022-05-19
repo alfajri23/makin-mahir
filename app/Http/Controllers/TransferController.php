@@ -43,7 +43,6 @@ class TransferController extends Controller
     public function transaksi(Request $request){
 
         if ($request->ajax()) {
-            //dd($request->tipe);
             if($request->tipe == 'lunas'){
                 $data = Transaksi::where('status','lunas')->get();
             }elseif($request->tipe == 'pending'){
@@ -257,12 +256,9 @@ class TransferController extends Controller
             $daftar = PendaftaranVideo::find($data->id_pendaftaran);
         }
 
-        // $data->delete();
-        // $daftar->delete();
 
         $data->forceDelete();
         $daftar->forceDelete();
-        //dd($data);
 
         return response()->json([
             'data' => 'sukses'
