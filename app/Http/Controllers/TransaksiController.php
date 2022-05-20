@@ -25,6 +25,7 @@ class TransaksiController extends Controller
         $data = Produk::find($request->id);
         $ceks = FormSetting::where('id_produk_kategori',$data->id_kategori)->first(); //Cek apakah ada pertanyaan
         if($ceks != null){
+            //dd($ceks);
             // $pertanyaans = strip_tags($ceks->pertanyaan);
             // $pertanyaans = explode("\r\n",$pertanyaans);
             // $pertanyaans = array_slice($pertanyaans,1);     //hapus depan
@@ -38,7 +39,7 @@ class TransaksiController extends Controller
             $pertanyaans = explode(",",$ceks->pertanyaan);
             $tipes = explode(",",$ceks->tipe);
             $files = explode(",",$ceks->file);
-
+            // dd($ceks->file);
             // dd($files);
 
 
@@ -163,6 +164,8 @@ class TransaksiController extends Controller
             return redirect()->back();
         }
 
+        $jawaban = $request->jawaban != null ? implode(",",$request->jawaban) : '';
+
         $datas = [
             'id_produk' => $request->id_produk,
             'nama' => $request->nama,
@@ -170,6 +173,7 @@ class TransaksiController extends Controller
             'status' => 'pending',
             'id_user' => $request->session()->get('auth.id_user'),
             'tanggal_bayar' => now(),
+            'jawaban' => $jawaban,
         ];
 
         $filed = [];

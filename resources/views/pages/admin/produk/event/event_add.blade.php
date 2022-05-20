@@ -40,6 +40,7 @@
             <div class="form-group">
                 <label for="exampleFormControlInput1">Harga</label>
                 <input type="text" onkeyup="currencyFormat(this)" name="harga" class="form-control" placeholder="Kosongkan jika gratis">
+                <small id="emailHelp" class="form-text text-primary">Isi "#" jika bayar suka-suka</small>
             </div>
 
             <div class="form-group">
