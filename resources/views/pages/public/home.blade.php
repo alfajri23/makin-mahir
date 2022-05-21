@@ -18,13 +18,13 @@
                         
                         <h2 class="fw-700 text-grey-900 lh-3 display3-size display4-md-size lh-1 mb-0 aos-init" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">
                             Cuma Disini Kamu Diajarin<br>
-                            <span class="text-current">Cara Bikin CV Terbaik</span><br>
+                            <div class="text-current typewriter">Cara Bikin CV Terbaik</div>
                             Langsung Sama HRD
                         </h2>
                         
                         <div class="col-12 col-sm-8 px-0">
                             <div class="mb-0 mb-sm-4 h75 w-100 border-0 p-4 d-inline-block mt-4 shadow-xss rounded-lg aos-init" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="500">
-                                <h2 class="fw-700 font-sm-lg font-xsss text-grey-900 mt-1 typewriter">Konsultasi Dengan HRD, SEKARANG.!</h2>
+                                <h2 class="fw-700 font-sm-lg font-xsss text-grey-900 mt-1 ">Konsultasi Dengan HRD, SEKARANG.!</h2>
                             </div>
                         </div>
                         
