@@ -363,64 +363,91 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
 
     <script>
-        let notificationsWrapper   = $('.dropdown-notifications');
-        //let notificationsToggle    = notificationsWrapper.find('a[data-toggle]');
-        let notificationsCountElem = $('.notification-count');
-        let notificationsCount     = parseInt(notificationsCountElem.data('count'));
-        let notifications          = $('.notification-menu');
-        let newNotificationHtml;
-        let existingNotifications;
-
-
         //PUSHER
-    
-        var pusher = new Pusher('151f9b18e61c87d5d423', {
-            cluster: 'ap1',
-            encrypted: true
-        });
+            let notificationsWrapper   = $('.dropdown-notifications');
+            //let notificationsToggle    = notificationsWrapper.find('a[data-toggle]');
+            let notificationsCountElem = $('.notification-count');
+            let notificationsCount     = parseInt(notificationsCountElem.data('count'));
+            let notifications          = $('.notification-menu');
+            let newNotificationHtml;
+            let existingNotifications;
+        
+            var pusher = new Pusher('151f9b18e61c87d5d423', {
+                cluster: 'ap1',
+                encrypted: true
+            });
 
-        var channel = pusher.subscribe('buy-notification');
+            var channel = pusher.subscribe('buy-notification');
 
-        channel.bind('App\\Events\\BuyNotification', function(data) {
-            existingNotifications = notifications.html();
-            newNotificationHtml = `
-            <a class="dropdown-item d-flex align-items-center" href="#">
-                <div class="mr-3">
-                    <div class="icon-circle bg-primary">
-                        <i class="fas fa-file-alt text-white"></i>
+            channel.bind('App\\Events\\BuyNotification', function(data) {
+                existingNotifications = notifications.html();
+                newNotificationHtml = `
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="mr-3">
+                        <div class="icon-circle bg-primary">
+                            <i class="fas fa-file-alt text-white"></i>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <span class="font-weight-bold">${data.produk}</span>
-                </div>
-            </a>
-            `;
-            notifications.html(newNotificationHtml + existingNotifications);
-            notificationsCount += 1;
-            notificationsCountElem.attr('data-count', notificationsCount);
-            notificationsCountElem.html(notificationsCount);
+                    <div>
+                        <span class="font-weight-bold">${data.produk}</span>
+                    </div>
+                </a>
+                `;
+                notifications.html(newNotificationHtml + existingNotifications);
+                notificationsCount += 1;
+                notificationsCountElem.attr('data-count', notificationsCount);
+                notificationsCountElem.html(notificationsCount);
+            });
+        //End pusher
+
+        //Number format
+            String.prototype.reverse = function() {
+                return this.split("").reverse().join("");
+            }
+
+            window.currencyFormat = function reformatText(input) {
+                var x = input.value;
+                x = x.replace(/,/g, ""); // Strip out all commas
+                x = x.reverse();
+                x = x.replace(/.../g, function(e) {
+                    return e + ",";
+                }); // Insert new commas
+                x = x.reverse();
+                x = x.replace(/^,/, ""); // Remove leading comma
+                input.value = x;
+            }
+        //End number
+
+        //SWAL
+        function swalAction(routes,tabel,id,pesan){
+            swal({
+            title: "Are you sure?",
+            text: pesan,
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+            })
+            .then((willDelete) => {
+            if (willDelete) {
+                $.ajax({
+                    type : 'GET',
+                    url  : routes,
+                    data : {
+                        id : id
+                    },
+                    dataType: 'json',
+                    success : (data)=>{
+                        swal("Sukses", data.message, "warning");
+                        tabel.DataTable().ajax.reload();
+                    }
+                })
+
+            } else {
+                swal("Aman", "Tidak ada perubahan", "success");
+            }
         });
-
-
-
-    </script>
-
-    <script>
-        String.prototype.reverse = function() {
-            return this.split("").reverse().join("");
         }
-
-        window.currencyFormat = function reformatText(input) {
-            var x = input.value;
-            x = x.replace(/,/g, ""); // Strip out all commas
-            x = x.reverse();
-            x = x.replace(/.../g, function(e) {
-                return e + ",";
-            }); // Insert new commas
-            x = x.reverse();
-            x = x.replace(/^,/, ""); // Remove leading comma
-            input.value = x;
-        }
+        //End swall
     </script>
 
 </body>

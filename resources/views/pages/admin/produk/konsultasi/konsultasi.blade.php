@@ -23,11 +23,7 @@
             </div>
             <div class="card-body">
                 <p class="font-weight-bold display2-md-size text-dark mb-0">{{$dt->judul}}</p>
-                <p class="mb-0">Rp. {{$dt->harga}}</p>
-
-
-               
-              {{-- <a href="{{route('produkDetail',$dt->id)}}" class="btn btn-primary">Go somewhere</a> --}}
+                <p class="mb-0">Rp. {{$dt->harga}}</p>    
             </div>
             
             <div class="btn-group" role="group" aria-label="Basic example">
@@ -41,7 +37,6 @@
             
         </div>
         @empty
-            
         @endforelse
     </div>
 </div>

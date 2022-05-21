@@ -99,7 +99,6 @@ integrity="sha512-XNYSOn0laKYg55QGFv1r3sIlQWCAyNKjCa+XXF5uliZH+8ohn327Ewr2bpEnss
 crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script type="text/javascript">
-
 	$(document).ready(function() {
 		 tinymce.init({
 	            selector: "textarea",
@@ -115,7 +114,6 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	      
 	    });
 	});
-
 </script>
 
 

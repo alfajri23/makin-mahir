@@ -147,17 +147,38 @@ class TransferController extends Controller
         ]);
     }
 
+    public function cek_produk_bundling($produk){
+        return $idsProduk = explode(",",$produk->id_produk);
+        
+    }
+
     public function transaksi_konfirmasi_bank(Request $request){
         $data = Transaksi::find($request->id);
         //! Besok ganti switch aja 
 
         if($data->produk->id_kategori == 2 || $data->produk->id_kategori == 3){
-            $enroll = EventEnroll::create([
-                'id_user' => $data->id_user,
-                'id_event' => $data->produk->id_produk,
-                'id_transaksi' => $data->id,
-                'id_expert' => $data->produk->event->id_expert
-            ]);
+            $id_produk = $this->cek_produk_bundling($data->produk);
+
+
+            //JIka paket bundling maka id_expert tidak ada
+
+            foreach($id_produk as $id){
+                if(count($id_produk)>0){
+                    $enroll = EventEnroll::create([
+                        'id_user' => $data->id_user,
+                        'id_event' => $id,
+                        'id_transaksi' => $data->id,
+                    ]);
+                }else{
+                    $enroll = EventEnroll::create([
+                        'id_user' => $data->id_user,
+                        'id_event' => $id,
+                        'id_transaksi' => $data->id,
+                        'id_expert' => $data->produk->event->id_expert
+                    ]);
+                }
+            }
+
         }else if($data->produk->id_kategori == 4){
             $enroll = KonsultasiEnroll::create([
                 'id_user' => $data->id_user,
@@ -247,21 +268,23 @@ class TransferController extends Controller
 
     function transaksi_delete(Request $request){
         $data = Transaksi::find($request->id);
-        //$data = $data->tipe;
-        if($data->tipe == 'webinar'){
-            $daftar = PendaftaranWebinar::find($data->id_pendaftaran);
-        }elseif($data->tipe == 'konsultasi'){
-            $daftar = PendaftaranKonsultasi::find($data->id_pendaftaran);
-        }elseif($data->tipe == 'video'){
-            $daftar = PendaftaranVideo::find($data->id_pendaftaran);
-        }
+
+        //! Besok dihapus
+        // if($data->tipe == 'webinar'){
+        //     $daftar = PendaftaranWebinar::find($data->id_pendaftaran);
+        // }elseif($data->tipe == 'konsultasi'){
+        //     $daftar = PendaftaranKonsultasi::find($data->id_pendaftaran);
+        // }elseif($data->tipe == 'video'){
+        //     $daftar = PendaftaranVideo::find($data->id_pendaftaran);
+        // }
 
 
         $data->forceDelete();
-        $daftar->forceDelete();
+        // $daftar->forceDelete();
 
         return response()->json([
-            'data' => 'sukses'
+            'data' => 'sukses',
+            'message' => ' Data terhapus'
         ]);
     }
 

@@ -8,10 +8,9 @@
     <h1 class="h3 mb-2 text-gray-800">Event</h1>
     <div>
         <a href="{{route('addEvent')}}" class="btn btn-primary">Tambah</a>
-        <a href="{{route('eventPast')}}" class="btn btn-primary">Riwayat</a>
-
+        <a href="{{route('eventBundling')}}" class="btn btn-info">Event Bundling</a>
+        <a href="{{route('eventPast')}}" class="btn btn-outline-secondary">Riwayat</a>
     </div>
-    <p></p>
     
     <!-- DataTales Example -->
     <div class="table-responsive">
@@ -24,6 +23,7 @@
                     <th>Tanggal</th>
                     <th>Harga</th>
                     <th>Poster</th>
+                    <th>Status</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -34,6 +34,8 @@
 
 
 </div>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <script>
     $(function (){
@@ -55,10 +57,27 @@
                 {data: 'tanggal', name: 'tanggal'},
                 {data: 'harga', name: 'harga'},
                 {data: 'poster', name: 'poster'},
+                {data: 'status', name: 'status'},
                 {data: 'action', name: 'action'},
             ]
         })
     })
+
+    const tabel = $('.tableEvent');
+
+    function deleteEvent(id){
+        const route_del = "{{ route('deleteEvent') }}";
+        const pesan_del = "Jika dihapus data akan hilang di user dan Admin";
+
+        swalAction(route_del,tabel,id,pesan_del);
+    }
+
+    function endEvent(id){
+        const route_end = "{{ route('endEvent') }}";
+        const pesan_end = "Event akan dihentikan";
+
+        swalAction(route_end,tabel,id,pesan_end);
+    }
 
 </script>
 

@@ -28,8 +28,17 @@
                                 <img src="{{asset($datas['poster'])}}" alt="image" class="w-100">
                             </div>
                             <div class="card-body pt-0">
-                                <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-success d-inline-block text-success mr-1">{{empty($datas['tipe']) ? 'konsultasi' : $datas['tipe']}}</span>
-                                <span class="font-xss fw-700 pl-3 pr-3 ls-2 lh-32 d-inline-block text-success float-right"><span class="font-xsssss">Rp.</span> {{number_format($datas['harga'])}}</span>
+                                <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-success d-inline-block text-success mr-1">{{$datas['tipe']}}</span>
+                                <span class="font-xss fw-700 pl-3 pr-3 ls-2 lh-32 d-inline-block text-success float-right">
+                                    <span class="font-xsssss">Rp.</span> 
+                                    @if ($datas['harga'] == '#')
+                                        donasi
+                                    @elseif ($datas['harga'] == null)
+                                        gratis
+                                    @else
+                                    Rp. {{number_format($datas['harga'])}}
+                                    @endif
+                                </span>
                                 <h4 class="fw-700 font-xss mt-3 lh-28 mt-0">
                                     {{-- beri pembeda route --}}
                                     <a href="{{route('enrollProdukDetail',$datas->produk->id)}}" class="text-dark text-grey-900">{{$datas['judul']}}</a>

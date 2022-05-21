@@ -201,6 +201,8 @@ Route::middleware(['auth'])->group(function () {
     //Produk
         //Event
             Route::post('save', [Controllers\Admin\ProdukController::class,'eventSave'])->name('saveEvent');
+            Route::post('save/bundling', [Controllers\Admin\ProdukController::class,'eventBundlingSave'])->name('saveBundlingEvent');
+            Route::get('end', [Controllers\Admin\ProdukController::class,'eventEnd'])->name('endEvent');
             Route::get('delete', [Controllers\Admin\ProdukController::class,'eventDelete'])->name('deleteEvent');
         //end event
 
@@ -288,7 +290,11 @@ Route::middleware(['admin'])->prefix('adm')->group(function () {
             Route::get('restore', [Controllers\Admin\ProdukController::class,'eventRestore'])->name('restoreEvent');
             Route::get('edit', [Controllers\Admin\ProdukController::class,'eventEdit'])->name('editEvent');
             Route::get('add', [Controllers\Admin\ProdukController::class,'eventAdd'])->name('addEvent');
-            //! Add event dipindah diatas ke group
+
+
+            Route::get('bundling', [Controllers\Admin\ProdukController::class,'eventBundling'])->name('eventBundling');
+            Route::get('add/bundling', [Controllers\Admin\ProdukController::class,'eventAddBundling'])->name('addEventBundling');
+            //! Store event dipindah diatas ke group
             
         });
 

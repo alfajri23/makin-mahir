@@ -144,18 +144,20 @@
                 //asset = window.location.origin + '/public';
                 asset = window.location.origin;
         
+                //Bukti bayar
                 bukti = `<a target="_blank" href="${asset}/${datas.bukti}">Bukti</a>`;
 
-                file_tambahan = datas.file_tambahan.split(",");
-
-                function mapFile(item) {
-                    return `<a href="${asset}/${item}" target="_blank">File</a>`;
+                //JIka ada file tambahan
+                if(!file_tambahan == null){
+                    file_tambahan = datas.file_tambahan.split(",");
+                    function mapFile(item) {
+                        return `<a href="${asset}/${item}" target="_blank">File</a>`;
+                    }
+                    file_tambahan = file_tambahan.map(mapFile);
                 }
 
-                file_tambahan = file_tambahan.map(mapFile);
-                console.log(file_tambahan);
-
-                    
+                
+                //Cek status bayar
                 if(datas.status != 'lunas'){
                     konfirmasi = `
                     <div class="btn-group" role="group" aria-label="Basic example">
@@ -253,32 +255,37 @@
     }
 
     function deletes(id){
-        swal({
-            title: "Are you sure?",
-            text: "Jika dihapus maka data akan hilang",
-            icon: "warning",
-            buttons: true,
-            dangerMode: true,
-            })
-            .then((willDelete) => {
-            if (willDelete) {
-                $.ajax({
-                    type : 'GET',
-                    url  : "{{ route('transaksiDelete') }}",
-                    data : {
-                        id : id
-                    },
-                    dataType: 'json',
-                    success : (data)=>{
-                        swal("Sukses", "Data terhapus", "warning");
-                        $('.tableTransaksi').DataTable().ajax.reload();
-                    }
-                })
+        const route = "{{ route('transaksiDelete') }}";
+        const tabel = $('.tableTransaksi');
+        const pesan_hapus = "Jika dihapus data akan hilang";
 
-            } else {
-                swal("Aman", "Data Anda aman", "success");
-            }
-        });
+        swalAction(route,tabel,id,pesan_hapus);
+        // swal({
+        //     title: "Are you sure?",
+        //     text: "Jika dihapus maka data akan hilang",
+        //     icon: "warning",
+        //     buttons: true,
+        //     dangerMode: true,
+        //     })
+        //     .then((willDelete) => {
+        //     if (willDelete) {
+        //         $.ajax({
+        //             type : 'GET',
+        //             url  : "{{ route('transaksiDelete') }}",
+        //             data : {
+        //                 id : id
+        //             },
+        //             dataType: 'json',
+        //             success : (data)=>{
+        //                 swal("Sukses", "Data terhapus", "warning");
+        //                 $('.tableTransaksi').DataTable().ajax.reload();
+        //             }
+        //         })
+
+        //     } else {
+        //         swal("Aman", "Data Anda aman", "success");
+        //     }
+        // });
     }
 
     function deleteMulti(){

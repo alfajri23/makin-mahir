@@ -253,6 +253,10 @@ class ProdukController extends Controller
                 $data = ProdukEvent::latest()->get();
                 return datatables()->of($data)
                     ->addIndexColumn()
+                    ->addColumn('status', function($row){
+                        $actionBtn = $row->status == 1 ? '<span class="badge badge-success">Publish</span>' : '<span class="badge badge-warning">Berhenti</span>';
+                        return $actionBtn;
+                    })
                     ->addColumn('poster', function($row){
                         $image = asset($row['poster']);
                         $actionBtn = '<img src="'.$image.'" style="width:100px">';
@@ -260,14 +264,21 @@ class ProdukController extends Controller
                     })
                     ->addColumn('action', function($row){
                         $actionBtn = '
-                        <div class="">
-                            <a href="'.route('editEvent',['id' => $row['id']]).'" class="edit btn btn-success btn-sm">Edit</a> 
-                            <a href="'.route('deleteEvent',['id' => $row['id']]).'" class="delete btn btn-danger btn-sm">Delete</a>
+                        <div class="btn-group">
+                            <a href="'.route('editEvent',['id' => $row['id']]).'" class="edit btn btn-success btn-sm">
+                                <i class="fa-solid fa-pencil"></i>
+                            </a> 
+                            <button onclick="deleteEvent('.$row['id'].')" class="delete btn btn-danger btn-sm">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                            <button onclick="endEvent('.$row['id'].')" class="delete btn btn-warning btn-sm">
+                                <i class="fa-solid fa-ban"></i>
+                            </button>
                         </div>
                         ';
                         return $actionBtn;
                     })
-                    ->rawColumns(['action','poster'])
+                    ->rawColumns(['action','poster','status'])
                     ->make(true);
             }
 
@@ -315,10 +326,29 @@ class ProdukController extends Controller
             return view('pages.admin.produk.event.event_edit',compact('data','produk','tipes','pemateri'));
         }
 
+        public function eventEnd(Request $request){
+            $data =ProdukEvent::find($request->id);
+            $data->status = 0;
+            $data->save();
+
+            return response()->json([
+                'data' => 'sukses',
+                'message' => 'Event tidak akan tampil diberanda'
+            ]);
+
+            //return redirect()->back();
+        }
+
         public function eventDelete(Request $request){
             $data =ProdukEvent::find($request->id);
             $data->delete();
-            return redirect()->back();
+
+            return response()->json([
+                'data' => 'sukses',
+                'message' => 'Data event terhapus'
+            ]);
+
+            //return redirect()->back();
         }
 
         public function eventRestore(Request $request){
@@ -331,6 +361,22 @@ class ProdukController extends Controller
             $pemateri = Expert::latest()->get();
             $tipes = ProdukKategori::latest()->get();
             return view('pages.admin.produk.event.event_add',compact('pemateri','tipes'));
+        }
+
+        public function eventBundling(){
+            $data = Produk::where([
+                'id_kategori' => 3,
+                'bundling' => 1
+            ])->get();
+            return view('pages.admin.produk.event.event_bundling',compact('data'));
+        }
+
+        public function eventAddBundling(Request $request){
+            $pemateri = Expert::latest()->get();
+            $data = ProdukEvent::latest()->get();
+
+            $bundling = Produk::find($request->id);
+            return view('pages.admin.produk.event.event_bundling_add',compact('pemateri','data','bundling'));
         }
 
         public function eventSave(Request $request){
@@ -348,8 +394,6 @@ class ProdukController extends Controller
                 $files = $foto->poster;
             }else{
                 $nama_file = time()."_".$file->getClientOriginalName();
-                // isi dengan nama folder tempat kemana file diuploadpublic_path('\img\uploads')
-                //$tujuan_upload_server = public_path('asset/img/profile'); //untuk dihosting
                 if($request->tipe == 'beduk'){
                     $tujuan_upload = 'asset/img/produk/beduk';   
                     $tujuan_upload_server = public_path('asset/img/produk/beduk'); 
@@ -359,7 +403,6 @@ class ProdukController extends Controller
                 }
                 $files = $tujuan_upload . '/'. $nama_file;
                 $file->move($tujuan_upload_server,$nama_file);
-                //$file->move($tujuan_upload,$nama_file);
             }
 
             //cari tipe produk
@@ -396,6 +439,36 @@ class ProdukController extends Controller
             }
 
         
+        }
+
+        public function eventBundlingSave(Request $request){
+            $validator = Validator::make($request->all(), [
+                'poster' => 'image|mimes:jpeg,png,jpg|max:2048',
+            ]);
+
+            if ($validator->fails()) {
+                return redirect()->back();
+                dd($validator->messages()->first()); 
+            }
+
+            $datas = [
+                'nama' => $request->nama,
+                'harga' => str_replace(",", "", $request->harga),
+                'desc' => $request->desc,
+                'id_kategori' => 3,
+                'bundling' => 1,
+                'id_produk' => implode(",",$request->id_produk)
+            ];
+
+
+            if(!empty($request->poster)){
+                $datas = UploadFile::file($request,'poster','asset/img/produk/bundling',$datas);
+            }
+
+            $produk = Produk::updateOrCreate(['id'=>$request->id],$datas);
+
+            return redirect()->route('eventBundling');
+
         }
     //END EVENT
 
