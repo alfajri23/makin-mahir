@@ -71,10 +71,14 @@ class PublicController extends Controller
 
     public function produk_list_event(Request $request){
         if($request->search != null){
-            $data = ProdukEvent::where('judul','like','%'.$request->search.'%')->get();
+            $data = ProdukEvent::where('judul','like','%'.$request->search.'%')
+            ->where('status',1)
+            ->get();
 
         }else{
-            $data = ProdukEvent::all();
+            $data = ProdukEvent::where('status',1)
+            ->latest()
+            ->get();
         }
 
         $layout = Layout::layout_check();

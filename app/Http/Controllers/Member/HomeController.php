@@ -60,8 +60,20 @@ class HomeController extends Controller
 
         switch ($produk->kategori->nama){
             case "webinar" :
-                $data = ProdukEvent::find($produk->id_produk);
+                $data = new ProdukEvent();
                 $rekomen = ProdukEvent::limit(6)->latest()->get();
+
+                //dd($produk);
+                
+                //*check jika bundling
+                $data = $this->cek_produk_bundling($produk,$data);
+
+                if(count($data)>1){
+                    return view('pages.produk.bundling.bundling_produk',compact('rekomen','data','produk','layout'));
+                }
+
+                $data = $data['0']; //karena blikan fungsi cek_produk_berupa array,maka harus diambil ke-0nya
+
 
                 return view('pages.produk.event.event_detail',compact('data','layout','rekomen'));
 
@@ -102,6 +114,14 @@ class HomeController extends Controller
         }; 
 
         return view('pages.member.produk_detail',compact('data','layout','rekomen','tipe'));
+    }
+
+    //Mengecek produk terdapat bundling atau tidak
+    //mengembalikan array
+    //jika tidak ada, harus diambil array pertamanya nya
+    public function cek_produk_bundling($produk,$model){
+        $idsProduk = explode(",",$produk->id_produk);
+        return $data = count($idsProduk) > 1 ? $model::whereIn('id',$idsProduk)->get() : $model::where('id',$produk->id_produk)->get();
     }
 
     public function produk_detail_enroll($id,Request $request){

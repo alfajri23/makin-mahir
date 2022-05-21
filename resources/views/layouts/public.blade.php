@@ -33,7 +33,7 @@
 
 <body class="color-theme-blue mont-font">
     <div class="main-wrap">
-        <div class="header-wrapper pt-3 pb-3 shadow-sm pos-fixed position-absolute">
+        <div class="header-wrapper pt-3 pb-3">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 navbar pt-0 pb-0">
