@@ -141,7 +141,7 @@
                 let asset,konfirmasi;
 
                 
-                asset = window.location.origin;
+                asset = window.location.origin + '/public'
                 bukti = `<a href="${asset}/${datas.bukti}">Bukti</a>`;
                     
                 if(datas.status != 'lunas'){

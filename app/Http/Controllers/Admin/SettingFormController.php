@@ -26,6 +26,7 @@ class SettingFormController extends Controller
     public function init(Request $request){
         $kategori = ProdukKategori::all();
         $data = FormSetting::find($request->id);
+        //dd($data);
 
         return view('pages.admin.setting.form.add_form',compact('kategori','data'));
     }

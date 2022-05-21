@@ -44,16 +44,6 @@
 
         <div class="alert alert-success" role="alert">
             <h4 class="alert-heading">Petunjuk pengisian</h4>
-            <p>Setiap menambah pertanyaan harus didahului urutan angka</p>
-            <ol>
-                <li>Pertanyaan 1</li>
-                <li>Pertanyaan 2</li>
-            </ol>
-            <p>Setiap pertanyaan (kiri) akan memiliki tipe input yang berbeda, maka setiap pertanyaan harus disertakan 
-                tipe input untuk user (kanan).
-            </p>
-            <p>Contoh pertanyaan pertama, "1.Berapa umur anda" maka ditipe Anda tulis "1.number".</p>
-            <hr>
             <p>Daftar aturan</p>
             <ol>
                 <li>Text biasa = text</li>
@@ -64,27 +54,15 @@
         </div>
 
         <div class="row">
-            {{-- <div class="col-8">
-                <div class="mb-3">
-                    <label class="fw-700 text-grey-800 display2-md-size">Pertanyaan</label>
-                    <textarea name="pertanyaan" class="form-control"> 
-                        {{isset($data) ? $data->pertanyaan : null}}
-                    </textarea>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="mb-3">
-                    <label class="fw-700 text-grey-800 display2-md-size">Tipe</label>
-                    <textarea name="tipe" class="form-control"> 
-                        {{isset($data) ? $data->tipe : null}}
-                    </textarea>
-                </div>
-            </div> --}}
+           
 
             <div id="form">
+                @empty(!$data)
                 @php
                     $pertanyaan = explode(",",$data->pertanyaan);
                     $tipe = explode(",",$data->tipe);
+                    //dd($pertanyaan);
+                    //dd($tipe);
                 @endphp
 
                 @for ($i=0;$i<count($pertanyaan);$i++)
@@ -103,21 +81,8 @@
                     </div>
                 </div>
                 @endfor
+                @endempty
 
-                {{-- <div class="row">
-                    <div class="col-6">
-                      <label>Pertanyaan</label>
-                      <input type="text" class="form-control" name="pertanyaan[]" placeholder="">
-                    </div>
-                    <div class="col-2">
-                      <label>Tipe</label>
-                      <input type="text" class="form-control" name="tipe[]" placeholder="">
-                    </div>
-                    <div class="col-4">
-                      <label>File</label>
-                      <input type="file" class="form-control" name="file[]" placeholder="">
-                    </div>
-                </div> --}}
             </div>
 
             <div>
