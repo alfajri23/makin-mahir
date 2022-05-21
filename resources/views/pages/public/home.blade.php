@@ -18,7 +18,7 @@
                         
                         <h2 class="fw-700 text-grey-900 lh-3 display3-size display4-md-size lh-1 mb-0 aos-init" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">
                             Cuma Disini Kamu Diajarin<br>
-                            <div class="text-current typewriter">Cara Bikin CV Terbaik</div>
+                            <div class="text-current">Cara Bikin CV Terbaik</div>
                             Langsung Sama HRD
                         </h2>
                         
