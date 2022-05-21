@@ -100,7 +100,9 @@
                         <div>
                             <input type="hidden" name="id_produk" value="{{$data->id}}">
                             <input type="hidden" name="nama" value="{{$data->nama}}">
+                            @if($data->harga != '#' || $data->harga != null)
                             <input type="hidden" name="harga" value="{{$data->harga}}">
+                            @endif
                         </div>
     
                         <div>
@@ -109,7 +111,7 @@
                         </div>
                     </div>
 
-                </form>
+                
             </div>
 
             <div class="col-12 col-md-5">
@@ -132,7 +134,16 @@
                                <tr>
                                    <th class="text-grey-700 fw-600 font-xss">Harga
                                    </th>
-                                   <td class="text-right text-grey-700 fw-600 font-xss">Rp. {{number_format($data->harga)}}</td>
+                                   @if ($data->harga == '#')
+                                        <td>
+                                            <input class="form-control" type="text" name="harga" placeholder="Isi harga sesuka Anda">
+                                        </td>
+                                    @elseif ($data->harga == null)
+                                        <td class="text-right text-grey-700 fw-600 font-xss">Gratis</td>
+                                    @else
+                                        <td class="text-right text-grey-700 fw-600 font-xss">Rp. {{number_format($data->harga)}}</td>
+                                    @endif
+                                   
                                </tr>
                                <tr>
                                     <th class="text-grey-700 fw-600 font-xss">Status
@@ -144,6 +155,7 @@
                        </table>
                    </div>
                 </div>
+                </form>
                 
             </div>
         </div>

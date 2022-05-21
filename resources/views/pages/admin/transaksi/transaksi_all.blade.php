@@ -66,6 +66,7 @@
                         <p>Nominal</p>
                         <p>Tanggal bayar</p>
                         <p>Bukti</p>
+                        <p>File tambahan</p>
                     </div>
                     <div class="col-8" id="modalBody">
                     </div>
@@ -137,12 +138,23 @@
             success : (data)=>{
                 let datas = data.data;
                 let modalBody = $('#modalBody');
-                let bukti;
+                let bukti,file_tambahan;
                 let asset,konfirmasi;
 
-                
-                asset = window.location.origin + '/public'
-                bukti = `<a href="${asset}/${datas.bukti}">Bukti</a>`;
+                asset = window.location.origin + '/public';
+                //asset = window.location.origin;
+        
+                bukti = `<a target="_blank" href="${asset}/${datas.bukti}">Bukti</a>`;
+
+                file_tambahan = datas.file_tambahan.split(",");
+
+                function mapFile(item) {
+                    return `<a href="${asset}/${item}" target="_blank">File</a>`;
+                }
+
+                file_tambahan = file_tambahan.map(mapFile);
+                //console.log(file_tambahan);
+
                     
                 if(datas.status != 'lunas'){
                     konfirmasi = `
@@ -158,6 +170,8 @@
                     </div>
                     `; 
                 }
+
+
                
 
                 let element = ` 
@@ -166,6 +180,7 @@
                     <p>:  Rp. ${datas.harga}</p>
                     <p>:  ${datas.tanggal_bayar}</p>
                     <p>:  ${bukti}</p>
+                    <p>:  ${file_tambahan}</p>
                     <p>:  ${konfirmasi}</p>
                 `;
             
@@ -188,8 +203,6 @@
             dataType: 'json',
             success : (data)=>{
                 console.log(data);
-                //let datas = data.data;
-                //console.log(datas);
                 swal('datas', "Pembayaran telah dikonfirmasi", "success");
                 $('#modalDetail').modal('hide');
                 $('.tableTransaksi').DataTable().ajax.reload();

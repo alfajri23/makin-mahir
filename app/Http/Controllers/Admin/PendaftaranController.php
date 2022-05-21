@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Helper\Telepon;
 use App\Http\Controllers\Controller;
 use App\Models\Kelas;
 use App\Models\KelasEnroll;
@@ -195,7 +196,7 @@ class PendaftaranController extends Controller
                 $actionBtn = '
                     <div class="btn-group" role="group" aria-label="Basic example">
                         <a onclick="detail('.$data->id.')" class="btn btn-secondary btn-sm"><i class="fa-solid fa-circle-info"></i></a>
-                        <a href="https://wa.me/'.$row['telepon'].'" target="_blank" class="btn btn-success btn-sm"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://wa.me/'.Telepon::changeTo62($row['telepon']).'" target="_blank" class="btn btn-success btn-sm"><i class="fa-brands fa-whatsapp"></i></a>
                     </div>
                 ';
                 
@@ -255,11 +256,10 @@ class PendaftaranController extends Controller
                 return $nama;
             })
             ->addColumn('aksi', function($row){
-
                 $actionBtn = '
                     <div class="">
                         <a onclick="detail('.$row->transaksi->id.')" class="btn btn-secondary btn-sm"><i class="fa-solid fa-circle-info"></i></a>
-                        <a href="https://wa.me/'.$row->user->telepon.'" target="_blank" class="btn btn-success btn-sm"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://wa.me/'.Telepon::changeTo62($row->user->telepon).'" target="_blank" class="btn btn-success btn-sm"><i class="fa-brands fa-whatsapp"></i></a>
                     </div>
                 ';
                 

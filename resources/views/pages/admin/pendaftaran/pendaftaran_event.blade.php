@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container-fluid">
-    <h1 class="h3 mb-2 text-gray-800">Pendaftaran Konsultasi</h1>
+    <h1 class="h3 mb-2 text-gray-800">Pendaftaran Event</h1>
 
     <div class="table-responsive">
         <table class="table table-bordered tablePendaftaran" width="100%" cellspacing="0">
@@ -79,9 +79,9 @@
                 },
                 {data: 'tipe', name: 'tipe'},
                 {data: 'judul', name: 'judul',width:"20%"},
-                {data: 'email', name: 'email'},
+                {data: 'email', name: 'email',width: "10%"},
                 {data: 'bayar', name: 'bayar',width: "5%"},
-                {data: 'aksi', name: 'aksi'},
+                {data: 'aksi', name: 'aksi',width: "10%"},
             ],
             dom: 'Bfrtlip',
             buttons: [
