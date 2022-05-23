@@ -8,9 +8,9 @@
 }
 
 @media screen and (min-width: 576px) {
-    /* .spacer-sm{
-        height: 100px;
-    } */
+    .spacer-sm{
+        height: 150px;
+    }
 }
 
 .item >.card{ 

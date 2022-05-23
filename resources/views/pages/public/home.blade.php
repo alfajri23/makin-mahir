@@ -7,30 +7,34 @@
         color: white !important
     }
 
+    .layer-blue{
+        z-index: 0;
+        width: 100%;
+        top: 300px;
+        height: 70%;
+    }
+
 </style>
     
 
-    <div class="banner-wrapper vh-md-100 layer-after app-shape">
+    <div class="banner-wrapper vh-md-100 layer-after app-shape bg-aliceblue">
         <div class="container">
             <div class="row">
-                <div class="col-xxxl-7 col-xl-8 vh-md-100 pt-5 pt-sm-7 pb-2 pt-sm-7 align-items-center d-flex">
+                <div class="col-xxxl-7 col-xl-7 vh-md-100 pt-5 pt-sm-7 pb-2 pt-sm-7 mt-sm-5 mt-2 d-flex">
                     <div class="card w-100 border-0 bg-transparent">
+                        <p class="font-md fw-600 text-primary">Aplikasi No.1 di Indonesia</p>
                         
-                        <h2 class="fw-700 text-grey-900 lh-3 display3-size display4-md-size lh-1 mb-0 aos-init" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">
-                            Cuma Disini Kamu Diajarin<br>
-                            <div class="text-current">Cara Bikin CV Terbaik</div>
-                            Langsung Sama HRD
+                        <h2 class="fw-700 text-grey-900 lh-3 display3-size display4-md-size typewrite" data-period="1000" data-type='[ "Cara Bikin CV Terbaik", "Latihan Interview Kerja", "Belajar Psikotes Kerja"]'>
+                              <span class="wrap"></span>
                         </h2>
-                        
-                        <div class="col-12 col-sm-8 px-0">
-                            <div class="mb-0 mb-sm-4 h75 w-100 border-0 p-4 d-inline-block mt-4 shadow-xss rounded-lg aos-init" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="500">
-                                <h2 class="fw-700 font-sm-lg font-xsss text-grey-900 mt-1 ">Konsultasi Dengan HRD, SEKARANG.!</h2>
-                            </div>
+
+                        <div class="w200">
+
+                            <a href="{{route('produkListKonsul')}}" class="btn btn-block border-0 w-100 bg-primary p-3 text-white fw-600 rounded-lg d-inline-block font-xssss btn-light mt-3">Ambil Sekarang</a>
                         </div>
-                        
                     </div>
                 </div>
-                <div class="col-xxxl-5 col-xl-4 vh-md-100 align-items-center justify-content-center d-flex home-phone">
+                <div class="col-xxxl-5 col-xl-4 vh-md-100 mt-5 mt-sm-0 align-items-center justify-content-center d-flex home-phone">
                     <div class="card w-75 border-0 bg-transparent text-center d-block">
                         <img src="{{asset('asset/img/program/phone.png')}}" alt="app-bg" class="w-100 d-lg-block" >    
                     </div>
@@ -39,7 +43,7 @@
         </div>
     </div>
 
-    <div class="feature-wrapper layer-after pb-lg--7 pb-5">
+    <div class="feature-wrapper layer-after pb-lg--7 pb-5 bg-aliceblue">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="page-title style1 col-xl-6 col-lg-8 col-md-10 text-center mb-5">
@@ -58,7 +62,7 @@
                             <h4 class="font-xsss text-grey-600 fw-500 mt-2">Tersedia lebih dari 300 konten edukasi dunia kerja buat teman kerja belajar</h4>
                         </div>
 
-                        <div class="col-lg-3 col-md-3 col-xss-6 text-center ">
+                        <div class="col-lg-3 col-md-3 col-xss-6 text-center mt-3 mt-md-0">
                             <h2 class="display4-size display1-sm-size fw-700 open-font text-info mb-0">1 on 1</h2>
                             <h4 class="font-xsss text-grey-600 fw-500 mt-2">Bisa Konsultasi Private 1 on 1 langsung dengan HRD tersertifikasi BNSP</h4>
                         </div>
@@ -70,7 +74,7 @@
         </div>
     </div>
 
-    <div class="feature-wrapper layer-after pb-lg--7 pb-5">
+    <div class="feature-wrapper layer-after my-5  pb-lg--7 pb-5">
         <div class="row justify-content-center">
             <div class="page-title style1 col-xl-6 col-lg-8 col-md-10 text-center mb-5">
                 <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-xl ls-2 alert-warning d-inline-block text-warning mr-1">Feedback</span>
@@ -81,7 +85,8 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6">
                     <a href="{{route('produkListEvent')}}" class="card mb-4 w-100 border-0 pt-4 pb-4 pr-4 pl-7 shadow-xss rounded-lg aos-init" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="500">
-                        <i class="feather-layers text-success font-xl position-absolute left-15 ml-2"></i>
+                        {{-- <i class="feather-layers text-success font-xl position-absolute left-15 ml-2"></i> --}}
+                        <i class="fa-solid fa-calendar-day text-success font-xl position-absolute left-15 ml-2"></i>
                         <h2 class="fw-700 font-xs text-grey-900 mt-1">Event Gratis</h2>
                         <p class="fw-500 font-xssss lh-24 text-grey-600 mb-0">Daftar Event Bersertifikat Dengan Pemateri Profesional di Dunia Kerja</p>
                     </a>
@@ -89,7 +94,7 @@
 
                 <div class="col-lg-4 col-md-6">
                     <a href="{{route('produkListKelas')}}" class="card mb-4 w-100 border-0 pt-4 pb-4 pr-4 pl-7 shadow-xss rounded-lg aos-init" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="500">
-                        <i class="feather-award text-danger font-xl position-absolute left-15 ml-2"></i>
+                        <i class="feather-book text-danger font-xl position-absolute left-15 ml-2"></i>
                         <h2 class="fw-700 font-xs text-grey-900 mt-1">Kelas Online</h2>
                         <p class="fw-500 font-xssss lh-24 text-grey-600 mb-0">Kelas Online Dari Mulai Belajar Soft Skill Sampai Hardskill</p>
                     </a>
@@ -97,7 +102,7 @@
 
                 <div class="col-lg-4 col-md-6">
                     <a href="{{route('produkListKonsul')}}" class="card mb-4 w-100 border-0 pt-4 pb-4 pr-4 pl-7 shadow-xss rounded-lg aos-init" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="500">
-                        <i class="feather-cpu text-info font-xl position-absolute left-15 ml-2"></i>
+                        <i class="fas fa-headset text-info font-xl position-absolute left-15 ml-2"></i>
                         <h2 class="fw-700 font-xs text-grey-900 mt-1">Konsultasi HRD</h2>
                         <p class="fw-500 font-xssss lh-24 text-grey-600 mb-0">Konsultasi Langsung Dengan HRD Buat Bedah CV, Interview Kerja & Psikotes</p>
                     </a>
@@ -105,7 +110,7 @@
 
                 <div class="col-lg-4 col-md-6">
                     <a href="{{route('cvIndex')}}" class="card mb-4 w-100 border-0 pt-4 pb-4 pr-4 pl-7 shadow-xss rounded-lg aos-init" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="500">
-                        <i class="feather-hard-drive text-warning font-xl position-absolute left-15 ml-2"></i>
+                        <i class="fa-solid fa-file-code text-warning font-xl position-absolute left-15 ml-2"></i>
                         <h2 class="fw-700 font-xs text-grey-900 mt-1">CV Maker</h2>
                         <p class="fw-500 font-xssss lh-24 text-grey-600 mb-0">Buat CV ATS Kamu Langsung Online, GRATIS</p>
                     </a>
@@ -113,7 +118,7 @@
 
                 <div class="col-lg-4 col-md-6">
                     <a href="{{route('memberChecker')}}" class="card mb-4 w-100 border-0 pt-4 pb-4 pr-4 pl-7 shadow-xss rounded-lg aos-init" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="500">
-                        <i class="feather-lock text-secondary font-xl position-absolute left-15 ml-2"></i>
+                        <i class="fa-solid fa-check-to-slot text-secondary font-xl position-absolute left-15 ml-2"></i>
                         <h2 class="fw-700 font-xs text-grey-900 mt-1">CV Checker</h2>
                         <p class="fw-500 font-xssss lh-24 text-grey-600 mb-0">Cek Dulu CV Kamu Udah Menarik Belum di Mata HRD</p>
                     </a>
@@ -121,7 +126,7 @@
 
                 <div class="col-lg-4 col-md-6">
                     <a href="{{route('testIndex')}}" class="card mb-4 w-100 border-0 pt-4 pb-4 pr-4 pl-7 shadow-xss rounded-lg aos-init" data-aos="zoom-in" data-aos-delay="500" data-aos-duration="500">
-                        <i class="feather-globe text-success font-xl position-absolute left-15 ml-2"></i>
+                        <i class="fa-solid fa-file-signature text-success font-xl position-absolute left-15 ml-2"></i>
                         <h2 class="fw-700 font-xs text-grey-900 mt-1">Assesment Test</h2>
                         <p class="fw-500 font-xssss lh-24 text-grey-600 mb-0">Ikuti Test Assesment Buat Tau Potensi, Minat dan Bakat Kamu</p>
                     </a>
@@ -130,7 +135,7 @@
         </div>
     </div>
 
-    <div class="service-wrapper layer-after">
+    <div class="service-wrapper layer-after my-5 ">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="page-title style1 col-xl-6 col-lg-8 col-md-10 text-center mb-5">
@@ -141,23 +146,23 @@
         </div>
     </div>
 
-    <div class="feature-wrapper layer-after">
+    <div class="zoom-beduk layer-after my-5 ">
         <div class="container">
               <div class="row">
                 <div class="col-lg-6">
                     <img src="{{asset('asset/img/program/zoom_beduk.png')}}" alt="image" class="img-fluid aos-init" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="500">
                 </div>
                 <div class="col-lg-4 offset-lg-1">
-                    <span class="font-xsssss mt-2 fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-xl ls-2 alert-success d-inline-block text-success mr-1">Beduk</span>
+                    <span class="font-xsssss mt-2 fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-xl ls-2 alert-success d-inline-block text-success mr-1 aos-init" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">Beduk</span>
                     <h2 class="text-grey-900 fw-700 display1-size display1-sm-size pb-3 mb-0 mt-3 d-block lh-3 aos-init" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">Live Event Bedah Dunia Kerja (BEDUK)</h2>
                     <p class="fw-400 font-xss lh-28 text-grey-600 aos-init" data-aos="fade-up" data-aos-delay="300" data-aos-duration="500">Kami Mempertemukan Kamu Dengan HRD Melalui Live Event Rutin Setiap Pekan</p>
-                    <a href="#" class="btn border-0 bg-warning p-2 text-white fw-600 rounded-lg d-inline-block font-xssss btn-light mt-3 w150 aos-init" data-aos="fade-up" data-aos-delay="400" data-aos-duration="500">Daftar sekarang</a>
+                    <a href="#" class="btn border-0 bg-warning p-2 text-white fw-600 rounded-lg d-inline-block font-xssss btn-light mt-3 w150 aos-init" data-aos="fade-up" data-aos-delay="100" data-aos-duration="200">Daftar sekarang</a>
                 </div>
               </div>
         </div>
     </div>
 
-    <div class="feature-wrapper layer-after pt-lg--7 pt-5 mt-4">
+    <div class="feature-wrapper layer-after my-5  pt-lg--7 pt-5 mt-4">
         <div class="container">
               <div class="row">
                 <div class="col-lg-7 order-lg-2 offset-lg-1">
@@ -165,24 +170,27 @@
                 </div>
                 
                 <div class="col-lg-4 order-lg-1">
-                    <span class="font-xsssss mt-2 fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-xl ls-2 alert-success d-inline-block text-success mr-1">Konsultasi</span>
+                    <span class="font-xsssss mt-2 fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-xl ls-2 alert-success d-inline-block text-success aos-init" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">Konsultasi</span>
                     <h2 class="text-grey-900 fw-700 display1-size display1-sm-size pb-3 mb-0 mt-3 d-block lh-3 aos-init" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">Konsultasi Private Dengan HRD</h2>
                     <p class="fw-400 font-xss lh-28 text-grey-600 aos-init" data-aos="fade-up" data-aos-delay="300" data-aos-duration="500">Kamu Bisa Ngobrol Langsung Sama HRD Buat Bedah CV, Latihan Interview Kerja dan Psikotes</p>
-                    <a href="#" class="btn border-0 bg-warning p-2 text-white fw-600 rounded-lg d-inline-block font-xssss btn-light mt-3 w150 aos-init" data-aos="fade-up" data-aos-delay="400" data-aos-duration="500">Daftar sekarang</a>
+                    <a href="#" class="btn border-0 bg-warning p-2 text-white fw-600 rounded-lg d-inline-block font-xssss btn-light mt-3 w150 aos-init" data-aos="fade-up" data-aos-delay="100" data-aos-duration="200">Daftar sekarang</a>
                 </div>
                 
               </div>
         </div>
     </div>
 
-    <div class="price-wrap pb-lg--7 pt-lg--7 pb-5 pt-5 layer-after ">
+    <div class="price-wrap pb-lg--7 pt-lg--7 pb-5 pt-5 layer-after position-relative">
+        <div class="overflow bg-aliceblue position-absolute layer-blue">
+        </div>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="page-title style1 col-xl-6 col-lg-8 col-md-10 text-center mb-5">
-                    <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-xl ls-2 alert-success d-inline-block text-success mr-1">Our Pricing</span>
-                    <h2 class="text-grey-900 fw-700 font-xxl pb-3 mb-0 mt-3 d-block lh-3">Choose the plan that's right for your business</h2>
+                    <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-xl ls-2 alert-success d-inline-block text-success mr-1">Paket</span>
+                    <h2 class="text-grey-900 fw-700 font-xxl pb-3 mb-0 mt-3 d-block lh-3">Pilih sesuai kebutuhanmu</h2>
                 </div>
             </div>
+            
             <div class="row justify-content-center">
                 <div class="col-lg-12 col-xl-10">
                     <div class="row">
@@ -246,7 +254,114 @@
                 </div>
             </div>
         </div>
+        
     </div>
+
+    <div class="testimoonial layer-after my-5 ">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="page-title style1 col-xl-6 col-lg-8 col-md-10 text-center mb-5">
+                    <h2 class="text-grey-900 fw-700 display1-size display1-sm-size pb-3 mb-0 mt-3 d-block lh-3">Testimoni</h2>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card w-100 p-5 text-left border-0 shadow-xss rounded-lg">
+                                <div class="card-body pl-0 pt-0">
+                                    <img src="{{asset('asset/img/program/testimoni/testi1.jpg')}}" alt="user" class="w45 float-left mr-3">
+                                    <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Kartika fitri</h4>    
+                                </div>
+                                <p class="font-xsss fw-400 text-grey-600 lh-28 mt-0 mb-0 ">"Bahkan ada beberapa pertanyaan yang menurut saya tuh itu gak ada gitu, biasanya kan ada yang muncul di youtube gitu, kayak beberapa pertanyaan terkait yang sering ditanyain sama HR. Tapi tadi kaya wow, ini bingung jawabnya gimana. Untungnya tadi udah dikasih solusi sih pak terkait pertanyaan tersebut"</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card w-100 p-5 text-left border-0 shadow-xss rounded-lg">
+                                <div class="card-body pl-0 pt-0">
+                                    <img src="{{asset('asset/img/program/testimoni/testi2.jpg')}}" alt="user" class="w45 float-left mr-3">
+                                    <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Alya Raihanna</h4>    
+                                </div>
+                                <p class="font-xsss fw-400 text-grey-600 lh-28 mt-0 mb-0 ">"Jadi karena ngikutin Kelas Bedah CV ini, aku jadi lebih tau mana yang harus aku masukin ke CV, mana yang enggak. Jadi bikin CV aku lebih ATS Friendly. Nah, walaupun ini berbayar, tapi menurut aku tuh ini worth it banget, kalian ga bakal nyesel gitu loh"</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card w-100 p-5 text-left border-0 shadow-xss rounded-lg">
+                                <div class="card-body pl-0 pt-0">
+                                    <img src="{{asset('asset/img/program/testimoni/testi3.jpg')}}" alt="user" class="w45 float-left mr-3">
+                                    <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Yola Yulliana</h4>    
+                                </div>
+                                <p class="font-xsss fw-400 text-grey-600 lh-28 mt-0 mb-0 ">"Kita tuh butuh prakteknya juga, gak cuma teorinya doank. Sekarang kan teorinya udah banyak, di google udah ada, di buku udah ada, kita butuh prakteknya juga. Kalo yang kaya gini saya baru pertama kali nih saya ikut yang kaya gini. Kalau menurut saya, yang kaya gini tuh cukup membantu sih mas"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+            </div>
+        </div>
+    </div>
+
+<script>
+    var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 1000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0 solid #fff}";
+        document.body.appendChild(css);
+    };
+</script>
    
     
     

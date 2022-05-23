@@ -652,6 +652,12 @@
   max-width: 70% !important;
 }
 
+.w__80 {
+  width: 80% !important;
+  flex: 0 0 80% !important;
+  max-width: 80% !important;
+}
+
 .w__100 {
   width: 100% !important;
   flex: 0 0 100% !important;
