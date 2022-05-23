@@ -3,7 +3,7 @@
 @section('content')
     <div class="spacer"></div>
 
-    <div class="card d-block w-100 border-0 shadow-xss rounded-lg overflow-hidden mb-3" style="background-image: url(https://via.placeholder.com/200x100.png);">
+    <div class="card d-block w-100 border-0 shadow-xss rounded-lg overflow-hidden mb-3 pt-5 pt-sm-0" style="background-image: url(https://via.placeholder.com/200x100.png);">
         <div class="card-body p-lg-5 p-4 bg-black-08">
             <div class="clearfix"></div>
             <div class="row">

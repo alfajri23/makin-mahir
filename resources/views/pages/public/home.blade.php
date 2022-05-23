@@ -14,6 +14,10 @@
         height: 70%;
     }
 
+    .header-wrapper .nav-menu li a {
+        color:#777 !important;
+    }
+
 </style>
     
 
@@ -22,11 +26,12 @@
             <div class="row">
                 <div class="col-xxxl-7 col-xl-7 vh-md-100 pt-5 pt-sm-7 pb-2 pt-sm-7 mt-sm-5 mt-2 d-flex">
                     <div class="card w-100 border-0 bg-transparent">
-                        <p class="font-md fw-600 text-primary">Aplikasi No.1 di Indonesia</p>
-                        
-                        <h2 class="fw-700 text-grey-900 lh-3 display3-size display4-md-size typewrite" data-period="1000" data-type='[ "Cara Bikin CV Terbaik", "Latihan Interview Kerja", "Belajar Psikotes Kerja"]'>
+
+                        <h2 class="poppins fw-800 text-grey-900 display3-size display4-md-size">Cuma Disini Kamu Diajarin</h2>
+                        <h2 class="poppins fw-700 text-primary display3-size display4-md-size typewrite" data-period="1000" data-type='[ "Cara Bikin CV Terbaik", "Latihan Interview Kerja", "Belajar Psikotes Kerja"]'>
                               <span class="wrap"></span>
                         </h2>
+                        <h2 class="poppins fw-700 text-grey-900 display3-size display4-md-size">Langsung Sama HRD</h2>
 
                         <div class="w200">
 
@@ -48,7 +53,7 @@
             <div class="row justify-content-center">
                 <div class="page-title style1 col-xl-6 col-lg-8 col-md-10 text-center mb-5">
                     <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-xl ls-2 alert-warning d-inline-block text-warning mr-1">Feedback</span>
-                    <h2 class="text-grey-900 fw-700 display1-size display1-sm-size pb-3 mb-0 mt-3 d-block lh-3">Makin Mahir Platform Terbaik Untuk Persiapan Kerja Kamu</h2>
+                    <h2 class="poppins text-grey-900 fw-700 display1-size display1-sm-size pb-3 mb-0 mt-3 d-block lh-3">Makin Mahir Platform Terbaik Untuk Persiapan Kerja Kamu</h2>
                 </div>
                 <div class="col-xl-10 col-lg-12 pb-lg--5">
                     <div class="row justify-content-center">
@@ -78,7 +83,7 @@
         <div class="row justify-content-center">
             <div class="page-title style1 col-xl-6 col-lg-8 col-md-10 text-center mb-5">
                 <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-xl ls-2 alert-warning d-inline-block text-warning mr-1">Feedback</span>
-                <h2 class="text-grey-900 fw-700 display1-size display1-sm-size pb-3 mb-0 mt-3 d-block lh-3">Yang Kamu Dapatkan<br> Di Makin Mahir</h2>
+                <h2 class="poppins text-grey-900 fw-700 display1-size display1-sm-size pb-3 mb-0 mt-3 d-block lh-3">Yang Kamu Dapatkan<br> Di Makin Mahir</h2>
             </div>
         </div>
         <div class="container">
@@ -112,7 +117,7 @@
                     <a href="{{route('cvIndex')}}" class="card mb-4 w-100 border-0 pt-4 pb-4 pr-4 pl-7 shadow-xss rounded-lg aos-init" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="500">
                         <i class="fa-solid fa-file-code text-warning font-xl position-absolute left-15 ml-2"></i>
                         <h2 class="fw-700 font-xs text-grey-900 mt-1">CV Maker</h2>
-                        <p class="fw-500 font-xssss lh-24 text-grey-600 mb-0">Buat CV ATS Kamu Langsung Online, GRATIS</p>
+                        <p class="fw-500 font-xssss lh-24 text-grey-600 mb-0">Buat CV ATS Kamu Langsung di Sini via Online, GRATIS</p>
                     </a>
                 </div>
 
@@ -139,7 +144,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="page-title style1 col-xl-6 col-lg-8 col-md-10 text-center mb-5">
-                    <h2 class="text-grey-900 fw-700 display1-size display1-sm-size pb-3 mb-0 mt-3 d-block lh-3">Tumbuh Bareng<br>Mahir Bareng</h2>
+                    <h2 class="poppins text-grey-900 fw-700 display1-size display1-sm-size pb-3 mb-0 mt-3 d-block lh-3">Tumbuh Bareng<br>Mahir Bareng</h2>
                     <p class="fw-300 font-xss lh-28 text-grey-600">Inilah cara kami membantu Teman Cari Kerja untuk mempersiapkan diri memasuki dunia kerja</p>
                 </div>
             </div>
@@ -154,7 +159,7 @@
                 </div>
                 <div class="col-lg-4 offset-lg-1">
                     <span class="font-xsssss mt-2 fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-xl ls-2 alert-success d-inline-block text-success mr-1 aos-init" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">Beduk</span>
-                    <h2 class="text-grey-900 fw-700 display1-size display1-sm-size pb-3 mb-0 mt-3 d-block lh-3 aos-init" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">Live Event Bedah Dunia Kerja (BEDUK)</h2>
+                    <h2 class="poppins text-grey-900 fw-700 display1-size display1-sm-size pb-3 mb-0 mt-3 d-block lh-3 aos-init" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">Live Event Bedah Dunia Kerja (BEDUK)</h2>
                     <p class="fw-400 font-xss lh-28 text-grey-600 aos-init" data-aos="fade-up" data-aos-delay="300" data-aos-duration="500">Kami Mempertemukan Kamu Dengan HRD Melalui Live Event Rutin Setiap Pekan</p>
                     <a href="#" class="btn border-0 bg-warning p-2 text-white fw-600 rounded-lg d-inline-block font-xssss btn-light mt-3 w150 aos-init" data-aos="fade-up" data-aos-delay="100" data-aos-duration="200">Daftar sekarang</a>
                 </div>
@@ -171,9 +176,9 @@
                 
                 <div class="col-lg-4 order-lg-1">
                     <span class="font-xsssss mt-2 fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-xl ls-2 alert-success d-inline-block text-success aos-init" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">Konsultasi</span>
-                    <h2 class="text-grey-900 fw-700 display1-size display1-sm-size pb-3 mb-0 mt-3 d-block lh-3 aos-init" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">Konsultasi Private Dengan HRD</h2>
+                    <h2 class="poppins text-grey-900 fw-700 display1-size display1-sm-size pb-3 mb-0 mt-3 d-block lh-3 aos-init" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">Konsultasi Private Dengan HRD</h2>
                     <p class="fw-400 font-xss lh-28 text-grey-600 aos-init" data-aos="fade-up" data-aos-delay="300" data-aos-duration="500">Kamu Bisa Ngobrol Langsung Sama HRD Buat Bedah CV, Latihan Interview Kerja dan Psikotes</p>
-                    <a href="#" class="btn border-0 bg-warning p-2 text-white fw-600 rounded-lg d-inline-block font-xssss btn-light mt-3 w150 aos-init" data-aos="fade-up" data-aos-delay="100" data-aos-duration="200">Daftar sekarang</a>
+                    <a href="{{route('produkListKonsul')}}" class="btn border-0 bg-warning p-2 text-white fw-600 rounded-lg d-inline-block font-xssss btn-light mt-3 w150 aos-init" data-aos="fade-up" data-aos-delay="100" data-aos-duration="200">Daftar sekarang</a>
                 </div>
                 
               </div>
@@ -187,12 +192,12 @@
             <div class="row justify-content-center">
                 <div class="page-title style1 col-xl-6 col-lg-8 col-md-10 text-center mb-5">
                     <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-xl ls-2 alert-success d-inline-block text-success mr-1">Paket</span>
-                    <h2 class="text-grey-900 fw-700 font-xxl pb-3 mb-0 mt-3 d-block lh-3">Pilih sesuai kebutuhanmu</h2>
+                    <h2 class="poppins text-grey-900 fw-700 font-xxl pb-3 mb-0 mt-3 d-block lh-3">Pilih sesuai kebutuhanmu</h2>
                 </div>
             </div>
             
             <div class="row justify-content-center">
-                <div class="col-lg-12 col-xl-10">
+                <div class="col-lg-12 col-xl-12">
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="card border-0 mb-4 bg-white shadow-xss shadow-xss rounded-lg">
@@ -261,13 +266,13 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="page-title style1 col-xl-6 col-lg-8 col-md-10 text-center mb-5">
-                    <h2 class="text-grey-900 fw-700 display1-size display1-sm-size pb-3 mb-0 mt-3 d-block lh-3">Testimoni</h2>
+                    <h2 class="poppins text-grey-900 fw-700 display1-size display1-sm-size pb-3 mb-0 mt-3 d-block lh-3">Testimoni</h2>
                 </div>
 
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-4 col-md-6 mb-4">
-                            <div class="card w-100 p-5 text-left border-0 shadow-xss rounded-lg">
+                            <div class="card w-100 p-5 text-left border-0 shadow-md rounded-lg">
                                 <div class="card-body pl-0 pt-0">
                                     <img src="{{asset('asset/img/program/testimoni/testi1.jpg')}}" alt="user" class="w45 float-left mr-3">
                                     <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Kartika fitri</h4>    
@@ -277,7 +282,7 @@
                         </div>
 
                         <div class="col-lg-4 col-md-6 mb-4">
-                            <div class="card w-100 p-5 text-left border-0 shadow-xss rounded-lg">
+                            <div class="card w-100 p-5 text-left border-0 shadow-md rounded-lg">
                                 <div class="card-body pl-0 pt-0">
                                     <img src="{{asset('asset/img/program/testimoni/testi2.jpg')}}" alt="user" class="w45 float-left mr-3">
                                     <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Alya Raihanna</h4>    
@@ -287,7 +292,7 @@
                         </div>
 
                         <div class="col-lg-4 col-md-6 mb-4">
-                            <div class="card w-100 p-5 text-left border-0 shadow-xss rounded-lg">
+                            <div class="card w-100 p-5 text-left border-0 shadow-md rounded-lg">
                                 <div class="card-body pl-0 pt-0">
                                     <img src="{{asset('asset/img/program/testimoni/testi3.jpg')}}" alt="user" class="w45 float-left mr-3">
                                     <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Yola Yulliana</h4>    

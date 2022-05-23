@@ -14,20 +14,23 @@
     <meta name="geo.placename" content="indonesia">
     <meta name="geo.country" content="id">
     <meta name="content-language" content="id">
-    <meta name="google-site-verification" content="imSOUh01H0EyYu2As8-Hvs2P30TnEhiAkPayXp_ySfk">
+    {{-- <meta name="google-site-verification" content="imSOUh01H0EyYu2As8-Hvs2P30TnEhiAkPayXp_ySfk"> --}}
 
     <link rel="stylesheet" href="{{ asset('css/themify-icons.css') }}">
 
     <link rel="stylesheet" href="{{ asset('css/feather.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/owl/owl.carousel.min.css') }}">
+
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/aos.min.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    {{-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> --}}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    
+    {{-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> --}}
     {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> --}}
 
 </head>
@@ -37,13 +40,13 @@
 
     <div class="main-wrapper">
         {{-- sidebar left --}}
-        <nav class="navigation scroll-bar">
+        <nav class="navigation scroll-bar" style="z-index: 3">
             <div class="container pl-0 pr-0">
                 <div class="nav-content">
                     <div class="nav-top">
                         <a href="default.html">
                             <i class="fa-solid fa-globe-stand display1-size mr-3 ml-3"></i>
-                            <span class="d-inline-block fredoka-font ls-3 fw-600 text-current font-xl logo-text mb-0">MakinMahir</span> 
+                            <span class="d-inline-block poppins ls-3 fw-600 text-current font-xl logo-text mb-0">MakinMahir</span> 
                         </a>
                         <a href="#" class="close-nav d-inline-block d-lg-none"><i class="ti-close bg-grey mb-4 btn-round-sm font-xssss fw-700 text-dark ml-auto mr-2 "></i></a>
                     </div>
@@ -112,7 +115,7 @@
 
             <div class="middle-sidebar-bottom py-0">
                 <div class="" style="width: 100%">
-                    <div class="row">
+                    <div class="row pb-5">
                         @yield('content')
 
                         {{-- floating button --}}
@@ -136,13 +139,13 @@
                 <i class="feather-home"></i><br>
                 <span class="font-xssss fw-700">Home</span>
             </a>
-            <a href="{{route('produkListKelas')}}" class="nav-content-bttn nav-center">
-                <i class="fas fa-chalkboard-teacher"></i><br>
-                <span class="font-xssss fw-700">Video</span>
+            <a href="{{route('produkListEvent')}}" class="nav-content-bttn nav-center">
+                <i class="fa-solid fa-calendar-day"></i><br>
+                <span class="font-xssss fw-700">Event</span>
             </a>
             {{-- <a href="default-live-stream.html" class="nav-content-bttn" data-tab="chats"><i class="feather-layout"></i></a>             --}}
-            <a href="{{route('memberKelas')}}" class="nav-content-bttn nav-center">
-                <i class="feather-video"></i><br>
+            <a href="{{route('produkListKelas')}}" class="nav-content-bttn nav-center">
+                <i class="fas fa-chalkboard-teacher"></i><br>
                 <span class="font-xssss fw-700">Kelas</span>
             </a>
             <a href="{{route('memberProfile')}}" class="nav-content-bttn nav-center">
@@ -150,20 +153,6 @@
                 <span class="font-xssss fw-700">Profil</span>
             </a>
         </div>
-
-        {{-- <div class="app-header-search">
-            <form class="search-form">
-                <div class="form-group searchbox mb-0 border-0 p-1">
-                    <input type="text" class="form-control border-0" placeholder="Search...">
-                    <i class="input-icon">
-                        <ion-icon name="search-outline" role="img" class="md hydrated" aria-label="search outline"></ion-icon>
-                    </i>
-                    <a href="#" class="ml-1 mt-1 d-inline-block close searchbox-close">
-                        <i class="ti-close font-xs"></i>
-                    </a>
-                </div>
-            </form>
-        </div> --}}
 
     </div>
 </body>
