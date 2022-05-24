@@ -267,7 +267,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-4 col-md-6 mb-4">
-                            <div class="card w-100 p-5 text-left border-0 shadow-xss rounded-lg">
+                            <div class="card w-100 p-5 text-left border-0 shadow-md rounded-lg">
                                 <div class="card-body pl-0 pt-0">
                                     <img src="{{asset('asset/img/program/testimoni/testi1.jpg')}}" alt="user" class="w45 float-left mr-3">
                                     <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Kartika fitri</h4>    
@@ -277,7 +277,7 @@
                         </div>
 
                         <div class="col-lg-4 col-md-6 mb-4">
-                            <div class="card w-100 p-5 text-left border-0 shadow-xss rounded-lg">
+                            <div class="card w-100 p-5 text-left border-0 shadow-md rounded-lg">
                                 <div class="card-body pl-0 pt-0">
                                     <img src="{{asset('asset/img/program/testimoni/testi2.jpg')}}" alt="user" class="w45 float-left mr-3">
                                     <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Alya Raihanna</h4>    
@@ -287,7 +287,7 @@
                         </div>
 
                         <div class="col-lg-4 col-md-6 mb-4">
-                            <div class="card w-100 p-5 text-left border-0 shadow-xss rounded-lg">
+                            <div class="card w-100 p-5 text-left border-0 shadow-md rounded-lg">
                                 <div class="card-body pl-0 pt-0">
                                     <img src="{{asset('asset/img/program/testimoni/testi3.jpg')}}" alt="user" class="w45 float-left mr-3">
                                     <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Yola Yulliana</h4>    

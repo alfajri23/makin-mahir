@@ -112,7 +112,7 @@
 
             <div class="middle-sidebar-bottom py-0">
                 <div class="" style="width: 100%">
-                    <div class="row">
+                    <div class="row pb-5">
                         @yield('content')
 
                         {{-- floating button --}}

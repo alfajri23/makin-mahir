@@ -41,6 +41,9 @@ class TransferController extends Controller
     }
 
     public function transaksi(Request $request){
+        
+        $data = Transaksi::latest()->get();
+        //dd($data);
 
         if ($request->ajax()) {
             if($request->tipe == 'lunas'){
@@ -106,15 +109,16 @@ class TransferController extends Controller
                 })
                 ->addColumn('nominal', function($row){
                     $actionBtn = '
-                    <div>Rp. '.number_format($row['harga']).'</div>
+                    <div>Rp. '.$row['harga'].'</div>
                     ';
                     return $actionBtn;
                 })
                 ->addColumn('aksi', function($row){
 
 
-                    $tel = $row->user->telepon;
-                    $tel = Telepon::changeTo62($tel);
+                    // $tel = $row->user->telepon;
+                    // $tel = Telepon::changeTo62($tel);
+                    $tel = '';
 
                     $btnDel = '
                         <a onclick="deletes('.$row['id'].')" class="delete btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></a>

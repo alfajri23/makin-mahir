@@ -137,6 +137,7 @@
             dataType: 'json',
             success : (data)=>{
                 let datas = data.data;
+                console.log(datas);
                 let modalBody = $('#modalBody');
                 let bukti,file_tambahan;
                 let asset,konfirmasi;
@@ -148,7 +149,7 @@
                 bukti = `<a target="_blank" href="${asset}/${datas.bukti}">Bukti</a>`;
 
                 //JIka ada file tambahan
-                if(!file_tambahan == null){
+                if(datas.file_tambahan != null){
                     file_tambahan = datas.file_tambahan.split(",");
                     function mapFile(item) {
                         return `<a href="${asset}/${item}" target="_blank">File</a>`;
