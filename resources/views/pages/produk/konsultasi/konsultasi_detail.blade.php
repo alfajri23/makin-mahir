@@ -1,10 +1,10 @@
 @extends($layout)
 
 @section('content')
-    <div class="spacer"></div>
-    <div class="spacer"></div>
+    {{-- <div class="spacer"></div>
+    <div class="spacer"></div> --}}
     <div class="container-fluid">
-        <div class="spacer"></div>
+        <div class="spacer-md"></div>
         <div class="col-12">
             <h2 class="text-grey-900 fw-700 display1-size display2-md-size pb-3 mb-0 mb-sm-5 d-block text-center">{{$data->produk->nama}}</h2>
         </div>
@@ -21,7 +21,7 @@
                         <h2 class="text-grey-800 fw-600 font-lg my-0 lh-3 " >{{$data->expert->nama}}</h2>
                     </div>
                     <div class="col-12 col-sm-4">
-                        <p class="font-xsss fw-500 my-0 text-success">
+                        <p class="font-xss fw-600 my-0 text-success">
                             Rp.{{number_format($data->harga)}}
                         </p>
                     </div>

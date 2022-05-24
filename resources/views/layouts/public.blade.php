@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="{{ asset('css/themify-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
     <link rel="stylesheet" href="{{ asset('css/feather.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/owl/owl.carousel.min.css') }}">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
     <!-- Custom Stylesheet -->
@@ -27,23 +28,22 @@
     <link rel="stylesheet" href="{{ asset('css/aos.min.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> --}}
-    @yield('css')
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 
 
 <body class="color-theme-blue mont-font">
     <div class="main-wrap">
-        <div class="header-wrapper pt-3 pb-3">
+        <div class="header-wrapper pt-3 pb-3 ng-info">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 navbar pt-0 pb-0">
-                        <a href="{{route('publicIndex')}}"><h1 class="ls-3 fw-700 text-current font-xxl">MakinMahir.id<span class="d-block font-xsssss ls-1 text-grey-500 open-font ">Berkembang dan Makin Mahir !</span></h1></a>
+                        <a href="{{route('publicIndex')}}"><h1 class="ls-3 fw-700 poppins font-xxl">MakinMahir.id<span class="d-block font-xsssss ls-1 text-grey-500 open-font ">Berkembang dan Makin Mahir !</span></h1></a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                            <ul class="navbar-nav nav-menu float-none text-center">
+                            <ul class="navbar-nav navbar-dark nav-menu float-none text-center">
 
                                 {{-- <li class="nav-item"><a class="nav-link" href="{{route('ebook')}}">Ebook</a></li> --}}
                                 <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Fitur<i class="ti-angle-down"></i></a>
@@ -108,8 +108,10 @@
                 </div>
             </div>
         </div>
+    
         
         @yield('content')
+        
 
         {{-- floating button --}}
         <a href="https://wa.me/+6289619119692" class="float text-decoration-none">
@@ -130,10 +132,9 @@
                             <div class="row">
                                 <div class="col-sm-6 col-xs-12 sm-mb-4">
                                     <h5 class="mb-4 font-xs">Makin mahir</h5>
-                                    <p class="w-100">platform perencana karir yang meberikan layanan yang di dalamnya berisi informasi seputar dunia kerja, membantu fresh graduate mengenali potensi dirinya dan memberikan rekomendasi yang dapat dijadikan pertimbangan dalam merencanakan karir terbaik mereka.</p>
-                                   
-                                    
+                                    <p class="w-100">platform perencana karir yang meberikan layanan yang di dalamnya berisi informasi seputar dunia kerja, membantu fresh graduate mengenali potensi dirinya dan memberikan rekomendasi yang dapat dijadikan pertimbangan dalam merencanakan karir terbaik mereka.</p>  
                                 </div>
+                                
                                 <div class="col-md-4 col-lg-2 col-sm-6 col-xs-6">
                                     <h5 class="font-xs">About</h5>
                                     <ul>

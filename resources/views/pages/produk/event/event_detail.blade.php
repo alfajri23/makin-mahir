@@ -1,10 +1,17 @@
 @extends($layout)
 
 @section('content')
-    <div class="spacer"></div>
+
+    <style>
+        .owl-carousel {
+        -ms-touch-action: pan-y;
+        touch-action: pan-y;
+        }
+    </style>
+    {{-- <div class="spacer-sm"></div> --}}
     <div class="container-fluid">
 
-        <div class="spacer"></div>
+        <div class="spacer-sm"></div>
 
         <div class="col-12 col-sm-11 mx-auto">
             <div class="card border-0 mb-0 rounded-lg overflow-hidden">
@@ -63,10 +70,10 @@
         $data = $rekomen;
         $title = 'rekomendasi lainnya';
     @endphp
+
     <div class="row bg-light py-4 w__100">
         @include('component.produk.produk_carousel')
     </div>
     <div class="spacer"></div>
-
 
 @endsection

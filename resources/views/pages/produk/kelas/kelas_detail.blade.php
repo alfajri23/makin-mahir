@@ -1,9 +1,8 @@
 @extends($layout)
 
 @section('content')
-    <div class="spacer"></div>
-
-    <div class="w-100 position-relative mt-4 mt-sm-0">
+    
+    <div class="w-100 position-relative mt-5 mt-sm-0">
             <div class="col-12 col-sm-12 mx-auto mt-4 mt-sm-0">
                 <div class="card-image w-100">
                     <a class="video-bttn position-relative d-block">

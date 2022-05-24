@@ -3,10 +3,10 @@
 @section('content')
 
 <div class="container">
-    <div class="spacer"></div>
+    <div class="spacer-sm"></div>
 
     <div class="row">
-        <div class="col-12 my-5">
+        <div class="col-12 mb-3">
             <div class="card w-100 p-lg-5 p-4 rounded-xxl border-0" style="background: #faece3;">
                 <div class="row justify-content-center">
                     <div class="col-lg-10 text-center">

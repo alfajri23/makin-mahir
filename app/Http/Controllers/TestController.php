@@ -47,7 +47,7 @@ class TestController extends Controller
             $layout = Layout::layout_check();
             $datas = MbtiType::where('code',$cek->result)->first();
             $history = $cek;
-            //dd($data);
+            dd($data);
             return view('pages.public.mbti.mbti_result',compact('datas','layout','data','title','tipe','history'));
         }else{
             //* Tes MBTI Baru
@@ -82,6 +82,8 @@ class TestController extends Controller
         $result .= $this->cek_exist('T') > $this->cek_exist('F') ? "T" : "F";
         $result .= $this->cek_exist('J') > $this->cek_exist('P') ? "J" : "P";
 
+        //dd($data);
+
         if (Auth::check()) {
             MbtiResult::create([
                 'id_user' => auth()->user()->id,
@@ -98,16 +100,17 @@ class TestController extends Controller
             ]); 
             $layout = 'layouts.member';
         }else{
-            $data = ProdukKonsul::latest()->limit(3)->get();
+            $data = KonsultasiExpert::latest()->limit(3)->get();
             $title = 'produk pilihan';
             $tipe = 'konsutasi';
+
+            //dd($data);
 
             $datas = MbtiType::where('code',$result)->first();
             $layout = 'layouts.public';
             return view('pages.public.mbti.mbti_result',compact('datas','layout','data','title','tipe'));
 
         }
-
         
 
         return redirect()->route('mbtiTest',compact('data'));
