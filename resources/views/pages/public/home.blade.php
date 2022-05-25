@@ -27,7 +27,7 @@
                 <div class="col-xxxl-7 col-xl-7 vh-md-100 pt-5 pt-sm-7 pb-2 pt-sm-7 mt-sm-5 mt-2 d-flex">
                     <div class="card w-100 border-0 bg-transparent">
 
-                        <h2 class="poppins fw-800 text-grey-900 display3-size display4-md-size">Cuma Disini Kamu Diajarin</h2>
+                        <h2 class="poppins fw-700 text-grey-900 display3-size display4-md-size">Cuma Disini Kamu Diajarin</h2>
                         <h2 class="poppins fw-700 text-primary display3-size display4-md-size typewrite" data-period="1000" data-type='[ "Cara Bikin CV Terbaik", "Latihan Interview Kerja", "Belajar Psikotes Kerja"]'>
                               <span class="wrap"></span>
                         </h2>
