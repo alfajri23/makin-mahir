@@ -79,6 +79,10 @@
                                     </div>
                                 </li>
 
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{route('blog')}}">Blog</a>
+                                </li>
+
                                 {{-- AUTH --}}
                                 @if (Route::has('login'))
                                     @auth

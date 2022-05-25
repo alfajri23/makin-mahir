@@ -105,8 +105,6 @@
                     tipe : "{{$_GET['tipe']}}"
                 }
             },
-            dom: 'frtlip',
-            
             columns: [
                 {data: 'checkbox', name: 'checkbox',width: "5%"},
                 {
@@ -123,7 +121,9 @@
                 {data: 'tanggal_bayar', name: 'tanggal_bayar'},
                 {data: 'bayar', name: 'bayar',width: "5%"},
                 {data: 'aksi', name: 'aksi',width: "15%"},
-            ]
+            ],
+            dom: 'Bfrtlip',
+
         })
     })
 

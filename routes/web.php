@@ -7,6 +7,10 @@ use App\Http\Controllers\Notifications;
 use App\Models\User;
 use App\Notifications\WelcomeEmailNotification;
 
+
+use App\Exports\EventEnrollExport;
+use Maatwebsite\Excel\Facades\Excel;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -324,6 +328,7 @@ Route::middleware(['admin'])->prefix('adm')->group(function () {
             //EVENT
             Route::get('event', [Controllers\Admin\PendaftaranController::class,'event'])->name('pendaftaranEvent');
             Route::get('event/delete', [Controllers\Admin\PendaftaranController::class,'deleteEnrollEvent'])->name('deleteEnrollEvent');
+            Route::get('event/download', [Controllers\Admin\PendaftaranController::class,'downloadEvent'])->name('downloadEvent');
         
             //KELAS
             Route::get('kelas', [Controllers\Admin\PendaftaranController::class,'list_kelas'])->name('listKelas');
@@ -458,4 +463,8 @@ Route::post('pendaftaran/beduk', [Controllers\TransaksiController::class,'pembay
 //     $user = User::find(8);
 //     $user->notify(new WelcomeEmailNotification($user));
 // });
+
+Route::get('export-beduk', function(){
+    return Excel::download(new EventEnrollExport, 'beduk.xlsx');
+});
 

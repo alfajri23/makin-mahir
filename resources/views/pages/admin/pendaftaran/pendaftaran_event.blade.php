@@ -5,6 +5,12 @@
 <div class="container-fluid">
     <h1 class="h3 mb-2 text-gray-800">Pendaftaran Event</h1>
 
+    <h6>Download</h6>
+    <div class="my-2">
+        <a href="{{route('downloadEvent',['id'=>2])}}" class="btn btn-primary btn-sm">Beduk</a>
+        <a href="{{route('downloadEvent',['id'=>3])}}" class="btn btn-secondary btn-sm">Webinar</a>
+    </div>
+
     <div class="table-responsive">
         <table class="table table-bordered tablePendaftaran" width="100%" cellspacing="0">
             <thead>
@@ -85,7 +91,7 @@
                 {data: 'bayar', name: 'bayar',width: "5%"},
                 {data: 'aksi', name: 'aksi',width: "10%"},
             ],
-            dom: 'Bfrtlip',
+            // dom: 'Bfrtlip',
             buttons: [
                 {
                     extend: 'copyHtml5',
@@ -93,21 +99,21 @@
                     title: '',
                     exportOptions: {
                         header : false,
-                        columns : [ 1,2,3,4,5,6,8,9]
+                        columns : [ 0,1,2,3,4,5]
                     },
                 },
                 {
                     extend: 'excelHtml5',
                     title: 'Data Konsultasi',
                     exportOptions: {
-                        columns : [ 1,2,3,4,5,6,8,9]
+                        columns : [ 0,1,2,3,4,5]
                     },
                 },
                 {
                     extend: 'csvHtml5',
                     title: 'Data Konsultasi',
                     exportOptions: {
-                        columns : [ 1,2,3,4,5,6,8,9]
+                        columns : [ 0,1,2,3,4,5]
                     },
                 },
             ]
