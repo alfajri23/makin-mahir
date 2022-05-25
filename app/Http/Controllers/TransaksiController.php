@@ -25,30 +25,16 @@ class TransaksiController extends Controller
         $data = Produk::find($request->id);
         $ceks = FormSetting::where('id_produk_kategori',$data->id_kategori)->first(); //Cek apakah ada pertanyaan
         if($ceks != null){
-            //dd($ceks);
-            // $pertanyaans = strip_tags($ceks->pertanyaan);
-            // $pertanyaans = explode("\r\n",$pertanyaans);
-            // $pertanyaans = array_slice($pertanyaans,1);     //hapus depan
-            // array_pop($pertanyaans);                        //hapus belakang
-
-            // $tipes = strip_tags($ceks->tipe);
-            // $tipes = explode("\r\n",$tipes);
-            // $tipes = array_slice($tipes,1);                 //hapus depan
-            // array_pop($tipes);  
-
             $pertanyaans = explode(",",$ceks->pertanyaan);
             $tipes = explode(",",$ceks->tipe);
             $files = explode(",",$ceks->file);
-            // dd($ceks->file);
-            // dd($files);
-
-
+            $required = explode(",",$ceks->required);
 
             if($data->id_kategori == 2){                    // Jika beduk
-                return view('pages.pembayaran.pembayaran_beduk',compact('tipes','pertanyaans','data','files'));
+                return view('pages.pembayaran.pembayaran_beduk',compact('tipes','pertanyaans','data','files','required'));
             }
 
-            return view('pages.member.daftar',compact('tipes','pertanyaans','data','files'));
+            return view('pages.member.daftar',compact('tipes','pertanyaans','data','files','required'));
 
         }elseif($data->harga == null){
             if($data->id_kategori == 2){                                        //gratis
@@ -79,6 +65,7 @@ class TransaksiController extends Controller
 
         $validator = Validator::make($request->all(), [
             'bukti' => 'file|mimes:jpeg,png,jpg,pdf|max:2048',
+            'telepon' => 'required', 'string','min:9',
         ]);
 
         if ($validator->fails()) {

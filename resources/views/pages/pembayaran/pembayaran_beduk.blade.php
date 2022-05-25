@@ -76,7 +76,7 @@
                             @endempty
                             <div class="form-group my-4">
                                 <label for="exampleInputEmail1" class="fw-600 mb-0">{{$pertanyaans[$i]}}</label>
-                                <input type="{{$tipes[$i]}}" name="{{$tipes[$i] == 'file' ? 'bukti[]' : 'jawaban[]' }}" class="form-control">
+                                <input type="{{$tipes[$i]}}" name="{{$tipes[$i] == 'file' ? 'bukti[]' : 'jawaban[]' }}" class="form-control" {{$required[$i] == 1 ? 'required' : ''}}>
                             </div>
                         @endfor
                     @endempty

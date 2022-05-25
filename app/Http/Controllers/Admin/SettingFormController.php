@@ -68,8 +68,11 @@ class SettingFormController extends Controller
     }
 
     public function store(Request $request){
+
+        //dd($request->required);
         $pertanyaan = implode(",",$request->pertanyaan);
         $tipe = implode(",",$request->tipe);
+        $required = implode(",",$request->required);
         $File = $request->file != null ? $request->file : [];
 
         if($request->id != null){
@@ -81,7 +84,7 @@ class SettingFormController extends Controller
         }
 
         //if(!empty($request->file)){
-            for($i=0;$i<count($request->tipe);$i++){
+            for($i=0;$i<=count($request->tipe);$i++){
                 if(array_key_exists($i,$File)){
                     if(!empty($request->file)){
                         $nama_file = $File[$i]->getClientOriginalName();
@@ -106,7 +109,7 @@ class SettingFormController extends Controller
 
 
         $file = implode(",",$filed);
-        $file = ',' . $file;
+        //$file = ',' . $file;
 
 
         $datas = [
@@ -114,9 +117,10 @@ class SettingFormController extends Controller
             'pertanyaan' => $pertanyaan,
             'tipe' => $tipe,
             'file' => $file,
+            'required' => $required,
         ];
 
-        dd($datas);
+        //dd($datas);
         
         $data = FormSetting::updateOrCreate(['id'=>$request->id],$datas);
 

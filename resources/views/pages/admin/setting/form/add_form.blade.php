@@ -12,17 +12,28 @@
 
     <div class="d-none">
         <div class="row" id="formInit">
-            <div class="col-6">
+            <div class="col-5">
               <label>Pertanyaan</label>
               <input type="text" class="form-control" name="pertanyaan[]" placeholder="">
             </div>
             <div class="col-2">
               <label>Tipe</label>
-              <input type="text" class="form-control" name="tipe[]" placeholder="">
+              <select id="inputState" name="tipe[]" class="form-control">
+                <option value="text">text</option>
+                <option value="number">number</option>
+                <option value="file">file</option>
+              </select>
             </div>
-            <div class="col-4">
+            <div class="col-3">
               <label>File</label>
               <input type="file" class="form-control" name="file[]" placeholder="">
+            </div>
+            <div class="col-2">
+                <label>Required</label>
+                <select id="inputState" name="required[]" class="form-control">
+                    <option value="0">no</option>
+                    <option value="1">ya</option>
+                </select>
             </div>
         </div>
     </div>
@@ -62,27 +73,42 @@
                     $pertanyaan = explode(",",$data->pertanyaan);
                     $tipe = explode(",",$data->tipe);
                     $file = explode(",",$data->file);
+                    $required = explode(",",$data->required);
                 @endphp
 
                 @for ($i=0;$i<count($pertanyaan);$i++)
                 <div class="row align-items-end my-2">
-                    <div class="col-6">
+                    <div class="col-5">
                       <label>Pertanyaan</label>
                       <input type="text" class="form-control" name="pertanyaan[]" value="{{$pertanyaan[$i]}}">
                     </div>
                     <div class="col-2">
                       <label>Tipe</label>
-                      <input type="text" class="form-control" name="tipe[]" value="{{$tipe[$i]}}">
+                      <select id="inputState" name="tipe[]" class="form-control">
+                        <option value="{{$tipe[$i]}}" selected>{{$tipe[$i]}}</option>
+                        <option value="text">text</option>
+                        <option value="number">number</option>
+                        <option value="file">file</option>
+                      </select>
+                      {{-- <input type="text" class="form-control" name="tipe[]" value="{{$tipe[$i]}}"> --}}
                     </div>
                     <div class="col-3">
                         <img class="w-100" src="{{$file[$i] != null ? asset($file[$i]) : ''}}" alt="" srcset="">
-                      <label>File</label>
+                      <label>File</label><br>
                       <input type="file" class="" name="file[]">
                     </div>
                     <div class="col-1">
                         <a href="{{route('formSettingDelete',['id'=>$data->id,'index'=>$i])}}" class="btn btn-outline-danger mt-4">
                             <i class="fa-solid fa-trash"></i>
                         </a>
+                    </div>
+                    <div class="col-1">
+                        <label>Required</label>
+                        <select id="inputState" name="required[]" class="form-control">
+                            <option value="{{$required[$i]}}" selected>{{$required[$i] == 1 ? 'ya' : 'no'}}</option>
+                            <option value="0">no</option>
+                            <option value="1">ya</option>
+                        </select>
                     </div>
                 </div>
                 @endfor
