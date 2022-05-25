@@ -59,27 +59,11 @@
                             @endempty
                             <div class="form-group my-4">
                                 <label for="exampleInputEmail1" class="fw-600 mb-0">{{$pertanyaans[$i]}}</label>
-                                <input type="{{$tipes[$i]}}" name="jawaban[]" class="form-control">
+                                <input type="{{$tipes[$i]}}" name="jawaban[]" class="form-control" {{$required[$i] == 1 ? 'required' : ''}}>
                             </div>
                         @endfor
                     @endempty
-                    {{-- @empty(!$pertanyaans)
-                        @for ($i=0;$i<count($pertanyaans);$i++)
-                            <div class="form-group my-4">
-                                <label for="exampleInputEmail1" class="fw-600 mb-0">{{$pertanyaans[$i]}}</label>
-                                <input type="{{$tipes[$i]}}" name="jawaban[]" class="form-control">
-                            </div>
-                        @endfor
-                    @endempty --}}
-
-                    {{-- @forelse ($tanya as $cek => $key)
-                    <div class="form-group my-4">
-                        <label for="exampleInputEmail1" class="fw-600 mb-0">{{$key}}</label>
-                        <input type="{{$cek}}" name="jawaban[]" class="form-control">
-                    </div>  
-                    @empty 
-                    @endforelse --}}
-
+                  
                     <div class="form-group my-4">
                         <label for="exampleInputPassword1" class="font-lg fw-700">Upload Bukti Pembayaran</label>
                         
