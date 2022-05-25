@@ -137,6 +137,7 @@
                 
                 //asset = window.location.origin;
                 asset = window.location.origin + '/public';
+
                 bukti = `<a target="_blank" href="${asset}/${datas.bukti}">Bukti</a>`;
                     
                 

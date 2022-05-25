@@ -20,10 +20,9 @@
                     <th>Facebook</th>
                     <th>Twitter</th>
                     <th>Linkedin</th>
-                    <th>Beduk</th>
-                    <th>Webinar</th>
+                    <th>Event</th>
                     <th>Konsultasi</th>
-                    <th>Video</th>
+                    <th>Kelas</th>
                     <th>MBTI</th>
                     <th>Riasec</th>
                     <th>Aksi</th>   
@@ -120,10 +119,9 @@
                 {data: 'facebook', name: 'facebook',visible: false},
                 {data: 'twitter', name: 'twitter',visible: false},
                 {data: 'linkedin', name: 'linkedin',visible: false},
-                {data: 'beduk', name: 'beduk',className: "dtCenter" },
-                {data: 'webinar', name: 'webinar',className: "dtCenter"},
+                {data: 'event', name: 'event',className: "dtCenter" },
                 {data: 'konsultasi', name: 'konsultasi',className: "dtCenter"},
-                {data: 'video', name: 'video',className: "dtCenter"},
+                {data: 'kelas', name: 'kelas',className: "dtCenter"},
                 {data: 'mbti', name: 'mbti',className: "dtCenter"},
                 {data: 'riasec', name: 'riasec',className: "dtCenter"},
                 {data: 'aksi', name: 'aksi',className: "dtCenter"},

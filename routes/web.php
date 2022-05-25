@@ -464,7 +464,4 @@ Route::post('pendaftaran/beduk', [Controllers\TransaksiController::class,'pembay
 //     $user->notify(new WelcomeEmailNotification($user));
 // });
 
-Route::get('export-beduk', function(){
-    return Excel::download(new EventEnrollExport, 'beduk.xlsx');
-});
 
