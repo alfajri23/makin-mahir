@@ -135,8 +135,9 @@
                 let asset,konfirmasi;
 
                 
-                asset = window.location.origin;
-                bukti = `<a href="${asset}/${datas.bukti}">Bukti</a>`;
+                //asset = window.location.origin;
+                asset = window.location.origin + '/public';
+                bukti = `<a target="_blank" href="${asset}/${datas.bukti}">Bukti</a>`;
                     
                 
                
