@@ -16,13 +16,14 @@ class EventEnrollExport implements FromView, WithStyles, ShouldAutoSize
 {
     
     public $data,$pertanyaan,$num_file = 0;
+    public $jenis;
 
-    public function __construct()
+    public function __construct($id)
     {
-        $id_produk = Produk::where('id_kategori',2)->pluck('id');
+        $id_produk = Produk::where('id_kategori',$id)->pluck('id');
         $this->data = Transaksi::whereIn('id_produk',$id_produk)->get();
 
-        $form = FormSetting::where('id_produk_kategori',2)->first();
+        $form = FormSetting::where('id_produk_kategori',$id)->first();
         $pertanyaan = explode(",",$form->pertanyaan);
         $tipe = explode(",",$form->tipe);
 
@@ -32,8 +33,9 @@ class EventEnrollExport implements FromView, WithStyles, ShouldAutoSize
                 $this->num_file ++;
             }
         }
-
         $this->pertanyaan = $pertanyaan;
+        
+        $this->jenis = $id == 2 ? 'beduk' : 'webinar';
 
     }
 
@@ -44,7 +46,8 @@ class EventEnrollExport implements FromView, WithStyles, ShouldAutoSize
             [
                 'datas' => $this->data, 
                 'pertanyaan' => $this->pertanyaan,
-                'num_file' => $this->num_file
+                'num_file' => $this->num_file,
+                'jenis' => $this->jenis,
             ]);
     }
 

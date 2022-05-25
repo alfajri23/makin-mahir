@@ -12,7 +12,8 @@
 
     <div>
         <h4>Daftar</h4>
-        <h4>Pendaftaran beduk</h4>
+        <h4>Pendaftaran {{$jenis}}</h4>
+        <h4></h4>
         {{-- <table class="table table-bordered">
             <tr class="thead-dark">
                 <th style="font-size:10px">Daftar</th>
@@ -30,13 +31,11 @@
                 <th style="text-align: center; font-size:10px">Telepon</th>
                 <th style="text-align: center; font-size:10px">Email</th>
                 <th style="text-align: center; font-size:10px">Bukti</th>
-                <th colspan="{{$num_file}}" style="text-align: center; font-size:10px">File tambahan</th>
                 @forelse ($pertanyaan as $ask)
-                    <th style="text-align: center; font-size:10px">{{$ask}}</th>
-                    
+                    <th style="text-align: center; font-size:10px">{{$ask}}</th>   
                 @empty
-                    
                 @endforelse
+                <th colspan="{{$num_file}}" style="text-align: center; font-size:10px">File tambahan</th>
                 
 
 
@@ -53,6 +52,12 @@
                         $jawabans = explode(",",$data->jawaban);
                         $file_tambahan = explode(",",$data->file_tambahan);
                     @endphp
+                    
+                    @forelse ($jawabans as $jawaban)
+                    <td style="font-size:10px">{{ $jawaban }}</td>
+                    @empty 
+                    @endforelse
+
                     @for ($i=0;$i<$num_file;$i++)
                         @if(array_key_exists($i,$file_tambahan))
                             <td style="font-size:10px">{{ asset($file_tambahan[$i]) }}</td>
@@ -62,10 +67,7 @@
                    
                     @endfor
 
-                    @forelse ($jawabans as $jawaban)
-                    <td style="font-size:10px">{{ $jawaban }}</td>
-                    @empty 
-                    @endforelse
+                    
 
                 </tr>
             @endforeach

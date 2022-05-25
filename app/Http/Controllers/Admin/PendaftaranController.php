@@ -17,6 +17,9 @@ use App\Models\Transaksi;
 use App\Models\KonsultasiEnroll;
 use App\Models\EventEnroll;
 
+use App\Exports\EventEnrollExport;
+use Maatwebsite\Excel\Facades\Excel;
+
 class PendaftaranController extends Controller
 {
     public function beduk(Request $request){
@@ -286,6 +289,10 @@ class PendaftaranController extends Controller
         return response()->json([
             'data' => 'sukses menghapus'
         ]);
+    }
+
+    public function downloadEvent(Request $request){
+        return Excel::download(new EventEnrollExport($request->id), 'beduk.xlsx');
     }
 
     //* Kelas

@@ -328,6 +328,7 @@ Route::middleware(['admin'])->prefix('adm')->group(function () {
             //EVENT
             Route::get('event', [Controllers\Admin\PendaftaranController::class,'event'])->name('pendaftaranEvent');
             Route::get('event/delete', [Controllers\Admin\PendaftaranController::class,'deleteEnrollEvent'])->name('deleteEnrollEvent');
+            Route::get('event/download', [Controllers\Admin\PendaftaranController::class,'downloadEvent'])->name('downloadEvent');
         
             //KELAS
             Route::get('kelas', [Controllers\Admin\PendaftaranController::class,'list_kelas'])->name('listKelas');
