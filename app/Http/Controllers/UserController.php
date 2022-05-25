@@ -67,24 +67,20 @@ class UserController extends Controller
             $data = User::latest()->get();
             return datatables()->of($data)
             ->addIndexColumn()
-            ->addColumn('beduk', function($row){
-                $nama = ''.count($row->daftar_beduk).'';
-                return $nama;
-            })
-            ->addColumn('webinar', function($row){
-                $nama = ''.count($row->daftar_webinar).'';
+            ->addColumn('event', function($row){
+                $nama = ''.count($row->event_enroll).'';
                 return $nama;
             })
             ->addColumn('konsultasi', function($row){
-                $nama = ''.count($row->daftar_konsultasi).'';
+                $nama = ''.count($row->konsultasi_enroll).'';
                 return $nama;
             })
-            ->addColumn('video', function($row){
-                $nama = ''.count($row->daftar_video).'';
+            ->addColumn('kelas', function($row){
+                $nama = ''.count($row->kelas_enroll).'';
                 return $nama;
             })
             ->addColumn('cv', function($row){
-                $nama = ''.count($row->daftar_video).'';
+                $nama = ''.count($row->cv_checker_enroll).'';
                 return $nama;
             })
             ->addColumn('mbti', function($row){
@@ -106,7 +102,7 @@ class UserController extends Controller
                 ';
                 return $nama;
             })
-            ->rawColumns(['aksi','beduk','webinar','konsultasi','video','mbti','riasec'])
+            ->rawColumns(['aksi','event','konsultasi','kelas','mbti','riasec'])
             ->make(true);
         }
 
