@@ -89,7 +89,7 @@ class SettingFormController extends Controller
                         $tujuan_upload_server = public_path('storage/setting/form');
                         $tujuan_upload = 'storage/setting/form';
                         $files = $tujuan_upload . '/'. $nama_file;
-                        //$File[$i]->move($tujuan_upload_server,$nama_file);
+                        $File[$i]->move($tujuan_upload_server,$nama_file);
                         $filed[$i] = $files;
                     }
                 }else{
@@ -117,7 +117,7 @@ class SettingFormController extends Controller
             'file' => $file,
         ];
 
-        dd($datas);
+        //dd($datas);
         
         $data = FormSetting::updateOrCreate(['id'=>$request->id],$datas);
 
