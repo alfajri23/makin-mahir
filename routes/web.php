@@ -314,7 +314,7 @@ Route::middleware(['admin'])->prefix('adm')->group(function () {
         Route::get('transaksi-delete', [Controllers\TransferController::class,'transaksi_delete'])->name('transaksiDelete');
         Route::get('transaksi-delete-multi', [Controllers\TransferController::class,'transaksi_delete_multi'])->name('transaksiDeleteMulti');
         Route::get('transaksi-konfirm-bank', [Controllers\TransferController::class,'transaksi_konfirmasi_bank'])->name('transaksiBankKonfirmasi');
-        Route::post('transaksi-tolak-bank', [Controllers\TransferController::class,'transaksi_tolak'])->name('transaksiTolak');
+        Route::get('transaksi-tolak-bank', [Controllers\TransferController::class,'transaksi_tolak'])->name('transaksiTolak');
         Route::get('transaksi-konfirm-mid', [Controllers\TransferController::class,'transaksi_konfirmasi_mid'])->name('transaksiMidKonfirmasi');
     //end 
 
@@ -323,6 +323,7 @@ Route::middleware(['admin'])->prefix('adm')->group(function () {
            
             //EVENT
             Route::get('event', [Controllers\Admin\PendaftaranController::class,'event'])->name('pendaftaranEvent');
+            Route::get('event/delete', [Controllers\Admin\PendaftaranController::class,'deleteEnrollEvent'])->name('deleteEnrollEvent');
         
             //KELAS
             Route::get('kelas', [Controllers\Admin\PendaftaranController::class,'list_kelas'])->name('listKelas');
@@ -339,6 +340,7 @@ Route::middleware(['admin'])->prefix('adm')->group(function () {
                 Route::get('/', [Controllers\Admin\SettingFormController::class,'index'])->name('formSetting');
                 Route::post('/', [Controllers\Admin\SettingFormController::class,'store'])->name('formSettingStore');
                 Route::get('/add', [Controllers\Admin\SettingFormController::class,'init'])->name('formSettingAdd');
+                Route::get('/delete', [Controllers\Admin\SettingFormController::class,'delete'])->name('formSettingDelete');
 
                 Route::get('beduk', [Controllers\Admin\SettingFormController::class,'beduk'])->name('formBeduk');
                 Route::get('beduk-detail', [Controllers\Admin\SettingFormController::class,'detail_beduk'])->name('detailBeduk');

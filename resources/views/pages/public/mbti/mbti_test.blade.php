@@ -167,18 +167,6 @@
     </script>
 
     <script>
-      window.onload = function() {
-        window.onbeforeunload = function (e) {
-          //return alert("Kamu sudah yakin ?.")
-          return 'Kamu sudah yakin ?. ';
-        };
-      };
-
-      window.onbeforeunload = function (e) {
-          //return alert("Kamu sudah yakin ?.")
-          return 'Kamu sudah yakin ?. ';
-        };
-
       let data = [];
       let ids;
 

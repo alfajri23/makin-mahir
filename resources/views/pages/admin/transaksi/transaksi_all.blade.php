@@ -174,8 +174,6 @@
                 }
 
 
-               
-
                 let element = ` 
                     <p>:  ${datas.nama}</p>
                     <p>:  ${datas.status}</p>
@@ -239,7 +237,7 @@
 
     function tolak(id){
         $.ajax({
-            type : 'POST',
+            type : 'GET',
             url  : "{{ route('transaksiTolak') }}",
             data : {
                 id : id
@@ -260,32 +258,6 @@
         const pesan_hapus = "Jika dihapus data akan hilang";
 
         swalAction(route,tabel,id,pesan_hapus);
-        // swal({
-        //     title: "Are you sure?",
-        //     text: "Jika dihapus maka data akan hilang",
-        //     icon: "warning",
-        //     buttons: true,
-        //     dangerMode: true,
-        //     })
-        //     .then((willDelete) => {
-        //     if (willDelete) {
-        //         $.ajax({
-        //             type : 'GET',
-        //             url  : "{{ route('transaksiDelete') }}",
-        //             data : {
-        //                 id : id
-        //             },
-        //             dataType: 'json',
-        //             success : (data)=>{
-        //                 swal("Sukses", "Data terhapus", "warning");
-        //                 $('.tableTransaksi').DataTable().ajax.reload();
-        //             }
-        //         })
-
-        //     } else {
-        //         swal("Aman", "Data Anda aman", "success");
-        //     }
-        // });
     }
 
     function deleteMulti(){

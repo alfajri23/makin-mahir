@@ -35,16 +35,17 @@
                     </div>
                     <div class="col-12 col-md-3">
                         <h6 class="font-xsss fw-500 text-grey-600 ls-2">
+                            <del>{{$data->harga_bias == null ? "" : 'Rp' .number_format($data->harga_bias)}}</del>
+                        </h6>
+                        <h1 class="fw-700 font-md d-block lh-1 text-success mb-2">
+                            
                             @if ($data->harga == '#')
-                                donasi
+                                Bayar<br> suka-suka
                             @elseif ($data->harga == null)
                                 gratis
                             @else
-                            <del>Rp. {{number_format($data->harga)}}<del>
+                                Rp. {{number_format($data->harga)}}
                             @endif
-                        </h6>
-                        <h1 class="fw-700 font-md d-block lh-4 mb-2">
-                            {{$data->harga_promo == null ? "" : number_format($data->harga_promo)}}
                         </h1>
                         <a href="{{route('pembayaranCek',$data->produk->id)}}" class="btn btn-block border-0 w-100 bg-success p-3 text-white fw-600 rounded-lg d-inline-block font-xssss btn-light">{{$data->harga == null ? 'Daftar' : 'Beli sekarang'}}</a>
                     </div>

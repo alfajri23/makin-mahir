@@ -21,7 +21,25 @@
                             <img src="{{asset($dt->poster)}}" alt="image" class="w-100">
                         </div>
                         <div class="card-body pt-0">
-                            <span class="font-xsss fw-700 pl-3 pr-3 ls-2 lh-32 d-inline-block text-success float-right">{{number_format($dt->harga)}}</span>
+                            <div class="float-right">
+                                @if($dt->harga_bias)
+                                <p class="font-xssss fw-400 pl-3 mb-0 text-muted text-right">
+                                    <del>Rp. {{number_format($dt->harga_bias)}}</del>
+                                </p>
+                                @endif
+                                <p class="font-xss fw-700 pl-3 lh-1 d-inline-block text-success ">
+                                    @if ($dt->harga == '#')
+                                        Bayar<br> suka-suka
+                                    @elseif ($dt->harga == null)
+                                        gratis
+                                    @else
+                                        Rp. {{number_format($dt->harga)}}
+                                    @endif
+                                </p>
+                            </div>
+                            
+                            
+                            
                             <h4 class="fw-700 font-xss mt-3 lh-20 mt-0">
                                 {{-- beri pembeda route --}}
                                 <a href="{{route('memberProdukDetail',$dt->produk->id)}}" class="text-dark text-grey-900">{{$dt->judul}}</a>

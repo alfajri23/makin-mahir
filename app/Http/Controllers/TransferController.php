@@ -19,6 +19,8 @@ use App\Models\KelasEnroll;
 use App\Models\KonsultasiEnroll;
 use App\Models\TemplateEnroll;
 
+use Illuminate\Support\Facades\File;
+
 class TransferController extends Controller
 {
 
@@ -115,10 +117,8 @@ class TransferController extends Controller
                 })
                 ->addColumn('aksi', function($row){
 
-
-                    // $tel = $row->user->telepon;
-                    // $tel = Telepon::changeTo62($tel);
-                    $tel = '';
+                    $tel = $row->telepon;
+                    $tel = Telepon::changeTo62($tel);
 
                     $btnDel = '
                         <a onclick="deletes('.$row['id'].')" class="delete btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></a>
@@ -162,12 +162,11 @@ class TransferController extends Controller
 
         if($data->produk->id_kategori == 2 || $data->produk->id_kategori == 3){
             $id_produk = $this->cek_produk_bundling($data->produk);
-
-
             //JIka paket bundling maka id_expert tidak ada
 
+
             foreach($id_produk as $id){
-                if(count($id_produk)>0){
+                if(count($id_produk)>1){
                     $enroll = EventEnroll::create([
                         'id_user' => $data->id_user,
                         'id_event' => $id,
@@ -228,8 +227,34 @@ class TransferController extends Controller
     public function transaksi_tolak(Request $request){
         $data = Transaksi::find($request->id);
 
-        $data->status_bayar = 'ditolak';
+        $data->status = 'ditolak';
         $data->save();
+
+        return response()->json([
+            'data' => 'sukses'
+        ]);
+
+        //! Hapus menghapus enroll
+    }
+
+    function transaksi_delete(Request $request){
+        $data = Transaksi::find($request->id);
+        File::delete($data->bukti);
+
+
+
+        $data->forceDelete();
+
+        return response()->json([
+            'data' => 'sukses',
+            'message' => ' Data terhapus'
+        ]);
+    }
+
+    function transaksi_delete_multi(Request $request){
+        $req = json_decode($request->data, true);
+        $data = Transaksi::whereIn('id', $req)->delete();
+        $data->delete();
 
         return response()->json([
             'data' => 'sukses'
@@ -267,38 +292,6 @@ class TransferController extends Controller
         return response()->json([
             'data' => $response,
 
-        ]);
-    }
-
-    function transaksi_delete(Request $request){
-        $data = Transaksi::find($request->id);
-
-        //! Besok dihapus
-        // if($data->tipe == 'webinar'){
-        //     $daftar = PendaftaranWebinar::find($data->id_pendaftaran);
-        // }elseif($data->tipe == 'konsultasi'){
-        //     $daftar = PendaftaranKonsultasi::find($data->id_pendaftaran);
-        // }elseif($data->tipe == 'video'){
-        //     $daftar = PendaftaranVideo::find($data->id_pendaftaran);
-        // }
-
-
-        $data->forceDelete();
-        // $daftar->forceDelete();
-
-        return response()->json([
-            'data' => 'sukses',
-            'message' => ' Data terhapus'
-        ]);
-    }
-
-    function transaksi_delete_multi(Request $request){
-        $req = json_decode($request->data, true);
-        $data = Transaksi::whereIn('id', $req)->delete();
-        $data->delete();
-
-        return response()->json([
-            'data' => 'sukses'
         ]);
     }
 

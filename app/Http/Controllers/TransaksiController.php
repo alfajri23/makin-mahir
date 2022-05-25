@@ -100,6 +100,7 @@ class TransaksiController extends Controller
             'id_user' => $request->session()->get('auth.id_user'),
             'tanggal_bayar' => now(),
             'jawaban' => $jawaban,
+            'telepon' => $request->telepon
         ];
 
 
@@ -131,6 +132,7 @@ class TransaksiController extends Controller
             'status' => 'pending',
             'id_user' => $request->session()->get('auth.id_user'),
             'tanggal_bayar' => now(),
+            'telepon' => $request->telepon
         ];
 
         $datas = UploadFile::file($request,'bukti','storage/transaksi',$datas);
@@ -174,6 +176,7 @@ class TransaksiController extends Controller
             'id_user' => $request->session()->get('auth.id_user'),
             'tanggal_bayar' => now(),
             'jawaban' => $jawaban,
+            'telepon' => $request->telepon
         ];
 
         $filed = [];
@@ -202,8 +205,6 @@ class TransaksiController extends Controller
 
             $datas['file_tambahan'] = $file_name;
         }
-
-        //dd($datas);
 
         $data_transaksi = Transaksi::create($datas);
 

@@ -57,7 +57,6 @@ class CVController extends Controller
         $training = CVTraining::where('id_user',auth()->user()->id)->get();
         $organisasi = CVOrganisasi::where('id_user',auth()->user()->id)->get();
         $user = User::find(auth()->user()->id); 
-        $image = base64_encode(file_get_contents($user->foto));
 
         $request->id = $request->id == null ? 0 : $request->id;
         $cvUser = CVUser::updateOrCreate(['id_user' => auth()->user()->id],[
@@ -65,20 +64,20 @@ class CVController extends Controller
         ]);
 
         if($request->session()->get('cv') == 1){
-            $pdf = PDF::loadview('pages.cv.print.cv_basic1_print',compact('user','organisasi','kerja','edukasi','training','skil','prestasi','image'));
+            $pdf = PDF::loadview('pages.cv.print.cv_basic1_print',compact('user','organisasi','kerja','edukasi','training','skil','prestasi'));
             return $pdf->stream();
             return $pdf->download('cv-basic.pdf');
 
         }elseif($request->session()->get('cv') == 2){
-            $pdf = PDF::loadview('pages.cv.print.cv_modern1_print',compact('user','organisasi','kerja','edukasi','training','skil','prestasi','image'));
+            $pdf = PDF::loadview('pages.cv.print.cv_modern1_print',compact('user','organisasi','kerja','edukasi','training','skil','prestasi'));
             return $pdf->stream();
             return $pdf->download('cv-modern.pdf');
         }elseif($request->session()->get('cv') == 3){
-            $pdf = PDF::loadview('pages.cv.print.cv_ats_print',compact('user','organisasi','kerja','edukasi','training','skil','prestasi','image'));
+            $pdf = PDF::loadview('pages.cv.print.cv_ats_print',compact('user','organisasi','kerja','edukasi','training','skil','prestasi'));
             return $pdf->stream();
             return $pdf->download('cv-ats.pdf');
         }else{
-            $pdf = PDF::loadview('pages.cv.print.cv_green',compact('user','organisasi','kerja','edukasi','training','skil','prestasi','image'));
+            $pdf = PDF::loadview('pages.cv.print.cv_green',compact('user','organisasi','kerja','edukasi','training','skil','prestasi'));
             return $pdf->stream();
             return $pdf->download('cv-ats.pdf');
         }

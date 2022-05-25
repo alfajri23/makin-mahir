@@ -50,8 +50,8 @@
             </div>
     
             <div class="form-group">
-                <label for="exampleFormControlInput1">Harga promo</label>
-                <input type="text" onkeyup="currencyFormat(this)" name="harga_promo" value="{{$data->harga_promo}}" class="form-control" placeholder="">
+                <label for="exampleFormControlInput1">Harga bias</label>
+                <input type="text" onkeyup="currencyFormat(this)" name="harga_bias" value="{{$data->harga_bias}}" class="form-control" placeholder="">
             </div>
     
             <div class="form-group">

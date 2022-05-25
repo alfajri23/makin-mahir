@@ -84,6 +84,11 @@
                         <li>EWALLET= GOPAY, OVO, DANA : 08579993240 A.N. Tri Astuti</li>
                     </ul>
 
+                    <div class="form-group my-4">
+                        <label for="exampleInputEmail1" class="fw-600 mb-0">Telepon</label>
+                        <input type="tel"  pattern="08\d{9,10}" maxlength="13" minlength="10" name="telepon" class="form-control" required>
+                    </div>
+
 
                     <div class="custom-file mt-3">
                         <label class="font-weight-bold" for="customFile">Bukti file</label><br>

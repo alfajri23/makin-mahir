@@ -61,12 +61,12 @@
                 @php
                     $pertanyaan = explode(",",$data->pertanyaan);
                     $tipe = explode(",",$data->tipe);
-                    //dd($pertanyaan);
-                    //dd($tipe);
+                    $file = explode(",",$data->file);
+
                 @endphp
 
                 @for ($i=0;$i<count($pertanyaan);$i++)
-                <div class="row">
+                <div class="row align-items-end my-2">
                     <div class="col-6">
                       <label>Pertanyaan</label>
                       <input type="text" class="form-control" name="pertanyaan[]" value="{{$pertanyaan[$i]}}">
@@ -75,9 +75,15 @@
                       <label>Tipe</label>
                       <input type="text" class="form-control" name="tipe[]" value="{{$tipe[$i]}}">
                     </div>
-                    <div class="col-4">
+                    <div class="col-3">
+                        <img class="w-100" src="{{$file[$i] != null ? asset($file[$i]) : ''}}" alt="" srcset="">
                       <label>File</label>
-                      <input type="file" class="form-control" name="file[]">
+                      <input type="file" class="" name="file[]">
+                    </div>
+                    <div class="col-1">
+                        <a href="{{route('formSettingDelete',['id'=>$data->id,'index'=>$i])}}" class="btn btn-outline-danger mt-4">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
                     </div>
                 </div>
                 @endfor

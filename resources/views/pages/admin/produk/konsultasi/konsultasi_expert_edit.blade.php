@@ -22,6 +22,12 @@
             <label for="exampleFormControlSelect1">Judul</label>
             <input type="text" name="judul" value="{{$data->judul}}" class="form-control">
         </div>
+
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Harga bias</label>
+            <input type="text" onkeyup="currencyFormat(this)" name="harga_bias" value="{{$data->harga_bias}}" class="form-control">
+        </div>
+
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Harga</label>
             <input type="text" onkeyup="currencyFormat(this)" name="harga" value="{{$data->harga}}" class="form-control">

@@ -16,7 +16,7 @@ class BlogController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->only(['create']);;
+        $this->middleware('auth')->only(['create']);
     }
     public function index(Request $request){
         // $data = Blog::latest()->get();

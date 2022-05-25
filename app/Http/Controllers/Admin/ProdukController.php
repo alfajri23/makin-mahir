@@ -415,7 +415,7 @@ class ProdukController extends Controller
                 'harga'=> str_replace(",", "", $request->harga),
                 'tanggal'=>$request->tanggal,
                 'waktu' =>$request->waktu,
-                'harga_promo' => str_replace(",", "", $request->harga_promo),
+                'harga_bias' => str_replace(",", "", $request->harga_bias),
                 'deskripsi'=>$request->desc,
                 'pemateri' =>$request->pemateri,
                 'poster' => $files,
@@ -427,7 +427,7 @@ class ProdukController extends Controller
                 'id_kategori' => $request->tipe,
                 'id_produk' => $event->id,
                 'nama' => $request->judul,
-                'harga' => $request->harga_promo == null ? str_replace(",", "", $request->harga) : str_replace(",", "", $request->harga_promo)
+                'harga' => str_replace(",", "", $request->harga)
             ]);
 
 

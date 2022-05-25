@@ -182,13 +182,14 @@
         }
 
         .list-group-item{
-          cursor: pointer;
+          cursor: move;
         }
 
         .prior-section{
           justify-content: center;
           align-items: center;
         }
+
 
     </style>
   </head>

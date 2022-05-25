@@ -14,10 +14,6 @@
     <div class="row">
         <div class="col-12 my-2">
             <div class="card shadow-xss border-0 p-5 rounded-lg">
-                <span class="btn-round-xxxl alert-success">
-                    <img src="{{asset($user->foto)}}" alt="image" class="float-right p-1 bg-white rounded-circle w-100">
-                </span>
-
                 <div class="mt-3">
                     <span class="float-right"><i class="fa-solid fa-pencil" onclick="changeName()"></i></span>
                     <h2 class="fw-700 font-lg text-grey-900" id="showNama">{{$user->nama}}</h2>                           

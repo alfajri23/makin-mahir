@@ -13,6 +13,7 @@
                     <th>Tipe</th>
                     <th>Nama</th>
                     <th>Email</th>
+                    <th>Tanggal</th>
                     <th>Status bayar</th>
                     <th>Aksi</th>
                 </tr>
@@ -77,9 +78,10 @@
                     searchable: true,
                     width: "5%"
                 },
-                {data: 'tipe', name: 'tipe'},
-                {data: 'judul', name: 'judul',width:"20%"},
+                {data: 'tipe', name: 'tipe',width:"10%"},
+                {data: 'judul', name: 'judul',width:"40%"},
                 {data: 'email', name: 'email',width: "10%"},
+                {data: 'tanggal', name: 'tanggal',width: "10%"},
                 {data: 'bayar', name: 'bayar',width: "5%"},
                 {data: 'aksi', name: 'aksi',width: "10%"},
             ],
@@ -112,7 +114,7 @@
         })
     })
 
-    function detail(id){
+    function detail(id,id_enroll){
         $.ajax({
             type : 'GET',
             url  : "{{ route('transaksiDetail') }}",
@@ -135,14 +137,14 @@
                 if(datas.status != 'lunas'){
                     konfirmasi = `
                     <div class="btn-group" role="group" aria-label="Basic example">
-                        <button onclick="tolak(${datas.id})" class="btn btn-danger btn-sm">Tolak</button>
+                        <button onclick="tolak(${datas.id},${id_enroll})" class="btn btn-danger btn-sm">Tolak</button>
                         <button onclick="konfirmasi_bank(${datas.id})" class="btn btn-success">Konfirmasi</button>
                     </div>
                     `;    
                 }else{
                     konfirmasi = `
                     <div class="btn-group" role="group" aria-label="Basic example">
-                        <button onclick="tolak(${datas.id})" class="btn btn-danger btn-sm">Tolak</button>
+                        <button onclick="tolak(${datas.id},${id_enroll})" class="btn btn-danger btn-sm">Tolak</button>
                     </div>
                     `; 
                 }
@@ -163,6 +165,37 @@
                 
             }
         });
+
+    }
+    
+    
+    function tolak(id_transaksi,id_enroll){
+        $.ajax({
+            type : 'GET',
+            url  : "{{ route('transaksiTolak') }}",
+            data : {
+                id : id_transaksi
+            },
+            dataType: 'json',
+            success : (data)=>{
+                console.log(data)
+                $.ajax({
+                    type : 'GET',
+                    url  : "{{ route('deleteEnrollEvent') }}",
+                    data : {
+                        id : id_enroll
+                    },
+                    dataType: 'json',
+                    success : (data)=>{
+                        swal('datas', "Pembayaran telah dikonfirmasi", "success");
+                        $('#modalDetail').modal('hide');
+                        $('.tablePendaftaran').DataTable().ajax.reload();
+                    }
+                });
+            }
+        });
+
+
 
     }
 
