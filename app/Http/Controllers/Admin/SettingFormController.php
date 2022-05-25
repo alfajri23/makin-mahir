@@ -38,8 +38,6 @@ class SettingFormController extends Controller
         $file = explode(",",$filed->file);
         $tipe = explode(",",$filed->tipe);
 
-        //dd($pertanyaan);
-
         unset($pertanyaan[$request->index]);
         unset($jawaban[$request->index]);
         unset($tipe[$request->index]);

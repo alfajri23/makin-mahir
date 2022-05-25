@@ -343,7 +343,7 @@
                         <div class="feedback-slider2 owl-carousel owl-theme dot-none right-nav pb-4 nav-xs-none">
                             <div class="owl-items bg-transparent">
                                 <div class="card w-100 p-0 bg-transparent text-left border-0">
-                                    <div class="card-body p-5 bg-white shadow-xss rounded-lg triangle-after">
+                                    <div class="card-body p-5 bg-white shadow-sm rounded-lg">
                                         <p class="font-xsss fw-500 text-grey-700 lh-30 mt-0 mb-0 ">"Bahkan ada beberapa pertanyaan yang menurut saya tuh itu gak ada gitu, biasanya kan ada yang muncul di youtube gitu, kayak beberapa pertanyaan terkait yang sering ditanyain sama HR. Tapi tadi kaya wow, ini bingung jawabnya gimana. Untungnya tadi udah dikasih solusi sih pak terkait pertanyaan tersebut"</p>
                                     </div>
 
@@ -356,7 +356,7 @@
 
                             <div class="owl-items bg-transparent">
                                 <div class="card w-100 p-0 bg-transparent text-left border-0 ">
-                                    <div class="card-body p-5 bg-white shadow-xss rounded-lg triangle-after">
+                                    <div class="card-body p-5 bg-white shadow-sm rounded-lg">
                                         <p class="font-xsss fw-500 text-grey-700 lh-30 mt-0 mb-0 ">"Jadi karena ngikutin Kelas Bedah CV ini, aku jadi lebih tau mana yang harus aku masukin ke CV, mana yang enggak. Jadi bikin CV aku lebih ATS Friendly. Nah, walaupun ini berbayar, tapi menurut aku tuh ini worth it banget, kalian ga bakal nyesel gitu loh"</p>
                                     </div>
 
@@ -369,7 +369,7 @@
 
                             <div class="owl-items bg-transparent">
                                 <div class="card w-100 p-0 bg-transparent text-left border-0">
-                                    <div class="card-body p-5 bg-white shadow-xss rounded-lg triangle-after">
+                                    <div class="card-body p-5 bg-white shadow-sm rounded-lg">
                                         <p class="font-xsss fw-500 text-grey-700 lh-30 mt-0 mb-0 ">"Kita tuh butuh prakteknya juga, gak cuma teorinya doank. Sekarang kan teorinya udah banyak, di google udah ada, di buku udah ada, kita butuh prakteknya juga. Kalo yang kaya gini saya baru pertama kali nih saya ikut yang kaya gini. Kalau menurut saya, yang kaya gini tuh cukup membantu sih mas"</p>
                                     </div>
 

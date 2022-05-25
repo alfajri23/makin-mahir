@@ -93,21 +93,21 @@
                     title: '',
                     exportOptions: {
                         header : false,
-                        columns : [ 1,2,3,4,5,6,8,9]
+                        columns : [ 0,1,2,3,4,5]
                     },
                 },
                 {
                     extend: 'excelHtml5',
                     title: 'Data Konsultasi',
                     exportOptions: {
-                        columns : [ 1,2,3,4,5,6,8,9]
+                        columns : [ 0,1,2,3,4,5]
                     },
                 },
                 {
                     extend: 'csvHtml5',
                     title: 'Data Konsultasi',
                     exportOptions: {
-                        columns : [ 1,2,3,4,5,6,8,9]
+                        columns : [ 0,1,2,3,4,5]
                     },
                 },
             ]

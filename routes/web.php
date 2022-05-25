@@ -7,6 +7,10 @@ use App\Http\Controllers\Notifications;
 use App\Models\User;
 use App\Notifications\WelcomeEmailNotification;
 
+
+use App\Exports\EventEnrollExport;
+use Maatwebsite\Excel\Facades\Excel;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -458,4 +462,8 @@ Route::post('pendaftaran/beduk', [Controllers\TransaksiController::class,'pembay
 //     $user = User::find(8);
 //     $user->notify(new WelcomeEmailNotification($user));
 // });
+
+Route::get('export-beduk', function(){
+    return Excel::download(new EventEnrollExport, 'beduk.xlsx');
+});
 
