@@ -23,6 +23,11 @@
 
     }
 
+    /* .owl-item{
+        width:400px !important;
+    } */
+
+
 </style>
     
 
@@ -160,7 +165,13 @@
         <div class="container">
               <div class="row">
                 <div class="col-lg-6">
-                    <img src="{{asset('asset/img/program/zoom_beduk.png')}}" alt="image" class="img-fluid aos-init" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="500">
+                    <div class="banner-slider owl-carousel owl-theme owl-nav-link rounded-lg overflow-hidden">
+                        @for ($i=0;$i<4;$i++)   
+                        <div class="owl-items" >
+                            <img src="{{asset('asset/img/program/zoom_beduk.png')}}" alt="image" class="img-fluid">
+                        </div>
+                        @endfor   
+                    </div>
                 </div>
                 <div class="col-lg-4 offset-lg-1">
                     <span class="font-xsssss mt-2 fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-xl ls-2 alert-success d-inline-block text-success mr-1 aos-init" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">Beduk</span>
@@ -175,9 +186,19 @@
     <div class="feature-wrapper layer-after my-5  pt-lg--7 pt-5 mt-4">
         <div class="container">
               <div class="row">
-                <div class="col-lg-7 order-lg-2 offset-lg-1">
-                    <img src="{{asset('asset/img/program/zoom_konsul.jpeg')}}" alt="image" class="w-100 aos-init" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="500">
+                <div class="col-lg-6 order-lg-2 offset-lg-1">
+                    <div class="banner-slider owl-carousel owl-theme owl-nav-link rounded-lg overflow-hidden">
+                        @for ($i=0;$i<4;$i++)   
+                        <div class="owl-items" >
+                            <img src="{{asset('asset/img/program/zoom_beduk.png')}}" alt="image" class="img-fluid">
+                        </div>
+                        @endfor   
+                    </div>
                 </div>
+
+                {{-- <div class="col-lg-7 order-lg-2 offset-lg-1">
+                    <img src="{{asset('asset/img/program/zoom_konsul.jpeg')}}" alt="image" class="w-100 aos-init" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="500">
+                </div> --}}
                 
                 <div class="col-lg-4 order-lg-1">
                     <span class="font-xsssss mt-2 fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-xl ls-2 alert-success d-inline-block text-success aos-init" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">Konsultasi</span>
@@ -275,8 +296,8 @@
                 </div>
 
                 <div class="container">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-6 mb-4">
+                    {{-- <div class="row owl-carousel owl-theme overflow-visible dot-none">
+                        <div class="owl-items col-lg-4 col-md-6 mb-4">
                             <div class="card w-100 p-5 text-left border-0 shadow-md rounded-lg">
                                 <div class="card-body pl-0 pt-0">
                                     <img src="{{asset('asset/img/program/testimoni/testi1.jpg')}}" alt="user" class="w45 float-left mr-3">
@@ -286,7 +307,7 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="owl-items col-lg-4 col-md-6 mb-4">
                             <div class="card w-100 p-5 text-left border-0 shadow-md rounded-lg">
                                 <div class="card-body pl-0 pt-0">
                                     <img src="{{asset('asset/img/program/testimoni/testi2.jpg')}}" alt="user" class="w45 float-left mr-3">
@@ -296,7 +317,7 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="owl-items col-lg-4 col-md-6 mb-4">
                             <div class="card w-100 p-5 text-left border-0 shadow-md rounded-lg">
                                 <div class="card-body pl-0 pt-0">
                                     <img src="{{asset('asset/img/program/testimoni/testi3.jpg')}}" alt="user" class="w45 float-left mr-3">
@@ -304,6 +325,63 @@
                                 </div>
                                 <p class="font-xsss fw-400 text-grey-600 lh-28 mt-0 mb-0 ">"Kita tuh butuh prakteknya juga, gak cuma teorinya doank. Sekarang kan teorinya udah banyak, di google udah ada, di buku udah ada, kita butuh prakteknya juga. Kalo yang kaya gini saya baru pertama kali nih saya ikut yang kaya gini. Kalau menurut saya, yang kaya gini tuh cukup membantu sih mas"</p>
                             </div>
+                        </div>
+
+                        <div class="owl-items col-lg-4 col-md-6 mb-4">
+                            <div class="card w-100 p-5 text-left border-0 shadow-md rounded-lg">
+                                <div class="card-body pl-0 pt-0">
+                                    <img src="{{asset('asset/img/program/testimoni/testi3.jpg')}}" alt="user" class="w45 float-left mr-3">
+                                    <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Yola Yulliana</h4>    
+                                </div>
+                                <p class="font-xsss fw-400 text-grey-600 lh-28 mt-0 mb-0 ">"Kita tuh butuh prakteknya juga, gak cuma teorinya doank. Sekarang kan teorinya udah banyak, di google udah ada, di buku udah ada, kita butuh prakteknya juga. Kalo yang kaya gini saya baru pertama kali nih saya ikut yang kaya gini. Kalau menurut saya, yang kaya gini tuh cukup membantu sih mas"</p>
+                            </div>
+                        </div>
+
+                    </div> --}}
+
+                    <div class="col-lg-12">
+                        <div class="feedback-slider2 owl-carousel owl-theme dot-none right-nav pb-4 nav-xs-none">
+                            <div class="owl-items bg-transparent">
+                                <div class="card w-100 p-0 bg-transparent text-left border-0">
+                                    <div class="card-body p-5 bg-white shadow-xss rounded-lg triangle-after">
+                                        <p class="font-xsss fw-500 text-grey-700 lh-30 mt-0 mb-0 ">"Bahkan ada beberapa pertanyaan yang menurut saya tuh itu gak ada gitu, biasanya kan ada yang muncul di youtube gitu, kayak beberapa pertanyaan terkait yang sering ditanyain sama HR. Tapi tadi kaya wow, ini bingung jawabnya gimana. Untungnya tadi udah dikasih solusi sih pak terkait pertanyaan tersebut"</p>
+                                    </div>
+
+                                    <div class="card-body p-0 mt-5 bg-transparent">
+                                        <img src="{{asset('asset/img/program/testimoni/testi1.jpg')}}" alt="user" class="w45 float-left mr-3">
+                                        <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Kartika fitri</h4>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="owl-items bg-transparent">
+                                <div class="card w-100 p-0 bg-transparent text-left border-0 ">
+                                    <div class="card-body p-5 bg-white shadow-xss rounded-lg triangle-after">
+                                        <p class="font-xsss fw-500 text-grey-700 lh-30 mt-0 mb-0 ">"Jadi karena ngikutin Kelas Bedah CV ini, aku jadi lebih tau mana yang harus aku masukin ke CV, mana yang enggak. Jadi bikin CV aku lebih ATS Friendly. Nah, walaupun ini berbayar, tapi menurut aku tuh ini worth it banget, kalian ga bakal nyesel gitu loh"</p>
+                                    </div>
+
+                                    <div class="card-body p-0 mt-5 bg-transparent">
+                                        <img src="{{asset('asset/img/program/testimoni/testi2.jpg')}}" alt="user" class="w45 float-left mr-3">
+                                        <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Alya Raihanna</h4>    
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="owl-items bg-transparent">
+                                <div class="card w-100 p-0 bg-transparent text-left border-0">
+                                    <div class="card-body p-5 bg-white shadow-xss rounded-lg triangle-after">
+                                        <p class="font-xsss fw-500 text-grey-700 lh-30 mt-0 mb-0 ">"Kita tuh butuh prakteknya juga, gak cuma teorinya doank. Sekarang kan teorinya udah banyak, di google udah ada, di buku udah ada, kita butuh prakteknya juga. Kalo yang kaya gini saya baru pertama kali nih saya ikut yang kaya gini. Kalau menurut saya, yang kaya gini tuh cukup membantu sih mas"</p>
+                                    </div>
+
+                                    <div class="card-body p-0 mt-5 bg-transparent">
+                                        <img src="{{asset('asset/img/program/testimoni/testi3.jpg')}}" alt="user" class="w45 float-left mr-3">
+                                        <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Yola Yulliana</h4>    
+                                    </div>
+                                </div>
+                            </div>
+
+                             
+                             
                         </div>
                     </div>
                 </div>
