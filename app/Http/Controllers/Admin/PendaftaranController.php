@@ -255,22 +255,37 @@ class PendaftaranController extends Controller
                 ';
                 return $nama;
             })
+            ->addColumn('tanggal', function($row){
+                $nama = '
+                <p>'.date_format(date_create($row->created_at),"d M Y").'</p>
+                ';
+                return $nama;
+            })
             ->addColumn('aksi', function($row){
                 $actionBtn = '
                     <div class="">
-                        <a onclick="detail('.$row->transaksi->id.')" class="btn btn-secondary btn-sm"><i class="fa-solid fa-circle-info"></i></a>
-                        <a href="https://wa.me/'.Telepon::changeTo62($row->user->telepon).'" target="_blank" class="btn btn-success btn-sm"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a onclick="detail('.$row->transaksi->id.','.$row->id.')" class="btn btn-secondary btn-sm"><i class="fa-solid fa-circle-info"></i></a>
+                        <a href="https://wa.me/'.Telepon::changeTo62($row->transaksi->telepon).'" target="_blank" class="btn btn-success btn-sm"><i class="fa-brands fa-whatsapp"></i></a>
                     </div>
                 ';
                 
                 return $actionBtn;
             })
-            ->rawColumns(['judul','email','tipe','aksi','bayar'])
+            ->rawColumns(['judul','email','tipe','aksi','bayar','tanggal'])
             ->make(true);
         
         }
 
         return view('pages.admin.pendaftaran.pendaftaran_event');
+    }
+
+    public function deleteEnrollEvent(Request $request){
+        $data = EventEnroll::find($request->id);
+        $data->forceDelete();
+
+        return response()->json([
+            'data' => 'sukses menghapus'
+        ]);
     }
 
     //* Kelas
@@ -320,6 +335,7 @@ class PendaftaranController extends Controller
         return view('pages.admin.pendaftaran.pendaftaran_kelas',compact('datas'));
     }
 
+    //* Kosultasi
     public function konsultasi(Request $request){
     
         if ($request->ajax()) {

@@ -81,6 +81,11 @@
                         @endfor
                     @endempty
 
+                    <div class="form-group my-4">
+                        <label for="exampleInputEmail1" class="fw-600 mb-0">Telepon</label>
+                        <input type="tel"  pattern="08\d{9,10}" maxlength="13" minlength="10" name="telepon" class="form-control" required>
+                    </div>
+
                     <div>
                         <input type="hidden" name="id_produk" value="{{$data->id}}">
                         <input type="hidden" name="nama" value="{{$data->nama}}">

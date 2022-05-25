@@ -30,6 +30,43 @@ class SettingFormController extends Controller
         return view('pages.admin.setting.form.add_form',compact('kategori','data'));
     }
 
+    public function delete(Request $request){
+        $filed = FormSetting::find($request->id);
+
+        $pertanyaan = explode(",",$filed->pertanyaan);
+        $jawaban = explode(",",$filed->jawaban);
+        $file = explode(",",$filed->file);
+        $tipe = explode(",",$filed->tipe);
+
+        //dd($pertanyaan);
+
+        unset($pertanyaan[$request->index]);
+        unset($jawaban[$request->index]);
+        unset($tipe[$request->index]);
+
+
+        unset($file[$request->index]);
+
+        //$pertanyaan = array_splice($pertanyaan, $request->index, 1);
+        // $jawaban = array_splice($jawaban, $request->index, 1);
+        // $file = array_splice($file, $request->index, 1);
+
+        $datas = [
+            'id_produk_kategori' => $filed->id_produk_kategori,
+            'pertanyaan' => implode(",",$pertanyaan),
+            'tipe' => implode(",",$tipe),
+            'file' => implode(",",$file),
+            'tipe' => implode(",",$tipe),
+        ];
+
+        //dd($datas);
+
+        $data = FormSetting::updateOrCreate(['id'=>$request->id],$datas);
+
+        return redirect()->back();
+
+    }
+
     public function store(Request $request){
         $pertanyaan = implode(",",$request->pertanyaan);
         $tipe = implode(",",$request->tipe);
@@ -48,10 +85,10 @@ class SettingFormController extends Controller
                 if(array_key_exists($i,$File)){
                     if(!empty($request->file)){
                         $nama_file = $File[$i]->getClientOriginalName();
-                        $tujuan_upload_server = public_path('asset/event/beduk');
-                        $tujuan_upload = 'asset/event/beduk';
+                        $tujuan_upload_server = public_path('storage/setting/form');
+                        $tujuan_upload = 'storage/setting/form';
                         $files = $tujuan_upload . '/'. $nama_file;
-                        $File[$i]->move($tujuan_upload_server,$nama_file);
+                        //$File[$i]->move($tujuan_upload_server,$nama_file);
                         $filed[$i] = $files;
                     }
                 }else{
@@ -67,9 +104,10 @@ class SettingFormController extends Controller
             }
         //}
 
-        //dd($filed);
 
         $file = implode(",",$filed);
+        $file = ',' . $file;
+
 
         $datas = [
             'id_produk_kategori' => $request->id_produk_kategori,
@@ -77,6 +115,8 @@ class SettingFormController extends Controller
             'tipe' => $tipe,
             'file' => $file,
         ];
+
+        dd($datas);
         
         $data = FormSetting::updateOrCreate(['id'=>$request->id],$datas);
 

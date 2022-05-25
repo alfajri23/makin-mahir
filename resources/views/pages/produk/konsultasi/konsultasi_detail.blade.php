@@ -21,9 +21,19 @@
                         <h2 class="text-grey-800 fw-600 font-lg my-0 lh-3 " >{{$data->expert->nama}}</h2>
                     </div>
                     <div class="col-12 col-sm-4">
-                        <p class="font-xss fw-600 my-0 text-success">
-                            Rp.{{number_format($data->harga)}}
-                        </p>
+                        <h6 class="font-xsss fw-500 text-grey-600 ls-2">
+                            <del>{{$data->harga_bias == null ? "" : 'Rp' .number_format($data->harga_bias)}}</del>
+                        </h6>
+                        <h1 class="fw-700 font-md d-block lh-1 text-success mb-2">
+                            
+                            @if ($data->harga == '#')
+                                Bayar<br> suka-suka
+                            @elseif ($data->harga == null)
+                                gratis
+                            @else
+                                Rp. {{number_format($data->harga)}}
+                            @endif
+                        </h1>
                     </div>
                 </div>
                

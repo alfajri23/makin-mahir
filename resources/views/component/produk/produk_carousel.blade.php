@@ -15,7 +15,15 @@
                     </div>
                     <div class="card-body pt-0">
                         <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-danger d-inline-block text-danger mr-1">{{$dt->tipe != null ? $dt->tipe : $tipe}}</span>
-                        <span class="font-xss fw-700 pl-3 pr-3 ls-2 lh-32 d-inline-block text-success float-right"><span class="font-xsssss">Rp.</span> {{$dt->harga}}</span>
+                        <span class="font-xss fw-700 pl-3 pr-3 lh-1 d-inline-block text-success float-right">
+                            @if ($dt->harga == '#')
+                                Bayar<br> suka-suka
+                            @elseif ($dt->harga == null)
+                                gratis
+                            @else
+                                Rp. {{number_format($dt->harga)}}
+                            @endif
+                        </span>
                         <h4 class="fw-700 font-xss mt-3 lh-28 mt-0">
                             <a href="{{route('memberProdukDetail',$dt->produk->id)}}" class="text-dark text-grey-900">{{$dt->judul}}</a>
                         </h4>

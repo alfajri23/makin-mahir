@@ -44,8 +44,8 @@
             </div>
 
             <div class="form-group">
-                <label for="exampleFormControlInput1">Harga promo</label>
-                <input type="text" onkeyup="currencyFormat(this)" name="harga_promo" class="form-control" placeholder="Kosongkan tidak ada">
+                <label for="exampleFormControlInput1">Harga bias</label>
+                <input type="text" onkeyup="currencyFormat(this)" name="harga_bias" class="form-control" placeholder="Kosongkan tidak ada">
             </div>
     
             <div class="form-group">

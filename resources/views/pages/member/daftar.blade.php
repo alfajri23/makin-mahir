@@ -96,6 +96,11 @@
                             {{-- <label class="custom-file-label" for="customFile">Bukti file</label> --}}
                             <input type="file" name="bukti" class="" required>
                         </div>
+
+                        <div class="form-group my-4">
+                            <label for="exampleInputEmail1" class="fw-600 mb-0">Telepon</label>
+                            <input type="tel"  pattern="08\d{9,10}" maxlength="13" minlength="10" name="telepon" class="form-control" required>
+                        </div>
     
                         <div>
                             <input type="hidden" name="id_produk" value="{{$data->id}}">
@@ -136,7 +141,7 @@
                                    </th>
                                    @if ($data->harga == '#')
                                         <td>
-                                            <input class="form-control" type="text" name="harga" placeholder="Isi harga sesuka Anda">
+                                            <input class="form-control" type="text" name="harga" placeholder="Isi harga sesuka Anda" required>
                                         </td>
                                     @elseif ($data->harga == null)
                                         <td class="text-right text-grey-700 fw-600 font-xss">Gratis</td>

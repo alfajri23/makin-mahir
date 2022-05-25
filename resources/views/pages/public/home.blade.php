@@ -18,6 +18,11 @@
         color:#777 !important;
     }
 
+    .hover:hover{
+        background-color:#fee6b5;
+
+    }
+
 </style>
     
 
@@ -89,7 +94,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6">
-                    <a href="{{route('produkListEvent')}}" class="card mb-4 w-100 border-0 pt-4 pb-4 pr-4 pl-7 shadow-xss rounded-lg aos-init" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="500">
+                    <a href="{{route('produkListEvent')}}" class="hover card mb-4 w-100 border-0 pt-4 pb-4 pr-4 pl-7 shadow-xss rounded-lg aos-init" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="500">
                         {{-- <i class="feather-layers text-success font-xl position-absolute left-15 ml-2"></i> --}}
                         <i class="fa-solid fa-calendar-day text-success font-xl position-absolute left-15 ml-2"></i>
                         <h2 class="fw-700 font-xs text-grey-900 mt-1">Event Gratis</h2>
@@ -98,7 +103,7 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6">
-                    <a href="{{route('produkListKelas')}}" class="card mb-4 w-100 border-0 pt-4 pb-4 pr-4 pl-7 shadow-xss rounded-lg aos-init" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="500">
+                    <a href="{{route('produkListKelas')}}" class="hover card mb-4 w-100 border-0 pt-4 pb-4 pr-4 pl-7 shadow-xss rounded-lg aos-init" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="500">
                         <i class="feather-book text-danger font-xl position-absolute left-15 ml-2"></i>
                         <h2 class="fw-700 font-xs text-grey-900 mt-1">Kelas Online</h2>
                         <p class="fw-500 font-xssss lh-24 text-grey-600 mb-0">Kelas Online Dari Mulai Belajar Soft Skill Sampai Hardskill</p>
@@ -106,7 +111,7 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6">
-                    <a href="{{route('produkListKonsul')}}" class="card mb-4 w-100 border-0 pt-4 pb-4 pr-4 pl-7 shadow-xss rounded-lg aos-init" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="500">
+                    <a href="{{route('produkListKonsul')}}" class="hover card mb-4 w-100 border-0 pt-4 pb-4 pr-4 pl-7 shadow-xss rounded-lg aos-init" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="500">
                         <i class="fas fa-headset text-info font-xl position-absolute left-15 ml-2"></i>
                         <h2 class="fw-700 font-xs text-grey-900 mt-1">Konsultasi HRD</h2>
                         <p class="fw-500 font-xssss lh-24 text-grey-600 mb-0">Konsultasi Langsung Dengan HRD Buat Bedah CV, Interview Kerja & Psikotes</p>
@@ -114,7 +119,7 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6">
-                    <a href="{{route('cvIndex')}}" class="card mb-4 w-100 border-0 pt-4 pb-4 pr-4 pl-7 shadow-xss rounded-lg aos-init" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="500">
+                    <a href="{{route('cvIndex')}}" class="hover card mb-4 w-100 border-0 pt-4 pb-4 pr-4 pl-7 shadow-xss rounded-lg aos-init" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="500">
                         <i class="fa-solid fa-file-code text-warning font-xl position-absolute left-15 ml-2"></i>
                         <h2 class="fw-700 font-xs text-grey-900 mt-1">CV Maker</h2>
                         <p class="fw-500 font-xssss lh-24 text-grey-600 mb-0">Buat CV ATS Kamu Langsung di Sini via Online, GRATIS</p>
@@ -122,7 +127,7 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6">
-                    <a href="{{route('memberChecker')}}" class="card mb-4 w-100 border-0 pt-4 pb-4 pr-4 pl-7 shadow-xss rounded-lg aos-init" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="500">
+                    <a href="{{route('memberChecker')}}" class="hover card mb-4 w-100 border-0 pt-4 pb-4 pr-4 pl-7 shadow-xss rounded-lg aos-init" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="500">
                         <i class="fa-solid fa-check-to-slot text-secondary font-xl position-absolute left-15 ml-2"></i>
                         <h2 class="fw-700 font-xs text-grey-900 mt-1">CV Checker</h2>
                         <p class="fw-500 font-xssss lh-24 text-grey-600 mb-0">Cek Dulu CV Kamu Udah Menarik Belum di Mata HRD</p>
@@ -130,7 +135,7 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6">
-                    <a href="{{route('testIndex')}}" class="card mb-4 w-100 border-0 pt-4 pb-4 pr-4 pl-7 shadow-xss rounded-lg aos-init" data-aos="zoom-in" data-aos-delay="500" data-aos-duration="500">
+                    <a href="{{route('testIndex')}}" class="hover card mb-4 w-100 border-0 pt-4 pb-4 pr-4 pl-7 shadow-xss rounded-lg aos-init" data-aos="zoom-in" data-aos-delay="500" data-aos-duration="500">
                         <i class="fa-solid fa-file-signature text-success font-xl position-absolute left-15 ml-2"></i>
                         <h2 class="fw-700 font-xs text-grey-900 mt-1">Assesment Test</h2>
                         <p class="fw-500 font-xssss lh-24 text-grey-600 mb-0">Ikuti Test Assesment Buat Tau Potensi, Minat dan Bakat Kamu</p>

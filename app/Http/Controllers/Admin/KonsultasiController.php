@@ -76,14 +76,14 @@ class KonsultasiController extends Controller
         $datas = [
             'judul' => $request->judul,
             'harga' => str_replace(",", "", $request->harga),
+            'harga_bias' => str_replace(",", "", $request->harga_bias),
             'jadwal' => $request->jadwal,
             'id_konsultasi' => $request->id_konsultasi,
             'id_expert' => $request->id_expert,
-            'poster' => ''
         ];
 
         if(!empty($request->poster)){
-            $datas = UploadFile::file($request,'poster','asset/img/produk/konsul',$datas);
+            $datas = UploadFile::file($request,'poster','storage/konsultasi',$datas);
         
             $foto = KonsultasiExpert::find($request->id);
             if(isset($foto)){
@@ -99,7 +99,7 @@ class KonsultasiController extends Controller
             'nama' => $request->judul,
             // 'nama' => "Konsultasi " . $data->tipe->nama . " oleh " . $data->expert->nama,
             'harga' => str_replace(",", "", $request->harga),
-            'poster' => $datas['poster'],
+            'poster' => $data->poster
         ]);
 
         // Cek untuk redirect sebagai admin atau expert
