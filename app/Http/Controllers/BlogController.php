@@ -19,16 +19,16 @@ class BlogController extends Controller
         $this->middleware('auth')->only(['create']);
     }
     public function index(Request $request){
-        // $data = Blog::latest()->get();
-        // dd($data);
+        $popular = Blog::limit(3)->orderBy('kunjungan','desc')->get();
+        $latest = Blog::limit(3)->latest()->get();
+
         if($request->search != null){
             $data = Blog::where('judul','like','%'.$request->search.'%')->paginate(6);
-            $popular= [];
-            $latest = [];
+            // $popular= [];
+            // $latest = [];
         }else{
             $data = Blog::paginate(6);
-            $popular = Blog::limit(3)->orderBy('kunjungan','desc')->get();
-            $latest = Blog::limit(3)->latest()->get();
+            
         }
 
         $layout = '';
