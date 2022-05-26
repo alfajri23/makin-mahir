@@ -83,7 +83,9 @@
                     <div class="col-12 mb-4 my-4">
                         <div class="card w-100 p-0 border-0 overflow-hidden mr-1">
                             <div class="card-image w-100 mb-0">
-                                <a  class="video-bttn position-relative d-block"><img src="{{asset($dt->gambar)}}" alt="image" class="w-100"></a>
+                                <a  class="video-bttn position-relative d-block">
+                                    <img src="{{asset($dt->gambar)}}" alt="image" class="w-100 lozad">
+                                </a>
                             </div>
                             <div class="card-body border-bottom pt-0 pl-0">
                                 <h6 class="font-xsss text-grey-700 fw-300 ml-0 mt-2 mb-0"> {{$dt->penulis}} </h6>
@@ -155,6 +157,12 @@
         </div>
     </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+<script>
+    const observer = lozad();
+    observer.observe();
+</script>
 
 
 

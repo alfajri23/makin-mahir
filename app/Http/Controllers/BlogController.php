@@ -21,15 +21,11 @@ class BlogController extends Controller
     public function index(Request $request){
         $popular = Blog::limit(3)->orderBy('kunjungan','desc')->get();
         $latest = Blog::limit(3)->latest()->get();
-        
+
         if($request->search != null){
             $data = Blog::where('judul','like','%'.$request->search.'%')->paginate(6);
-            // $popular= [];
-            // $latest = [];
         }else{
             $data = Blog::paginate(6);
-            // $popular = Blog::limit(3)->orderBy('kunjungan','desc')->get();
-            // $latest = Blog::limit(3)->latest()->get();
         }
 
         $layout = '';
