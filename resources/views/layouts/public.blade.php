@@ -15,6 +15,13 @@
     <meta name="geo.country" content="id">
     <meta name="content-language" content="id">
 
+    <meta property="fb:app_id" content="145000412781544" /> 
+    <meta property="og:title" content="Belajar Online | Kursus Online | Makin Mahir ID" />
+    <meta property="og:description" content="MakinMahir.ID adalah situs belajar online. Kami ingin membuat Anda menjadi mahir sesuai bidang Anda. Yuk, belajar dan menjadi semakin mahir bersama MakinMahir.ID." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="makinmahir.id" />
+
+    
     <meta name="google-site-verification" content="As9x3hHlJBlzxDhOZNPdkLLwpR75maT_4pZ8Jn9WmaA" />
     <!-- Global site tag (gtag.js) - Google Ads: 1002698644 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1002698644"></script>
@@ -174,7 +181,7 @@
 
                                 <div class="col-md-4 col-lg-4 col-sm-6 col-xs-6">
                                     <h5 class="mb-3 font-xs">Kantor</h5>
-                                    <p style="width: 100%;">Jl. Raya Pringsurat - Temanggung, Kel. Kebumen,<br> Kec. Pringsurat, Temanggung</p>
+                                    <p class="w-100">Jl. Raya Pringsurat - Temanggung, Kel. Kebumen,<br> Kec. Pringsurat, Temanggung</p>
                                 
                                     <h5 class="mb-3 font-xs">Kontak</h5>
                                     <p class="mb-0">Telepon : 085856561200</p>

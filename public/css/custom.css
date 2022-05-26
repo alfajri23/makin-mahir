@@ -9,6 +9,15 @@
     font-family: 'Roboto', sans-serif;
 }
 
+/* Layout */
+
+.navigation .scroll-bar{
+    z-index: index 3;
+}
+
+
+
+
 
 
 /* Mobile */
