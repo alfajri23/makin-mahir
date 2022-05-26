@@ -14,7 +14,27 @@
     <meta name="geo.placename" content="indonesia">
     <meta name="geo.country" content="id">
     <meta name="content-language" content="id">
-    {{-- <meta name="google-site-verification" content="imSOUh01H0EyYu2As8-Hvs2P30TnEhiAkPayXp_ySfk"> --}}
+    
+    <meta name="google-site-verification" content="As9x3hHlJBlzxDhOZNPdkLLwpR75maT_4pZ8Jn9WmaA" />
+    <!-- Global site tag (gtag.js) - Google Ads: 1002698644 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1002698644"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-1002698644');
+    </script>
+    <!-- Event snippet for Pembelian kelas google ads pemula conversion page -->
+    <script>
+    gtag('event', 'conversion', {
+        'send_to': 'AW-1002698644/dCPhCKn23t8BEJTvj94D',
+        'value': 199000.0,
+        'currency': 'IDR',
+        'transaction_id': ''
+    });
+    </script>
+    <script src="https://www.googleoptimize.com/optimize.js?id=OPT-PT7JSV2"></script>
 
     <link rel="stylesheet" href="{{ asset('css/themify-icons.css') }}">
 
