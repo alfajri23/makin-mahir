@@ -83,9 +83,9 @@
                     <div class="col-12 mb-4 my-4">
                         <div class="card w-100 p-0 border-0 overflow-hidden mr-1">
                             <div class="card-image w-100 mb-0">
-                                <a  class="video-bttn position-relative d-block">
+                                <div class="video-bttn position-relative d-block">
                                     <img src="{{asset($dt->gambar)}}" alt="image" class="w-100 lozad">
-                                </a>
+                                </div>
                             </div>
                             <div class="card-body border-bottom pt-0 pl-0">
                                 <h6 class="font-xsss text-grey-700 fw-300 ml-0 mt-2 mb-0"> {{$dt->penulis}} </h6>
@@ -116,7 +116,7 @@
                 <div class="col-12 mb-4">
                     <div class="card w-100 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1">
                         <div class="card-image w-100 mb-3">
-                            <a  class="video-bttn position-relative d-block"><img src="{{asset($dt->gambar)}}" alt="image" class="w-100"></a>
+                            <div class="video-bttn position-relative d-block"><img src="{{asset($dt->gambar)}}" alt="image" class="w-100"></div>
                         </div>
                         <div class="card-body pt-0">
                             <h4 class="fw-700 font-xss mt-3 lh-28 mt-0">
@@ -137,7 +137,7 @@
                 <div class="col-12 mb-4">
                     <div class="card w-100 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1">
                         <div class="card-image w-100 mb-3">
-                            <a  class="video-bttn position-relative d-block"><img src="{{asset($dt->gambar)}}" alt="image" class="w-100"></a>
+                            <div class="video-bttn position-relative d-block"><img src="{{asset($dt->gambar)}}" alt="image" class="w-100"></div>
                         </div>
                         <div class="card-body pt-0">
                             <h4 class="fw-700 font-xss mt-3 lh-28 mt-0">
