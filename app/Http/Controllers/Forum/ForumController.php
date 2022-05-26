@@ -11,6 +11,12 @@ use App\Models\ForumKategori;
 
 class ForumController extends Controller
 {
+    
+    public function __construct()
+    {
+        $this->middleware('auth')->only(['create','komentar','deleteKomentar','createKategori']);
+    }
+    
     public function index(Request $request){
 
         $data = ForumPertanyaaan::query()
