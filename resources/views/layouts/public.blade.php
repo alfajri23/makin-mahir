@@ -14,15 +14,39 @@
     <meta name="geo.placename" content="indonesia">
     <meta name="geo.country" content="id">
     <meta name="content-language" content="id">
-    <meta name="google-site-verification" content="imSOUh01H0EyYu2As8-Hvs2P30TnEhiAkPayXp_ySfk">
+
+    <meta name="google-site-verification" content="As9x3hHlJBlzxDhOZNPdkLLwpR75maT_4pZ8Jn9WmaA" />
+    <!-- Global site tag (gtag.js) - Google Ads: 1002698644 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1002698644"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-1002698644');
+    </script>
+    <!-- Event snippet for Pembelian kelas google ads pemula conversion page -->
+    <script>
+    gtag('event', 'conversion', {
+        'send_to': 'AW-1002698644/dCPhCKn23t8BEJTvj94D',
+        'value': 199000.0,
+        'currency': 'IDR',
+        'transaction_id': ''
+    });
+    </script>
+    <script src="https://www.googleoptimize.com/optimize.js?id=OPT-PT7JSV2"></script>
 
 
     <link rel="stylesheet" href="{{ asset('css/themify-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
     <link rel="stylesheet" href="{{ asset('css/feather.css') }}">
     <link rel="stylesheet" href="{{ asset('css/owl/owl.carousel.min.css') }}">
+
+
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+
+
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/aos.min.css') }}">
@@ -46,7 +70,7 @@
                             <ul class="navbar-nav navbar-dark nav-menu float-none text-center">
 
                                 {{-- <li class="nav-item"><a class="nav-link" href="{{route('ebook')}}">Ebook</a></li> --}}
-                                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Fitur<i class="ti-angle-down"></i></a>
+                                <li class="nav-item dropdown"><div class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Fitur<i class="ti-angle-down"></i></div>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="{{route('cvIndex')}}">CV Maker</a>
                                         <a class="dropdown-item" href="{{route('blog')}}">Blog</a>
@@ -55,14 +79,14 @@
                                     </div>
                                 </li>
 
-                                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Tes <i class="ti-angle-down"></i></a>
+                                <li class="nav-item dropdown"><div class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Tes <i class="ti-angle-down"></i></div>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="{{route('mbtiTest')}}">Tes kepribadian</a>
                                         <a class="dropdown-item" href="{{route('riasecTest')}}">Tes minat bakat</a>
                                     </div>
                                 </li>
 
-                                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Tentang kami <i class="ti-angle-down"></i></a>
+                                <li class="nav-item dropdown"><div class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Tentang kami <i class="ti-angle-down"></i></div>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="{{route('profile')}}">Profil</a>
                                         <a class="dropdown-item" href="{{route('goes_sekolah')}}">Goes to sekolah</a>
@@ -71,7 +95,7 @@
                                     </div>
                                 </li>
 
-                                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Bantuan <i class="ti-angle-down"></i></a>
+                                <li class="nav-item dropdown"><div class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Bantuan <i class="ti-angle-down"></i></div>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="{{route('faq')}}">FAQ</a>
                                         <a class="dropdown-item" href="{{route('term')}}">Syarat dan ketentuan</a>
