@@ -172,8 +172,8 @@ class BlogController extends Controller
             $files = $foto->gambar;
         }else{ //! Nanti lewat helper aja
             $nama_file = $file->getClientOriginalName();
-            $tujuan_upload_server = public_path('asset/img/blog'); //untuk dihosting
-            $tujuan_upload = 'asset/img/blog';                     //untuk local
+            $tujuan_upload_server = public_path('storage/blog'); //untuk dihosting
+            $tujuan_upload = 'storage/blog';                     //untuk local
             $files = $tujuan_upload . '/'. $nama_file;
             $file->move($tujuan_upload_server,$nama_file);
 

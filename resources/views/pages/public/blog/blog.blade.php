@@ -77,7 +77,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-12 col-sm-9">
+        <div class="col-12 col-sm-8">
             <div class="row">
                 @forelse ($data as $dt)
                     <div class="col-12 mb-4 my-4">
@@ -85,12 +85,15 @@
                             <div class="card-image w-100 mb-0">
                                 <a  class="video-bttn position-relative d-block"><img src="{{asset($dt->gambar)}}" alt="image" class="w-100"></a>
                             </div>
-                            <div class="card-body pt-0 pl-0">
-                                <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2 mb-0"> {{$dt->penulis}} </h6>
-                                <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-0"> {{$dt->created_at}} </h6>
+                            <div class="card-body border-bottom pt-0 pl-0">
+                                <h6 class="font-xsss text-grey-700 fw-300 ml-0 mt-2 mb-0"> {{$dt->penulis}} </h6>
+                                <h6 class="font-xsss text-grey-600 fw-300 ml-0 mt-0"> {{$dt->created_at}} </h6>
                                 <h4 class="fw-700 font-md lh-28 mt-0">
                                     <a href="{{route('blogDetail',['judul' => $dt->judul ])}}" class="text-dark text-grey-900">{{$dt->judul}}</a>
                                 </h4>
+                                <p class="text-break font-xss text-grey-600 fw-200">
+                                    {{$dt->meta_description}}
+                                </p>
                                 {{-- <h6 class="font-xs text-grey-700 ml-0 mt-2 mb-0 blog-value"> {!!$dt->isi!!} </h6>        --}}
                             </div>
                         </div>
@@ -105,7 +108,7 @@
                 {!! $data->links() !!}
             </div>
         </div>
-        <div class="col-12 col-sm-3 bg-light bg-sm-transparent py-5 p-sm-0">
+        <div class="col-12 col-sm-4 bg-light bg-sm-transparent py-5 p-sm-0">
             <h5 class="mb-0 text-grey-900 fw-700 font-xs pb-3 mb-0 d-block ml-2">Blog terpopuler</h5>
             @forelse ($popular as $dt)
                 <div class="col-12 mb-4">
