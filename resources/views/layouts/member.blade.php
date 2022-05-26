@@ -14,6 +14,13 @@
     <meta name="geo.placename" content="indonesia">
     <meta name="geo.country" content="id">
     <meta name="content-language" content="id">
+
+    <meta property="fb:app_id" content="145000412781544" /> 
+    <meta property="og:title" content="Belajar Online | Kursus Online | Makin Mahir ID" />
+    <meta property="og:description" content="MakinMahir.ID adalah situs belajar online. Kami ingin membuat Anda menjadi mahir sesuai bidang Anda. Yuk, belajar dan menjadi semakin mahir bersama MakinMahir.ID." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="makinmahir.id" />
+
     
     <meta name="google-site-verification" content="As9x3hHlJBlzxDhOZNPdkLLwpR75maT_4pZ8Jn9WmaA" />
     <!-- Global site tag (gtag.js) - Google Ads: 1002698644 -->
@@ -117,7 +124,7 @@
             </div>
         </nav>
 
-        <div class="main-content" style="height: 100%;">
+        <div class="main-content h-100">
             {{-- header atas --}}
             <div class="middle-sidebar-header bg-white">
                 <button class="header-menu"></button>
