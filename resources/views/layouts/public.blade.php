@@ -69,7 +69,7 @@
                         <div class="collapse navbar-collapse" id="navbarNavDropdown">
                             <ul class="navbar-nav navbar-dark nav-menu float-none text-center">
 
-                                {{-- <li class="nav-item"><a class="nav-link" href="{{route('ebook')}}">Ebook</a></li> --}}
+                                {{-- <li class="nav-item"><div class="nav-link" href="{{route('ebook')}}">Ebook</a></li> --}}
                                 <li class="nav-item dropdown"><div class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Fitur<i class="ti-angle-down"></i></div>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="{{route('cvIndex')}}">CV Maker</a>
@@ -91,7 +91,7 @@
                                         <a class="dropdown-item" href="{{route('profile')}}">Profil</a>
                                         <a class="dropdown-item" href="{{route('goes_sekolah')}}">Goes to sekolah</a>
                                         <a class="dropdown-item" href="{{route('goes_campus')}}">Goes to campus</a>
-                                        <a class="dropdown-item" href="">Kontak</a>
+                                        <!--<a class="dropdown-item" href="">Kontak</a>-->
                                     </div>
                                 </li>
 
