@@ -19,36 +19,73 @@ use Illuminate\Http\Request;
 class CVController extends Controller
 {
 
-    public function __construct(){
-        $this->middleware('auth');
+    // public function __construct(){
+    //     $this->middleware('auth');
+    // }
+
+    public function checkIndex($request,$index){
+        if($request[0][$index] != null){        //Jika input kosong
+            if($request[1][$index] == null){    //jika index ke-1 kosong,maka ambil index 0 saja
+                //dd($request);
+                array_pop($request);
+                //$data[] = $request;
+                //dd($request);
+                return $request;
+
+            }else{
+                return $request;                //jika full
+            }
+        }else{
+            return [];
+        }
+    }
+
+    public function printPublicCV(Request $request){
+        //dd($request['kerja']);
+        //$kerja = $request['kerja'][0]['posisi'] != null ? $request['kerja'] : [];
+        $kerja = $this->checkIndex($request['kerja'],'posisi');
+        $skil = $this->checkIndex($request['skil'],'skil');
+        $edukasi = $this->checkIndex($request['edukasi'],'sekolah');
+        $prestasi = $this->checkIndex($request['prestasi'],'prestasi');
+        $training = $this->checkIndex($request['training'],'program');
+        $organisasi = $this->checkIndex($request['organisasi'],'organisasi');
+        $user = $request['user'];
+
+        $pdf = PDF::loadview('pages.cv.print.cv_ats_print',compact('user','organisasi','kerja','edukasi','training','skil','prestasi'));
+        return $pdf->stream();
+        return $pdf->download('cv-ats.pdf');
     }
 
     public function index(Request $request){
-        $kerja = CVKerja::where('id_user',auth()->user()->id)->get();
-        $skil = CVSkil::where('id_user',auth()->user()->id)->get();
-        $edukasi = CVEdukasi::where('id_user',auth()->user()->id)->get();
-        $portofolio = CVPortofolio::where('id_user',auth()->user()->id)->get();
-        $prestasi = CVPrestasi::where('id_user',auth()->user()->id)->get();
-        $training = CVTraining::where('id_user',auth()->user()->id)->get();
-        $organisasi = CVOrganisasi::where('id_user',auth()->user()->id)->get();
-        $user = User::find(auth()->user()->id); 
-
-        $cvs = CVTema::latest()->get();
-        $cv_user = CVUser::find(auth()->user()->id);
-        $cv_user = $cv_user != null ? $cv_user->id : null;
-
-        $request->session()->put('cv', 3);
 
         if(Auth::check()){
+            $kerja = CVKerja::where('id_user',auth()->user()->id)->get();
+            $skil = CVSkil::where('id_user',auth()->user()->id)->get();
+            $edukasi = CVEdukasi::where('id_user',auth()->user()->id)->get();
+            $portofolio = CVPortofolio::where('id_user',auth()->user()->id)->get();
+            $prestasi = CVPrestasi::where('id_user',auth()->user()->id)->get();
+            $training = CVTraining::where('id_user',auth()->user()->id)->get();
+            $organisasi = CVOrganisasi::where('id_user',auth()->user()->id)->get();
+            $user = User::find(auth()->user()->id); 
 
+            $cvs = CVTema::latest()->get();
+            $cv_user = CVUser::find(auth()->user()->id);
+            $cv_user = $cv_user != null ? $cv_user->id : null;
+
+            $request->session()->put('cv', 3);
+
+        
+            return view('pages.cv.cv_data',compact('user','organisasi','kerja',
+                                                    'edukasi','training','skil',
+                                                    'prestasi','cvs','cv_user'));
+        }else{
+            return view('pages.cv.cv_public');
         }
 
-        return view('pages.cv.cv_data',compact('user','organisasi','kerja',
-                                                'edukasi','training','skil',
-                                                'prestasi','cvs','cv_user'));
     }
 
     public function print(Request $request){
+
         $kerja = CVKerja::where('id_user',auth()->user()->id)->get();
         $skil = CVSkil::where('id_user',auth()->user()->id)->get();
         $edukasi = CVEdukasi::where('id_user',auth()->user()->id)->get();
@@ -63,24 +100,30 @@ class CVController extends Controller
             'id_tema' => $request->session()->get('cv'),
         ]);
 
-        if($request->session()->get('cv') == 1){
-            $pdf = PDF::loadview('pages.cv.print.cv_basic1_print',compact('user','organisasi','kerja','edukasi','training','skil','prestasi'));
-            return $pdf->stream();
-            return $pdf->download('cv-basic.pdf');
+        $pdf = PDF::loadview('pages.cv.print.cv_ats_print',compact('user','organisasi','kerja','edukasi','training','skil','prestasi'));
+        return $pdf->stream();
+        return $pdf->download('cv-ats.pdf');
 
-        }elseif($request->session()->get('cv') == 2){
-            $pdf = PDF::loadview('pages.cv.print.cv_modern1_print',compact('user','organisasi','kerja','edukasi','training','skil','prestasi'));
-            return $pdf->stream();
-            return $pdf->download('cv-modern.pdf');
-        }elseif($request->session()->get('cv') == 3){
-            $pdf = PDF::loadview('pages.cv.print.cv_ats_print',compact('user','organisasi','kerja','edukasi','training','skil','prestasi'));
-            return $pdf->stream();
-            return $pdf->download('cv-ats.pdf');
-        }else{
-            $pdf = PDF::loadview('pages.cv.print.cv_green',compact('user','organisasi','kerja','edukasi','training','skil','prestasi'));
-            return $pdf->stream();
-            return $pdf->download('cv-ats.pdf');
-        }
+
+        //*Simpan tidak ada tipe
+        // if($request->session()->get('cv') == 1){
+        //     $pdf = PDF::loadview('pages.cv.print.cv_basic1_print',compact('user','organisasi','kerja','edukasi','training','skil','prestasi'));
+        //     return $pdf->stream();
+        //     return $pdf->download('cv-basic.pdf');
+
+        // }elseif($request->session()->get('cv') == 2){
+        //     $pdf = PDF::loadview('pages.cv.print.cv_modern1_print',compact('user','organisasi','kerja','edukasi','training','skil','prestasi'));
+        //     return $pdf->stream();
+        //     return $pdf->download('cv-modern.pdf');
+        // }elseif($request->session()->get('cv') == 3){
+        //     $pdf = PDF::loadview('pages.cv.print.cv_ats_print',compact('user','organisasi','kerja','edukasi','training','skil','prestasi'));
+        //     return $pdf->stream();
+        //     return $pdf->download('cv-ats.pdf');
+        // }else{
+        //     $pdf = PDF::loadview('pages.cv.print.cv_green',compact('user','organisasi','kerja','edukasi','training','skil','prestasi'));
+        //     return $pdf->stream();
+        //     return $pdf->download('cv-ats.pdf');
+        // }
     }
 
     public function setCV(Request $request){

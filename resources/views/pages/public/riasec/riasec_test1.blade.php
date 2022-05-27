@@ -226,7 +226,7 @@
         </div>
 
         <div class="swiper-slide">
-            <form action="{{route('saveRiasecTest')}}" method="POST" id="formRias">
+            <form action="{{route('saveRiasecTest')}}" method="GET" id="formRias">
                 @csrf
                 <input type="hidden" name="hasil" id="hasil">
                 <input type="hidden" name="prior" id="prior_form">

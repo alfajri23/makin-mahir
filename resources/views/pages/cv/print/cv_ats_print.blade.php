@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -37,13 +37,13 @@
                 <tbody>
                 <tr>
                 <td style="text-align:center">
-                    <h3>{{$user->nama}}</h3>
+                    <h3>{{$user['nama']}}</h3>
                 </td>
                 </tr>
                 <tr>
                 <td style="text-align:center">
-                    <p class="mb-0">{{$user->email}} | {{$user->telepon}} | {{$user->linkedin}}</p>
-                    <p>{{$user->alamat}}</p>
+                    <p class="mb-0">{{$user['email']}} | {{$user['telepon']}} | {{$user['linkedin']}}</p>
+                    <p>{{$user['alamat']}}</p>
                 </td>
                 </tr>
                 </tbody>
@@ -55,7 +55,7 @@
         <div class="personal">
             <h6 class="text-uppercase title-section">Personal Info</h6>
             <p class="">
-                {{$user->desc}}
+                {{$user['desc']}}
             </p>
         </div>
 
@@ -63,15 +63,15 @@
             <h6 class="text-uppercase title-section">Keahlian</h6>
             @forelse ($skil as $sk)
             <div>
-                <p class="mb-0">{{$sk->skil}}</p>
+                <p class="mb-0">{{$sk['skil']}}</p>
             </div>
             
             @empty
-                
             @endforelse
             <p></p>
         </div>
 
+        @if(count($edukasi)>0)
         <div class="edukasi my-4">
             <h6 class="text-uppercase title-section">Edukasi</h6>
             @forelse ($edukasi as $edu)
@@ -79,17 +79,18 @@
                 <table style="width:100%">
                     <tbody>
                     <tr>
-                    <td><p class="subtitle-section">{{$edu->sekolah}} | {{$edu->jurusan}} | {{$edu->gpa}}</p></td>
-                    <td style="text-align: right;"><p class="float-right font-italic mb-0">{{$edu->masuk}} - {{$edu->keluar}}</p></td>
+                    <td><p class="subtitle-section">{{$edu['sekolah']}} | {{$edu['jurusan']}} | {{$edu['gpa']}}</p></td>
+                    <td style="text-align: right;"><p class="float-right font-italic mb-0">{{$edu['masuk']}} - {{$edu['keluar']}}</p></td>
                     </tr>
                     </tbody>
                 </table>
             </div>
             @empty
-                
             @endforelse
         </div>
+        @endif
 
+        @if(count($training)>0)
         <div class="training my-4">
             <h6 class="text-uppercase title-section">Training</h6>
             @forelse ($training as $tr)
@@ -97,19 +98,20 @@
                 <table style="width:100%">
                     <tbody>
                     <tr>
-                        <td><p class="subtitle-section mb-0">{{$tr->program}}</p></td>
-                        <td style="text-align: right;"><p class="float-right font-italic mb-0">{{$tr->mulai}} sampai {{$tr->akhir}}</p></td>
+                        <td><p class="subtitle-section mb-0">{{$tr['program']}}</p></td>
+                        <td style="text-align: right;"><p class="float-right font-italic mb-0">{{$tr['mulai']}} sampai {{$tr['akhir']}}</p></td>
                     </tr>
                     </tbody>
                 </table>
-                <p class="mb-0">{{$tr->penyelenggara}}</p>
-                <p class="">{{$tr->deskripsi}}</p>
+                <p class="mb-0">{{$tr['penyelenggara']}}</p>
+                <p class="">{{$tr['deskripsi']}}</p>
             </div>
             @empty
-                
             @endforelse
         </div>
+        @endif
 
+        @if(count($prestasi)>0)
         <div class="prestasi my-4">
             <h6 class="text-uppercase title-section">Prestasi</h6>
             @forelse ($prestasi as $ps)
@@ -117,18 +119,19 @@
                 <table style="width:100%">
                     <tbody>
                     <tr>
-                        <td><p class="subtitle-section mb-0">{{$ps->prestasi}}</p></td>
-                        <td style="text-align: right;"><p class="float-right font-italic mb-0">{{$ps->tahun}}</p></td>
+                        <td><p class="subtitle-section mb-0">{{$ps['prestasi']}}</p></td>
+                        <td style="text-align: right;"><p class="float-right font-italic mb-0">{{$ps['tahun']}}</p></td>
                     </tr>
                     </tbody>
                 </table>
-                <p class="">{{$ps->organisasi}}</p>
+                <p class="">{{$ps['organisasi']}}</p>
             </div>
             @empty
-                
             @endforelse
         </div>
+        @endif
 
+        @if(count($kerja)>0)
         <div class="work my-4">
             <h6 class="text-uppercase title-section">Pengalaman Kerja</h6>
             @forelse ($kerja as $kr)
@@ -136,19 +139,20 @@
                 <table style="width:100%">
                     <tbody>
                     <tr>
-                        <td><p class="subtitle-section mb-0">{{$kr->perusahaan}}</p></td>
-                        <td style="text-align: right;"><p class="float-right font-italic mb-0">{{$kr->mulai}} sampai {{$kr->akhir}}</p></td>
+                        <td><p class="subtitle-section mb-0">{{$kr['perusahaan']}}</p></td>
+                        <td style="text-align: right;"><p class="float-right font-italic mb-0">{{$kr['mulai']}} sampai {{$kr['akhir']}}</p></td>
                     </tr>
                     </tbody>
                 </table>
-                <p class="mb-0">{{$kr->posisi}}</p>
-                <p class="">{{$kr->deskripsi}}</p>
+                <p class="mb-0">{{$kr['posisi']}}</p>
+                <p class="">{{$kr['deskripsi']}}</p>
             </div>
             @empty
-                
             @endforelse
         </div>
+        @endif
 
+        @if(count($organisasi)>0)
         <div class="work my-4">
             <h6 class="text-uppercase title-section">Organisasi</h6>
             @forelse ($organisasi as $org)
@@ -156,18 +160,18 @@
                 <table style="width:100%">
                     <tbody>
                     <tr>
-                        <td><p class="subtitle-section mb-0">{{$org->posisi}}</p></td>
-                        <td style="text-align: right;"><p class="float-right font-italic mb-0">{{$org->mulai}} sampai {{$org->akhir}}</p></td>
+                        <td><p class="subtitle-section mb-0">{{$org['posisi']}}</p></td>
+                        <td style="text-align: right;"><p class="float-right font-italic mb-0">{{$org['mulai']}} sampai {{$org['akhir']}}</p></td>
                     </tr>
                     </tbody>
                 </table>
-                <p class="mb-0">{{$org->organisasi}}</p>
-                <p class="">{{$org->deskripsi}}</p>
+                <p class="mb-0">{{$org['organisasi']}}</p>
+                <p class="">{{$org['deskripsi']}}</p>
             </div>
             @empty
-                
             @endforelse
         </div>
+        @endif
 
     </main>
     

@@ -54,8 +54,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset('asset/img/program/favicon-32x32.png')}}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('asset/img/program/favicon-16x16.png')}}">
     <link rel="manifest" href="/site.webmanifest">
-    
-    
+
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/aos.min.css') }}">

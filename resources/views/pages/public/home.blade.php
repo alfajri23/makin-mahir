@@ -3,9 +3,9 @@
 @section('content')
 
 <style>
-    .nav-link{
-        color: white !important
-    }
+    /* .nav-link{
+        color: rgb(138, 138, 138) !important
+    } */
 
     .layer-blue{
         z-index: 0;

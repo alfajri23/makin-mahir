@@ -21,7 +21,7 @@
     <meta property="og:type" content="article" />
     <meta property="og:url" content="makinmahir.id" />
 
-    
+
     <meta name="google-site-verification" content="As9x3hHlJBlzxDhOZNPdkLLwpR75maT_4pZ8Jn9WmaA" />
     <!-- Global site tag (gtag.js) - Google Ads: 1002698644 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1002698644"></script>
@@ -54,7 +54,8 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{{asset('asset/img/program/apple-touch-icon.png')}}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset('asset/img/program/favicon-32x32.png')}}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('asset/img/program/favicon-16x16.png')}}">
-    <link rel="manifest" href="/site.webmanifest">
+
+    {{-- <link rel="manifest" href="/site.webmanifest"> --}}
 
 
     <!-- Custom Stylesheet -->
@@ -79,8 +80,10 @@
                         <div class="collapse navbar-collapse" id="navbarNavDropdown">
                             <ul class="navbar-nav navbar-dark nav-menu float-none text-center">
 
+
                                 {{-- <li class="nav-item"><div class="nav-link" href="{{route('ebook')}}">Ebook</a></li> --}}
                                 <li class="nav-item dropdown"><div class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Fitur<i class="ti-angle-down"></i></div>
+
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="{{route('cvIndex')}}">CV Maker</a>
                                         <a class="dropdown-item" href="{{route('blog')}}">Blog</a>
@@ -89,14 +92,14 @@
                                     </div>
                                 </li>
 
-                                <li class="nav-item dropdown"><div class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Tes <i class="ti-angle-down"></i></div>
+                                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Tes <i class="ti-angle-down"></i></a>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="{{route('mbtiTest')}}">Tes kepribadian</a>
                                         <a class="dropdown-item" href="{{route('riasecTest')}}">Tes minat bakat</a>
                                     </div>
                                 </li>
 
-                                <li class="nav-item dropdown"><div class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Tentang kami <i class="ti-angle-down"></i></div>
+                                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Tentang kami <i class="ti-angle-down"></i></a>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="{{route('profile')}}">Profil</a>
                                         <a class="dropdown-item" href="{{route('goes_sekolah')}}">Goes to sekolah</a>
@@ -105,13 +108,25 @@
                                     </div>
                                 </li>
 
-                                <li class="nav-item dropdown"><div class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Bantuan <i class="ti-angle-down"></i></div>
+                                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Bantuan <i class="ti-angle-down"></i></a>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="{{route('faq')}}">FAQ</a>
                                         <a class="dropdown-item" href="{{route('term')}}">Syarat dan ketentuan</a>
                                         <a class="dropdown-item" href="{{route('privacy')}}">Kebijakan privasi</a>
                                     </div>
                                 </li>
+
+                                {{-- <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Course <i class="ti-angle-down"></i></a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="./courses-grid-1.html">Course Gird 1</a>
+                                        <a class="dropdown-item" href="./courses-grid-2.html">Course Gird 2</a>
+                                        <a class="dropdown-item" href="./courses-grid-3.html">Course Gird 3</a>
+                                        <a class="dropdown-item" href="./course-details.html">Single Course 1</a>
+                                        <a class="dropdown-item" href="./course-details-2.html">Single Course 2</a>
+                                        <a class="dropdown-item" href="./user-profile.html">User Profile</a>
+                                        <a class="dropdown-item" href="./author-profile.html">Author Profile</a>
+                                    </div>
+                                </li> --}}
 
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{route('blog')}}">Blog</a>

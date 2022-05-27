@@ -62,7 +62,7 @@ Route::get('privacy-policy', [Controllers\PublicController::class,'privacy'])->n
 //*Goes to
     Route::get('goes-to-sekolah', [Controllers\PublicController::class,'goes_sekolah'])->name('goes_sekolah');
     Route::get('goes-to-campus', [Controllers\PublicController::class,'goes_campus'])->name('goes_campus');
-//End goes to 
+//End goes to
 
 //*FORUM
     Route::get('forum', [Controllers\Forum\ForumController::class,'index'])->name('forumIndex');
@@ -80,12 +80,12 @@ Route::get('privacy-policy', [Controllers\PublicController::class,'privacy'])->n
 
     //MBTI
     Route::get('test/mbti', [Controllers\TestController::class,'mbti_test'])->name('mbtiTest');
-    Route::post('test/mbti', [Controllers\TestController::class,'save_mbti'])->name('saveMbtiTest');
+    Route::get('test/mbti-save', [Controllers\TestController::class,'save_mbti'])->name('saveMbtiTest');
     Route::get('download/mbti', [Controllers\TestController::class,'mbti_print'])->name('mbtiPrint');
 
     //RIASEC
     Route::get('test-minat', [Controllers\TestController::class,'riasec_test'])->name('riasecTest');
-    Route::post('test-minat', [Controllers\TestController::class,'save_riasec'])->name('saveRiasecTest');
+    Route::get('test-minat/save', [Controllers\TestController::class,'save_riasec'])->name('saveRiasecTest');
     Route::get('test-minat/download', [Controllers\TestController::class,'riasec_print'])->name('riasecPrint');
 //end assesment
 
@@ -101,7 +101,8 @@ Route::get('privacy-policy', [Controllers\PublicController::class,'privacy'])->n
 
 //*CV
     Route::get('cv',[Controllers\CVController::class,'index'])->name('cvIndex');
-    Route::get('cv-print-basic',[Controllers\CVController::class,'print'])->name('cvPrint');
+    Route::get('cv-print',[Controllers\CVController::class,'print'])->name('cvPrint');
+    Route::post('cv-prints',[Controllers\CVController::class,'printPublicCV'])->name('printPublicCV');
 
     //Set Session
     Route::get('cv-session',[Controllers\CVController::class,'setCV'])->name('cvSet');

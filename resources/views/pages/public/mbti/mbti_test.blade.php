@@ -123,7 +123,7 @@
         @endforelse
 
         <div class="swiper-slide">
-          <form id="formTest" action="{{route('saveMbtiTest')}}" method="post">
+          <form id="formTest" action="{{route('saveMbtiTest')}}" method="get">
             @csrf
             <input type="hidden" id="resultTest" name="values" value="">
           </form>
@@ -151,7 +151,6 @@
       var swiper = new Swiper(".mySwiper", {
         navigation: {
           nextEl: ".swiper-next",
-          // nextEl: ".swiper-btn-next",
           prevEl: ".swiper-btn-prev",
         },
         pagination: {
