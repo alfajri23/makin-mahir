@@ -23,6 +23,10 @@ class CVController extends Controller
         $this->middleware('auth');
     }
 
+    public function savePublicCV(Request $request){
+        
+    }
+
     public function index(Request $request){
         $kerja = CVKerja::where('id_user',auth()->user()->id)->get();
         $skil = CVSkil::where('id_user',auth()->user()->id)->get();

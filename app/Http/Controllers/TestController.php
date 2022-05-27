@@ -35,10 +35,13 @@ class TestController extends Controller
         //ambil data test user sebelumnya
         $cek = MbtiResult::where('id_user',$id_user)->first();
 
+        //dd($request);
+
         //jika user login dan ingin mengulang tes
         if($request->filled('ulang')){
             $cek->delete();
-            $data = MbtiQuestion::all();
+            //$data = MbtiQuestion::all();
+            $data = MbtiQuestion::limit(5)->get();
             return view('pages.public.mbti.mbti_test',compact('data'));
         }
         
@@ -55,8 +58,11 @@ class TestController extends Controller
             return view('pages.public.mbti.mbti_result',compact('datas','layout','data','title','tipe','history'));
         }else{
             //* Tes MBTI Baru
-            $data = MbtiQuestion::all();
-            //$data = MbtiQuestion::limit(3)->get();
+            //$data = MbtiQuestion::all();
+            $data = MbtiQuestion::limit(5)->get();
+
+            //dd("masuk sini login");
+
             return view('pages.public.mbti.mbti_test',compact('data'));
         }
     }
@@ -77,6 +83,8 @@ class TestController extends Controller
     }
 
     public function save_mbti(Request $request){
+
+        //dd("post");
         $this->dataTest = json_decode($request->values, true);
         $data = $this->dataTest;
         
@@ -86,6 +94,7 @@ class TestController extends Controller
         $result .= $this->cek_exist('T') > $this->cek_exist('F') ? "T" : "F";
         $result .= $this->cek_exist('J') > $this->cek_exist('P') ? "J" : "P";
 
+        //dd($result);
         if (Auth::check()) {
             MbtiResult::create([
                 'id_user' => auth()->user()->id,
@@ -106,13 +115,12 @@ class TestController extends Controller
             $title = 'produk pilihan';
             $tipe = 'konsutasi';
 
-            //dd($result);
-
             $datas = MbtiType::where('code',$result)->first();
             $layout = 'layouts.public';
-            return view('pages.public.mbti.mbti_result',compact('datas','layout','data','title','tipe'));
-
+            //return view('pages.public.mbti.mbti_result',compact('datas','layout','data','title','tipe'));
         }
+
+        //dd("disini");
         
         return redirect()->route('mbtiTest',compact('data'));
         
@@ -128,8 +136,8 @@ class TestController extends Controller
 
         if($request->filled('ulang')){
             $cek->delete();
-            $data = RiasecQuestion::all();
-            //$data = RiasecQuestion::limit(3)->get();
+            //$data = RiasecQuestion::all();
+            $data = RiasecQuestion::limit(6)->get();
 
             return view('pages.public.riasec.riasec_test1',compact('data'));
         }
@@ -148,8 +156,8 @@ class TestController extends Controller
             return view('pages.public.riasec.riasec_result',compact('datas','layout','history','data','title','tipe'));
         }else{
             //* Tes riasec Baru
-            $data = RiasecQuestion::all();
-            //$data = RiasecQuestion::limit(3)->get();
+            //$data = RiasecQuestion::all();
+            $data = RiasecQuestion::limit(6)->get();
             return view('pages.public.riasec.riasec_test1',compact('data'));
         }
 
@@ -193,7 +201,7 @@ class TestController extends Controller
         $result = $first.','.$second;
 
         if (Auth::check()) {
-            RiasecResult::create([
+            RiasecResult::updateOrCreate(['id_user' => auth()->user()->id],[
                 'id_user' => auth()->user()->id,
                 'R' => $json[0],
                 'I' => $json[1],
