@@ -26,14 +26,14 @@
 
 </style>
 <div class="spacer"></div>
-<div class="container">
+<div class="container mt-4 mt-sm-0">
     <div class="spacer-sm"></div>
 
     <div class="row flex-column-reverse flex-sm-row">
         <div class="col-12 col-sm-9">
 
             <div class="row justify-content-between px-3 mb-4">
-                <div class="clearfix col-12 col-sm-6">
+                <div class="clearfix col-12 col-sm-8">
                     <form action="{{route('forumIndex')}}" method="GET" class="float-left header-search border-1 rounded-sm">
                         <div class="form-group mb-0 icon-input">
                             <i class="feather-search font-lg text-grey-400"></i>

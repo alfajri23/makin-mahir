@@ -80,6 +80,7 @@ class KonsultasiController extends Controller
             'jadwal' => $request->jadwal,
             'id_konsultasi' => $request->id_konsultasi,
             'id_expert' => $request->id_expert,
+            'status' => $request->status
         ];
 
         if(!empty($request->poster)){

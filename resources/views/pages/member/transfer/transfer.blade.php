@@ -20,7 +20,7 @@
                 <div class="d-flex justify-content-between">
                     <h4 class="fw-700 font-lg mt-3 mb-1">{{$dt->nama}}</h4>
                     <p class="fw-600 font-xs text-grey-500 mt-0 mb-2">
-                        @if ($dt->status == 'belum bayar')
+                        @if ($dt->status == 'ditolak')
                             <span class="badge badge-pill badge-danger p-2 px-3">{{$dt->status}}</span>
                         @elseif ($dt->status == 'pending')
                             <span class="badge badge-pill badge-warning p-2 px-3">{{$dt->status}}</span>

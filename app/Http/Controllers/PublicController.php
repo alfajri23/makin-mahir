@@ -20,10 +20,15 @@ class PublicController extends Controller
         $event = ProdukEvent::limit(3)->get(); 
         $blog = Blog::limit(6)->get();
         $konsuls = KonsultasiExpert::limit(4)->get();
+        $beduk = ProdukEvent::where([
+            'tipe'=>'beduk',
+            'status'=> 1
+        ])->first();
+        //dd($beduk);
 
         //dd($event);
 
-        return view('pages.public.home',compact('kelas','blog','event','konsuls'));
+        return view('pages.public.home',compact('kelas','blog','event','konsuls','beduk'));
     }
 
     public function produk_detail_konsul(Request $request){         //! JSON Ajax
@@ -57,7 +62,9 @@ class PublicController extends Controller
 
         }else{
             //$data = KonsultasiExpert::where('id_konsultasi',$id)->get();
-            $data = KonsultasiExpert::latest()->get();
+            $data = KonsultasiExpert::where('status',1)
+            ->latest()
+            ->get();
         }
 
         $layout = Layout::layout_check();

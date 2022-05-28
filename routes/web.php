@@ -337,6 +337,8 @@ Route::middleware(['admin'])->prefix('adm')->group(function () {
 
             //KOSULTASI
             Route::get('konsultasi', [Controllers\Admin\PendaftaranController::class,'konsultasi'])->name('pendaftaranKonsultasi');
+            Route::get('konsultasi/download', [Controllers\Admin\PendaftaranController::class,'downloadKonsultasi'])->name('downloadKonsultasi');
+            Route::get('konsultasi/done', [Controllers\Admin\PendaftaranController::class,'konsultasiDone'])->name('doneKonsultasi');
         });
     //end pendaftaran
 

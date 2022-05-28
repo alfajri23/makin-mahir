@@ -5,6 +5,10 @@
 <div class="container-fluid">
     <h1 class="h3 mb-2 text-gray-800">Pendaftaran Konsultasi</h1>
 
+    <div class="my-2">
+        <a href="{{route('downloadKonsultasi')}}" class="btn btn-primary btn-sm">Download</a>
+    </div>
+
     <div class="table-responsive">
         <table class="table table-bordered tablePendaftaran" width="100%" cellspacing="0">
             <thead>
@@ -12,9 +16,9 @@
                     <th>No</th>
                     <th>Nama</th>
                     <th>Email</th>
-                    <th>Jadwal</th>
+                    <th>Jawaban</th>
                     <th>Status bayar</th>
-                    <th>Status</th>
+                    <th>Status konsultasi</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -80,7 +84,7 @@
                 },
                 {data: 'judul', name: 'judul',width:"20%"},
                 {data: 'email', name: 'email'},
-                {data: 'jadwal', name: 'jadwal'},
+                {data: 'jawaban', name: 'jawaban'},
                 {data: 'bayar', name: 'bayar',width: "5%"},
                 {data: 'status', name: 'status',width: "5%"},
                 {data: 'aksi', name: 'aksi'},
@@ -166,6 +170,14 @@
             }
         });
 
+    }
+
+    function doneKonsultasi(id){
+        const route = "{{ route('doneKonsultasi') }}";
+        const tabel = $('.tablePendaftaran');
+        const pesan_hapus = "Yakin konsultasi sudah selesai";
+
+        swalAction(route,tabel,id,pesan_hapus);
     }
 
     function konfirmasi_bank(id){

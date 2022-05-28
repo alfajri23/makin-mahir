@@ -20,12 +20,19 @@
     
 
     <div class="table-responsive">
-        @if ($_GET['tipe'] == 'ditolak' || $_GET['tipe'] == 'belum_bayar')
-        <div class="btn-group" role="group" aria-label="Basic example">
-            <button onclick="check_all()" class="btn btn-secondary btn-sm">Check all</button>
-            <button onclick="deleteMulti()" class="btn btn-danger btn-sm">Delete All</button>
+
+        <div class="row justify-content-center">
+            <div class="col-6">
+                @if ($_GET['tipe'] == 'ditolak' || $_GET['tipe'] == 'belum_bayar')
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button onclick="check_all()" class="btn btn-secondary btn-sm">Check all</button>
+                    <button onclick="deleteMulti()" class="btn btn-danger btn-sm">Delete All</button>
+                </div>
+                @endif
+            </div>
         </div>
-        @endif
+
+
         <table class="table table-bordered tableTransaksi" width="100%" cellspacing="0">
             <thead>
                 <tr>

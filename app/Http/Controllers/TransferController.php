@@ -51,8 +51,8 @@ class TransferController extends Controller
                 $data = Transaksi::where('status','pending')->get();
             }elseif($request->tipe == 'ditolak'){
                 $data = Transaksi::where('status','ditolak')->get();
-            }elseif($request->tipe == 'belum'){
-                $data = Transaksi::where('status','belum bayar')->get();
+            // }elseif($request->tipe == 'belum'){
+            //     $data = Transaksi::where('status','belum bayar')->get();
             }elseif($request->tipe == 'semua'){
                 $data = Transaksi::latest()->get();
             }
@@ -236,8 +236,6 @@ class TransferController extends Controller
     function transaksi_delete(Request $request){
         $data = Transaksi::find($request->id);
         File::delete($data->bukti);
-
-
 
         $data->forceDelete();
 
