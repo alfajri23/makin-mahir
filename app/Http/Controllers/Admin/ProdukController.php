@@ -263,14 +263,18 @@ class ProdukController extends Controller
                         return $actionBtn;
                     })
                     ->addColumn('action', function($row){
+                        $deleteBtn = '
+                        <button onclick="deleteEvent('.$row['id'].')" class="delete btn btn-danger btn-sm">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                        ';
+
                         $actionBtn = '
                         <div class="btn-group">
                             <a href="'.route('editEvent',['id' => $row['id']]).'" class="edit btn btn-success btn-sm">
                                 <i class="fa-solid fa-pencil"></i>
                             </a> 
-                            <button onclick="deleteEvent('.$row['id'].')" class="delete btn btn-danger btn-sm">
-                                <i class="fa-solid fa-trash"></i>
-                            </button>
+                            
                             <button onclick="endEvent('.$row['id'].')" class="delete btn btn-warning btn-sm">
                                 <i class="fa-solid fa-ban"></i>
                             </button>

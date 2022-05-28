@@ -19,9 +19,9 @@ use Illuminate\Http\Request;
 class CVController extends Controller
 {
 
-    // public function __construct(){
-    //     $this->middleware('auth');
-    // }
+    public function __construct(){
+        $this->middleware('auth')->except(['index']);
+    }
 
     public function checkIndex($request,$index){
         if($request[0][$index] != null){        //Jika input kosong

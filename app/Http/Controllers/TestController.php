@@ -96,7 +96,7 @@ class TestController extends Controller
 
         //dd($result);
         if (Auth::check()) {
-            MbtiResult::create([
+            MbtiResult::updateOrCreate(['id_user' => auth()->user()->id],[
                 'id_user' => auth()->user()->id,
                 'I' => $this->cek_exist('I'),
                 'E' => $this->cek_exist('E'),
