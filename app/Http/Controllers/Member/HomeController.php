@@ -56,6 +56,11 @@ class HomeController extends Controller
     public function produk_detail($id){
 
         $produk = Produk::find($id);
+        // $produk = Produk::where([
+        //     'id' => $id,
+        //     'status' => 1
+        // ])->get();
+
         $layout = Layout::layout_check();
 
         switch ($produk->kategori->nama){

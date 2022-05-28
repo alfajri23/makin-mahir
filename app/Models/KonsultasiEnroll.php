@@ -18,10 +18,10 @@ class KonsultasiEnroll extends Model
         return $this->belongsTo(KonsultasiExpert::class, 'id_konsultasi', 'id');
     }
 
-    public function tipe()
-    {
-        return $this->belongsTo(KonsultasiTipe::class, 'id_konsultasi', 'id');
-    }
+    // public function tipe()
+    // {
+    //     return $this->belongsTo(KonsultasiTipe::class, 'id_konsultasi', 'id');
+    // }
 
     public function user()
     {

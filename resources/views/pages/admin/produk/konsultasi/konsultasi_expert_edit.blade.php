@@ -23,18 +23,37 @@
             <input type="text" name="judul" value="{{$data->judul}}" class="form-control">
         </div>
 
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Harga bias</label>
-            <input type="text" onkeyup="currencyFormat(this)" name="harga_bias" value="{{$data->harga_bias}}" class="form-control">
+        <div class="form-row">
+            <div class="col">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Harga bias</label>
+                    <input type="text" onkeyup="currencyFormat(this)" name="harga_bias" value="{{$data->harga_bias}}" class="form-control">
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Harga</label>
+                    <input type="text" onkeyup="currencyFormat(this)" name="harga" value="{{$data->harga}}" class="form-control">
+                    <input type="hidden" name="id_konsultasi" value="{{$data->id_konsultasi}}" class="form-control">
+                    <input type="hidden" name="id" value="{{$data->id}}" class="form-control">
+                    <input type="hidden" name="id_produk" value="{{$id_produk}}" class="form-control">
+                </div>
+            </div>
+
+            <div class="col">
+                <label for="inputState">Status</label>
+                <select id="inputState" class="form-control" name="status">
+                    <option value="{{$data->status}}" selected>{{$data->status}}</option>
+                    <option value="1">1</option>
+                    <option value="0">0</option>
+                </select>
+            </div>
         </div>
 
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Harga</label>
-            <input type="text" onkeyup="currencyFormat(this)" name="harga" value="{{$data->harga}}" class="form-control">
-            <input type="hidden" name="id_konsultasi" value="{{$data->id_konsultasi}}" class="form-control">
-            <input type="hidden" name="id" value="{{$data->id}}" class="form-control">
-            <input type="hidden" name="id_produk" value="{{$id_produk}}" class="form-control">
-        </div>
+        
+
+        
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Jadwal</label>
             <textarea name="jadwal" id="jadwal" class="form-control">

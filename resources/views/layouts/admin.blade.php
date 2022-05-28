@@ -125,7 +125,6 @@
                         <a class="collapse-item" href="{{route('transaksiIndex',['tipe'=>'semua'])}}">Semua</a>
                         <a class="collapse-item" href="{{route('transaksiIndex',['tipe'=>'lunas'])}}">Lunas</a>
                         <a class="collapse-item" href="{{route('transaksiIndex',['tipe'=>'pending'])}}">Menunggu</a>
-                        <a class="collapse-item" href="{{route('transaksiIndex',['tipe'=>'belum_bayar'])}}">Belum bayar</a>
                         <a class="collapse-item" href="{{route('transaksiIndex',['tipe'=>'ditolak'])}}">Ditolak</a>
                     </div>
                 </div>

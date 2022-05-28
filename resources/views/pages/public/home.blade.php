@@ -177,7 +177,7 @@
                     <span class="font-xsssss mt-2 fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-xl ls-2 alert-success d-inline-block text-success mr-1 aos-init" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">Beduk</span>
                     <h2 class="poppins text-grey-900 fw-700 display1-size display1-sm-size pb-3 mb-0 mt-3 d-block lh-3 aos-init" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">Live Event Bedah Dunia Kerja (BEDUK)</h2>
                     <p class="fw-400 font-xss lh-28 text-grey-600 aos-init" data-aos="fade-up" data-aos-delay="300" data-aos-duration="500">Kami Mempertemukan Kamu Dengan HRD Melalui Live Event Rutin Setiap Pekan</p>
-                    <a href="#" class="btn border-0 bg-warning p-2 text-white fw-600 rounded-lg d-inline-block font-xssss btn-light mt-3 w150 aos-init" data-aos="fade-up" data-aos-delay="100" data-aos-duration="200">Daftar sekarang</a>
+                    <a href="{{route('memberProdukDetail',$beduk->produk->id)}}" class="btn border-0 bg-warning p-2 text-white fw-600 rounded-lg d-inline-block font-xssss btn-light mt-3 w150 aos-init" data-aos="fade-up" data-aos-delay="100" data-aos-duration="200">Daftar sekarang</a>
                 </div>
               </div>
         </div>

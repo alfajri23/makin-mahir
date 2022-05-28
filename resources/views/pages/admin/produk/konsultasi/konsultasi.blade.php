@@ -21,7 +21,13 @@
             <div class="card-image w-100 mb-3">
                 <img src="{{asset($dt->poster)}}" alt="image" class="w-100">
             </div>
-            <div class="card-body">
+            <div class="card-body pt-0">
+                @if ($dt->status == 1)
+                    <span class="badge badge-success">Aktif</span>
+                @else
+                    <span class="badge badge-danger">Non aktif</span>
+                @endif
+                
                 <p class="font-weight-bold display2-md-size text-dark mb-0">{{$dt->judul}}</p>
                 <p class="mb-0">Rp. {{$dt->harga}}</p>    
             </div>

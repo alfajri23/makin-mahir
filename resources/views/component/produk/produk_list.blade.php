@@ -33,8 +33,6 @@
                                 </div>
                             </div>
 
-
-
                             <h4 class="fw-700 font-xss mt-3 lh-20 mt-0">
                                 <a href="{{route('memberProdukDetail',$dt->produk->id)}}" class="text-dark text-grey-900">{{$dt->judul}}</a>
                             </h4>

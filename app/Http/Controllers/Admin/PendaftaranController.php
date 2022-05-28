@@ -18,6 +18,7 @@ use App\Models\KonsultasiEnroll;
 use App\Models\EventEnroll;
 
 use App\Exports\EventEnrollExport;
+use App\Exports\KonsultasiEnrollExport;
 use Maatwebsite\Excel\Facades\Excel;
 
 class PendaftaranController extends Controller
@@ -345,16 +346,15 @@ class PendaftaranController extends Controller
         return view('pages.admin.pendaftaran.pendaftaran_kelas',compact('datas'));
     }
 
-    //* Kosultasi
+    //* Konsultasi
     public function konsultasi(Request $request){
-    
         if ($request->ajax()) {
             $data = KonsultasiEnroll::latest()->get();
             return datatables()->of($data)
             ->addIndexColumn()
             ->addColumn('judul', function($row){
                 $nama = '
-                <p>'.$row->tipe->nama. ' ' .$row->expert->nama .'</p>
+                <p>'.$row->konsultasi->judul.'</p>
                 ';
                 return $nama;
             })
@@ -385,7 +385,7 @@ class PendaftaranController extends Controller
                 }
                 return $actionBtn;
             })
-            ->addColumn('jadwal', function($row){
+            ->addColumn('jawaban', function($row){
                 $nama = '
                 <p>'.$row->transaksi->jawaban.'</p>
                 ';
@@ -404,20 +404,39 @@ class PendaftaranController extends Controller
             })
             ->addColumn('aksi', function($row){
 
+                $done = $row->is_done == 1 ? 
+                    `
+                    <a onclick="doneKonsultasi('.$row->id.')" class="btn btn-warning btn-sm"><i class="fas fa-check-circle"></i></a>
+                    `: '';
+
                 $actionBtn = '
-                    <div class="">
+                    <div class="btn-group" role="group" aria-label="Basic example">
                         <a onclick="detail('.$row->transaksi->id.')" class="btn btn-secondary btn-sm"><i class="fa-solid fa-circle-info"></i></a>
-                        <a href="https://wa.me/'.$row->user->telepon.'" target="_blank" class="btn btn-success btn-sm"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://wa.me/'.Telepon::changeTo62($row->transaksi->telepon).'" target="_blank" class="btn btn-success btn-sm"><i class="fa-brands fa-whatsapp"></i></a>
                     </div>
                 ';
                 
                 return $actionBtn;
             })
-            ->rawColumns(['judul','email','jadwal','aksi','bayar','status'])
+            ->rawColumns(['judul','email','jawaban','aksi','bayar','status'])
             ->make(true);
         
         }
 
         return view('pages.admin.pendaftaran.pendaftaran_konsultasi');
+    }
+
+    public function konsultasiDone(Request $request){
+        $data = KonsultasiEnroll::find($request->id);
+        $data->is_done = 1;
+        $data->save();
+
+        return response()->json([
+            'message' => 'Konsultasi selesai'
+        ]);
+    }
+
+    public function downloadKonsultasi(Request $request){
+        return Excel::download(new KonsultasiEnrollExport($request->id), 'konsultasi.xlsx');
     }
 }

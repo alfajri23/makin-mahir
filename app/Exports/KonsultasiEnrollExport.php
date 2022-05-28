@@ -12,18 +12,17 @@ use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 use Maatwebsite\Excel\Concerns\WithStyles;
 use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
 
-class EventEnrollExport implements FromView, WithStyles, ShouldAutoSize
+class KonsultasiEnrollExport implements FromView, WithStyles, ShouldAutoSize
 {
     
     public $data,$pertanyaan,$num_file = 0;
-    public $jenis;
 
-    public function __construct($id)
+    public function __construct()
     {
-        $id_produk = Produk::where('id_kategori',$id)->pluck('id');
+        $id_produk = Produk::where('id_kategori',4)->pluck('id');
         $this->data = Transaksi::whereIn('id_produk',$id_produk)->get();
 
-        $form = FormSetting::where('id_produk_kategori',$id)->first();
+        $form = FormSetting::where('id_produk_kategori',4)->first();
         $pertanyaan = explode(",",$form->pertanyaan);
         $tipe = explode(",",$form->tipe);
 
@@ -34,20 +33,18 @@ class EventEnrollExport implements FromView, WithStyles, ShouldAutoSize
             }
         }
         $this->pertanyaan = $pertanyaan;
-        
-        $this->jenis = $id == 2 ? 'beduk' : 'webinar';
 
     }
 
     public function view(): View
     {
 
-        return view('export.event_export',
+        return view('export.konsultasi_export',
             [
                 'datas' => $this->data, 
                 'pertanyaan' => $this->pertanyaan,
                 'num_file' => $this->num_file,
-                'jenis' => $this->jenis,
+                'jenis' => 'Konsultasi',
             ]);
     }
 
