@@ -82,7 +82,7 @@
 
 
                                 {{-- <li class="nav-item"><div class="nav-link" href="{{route('ebook')}}">Ebook</a></li> --}}
-                                <li class="nav-item dropdown"><div class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Fitur<i class="ti-angle-down"></i></div>
+                                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Fitur<i class="ti-angle-down"></i></a>
 
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="{{route('cvIndex')}}">CV Maker</a>

@@ -11,7 +11,7 @@
         </div>
     </div>
 
-    <form action="{{route('printPublicCV')}}" method="post">
+    <form action="{{route('printPublicCV')}}" method="get">
     @csrf
 
     <div>
