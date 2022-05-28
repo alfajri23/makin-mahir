@@ -102,7 +102,7 @@ Route::get('privacy-policy', [Controllers\PublicController::class,'privacy'])->n
 //*CV
     Route::get('cv',[Controllers\CVController::class,'index'])->name('cvIndex');
     Route::get('cv-print',[Controllers\CVController::class,'print'])->name('cvPrint');
-    Route::post('cv-prints',[Controllers\CVController::class,'printPublicCV'])->name('printPublicCV');
+    Route::get('cv-prints',[Controllers\CVController::class,'printPublicCV'])->name('printPublicCV');
 
     //Set Session
     Route::get('cv-session',[Controllers\CVController::class,'setCV'])->name('cvSet');
