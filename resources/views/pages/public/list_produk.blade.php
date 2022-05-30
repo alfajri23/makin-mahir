@@ -36,7 +36,7 @@
             </div>
             @if(\Auth::check()) 
             <div>
-                <button type="button" class="btn btn-primary ">Saya</button>
+                <a href="{{route($riwayat)}}" class="btn btn-primary ">Saya</a>
             </div>
             @endif
         </div>

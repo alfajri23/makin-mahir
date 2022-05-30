@@ -72,8 +72,14 @@ class PublicController extends Controller
         $meta_title = "Konsultasi Makin Mahir | MakinMahir.id";
         $tipe = 'konsultasi';
         $route = 'produkListKonsul';
-        return view('pages.produk.konsultasi.konsultasi_list_detail',compact('data','tipe','meta_title',
-                                                                            'route','layout'));
+        $riwayat = 'memberKonsultasi';
+        // return view('pages.produk.konsultasi.konsultasi_list_detail',compact('data','tipe',
+        //                                                                     'meta_title','route',
+        //                                                                     'layout','riwayat'));
+
+        return view('pages.public.list_produk',compact('data','tipe',
+                        'meta_title','route',
+                        'layout','riwayat'));
     }
 
     public function produk_list_event(Request $request){

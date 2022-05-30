@@ -208,6 +208,7 @@ class HomeController extends Controller
             case "konsultasi" :
                 $data = KonsultasiExpert::find($produk->id_produk);
 
+                return view('pages.member.produk.konsultasi.detail_konsultasi',compact('data'));
                 return view('pages.produk.konsultasi.konsultasi_detail',compact('data','layout'));
                 break;   
                 
@@ -319,6 +320,7 @@ class HomeController extends Controller
         ])->pluck('id_konsultasi');
 
         $data = KonsultasiExpert::whereIn('id',$id)->get();
+        //dd($data);
 
         return view('pages.member.riwayat.riwayat_konsultasi',compact('data'));
     }
