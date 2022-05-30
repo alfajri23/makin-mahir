@@ -20,6 +20,11 @@
                 <img src="{{asset($dt->poster)}}" alt="image" class="w-100">
             </div>
             <div class="card-body">
+                @if ($dt->status == 1)
+                    <span class="badge badge-success">Aktif</span>
+                @else
+                    <span class="badge badge-danger">Non aktif</span>
+                @endif
               <p class="fw-700 text-grey-800 display2-md-size card-title">{{$dt->judul}}</p>
               {{-- <a href="{{route('produkDetail',$dt->id)}}" class="btn btn-primary">Go somewhere</a> --}}
             </div>

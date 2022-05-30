@@ -76,10 +76,10 @@
             <div class="container pl-0 pr-0">
                 <div class="nav-content">
                     <div class="nav-top">
-                        <a href="{{route('memberIndex')}}">
+                        <div href="{{route('memberIndex')}}">
                             <i class="fa-solid fa-globe-stand display1-size mr-3 ml-3"></i>
                             <span class="d-inline-block poppins ls-3 fw-600 text-current font-xl logo-text mb-0">MakinMahir</span> 
-                        </a>
+                        </div>
                         <a href="#" class="close-nav d-inline-block d-lg-none"><i class="ti-close bg-grey mb-4 btn-round-sm font-xssss fw-700 text-dark ml-auto mr-2 "></i></a>
                     </div>
                     <div class="nav-caption fw-600 font-xssss text-grey-500"><span>New </span>Feeds</div>

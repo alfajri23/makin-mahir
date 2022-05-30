@@ -21,4 +21,9 @@ class TemplateEnroll extends Model
     public function transaksi(){
         return $this->hasOne(Transaksi::class,'id','id_transaksi');
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id_user', 'id');
+    }
 }

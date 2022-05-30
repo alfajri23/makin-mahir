@@ -144,6 +144,7 @@
                         <a class="collapse-item" href="{{route('pendaftaranEvent')}}">Event</a>
                         <a class="collapse-item" href="{{route('listKelas')}}">Kelas</a>
                         <a class="collapse-item" href="{{route('pendaftaranKonsultasi')}}">Konsultasi</a>
+                        <a class="collapse-item" href="{{route('pendaftaranTemplate')}}">Template</a>
                     </div>
                 </div>
             </li>

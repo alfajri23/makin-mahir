@@ -63,6 +63,15 @@
                 </textarea>
             </div>
 
+            <div class="form-group">
+                <label for="inputState">Status</label>
+                <select id="inputState" class="form-control" name="status">
+                    <option value="{{$data->status}}" selected>{{$data->status}}</option>
+                    <option value="1">1</option>
+                    <option value="0">0</option>
+                </select>
+            </div>
+
             <button type="submit" class="btn btn-primary ml-3">Tambah</button>
             <a href="{{route('deleteTemplate',$data->id)}}" class="btn btn-outline-danger">Hapus</a>
         </form>

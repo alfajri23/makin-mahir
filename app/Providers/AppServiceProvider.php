@@ -25,6 +25,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        
         Paginator::useBootstrap();
 
         View()->composer('component.notifikasi.notifikasi', function ($view) {
