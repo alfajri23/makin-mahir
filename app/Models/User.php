@@ -97,6 +97,11 @@ class User extends Authenticatable
         return $this->hasMany(KonsultasiEnroll::class, 'id_user', 'id');
     }
 
+    public function template_enroll()
+    {
+        return $this->hasMany(TemplateEnroll::class, 'id_user', 'id');
+    }
+
     public function kelas_enroll()
     {
         return $this->hasMany(KelasEnroll::class, 'id_user', 'id');

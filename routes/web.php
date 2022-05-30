@@ -335,11 +335,16 @@ Route::middleware(['admin'])->prefix('adm')->group(function () {
             //KELAS
             Route::get('kelas', [Controllers\Admin\PendaftaranController::class,'list_kelas'])->name('listKelas');
             Route::get('kelas-detail', [Controllers\Admin\PendaftaranController::class,'kelas'])->name('pendaftaranKelas');
+            Route::get('kelas/delete', [Controllers\Admin\PendaftaranController::class,'deleteEnrollKelas'])->name('deleteEnrollKelas');
 
             //KOSULTASI
             Route::get('konsultasi', [Controllers\Admin\PendaftaranController::class,'konsultasi'])->name('pendaftaranKonsultasi');
             Route::get('konsultasi/download', [Controllers\Admin\PendaftaranController::class,'downloadKonsultasi'])->name('downloadKonsultasi');
             Route::get('konsultasi/done', [Controllers\Admin\PendaftaranController::class,'konsultasiDone'])->name('doneKonsultasi');
+        
+            //TEMPLATE
+            Route::get('template', [Controllers\Admin\PendaftaranController::class,'template'])->name('pendaftaranTemplate');
+            Route::get('template/delete', [Controllers\Admin\PendaftaranController::class,'deleteEnrollTemplate'])->name('deleteEnrollTemplate');
         });
     //end pendaftaran
 

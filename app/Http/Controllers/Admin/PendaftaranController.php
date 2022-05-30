@@ -19,6 +19,7 @@ use App\Models\EventEnroll;
 
 use App\Exports\EventEnrollExport;
 use App\Exports\KonsultasiEnrollExport;
+use App\Models\TemplateEnroll;
 use Maatwebsite\Excel\Facades\Excel;
 
 class PendaftaranController extends Controller
@@ -299,6 +300,78 @@ class PendaftaranController extends Controller
         return Excel::download(new EventEnrollExport($request->id), 'beduk.xlsx');
     }
 
+    public function deleteEnrollTemplate(Request $request){
+        $data = TemplateEnroll::find($request->id);
+        $data->forceDelete();
+
+        return response()->json([
+            'data' => 'sukses menghapus'
+        ]);
+    }
+
+    //* Template
+    public function template(Request $request){
+        if ($request->ajax()) {
+            $data = TemplateEnroll::latest()->get();
+            return datatables()->of($data)
+            ->addIndexColumn()
+            ->addColumn('judul', function($row){
+                $nama = '
+                <p>'.$row->template->judul.'</p>
+                ';
+                return $nama;
+            })
+            ->addColumn('email', function($row){
+                $nama = '
+                <p>'.$row->user->email.'</p>
+                ';
+                return $nama;
+            })
+            ->addColumn('bayar', function($row){
+                $actionBtn = '';
+                if($row->transaksi->status == 'lunas'){
+                    $actionBtn = '
+                        <span class="badge badge-success">Lunas</span>
+                    ';
+                }elseif( $row->transaksi->status == 'belum bayar' ){
+                    $actionBtn = '
+                        <span class="badge badge-warning">Belum bayar</span>
+                    ';
+                }elseif( $row->transaksi->status == 'pending' ){
+                    $actionBtn = '
+                        <span class="badge badge-info">Konfirmasi</span>
+                    ';
+                }elseif( $row->transaksi->status == 'ditolak' ){
+                    $actionBtn = '
+                        <span class="badge badge-danger">Ditolak</span>
+                    ';
+                }
+                return $actionBtn;
+            })
+            ->addColumn('tanggal', function($row){
+                $nama = '
+                <p>'.date_format(date_create($row->created_at),"d M Y").'</p>
+                ';
+                return $nama;
+            })
+            ->addColumn('aksi', function($row){
+                $actionBtn = '
+                    <div class="">
+                        <a onclick="detail('.$row->transaksi->id.','.$row->id.')" class="btn btn-secondary btn-sm"><i class="fa-solid fa-circle-info"></i></a>
+                        <a href="https://wa.me/'.Telepon::changeTo62($row->transaksi->telepon).'" target="_blank" class="btn btn-success btn-sm"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                ';
+                
+                return $actionBtn;
+            })
+            ->rawColumns(['judul','email','aksi','bayar','tanggal'])
+            ->make(true);
+        
+        }
+
+        return view('pages.admin.pendaftaran.pendaftaran_template');
+    }
+
     //* Kelas
     public function list_kelas(){
         $data = Kelas::latest()->get();
@@ -331,8 +404,8 @@ class PendaftaranController extends Controller
 
                 $actionBtn = '
                     <div class="btn-group" role="group" aria-label="Basic example">
-                        <a onclick="detail('.$row->transaksi->id.')" class="btn btn-secondary btn-sm"><i class="fa-solid fa-circle-info"></i></a>
-                        <a href="https://wa.me/'.$row->user->telepon.'" target="_blank" class="btn btn-success btn-sm"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a onclick="detail('.$row->transaksi->id.','.$row->id.')" class="btn btn-secondary btn-sm"><i class="fa-solid fa-circle-info"></i></a>
+                        <a href="https://wa.me/'.Telepon::changeTo62($row->transaksi->telepon).'" target="_blank" class="btn btn-success btn-sm"><i class="fa-brands fa-whatsapp"></i></a>
                     </div>
                 ';
                 
@@ -344,6 +417,15 @@ class PendaftaranController extends Controller
         }
 
         return view('pages.admin.pendaftaran.pendaftaran_kelas',compact('datas'));
+    }
+
+    public function deleteEnrollKelas(Request $request){
+        $data = KelasEnroll::find($request->id);
+        $data->forceDelete();
+
+        return response()->json([
+            'data' => 'sukses menghapus'
+        ]);
     }
 
     //* Konsultasi

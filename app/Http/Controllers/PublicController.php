@@ -58,7 +58,7 @@ class PublicController extends Controller
     //public function produk_list_detail_konsul($id,Request $request){  
     public function produk_list_detail_konsul(Request $request){  
         if($request->search != null){
-            $data = KonsultasiExpert::where('nama','like','%'.$request->search.'%')->get();
+            $data = KonsultasiExpert::where('judul','like','%'.$request->search.'%')->get();
 
         }else{
             //$data = KonsultasiExpert::where('id_konsultasi',$id)->get();
@@ -109,7 +109,9 @@ class PublicController extends Controller
             $data = Kelas::where('judul','like','%'.$request->search.'%')->get();
 
         }else{
-            $data = Kelas::all();
+            $data = Kelas::where('status',1)
+            ->latest()
+            ->get();
         }
 
         $layout = Layout::layout_check();
@@ -123,7 +125,15 @@ class PublicController extends Controller
     }
 
     public function produk_list_template(Request $request){
-        $data = Template::latest()->get();
+        if($request->search != null){
+            $data = Template::where('judul','like','%'.$request->search.'%')->get();
+
+        }else{
+            $data = Template::where('status',1)
+            ->latest()
+            ->get();
+        }
+
         $tipe = 'Bundling';
         $route = 'produkListTemplate';
         $riwayat = 'memberTemplate';

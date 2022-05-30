@@ -133,6 +133,15 @@
                     <input type="text" name="harga" value="{{$data->harga}}" class="form-control">
                 </div>
 
+                <div class="mb-3">
+                    <label for="inputState">Status</label>
+                <select id="inputState" class="form-control" name="status">
+                    <option value="{{$data->status}}" selected>{{$data->status}}</option>
+                    <option value="1">1</option>
+                    <option value="0">0</option>
+                </select>
+                </div>
+
             </form>
 
             </div>

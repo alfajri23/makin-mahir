@@ -103,6 +103,7 @@ class ProdukController extends Controller
                 'id_kategori' => $request->id_kategori,
                 'id_status' => $request->id_status,
                 'harga' => $request->harga,
+                'status' => $request->status,
             ];
 
             if(!empty($request->poster)){
@@ -508,6 +509,7 @@ class ProdukController extends Controller
                 'judul' => $request->judul,
                 'harga' => str_replace(",", "", $request->harga),
                 'desc' => $request->desc,
+                'status' => $request->status,
             ];
 
             if(!empty($request->poster)){

@@ -3,15 +3,17 @@
 @section('content')
 
 <div class="container-fluid">
-    <h1 class="h3 mb-2 text-gray-800 mb-4">Pendaftaran <br>{{$datas->judul}}</h1>
+    <h1 class="h3 mb-2 text-gray-800 mb-4">Pendaftaran <br>Template</h1>
 
     <div class="table-responsive">
         <table class="table table-bordered tablePendaftaran" width="100%" cellspacing="0">
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>User</th>
-                    <th>Tanggal beli</th>
+                    <th>Judul</th>
+                    <th>Email</th>
+                    <th>Bayar</th>
+                    <th>Tanggal</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -67,10 +69,7 @@
             processing: true,
             serverSide: true,
             ajax: {
-                url : "{{ route('pendaftaranKelas') }}",
-                data : {
-                    id : '{{$_GET['id']}}'
-                }
+                url : "{{ route('pendaftaranTemplate') }}",
             },
             columns: [
                 {
@@ -79,7 +78,9 @@
                     nameorderable: true, 
                     searchable: true
                 },
-                {data: 'user', name: 'user'},
+                {data: 'judul', name: 'judul'},
+                {data: 'email', name: 'email'},
+                {data: 'bayar', name: 'bayar'},
                 {data: 'tanggal', name: 'tanggal',className: "dtCenter"},
                 {data: 'aksi', name: 'aksi'},
             ]
@@ -102,7 +103,7 @@
 
                 
                 asset = window.location.origin;
-                bukti = `<a href="${asset}/${datas.bukti}">Bukti</a>`;
+                bukti = `<a target="_blank" href="${asset}/${datas.bukti}">Bukti</a>`;
                     
                 
                
@@ -143,7 +144,7 @@
                 console.log(data)
                 $.ajax({
                     type : 'GET',
-                    url  : "{{ route('deleteEnrollKelas') }}",
+                    url  : "{{ route('deleteEnrollTemplate') }}",
                     data : {
                         id : id_enroll
                     },

@@ -89,10 +89,9 @@
                         <input type="tel"  pattern="08\d{9,10}" maxlength="13" minlength="10" name="telepon" class="form-control" required>
                     </div>
 
-
                     <div class="custom-file mt-3">
-                        <label class="custom-file-label" for="customFile">Bukti file</label>
-                        <input type="file" name="bukti" class="custom-file-input" id="customFile">
+                        <label class="font-weight-bold" for="customFile">Bukti file</label><br>
+                        <input type="file" name="bukti" class="" id="customFile" required>
                     </div>
 
                     <div>
