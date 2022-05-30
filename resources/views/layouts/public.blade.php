@@ -116,18 +116,6 @@
                                     </div>
                                 </li>
 
-                                {{-- <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Course <i class="ti-angle-down"></i></a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="./courses-grid-1.html">Course Gird 1</a>
-                                        <a class="dropdown-item" href="./courses-grid-2.html">Course Gird 2</a>
-                                        <a class="dropdown-item" href="./courses-grid-3.html">Course Gird 3</a>
-                                        <a class="dropdown-item" href="./course-details.html">Single Course 1</a>
-                                        <a class="dropdown-item" href="./course-details-2.html">Single Course 2</a>
-                                        <a class="dropdown-item" href="./user-profile.html">User Profile</a>
-                                        <a class="dropdown-item" href="./author-profile.html">Author Profile</a>
-                                    </div>
-                                </li> --}}
-
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{route('blog')}}">Blog</a>
                                 </li>

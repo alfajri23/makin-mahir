@@ -106,7 +106,11 @@
             <div class="col-12 col-md-5">
                 <div class="order-details">
                     {{-- <h4 class="mont-font fw-600 font-md mb-5">Order Details</h4> --}}
+<<<<<<< HEAD
                     <div class="table-content table-responsive mb-5 card border-0 bg-greyblue p-4">
+=======
+                    <div class="table-content table-responsive mb-5 card border-0 bg-greyblue p-4 p-sm-5">
+>>>>>>> 477e45f0eacdbee56e74d33cce6fe07b08266fc4
                        <table class="table order-table order-table-2 mb-0">
                            <thead>
                                <tr>
