@@ -521,8 +521,8 @@ class ProdukController extends Controller
             if(!empty($request->file)){
                 foreach($request->file as $file){
                     $nama_file = time()."_".$file->getClientOriginalName();
-                    $tujuan_upload_server = public_path('asset/file/template');
-                    $tujuan_upload = 'asset/file/template';
+                    $tujuan_upload_server = public_path('storage/template');
+                    $tujuan_upload = 'storage/template';
                     $files = $tujuan_upload . '/'. $nama_file;
                     $file->move($tujuan_upload_server,$nama_file);
                     $filed[] = $files;
