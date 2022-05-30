@@ -65,6 +65,7 @@
 
 .float{
     display:none;
+    z-index: 5;
 }
 
 @media screen and (min-width: 960px) {
