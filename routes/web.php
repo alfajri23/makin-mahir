@@ -9,6 +9,7 @@ use App\Notifications\WelcomeEmailNotification;
 
 
 use App\Exports\EventEnrollExport;
+use Illuminate\Support\Facades\Cookie;
 use Maatwebsite\Excel\Facades\Excel;
 
 /*
@@ -462,9 +463,10 @@ Route::post('pembayaran/cv-checker', [Controllers\TransaksiController::class,'pe
 Route::post('pendaftaran/beduk', [Controllers\TransaksiController::class,'pembayaranBeduk'])->name('pembayaranBeduk');
 
 
-// Route::get('set-noti', function(){
-//     $user = User::find(8);
-//     $user->notify(new WelcomeEmailNotification($user));
-// });
+Route::get('get/cookie', function(){
+    dd(Cookie::get());
+});
+
+
 
 

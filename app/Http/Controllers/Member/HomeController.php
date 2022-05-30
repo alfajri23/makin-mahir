@@ -32,10 +32,16 @@ use App\Models\KonsultasiExpert;
 
 use App\Models\Produk;
 use App\Models\TemplateEnroll;
+use Illuminate\Support\Facades\Cookie;
 
 class HomeController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
+
+        if($request->session()->get('auth.id_user') == null){
+            $request->session()->put('auth.id_user', Cookie::get('id_user'));
+        }
+
         $data = ProdukVideo::limit(6)->get(); 
         $tipe = 'video';
         $title = 'Event';
