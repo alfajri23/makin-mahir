@@ -28,8 +28,8 @@
                                 <a class="video-bttn position-relative d-block"><img src="{{asset($dt->poster)}}" alt="image" class="w-100"></a>
                             </div>
                             <div class="card-body pt-0">
-                                <span class="font-xsss fw-700 pl-3 pr-3 ls-2 lh-32 d-inline-block text-success float-right"><span class="font-xsssss">Rp.</span> {{number_format(!empty($dt->harga_promo) ? $dt->harga_promo : $dt->harga )}}</span>
-                                <h4 class="fw-700 font-xss mt-3 lh-28 mb-0">
+                                <span class="font-xsss fw-700 pl-3 pr-3 ls-2 lh-1 d-inline-block text-success float-right"><span class="font-xsssss">Rp.</span> {{number_format(!empty($dt->harga_promo) ? $dt->harga_promo : $dt->harga )}}</span>
+                                <h4 class="fw-700 font-xss mt-3 lh-1 mb-0">
                                     {{-- beri pembeda route --}}
                                     <a href="{{route('enrollProdukDetail',$dt->produk->id)}}" class="text-dark text-grey-900">{{$dt->judul}}</a>
                                     
