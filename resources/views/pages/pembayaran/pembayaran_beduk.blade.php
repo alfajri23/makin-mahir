@@ -38,7 +38,7 @@
         <div class="col-10 col-md-6 mx-auto mt-5">
             <div class="order-details">
                 {{-- <h4 class="mont-font fw-600 font-md mb-5">Order Details</h4> --}}
-                <div class="table-content table-responsive mb-5 card border-0 bg-greyblue p-5">
+                <div class="table-content table-responsive mb-5 card border-0 bg-greyblue p-4">
                    <table class="table order-table order-table-2 mb-0">
                        <thead>
                            <tr>
