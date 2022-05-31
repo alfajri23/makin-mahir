@@ -26,6 +26,7 @@ class SettingFormController extends Controller
     public function init(Request $request){
         $kategori = ProdukKategori::all();
         $data = FormSetting::find($request->id);
+        //dd($data);
 
         return view('pages.admin.setting.form.add_form',compact('kategori','data'));
     }
@@ -89,7 +90,7 @@ class SettingFormController extends Controller
                         $tujuan_upload_server = public_path('storage/setting/form');
                         $tujuan_upload = 'storage/setting/form';
                         $files = $tujuan_upload . '/'. $nama_file;
-                        //$File[$i]->move($tujuan_upload_server,$nama_file);
+                        $File[$i]->move($tujuan_upload_server,$nama_file);
                         $filed[$i] = $files;
                     }
                 }else{

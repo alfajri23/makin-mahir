@@ -74,6 +74,7 @@
                     $tipe = explode(",",$data->tipe);
                     $file = explode(",",$data->file);
                     $required = explode(",",$data->required);
+
                 @endphp
 
                 @for ($i=0;$i<count($pertanyaan);$i++)

@@ -24,11 +24,8 @@ class BlogController extends Controller
 
         if($request->search != null){
             $data = Blog::where('judul','like','%'.$request->search.'%')->paginate(6);
-            // $popular= [];
-            // $latest = [];
         }else{
             $data = Blog::paginate(6);
-            
         }
 
         $layout = '';

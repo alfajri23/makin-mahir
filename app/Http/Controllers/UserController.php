@@ -34,6 +34,8 @@ class UserController extends Controller
             'pekerjaan' => $request->pekerjaan,
             'pendidikan' => $request->pendidikan,
         ];
+        
+        //dd($request->foto);
 
         if(!empty($request->foto)){
             $datas = UploadFile::file($request,'foto','asset/img/foto',$datas);

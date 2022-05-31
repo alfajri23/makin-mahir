@@ -217,6 +217,9 @@ class PendaftaranController extends Controller
 
     //* Event
     public function event(Request $request){
+        
+        $data = EventEnroll::latest()->get();
+        //dd($data);
         if ($request->ajax()) {
             $data = EventEnroll::latest()->get();
             return datatables()->of($data)

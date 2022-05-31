@@ -144,12 +144,13 @@
             dataType: 'json',
             success : (data)=>{
                 let datas = data.data;
+                console.log(datas);
                 let modalBody = $('#modalBody');
                 let bukti,file_tambahan;
                 let asset,konfirmasi;
 
-                //asset = window.location.origin + '/public';
-                asset = window.location.origin;
+                asset = window.location.origin + '/public';
+                //asset = window.location.origin;
         
                 //Bukti bayar
                 bukti = `<a target="_blank" href="${asset}/${datas.bukti}">Bukti</a>`;
@@ -163,8 +164,7 @@
                     file_tambahan = file_tambahan.map(mapFile);
                 }
 
-                
-                //Cek status bayar
+
                 if(datas.status != 'lunas'){
                     konfirmasi = `
                     <div class="btn-group" role="group" aria-label="Basic example">

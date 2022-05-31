@@ -31,7 +31,7 @@
     gtag('js', new Date());
 
     gtag('config', 'AW-1002698644');
-    </script>
+    </script defer>
     <!-- Event snippet for Pembelian kelas google ads pemula conversion page -->
     <script>
     gtag('event', 'conversion', {
@@ -41,7 +41,7 @@
         'transaction_id': ''
     });
     </script>
-    <script src="https://www.googleoptimize.com/optimize.js?id=OPT-PT7JSV2"></script>
+    <script defer src="https://www.googleoptimize.com/optimize.js?id=OPT-PT7JSV2"></script>
 
 
     <link rel="stylesheet" href="{{ asset('css/themify-icons.css') }}">
@@ -54,6 +54,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{{asset('asset/img/program/apple-touch-icon.png')}}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset('asset/img/program/favicon-32x32.png')}}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('asset/img/program/favicon-16x16.png')}}">
+
     {{-- <link rel="manifest" href="/site.webmanifest"> --}}
 
 
@@ -79,8 +80,10 @@
                         <div class="collapse navbar-collapse" id="navbarNavDropdown">
                             <ul class="navbar-nav navbar-dark nav-menu float-none text-center">
 
-                                {{-- <li class="nav-item"><a class="nav-link" href="{{route('ebook')}}">Ebook</a></li> --}}
+
+                                {{-- <li class="nav-item"><div class="nav-link" href="{{route('ebook')}}">Ebook</a></li> --}}
                                 <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Fitur<i class="ti-angle-down"></i></a>
+
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="{{route('cvIndex')}}">CV Maker</a>
                                         <a class="dropdown-item" href="{{route('blog')}}">Blog</a>
@@ -101,7 +104,7 @@
                                         <a class="dropdown-item" href="{{route('profile')}}">Profil</a>
                                         <a class="dropdown-item" href="{{route('goes_sekolah')}}">Goes to sekolah</a>
                                         <a class="dropdown-item" href="{{route('goes_campus')}}">Goes to campus</a>
-                                        <a class="dropdown-item" href="">Kontak</a>
+                                        <!--<a class="dropdown-item" href="">Kontak</a>-->
                                     </div>
                                 </li>
 
