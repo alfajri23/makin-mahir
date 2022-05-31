@@ -486,15 +486,16 @@ class PendaftaranController extends Controller
             })
             ->addColumn('aksi', function($row){
 
-                $done = $row->is_done == 1 ? 
-                    `
+                $done = $row->is_done == 0 ? 
+                    '
                     <a onclick="doneKonsultasi('.$row->id.')" class="btn btn-warning btn-sm"><i class="fas fa-check-circle"></i></a>
-                    `: '';
+                    ': '';
 
                 $actionBtn = '
                     <div class="btn-group" role="group" aria-label="Basic example">
-                        <a onclick="detail('.$row->transaksi->id.')" class="btn btn-secondary btn-sm"><i class="fa-solid fa-circle-info"></i></a>
+                        <a onclick="detail('.$row->transaksi->id.','.$row->id.')" class="btn btn-secondary btn-sm"><i class="fa-solid fa-circle-info"></i></a>
                         <a href="https://wa.me/'.Telepon::changeTo62($row->transaksi->telepon).'" target="_blank" class="btn btn-success btn-sm"><i class="fa-brands fa-whatsapp"></i></a>
+                        '.$done.'
                     </div>
                 ';
                 
@@ -515,6 +516,15 @@ class PendaftaranController extends Controller
 
         return response()->json([
             'message' => 'Konsultasi selesai'
+        ]);
+    }
+
+    public function deleteEnrollKonsultasi(Request $request){
+        $data = KonsultasiEnroll::find($request->id);
+        $data->forceDelete();
+
+        return response()->json([
+            'data' => 'sukses menghapus'
         ]);
     }
 

@@ -95,7 +95,7 @@ class TransaksiController extends Controller
 
         if(!empty($request->bukti)){    
             foreach($request->bukti as $key => $file){
-                if ($key === array_key_first($request->bukti)) {
+                if ($key != array_key_first($request->bukti)) {
                     $nama_file = time()."_".$file->getClientOriginalName();
                     $tujuan_upload_server = public_path('storage/transaksi');
                     $tujuan_upload = 'storage/transaksi';
