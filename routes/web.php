@@ -342,6 +342,7 @@ Route::middleware(['admin'])->prefix('adm')->group(function () {
             Route::get('konsultasi', [Controllers\Admin\PendaftaranController::class,'konsultasi'])->name('pendaftaranKonsultasi');
             Route::get('konsultasi/download', [Controllers\Admin\PendaftaranController::class,'downloadKonsultasi'])->name('downloadKonsultasi');
             Route::get('konsultasi/done', [Controllers\Admin\PendaftaranController::class,'konsultasiDone'])->name('doneKonsultasi');
+            Route::get('konsultasi/delete', [Controllers\Admin\PendaftaranController::class,'deleteEnrollKonsultasi'])->name('deleteEnrollKonsultasi');
         
             //TEMPLATE
             Route::get('template', [Controllers\Admin\PendaftaranController::class,'template'])->name('pendaftaranTemplate');
