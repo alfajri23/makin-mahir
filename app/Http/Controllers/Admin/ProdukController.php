@@ -116,7 +116,7 @@ class ProdukController extends Controller
             //Update data pada produk
             $produk = Produk::where([
                 'id_kategori' => 1,
-                'id_produk' => $request->id
+                'id_produk' => $data->id
             ])->first();
 
             $produk->nama = $request->judul;
