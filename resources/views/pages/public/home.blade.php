@@ -132,10 +132,10 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6">
-                    <a href="{{route('memberChecker')}}" class="hover card mb-4 w-100 border-0 pt-4 pb-4 pr-4 pl-7 shadow-xss rounded-lg aos-init" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="500">
+                    <a href="{{route('produkListTemplate')}}" class="hover card mb-4 w-100 border-0 pt-4 pb-4 pr-4 pl-7 shadow-xss rounded-lg aos-init" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="500">
                         <i class="fa-solid fa-check-to-slot text-secondary font-xl position-absolute left-15 ml-2"></i>
-                        <h2 class="fw-700 font-xs text-grey-900 mt-1">CV Checker</h2>
-                        <p class="fw-500 font-xssss lh-24 text-grey-600 mb-0">Cek Dulu CV Kamu Udah Menarik Belum di Mata HRD</p>
+                        <h2 class="fw-700 font-xs text-grey-900 mt-1">Template CV</h2>
+                        <p class="fw-500 font-xssss lh-24 text-grey-600 mb-0">Buat kamu, ini rekomendasi template CV langsung dari HRD</p>
                     </a>
                 </div>
 

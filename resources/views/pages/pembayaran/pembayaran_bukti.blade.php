@@ -60,7 +60,7 @@
                            <tr>
                                 <th class="text-grey-700 fw-600 font-xss">Status
                                 </th>
-                                <td class="text-right text-grey-700 fw-600 font-xss">{{$data->status_bayar}}</td>
+                                <td class="text-right text-grey-700 fw-600 font-xss">Lakukan pembayaran</td>
                             </tr>
                        </tbody>
 
@@ -84,14 +84,15 @@
                         <li>EWALLET= GOPAY, OVO, DANA : 08579993240 A.N. Tri Astuti</li>
                     </ul>
 
+
+                    <div class="custom-file mt-3">
+                        <label class="font-weight-bold" for="customFile">Bukti pembayaran</label><br>
+                        <input type="file" name="bukti[]" class="" id="customFile" required>
+                    </div>
+                    
                     <div class="form-group my-4">
                         <label for="exampleInputEmail1" class="fw-600 mb-0">Telepon</label>
                         <input type="tel"  pattern="08\d{9,10}" maxlength="13" minlength="10" name="telepon" class="form-control" required>
-                    </div>
-
-                    <div class="custom-file mt-3">
-                        <label class="font-weight-bold" for="customFile">Bukti file</label><br>
-                        <input type="file" name="bukti" class="" id="customFile" required>
                     </div>
 
                     <div>

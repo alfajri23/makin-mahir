@@ -27,16 +27,16 @@
                     <div class="form-group mb-0 icon-input d-flex">
                         {{-- <i class="feather-search font-lg text-grey-400"></i> --}}
                         <input name="search" type="text" placeholder="Start typing to search.." class="bg-transparent border-0 lh-32 pt-1 pb-1 px-3 font-xsss fw-500 rounded-xl">
-                        <button type="submit" class="btn btn-success">
+                        <button type="submit" class="btn">
                             
-                            <i class="feather-search text-white"></i>
+                            <i class="feather-search"></i>
                         </button>
                     </div>
                 </form>
             </div>
             @if(\Auth::check()) 
-            <div>
-                <a href="{{route($riwayat)}}" class="btn btn-primary ">Saya</a>
+            <div class="mx-1">
+                <a href="{{route($riwayat)}}" class="btn btn-info text-capitalize">{{$tipe}} Saya</a>
             </div>
             @endif
         </div>

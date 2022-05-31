@@ -91,17 +91,17 @@
 
 
                     <div class="custom-file mt-3">
-                        <label class="font-weight-bold" for="customFile">Bukti file</label><br>
+                        <label class="font-weight-bold" for="customFile">Bukti pembayaran</label><br>
                         <input type="file" name="bukti" class="" id="customFile" required>
                     </div>
 
                     <div class="custom-file mt-3">
-                        <label class="font-weight-bold" for="customFile">CV</label><br>
+                        <label class="font-weight-bold" for="customFile">Upload CV kamu</label><br>
                         <input type="file" name="cv_user" class="" required>
                     </div>
 
                     <div class="form-group mt-3">
-                        <label for="exampleInputnama1">Pesan review</label>
+                        <label for="exampleInputnama1">Tuliskan masalah yang kamu hadapi saat membuat CV</label>
                         <textarea name="pesan" class="form-control p-1 py-0">
                             
                         </textarea>
