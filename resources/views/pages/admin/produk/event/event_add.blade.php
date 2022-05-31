@@ -108,9 +108,9 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	            plugins: [
 	                "advlist autolink lists charmap print preview anchor",
 	                "searchreplace visualblocks code fullscreen",
-	                "paste wordcount"
+	                "paste wordcount link"
 	            ],
-	            toolbar: "undo redo | bold italic | bullist numlist outdent indent "
+	            toolbar: "link | undo redo | bold italic | bullist numlist outdent indent "
 	      
 	    });
 	});

@@ -3,7 +3,10 @@
 @section('content')
 
 <div class="container">
-    <button type="button" data-toggle="modal" data-target="#modalCreate" class="btn btn-primary">Tambah</button>
+    <a href="{{route('notifikasiAdd')}}" class="btn btn-primary">Tambah</a>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCreate">
+        Tambah
+    </button>
     <div class="table-responsive">
         <table class="table table-bordered tableNotifikasi" width="100%" cellspacing="0">
             <thead>
@@ -23,7 +26,7 @@
 
 <!-- Modal Create -->
 <div class="modal fade" id="modalCreate" tabindex="1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Data</h5>
@@ -36,12 +39,20 @@
                 @csrf
                 <div class="form-group">
                   <label for="exampleInputEmail1">Nama</label>
-                  <input type="text" name="nama" class="form-control" id="formNama" aria-describedby="emailHelp">
+                  {{-- <input type="text" name="nama" class="form-control" id="formNama" aria-describedby="emailHelp"> --}}
+                    <textarea name="nama" class="form-control point"> 
+                    
+                    </textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Jenis</label>
                     <input type="text" name="jenis" class="form-control" id="formJudul" aria-describedby="emailHelp">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Link</label>
+                    <input type="text" name="link" class="form-control">
                 </div>
 
                 <div class="form-group">
@@ -71,7 +82,9 @@
     </div>
 </div>
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.10.0/tinymce.min.js"
+integrity="sha512-XNYSOn0laKYg55QGFv1r3sIlQWCAyNKjCa+XXF5uliZH+8ohn327Ewr2bpEnssV9Zw3pB3pmVvPQNrnCTRZtCg=="
+crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
 
     $.ajaxSetup({
@@ -100,6 +113,22 @@
                 {data: 'aksi', name: 'aksi',width: '3%'},
             ],
             dom: 'frtlip',
+        });
+
+        tinymce.init({
+            menubar: 'insert',
+            selector: "textarea.point",
+            branding: false,
+            width: "100%",
+            height: "250",
+            plugins: [
+                "advlist autolink lists charmap print preview anchor",
+                "searchreplace visualblocks code fullscreen",
+                "paste wordcount link",
+                "media"
+            ],
+            toolbar: "undo redo | bold italic | bullist numlist outdent indent | media | link",
+            convert_urls: false,
         });
     });
 

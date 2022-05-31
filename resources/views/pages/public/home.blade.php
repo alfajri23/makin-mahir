@@ -44,7 +44,6 @@
                         <h2 class="poppins fw-700 text-grey-900 display3-size display4-md-size">Langsung Sama HRD</h2>
 
                         <div class="w200">
-
                             <a href="{{route('produkListKonsul')}}" class="btn btn-block border-0 w-100 bg-primary p-3 text-white fw-600 rounded-lg d-inline-block font-xssss btn-light mt-3">Ambil Sekarang</a>
                         </div>
                     </div>
@@ -81,8 +80,7 @@
                             <h2 class="display4-size display1-sm-size fw-700 open-font text-info mb-0">1 on 1</h2>
                             <h4 class="font-xsss text-grey-600 fw-500 mt-2">Bisa Konsultasi Private 1 on 1 langsung dengan HRD tersertifikasi BNSP</h4>
                         </div>
-
-                        
+   
                     </div>
                 </div>
             </div>
@@ -296,49 +294,6 @@
                 </div>
 
                 <div class="container">
-                    {{-- <div class="row owl-carousel owl-theme overflow-visible dot-none">
-                        <div class="owl-items col-lg-4 col-md-6 mb-4">
-                            <div class="card w-100 p-5 text-left border-0 shadow-md rounded-lg">
-                                <div class="card-body pl-0 pt-0">
-                                    <img src="{{asset('asset/img/program/testimoni/testi1.jpg')}}" alt="user" class="w45 float-left mr-3">
-                                    <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Kartika fitri</h4>    
-                                </div>
-                                <p class="font-xsss fw-400 text-grey-600 lh-28 mt-0 mb-0 ">"Bahkan ada beberapa pertanyaan yang menurut saya tuh itu gak ada gitu, biasanya kan ada yang muncul di youtube gitu, kayak beberapa pertanyaan terkait yang sering ditanyain sama HR. Tapi tadi kaya wow, ini bingung jawabnya gimana. Untungnya tadi udah dikasih solusi sih pak terkait pertanyaan tersebut"</p>
-                            </div>
-                        </div>
-
-                        <div class="owl-items col-lg-4 col-md-6 mb-4">
-                            <div class="card w-100 p-5 text-left border-0 shadow-md rounded-lg">
-                                <div class="card-body pl-0 pt-0">
-                                    <img src="{{asset('asset/img/program/testimoni/testi2.jpg')}}" alt="user" class="w45 float-left mr-3">
-                                    <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Alya Raihanna</h4>    
-                                </div>
-                                <p class="font-xsss fw-400 text-grey-600 lh-28 mt-0 mb-0 ">"Jadi karena ngikutin Kelas Bedah CV ini, aku jadi lebih tau mana yang harus aku masukin ke CV, mana yang enggak. Jadi bikin CV aku lebih ATS Friendly. Nah, walaupun ini berbayar, tapi menurut aku tuh ini worth it banget, kalian ga bakal nyesel gitu loh"</p>
-                            </div>
-                        </div>
-
-                        <div class="owl-items col-lg-4 col-md-6 mb-4">
-                            <div class="card w-100 p-5 text-left border-0 shadow-md rounded-lg">
-                                <div class="card-body pl-0 pt-0">
-                                    <img src="{{asset('asset/img/program/testimoni/testi3.jpg')}}" alt="user" class="w45 float-left mr-3">
-                                    <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Yola Yulliana</h4>    
-                                </div>
-                                <p class="font-xsss fw-400 text-grey-600 lh-28 mt-0 mb-0 ">"Kita tuh butuh prakteknya juga, gak cuma teorinya doank. Sekarang kan teorinya udah banyak, di google udah ada, di buku udah ada, kita butuh prakteknya juga. Kalo yang kaya gini saya baru pertama kali nih saya ikut yang kaya gini. Kalau menurut saya, yang kaya gini tuh cukup membantu sih mas"</p>
-                            </div>
-                        </div>
-
-                        <div class="owl-items col-lg-4 col-md-6 mb-4">
-                            <div class="card w-100 p-5 text-left border-0 shadow-md rounded-lg">
-                                <div class="card-body pl-0 pt-0">
-                                    <img src="{{asset('asset/img/program/testimoni/testi3.jpg')}}" alt="user" class="w45 float-left mr-3">
-                                    <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Yola Yulliana</h4>    
-                                </div>
-                                <p class="font-xsss fw-400 text-grey-600 lh-28 mt-0 mb-0 ">"Kita tuh butuh prakteknya juga, gak cuma teorinya doank. Sekarang kan teorinya udah banyak, di google udah ada, di buku udah ada, kita butuh prakteknya juga. Kalo yang kaya gini saya baru pertama kali nih saya ikut yang kaya gini. Kalau menurut saya, yang kaya gini tuh cukup membantu sih mas"</p>
-                            </div>
-                        </div>
-
-                    </div> --}}
-
                     <div class="col-lg-12">
                         <div class="feedback-slider2 owl-carousel owl-theme dot-none right-nav pb-4 nav-xs-none">
                             <div class="owl-items bg-transparent">
@@ -348,7 +303,7 @@
                                     </div>
 
                                     <div class="card-body p-0 mt-5 bg-transparent">
-                                        <img src="{{asset('asset/img/program/testimoni/testi1.jpg')}}" alt="user" class="w45 float-left mr-3">
+                                        {{-- <img src="{{asset('asset/img/program/testimoni/testi1.jpg')}}" alt="user" class="w45 float-left mr-3"> --}}
                                         <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Kartika fitri</h4>
                                     </div>
                                 </div>
@@ -361,7 +316,7 @@
                                     </div>
 
                                     <div class="card-body p-0 mt-5 bg-transparent">
-                                        <img src="{{asset('asset/img/program/testimoni/testi2.jpg')}}" alt="user" class="w45 float-left mr-3">
+                                        {{-- <img src="{{asset('asset/img/program/testimoni/testi2.jpg')}}" alt="user" class="w45 float-left mr-3"> --}}
                                         <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Alya Raihanna</h4>    
                                     </div>
                                 </div>
@@ -374,13 +329,55 @@
                                     </div>
 
                                     <div class="card-body p-0 mt-5 bg-transparent">
-                                        <img src="{{asset('asset/img/program/testimoni/testi3.jpg')}}" alt="user" class="w45 float-left mr-3">
+                                        {{-- <img src="{{asset('asset/img/program/testimoni/testi3.jpg')}}" alt="user" class="w45 float-left mr-3"> --}}
                                         <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Yola Yulliana</h4>    
                                     </div>
                                 </div>
                             </div>
 
-                             
+                            <div class="owl-items bg-transparent">
+                                <div class="card w-100 p-0 bg-transparent text-left border-0">
+                                    <div class="card-body p-5 bg-white shadow-sm rounded-lg">
+                                        <p class="font-xsss fw-500 text-grey-700 lh-30 mt-0 mb-0 ">“ Setelah mengikuti kelas konsul ini saya jadi lebih paham cara membuat CV untuk membuat personal branding lebih menonjol dibandingkan kandidat lain. Selain itu masukan dari kak Aldino terkait portofolio sangat membantu saya.”</p>
+                                    </div>
+
+                                    <div class="card-body p-0 mt-5 bg-transparent">
+                                        {{-- <img src="{{asset('asset/img/program/testimoni/testi3.jpg')}}" alt="user" class="w45 float-left mr-3"> --}}
+                                        <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Ibnu Hari Winartomo </h4>  
+                                        <h4 class="text-grey-800 fw-500 font-xsss mt-0">(Universitas Budi Luhur) </h4>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="owl-items bg-transparent">
+                                <div class="card w-100 p-0 bg-transparent text-left border-0">
+                                    <div class="card-body p-5 bg-white shadow-sm rounded-lg">
+                                        <p class="font-xsss fw-500 text-grey-700 lh-30 mt-0 mb-0 ">“Insighfull banget yah, jadi pikiran yang sebelumnya menurut saya sudah benar ternyata menurut HR ini kurang tepat. Jadi kelas bedah CV ini sangat membantu saya”
+                                        </p>
+                                    </div>
+
+                                    <div class="card-body p-0 mt-5 bg-transparent">
+                                        {{-- <img src="{{asset('asset/img/program/testimoni/testi3.jpg')}}" alt="user" class="w45 float-left mr-3"> --}}
+                                        <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Dalil AF</h4>  
+                                        <h4 class="text-grey-800 fw-500 font-xsss mt-0">( ISI Denpasar, Bali ) </h4>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="owl-items bg-transparent">
+                                <div class="card w-100 p-0 bg-transparent text-left border-0">
+                                    <div class="card-body p-5 bg-white shadow-sm rounded-lg">
+                                        <p class="font-xsss fw-500 text-grey-700 lh-30 mt-0 mb-0 ">“Saya jadi paham terkait pembuatan CV, baik yang ATS ataupun CV Kreatif. Terimakasih Makin Mahir”
+                                        </p>
+                                    </div>
+
+                                    <div class="card-body p-0 mt-5 bg-transparent">
+                                        {{-- <img src="{{asset('asset/img/program/testimoni/testi3.jpg')}}" alt="user" class="w45 float-left mr-3"> --}}
+                                        <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Veronica Yolanda </h4>  
+                                        <h4 class="text-grey-800 fw-500 font-xsss mt-0">( UII Yogyakarta ) </h4>
+                                    </div>
+                                </div>
+                            </div>
                              
                         </div>
                     </div>
@@ -408,29 +405,29 @@
         var fullTxt = this.toRotate[i];
 
         if (this.isDeleting) {
-        this.txt = fullTxt.substring(0, this.txt.length - 1);
+            this.txt = fullTxt.substring(0, this.txt.length - 1);
         } else {
-        this.txt = fullTxt.substring(0, this.txt.length + 1);
+            this.txt = fullTxt.substring(0, this.txt.length + 1);
         }
 
         this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
 
         var that = this;
-        var delta = 200 - Math.random() * 100;
+        var delta = 200 - Math.random() * 250;
 
         if (this.isDeleting) { delta /= 2; }
 
         if (!this.isDeleting && this.txt === fullTxt) {
-        delta = this.period;
-        this.isDeleting = true;
+            delta = this.period;
+            this.isDeleting = true;
         } else if (this.isDeleting && this.txt === '') {
-        this.isDeleting = false;
-        this.loopNum++;
-        delta = 500;
+            this.isDeleting = false;
+            this.loopNum++;
+            delta = 500;
         }
 
         setTimeout(function() {
-        that.tick();
+            that.tick();
         }, delta);
     };
 

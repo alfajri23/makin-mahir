@@ -12996,11 +12996,11 @@ strong,
 .main-content .middle-sidebar-header .right-menu-icon li {
   margin-left: 25px;
 }
-.main-content .middle-sidebar-header .right-menu-icon li a {
+.main-content .middle-sidebar-header .right-menu-icon li div {
   display: inline-block;
   position: relative;
 }
-.main-content .middle-sidebar-header .right-menu-icon li a .dot-count {
+.main-content .middle-sidebar-header .right-menu-icon li div .dot-count {
   position: absolute;
   top: -3px;
   right: -3px;
@@ -13012,11 +13012,11 @@ strong,
   display: inline-block;
   font-size: 10px;
 }
-.main-content .middle-sidebar-header .right-menu-icon li a:hover .menu-dropdown {
+.main-content .middle-sidebar-header .right-menu-icon li div:hover .menu-dropdown {
   visibility: visible;
   opacity: 1;
 }
-.main-content .middle-sidebar-header .right-menu-icon li a .menu-dropdown {
+.main-content .middle-sidebar-header .right-menu-icon li div .menu-dropdown {
   visibility: hidden;
   opacity: 0;
   background-color: #fff;
@@ -13032,7 +13032,7 @@ strong,
   text-align: left;
   transition: all 0.4s ease;
 }
-.main-content .middle-sidebar-header .right-menu-icon li a .menu-dropdown:after {
+.main-content .middle-sidebar-header .right-menu-icon li div .menu-dropdown:after {
   content: "";
   width: 0;
   height: 0;

@@ -41,8 +41,12 @@ class NotifikasiUserController extends Controller
             'link' => $request->link,
         ]);
 
-        return redirect()->back();
+        return redirect()->route('notifikasiIndex');
 
+    }
+
+    public function add(){
+        return view('pages.admin.notifikasi.notifikasi_add');
     }
 
     public function delete(Request $request){

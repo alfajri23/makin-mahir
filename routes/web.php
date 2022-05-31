@@ -404,7 +404,8 @@ Route::middleware(['admin'])->prefix('adm')->group(function () {
 
     //*NOTIFIKASI
         Route::get('notifikasi', [Controllers\Admin\NotifikasiUserController::class,'index'])->name('notifikasiIndex');
-        Route::post('notifikasi/add', [Controllers\Admin\NotifikasiUserController::class,'store'])->name('notifikasiStore');
+        Route::get('notifikasi/add', [Controllers\Admin\NotifikasiUserController::class,'add'])->name('notifikasiAdd');
+        Route::post('notifikasi/store', [Controllers\Admin\NotifikasiUserController::class,'store'])->name('notifikasiStore');
         Route::get('notifikasi/delete', [Controllers\Admin\NotifikasiUserController::class,'delete'])->name('notifikasiDelete');
     //edn noti
 
