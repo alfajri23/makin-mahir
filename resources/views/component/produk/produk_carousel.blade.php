@@ -19,7 +19,7 @@
                             @if ($dt->harga == '#')
                                 Bayar<br> suka-suka
                             @elseif ($dt->harga == null)
-                                gratis
+                                GRATIS
                             @else
                                 Rp. {{number_format($dt->harga)}}
                             @endif

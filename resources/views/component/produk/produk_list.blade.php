@@ -4,10 +4,10 @@
         <div class="row">
 
             @forelse ($data as $dt)
-                <div class="{{$layout == 'public' ? 'col-xl-3' : 'col-xl-4'}} col-lg-6 col-md-6 col-sm-6 mb-4">
+                <div class="{{$layout == 'layouts.public' ? 'col-xl-4' : 'col-xl-4'}} col-lg-6 col-md-6 col-sm-6 mb-4">
                     <div class="card w-100 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1">
-                        {{-- <div class="card-image-main w-100 mb-3">--}}
-                        <div class="card-image w-100 mb-3">
+                        {{-- <div class="card-image w-100 mb-3">--}}
+                        <div class="{{$layout == 'layouts.member' ? 'card-image' : 'card-image-main'}} w-100 mb-3">
                             <img src="{{asset($dt->poster)}}" alt="image" class="w-100">   
                         </div>
                         <div class="card-body pt-0">
@@ -23,12 +23,13 @@
                                     @endif
                                     <p class="font-xss fw-700 pl-3 pr-3 lh-1 d-inline-block text-success mb-0">
                                         @if ($dt->harga == '#')
-                                            Bayar suka-suka
+                                            Bayar suka-suka 
                                         @elseif ($dt->harga == null)
-                                            gratis
+                                            GRATIS
                                         @else
                                             Rp. {{number_format($dt->harga)}}
                                         @endif
+                                       
                                     </p>
                                 </div>
                             </div>

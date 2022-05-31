@@ -19,7 +19,7 @@
 <div class="container mt-5 pt-3 mb-3">
     <div class="row px-3 flex-column flex-sm-row">
         <div class="flex-grow-1">
-            <h2 class="text-grey-900 fw-700 display3-size display4-md-size pb-3 mb-0 d-block">{{$tipe}}</h2>
+            <h2 class="text-grey-900 text-uppercase fw-700 display3-size display4-md-size pb-3 mb-0 d-block">{{$tipe}}</h2>
         </div>
         <div class=" d-flex align-items-center">
             <div>

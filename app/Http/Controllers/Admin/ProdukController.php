@@ -109,6 +109,8 @@ class ProdukController extends Controller
             if(!empty($request->poster)){
                 $datas = UploadFile::file($request,'poster','asset/img/produk/kelas',$datas);
             }
+            
+            //dd($datas);
 
             $data = Kelas::updateOrCreate(['id'=>$request->id],$datas);
 
@@ -116,7 +118,7 @@ class ProdukController extends Controller
             //Update data pada produk
             $produk = Produk::where([
                 'id_kategori' => 1,
-                'id_produk' => $request->id
+                'id_produk' => $data->id
             ])->first();
 
             $produk->nama = $request->judul;

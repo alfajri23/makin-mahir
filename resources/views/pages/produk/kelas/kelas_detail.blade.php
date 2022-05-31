@@ -3,8 +3,8 @@
 @section('content')
     
     <div class="w-100 position-relative mt-5 mt-sm-0">
-            <div class="col-12 col-sm-12 mx-auto mt-4 mt-sm-0">
-                <div class="card-image w-100">
+            <div class="col-12 col-sm-10 mx-auto mt-4 mt-sm-0">
+                <div class="card-image w-90">
                     <a class="video-bttn position-relative d-block">
                         <img src="{{asset($data->poster)}}" alt="image" class="w-100">
                     </a>
@@ -20,7 +20,7 @@
                         <h4 class=" fw-500 mb-4 lh-30 font-xsss text-grey-600 mt-3 os-init">
                             {{$data['tentang']}}
                         </h4>
-                        <a href="{{route('pembayaranCek',$data->produk->id)}}" class="btn border-0 btn-primary fw-600 font-xssss os-init">Beli kelas</a>
+                        <a href="{{route('pembayaranCek',$data->produk->id)}}" class="btn border-0 btn-primary px-5 fw-400 font-xs os-init">Beli kelas</a>
                     </div>
                 </div>
             </div>

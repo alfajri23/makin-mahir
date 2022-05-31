@@ -31,7 +31,7 @@
     gtag('js', new Date());
 
     gtag('config', 'AW-1002698644');
-    </script>
+    </script defer>
     <!-- Event snippet for Pembelian kelas google ads pemula conversion page -->
     <script>
     gtag('event', 'conversion', {
@@ -41,7 +41,7 @@
         'transaction_id': ''
     });
     </script>
-    <script src="https://www.googleoptimize.com/optimize.js?id=OPT-PT7JSV2"></script>
+    <script defer src="https://www.googleoptimize.com/optimize.js?id=OPT-PT7JSV2"></script>
 
 
     <link rel="stylesheet" href="{{ asset('css/themify-icons.css') }}">
