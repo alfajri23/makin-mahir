@@ -91,10 +91,10 @@
                         <li class="flex-lg-brackets"><a href="{{route('produkListKelas')}}" data-tab="archived" class="nav-content-bttn open-font"><i class="fas fa-chalkboard-teacher mr-2"></i><span>Kelas</span></a></li>
                         <li class="flex-lg-brackets"><a href="{{route('blog')}}" data-tab="archived" class="nav-content-bttn open-font"><i class="fa-solid fa-newspaper mr-3"></i><span>Blog</span></a></li>
                         <li class="flex-lg-brackets"><a href="{{route('ebook')}}" data-tab="archived" class="nav-content-bttn open-font"><i class="feather-book mr-3"></i><span>Ebook</span></a></li>
-                        <li class="flex-lg-brackets"><a href="{{route('produkListTemplate')}}" data-tab="archived" class="nav-content-bttn open-font"><i class="fas fa-box mr-3"></i></i><span>Bundle</span></a></li>
+                        <li class="flex-lg-brackets"><a href="{{route('produkListTemplate')}}" data-tab="archived" class="nav-content-bttn open-font"><i class="fas fa-box mr-3"></i></i><span>Template CV</span></a></li>
                         <li><a href="{{route('testIndex')}}" class="nav-content-bttn open-font" data-tab="favorites"><i class="feather-globe mr-3"></i><span>Assesment</span></a></li>
                         <li><a href="{{route('cvIndex')}}" class="nav-content-bttn open-font" data-tab="favorites"><i class="feather-play-circle mr-3"></i><span>CV Maker</span></a></li>
-                        <li><a href="{{route('memberChecker')}}" data-tab="archived" class="nav-content-bttn open-font"><i class="fas fa-file-signature mr-3"></i><span>CV Checker</span></a></li>
+                        <!--<li><a href="{{route('memberChecker')}}" data-tab="archived" class="nav-content-bttn open-font"><i class="fas fa-file-signature mr-3"></i><span>CV Checker</span></a></li>-->
                         <li><a href="{{route('forumIndex')}}" data-tab="favorites"><i class="feather-play-circle mr-3"></i><span>Forum</span></a></li>
                         <li class="flex-lg-brackets"><a href="{{route('transferIndex')}}" data-tab="archived" class="nav-content-bttn open-font"><i class="feather-dollar-sign mr-3"></i><span>Riwayat transfer</span></a></li>
                     </ul>

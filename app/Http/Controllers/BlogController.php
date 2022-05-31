@@ -104,7 +104,7 @@ class BlogController extends Controller
             })
             ->addColumn('kategori', function($row){
                 $nama = '
-                <p>'.$row->kategoris->nama.'</p>
+                <p>'.$row->kategori.'</p>
                 ';
                 return $nama;
             })

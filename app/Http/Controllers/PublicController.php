@@ -134,7 +134,7 @@ class PublicController extends Controller
             ->get();
         }
 
-        $tipe = 'Bundling';
+        $tipe = 'template';
         $route = 'produkListTemplate';
         $riwayat = 'memberTemplate';
         $meta_title = "Paket CV Makin Mahir | MakinMahir.id";
