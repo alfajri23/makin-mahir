@@ -59,7 +59,7 @@
                             @endempty
                             <div class="form-group my-4">
                                 <label for="exampleInputEmail1" class="fw-600 mb-0">{{$pertanyaans[$i]}}</label>
-                                <input type="{{$tipes[$i]}}" name="jawaban[]" class="form-control" {{$required[$i] == 1 ? 'required' : ''}}>
+                                <input type="{{$tipes[$i]}}" name="{{$tipes[$i] == 'file' ? 'bukti[]' : 'jawaban[]' }}" class="form-control" {{$required[$i] == 1 ? 'required' : ''}}>
                             </div>
                         @endfor
                     @endempty
@@ -78,7 +78,7 @@
     
                         <div class="custom-file mt-3">
                             {{-- <label class="custom-file-label" for="customFile">Bukti file</label> --}}
-                            <input type="file" name="bukti" class="" required>
+                            <input type="file" name="bukti[]" class="" required>
                         </div>
 
                         <div class="form-group my-4">

@@ -9,9 +9,9 @@
             <h2 class="text-gray-800 fw-700 display1-size">Konsultasi</h2>
         </div>
         <div class="col-2">
-            <button href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <a href="{{route('konsultasiAdd')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" >
                 <i class="fas fa-download fa-sm text-white-50"></i> Tambah
-            </button>
+            </a>
         </div>
     </div>
     

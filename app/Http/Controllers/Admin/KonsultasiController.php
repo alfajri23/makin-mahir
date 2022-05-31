@@ -24,6 +24,12 @@ class KonsultasiController extends Controller
         return view('pages.admin.produk.konsultasi.konsultasi',compact('data','expert','tipe'));
     }
 
+    public function konsultasiAdd(){
+        $expert = Expert::latest()->get();
+        $tipe = KonsultasiTipe::latest()->get();
+        return view('pages.admin.produk.konsultasi.konsultasi_expert_add',compact('expert','tipe'));
+    }
+
 //Tipe
     public function tipeIndex(){
         $data = KonsultasiTipe::latest()->get();

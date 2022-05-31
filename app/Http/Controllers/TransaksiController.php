@@ -62,22 +62,23 @@ class TransaksiController extends Controller
     }
 
     public function create(Request $request){
+        $buktis = $request->bukti;
 
-        $validator = Validator::make($request->all(), [
-            'bukti' => 'file|mimes:jpeg,png,jpg,pdf|max:2048',
-            'telepon' => 'required', 'string','min:9',
-        ]);
+        //dd($request->bukti);
+
+        for($i=0;$i<count($request->bukti);$i++){
+            $rules['bukti.' . $i] = 'file|mimes:jpeg,png,jpg,pdf|max:2048';
+        }
+        $rules['telepon'] = 'required|string|min:9';
+
+        $validator = Validator::make($request->all(),$rules);
 
         if ($validator->fails()) {
             dd($validator->messages()->first()); 
             return redirect()->back();
         }
 
-        if($request->jawaban != null) {
-            $jawaban = implode(",",$request->jawaban);
-        }else{
-            $jawaban = '';
-        }
+        $jawaban = $request->jawaban != null ? implode(",",$request->jawaban) : '';
 
         $datas = [
             'id_produk' => $request->id_produk,
@@ -90,10 +91,37 @@ class TransaksiController extends Controller
             'telepon' => $request->telepon
         ];
 
+        $filed = [];
 
-        if(!empty($request->bukti)){
-            $datas = UploadFile::file($request,'bukti','storage/transaksi',$datas);
+        if(!empty($request->bukti)){    
+            foreach($request->bukti as $key => $file){
+                if ($key === array_key_first($request->bukti)) {
+                    $nama_file = time()."_".$file->getClientOriginalName();
+                    $tujuan_upload_server = public_path('storage/transaksi');
+                    $tujuan_upload = 'storage/transaksi';
+                    $files = $tujuan_upload . '/'. $nama_file;
+                    $file->move($tujuan_upload_server,$nama_file);
+                    $datas['bukti'] = $files;
+                }else{
+                    $nama_file = time()."_".$file->getClientOriginalName();
+                    $tujuan_upload_server = public_path('storage/file_tambahan');
+                    $tujuan_upload = 'storage/file_tambahan';
+                    $files = $tujuan_upload . '/'. $nama_file;
+                    $file->move($tujuan_upload_server,$nama_file);
+                    $filed[] = $files;
+                }
+
+            }
+
+            $file_name = implode(",",$filed);
+
+            $datas['file_tambahan'] = $file_name;
         }
+
+
+        // if(!empty($request->bukti)){
+        //     $datas = UploadFile::file($request,'bukti','storage/transaksi',$datas);
+        // }
 
         $data = Transaksi::updateOrCreate(['id'=>$request->id],$datas);
     
@@ -145,6 +173,8 @@ class TransaksiController extends Controller
         for($i=0;$i<count($request->bukti);$i++){
             $rules['bukti.' . $i] = 'file|mimes:jpeg,png,jpg,pdf|max:2048';
         }
+
+        $rules['telepon'] = 'required|string|min:9';
 
         $validator = Validator::make($request->all(),$rules);
 

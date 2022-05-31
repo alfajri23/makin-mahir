@@ -271,6 +271,7 @@ Route::middleware(['admin'])->prefix('adm')->group(function () {
         Route::prefix('konsultasi')->group(function(){
 
             Route::get('/', [Controllers\Admin\KonsultasiController::class,'index'])->name('konsultasiIndex');
+            Route::get('/add', [Controllers\Admin\KonsultasiController::class,'konsultasiAdd'])->name('konsultasiAdd');
 
             Route::prefix('tipe')->group(function(){
                 Route::get('/', [Controllers\Admin\KonsultasiController::class,'tipeIndex'])->name('konsultasiTipeIndex');
