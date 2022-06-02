@@ -56,7 +56,7 @@
                            <tr>
                                 <th class="text-grey-700 fw-600 font-xss">Status
                                 </th>
-                                <td class="text-right text-grey-700 fw-600 font-xss">{{$data->status_bayar}}</td>
+                                <td class="text-right text-grey-700 fw-600 font-xss">Lakukan pembayaran</td>
                             </tr>
                        </tbody>
 
