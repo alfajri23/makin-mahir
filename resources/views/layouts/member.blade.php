@@ -71,7 +71,7 @@
 
     <div class="main-wrapper">
         {{-- sidebar left --}}
-        <nav class="navigation scroll-bar" style="z-index: 3">
+        <nav class="navigation scroll-bar">
             <div class="container pl-0 pr-0">
                 <div class="nav-content">
                     <div class="nav-top">
@@ -171,7 +171,7 @@
                 <span class="font-xssss fw-700">Home</span>
             </a>
             <a href="{{route('produkListEvent')}}" class="nav-content-bttn nav-center">
-                <i class="fa-solid fa-calendar-day"></i><br>
+                <i class="fa-solid fa-calendar-day ml-1"></i><br>
                 <span class="font-xssss fw-700">Event</span>
             </a>
             {{-- <a href="default-live-stream.html" class="nav-content-bttn" data-tab="chats"><i class="feather-layout"></i></a>             --}}
@@ -180,7 +180,7 @@
                 <span class="font-xssss fw-700">Kelas</span>
             </a>
             <a href="{{route('memberProfile')}}" class="nav-content-bttn nav-center">
-                <i class="font-md feather-user fw-600"></i><br>
+                <i class="font-md feather-user fw-600 ml-1"></i><br>
                 <span class="font-xssss fw-700">Profil</span>
             </a>
         </div>

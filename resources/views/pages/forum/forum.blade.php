@@ -107,11 +107,12 @@
 
         <div class="col-12 col-sm-3 mb-5">
             <h5 class="font-sm fw-500">Kategori</h5>
-            
+            @if(\Auth::check()) 
                 <button type="button" class="btn btn-light" data-toggle="modal" data-target="#kategoriModal">
                     <i class="fa-solid fa-plus"></i>
                     Tambah kategori
                 </button>
+            @endif
             
             @forelse ($kategori as $kat)
             <a href="{{route('forumIndex',['kategori'=> $kat->nama])}}" class="d-flex align-items-center btn btn-light my-1">  
@@ -213,6 +214,13 @@
 
 <script type="text/javascript">
 
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+            'Authorization': `Bearer {{Session::get('token')}}`
+        }
+    });
+
     $(document).ready(function() {
 		 tinymce.init({
                 menubar: 'insert',
@@ -264,9 +272,9 @@
             data : data,
             dataType: 'json',
             success : (data)=>{
+                console.log(data);
                 $('#kategoriModal').modal('hide');
                 if(data.data == 'success'){
-
                     swal('Berhasil','Kategori telah ditambahkan', "success");
                 }else{
                     swal('Gagal','kategori '+data.pesan+' sudah ada', "warning");

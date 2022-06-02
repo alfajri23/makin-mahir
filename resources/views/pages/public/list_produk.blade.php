@@ -36,7 +36,7 @@
             </div>
             @if(\Auth::check()) 
             <div class="mx-1">
-                <a href="{{route($riwayat)}}" class="btn btn-info text-capitalize">{{$tipe}} Saya</a>
+                <a href="{{route($riwayat)}}" class="btn btn-info btn-sm text-capitalize">{{$tipe}} Saya</a>
             </div>
             @endif
         </div>

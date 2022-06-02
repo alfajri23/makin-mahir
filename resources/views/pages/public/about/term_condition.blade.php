@@ -12,7 +12,6 @@
     }
 </style>
 
-<div class="spacer"></div>
 <div class="card d-block w-100 border-0 shadow-xss rounded-lg overflow-hidden p-4">
     <div class="card-body pb-0">
         <div class="">

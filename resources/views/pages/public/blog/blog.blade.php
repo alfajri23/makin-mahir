@@ -11,10 +11,6 @@
         white-space: nowrap;
         display: block;
     }
-    .spacer{
-        height: 100px;
-    }
-
     form{
         border: 1px solid #dedede;
     }
@@ -35,7 +31,6 @@
     }
 </style>
 
-<div class="spacer"></div>
 
 <div class="container mt-5 mt-sm-0">
     <div class="row align-items-center flex-column pt-4">
