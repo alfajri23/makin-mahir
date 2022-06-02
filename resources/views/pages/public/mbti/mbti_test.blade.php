@@ -101,47 +101,50 @@
   </head>
 
   <body>
-    <!-- Swiper -->
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        @forelse ($data as $dt)
-        <div class="swiper-slide">
-          <div>
-            <p class="fw-bold">Pilih salah satu ?</p>
-            <div class="d-flex flex-column">
-              <button onclick="change({{$loop->iteration}},'{{$dt->type_1}}',1)" id="{{$loop->iteration}}.1" data-btn="{{$dt->type_1}}" class="btn btn-md btn-outline-dark px-5 py-3 shadow-sm swiper-next" style="display: block; margin: 5px 0;">
-                {{$dt->statement_1}}
-              </button>
-              <button onclick="change({{$loop->iteration}},'{{$dt->type_2}}',2)" id="{{$loop->iteration}}.2" data-btn="{{$dt->type_2}}" class="btn btn-md btn-outline-dark px-5 py-3 shadow-sm swiper-next" style="display: block;">
-                {{$dt->statement_2}}
-              </button>
+    {{-- <div class="container"> --}}
+
+      <!-- Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          @forelse ($data as $dt)
+          <div class="swiper-slide">
+            <div class="container">
+              <p class="fw-bold">Pilih salah satu ?</p>
+              <div class="d-flex flex-column">
+                <button onclick="change({{$loop->iteration}},'{{$dt->type_1}}',1)" id="{{$loop->iteration}}.1" data-btn="{{$dt->type_1}}" class="btn btn-md btn-outline-dark px-5 py-3 shadow-sm swiper-next" style="display: block; margin: 5px 0;">
+                  {{$dt->statement_1}}
+                </button>
+                <button onclick="change({{$loop->iteration}},'{{$dt->type_2}}',2)" id="{{$loop->iteration}}.2" data-btn="{{$dt->type_2}}" class="btn btn-md btn-outline-dark px-5 py-3 shadow-sm swiper-next" style="display: block;">
+                  {{$dt->statement_2}}
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-        @empty
+          @empty
+            
+          @endforelse
+  
+          <div class="swiper-slide">
+            <form id="formTest" action="{{route('saveMbtiTest')}}" method="get">
+              @csrf
+              <input type="hidden" id="resultTest" name="values" value="">
+            </form>
+            <button onclick="send()" class="btn btn-md d-block btn-outline-success px-5 py-3 shadow-sm">
+              Selesai
+            </button>
+            
+          </div>
           
-        @endforelse
-
-        <div class="swiper-slide">
-          <form id="formTest" action="{{route('saveMbtiTest')}}" method="get">
-            @csrf
-            <input type="hidden" id="resultTest" name="values" value="">
-          </form>
-          <button onclick="send()" class="btn btn-md d-block btn-outline-success px-5 py-3 shadow-sm">
-            Selesai
-          </button>
-          
         </div>
-        
+  
+        <div class="swiper-container">
+          <div class="btn mx-1 btn-lg btn-dark swiper-btn-prev"><i class="fa-solid fa-arrow-left"></i></div>
+          <div class="btn mx-1 btn-lg btn-dark swiper-btn-next swiper-next"><i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+  
+        <div class="swiper-pagination"></div>
       </div>
-
-      <div class="swiper-container">
-        <div class="btn mx-1 btn-lg btn-dark swiper-btn-prev"><i class="fa-solid fa-arrow-left"></i></div>
-        <div class="btn mx-1 btn-lg btn-dark swiper-btn-next swiper-next"><i class="fa-solid fa-arrow-right"></i></div>
-      </div>
-
-      <div class="swiper-pagination"></div>
-    </div>
+    {{-- </div> --}}
 
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>

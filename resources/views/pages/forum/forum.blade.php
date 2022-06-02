@@ -25,8 +25,8 @@
     }
 
 </style>
-<div class="spacer"></div>
-<div class="container mt-4 mt-sm-0">
+
+<div class="container mt-3 mt-sm-0">
     <div class="spacer-sm"></div>
 
     <div class="row flex-column-reverse flex-sm-row">
@@ -35,10 +35,10 @@
             <div class="row justify-content-between px-3 mb-4">
                 <div class="clearfix col-12 col-sm-8">
                     <form action="{{route('forumIndex')}}" method="GET" class="float-left header-search border-1 rounded-sm">
-                        <div class="form-group mb-0 icon-input">
+                        <div class="form-group mb-0 icon-input d-flex">
                             <i class="feather-search font-lg text-grey-400"></i>
-                            <input name="cari" type="text" placeholder="Start typing to search.." class="bg-transparent border-0 lh-32 pt-1 pb-1 pl-5 pr-3 font-xsss fw-500 rounded-xl">
-                            <button type="submit" class="btn btn-info">Search</button>
+                            <input name="cari" type="text" placeholder="Start typing to search.." class="flex-grow-1 bg-transparent border-0 lh-32 pt-1 pb-1 pl-5 pr-3 font-xsss fw-500 rounded-xl">
+                            <button type="submit" class="btn btn-info">Cari</button>
                         </div>
                     </form>
                 </div>

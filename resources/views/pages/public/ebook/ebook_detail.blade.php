@@ -2,9 +2,6 @@
 
 @section('content')
 <style>
-    .spacer{
-        height: 100px;
-    }
 
     form{
         border: 1px solid #dedede;
@@ -17,7 +14,7 @@
     }
 </style>
 
-<div class="spacer"></div>
+
 
 <div class="col-12 col-sm-11 mx-auto mt-5 mt-sm-4 mt-lg-0">
     <div class="card border-0 mb-0 rounded-lg overflow-hidden">
@@ -77,11 +74,9 @@
                             <a  class="video-bttn position-relative d-block"><img src="{{asset($dt->gambar)}}" alt="image" class="w-100"></a>
                         </div>
                         <div class="card-body pt-0">
-                            <h4 class="fw-700 font-xss mt-3 lh-28 mt-0">
+                            <h4 class="fw-700 font-xss mt-3 mt-0">
                                 <a href="{{route('ebookDetail',['judul' => $dt->judul ])}}" class="text-dark text-grey-900">{{$dt->judul}}</a>
                             </h4>
-                            <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-0"> {{$dt->created_at}} </h6>
-                            
                         </div>
                     </div>
                 </div>

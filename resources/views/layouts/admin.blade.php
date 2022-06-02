@@ -149,12 +149,12 @@
                 </div>
             </li>
 
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link" href="{{route('cvCheckerIndex')}}">
                     <i class="fas fa-file-signature mx-1"></i>
                     <span>CV Checker</span>
                 </a>
-            </li>
+            </li> --}}
 
             <li class="nav-item">
                 <a class="nav-link" href="{{route('ebookAdmin')}}">
