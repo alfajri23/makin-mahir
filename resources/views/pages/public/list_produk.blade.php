@@ -21,7 +21,7 @@
         <div class="flex-grow-1">
             <h2 class="text-grey-900 text-uppercase fw-700 display3-size display4-md-size pb-3 mb-0 d-block">{{$tipe}}</h2>
         </div>
-        <div class=" d-flex align-items-center">
+        <div class="d-flex align-items-center">
             <div>
                 <form action="{{route($route)}}" method="GET" class="header-search border-1 rounded-sm flex-grow-1">
                     <div class="form-group mb-0 icon-input d-flex">

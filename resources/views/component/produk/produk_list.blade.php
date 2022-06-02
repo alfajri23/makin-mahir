@@ -29,7 +29,6 @@
                                         @else
                                             Rp. {{number_format($dt->harga)}}
                                         @endif
-                                       
                                     </p>
                                 </div>
                             </div>

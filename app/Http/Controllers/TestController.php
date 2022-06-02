@@ -191,7 +191,6 @@ class TestController extends Controller
             $first = array_keys($hasil)[1];
             $second = array_keys($hasil)[0];
         }
-
         
         $result = $first.','.$second;
 

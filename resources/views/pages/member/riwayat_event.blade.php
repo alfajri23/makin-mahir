@@ -15,7 +15,7 @@
             <div class="row justify-content-center">
                 <div class="page-title style1 col-xl-6 col-lg-6 col-md-10 text-center mb-5">
                     <h2 class="text-grey-900 fw-700 display1-size display2-md-size pb-3 mb-0 d-block">Riwayat event anda</h2>
-                    <p class="fw-300 font-xs lh-28 text-grey-500">Riwayat event anda</p>
+                    <p class="fw-200 font-xss text-grey-600">Daftar event yang pernah Anda ikuti</p>
                 </div>
             </div>
 
