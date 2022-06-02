@@ -213,6 +213,13 @@
 
 <script type="text/javascript">
 
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+            'Authorization': `Bearer {{Session::get('token')}}`
+        }
+    });
+
     $(document).ready(function() {
 		 tinymce.init({
                 menubar: 'insert',
