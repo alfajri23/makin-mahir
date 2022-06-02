@@ -35,13 +35,11 @@ class TestController extends Controller
         //ambil data test user sebelumnya
         $cek = MbtiResult::where('id_user',$id_user)->first();
 
-        //dd($request);
-
         //jika user login dan ingin mengulang tes
         if($request->filled('ulang')){
             $cek->delete();
-            //$data = MbtiQuestion::all();
-            $data = MbtiQuestion::limit(5)->get();
+            $data = MbtiQuestion::all();
+            //$data = MbtiQuestion::limit(5)->get();
             return view('pages.public.mbti.mbti_test',compact('data'));
         }
         
@@ -58,8 +56,8 @@ class TestController extends Controller
             return view('pages.public.mbti.mbti_result',compact('datas','layout','data','title','tipe','history'));
         }else{
             //* Tes MBTI Baru
-            //$data = MbtiQuestion::all();
-            $data = MbtiQuestion::limit(5)->get();
+            $data = MbtiQuestion::all();
+            //$data = MbtiQuestion::limit(5)->get();
 
             //dd("masuk sini login");
 
@@ -136,15 +134,15 @@ class TestController extends Controller
 
         if($request->filled('ulang')){
             $cek->delete();
-            //$data = RiasecQuestion::all();
-            $data = RiasecQuestion::limit(6)->get();
+            $data = RiasecQuestion::all();
+            //$data = RiasecQuestion::limit(6)->get();
 
             return view('pages.public.riasec.riasec_test1',compact('data'));
         }
         
         //cek apakah ada data tes sebelumnya
         if($cek){
-            $data = KonsultasiExpert::latest()->limit(3)->get();
+            $data = KonsultasiExpert::where('status',1)->latest()->limit(3)->get();
             $title = 'produk pilihan';
             $tipe = 'konsutasi';
 
@@ -156,13 +154,10 @@ class TestController extends Controller
             return view('pages.public.riasec.riasec_result',compact('datas','layout','history','data','title','tipe'));
         }else{
             //* Tes riasec Baru
-            //$data = RiasecQuestion::all();
-            $data = RiasecQuestion::limit(6)->get();
+            $data = RiasecQuestion::all();
+            //$data = RiasecQuestion::limit(6)->get();
             return view('pages.public.riasec.riasec_test1',compact('data'));
         }
-
-       
-
     }
 
     public function save_riasec(Request $request){

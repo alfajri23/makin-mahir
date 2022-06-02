@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <h2 class="text-center h1 font-weight-bold text-gray-800 mb-4">Tambah Event</h2>
+    <h2 class="text-center h1 font-weight-bold text-gray-800 mb-4">Tambah Notifikasi</h2>
     <div class="row">
         <div class="container">
             <form action="{{route('notifikasiStore')}}" method="post" enctype="multipart/form-data">
