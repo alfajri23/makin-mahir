@@ -92,7 +92,6 @@ Route::get('privacy-policy', [Controllers\PublicController::class,'privacy'])->n
 
 //* Untuk detail belum beli
     Route::get('produk/detail/{id}', [Controllers\Member\HomeController::class,'produk_detail'])->name('memberProdukDetail');
-
     Route::get('produk/enroll/{id}', [Controllers\Member\HomeController::class,'produk_detail_enroll'])->name('enrollProdukDetail');
     Route::get('course/{id}/materi/{ids}', [Controllers\Member\HomeController::class,'detail_kelas_materi'])->name('enrollMateriKelas');
 
@@ -316,10 +315,10 @@ Route::middleware(['admin'])->prefix('adm')->group(function () {
     //End produk
 
     //*Forum
-    Route::prefix('forums')->group(function(){
-        Route::get('/', [Controllers\Admin\ForumController::class,'index'])->name('forumAdmin');
-        Route::post('/jawab', [Controllers\Admin\ForumController::class,'jawab'])->name('forumAdminJawab');
-    });
+        Route::prefix('forums')->group(function(){
+            Route::get('/', [Controllers\Admin\ForumController::class,'index'])->name('forumAdmin');
+            Route::post('/jawab', [Controllers\Admin\ForumController::class,'jawab'])->name('forumAdminJawab');
+        });
     //End forum
 
     //*Transaksi
@@ -470,6 +469,8 @@ Route::middleware(['expert'])->prefix('exp')->group(function () {
     Route::get('pendaftaran', [Controllers\Expert\PendaftaranController::class,'index'])->name('pendaftaranExpert');
 
 });
+
+
 
 Route::get('formulir', [Controllers\FormulirController::class,'index'])->name('formIndex');
 Route::get('pembayaran/{id}', [Controllers\TransaksiController::class,'cekForm'])->name('pembayaranCek');

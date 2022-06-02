@@ -72,7 +72,7 @@ class HomeController extends Controller
         switch ($produk->kategori->nama){
             case "webinar" :
                 $data = new ProdukEvent();
-                $rekomen = ProdukEvent::limit(6)->latest()->get();
+                $rekomen = ProdukEvent::where('status',1)->limit(6)->latest()->get();
 
                 //dd($produk);
                 
@@ -92,7 +92,7 @@ class HomeController extends Controller
 
             case "beduk" :
                 $data = ProdukEvent::find($produk->id_produk);
-                $rekomen = ProdukEvent::limit(6)->latest()->get();
+                $rekomen = ProdukEvent::where('status',1)->limit(6)->latest()->get();
 
                 return view('pages.produk.event.event_detail',compact('data','layout','rekomen'));
 
@@ -100,7 +100,7 @@ class HomeController extends Controller
 
             case "kelas" :
                 $data = Kelas::find($produk->id_produk);
-                $rekomen = Kelas::limit(6)->latest()->get();
+                $rekomen = Kelas::where('status',1)->limit(6)->latest()->get();
                 $babs = KelasBab::where('id_kelas',$produk->id_produk)->get();
 
                 return view('pages.produk.kelas.kelas_detail',compact('data','layout',
@@ -109,7 +109,7 @@ class HomeController extends Controller
 
             case "konsultasi" :
                 $data = KonsultasiExpert::find($produk->id_produk);
-                $rekomen = KonsultasiExpert::limit(6)->latest()->get();
+                $rekomen = KonsultasiExpert::where('status',1)->limit(6)->latest()->get();
 
                 return view('pages.produk.konsultasi.konsultasi_detail',compact('data','layout',
                                                                         'rekomen'));
