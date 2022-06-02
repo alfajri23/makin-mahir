@@ -203,11 +203,11 @@
           </div>
         @forelse ($data as $dt)
         <div class="swiper-slide">
-          <div>
+          <div class="container">
             <h4 class="text-center mb-4">{{$loop->iteration}}. {{$dt->question}}</h4>
             <div class="row justify-content-around align-items-center">
                 <p style="width: 20%" class="text-center">Tidak setuju</p>
-                <div style="width: 60%" class="d-flex justify-content-center justify-content-sm-around"> 
+                <div style="width: 50%" class="d-flex justify-content-center justify-content-sm-around"> 
                     <label> <input type="radio" value="-2" class="option-input radio {{$dt->category}}" onclick="slide()" name="data-{{$loop->iteration}}" /></label> 
                     <label> <input type="radio" value="-1" class="option-input radio {{$dt->category}}" onclick="slide()"  name="data-{{$loop->iteration}}" /></label> 
                     <label> <input type="radio" value="1" class="option-input radio {{$dt->category}}" onclick="slide()"  name="data-{{$loop->iteration}}" /></label> 
@@ -275,6 +275,7 @@
 
 
       var swiper = new Swiper(".mySwiper", {
+        cssMode : true,
         navigation: {
           nextEl: ".swiper-next",
           prevEl: ".swiper-btn-prev",

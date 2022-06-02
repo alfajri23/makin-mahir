@@ -4,9 +4,6 @@
 
 <div class="container">
     <a href="{{route('notifikasiAdd')}}" class="btn btn-primary">Tambah</a>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCreate">
-        Tambah
-    </button>
     <div class="table-responsive">
         <table class="table table-bordered tableNotifikasi" width="100%" cellspacing="0">
             <thead>
