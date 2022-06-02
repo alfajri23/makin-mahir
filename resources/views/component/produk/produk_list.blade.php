@@ -4,7 +4,7 @@
         <div class="row">
 
             @forelse ($data as $dt)
-                <div class="{{$layout == 'layouts.public' ? 'col-xl-4' : 'col-xl-4'}} col-lg-6 col-md-6 col-sm-6 mb-4">
+                <div class="{{$layout == 'layouts.public' ? 'col-xl-4' : 'col-xl-4'}} col-lg-6 col-md-6 col-sm-6 col-11 mb-4">
                     <div class="card w-100 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1">
                         {{-- <div class="card-image w-100 mb-3">--}}
                         <div class="{{$layout == 'layouts.member' ? 'card-image' : 'card-image-main'}} w-100 mb-3">
@@ -15,7 +15,7 @@
                                 <div>
                                     <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-danger d-inline-block text-danger mr-1">{{$dt->tipe}}</span>
                                 </div>
-                                <div class="">
+                                <div class="lh-2">
                                     @if($dt->harga_bias)
                                     <p class="font-xssss fw-400 pl-3 pr-3 text-muted text-right mb-0">
                                         <del>Rp. {{number_format($dt->harga_bias)}}</del>
@@ -29,7 +29,6 @@
                                         @else
                                             Rp. {{number_format($dt->harga)}}
                                         @endif
-                                       
                                     </p>
                                 </div>
                             </div>

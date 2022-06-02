@@ -18,7 +18,11 @@
         <div class="col-xl-10 col-lg-6 col-md-6 col-sm-6 mx-auto">
             <div class="card mb-4 d-block w-100 shadow-xss rounded-lg p-4 border-0">
                 <div class="d-flex justify-content-between">
+                    @if($dt->status == 'lunas')
+                    <a href="{{route('enrollProdukDetail',$dt->id_produk)}}" class="text-dark fw-700 font-lg mt-3 mb-1">{{$dt->nama}}</a>
+                    @else
                     <h4 class="fw-700 font-lg mt-3 mb-1">{{$dt->nama}}</h4>
+                    @endif
                     <p class="fw-600 font-xs text-grey-500 mt-0 mb-2">
                         @if ($dt->status == 'ditolak')
                             <span class="badge badge-pill badge-danger p-2 px-3">{{$dt->status}}</span>
@@ -35,8 +39,6 @@
                 
                 <div class="clearfix"></div>
                 
-                
-
                 <div class="d-flex flex-column flex-sm-row justify-content-between">
                     <div>
                         <ul class="list-inline border-0 mt-0">
@@ -45,20 +47,13 @@
                             </p>
                             <li class="list-inline-item text-center mr-0">
                                 <h4 class="fw-700 font-xs text-grey-700">Rp. {{number_format($dt->harga)}} 
-                                    {{-- <span class="font-xsssss fw-500 mt-1 text-grey-500 d-block">Nominal</span> --}}
                                 </h4>
                             </li>
                         </ul>
                     </div>
                     <div class="d-flex align-items-end">
-                            <a href="{{route('transferDetail',['id' => $dt->id])}}" class="mt-3 p-1 btn lh-24 w100 ml-1 ls-3 d-inline-block btn-sm bg-light font-xssss fw-700 ls-lg text-dark">Detail</a>
-                        @if($dt->status_bayar == 'belum bayar')
-                            <a href="{{route('payInvoiceDetail',['id' => $dt->id])}}" class="mt-3 p-1 btn lh-24 w100 ml-1 ls-3 d-inline-block btn-sm bg-success font-xssss fw-700 ls-lg text-white">Bayar</a>
-                            <a onclick="cancels('{{base64_encode($dt->id)}}')" class="mt-3 p-1 btn lh-24 w100 ml-1 ls-3 d-inline-block btn-sm bg-danger font-xssss fw-700 ls-lg text-white">Batalkan</a>
-                           
-
-                        
-                        @endif
+                        <a href="{{route('transferDetail',$dt->id)}}" class="mt-3 p-1 btn lh-24 w100 ml-1 ls-3 d-inline-block btn-sm bg-light font-xssss fw-700 ls-lg text-dark">Detail</a>
+                       
                     </div>
                 </div>
             </div>

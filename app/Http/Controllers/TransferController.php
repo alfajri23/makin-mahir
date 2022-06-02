@@ -35,8 +35,8 @@ class TransferController extends Controller
         return view('pages.member.transfer.transfer',compact('data'));
     }
 
-    public function detail(Request $request){
-        $data = Transaksi::find($request->id);
+    public function detail($id){
+        $data = Transaksi::find($id);
         //dd($data);
 
         return view('pages.member.transfer.transfer_detail',compact('data'));

@@ -192,7 +192,7 @@ Route::middleware(['auth'])->group(function () {
 
     //*Transfer
     Route::get('riwayat-pembayaran', [Controllers\TransferController::class,'index'])->name('transferIndex');
-    Route::get('riwayat-pembayaran/detail', [Controllers\TransferController::class,'detail'])->name('transferDetail');
+    Route::get('riwayat-pembayaran/detail/{id}', [Controllers\TransferController::class,'detail'])->name('transferDetail');
 
     //notification
     Route::prefix('notifications')->group(function(){
