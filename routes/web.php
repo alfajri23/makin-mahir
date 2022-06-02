@@ -315,6 +315,13 @@ Route::middleware(['admin'])->prefix('adm')->group(function () {
 
     //End produk
 
+    //*Forum
+    Route::prefix('forums')->group(function(){
+        Route::get('/', [Controllers\Admin\ForumController::class,'index'])->name('forumAdmin');
+        Route::post('/jawab', [Controllers\Admin\ForumController::class,'jawab'])->name('forumAdminJawab');
+    });
+    //End forum
+
     //*Transaksi
         Route::get('transaksi', [Controllers\TransferController::class,'transaksi'])->name('transaksiIndex');
         Route::get('transaksi-detail', [Controllers\TransferController::class,'transaksi_detail'])->name('transaksiDetail');

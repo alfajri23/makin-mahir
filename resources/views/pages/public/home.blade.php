@@ -164,11 +164,19 @@
               <div class="row">
                 <div class="col-lg-6">
                     <div class="banner-slider owl-carousel owl-theme owl-nav-link rounded-lg overflow-hidden">
-                        @for ($i=0;$i<4;$i++)   
+                           
                         <div class="owl-items" >
-                            <img src="{{asset('asset/img/program/zoom_beduk.png')}}" alt="image" class="img-fluid">
+                            <img src="{{asset('asset/img/program/beduk1.jpg')}}" alt="image" class="img-fluid">
                         </div>
-                        @endfor   
+
+                        <div class="owl-items" >
+                            <img src="{{asset('asset/img/program/beduk2.jpg')}}" alt="image" class="img-fluid">
+                        </div>
+
+                        <div class="owl-items" >
+                            <img src="{{asset('asset/img/program/beduk3.jpg')}}" alt="image" class="img-fluid">
+                        </div>
+
                     </div>
                 </div>
                 <div class="col-lg-4 offset-lg-1">

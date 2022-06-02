@@ -214,6 +214,13 @@
             </li>
 
             <li class="nav-item">
+                <a class="nav-link" href="{{route('forumAdmin')}}">
+                    <i class="fa-solid fa-book mx-1"></i>
+                    <span>Forum</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link" href="{{route('notifikasiIndex')}}">
                     <i class="fas fa-bell fa-fw mx-1"></i>
                     <span>Notifikasi</span>

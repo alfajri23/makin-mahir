@@ -81,7 +81,7 @@ class ForumController extends Controller
         $data = ForumJawaban::updateOrCreate(['id'=>$request->id],[
             'id_pertanyaan' => $request->id_pertanyaan,
             'jawaban' => $request->jawaban,
-            'id_user' => auth()->user()->id,
+            'id_user' => isset(auth()->user()->id) ? auth()->user()->id : 23,
         ]);
 
         return redirect()->back();

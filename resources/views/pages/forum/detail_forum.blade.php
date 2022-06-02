@@ -67,12 +67,19 @@
                 <div class="message-item position-relative">
                     <div class="row px-3">
                         <figure class="avatar mr-2">
+                            @if(!empty($km->user->foto))
                             <img src="{{asset($km->user->foto)}}" alt="image" style="width:40px">
+                            @else
+                            <i class="fa-solid fa-user fa-lg"></i>
+                            @endif
                         </figure>
+                        
+                       
                         <div>
                             <h5 class="font-xssss mb-0">{{$km->user->nama}}</h5>
                             <div class="font-xssss">{{date_format(date_create($km->created_at),"d M Y")}} </div>
                         </div>
+                        <i class="fa-solid fa-circle-check ml-2 text-info"></i>
                     </div>
 
                     @if ($km->id_user == Session::get('auth.id_user'))
@@ -81,7 +88,7 @@
                     </span>
                         
                     @endif
-                    <div class="message-wrap shadow-none">{{$km->jawaban}}</div>
+                    <div class="message-wrap shadow-none">{!!$km->jawaban!!}</div>
                 </div>
             </div> 
             @empty
