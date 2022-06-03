@@ -82,39 +82,43 @@
 
 
                                 {{-- <li class="nav-item"><div class="nav-link" href="{{route('ebook')}}">Ebook</a></li> --}}
-                                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Fitur<i class="ti-angle-down"></i></a>
+                                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Layanan<i class="ti-angle-down"></i></a>
 
                                     <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="{{route('produkListEvent')}}">Event</a>
+                                        <a class="dropdown-item" href="{{route('produkListKelas')}}">Kelas Online</a>
+                                        <a class="dropdown-item" href="{{route('produkListKonsul')}}">Konsultasi</a>
                                         <a class="dropdown-item" href="{{route('cvIndex')}}">CV Maker</a>
+                                        <a class="dropdown-item" href="{{route('produkListTemplate')}}">Template CV</a>
                                         <!--<a class="dropdown-item" href="{{route('blog')}}">Blog</a>-->
                                         <a class="dropdown-item" href="{{route('ebook')}}">Ebook</a>
                                         <a class="dropdown-item" href="{{route('forumIndex')}}">Forum</a>
                                     </div>
                                 </li>
 
-                                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Tes <i class="ti-angle-down"></i></a>
+                                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Tes Siap Kerja<i class="ti-angle-down"></i></a>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="{{route('mbtiTest')}}">Tes kepribadian</a>
-                                        <a class="dropdown-item" href="{{route('riasecTest')}}">Tes minat bakat</a>
+                                        <a class="dropdown-item" href="{{route('testIndex')}}">Tes kepribadian</a>
+                                        <a class="dropdown-item" href="{{route('testIndex')}}">Tes minat bakat</a>
                                     </div>
                                 </li>
 
                                 <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Tentang kami <i class="ti-angle-down"></i></a>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="{{route('profile')}}">Profil</a>
-                                        <a class="dropdown-item" href="{{route('goes_sekolah')}}">Goes to sekolah</a>
-                                        <a class="dropdown-item" href="{{route('goes_campus')}}">Goes to campus</a>
+                                        <!--<a class="dropdown-item" href="{{route('goes_sekolah')}}">Goes to sekolah</a>-->
+                                        <!--<a class="dropdown-item" href="{{route('goes_campus')}}">Goes to campus</a>-->
                                         <!--<a class="dropdown-item" href="">Kontak</a>-->
                                     </div>
                                 </li>
 
-                                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Bantuan <i class="ti-angle-down"></i></a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="{{route('faq')}}">FAQ</a>
-                                        <a class="dropdown-item" href="{{route('term')}}">Syarat dan ketentuan</a>
-                                        <a class="dropdown-item" href="{{route('privacy')}}">Kebijakan privasi</a>
-                                    </div>
-                                </li>
+                                <!--<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Bantuan <i class="ti-angle-down"></i></a>-->
+                                <!--    <div class="dropdown-menu">-->
+                                <!--        <a class="dropdown-item" href="{{route('faq')}}">FAQ</a>-->
+                                <!--        <a class="dropdown-item" href="{{route('term')}}">Syarat dan ketentuan</a>-->
+                                <!--        <a class="dropdown-item" href="{{route('privacy')}}">Kebijakan privasi</a>-->
+                                <!--    </div>-->
+                                <!--</li>-->
 
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{route('blog')}}">Blog</a>
@@ -177,7 +181,7 @@
                                 </div>
                                 
                                 <div class="col-md-4 col-lg-2 col-sm-6 col-xs-6">
-                                    <h5 class="font-xs">About</h5>
+                                    <h5 class="font-xs">Bantuan</h5>
                                     <ul>
                                         <li><a href="{{route('faq')}}">FAQ</a></li>
                                         <li><a href="{{route('term')}}">Syarat dan kebijakan</a></li>
