@@ -28,7 +28,7 @@
 <body class="color-theme-blue mont-font">
     <div class="main-wrap">
         <div class="row">
-            <div class="col-xl-5 d-none d-xl-block p-0 vh-100 bg-image-cover bg-no-repeat background-image" style="background-image: url(https://images.unsplash.com/photo-1602526371152-621b3b4e4b4b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80);"></div>
+            <div class="col-xl-5 d-none d-xl-block p-0 vh-100 bg-image-cover bg-no-repeat background-image" style="background-image: url({{asset('asset/img/program/login.png')}});"></div>
             <div class="col-xl-7 vh-lg-100 align-items-center d-flex bg-white rounded-lg overflow-hidden">
                 <div class="card shadow-none border-0 ml-auto mr-auto login-card">
                     <div class="card-body rounded-0 text-left">

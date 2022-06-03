@@ -79,7 +79,7 @@
                             <h5 class="font-xssss mb-0">{{$km->user->nama}}</h5>
                             <div class="font-xssss">{{date_format(date_create($km->created_at),"d M Y")}} </div>
                         </div>
-                        @if($km->id_user == 24)
+                        @if($km->id_user == 20)
                         <i class="fa-solid fa-circle-check ml-2 text-info"></i>
                         @endif
                     </div>

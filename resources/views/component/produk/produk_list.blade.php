@@ -1,7 +1,7 @@
 
 <div class="pb-lg--7 pt-3 w-100">
     <div class="container">
-        <div class="row">
+        <div class="row ml-1">
 
             @forelse ($data as $dt)
                 <div class="{{$layout == 'layouts.public' ? 'col-xl-4' : 'col-xl-4'}} col-lg-6 col-md-6 col-sm-6 col-11 mb-4">

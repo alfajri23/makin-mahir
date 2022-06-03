@@ -47,7 +47,7 @@ class ForumController extends Controller
 
         $jawaban = ForumJawaban::create([
             'id_pertanyaan' => $request->id,
-            'id_user' => 24,
+            'id_user' => 20,
             'jawaban' => $request->jawaban,
         ]);
 
