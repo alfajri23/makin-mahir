@@ -94,8 +94,8 @@
 
                                 <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Tes <i class="ti-angle-down"></i></a>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="{{route('mbtiTest')}}">Tes kepribadian</a>
-                                        <a class="dropdown-item" href="{{route('riasecTest')}}">Tes minat bakat</a>
+                                        <a class="dropdown-item" href="{{route('testIndex')}}">Tes kepribadian</a>
+                                        <a class="dropdown-item" href="{{route('testIndex')}}">Tes minat bakat</a>
                                     </div>
                                 </li>
 

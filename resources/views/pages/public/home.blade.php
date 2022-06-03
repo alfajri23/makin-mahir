@@ -235,15 +235,18 @@
                             <div class="card border-0 mb-4 bg-white shadow-xss shadow-xss rounded-lg">
                                 <div class="card-body p-5 border-top-lg border-size-lg border-primary">
                                     
-                                    <h1 class="display2-size fw-700">39 <span class="font-xssss text-grey-600"> / ribu</span></h1>
-                                    <h2 class=" font-xs fw-700 my-3">Kelas Pembuatan CV Step By Step Langsung Sama HRD</h2>
-                                    <h4 class=" fw-500 mb-4 lh-24 font-xssss text-grey-600">Kelas Online yang bakal ngajarin kami step by step bikin CV yang menarik dimata HRD</h4>
-                                    <h4 class=" font-xssss fw-600 text-grey-600 mb-3 "><i class="ti-check font-xssss mr-2 btn-round-xs alert-primary text-primary"></i><span>Video Rekaman Berdurasi 1 JAM</span></h4>
-                                    <h4 class=" font-xssss fw-600 text-grey-600 mb-3 "><i class="ti-check font-xssss mr-2 btn-round-xs alert-primary text-primary"></i> Bisa di Akses Selamanya</h4>
-                                    <h4 class=" font-xssss fw-600 text-grey-600 mb-4"><i class="ti-check font-xssss mr-2 btn-round-xs alert-primary text-primary"></i> Pemateri HRD Tersertifikasi BNSP</h4>
-                                    <h4 class=" font-xssss fw-600 text-grey-600 mb-4"><i class="ti-check font-xssss mr-2 btn-round-xs alert-primary text-primary"></i> Materi Studi Kasus</h4>
-                                    <h4 class=" font-xssss fw-600 text-grey-600 mb-4"><i class="ti-check font-xssss mr-2 btn-round-xs alert-primary text-primary"></i> Bukan Materi Teori Tapi Praktikal</h4>
-                                    <h4 class=" font-xssss fw-600 text-grey-600 mb-4"><i class="ti-check font-xssss mr-2 btn-round-xs alert-primary text-primary"></i> Akses Grup Private Pengembangan Karier</h4>
+                                    <h1 class="display2-size fw-700">29 <span class="font-xssss text-grey-600"> / ribu</span></h1>
+                                    <h2 class=" font-lg fw-700 my-3">Makin Tau</h2>
+                                    <h4 class=" fw-500 mb-4 lh-24 font-xssss text-grey-600 d-none">Kelas Online yang bakal ngajarin kami step by step bikin CV yang menarik dimata HRD</h4>
+                                    <h4 class=" font-xssss fw-600 text-grey-700 mb-3 "><i class="ti-check font-xssss mr-2 btn-round-xs alert-success text-success"></i><span>Konsultasi privat 1 on 1</span></h4>
+                                    <h4 class=" font-xssss fw-600 text-grey-700 mb-4"><i class="ti-check font-xssss mr-2 btn-round-xs alert-success text-success"></i> Bedah CV langsung dengan HRD</h4>
+                                    <h4 class=" font-xssss fw-600 text-grey-700 mb-3 "><i class="ti-check font-xssss mr-2 btn-round-xs alert-success text-success"></i>Dibimbing sampai dapat kerja</h4>
+                                    <h4 class=" font-xssss fw-600 text-grey-700 mb-4"><i class="ti-check font-xssss mr-2 btn-round-xs alert-success text-success"></i> Gratis 20 template CV</h4>
+                                    <h4 class=" font-xssss fw-600 text-grey-700 mb-4"><i class="ti-check font-xssss mr-2 btn-round-xs alert-success text-success"></i> Konsultasi via Chat</h4>
+                                    <h4 class=" font-xssss fw-600 text-grey-700 mb-4"><i class="ti-check font-xssss mr-2 btn-round-xs alert-success text-success"></i> Durasi 15 menit</h4>
+                                    <h4 class=" font-xssss fw-600 text-grey-700 mb-4"><i class="fa-solid fa-xmark font-xssss mr-2 btn-round-xs alert-danger text-danger"></i> Latihan interview kerja dengan HRD</h4>
+                                    <h4 class=" font-xssss fw-600 text-grey-700 mb-4"><i class="fa-solid fa-xmark font-xssss mr-2 btn-round-xs alert-danger text-danger"></i> Konsultasi karir dengan HRD</h4>
+                                    <h4 class=" font-xssss fw-600 text-grey-700 mb-4"><i class="fa-solid fa-xmark font-xssss mr-2 btn-round-xs alert-danger text-danger"></i> Template surat lamaran kerja</h4>
                                     <a href="#" class="btn btn-block border-0 w-100 bg-primary p-3 text-white fw-600 rounded-lg d-inline-block font-xssss btn-light mt-3">Ambil Sekarang</a>
 
                                 </div>
@@ -255,15 +258,19 @@
                                 <div class="card-body p-5 border-top-lg border-size-lg border-success">
                                     
                                     <h1 class="display2-size fw-700">49 <span class="font-xssss text-grey-600"> / ribu</span></h1>
-                                    <h2 class=" font-xs fw-700 my-3">Bedah CV Langsung Sama HRD</h2>
-                                    <h4 class=" fw-500 mb-4 lh-24 font-xssss text-grey-600">Kelas Private 1 on 1 bareng dengan HRD untuk membedah CV kamu secara  langsung</h4>
-                                    <h4 class=" font-xssss fw-600 text-grey-600 mb-3 "><i class="ti-check font-xssss mr-2 btn-round-xs alert-primary text-primary"></i> Kelas Via Zoom/Gmeet</h4>
-                                    <h4 class=" font-xssss fw-600 text-grey-600 mb-3 "><i class="ti-check font-xssss mr-2 btn-round-xs alert-primary text-primary"></i> Durasi 30 Menit</h4>
-                                    <h4 class=" font-xssss fw-600 text-grey-600 mb-4"><i class="ti-check font-xssss mr-2 btn-round-xs alert-primary text-primary"></i> Pemateri HRD Tersertifikasi BNSP</h4>
-                                    <h4 class=" font-xssss fw-600 text-grey-600 mb-4"><i class="ti-check font-xssss mr-2 btn-round-xs alert-primary text-primary"></i> Bedah CV Kamu Secara Langsung</h4>
-                                    <h4 class=" font-xssss fw-600 text-grey-600 mb-4"><i class="ti-check font-xssss mr-2 btn-round-xs alert-primary text-primary"></i> Bukan Materi Teori Tapi Praktikal</h4>
-                                    <h4 class=" font-xssss fw-600 text-grey-600 mb-4"><i class="ti-check font-xssss mr-2 btn-round-xs alert-primary text-primary"></i> Dibimbing HRD Sampai Dapat Kerja</h4>
+                                    <h2 class=" font-lg fw-700 my-3">Makin Tau</h2>
+                                    <h4 class=" fw-500 mb-4 lh-24 font-xssss text-grey-600 d-none">Kelas Online yang bakal ngajarin kami step by step bikin CV yang menarik dimata HRD</h4>
+                                    <h4 class=" font-xssss fw-600 text-grey-700 mb-3 "><i class="ti-check font-xssss mr-2 btn-round-xs alert-success text-success"></i><span>Konsultasi privat 1 on 1</span></h4>
+                                    <h4 class=" font-xssss fw-600 text-grey-700 mb-4"><i class="ti-check font-xssss mr-2 btn-round-xs alert-success text-success"></i> Bedah CV langsung dengan HRD</h4>
+                                    <h4 class=" font-xssss fw-600 text-grey-700 mb-3 "><i class="ti-check font-xssss mr-2 btn-round-xs alert-success text-success"></i>Dibimbing sampai dapat kerja</h4>
+                                    <h4 class=" font-xssss fw-600 text-grey-700 mb-4"><i class="ti-check font-xssss mr-2 btn-round-xs alert-success text-success"></i> Gratis 20 template CV</h4>
+                                    <h4 class=" font-xssss fw-600 text-grey-700 mb-4"><i class="ti-check font-xssss mr-2 btn-round-xs alert-success text-success"></i> Konsultasi via Zoom</h4>
+                                    <h4 class=" font-xssss fw-600 text-grey-700 mb-4"><i class="ti-check font-xssss mr-2 btn-round-xs alert-success text-success"></i> Durasi 30 menit</h4>
+                                    <h4 class=" font-xssss fw-600 text-grey-700 mb-4"><i class="fa-solid fa-xmark font-xssss mr-2 btn-round-xs alert-danger text-danger"></i> Latihan interview kerja dengan HRD</h4>
+                                    <h4 class=" font-xssss fw-600 text-grey-700 mb-4"><i class="fa-solid fa-xmark font-xssss mr-2 btn-round-xs alert-danger text-danger"></i> Konsultasi karir dengan HRD</h4>
+                                    <h4 class=" font-xssss fw-600 text-grey-700 mb-4"><i class="fa-solid fa-xmark font-xssss mr-2 btn-round-xs alert-danger text-danger"></i> Template surat lamaran kerja</h4>
                                     <a href="#" class="btn btn-block border-0 w-100 bg-primary p-3 text-white fw-600 rounded-lg d-inline-block font-xssss btn-light mt-3">Ambil Sekarang</a>
+
 
                                 </div>
                             </div>
@@ -274,15 +281,20 @@
                                 <div class="card-body p-5 border-top-lg border-size-lg border-warning">
                                     
                                     <h1 class="display2-size fw-700">99 <span class="font-xssss text-grey-600"> / ribu</span></h1>
-                                    <h2 class=" font-xs fw-700 my-3">Bedah CV & Latihan Interview Kerja</h2>
-                                    <h4 class=" fw-500 mb-4 lh-24 font-xssss text-grey-600">Kelas Private 1 on 1 bareng dengan HRD untuk membedah CV kamu secara  langsung</h4>
-                                    <h4 class=" font-xssss fw-600 text-grey-600 mb-3 "><i class="ti-check font-xssss mr-2 btn-round-xs alert-primary text-primary"></i> Kelas Via Zoom/Gmeet</h4>
-                                    <h4 class=" font-xssss fw-600 text-grey-600 mb-3 "><i class="ti-check font-xssss mr-2 btn-round-xs alert-primary text-primary"></i> Durasi 60 Menit</h4>
-                                    <h4 class=" font-xssss fw-600 text-grey-600 mb-4"><i class="ti-check font-xssss mr-2 btn-round-xs alert-primary text-primary"></i> Pemateri HRD Tersertifikasi BNSP</h4>
-                                    <h4 class=" font-xssss fw-600 text-grey-600 mb-4"><i class="ti-check font-xssss mr-2 btn-round-xs alert-primary text-primary"></i> Bedah CV Kamu Secara Langsung</h4>
-                                    <h4 class=" font-xssss fw-600 text-grey-600 mb-4"><i class="ti-check font-xssss mr-2 btn-round-xs alert-primary text-primary"></i> Bukan Materi Teori Tapi Praktikal</h4>
-                                    <h4 class=" font-xssss fw-600 text-grey-600 mb-4"><i class="ti-check font-xssss mr-2 btn-round-xs alert-primary text-primary"></i> Dibimbing HRD Sampai Dapat Kerja</h4>
+                                    <h2 class=" font-lg fw-700 my-3">Makin Tau</h2>
+                                    <h4 class=" fw-500 mb-4 lh-24 font-xssss text-grey-600 d-none">Kelas Online yang bakal ngajarin kami step by step bikin CV yang menarik dimata HRD</h4>
+                                    <h4 class=" font-xssss fw-600 text-grey-700 mb-3 "><i class="ti-check font-xssss mr-2 btn-round-xs alert-success text-success"></i><span>Konsultasi privat 1 on 1</span></h4>
+                                    <h4 class=" font-xssss fw-600 text-grey-700 mb-4"><i class="ti-check font-xssss mr-2 btn-round-xs alert-success text-success"></i> Bedah CV langsung dengan HRD</h4>
+                                    <h4 class=" font-xssss fw-600 text-grey-700 mb-3 "><i class="ti-check font-xssss mr-2 btn-round-xs alert-success text-success"></i>Dibimbing sampai dapat kerja</h4>
+                                    <h4 class=" font-xssss fw-600 text-grey-700 mb-4"><i class="ti-check font-xssss mr-2 btn-round-xs alert-success text-success"></i> Gratis 10 template CV</h4>
+                                    <h4 class=" font-xssss fw-600 text-grey-700 mb-4"><i class="ti-check font-xssss mr-2 btn-round-xs alert-success text-success"></i> Konsultasi via Zoom</h4>
+                                    <h4 class=" font-xssss fw-600 text-grey-700 mb-4"><i class="ti-check font-xssss mr-2 btn-round-xs alert-success text-success"></i> Durasi 60 menit</h4>
+                                    <h4 class=" font-xssss fw-600 text-grey-700 mb-4"><i class="ti-check font-xssss mr-2 btn-round-xs alert-success text-success"></i> Latihan interview kerja dengan HRD</h4>
+                                    <h4 class=" font-xssss fw-600 text-grey-700 mb-4"><i class="ti-check font-xssss mr-2 btn-round-xs alert-success text-success"></i> Konsultasi karir dengan HRD</h4>
+                                    <h4 class=" font-xssss fw-600 text-grey-700 mb-4"><i class="ti-check font-xssss mr-2 btn-round-xs alert-success text-success"></i> Template surat lamaran kerja</h4>
+                                    <h4 class=" font-xssss fw-600 text-grey-700 mb-4"><i class="ti-check font-xssss mr-2 btn-round-xs alert-success text-success"></i> Rekaman kelas</h4>
                                     <a href="#" class="btn btn-block border-0 w-100 bg-primary p-3 text-white fw-600 rounded-lg d-inline-block font-xssss btn-light mt-3">Ambil Sekarang</a>
+
 
                                 </div>
                             </div>

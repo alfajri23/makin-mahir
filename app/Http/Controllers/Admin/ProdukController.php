@@ -547,7 +547,7 @@ class ProdukController extends Controller
                 'nama' => $request->judul,
                 'harga' => str_replace(",", "", $request->harga),
                 'id_kategori' => 7,
-                'id_produk' => $request->id,
+                'id_produk' => $data->id,
             ]);
 
             return redirect()->route('templateAdmin');
@@ -559,7 +559,6 @@ class ProdukController extends Controller
 
             $produk->delete();
             $data->delete();
-
 
             return redirect()->back();
         }
