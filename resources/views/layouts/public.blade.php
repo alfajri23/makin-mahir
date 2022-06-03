@@ -175,12 +175,21 @@
                     <div class="col-sm-12">
                         <div class="middle-footer mt-0">
                             <div class="row">
-                                <div class="col-sm-6 col-xs-12 sm-mb-4">
+                                <div class="col-sm-4 col-xs-12 sm-mb-4">
                                     <h5 class="mb-4 font-xs">Makin mahir</h5>
                                     <p class="w-100">platform perencana karir yang meberikan layanan yang di dalamnya berisi informasi seputar dunia kerja, membantu fresh graduate mengenali potensi dirinya dan memberikan rekomendasi yang dapat dijadikan pertimbangan dalam merencanakan karir terbaik mereka.</p>  
                                 </div>
+
+                                <div class="col-md-3 col-lg-2 col-sm-6 col-xs-6">
+                                    <h5 class="font-xs">Layanan</h5>
+                                    <ul>
+                                        <li><a href="{{route('faq')}}">FAQ</a></li>
+                                        <li><a href="{{route('term')}}">Syarat dan kebijakan</a></li>
+                                        <li><a href="{{route('privacy')}}">Privacy Policy</a></li>
+                                    </ul>
+                                </div>
                                 
-                                <div class="col-md-4 col-lg-2 col-sm-6 col-xs-6">
+                                <div class="col-md-3 col-lg-2 col-sm-6 col-xs-6">
                                     <h5 class="font-xs">Bantuan</h5>
                                     <ul>
                                         <li><a href="{{route('faq')}}">FAQ</a></li>
@@ -189,7 +198,7 @@
                                     </ul>
                                 </div>
 
-                                <div class="col-md-4 col-lg-4 col-sm-6 col-xs-6">
+                                <div class="col-md-3 col-lg-2 col-sm-6 col-xs-6">
                                     <h5 class="mb-3 font-xs">Kantor</h5>
                                     <p class="w-100">Jl. Raya Pringsurat - Temanggung, Kel. Kebumen,<br> Kec. Pringsurat, Temanggung</p>
                                 

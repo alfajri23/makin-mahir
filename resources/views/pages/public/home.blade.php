@@ -161,7 +161,7 @@
         <div class="container">
               <div class="row">
                 <div class="col-lg-6">
-                    <div class="banner-slider owl-carousel owl-theme owl-nav-link rounded-lg overflow-hidden">
+                    <div class="banner-slider owl-carousel owl-theme owl-nav-link rounded-lg overflow-hidden beduk-owl">
                            
                         <div class="owl-items" >
                             <img src="{{asset('asset/img/program/beduk1.jpg')}}" alt="image" class="img-fluid">
@@ -420,21 +420,48 @@
     <div class="brand-wrapper pt-5 pb-lg--7 pb-5">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="brand-slider owl-carousel owl-theme overflow-visible dot-none">
-                        <div class="owl-items text-center"><img src="https://via.placeholder.com/120x50.png" alt="icon" class="w100 ml-auto mr-auto"></div>
-                        <div class="owl-items text-center"><img src="https://via.placeholder.com/120x50.png" alt="icon" class="w100 ml-auto mr-auto"></div>
-                        <div class="owl-items text-center"><img src="https://via.placeholder.com/120x50.png" alt="icon" class="w100 ml-auto mr-auto"></div>
-                        <div class="owl-items text-center"><img src="https://via.placeholder.com/120x50.png" alt="icon" class="w100 ml-auto mr-auto"></div>
-                        <div class="owl-items text-center"><img src="https://via.placeholder.com/120x50.png" alt="icon" class="w100 ml-auto mr-auto"></div>
-                        <div class="owl-items text-center"><img src="https://via.placeholder.com/120x50.png" alt="icon" class="w100 ml-auto mr-auto"></div>
+                <div class="col-6">
+                    <h2 class="text-grey-900 fw-500 font-xss pb-3 mb-1 d-block">Ikuti Kami</h2>
+                    <div class="container">
+                        <div class="row">
+                            <i class="fa-brands fa-instagram fa-2x mx-1"></i>
+                            <i class="fa-brands fa-youtube fa-2x mx-1"></i>
+                            <i class="fa-brands fa-linkedin fa-2x mx-1"></i>
+                            <i class="fa-brands fa-tiktok fa-2x mx-1"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <h2 class="text-grey-900 fw-500 font-xss pb-3 mb-1 d-block">Metode Pembayaran</h2>
+                    <div class="container">
+                    <div class="row">
+                        <div class="text-center mx-2"><img src="{{asset('asset/img/program/bni.png')}}" alt="icon" class="w50 ml-auto mr-auto"></div>
+                        <div class="text-center mx-2"><img src="{{asset('asset/img/program/bri.png')}}" alt="icon" class="w50 ml-auto mr-auto"></div>
+                        <div class="text-center mx-2"><img src="{{asset('asset/img/program/mandiri.png')}}" alt="icon" class="w50 ml-auto mr-auto"></div>
+                        <div class="text-center mx-2"><img src="{{asset('asset/img/program/bca.png')}}" alt="icon" class="w50 ml-auto mr-auto"></div>
+                    </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script>
+    var owl = $('.owl-carousel');
+    console.log(owl);
+    owl.owlCarousel({
+        items:1,
+        loop:true,
+        center:true,
+        //autoWidth:true,
+        margin:15,
+        autoplay:true,
+        autoplayTimeout:3000,
+        //autoplayHoverPause:true
+    });
+
     var TxtType = function(el, toRotate, period) {
         this.toRotate = toRotate;
         this.el = el;
