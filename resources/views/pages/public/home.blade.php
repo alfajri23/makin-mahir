@@ -424,10 +424,18 @@
                     <h2 class="text-grey-900 fw-500 font-xss pb-3 mb-1 d-block">Ikuti Kami</h2>
                     <div class="container">
                         <div class="row">
-                            <i class="fa-brands fa-instagram fa-2x mx-1"></i>
-                            <i class="fa-brands fa-youtube fa-2x mx-1"></i>
-                            <i class="fa-brands fa-linkedin fa-2x mx-1"></i>
-                            <i class="fa-brands fa-tiktok fa-2x mx-1"></i>
+                            <a href="https://www.linkedin.com/company/makinmahir-id/" class="text-linkedin">
+                                <i class="fa-brands fa-linkedin fa-2x mx-1"></i>
+                            </a>
+                            <a href="https://www.instagram.com/makinmahir_id/?hl=en" class="text-instagram">
+                                <i class="fa-brands fa-instagram fa-2x mx-1"></i>
+                            </a>
+                            <a href="https://www.youtube.com/c/MAKINMAHIR" class="text-pinterest">
+                                <i class="fa-brands fa-youtube fa-2x mx-1"></i>
+                            </a>
+                            <a href="https://www.tiktok.com/@makinmahir">
+                                <i class="fa-brands fa-tiktok fa-2x mx-1"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
