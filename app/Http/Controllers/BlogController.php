@@ -38,6 +38,8 @@ class BlogController extends Controller
             $layout = 'layouts.public';
         }
 
+        //dd($data);
+
         return view('pages.public.blog.blog',compact('data','layout','popular','latest'));
 
         
