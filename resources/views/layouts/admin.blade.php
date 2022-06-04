@@ -10,7 +10,12 @@
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>Admin</title>
+
+    <!-- Favicon icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('asset/img/program/favicon.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('asset/img/program/favicon.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('asset/img/program/favicon.png')}}">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
@@ -70,7 +75,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">Admin <sup>Makin Mahir</sup></div>
             </a>
 
             <!-- Divider -->
