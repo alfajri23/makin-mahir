@@ -129,15 +129,21 @@ class EbookController extends Controller
 
     public function ebookCreate(Request $request){
 
+        //dd($request->all());
+        
         $validator = Validator::make($request->all(), [
-			'file' => 'file|mimes:doc,docx,pdf|max:10000',
+			'file' => 'file|mimes:doc,docx,pdf,pptx,ppt|max:10000',
             'gambar' => 'file|image|mimes:jpeg,png,jpg|max:2048',
 		]);
+		
+		//dd($request->all());
 
         if ($validator->fails()) {
+            dd($validator->messages()); 
             return redirect()->back();
-            dd($validator->messages()->first()); 
         }
+        
+        //dd($request->all());
 
         //file asli
         $files = $request->file('file');
@@ -179,7 +185,7 @@ class EbookController extends Controller
             'link' => $request->link,
             'gambar'=>$gambar,
             'link' =>$file,
-            'harga' => str_replace(",", "", $request->harga),
+            'harga' => $request->harga != null ? str_replace(",", "", $request->harga) : null,
             'id_expert' => $request->id_expert,
         ]);
 
@@ -187,7 +193,7 @@ class EbookController extends Controller
             'id_kategori' => 5,
             'id_produk' => $data->id,
             'nama' => $request->judul,
-            'harga' => str_replace(",", "", $request->harga),
+            'harga' => $request->harga != null ? str_replace(",", "", $request->harga) : null,
         ]);
 
         // Cek untuk redirect sebagai admin atau expert
