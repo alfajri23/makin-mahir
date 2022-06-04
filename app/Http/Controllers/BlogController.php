@@ -9,6 +9,7 @@ use App\Models\KomentarBlog;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use App\Helper\Layout;
+use Illuminate\Support\Str;
 
 
 
@@ -42,9 +43,9 @@ class BlogController extends Controller
         
     }
 
-    public function detail(Request $request){
+    public function detail($id,$link){
         $datas = Blog::limit(6)->get();
-        $data = Blog::where('judul',$request->judul)->first();
+        $data = Blog::find($id);
         
         $data->pengunjung = empty($data->pengunjung) ? 1 : $data->pengunjung+1;
         $data->save();
@@ -111,7 +112,7 @@ class BlogController extends Controller
             ->addColumn('aksi', function($row){
                 $actionBtn = '
                 <div class="">
-                    <a href="'.route('blogDetail',['judul' => $row['judul']]).'" class="btn btn-secondary btn-sm"><i class="fa-solid fa-circle-info"></i></a>
+                    <a href="'.route('blogDetail',['id' => $row['id'], 'link' => $row['link'] ]).'" class="btn btn-secondary btn-sm"><i class="fa-solid fa-circle-info"></i></a>
                     <a href="'.route('blogEdit',['id' => $row['id']]).'" class="btn btn-success btn-sm"><i class="fa-solid fa-pencil"></i></a>
                     <a onclick="unpublish('.$row['id'].')" class="delete btn btn-danger btn-sm"><i class="fa-solid fa-eye-slash"></i></a>
                 </div>
@@ -160,10 +161,7 @@ class BlogController extends Controller
 		]);
 		// menyimpan data file yang diupload ke variabel $file
 		$file = $request->file('file');
-        $datas = [
-
-        ];
-
+       
         if(empty($request->file)){
             $foto = Blog::find($request->id);
             $files = $foto->gambar;
@@ -185,6 +183,7 @@ class BlogController extends Controller
 
         Blog::updateOrCreate(['id' => $request->id],[
             'judul' => $request->judul,
+            'link' => Str::slug($request->judul, '-'),
             'penulis' => $request->penulis,
             'isi' => $request->isi,
             'tag' => $request->tag,

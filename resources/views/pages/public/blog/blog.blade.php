@@ -67,7 +67,7 @@
                                 <h6 class="font-xsss text-grey-700 fw-300 ml-0 mt-2 mb-0"> {{$dt->penulis}} </h6>
                                 <h6 class="font-xsss text-grey-600 fw-300 ml-0 mt-0"> {{$dt->created_at}} </h6>
                                 <h4 class="fw-700 font-md lh-28 mt-0">
-                                    <a href="{{route('blogDetail',['judul' => $dt->judul ])}}" class="text-dark text-grey-900">{{$dt->judul}}</a>
+                                    <a href="{{route('blogDetail',['id' => $dt->id, 'link' => $dt->link ])}}" class="text-dark text-grey-900">{{$dt->judul}}</a>
                                 </h4>
                                 <p class="text-break font-xss text-grey-600 fw-200">
                                     {{$dt->meta_description}}
@@ -97,7 +97,7 @@
                         <div class="card-body pt-0">
                             <h4 class="fw-700 font-xss mt-3 lh-28 mt-0">
                                 {{-- beri pembeda route --}}
-                                <a href="{{route('blogDetail',['judul' => $dt->judul ])}}" class="text-dark text-grey-900">{{$dt->judul}}</a>
+                                <a href="{{route('blogDetail',['id' => $dt->id, 'link' => $dt->link ])}}" class="text-dark text-grey-900">{{$dt->judul}}</a>
                                 
                             </h4>
                             <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2 mb-0"> {{$dt->penulis}} </h6>
@@ -118,7 +118,7 @@
                         <div class="card-body pt-0">
                             <h4 class="fw-700 font-xss mt-3 lh-28 mt-0">
                                 {{-- beri pembeda route --}}
-                                <a href="{{route('blogDetail',['judul' => $dt->judul ])}}" class="text-dark text-grey-900">{{$dt->judul}}</a>
+                                <a href="{{route('blogDetail',['id' => $dt->id, 'link' => $dt->link ])}}" class="text-dark text-grey-900">{{$dt->judul}}</a>
                                 
                             </h4>
                             <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2 mb-0"> {{$dt->penulis}} </h6>
