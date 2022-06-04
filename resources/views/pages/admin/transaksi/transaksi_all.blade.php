@@ -156,12 +156,13 @@
                 bukti = `<a target="_blank" href="${asset}/${datas.bukti}">Bukti</a>`;
 
                 //JIka ada file tambahan
-                if(datas.file_tambahan != null){
+                if(datas.file_tambahan != null && datas.file_tambahan != ""){
                     file_tambahan = datas.file_tambahan.split(",");
                     function mapFile(item) {
                         return `<a href="${asset}/${item}" target="_blank">File</a>`;
                     }
                     file_tambahan = file_tambahan.map(mapFile);
+                    console.log("ada");
                 }
 
 

@@ -264,7 +264,7 @@
                                 <div class="card-body p-5 border-top-lg border-size-lg border-success">
                                     
                                     <h1 class="display2-size fw-700">49 <span class="font-xssss text-grey-600"> / ribu</span></h1>
-                                    <h2 class=" font-lg fw-700 my-3">Makin Tau</h2>
+                                    <h2 class=" font-lg fw-700 my-3">Makin Faham</h2>
                                     <h4 class=" fw-500 mb-4 lh-24 font-xssss text-grey-600 d-none">Kelas Online yang bakal ngajarin kami step by step bikin CV yang menarik dimata HRD</h4>
                                     <h4 class=" font-xssss fw-600 text-grey-700 mb-3 "><i class="ti-check font-xssss mr-2 btn-round-xs alert-success text-success"></i><span>Konsultasi privat 1 on 1</span></h4>
                                     <h4 class=" font-xssss fw-600 text-grey-700 mb-4"><i class="ti-check font-xssss mr-2 btn-round-xs alert-success text-success"></i> Bedah CV langsung dengan HRD</h4>
