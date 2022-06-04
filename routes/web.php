@@ -9,8 +9,11 @@ use App\Notifications\WelcomeEmailNotification;
 
 
 use App\Exports\EventEnrollExport;
+use App\Models\Blog;
 use Illuminate\Support\Facades\Cookie;
 use Maatwebsite\Excel\Facades\Excel;
+
+use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,7 +51,7 @@ Route::get('template', [Controllers\PublicController::class,'produk_list_templat
 Route::get('blog', [Controllers\BlogController::class,'index'])->name('blog');
 Route::get('blog-kategori', [Controllers\BlogController::class,'by_categori'])->name('blogKategori');
 Route::post('blog/create', [Controllers\BlogController::class,'create'])->name('blogCreate');
-Route::get('blog-detail', [Controllers\BlogController::class,'detail'])->name('blogDetail');
+Route::get('blog/detail', [Controllers\BlogController::class,'detail'])->name('blogDetail');
 
 //ebook
 Route::get('ebook', [Controllers\EbookController::class,'index'])->name('ebook');
@@ -208,6 +211,7 @@ Route::middleware(['auth'])->group(function () {
             Route::post('save', [Controllers\Admin\ProdukController::class,'eventSave'])->name('saveEvent');
             Route::post('save/bundling', [Controllers\Admin\ProdukController::class,'eventBundlingSave'])->name('saveBundlingEvent');
             Route::get('end', [Controllers\Admin\ProdukController::class,'eventEnd'])->name('endEvent');
+            Route::get('start', [Controllers\Admin\ProdukController::class,'eventStart'])->name('startEvent');
             Route::get('delete', [Controllers\Admin\ProdukController::class,'eventDelete'])->name('deleteEvent');
         //end event
 
@@ -482,6 +486,18 @@ Route::post('pendaftaran/beduk', [Controllers\TransaksiController::class,'pembay
 Route::get('get/cookie', function(){
     dd(Cookie::get());
 });
+
+Route::get('slug', function(){
+    $data = Blog::all();
+
+    foreach ($data as $dt){
+        $dt->link = Str::slug($dt->judul, '-');
+        $dt->save();
+    }
+
+});
+
+
 
 
 

@@ -272,15 +272,21 @@ class ProdukController extends Controller
                         </button>
                         ';
 
+                        $event = $row->status == 1 ? 
+                            '<button onclick="endEvent('.$row['id'].')" class="delete btn btn-warning btn-sm">
+                                <i class="fa-solid fa-ban"></i>
+                            </button>' :
+                            '<button onclick="startEvent('.$row['id'].')" class="delete btn btn-info btn-sm">
+                                <i class="fa-solid fa-ban"></i>
+                            </button>';
+
                         $actionBtn = '
                         <div class="btn-group">
                             <a href="'.route('editEvent',['id' => $row['id']]).'" class="edit btn btn-success btn-sm">
                                 <i class="fa-solid fa-pencil"></i>
                             </a> 
                             
-                            <button onclick="endEvent('.$row['id'].')" class="delete btn btn-warning btn-sm">
-                                <i class="fa-solid fa-ban"></i>
-                            </button>
+                            '.$event.'
                         </div>
                         ';
                         return $actionBtn;
@@ -336,6 +342,19 @@ class ProdukController extends Controller
         public function eventEnd(Request $request){
             $data =ProdukEvent::find($request->id);
             $data->status = 0;
+            $data->save();
+
+            return response()->json([
+                'data' => 'sukses',
+                'message' => 'Event tidak akan tampil diberanda'
+            ]);
+
+            //return redirect()->back();
+        }
+
+        public function eventStart(Request $request){
+            $data =ProdukEvent::find($request->id);
+            $data->status = 1;
             $data->save();
 
             return response()->json([

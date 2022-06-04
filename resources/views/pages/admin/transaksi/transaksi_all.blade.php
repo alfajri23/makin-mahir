@@ -149,8 +149,8 @@
                 let bukti,file_tambahan;
                 let asset,konfirmasi;
 
-                asset = window.location.origin + '/public';
-                //asset = window.location.origin;
+                //asset = window.location.origin + '/public';
+                asset = window.location.origin;
         
                 //Bukti bayar
                 bukti = `<a target="_blank" href="${asset}/${datas.bukti}">Bukti</a>`;

@@ -79,6 +79,13 @@
         swalAction(route_end,tabel,id,pesan_end);
     }
 
+    function startEvent(id){
+        const route_end = "{{ route('startEvent') }}";
+        const pesan_end = "Event akan berlangsung";
+
+        swalAction(route_end,tabel,id,pesan_end);
+    }
+
 </script>
 
 @endsection

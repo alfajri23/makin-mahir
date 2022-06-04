@@ -241,6 +241,15 @@ class TransferController extends Controller
         $data = Transaksi::find($request->id);
         File::delete($data->bukti);
 
+        $fileLain = $data->file_tambahan;
+        if(!empty($fileLain)){
+            $fileLain = explode(",",$fileLain);
+
+            foreach($fileLain as $lain){
+                File::delete($lain);
+            }
+        }
+
         $data->forceDelete();
 
         return response()->json([

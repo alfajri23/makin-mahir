@@ -41,7 +41,7 @@
             <form action="{{route('blog')}}" method="GET" class="float-left header-search border-1 rounded-sm">
                 <div class="form-group mb-0 icon-input">
                     <i class="feather-search font-lg text-grey-400"></i>
-                    <input name="search" type="text" placeholder="Start typing to search.." class="bg-transparent border-0 lh-32 pt-1 pb-1 pl-5 pr-3 font-xsss fw-500 rounded-xl">
+                    <input name="key" type="text" placeholder="Start typing to search.." class="bg-transparent border-0 lh-32 pt-1 pb-1 pl-5 pr-3 font-xsss fw-500 rounded-xl">
                     <button type="submit" class="btn btn-info">Search</button>
                 </div>
             </form>

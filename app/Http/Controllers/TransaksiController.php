@@ -37,21 +37,14 @@ class TransaksiController extends Controller
             return view('pages.member.daftar',compact('tipes','pertanyaans','data','files','required'));
 
         }elseif($data->harga == null){
-            if($data->id_kategori == 2){                                        //gratis
-                $enroll = EventEnroll::create([
-                    'id_user' => $request->session()->get('auth.id_user'),
-                    'id_event' => $data->id_produk,
-                    'id_expert' => $data->event->id_expert
-                ]);
-
-            }else if($data->id_kategori == 5){                                 //ebook
+            if($data->id_kategori == 5){                                            //ebook
                 $enroll = EbookEnroll::create([
                     'id_user' => $request->session()->get('auth.id_user'),
-                    'id_event' => $data->id_produk,
+                    'id_ebook' => $data->id_produk,
                     'id_expert' => $data->ebook->id_expert
                 ]);
             }
-            return redirect()->route('memberIndex');
+            return redirect()->route('memberEbook');
         }elseif($data->id_kategori == 6){
             return view('pages.pembayaran.pembayaran_cvchecker',compact('data'));
         }else{
@@ -88,7 +81,8 @@ class TransaksiController extends Controller
             'id_user' => $request->session()->get('auth.id_user'),
             'tanggal_bayar' => now(),
             'jawaban' => $jawaban,
-            'telepon' => $request->telepon
+            'telepon' => $request->telepon,
+            'file_tambahan' => null
         ];
 
         $filed = [];
@@ -110,7 +104,6 @@ class TransaksiController extends Controller
                     $file->move($tujuan_upload_server,$nama_file);
                     $filed[] = $files;
                 }
-
             }
 
             $file_name = implode(",",$filed);

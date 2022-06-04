@@ -22,7 +22,7 @@ class BlogController extends Controller
         $popular = Blog::limit(3)->orderBy('kunjungan','desc')->get();
         $latest = Blog::limit(3)->latest()->get();
 
-        if($request->search != null){
+        if($request->key != null){
             $data = Blog::where('judul','like','%'.$request->search.'%')->paginate(6);
         }else{
             $data = Blog::paginate(6);
