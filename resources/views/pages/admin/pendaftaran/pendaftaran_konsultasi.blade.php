@@ -132,7 +132,7 @@
                 let bukti;
                 let asset,konfirmasi;
 
-                
+                //asset = window.location.origin + '/public';
                 asset = window.location.origin;
                 bukti = `<a href="${asset}/${datas.bukti}">Bukti</a>`;
                     

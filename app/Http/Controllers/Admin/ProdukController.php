@@ -277,7 +277,7 @@ class ProdukController extends Controller
                                 <i class="fa-solid fa-ban"></i>
                             </button>' :
                             '<button onclick="startEvent('.$row['id'].')" class="delete btn btn-info btn-sm">
-                                <i class="fa-solid fa-ban"></i>
+                                <i class="fa-solid fa-check"></i>
                             </button>';
 
                         $actionBtn = '

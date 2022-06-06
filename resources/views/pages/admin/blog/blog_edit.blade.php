@@ -13,6 +13,11 @@
                     <input type="hidden" name="id" value="{{$data->id}}" class="form-control" id="exampleFormControlInput1" placeholder="">
                     <input type="text" name="judul" value="{{$data->judul}}" class="form-control" id="exampleFormControlInput1" placeholder="">
                 </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Link</label>
+                    <input type="text" name="link" value="{{$data->link}}" class="form-control" id="exampleFormControlInput1" placeholder="">
+                </div>
                 
                 <div class="form-group">
                     <label for="exampleInputnama1">Isi</label>

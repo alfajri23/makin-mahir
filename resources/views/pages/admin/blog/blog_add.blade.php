@@ -12,6 +12,11 @@
                     <label for="exampleFormControlInput1">Judul</label>
                     <input type="text" name="judul" class="form-control" id="exampleFormControlInput1" placeholder="">
                 </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Link</label>
+                    <input type="text" name="link" class="form-control" id="exampleFormControlInput1" placeholder="">
+                </div>
                 
                 <div class="form-group">
                     <label for="exampleInputnama1">Isi</label>

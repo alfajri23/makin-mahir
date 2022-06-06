@@ -185,7 +185,7 @@ class BlogController extends Controller
 
         Blog::updateOrCreate(['id' => $request->id],[
             'judul' => $request->judul,
-            'link' => Str::slug($request->judul, '-'),
+            'link' => $request->link,
             'penulis' => $request->penulis,
             'isi' => $request->isi,
             'tag' => $request->tag,
@@ -232,7 +232,8 @@ class BlogController extends Controller
 
     public function delete(Request $request){
         $data = Blog::onlyTrashed()->find($request->id);
-        File::delete($data->gambar);
+        //File::delete($data->gambar);
+        File::delete(public_path($data->gambar));
         $data->forceDelete();
 
         return response()->json([
