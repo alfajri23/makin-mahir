@@ -71,22 +71,18 @@
         
     </div>
 
-    <div class="row">
-        <a href="https://www.facebook.com/sharer/sharer.php?u={{url()->full()}}" class="btn-round-md ml-3 d-inline-block float-right rounded-lg bg-danger">
-            <i class="feather-facebook font-sm text-white"></i>
-        </a>
-        
-        <a target="_blank" href="https://wa.me/?text={{url()->full()}}" class="btn-round-md ml-0 d-inline-block float-right rounded-lg bg-success mx-1" data-original-title="whatsapp" rel="tooltip" data-placement="left" data-action="share/whatsapp/share">
-            <i class="feather-phone font-sm text-white"></i>
-        </a>
-        
-        <a href="https://twitter.com/intent/tweet?text=Share+title&url={{url()->full()}}" class="btn-round-md ml-0 d-inline-block float-right rounded-lg bg-info" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="feather-twitter font-sm text-white"></i>
-        </a>
-        
-        <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{url()->full()}}&amp;title=my share text&amp;summary=dit is de linkedin summary" class="btn-round-md ml-0 d-inline-block float-right rounded-lg bg-info ml-1" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fa-brands fa-linkedin font-sm text-white"></i>
-        </a>
+    <div class="container-fluid fixed-bottom {{$layout == 'layouts.member' ? 'share-member' : ''}}">
+        <div class="row bg-info">
+            <div class="btn-group w-100" role="group" aria-label="Basic example">
+            <a href="https://www.facebook.com/sharer/sharer.php?u={{url()->full()}}" class="btn bg-danger">
+                <i class="feather-facebook font-sm text-white"></i>
+            </a>
+            
+            <a target="_blank" href="https://wa.me/?text={{url()->full()}}" class="btn bg-success" data-original-title="whatsapp" rel="tooltip" data-placement="left" data-action="share/whatsapp/share">
+                <i class="feather-phone font-sm text-white"></i>
+            </a>
+            </div>
+        </div>
     </div>
 
     <div class="card d-block border-0 rounded-lg overflow-hidden dark-bg-transparent bg-transparent mt-4 pb-3">

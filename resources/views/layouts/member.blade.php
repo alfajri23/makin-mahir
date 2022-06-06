@@ -150,14 +150,14 @@
                         @yield('content')
 
                         {{-- floating button --}}
-                        {{-- <a href="https://wa.me/+6289619119692" class="float text-decoration-none">
+                        <a href="https://wa.me/+6289619119692" class="float text-decoration-none float-member">
                             <div class="my-float d-flex align-items-center justify-content-center text-decoration-none">
-                                <i class="fa-brands fa-whatsapp fa-2x mr-2"></i>
-                                <p class="mb-0 font-weight-bold">
-                                   Butuh bantuan
+                                <i class="fa-brands fa-whatsapp fa-2x"></i>
+                                <p class="mb-0 font-weight-bold d-none d-sm-block ml-2">
+                                Butuh bantuan
                                 </p>
                             </div>
-                        </a> --}}
+                        </a>
 
                     </div>
                 </div>
