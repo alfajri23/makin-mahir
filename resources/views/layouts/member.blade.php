@@ -71,11 +71,11 @@
 
     <div class="main-wrapper">
         {{-- sidebar left --}}
-        <nav class="navigation scroll-bar">
+        <nav class="navigation scroll-bar z-index-1">
             <div class="container pl-0 pr-0">
                 <div class="nav-content">
                     <div class="nav-top">
-                        <a href="{{route('memberIndex')}}">
+                        <a href="{{route('publicIndex')}}">
                             <i class="fa-solid fa-globe-stand display1-size mr-3 ml-3"></i>
                             <span class="d-inline-block poppins ls-3 fw-600 text-current font-xl logo-text mb-0">MakinMahir</span> 
                         </a>

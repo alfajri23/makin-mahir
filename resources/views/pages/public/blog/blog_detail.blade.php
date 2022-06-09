@@ -70,29 +70,28 @@
         
     </div>
 
-    <div class="container-fluid fixed-bottom {{$layout == 'layouts.member' ? 'share-member' : ''}}">
-        <div class="row bg-info">
-            <div class="btn-group w-100" role="group" aria-label="Basic example">
-            <a href="https://www.facebook.com/sharer/sharer.php?u={{url()->full()}}" class="btn bg-danger">
-                <i class="feather-facebook font-sm text-white"></i>
-            </a>
-            
-            <a target="_blank" href="https://wa.me/?text={{url()->full()}}" class="btn bg-success" data-original-title="whatsapp" rel="tooltip" data-placement="left" data-action="share/whatsapp/share">
-                <i class="fa-brands fa-whatsapp font-sm text-white"></i>
-            </a>
-
-            <a target="_blank" href="https://twitter.com/intent/tweet?text={{url()->full()}}" class="btn bg-info" data-original-title="whatsapp" rel="tooltip" data-placement="left" data-action="share/whatsapp/share">
-                <i class="fa-brands fa-twitter font-sm text-white"></i>
-            </a>
-            </div>
-        </div>
-    </div>
-
     <div class="card d-block border-0 rounded-lg overflow-hidden dark-bg-transparent bg-transparent mt-4 pb-3">
-        <div class="row justify-content-md-between">
-            <div class="col-12 col-md-8">
+        <div class="row flex-sm-row justify-content-md-between flex-column-reverse">
+            <div class="col-12 col-md-7">
                 <h2 class="display1-size fw-700">{{$data->judul}}</h2>
             </div>
+
+            <div class="col-12 col-md-4 mb-3">
+                <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{url()->full()}}" class="btn-round-md bg-facebook bg-blur">
+                    <i class="feather-facebook font-xs text-white"></i>
+                </a>
+                <a target="_blank" href="https://wa.me/?text={{url()->full()}}" class="btn-round-md bg-facebook bg-success">
+                    <i class="fa-brands fa-whatsapp font-xs text-white"></i>
+                </a>
+                <a target="_blank" href="https://twitter.com/intent/tweet?text={{url()->full()}}" class="btn-round-md bg-twiiter">
+                    <i class="fa-brands fa-twitter font-xs text-white"></i>
+                </a>
+                <a onclick="copyText()" class="btn-round-sm d-inline p-3 bg-instagram cursor-pointer">
+                    <small id="copy" class="text-white">Copy link</small>
+                    
+                </a>
+            </div>
+
         </div>
 
         <span class="font-xssss fw-700 text-grey-900 d-inline-block ml-0 text-dark">Penulis : {{$data->penulis}}</span>
@@ -171,10 +170,16 @@
             
         </div>
     </div>
-
-
-
 </div>
+
+<script>
+    function copyText() {
+        navigator.clipboard.writeText
+            ("{{url()->full()}}");
+        let copy = document.getElementById("copy");
+        copy.innerHTML = "Copied";
+    }
+</script>
 
 
 

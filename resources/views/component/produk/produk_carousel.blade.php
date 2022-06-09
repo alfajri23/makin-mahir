@@ -14,7 +14,7 @@
                             <img src="{{asset($dt->poster)}}" alt="image" class="w-100">
                     </div>
                     <div class="card-body pt-0">
-                        <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-danger d-inline-block text-danger mr-1">{{$dt->tipe != null ? $dt->tipe : $tipe}}</span>
+                        <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-danger d-inline-block text-danger mr-1">{{$dt->tipe != null ? $dt->tipe : ''}}</span>
                         <span class="font-xss fw-700 pl-3 pr-3 lh-1 d-inline-block text-success float-right">
                             @if ($dt->harga == '#')
                                 Bayar<br> suka-suka
@@ -64,5 +64,4 @@
         </div> --}}
     </div>
 
-    <div class="spacer"></div>
 </div>

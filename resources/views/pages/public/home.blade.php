@@ -417,6 +417,61 @@
         </div>
     </div>
 
+    <div class="feedback-wrapper layer-after pb-lg--7 pb-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="page-title style1 col-xl-6 col-lg-8 col-md-10 text-center mb-5">
+                    <h2 class="poppins text-grey-900 fw-700 font-xxl pb-3 mb-0 mt-3 d-block lh-3">Testimoni</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="banner-slider owl-carousel owl-theme owl-nav-link rounded-lg overflow-hidden">
+                        
+                        <div class="owl-items" >
+                            <h4 class="fw-500 lh-5 font-lg mb-3 text-grey-700">Saya jadi paham terkait pembuatan CV, baik yang ATS ataupun CV Kreatif. Terimakasih Makin Mahir”</h4>
+                             
+                            <div class="clearfix"></div>
+                            <div class="card-body pl-0 pt-0 mt-4 mb-5 pb-4 d-block">
+                                <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Veronica Yolanda</h4>    
+                                <h5 class="font-xssss fw-500 mb-1 text-grey-500">( UII Yogyakarta )</h5>
+                            </div>
+
+                        </div>
+
+                        <div class="owl-items" >
+                            <h4 class="fw-500 lh-5 font-lg mb-3 text-grey-700">The customisation and flexibility are superb. Speed is awesome. Not a criticism we can make. Fun to use the theme, easy installation, super easy to use. Excellent work. Quite simply the best theme we’ve ever purchased. ”</h4>
+                             
+                            <div class="clearfix"></div>
+                            <div class="card-body pl-0 pt-0 mt-4 mb-5 pb-4 d-block">
+                                <img src="https://via.placeholder.com/40x40.png" alt="user" class="w45 float-left mr-3">
+                                <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Goria Coast</h4>    
+                                <h5 class="font-xssss fw-500 mb-1 text-grey-500">Digital Marketing Executive</h5>
+                            </div>
+
+                        </div>
+
+                        <div class="owl-items" >
+                            <h4 class="fw-500 lh-5 font-lg mb-3 text-grey-700">Quite simply the best theme we’ve ever purchased. The customisation and flexibility are superb. Speed is awesome. Not a criticism we can make. Fun to use the theme, easy installation, super easy to use. Excellent work.”</h4>
+                             
+                            <div class="clearfix"></div>
+                            <div class="card-body pl-0 pt-0 mt-4 mb-5 pb-4 d-block">
+                                <img src="https://via.placeholder.com/40x40.png" alt="user" class="w45 float-left mr-3">
+                                <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Goria Coast</h4>    
+                                <h5 class="font-xssss fw-500 mb-1 text-grey-500">Digital Marketing Executive</h5>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-5 offset-lg-1">
+                    <img src="https://via.placeholder.com/480x480.png" alt="image" class="img-fluid pr-5">
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="brand-wrapper pt-5 pb-lg--7 pb-5">
         <div class="container">
             <div class="row">

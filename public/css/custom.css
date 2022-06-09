@@ -16,10 +16,6 @@
 }
 
 
-
-
-
-
 /* Mobile */
 
 .spacer{
@@ -34,8 +30,7 @@
     height: 70px;
 }
 
-/* Desktop */
-
+/* Desktop -> 576 ke atas */
 @media screen and (min-width: 576px) {
     .spacer-sm{
         height: 150px;
@@ -43,6 +38,13 @@
 
     .spacer-md{
         height: 100px;
+    }
+}
+
+/* Desktop -> 576 ke atas */
+@media screen and (max-width: 576px) {
+    .card-image-main > img{
+        height: 165px !important;
     }
 }
 
@@ -70,24 +72,9 @@
     z-index: 100;
 }
 
-/* Desktop */
-@media screen and (min-width: 960px) {  
-    .share-member{
-        bottom: 0 !important;
-    }
-}
-
-
 /* Float bottom untuk halaman member */
 .float-member{
     bottom: 90px !important;
-}
-
-/* Desktop */
-@media screen and (min-width: 960px) {  
-    .float-member{
-        bottom: 10px !important;
-    }
 }
 
 
@@ -107,16 +94,6 @@
     box-shadow: 2px 2px 3px rgb(216, 216, 216);
 }
 
-/* Desktop */
-@media screen and (min-width: 960px) {  
-    .float{
-        width:190px;
-        bottom:40px;
-        right:30px;
-    }
-
-}
-
 .my-float{
     margin-top: 13px;
 }
@@ -128,6 +105,24 @@
 .my-float:hover{
     color: #0C9;
 }
+
+/* Desktop -> 960 ke atas */ 
+@media screen and (min-width: 960px) {  
+    .share-member{
+        bottom: 0 !important;
+    }
+
+    .float-member{
+        bottom: 10px !important;
+    }
+
+    .float{
+        width:190px;
+        bottom:40px;
+        right:30px;
+    }
+}
+
 
 
 /* Kelas */
