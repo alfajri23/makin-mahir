@@ -41,12 +41,15 @@
                             </div>
                             <div class="form-group icon-input mb-2">
                                 <i class="font-sm ti-microphone text-grey-500 pr-0"></i>
-                                <input type="tel" pattern="08\d{9,10}" maxlength="13" minlength="10" class="style2-input pl-5 form-control text-grey-900 font-xsss fw-600" placeholder="Telepon" name="telepon" value="{{ old('telepon') }}" required autocomplete="telepon" autofocus>                        
+                                <input type="tel" placeholder="081897234771" pattern="08\d{9,10}" maxlength="13" minlength="10" class="style2-input pl-5 form-control text-grey-900 font-xsss fw-600" placeholder="Telepon" name="telepon" value="{{ old('telepon') }}" required autocomplete="telepon" autofocus>                        
                                 @error('telepon')
                                     <span class="" role="alert alert-danger">
                                         <small  class="text-danger">{{ $message }}</small>
                                     </span>
                                 @enderror
+                                <small class="form-text text-muted">
+                                    Format telepon min.10, max.13
+                                </small>
                             </div>
                             <div class="form-group icon-input mb-2">
                                 <i class="font-sm ti-email text-grey-500 pr-0"></i>

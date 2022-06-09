@@ -218,7 +218,7 @@ class TransaksiController extends Controller
 
         $data_transaksi = Transaksi::create($datas);
 
-        return redirect()->route('transferIndex');
+        return redirect()->route('transferIndex')->with(['grup' => 'Pesan Warning']);;
 
     }
 

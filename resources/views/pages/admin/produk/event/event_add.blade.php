@@ -54,6 +54,11 @@
             </div>
 
             <div class="form-group">
+                <label for="exampleFormControlInput1">Grub WA</label>
+                <input type="text" name="grup_wa" class="form-control" id="exampleFormControlInput1" placeholder="">
+            </div>
+
+            <div class="form-group">
                 <label for="exampleFormControlInput1">Poster</label><br>
                 <input type="file" name="file" class="" id="exampleFormControlInput1" placeholder="">
             </div>

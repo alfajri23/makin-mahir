@@ -446,7 +446,8 @@ class ProdukController extends Controller
                 'pemateri' =>$request->pemateri,
                 'poster' => $files,
                 'status' => 1,
-                'id_expert' => $request->id_pemateri
+                'id_expert' => $request->id_pemateri,
+                'grup_wa' => $request->grup_wa,
             ]);
 
             $produk = Produk::updateOrCreate(['id'=>$request->id_produk],[

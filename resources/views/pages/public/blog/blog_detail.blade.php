@@ -54,9 +54,9 @@
             {{-- gambar --}}
             <div class="col-12 col-sm-12 mx-auto">
                 <div class="card-image w-100 mb-3">
-                    <a href="default-course-details.html" class="video-bttn position-relative d-block">
+                    <div class="video-bttn position-relative d-block">
                         <img src="{{asset($data->gambar)}}" alt="image" class="w-100">
-                    </a>
+                    </div>
                 </div>
             </div>
             @else
