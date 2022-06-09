@@ -14,6 +14,16 @@
 
 <div class="container">
     <div class="row px-2">
+        @if ($message = Session::get('grup'))
+        <div class="alert alert-success alert-dismissible fade show mx-auto" role="alert">
+            <strong>Pendaftaran beduk sukses!</strong><br>
+            gabung grup WA <a href="{{$message}}"> Disini </a>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        @endif
+
         @forelse ($data as $dt)
         <div class="col-xl-10 col-lg-6 col-md-6 col-sm-6 mx-auto">
             <div class="card mb-4 d-block w-100 shadow-xss rounded-lg p-4 border-0">

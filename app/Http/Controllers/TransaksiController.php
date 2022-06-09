@@ -12,7 +12,7 @@ use App\Models\EbookEnroll;
 use App\Models\EventEnroll;
 use App\Models\KelasEnroll;
 use App\Models\KonsultasiEnroll;
-
+use App\Models\ProdukEvent;
 use Illuminate\Support\Facades\Validator;
 
 class TransaksiController extends Controller
@@ -218,7 +218,9 @@ class TransaksiController extends Controller
 
         $data_transaksi = Transaksi::create($datas);
 
-        return redirect()->route('transferIndex')->with(['grup' => 'Pesan Warning']);;
+        $produk = ProdukEvent::find($request->id_produk);
+
+        return redirect()->route('transferIndex')->with(['grup' => $produk->grup_wa]);;
 
     }
 
