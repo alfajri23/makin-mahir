@@ -98,6 +98,7 @@
 
                     <div>
                         <input type="hidden" name="id_produk" value="{{$data->id}}">
+                        <input type="hidden" name="id_event" value="{{$data->event->id}}">
                         <input type="hidden" name="nama" value="{{$data->nama}}">
                         <input type="hidden" name="harga" value="{{$data->harga}}">
                     </div>

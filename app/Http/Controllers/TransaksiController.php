@@ -118,7 +118,7 @@ class TransaksiController extends Controller
 
         $data = Transaksi::updateOrCreate(['id'=>$request->id],$datas);
     
-        return redirect()->route('transferIndex');
+        return redirect()->route('transferIndex')->with(['sukses' => 'sukses']);
     }
 
 
@@ -156,7 +156,7 @@ class TransaksiController extends Controller
         $data_cv = UploadFile::file($request,'cv_user','storage/cv_review/member',$data_cv);
         $datas_cv = CVCheckerEnroll::create($data_cv);
 
-        return redirect()->route('memberChecker');
+        return redirect()->route('memberChecker')->with(['sukses' => 'sukses']);
 
     }
 
@@ -218,9 +218,9 @@ class TransaksiController extends Controller
 
         $data_transaksi = Transaksi::create($datas);
 
-        $produk = ProdukEvent::find($request->id_produk);
+        $produk = ProdukEvent::find($request->id_event);
 
-        return redirect()->route('transferIndex')->with(['grup' => $produk->grup_wa]);;
+        return redirect()->route('transferIndex')->with(['grup' => $produk->grup_wa]);
 
     }
 

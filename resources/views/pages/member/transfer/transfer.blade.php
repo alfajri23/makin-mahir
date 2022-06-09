@@ -16,8 +16,18 @@
     <div class="row px-2">
         @if ($message = Session::get('grup'))
         <div class="alert alert-success alert-dismissible fade show mx-auto" role="alert">
-            <strong>Pendaftaran beduk sukses!</strong><br>
-            gabung grup WA <a href="{{$message}}"> Disini </a>
+            <strong>Selamat Kamu Sudah Jadi Peserta BEDUK !</strong><br>
+            Gabung Grup WA untuk Informasi Acara dan Bonus <a href="{{$message}}">KLIK DISINI </a>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        @endif
+
+        @if (Session::get('sukses'))
+        <div class="alert alert-success alert-dismissible fade show mx-auto" role="alert">
+            <strong>Selamat Transaksi Berhasi !</strong><br>
+            Admin akan segera memproses pembayaranmu
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
