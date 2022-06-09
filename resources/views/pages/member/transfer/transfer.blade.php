@@ -26,7 +26,7 @@
 
         @if (Session::get('sukses'))
         <div class="alert alert-success alert-dismissible fade show mx-auto" role="alert">
-            <strong>Selamat Transaksi Berhasi !</strong><br>
+            <strong>Selamat Transaksi Berhasil !</strong><br>
             Admin akan segera memproses pembayaranmu
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
@@ -42,6 +42,7 @@
                     <a href="{{route('enrollProdukDetail',$dt->id_produk)}}" class="text-dark fw-700 font-lg mt-3 mb-1">{{$dt->nama}}</a>
                     @else
                     <h4 class="fw-700 font-lg mt-3 mb-1">{{$dt->nama}}</h4>
+                   
                     @endif
                     <p class="fw-600 font-xs text-grey-500 mt-0 mb-2">
                         @if ($dt->status == 'ditolak')
@@ -66,8 +67,10 @@
                                 {{$dt->tipe_bayar}}
                             </p>
                             <li class="list-inline-item text-center mr-0">
+                                <small>{{$dt->tanggal_bayar}}</small>
                                 <h4 class="fw-700 font-xs text-grey-700">Rp. {{number_format($dt->harga)}} 
                                 </h4>
+                                
                             </li>
                         </ul>
                     </div>

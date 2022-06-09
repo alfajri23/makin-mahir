@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+
+.poppins{
+    font-family: 'Poppins', sans-serif;
+}
+
+.roboto{
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Layout */
+
+.navigation .scroll-bar{
+    z-index: index 3;
+}
+
+
+
+
+
+
+/* Mobile */
+
+.spacer{
+    height: 100px;
+}
+
+.spacer-sm{
+    height: 50px;
+}
+
+.spacer-md{
+    height: 70px;
+}
+
+/* Desktop */
+
+@media screen and (min-width: 576px) {
+    .spacer-sm{
+        height: 150px;
+    }
+
+    .spacer-md{
+        height: 100px;
+    }
+}
+
+.item >.card{ 
+    min-height: 320px !important;
+}
+
+.card-image-main > img{
+    height: 200px;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+.card-image > img{
+    height: 160px;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+/* Button Share Blog */
+.share-member{
+    bottom: 0px !important;
+    position: relative !important;
+    bottom:0;
+    z-index: 100;
+}
+
+/* Desktop */
+@media screen and (min-width: 960px) {  
+    .share-member{
+        bottom: 0 !important;
+    }
+}
+
+
+/* Float bottom untuk halaman member */
+.float-member{
+    bottom: 90px !important;
+}
+
+/* Desktop */
+@media screen and (min-width: 960px) {  
+    .float-member{
+        bottom: 10px !important;
+    }
+}
+
+
+.float{
+    /* display:none; */
+    z-index: 5;
+    display:block;
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:40px;
+    right:10px;
+    background-color:#0C9;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    box-shadow: 2px 2px 3px rgb(216, 216, 216);
+}
+
+/* Desktop */
+@media screen and (min-width: 960px) {  
+    .float{
+        width:190px;
+        bottom:40px;
+        right:30px;
+    }
+
+}
+
+.my-float{
+    margin-top: 13px;
+}
+
+.float:hover{
+    background-color:#fff;
+}
+
+.my-float:hover{
+    color: #0C9;
+}
+
+
+/* Kelas */
+
+.banner-kelas{
+    height: 400px;
+    position: absolute;
+}

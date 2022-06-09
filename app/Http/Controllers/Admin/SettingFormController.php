@@ -26,7 +26,6 @@ class SettingFormController extends Controller
     public function init(Request $request){
         $kategori = ProdukKategori::all();
         $data = FormSetting::find($request->id);
-        //dd($data);
 
         return view('pages.admin.setting.form.add_form',compact('kategori','data'));
     }
@@ -38,17 +37,13 @@ class SettingFormController extends Controller
         $jawaban = explode(",",$filed->jawaban);
         $file = explode(",",$filed->file);
         $tipe = explode(",",$filed->tipe);
+        $pilihan = explode(",",$filed->pilihan);
 
         unset($pertanyaan[$request->index]);
         unset($jawaban[$request->index]);
         unset($tipe[$request->index]);
-
-
         unset($file[$request->index]);
-
-        //$pertanyaan = array_splice($pertanyaan, $request->index, 1);
-        // $jawaban = array_splice($jawaban, $request->index, 1);
-        // $file = array_splice($file, $request->index, 1);
+        unset($plihan[$request->index]);
 
         $datas = [
             'id_produk_kategori' => $filed->id_produk_kategori,
@@ -56,9 +51,8 @@ class SettingFormController extends Controller
             'tipe' => implode(",",$tipe),
             'file' => implode(",",$file),
             'tipe' => implode(",",$tipe),
+            'pilihan' => implode(",",$pilihan),
         ];
-
-        //dd($datas);
 
         $data = FormSetting::updateOrCreate(['id'=>$request->id],$datas);
 
@@ -68,11 +62,13 @@ class SettingFormController extends Controller
 
     public function store(Request $request){
 
-        //dd($request->required);
+        //dd($request->pilihan);
         $pertanyaan = implode(",",$request->pertanyaan);
         $tipe = implode(",",$request->tipe);
         $required = implode(",",$request->required);
         $File = $request->file != null ? $request->file : [];
+        $pilihan = implode(",",$request->pilihan);
+        //dd($pilihan);
 
         if($request->id != null){
             $filed = FormSetting::find($request->id);
@@ -93,8 +89,7 @@ class SettingFormController extends Controller
                         $File[$i]->move($tujuan_upload_server,$nama_file);
                         $filed[$i] = $files;
                     }
-                }else{
-                    
+                }else{  
                     if(array_key_exists($i,$filed)){
                         if($filed[$i] == null){
                             $filed[$i] = '';
@@ -117,6 +112,7 @@ class SettingFormController extends Controller
             'tipe' => $tipe,
             'file' => $file,
             'required' => $required,
+            'pilihan' => $pilihan,
         ];
 
         //dd($datas);

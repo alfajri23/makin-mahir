@@ -86,11 +86,29 @@
                             @endempty
                             <div class="form-group my-4">
                                 <label for="exampleInputEmail1" class="fw-600 mb-0 text-break">{!!$pertanyaans[$i]!!}</label>
-                                <input type="{{$tipes[$i]}}" name="{{$tipes[$i] == 'file' ? 'bukti[]' : 'jawaban[]' }}" class="form-control" {{$required[$i] == 1 ? 'required' : ''}}>
+                                
+                                @if($tipes[$i] != 'radio')
+                                    <input type="{{$tipes[$i]}}" name="{{$tipes[$i] == 'file' ? 'bukti[]' : 'jawaban[]' }}" class="form-control" {{$required[$i] == 1 ? 'required' : ''}}>
+                                @else
+                                    @php
+                                        $pilihans = explode("/",$pilihan[$i]);
+                                    @endphp
+                                        @forelse ($pilihans as $pil)  
+                                        <div class="form-check">
+                                            <input type="radio" name="jawaban[]" value="{{$pil}}" class="form-check-input" required>
+                                            <label class="form-check-label" for="exampleRadios1">
+                                                {{$pil}}
+                                            </label>
+                                        </div>
+                                        @empty
+                                        @endforelse
+                                @endif
+
+
                                 @if($tipes[$i] == 'file')
-                                <small class="form-text text-muted">
-                                    Format file yang diterima pdf, jpg, png, jpeg | Max 5 Mb
-                                </small>
+                                    <small class="form-text text-muted">
+                                        Format file yang diterima pdf, jpg, png, jpeg | Max 5 Mb
+                                    </small>
                                 @endif
                             </div>
                         @endfor

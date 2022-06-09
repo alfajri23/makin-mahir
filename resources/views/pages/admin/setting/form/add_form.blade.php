@@ -11,10 +11,14 @@
     </div>
 
     <div class="d-none">
-        <div class="row" id="formInit">
+        <div class="row align-items-end my-4" id="formInit">
             <div class="col-5">
-              <label>Pertanyaan</label>
-              <input type="text" class="form-control" name="pertanyaan[]" placeholder="">
+              <div class="font-weight-bold text-uppercase">Pertanyaan</div>
+              <textarea type="text" rows="4" class="form-control" name="pertanyaan[]" placeholder=""></textarea>
+              <small class="form-text text-muted">
+                Isi jika ada pilihan
+              </small>
+              <input type="text" class="form-control" name="pilihan[]">
             </div>
             <div class="col-2">
               <label>Tipe</label>
@@ -22,6 +26,7 @@
                 <option value="text">text</option>
                 <option value="number">number</option>
                 <option value="file">file</option>
+                <option value="radio">radio</option>
               </select>
             </div>
             <div class="col-3">
@@ -74,15 +79,21 @@
                     $tipe = explode(",",$data->tipe);
                     $file = explode(",",$data->file);
                     $required = explode(",",$data->required);
+                    $pilihan = explode(",",$data->pilihan);
 
                 @endphp
 
                 @for ($i=0;$i<count($pertanyaan);$i++)
-                <div class="row align-items-end my-2">
-                    <div class="col-5">
-                      <label>Pertanyaan</label>
+                <div class="row align-items-end my-4">
+                    <div id="formPilihan-{{$i}}" class="col-5">
+                      <div class="font-weight-bold text-uppercase">Pertanyaan {{$i + 1}}</div>
                       <textarea type="text" rows="4" class="form-control" name="pertanyaan[]" value="{{$pertanyaan[$i]}}">{{$pertanyaan[$i]}}</textarea>
+                      <small class="form-text text-muted">
+                        Isi jika ada pilihan
+                      </small>
+                      <input type="text" class="form-control" name="pilihan[]" value="{{$pilihan[$i]}}">
                     </div>
+
                     <div class="col-2">
                       <label>Tipe</label>
                       <select id="inputState" name="tipe[]" class="form-control">
@@ -90,19 +101,22 @@
                         <option value="text">text</option>
                         <option value="number">number</option>
                         <option value="file">file</option>
+                        <option value="radio">radio</option>
                       </select>
-                      {{-- <input type="text" class="form-control" name="tipe[]" value="{{$tipe[$i]}}"> --}}
                     </div>
+
                     <div class="col-3">
                         <img class="w-100" src="{{$file[$i] != null ? asset($file[$i]) : ''}}" alt="" srcset="">
                       <label>File</label><br>
                       <input type="file" class="" name="file[]">
                     </div>
+
                     <div class="col-1">
                         <a href="{{route('formSettingDelete',['id'=>$data->id,'index'=>$i])}}" class="btn btn-outline-danger mt-4">
                             <i class="fa-solid fa-trash"></i>
                         </a>
                     </div>
+
                     <div class="col-1">
                         <label>Required</label>
                         <select id="inputState" name="required[]" class="form-control">
@@ -157,6 +171,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         console.log("data");
         $( "#formInit" ).clone().appendTo( "#form" );
     }
+
+
 
 </script>
 

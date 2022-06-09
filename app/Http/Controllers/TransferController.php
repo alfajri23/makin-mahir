@@ -30,7 +30,7 @@ class TransferController extends Controller
     }
 
     public function index(){
-        $data = Transaksi::where('id_user',auth()->user()->id)->get();
+        $data = Transaksi::where('id_user',auth()->user()->id)->latest()->get();
 
         return view('pages.member.transfer.transfer',compact('data'));
     }
@@ -71,8 +71,9 @@ class TransferController extends Controller
                     return $nama;
                 })
                 ->addColumn('name', function($row){
+                    $name = explode(",",$row->jawaban);
                     $nama = '
-                        <p>'.$row->nama.'</p>
+                        <p>'.$name[0].'</p>
                     ';
                     return $nama;
                 })

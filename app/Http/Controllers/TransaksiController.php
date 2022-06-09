@@ -29,9 +29,11 @@ class TransaksiController extends Controller
             $tipes = explode(",",$ceks->tipe);
             $files = explode(",",$ceks->file);
             $required = explode(",",$ceks->required);
+            $pilihan = explode(",",$ceks->pilihan);
 
             if($data->id_kategori == 2){                    // Jika beduk
-                return view('pages.pembayaran.pembayaran_beduk',compact('tipes','pertanyaans','data','files','required'));
+                return view('pages.pembayaran.pembayaran_beduk',compact('tipes','pertanyaans',
+                                                                        'data','files','required','pilihan'));
             }
 
             return view('pages.member.daftar',compact('tipes','pertanyaans','data','files','required'));
@@ -161,6 +163,7 @@ class TransaksiController extends Controller
     }
 
     public function pembayaranBeduk(Request $request){
+        //dd($request->all());
         $buktis = $request->bukti;
 
         for($i=0;$i<count($request->bukti);$i++){
