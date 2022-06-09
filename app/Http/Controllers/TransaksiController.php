@@ -60,7 +60,7 @@ class TransaksiController extends Controller
         //dd($request->bukti);
 
         for($i=0;$i<count($request->bukti);$i++){
-            $rules['bukti.' . $i] = 'file|mimes:jpeg,png,jpg,pdf|max:2048';
+            $rules['bukti.' . $i] = 'file|mimes:jpeg,png,jpg,pdf|max:5120';
         }
         $rules['telepon'] = 'required|string|min:9';
 
@@ -124,8 +124,8 @@ class TransaksiController extends Controller
 
     public function pembayaranCvChecker(Request $request){
         $validator = Validator::make($request->all(), [
-            'bukti' => 'file|mimes:jpeg,png,jpg,pdf|max:2048',
-            'cv_user' => 'file|mimes:jpeg,png,jpg,pdf|max:2048',
+            'bukti' => 'file|mimes:jpeg,png,jpg,pdf|max:5120',
+            'cv_user' => 'file|mimes:jpeg,png,jpg,pdf|max:5120',
         ]);
 
         if ($validator->fails()) {
@@ -164,7 +164,7 @@ class TransaksiController extends Controller
         $buktis = $request->bukti;
 
         for($i=0;$i<count($request->bukti);$i++){
-            $rules['bukti.' . $i] = 'file|mimes:jpeg,png,jpg,pdf|max:2048';
+            $rules['bukti.' . $i] = 'file|mimes:jpeg,png,jpg,pdf|max:5120';
         }
 
         $rules['telepon'] = 'required|string|min:9';

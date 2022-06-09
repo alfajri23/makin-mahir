@@ -56,7 +56,7 @@
                            <tr>
                                 <th class="text-grey-700 fw-600 font-xss">Status
                                 </th>
-                                <td class="text-right text-grey-700 fw-600 font-xss">Lakukan pembayaran</td>
+                                <td class="text-right text-grey-700 fw-600 font-xss">Gratis</td>
                             </tr>
                        </tbody>
 
@@ -70,22 +70,31 @@
             <form action="{{route('pembayaranBeduk')}}" method="post" class="payment-form" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group my-4">
+
+                    <div class="form-group my-4">
+                        <label for="exampleInputEmail1" class="fw-600 mb-0">Telepon</label>
+                        <input type="tel" placeholder="081897234771" pattern="08\d{9,10}" maxlength="13" minlength="10" name="telepon" class="form-control" required>
+                        <small class="form-text text-muted">
+                            Format telepon min.10, max.13
+                        </small>
+                    </div>
+
                     @empty(!$pertanyaans)
                         @for ($i=0;$i<count($pertanyaans);$i++)
                             @empty(!$files[$i])
                             <img class="w-100" src="{{asset($files[$i])}}"/>
                             @endempty
                             <div class="form-group my-4">
-                                <label for="exampleInputEmail1" class="fw-600 mb-0 text-break">{{$pertanyaans[$i]}}</label>
+                                <label for="exampleInputEmail1" class="fw-600 mb-0 text-break">{!!$pertanyaans[$i]!!}</label>
                                 <input type="{{$tipes[$i]}}" name="{{$tipes[$i] == 'file' ? 'bukti[]' : 'jawaban[]' }}" class="form-control" {{$required[$i] == 1 ? 'required' : ''}}>
+                                @if($tipes[$i] == 'file')
+                                <small class="form-text text-muted">
+                                    Format file yang diterima pdf, jpg, png, jpeg | Max 5 Mb
+                                </small>
+                                @endif
                             </div>
                         @endfor
                     @endempty
-
-                    <div class="form-group my-4">
-                        <label for="exampleInputEmail1" class="fw-600 mb-0">Telepon</label>
-                        <input type="tel"  pattern="08\d{9,10}" maxlength="13" minlength="10" name="telepon" class="form-control" required>
-                    </div>
 
                     <div>
                         <input type="hidden" name="id_produk" value="{{$data->id}}">

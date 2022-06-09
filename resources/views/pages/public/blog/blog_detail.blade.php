@@ -45,7 +45,6 @@
     } */
 </style>
 
-<div class="spacer"></div>
 
 <div class="col-12 col-sm-10 mx-auto pt-5 pt-sm-0">
     <div class="card border-0 mb-0 rounded-lg overflow-hidden pt-5 pt-sm-0">
@@ -79,7 +78,11 @@
             </a>
             
             <a target="_blank" href="https://wa.me/?text={{url()->full()}}" class="btn bg-success" data-original-title="whatsapp" rel="tooltip" data-placement="left" data-action="share/whatsapp/share">
-                <i class="feather-phone font-sm text-white"></i>
+                <i class="fa-brands fa-whatsapp font-sm text-white"></i>
+            </a>
+
+            <a target="_blank" href="https://twitter.com/intent/tweet?text={{url()->full()}}" class="btn bg-info" data-original-title="whatsapp" rel="tooltip" data-placement="left" data-action="share/whatsapp/share">
+                <i class="fa-brands fa-twitter font-sm text-white"></i>
             </a>
             </div>
         </div>

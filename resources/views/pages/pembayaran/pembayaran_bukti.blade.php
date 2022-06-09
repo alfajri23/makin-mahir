@@ -74,6 +74,15 @@
             <form action="{{route('pembayaranCreate')}}" method="post" class="payment-form" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group my-4">
+
+                    <div class="form-group my-4">
+                        <label for="exampleInputEmail1" class="fw-600 mb-0">Telepon</label>
+                        <input type="tel" placeholder="081897234771" pattern="08\d{9,10}" maxlength="13" minlength="10" name="telepon" class="form-control" required>
+                        <small class="form-text text-muted">
+                            Format telepon min.10, max.13
+                        </small>
+                    </div>
+
                     <label for="exampleInputPassword1" class="font-lg fw-700">Upload Bukti Pembayaran</label>
                     
                     <ul class="font-xssss text-grey-800 fw-600">
@@ -88,11 +97,9 @@
                     <div class="custom-file mt-3">
                         <label class="font-weight-bold" for="customFile">Bukti pembayaran</label><br>
                         <input type="file" name="bukti[]" class="" id="customFile" required>
-                    </div>
-                    
-                    <div class="form-group my-4">
-                        <label for="exampleInputEmail1" class="fw-600 mb-0">Telepon</label>
-                        <input type="tel"  pattern="08\d{9,10}" maxlength="13" minlength="10" name="telepon" class="form-control" required>
+                        <small class="form-text text-muted">
+                            Format file yang diterima pdf, jpg, png, jpeg | Max 5 Mb
+                        </small>
                     </div>
 
                     <div>

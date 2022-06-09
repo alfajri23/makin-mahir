@@ -24,7 +24,7 @@ class BlogController extends Controller
         $latest = Blog::limit(3)->latest()->get();
 
         if($request->key != null){
-            $data = Blog::where('judul','like','%'.$request->search.'%')->paginate(6);
+            $data = Blog::where('judul','like','%'.$request->key.'%')->paginate(6);
         }else{
             $data = Blog::paginate(6);
         }

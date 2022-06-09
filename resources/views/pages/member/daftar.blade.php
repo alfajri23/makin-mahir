@@ -52,7 +52,16 @@
             <div class="col-12 col-sm-7">
                 <form action="{{route('pembayaranCreate')}}" method="post" enctype="multipart/form-data">
                 @csrf
-                @empty(!$pertanyaans)
+
+                    <div class="form-group my-4">
+                        <label for="exampleInputEmail1" class="fw-600 mb-0">Telepon</label>
+                        <input type="tel" placeholder="081897234771" pattern="08\d{9,10}" maxlength="13" minlength="10" name="telepon" class="form-control" required>
+                        <small class="form-text text-muted">
+                            Format telepon min.10, max.13
+                        </small>
+                    </div>
+
+                    @empty(!$pertanyaans)
                         @for ($i=0;$i<count($pertanyaans);$i++)
                             @empty(!$files[$i])
                             <img class="w-100" src="{{asset($files[$i])}}"/>
@@ -79,11 +88,9 @@
                         <div class="custom-file mt-3">
                             {{-- <label class="custom-file-label" for="customFile">Bukti file</label> --}}
                             <input type="file" name="bukti[]" class="" required>
-                        </div>
-
-                        <div class="form-group my-4">
-                            <label for="exampleInputEmail1" class="fw-600 mb-0">Telepon</label>
-                            <input type="tel"  pattern="08\d{9,10}" maxlength="13" minlength="10" name="telepon" class="form-control" required>
+                            <small class="form-text text-muted">
+                                Format file yang diterima pdf, jpg, png, jpeg | Max 5 Mb
+                            </small>
                         </div>
     
                         <div>

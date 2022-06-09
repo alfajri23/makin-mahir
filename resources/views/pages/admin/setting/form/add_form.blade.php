@@ -41,6 +41,8 @@
     <div class="container">
         <form action="{{route('formSettingStore')}}" method="post" enctype="multipart/form-data">
         @csrf
+
+        {{-- Kategori --}}
         <div class="mb-3">
             <p class="mb-0 fw-700 text-grey-800 display2-md-size">Kategori</p>
             <input type="hidden" name="id" value="{{isset($data) ? $data->id : null}}">
@@ -65,8 +67,6 @@
         </div>
 
         <div class="row">
-           
-
             <div id="form">
                 @empty(!$data)
                 @php
@@ -81,7 +81,7 @@
                 <div class="row align-items-end my-2">
                     <div class="col-5">
                       <label>Pertanyaan</label>
-                      <input type="text" class="form-control" name="pertanyaan[]" value="{{$pertanyaan[$i]}}">
+                      <textarea type="text" rows="4" class="form-control" name="pertanyaan[]" value="{{$pertanyaan[$i]}}">{{$pertanyaan[$i]}}</textarea>
                     </div>
                     <div class="col-2">
                       <label>Tipe</label>
@@ -136,22 +136,22 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script type="text/javascript">
 
-    $(document).ready(function() {
+    // $(document).ready(function() {
 
-		tinymce.init({
-	            selector: "textarea",
-	            branding: false,
-	            width: "100%",
-	            height: "400",
-	            plugins: [
-	                "advlist autolink lists",
-	                "searchreplace",
-	                "paste"
-	            ],
-	            toolbar: "undo redo | bold italic | numlist "
+	// 	tinymce.init({
+	//             selector: "textarea",
+	//             branding: false,
+	//             width: "100%",
+	//             height: "200",
+	//             plugins: [
+	//                 "advlist autolink lists",
+	//                 "searchreplace",
+	//                 "paste"
+	//             ],
+	//             toolbar: "undo redo | bold italic | numlist "
 	      
-	    });
-    });
+	//     });
+    // });
 
     function addForm(){
         console.log("data");
