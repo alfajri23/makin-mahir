@@ -127,11 +127,8 @@
                     </div>
                 </div>
             </div>
-        @empty
-            
+        @empty   
         @endforelse
-        
-
     </div>
 
     {{-- Komentar --}}
@@ -170,6 +167,7 @@
             
         </div>
     </div>
+    
 </div>
 
 <script>

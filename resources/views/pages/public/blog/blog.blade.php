@@ -88,48 +88,53 @@
         </div>
         <div class="col-12 col-sm-4 bg-light bg-sm-transparent py-5 p-sm-0">
             <h5 class="mb-0 text-grey-900 fw-700 font-xs pb-3 mb-0 d-block ml-2">Blog terpopuler</h5>
-            @forelse ($popular as $dt)
-                <div class="col-12 mb-4">
-                    <div class="card w-100 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1">
-                        <div class="card-image w-100 mb-3">
-                            <div class="video-bttn position-relative d-block"><img src="{{asset($dt->gambar)}}" alt="image" class="w-100"></div>
+            <div class="blog-responsive">
+                @forelse ($popular as $dt)
+                    <div class="col-12 mb-4 blog-responsive-item owl-items">
+    
+                        <div class="card w-100 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1">
+                            <div class="card-image w-100 mb-3">
+                                <div class="video-bttn position-relative d-block"><img src="{{asset($dt->gambar)}}" alt="image" class="w-100"></div>
+                            </div>
+                            <div class="card-body pt-0">
+                                <h4 class="fw-700 font-xss mt-3 lh-28 mt-0">
+                                    {{-- beri pembeda route --}}
+                                    <a href="{{route('blogDetail',['id' => $dt->id, 'link' => $dt->link ])}}" class="text-dark text-grey-900">{{$dt->judul}}</a>  
+                                </h4>
+                                <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2 mb-0"> {{$dt->penulis}} </h6>
+                                <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-0"> {{$dt->created_at}} </h6>
+                            </div>
                         </div>
-                        <div class="card-body pt-0">
-                            <h4 class="fw-700 font-xss mt-3 lh-28 mt-0">
-                                {{-- beri pembeda route --}}
-                                <a href="{{route('blogDetail',['id' => $dt->id, 'link' => $dt->link ])}}" class="text-dark text-grey-900">{{$dt->judul}}</a>
-                                
-                            </h4>
-                            <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2 mb-0"> {{$dt->penulis}} </h6>
-                            <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-0"> {{$dt->created_at}} </h6>
-                            
-                        </div>
+    
                     </div>
-                </div>
-            @empty      
-            @endforelse
+                @empty      
+                @endforelse
+            </div>
+
             <h5 class="mb-0 text-grey-900 fw-700 font-xs pb-3 mb-0 d-block ml-2">Terbaru</h5>
-            @forelse ($latest as $dt)
-                <div class="col-12 mb-4">
-                    <div class="card w-100 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1">
-                        <div class="card-image w-100 mb-3">
-                            <div class="video-bttn position-relative d-block"><img src="{{asset($dt->gambar)}}" alt="image" class="w-100"></div>
+            <div class="blog-responsive">
+                @forelse ($latest as $dt)
+                    <div class="col-12 mb-4 blog-responsive-item owl-items">
+
+                        <div class="card w-100 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1">
+                            <div class="card-image w-100 mb-3">
+                                <div class="video-bttn position-relative d-block"><img src="{{asset($dt->gambar)}}" alt="image" class="w-100"></div>
+                            </div>
+                            <div class="card-body pt-0">
+                                <h4 class="fw-700 font-xss mt-3 lh-28 mt-0">
+                                    {{-- beri pembeda route --}}
+                                    <a href="{{route('blogDetail',['id' => $dt->id, 'link' => $dt->link ])}}" class="text-dark text-grey-900">{{$dt->judul}}</a>
+                                    
+                                </h4>
+                                <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2 mb-0"> {{$dt->penulis}} </h6>
+                                <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-0"> {{$dt->created_at}} </h6>  
+                            </div>
                         </div>
-                        <div class="card-body pt-0">
-                            <h4 class="fw-700 font-xss mt-3 lh-28 mt-0">
-                                {{-- beri pembeda route --}}
-                                <a href="{{route('blogDetail',['id' => $dt->id, 'link' => $dt->link ])}}" class="text-dark text-grey-900">{{$dt->judul}}</a>
-                                
-                            </h4>
-                            <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2 mb-0"> {{$dt->penulis}} </h6>
-                            <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-0"> {{$dt->created_at}} </h6>
-                            
-                        </div>
+
                     </div>
-                </div>
-            @empty      
-            @endforelse
-            
+                @empty      
+                @endforelse
+            </div>
         </div>
     </div>
 </div>
@@ -138,6 +143,42 @@
 <script>
     const observer = lozad();
     observer.observe();
+
+
+    //Element
+    let blog = document.querySelectorAll('.blog-responsive');
+    let items = document.querySelectorAll('.blog-responsive-item');
+    //Media query
+    const mediaQuery = window.matchMedia('(max-width: 768px)')
+
+    function handleTabletChange(e) {
+    // Check if the media query is true
+        if (e.matches) {
+            // Then log the following message to the console
+            // for(let i=0; i<items.length; i++) {
+            //     items[i].setAttribute("class", "col-12 mb-4 blog-responsive-item owl-items");  
+            // }
+
+            for(let i=0; i<blog.length; i++) {
+                blog[i].setAttribute("class", "blog-responsive banner-slider owl-carousel owl-theme owl-nav-link rounded-lg overflow-hidden");  
+            }
+        }else{
+            for(let i=0; i<blog.length; i++) {
+                blog[i].setAttribute("class", "blog-responsive");  
+            }
+
+            // for(let i=0; i<items.length; i++) {
+            //     items[i].setAttribute("class", "col-12 mb-4 blog-responsive-item");  
+            // }
+        }
+    }
+
+    // Register event listener
+    mediaQuery.addListener(handleTabletChange)
+
+    // Initial check
+    handleTabletChange(mediaQuery)
+
 </script>
 
 

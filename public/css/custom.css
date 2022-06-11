@@ -41,7 +41,7 @@
     }
 }
 
-/* Desktop -> 576 ke atas */
+/* Desktop -> 576 ke bawah */
 @media screen and (max-width: 576px) {
     .card-image-main > img{
         height: 165px !important;
