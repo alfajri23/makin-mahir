@@ -24,8 +24,8 @@
                                 Rp. {{number_format($dt->harga)}}
                             @endif
                         </span>
-                        <h4 class="fw-700 font-xss mt-3 lh-28 mt-0">
-                            <a href="{{route('memberProdukDetail',$dt->produk->id)}}" class="text-dark text-grey-900">{{$dt->judul}}</a>
+                        <h4 class="fw-700 font-xsss mt-3 lh-20 mt-0">
+                            <a href="{{route('memberProdukDetail',$dt->produk->id)}}" class="text-dark text-grey-800">{{$dt->judul}}</a>
                         </h4>
                         <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2 mb-0"> {{$dt->tanggal}} </h6>
                         <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-0"> {{$dt->waktu}} </h6>  

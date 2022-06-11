@@ -30,6 +30,14 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="inputState">Status</label>
+                    <select id="inputState" class="form-control" name="status">
+                        <option value="1">Aktif</option>
+                        <option value="0">Non aktif</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
                     <label for="exampleFormControlInput1">Harga</label>
                     <input type="text" onkeyup="currencyFormat(this)" name="harga" class="form-control" id="exampleFormControlInput1" placeholder="">
                     <div id="emailHelp" class="form-text">Kosongkan jika gratis</div>

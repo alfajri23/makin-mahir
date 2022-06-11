@@ -14,6 +14,7 @@
                 <tr>
                     <th>Id</th>
                     <th>Judul</th>
+                    <th>Status</th>
                     <th>Gambar</th>
                     <th>Kategori</th>
                     <th>Aksi</th>
@@ -73,6 +74,7 @@
                     width:'5%'
                 },
                 {data: 'judul', name: 'judul'},
+                {data: 'status', name: 'status',width:'5%'},
                 {data: 'gambar', name: 'gambar'},
                 {data: 'kategori', name: 'kategori',width:'10%'},
                 {data: 'aksi', name: 'aksi',width:'10%'},

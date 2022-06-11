@@ -31,17 +31,17 @@
 </style>
     
 
-    <div class="banner-wrapper vh-md-100 layer-after app-shape bg-aliceblue">
+    <div class="banner-wrapper vh-md-100 layer-after app-shape bg-nav">
         <div class="container">
             <div class="row">
                 <div class="col-xxxl-7 col-xl-7 vh-md-100 pt-5 pt-sm-7 pb-2 pt-sm-7 mt-sm-5 mt-2 d-flex">
                     <div class="card w-100 border-0 bg-transparent">
 
-                        <h2 class="poppins fw-700 text-grey-900 display3-size display4-md-size">Cuma Disini Kamu Diajarin</h2>
-                        <h2 class="poppins fw-700 text-primary display3-size display4-md-size typewrite" data-period="1000" data-type='[ "Cara Bikin CV Terbaik", "Latihan Interview Kerja", "Belajar Psikotes Kerja"]'>
+                        <h2 class="poppins fw-600 text-grey-800 display3-size display4-md-size">Cuma Disini Kamu Diajarin</h2>
+                        <h2 class="poppins fw-600 text-primary display3-size display4-md-size typewrite" data-period="1000" data-type='[ "Cara Bikin CV Terbaik", "Latihan Interview Kerja", "Belajar Psikotes Kerja"]'>
                               <span class="wrap"></span>
                         </h2>
-                        <h2 class="poppins fw-700 text-grey-900 display3-size display4-md-size">Langsung Sama HRD</h2>
+                        <h2 class="poppins fw-600 text-grey-800 display3-size display4-md-size">Langsung Sama HRD</h2>
 
                         <div class="w200">
                             <a href="{{route('produkListKonsul')}}" class="btn btn-block border-0 w-100 bg-primary p-3 text-white fw-600 rounded-lg d-inline-block font-xssss btn-light mt-3">Konsultasi Sekarang</a>
@@ -57,7 +57,7 @@
         </div>
     </div>
 
-    <div class="feature-wrapper layer-after pb-lg--7 pb-5 bg-aliceblue">
+    <div class="feature-wrapper layer-after pb-lg--7 pb-5 ">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="page-title style1 col-xl-6 col-lg-8 col-md-10 text-center mb-5">
@@ -86,7 +86,7 @@
         </div>
     </div>
 
-    <div class="feature-wrapper layer-after my-5  pb-lg--7 pb-5">
+    <div class="feature-wrapper layer-after my-5 pb-lg--7 pb-5">
         <div class="row justify-content-center">
             <div class="page-title style1 col-xl-6 col-lg-8 col-md-10 text-center mb-5">
                 <h2 class="poppins text-grey-900 fw-700 display1-size display1-sm-size pb-3 mb-0 mt-3 d-block lh-3">Yang Kamu Dapatkan<br> Di Makin Mahir</h2>
@@ -314,7 +314,7 @@
         
     </div>
 
-    <div class="testimoonial layer-after my-5 ">
+    {{-- <div class="testimoonial layer-after my-5 ">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="page-title style1 col-xl-6 col-lg-8 col-md-10 text-center mb-5">
@@ -331,7 +331,6 @@
                                     </div>
 
                                     <div class="card-body p-0 mt-5 bg-transparent">
-                                        {{-- <img src="{{asset('asset/img/program/testimoni/testi1.jpg')}}" alt="user" class="w45 float-left mr-3"> --}}
                                         <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Kartika fitri</h4>
                                     </div>
                                 </div>
@@ -344,7 +343,6 @@
                                     </div>
 
                                     <div class="card-body p-0 mt-5 bg-transparent">
-                                        {{-- <img src="{{asset('asset/img/program/testimoni/testi2.jpg')}}" alt="user" class="w45 float-left mr-3"> --}}
                                         <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Alya Raihanna</h4>    
                                     </div>
                                 </div>
@@ -357,7 +355,6 @@
                                     </div>
 
                                     <div class="card-body p-0 mt-5 bg-transparent">
-                                        {{-- <img src="{{asset('asset/img/program/testimoni/testi3.jpg')}}" alt="user" class="w45 float-left mr-3"> --}}
                                         <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Yola Yulliana</h4>    
                                     </div>
                                 </div>
@@ -370,7 +367,6 @@
                                     </div>
 
                                     <div class="card-body p-0 mt-5 bg-transparent">
-                                        {{-- <img src="{{asset('asset/img/program/testimoni/testi3.jpg')}}" alt="user" class="w45 float-left mr-3"> --}}
                                         <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Ibnu Hari Winartomo </h4>  
                                         <h4 class="text-grey-800 fw-500 font-xsss mt-0">(Universitas Budi Luhur) </h4>
                                     </div>
@@ -385,7 +381,6 @@
                                     </div>
 
                                     <div class="card-body p-0 mt-5 bg-transparent">
-                                        {{-- <img src="{{asset('asset/img/program/testimoni/testi3.jpg')}}" alt="user" class="w45 float-left mr-3"> --}}
                                         <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Dalil AF</h4>  
                                         <h4 class="text-grey-800 fw-500 font-xsss mt-0">( ISI Denpasar, Bali ) </h4>
                                     </div>
@@ -400,7 +395,6 @@
                                     </div>
 
                                     <div class="card-body p-0 mt-5 bg-transparent">
-                                        {{-- <img src="{{asset('asset/img/program/testimoni/testi3.jpg')}}" alt="user" class="w45 float-left mr-3"> --}}
                                         <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Veronica Yolanda </h4>  
                                         <h4 class="text-grey-800 fw-500 font-xsss mt-0">( UII Yogyakarta ) </h4>
                                     </div>
@@ -410,12 +404,9 @@
                         </div>
                     </div>
                 </div>
-
-                
-
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <div class="feedback-wrapper layer-after pb-lg--7 pb-5">
         <div class="container">
@@ -429,59 +420,59 @@
                     <div class="owl-testimoni banner-slider owl-carousel owl-theme owl-nav-link rounded-lg overflow-hidden">
                         
                         <div class="owl-items" >
-                            <h4 class="fw-500 lh-5 font-lg mb-3 text-grey-700">“Saya jadi paham terkait pembuatan CV, baik yang ATS ataupun CV Kreatif. Terimakasih Makin Mahir”</h4>
+                            <h4 class="fw-500 lh-5 font-md mb-3 text-grey-700">“Saya jadi paham terkait pembuatan CV, baik yang ATS ataupun CV Kreatif. Terimakasih Makin Mahir”</h4>
                              
                             <div class="clearfix"></div>
                             <div class="card-body pl-0 pt-0 mt-4 mb-5 pb-4 d-block">
                                 <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Veronica Yolanda</h4>    
-                                <h5 class="font-xssss fw-500 mb-1 text-grey-500">( UII Yogyakarta )</h5>
+                                <h5 class="font-xssss fw-600 mb-1 text-grey-500">( UII Yogyakarta )</h5>
                             </div>
                         </div>
 
                         <div class="owl-items" >
-                            <h4 class="fw-500 lh-5 font-lg mb-3 text-grey-700">"Jadi karena ngikutin Kelas Bedah CV ini, aku jadi lebih tau mana yang harus aku masukin ke CV, mana yang enggak. Jadi bikin CV aku lebih ATS Friendly. Nah, walaupun ini berbayar, tapi menurut aku tuh ini worth it banget, kalian ga bakal nyesel gitu loh"</h4>
+                            <h4 class="fw-500 lh-5 font-md mb-3 text-grey-700">"Jadi karena ngikutin Kelas Bedah CV ini, aku jadi lebih tau mana yang harus aku masukin ke CV, mana yang enggak. Jadi bikin CV aku lebih ATS Friendly. Nah, walaupun ini berbayar, tapi menurut aku tuh ini worth it banget, kalian ga bakal nyesel gitu loh"</h4>
                              
                             <div class="clearfix"></div>
                             <div class="card-body pl-0 pt-0 mt-4 mb-5 pb-4 d-block">
                                 <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Alya Raihanna</h4>    
-                                <h5 class="font-xssss fw-500 mb-1 text-grey-500"></h5>
+                                <h5 class="font-xssss fw-600 mb-1 text-grey-500"></h5>
                             </div>
                         </div>
 
                         <div class="owl-items" >
-                            <h4 class="fw-500 lh-5 font-lg mb-3 text-grey-700">"Kita tuh butuh prakteknya juga, gak cuma teorinya doank. Sekarang kan teorinya udah banyak, di google udah ada, di buku udah ada, kita butuh prakteknya juga. Kalo yang kaya gini saya baru pertama kali nih saya ikut yang kaya gini. Kalau menurut saya, yang kaya gini tuh cukup membantu sih mas"</h4>
+                            <h4 class="fw-500 lh-5 font-md mb-3 text-grey-700">"Kita tuh butuh prakteknya juga, gak cuma teorinya doank. Sekarang kan teorinya udah banyak, di google udah ada, di buku udah ada, kita butuh prakteknya juga. Kalo yang kaya gini saya baru pertama kali nih saya ikut yang kaya gini. Kalau menurut saya, yang kaya gini tuh cukup membantu sih mas"</h4>
                              
                             <div class="clearfix"></div>
                             <div class="card-body pl-0 pt-0 mt-4 mb-5 pb-4 d-block">
                                 <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Yola Yulliana</h4>    
-                                <h5 class="font-xssss fw-500 mb-1 text-grey-500"></h5>
+                                <h5 class="font-xssss fw-600 mb-1 text-grey-500"></h5>
                             </div>
                         </div>
 
                         <div class="owl-items" >
-                            <h4 class="fw-500 lh-5 font-lg mb-3 text-grey-700">“Setelah mengikuti kelas konsul ini saya jadi lebih paham cara membuat CV untuk membuat personal branding lebih menonjol dibandingkan kandidat lain. Selain itu masukan dari kak Aldino terkait portofolio sangat membantu saya.”</h4>
+                            <h4 class="fw-500 lh-5 font-md mb-3 text-grey-700">“Setelah mengikuti kelas konsul ini saya jadi lebih paham cara membuat CV untuk membuat personal branding lebih menonjol dibandingkan kandidat lain. Selain itu masukan dari kak Aldino terkait portofolio sangat membantu saya.”</h4>
                              
                             <div class="clearfix"></div>
                             <div class="card-body pl-0 pt-0 mt-4 mb-5 pb-4 d-block">
                                 <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Ibnu Hari Winartomo</h4>    
-                                <h5 class="font-xssss fw-500 mb-1 text-grey-500">(Universitas Budi Luhur) </h5>
+                                <h5 class="font-xssss fw-600 mb-1 text-grey-500">(Universitas Budi Luhur) </h5>
                             </div>
                         </div>
 
                         <div class="owl-items" >
-                            <h4 class="fw-500 lh-5 font-lg mb-3 text-grey-700">“Insighfull banget yah, jadi pikiran yang sebelumnya menurut saya sudah benar ternyata menurut HR ini kurang tepat. Jadi kelas bedah CV ini sangat membantu saya”</h4>
+                            <h4 class="fw-500 lh-5 font-md mb-3 text-grey-700">“Insighfull banget yah, jadi pikiran yang sebelumnya menurut saya sudah benar ternyata menurut HR ini kurang tepat. Jadi kelas bedah CV ini sangat membantu saya”</h4>
                              
                             <div class="clearfix"></div>
                             <div class="card-body pl-0 pt-0 mt-4 mb-5 pb-4 d-block">
                                 <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Dalil AF</h4>    
-                                <h5 class="font-xssss fw-500 mb-1 text-grey-500">( ISI Denpasar, Bali )</h5>
+                                <h5 class="font-xssss fw-600 mb-1 text-grey-500">( ISI Denpasar, Bali )</h5>
                             </div>
                         </div>
 
                     </div>
                 </div>
                 <div class="col-lg-5 offset-lg-1">
-                    <img src="https://via.placeholder.com/480x480.png" alt="image" class="img-fluid pr-5">
+                    <img src="https://images.unsplash.com/photo-1465188035480-cf3a60801ea5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="image" class="img-fluid pr-5">
                 </div>
             </div>
         </div>

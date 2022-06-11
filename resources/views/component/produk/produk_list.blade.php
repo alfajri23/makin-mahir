@@ -33,16 +33,16 @@
                                 </div>
                             </div>
 
-                            <h4 class="fw-700 font-xss mt-3 lh-20 mt-0">
-                                <a href="{{route('memberProdukDetail',$dt->produk->id)}}" class="text-dark text-grey-900">{{$dt->judul}}</a>
+                            <h4 class="fw-700 font-xsss mt-3 lh-20 mt-0">
+                                <a href="{{route('memberProdukDetail',$dt->produk->id)}}" class="text-grey-900">{{$dt->judul}}</a>
                             </h4>
-                            <h6 class="font-xsss text-grey-600 fw-500 ml-0 mt-2 mb-0">
+                            <h6 class="font-xssss text-grey-600 fw-500 ml-0 mt-2 mb-0">
                                 @if (!empty($dt->tanggal))
                                     {{date_format(date_create($dt->tanggal),"d M Y")}} 
                                 @else
                                 @endif
                             </h6>
-                            <h6 class="font-xsss text-grey-600 fw-500 ml-0 mt-0"> {{$dt->waktu}} </h6>
+                            <h6 class="font-xssss text-grey-600 fw-500 ml-0 mt-0"> {{$dt->waktu}} </h6>
                         </div>
                     </div>
                 </div>

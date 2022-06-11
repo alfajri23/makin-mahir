@@ -69,11 +69,15 @@
 
 <body class="color-theme-blue mont-font">
     <div class="main-wrap">
-        <div class="header-wrapper pt-3 pb-3 ng-info">
+        <div class="header-wrapper pt-3 pb-3 bg-nav">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 navbar pt-0 pb-0">
-                        <a href="{{route('publicIndex')}}"><h1 class="ls-3 fw-700 poppins font-xxl">MakinMahir.id<span class="d-block font-xsssss ls-1 text-grey-500 open-font ">Berkembang dan Makin Mahir !</span></h1></a>
+                    <div class="col-lg-9 navbar pt-0 pb-0">
+                        <a class="" href="{{route('publicIndex')}}">
+                            <h1 class="ls-3 fw-700 poppins font-xs text-white mb-0 bg-primary rounded-xxl p-2 px-3">MakinMahir.id
+                            </h1>
+                            <span class="d-block fw-700 font-xsssss ls-1 text-grey-600 open-font text-center">Berkembang dan Makin Mahir !</span>
+                        </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
@@ -112,14 +116,6 @@
                                     </div>
                                 </li>
 
-                                <!--<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Bantuan <i class="ti-angle-down"></i></a>-->
-                                <!--    <div class="dropdown-menu">-->
-                                <!--        <a class="dropdown-item" href="{{route('faq')}}">FAQ</a>-->
-                                <!--        <a class="dropdown-item" href="{{route('term')}}">Syarat dan ketentuan</a>-->
-                                <!--        <a class="dropdown-item" href="{{route('privacy')}}">Kebijakan privasi</a>-->
-                                <!--    </div>-->
-                                <!--</li>-->
-
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{route('blog')}}">Blog</a>
                                 </li>
@@ -138,7 +134,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-4 text-right d-lg-block d-none">
+                    <div class="col-lg-3 text-right d-lg-block d-none">
                         @if (Route::has('login'))
                             @auth
                                 <a href="{{ route('memberIndex') }}" class="header-btn bg-dark fw-500 text-white font-xssss lh-32 w100 text-center d-inline-block rounded-xl mt-1">Home</a>
@@ -178,6 +174,15 @@
                                 <div class="col-sm-4 col-xs-12 sm-mb-4">
                                     <h5 class="mb-4 font-xs">Makin mahir</h5>
                                     <p class="w-100">platform perencana karir yang meberikan layanan yang di dalamnya berisi informasi seputar dunia kerja, membantu fresh graduate mengenali potensi dirinya dan memberikan rekomendasi yang dapat dijadikan pertimbangan dalam merencanakan karir terbaik mereka.</p>  
+                                    
+                                    <ul class="d-flex align-items-center mt-2 float-left xs-mb-2">
+                                        <li class="mr-2"><a href="#" class="btn-round-md bg-facebook"><i class="font-xs ti-facebook text-white"></i></a></li>
+                                        <li class="mr-2"><a href="#" class="btn-round-md bg-twiiter"><i class="font-xs ti-twitter-alt text-white"></i></a></li>
+                                        <li class="mr-2"><a href="#" class="btn-round-md bg-linkedin"><i class="font-xs ti-linkedin text-white"></i></a></li>
+                                        <li class="mr-2"><a href="#" class="btn-round-md bg-instagram"><i class="font-xs ti-instagram text-white"></i></a></li>
+                                        <li class="mr-2"><a href="#" class="btn-round-md bg-pinterest"><i class="font-xs ti-pinterest text-white"></i></a></li>
+                                    </ul>
+                                
                                 </div>
 
                                 <div class="col-md-3 col-lg-2 col-sm-6 col-xs-6">
@@ -198,7 +203,7 @@
                                     </ul>
                                 </div>
 
-                                <div class="col-md-3 col-lg-2 col-sm-6 col-xs-6">
+                                <div class="col-md-3 col-lg-4 col-sm-6 col-xs-6">
                                     <h5 class="mb-3 font-xs">Kantor</h5>
                                     <p class="w-100">Jl. Raya Pringsurat - Temanggung, Kel. Kebumen,<br> Kec. Pringsurat, Temanggung</p>
                                 
@@ -212,6 +217,7 @@
                     </div>
         
                     <div class="col-sm-12 lower-footer"></div>
+                    
                     <div class="col-sm-6">
                         <p class="copyright-text">© 2021 copyright. All rights reserved.</p>
                     </div>

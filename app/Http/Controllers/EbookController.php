@@ -8,7 +8,6 @@ use App\Models\Produk;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -25,7 +24,8 @@ class EbookController extends Controller
             $data = Ebook::where('judul','like','%'.$request->search.'%')->get();
            
         }else{
-            $data = Ebook::all();
+            $data = Ebook::where('status',1)
+            ->get();
 
         }
 
@@ -43,8 +43,20 @@ class EbookController extends Controller
     }
 
     public function detail(Request $request){
-        $datas = Ebook::limit(6)->get();
-        $data = Ebook::where('judul',$request->judul)->first();
+        $datas = Ebook::limit(6)->where('status',1)
+        ->get();
+
+        $data = Ebook::where([
+            'judul' => $request->judul,
+            'status' => 1
+        ])->first();
+        
+        if($data == null) {
+            dd("kososng");
+        }
+        
+
+      
         
         $layout = '';
 
@@ -128,22 +140,17 @@ class EbookController extends Controller
     }
 
     public function ebookCreate(Request $request){
-
-        //dd($request->all());
         
         $validator = Validator::make($request->all(), [
 			'file' => 'file|mimes:doc,docx,pdf,pptx,ppt|max:10000',
             'gambar' => 'file|image|mimes:jpeg,png,jpg|max:2048',
 		]);
-		
-		//dd($request->all());
 
         if ($validator->fails()) {
             dd($validator->messages()); 
             return redirect()->back();
         }
         
-        //dd($request->all());
 
         //file asli
         $files = $request->file('file');
@@ -187,6 +194,7 @@ class EbookController extends Controller
             'link' =>$file,
             'harga' => $request->harga != null ? str_replace(",", "", $request->harga) : null,
             'id_expert' => $request->id_expert,
+            'status' => $request->status
         ]);
 
         $produk = Produk::updateOrCreate(['id'=>$request->id_produk],[
