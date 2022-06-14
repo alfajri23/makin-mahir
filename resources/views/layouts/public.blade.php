@@ -188,7 +188,13 @@
 
                                     
 
-                                    <h5 class="my-4 font-xs">Metode Pembayaran</h5>
+                                    <h5 class="my-4 pt-4 font-xs">Metode Pembayaran</h5>
+
+                                    <div class="">
+
+                                        <img src="{{asset('asset/img/program/bank.png')}}" class="img-fluid" alt="" srcset="">
+                                    </div>
+
 
                                 
                                 </div>
