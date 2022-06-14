@@ -90,9 +90,8 @@
             <h5 class="mb-0 text-grey-900 fw-700 font-xs pb-3 mb-0 d-block ml-2">Blog terpopuler</h5>
             <div class="blog-responsive">
                 @forelse ($popular as $dt)
-                    <div class="col-12 mb-4 blog-responsive-item owl-items">
-    
-                        <div class="card w-100 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1">
+                    <div class="item w300 mb-4 blog-responsive-item owl-items">
+                        <div class="card w300 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1">
                             <div class="card-image w-100 mb-3">
                                 <div class="video-bttn position-relative d-block"><img src="{{asset($dt->gambar)}}" alt="image" class="w-100"></div>
                             </div>
@@ -112,11 +111,11 @@
             </div>
 
             <h5 class="mb-0 text-grey-900 fw-700 font-xs pb-3 mb-0 d-block ml-2">Terbaru</h5>
+            
             <div class="blog-responsive">
                 @forelse ($latest as $dt)
-                    <div class="col-12 mb-4 blog-responsive-item owl-items">
-
-                        <div class="card w-100 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1">
+                    <div class="item w300 mb-4 blog-responsive-item owl-items">
+                        <div class="card w300 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1">
                             <div class="card-image w-100 mb-3">
                                 <div class="video-bttn position-relative d-block"><img src="{{asset($dt->gambar)}}" alt="image" class="w-100"></div>
                             </div>
@@ -160,7 +159,7 @@
             // }
 
             for(let i=0; i<blog.length; i++) {
-                blog[i].setAttribute("class", "blog-responsive banner-slider owl-carousel owl-theme owl-nav-link rounded-lg overflow-hidden");  
+                blog[i].setAttribute("class", "blog-responsive owl-carousel category-card owl-theme overflow-hidden overflow-visible-xl nav-none");  
             }
         }else{
             for(let i=0; i<blog.length; i++) {

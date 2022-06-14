@@ -23,6 +23,10 @@
 
     }
 
+    .owl-theme.owl-nav-link .owl-nav {
+        top: 90% !important;
+    }
+
     /* .owl-item{
         width:400px !important;
     } */
@@ -66,17 +70,17 @@
                 <div class="col-xl-10 col-lg-12 pb-lg--5">
                     <div class="row justify-content-center">
                         <div class="col-lg-3 col-md-3 col-xss-6 text-center ">
-                            <h2 class="display4-size display1-sm-size fw-700 open-font text-danger mb-0">6000+</span></h2>
+                            <h2 class="display3-size display1-sm-size fw-700 open-font mb-0 text-instagram"><i class="fa-solid fa-user mr-2"></i>6000+</h2>
                             <h4 class="font-xsss text-grey-600 fw-500 mt-2">Lebih dari 6000 teman kerja sudah menggunakan layanan Makin Mahir</h4>
                         </div>
 
                         <div class="col-lg-3 col-md-3 col-xss-6 text-center ">
-                            <h2 class="display4-size display1-sm-size fw-700 open-font text-success mb-0">300+</span></h2>
+                            <h2 class="display3-size display1-sm-size fw-700 open-font text-success mb-0"><i class="fas fa-photo-video mr-2"></i>300+</h2>
                             <h4 class="font-xsss text-grey-600 fw-500 mt-2">Tersedia lebih dari 300 konten edukasi dunia kerja buat teman kerja belajar</h4>
                         </div>
 
                         <div class="col-lg-3 col-md-3 col-xss-6 text-center mt-3 mt-md-0">
-                            <h2 class="display4-size display1-sm-size fw-700 open-font text-info mb-0">1 on 1</h2>
+                            <h2 class="display3-size display1-sm-size fw-700 open-font text-linkedin mb-0"><i class="fas fa-user-friends mr-2"></i>1on1</h2>
                             <h4 class="font-xsss text-grey-600 fw-500 mt-2">Bisa Konsultasi Private 1 on 1 langsung dengan HRD tersertifikasi BNSP</h4>
                         </div>
    
