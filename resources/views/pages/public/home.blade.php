@@ -478,7 +478,7 @@
         </div>
     </div>
 
-    <div class="brand-wrapper pt-5 pb-lg--7 pb-5">
+    {{-- <div class="brand-wrapper pt-5 pb-lg--7 pb-5">
         <div class="container">
             <div class="row">
                 <div class="col-6">
@@ -513,7 +513,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>

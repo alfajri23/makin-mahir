@@ -175,13 +175,21 @@
                                     <h5 class="mb-4 font-xs">Makin mahir</h5>
                                     <p class="w-100">platform perencana karir yang meberikan layanan yang di dalamnya berisi informasi seputar dunia kerja, membantu fresh graduate mengenali potensi dirinya dan memberikan rekomendasi yang dapat dijadikan pertimbangan dalam merencanakan karir terbaik mereka.</p>  
                                     
-                                    <ul class="d-flex align-items-center mt-2 float-left xs-mb-2">
-                                        <li class="mr-2"><a href="#" class="btn-round-md bg-facebook"><i class="font-xs ti-facebook text-white"></i></a></li>
-                                        <li class="mr-2"><a href="#" class="btn-round-md bg-twiiter"><i class="font-xs ti-twitter-alt text-white"></i></a></li>
-                                        <li class="mr-2"><a href="#" class="btn-round-md bg-linkedin"><i class="font-xs ti-linkedin text-white"></i></a></li>
-                                        <li class="mr-2"><a href="#" class="btn-round-md bg-instagram"><i class="font-xs ti-instagram text-white"></i></a></li>
-                                        <li class="mr-2"><a href="#" class="btn-round-md bg-pinterest"><i class="font-xs ti-pinterest text-white"></i></a></li>
-                                    </ul>
+                                    <div class="clearfix">
+
+                                        <ul class="d-flex align-items-center mt-2 float-left xs-mb-2">
+                                            <li class="mr-2"><a target="_blank" href="https://www.facebook.com/makinmahirID/" class="btn-round-md bg-facebook"><i class="font-xs ti-facebook text-white"></i></a></li>
+                                            <li class="mr-2"><a target="_blank" href="https://vt.tiktok.com/ZSdgqkhgU/" class="btn-round-md bg-white"><i class="font-xs fa-brands fa-tiktok text-info"></i></a></li>
+                                            <li class="mr-2"><a target="_blank" href="https://www.linkedin.com/company/makinmahir-id/" class="btn-round-md bg-linkedin"><i class="font-xs ti-linkedin text-white"></i></a></li>
+                                            <li class="mr-2"><a target="_blank" href="https://instagram.com/makinmahir_id?igshid=YmMyMTA2M2Y=" class="btn-round-md bg-instagram"><i class="font-xs ti-instagram text-white"></i></a></li>
+                                            <li class="mr-2"><a target="_blank" href="https://youtube.com/c/MAKINMAHIR" class="btn-round-md bg-youtube"><i class="font-xs ti-youtube text-white"></i></a></li>
+                                        </ul>
+                                    </div>
+
+                                    
+
+                                    <h5 class="my-4 font-xs">Metode Pembayaran</h5>
+
                                 
                                 </div>
 
