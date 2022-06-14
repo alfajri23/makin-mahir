@@ -169,7 +169,6 @@
             dataType: 'json',
             success : (data)=>{
                 let datas = data.data;
-                console.log(data);
                 let modalBody = $('#modalBody');
 
                 //Data
@@ -197,10 +196,9 @@
                 //Event
                 let event = `
                     <tr>
-                        <td>${datas.daftar_beduk.length}</td>
-                        <td>${datas.daftar_webinar.length}</td>
-                        <td>${datas.daftar_konsultasi.length}</td>
-                        <td>${datas.daftar_video.length}</td>
+                        <td>${data.event.length}</td>
+                        <td>${data.konsultasi.length}</td>
+                        <td>${data.kelas.length}</td>
                     </tr>
                 `;
 

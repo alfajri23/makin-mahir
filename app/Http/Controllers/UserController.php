@@ -117,11 +117,9 @@ class UserController extends Controller
 
         return response()->json([
             'data' => $data,
-            'beduk' => $data->daftar_beduk,
-            'webinar' => $data->daftar_webinar,
-            'konsultasi' => $data->daftar_konsultasi,
-            'video' => $data->daftar_video,
-
+            'event' => $data->event_enroll,
+            'konsultasi' => $data->konsultasi_enroll,
+            'kelas' => $data->kelas_enroll,
         ]);
     }
 
