@@ -415,7 +415,7 @@
                     <h2 class="poppins text-grey-900 fw-700 font-xxl pb-3 mb-0 mt-3 d-block lh-3">Testimoni</h2>
                 </div>
             </div>
-            <div class="row">
+            <div class="row flex-column-reverse flex-sm-row">
                 <div class="col-lg-6">
                     <div class="owl-testimoni banner-slider owl-carousel owl-theme owl-nav-link rounded-lg overflow-hidden">
                         
@@ -472,7 +472,7 @@
                     </div>
                 </div>
                 <div class="col-lg-5 offset-lg-1">
-                    <img src="https://images.unsplash.com/photo-1558769132-92e717d613cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="image" class="img-fluid pr-5">
+                    <img src="https://images.unsplash.com/photo-1558769132-92e717d613cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="image" class="img-fluid mb-4">
                 </div>
             </div>
         </div>

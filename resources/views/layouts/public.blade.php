@@ -210,7 +210,7 @@
                                     </ul>
                                 </div>
                                 
-                                <div class="col-md-3 col-lg-4 col-sm-6 col-xs-6">
+                                <div class="col-md-3 col-lg-4 col-sm-6 col-xs-8">
                                     <h5 class="mb-3 font-xs">Kantor</h5>
                                     <p class="w-100">Jl. Raya Pringsurat - Temanggung, Kel. Kebumen,<br> Kec. Pringsurat, Temanggung</p>
                                 
