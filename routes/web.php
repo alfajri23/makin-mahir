@@ -479,29 +479,6 @@ Route::post('pembayaran/cv-checker', [Controllers\TransaksiController::class,'pe
 Route::post('pendaftaran/beduk', [Controllers\TransaksiController::class,'pembayaranBeduk'])->name('pembayaranBeduk');
 
 
-Route::get('test/form', function(){
-    return view('testinput');
-});
-
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Http\Request;
-
-Route::post('test/form', function(Request $request){
-    //dd($request->all());
-    $data =  Validator::make($request->all(), [
-        'name' => ['required', 'string', 'max:255'],
-        'email' => ['required', 'string', 'email', 'max:255'],
-        'password' => ['required', 'string', 'min:8', 'confirmed'],
-        'telepon' => ['required', 'string','regex:/08\d{9,10}/','min:9','max:14'],
-    ]);
-
-    $data->validate();
-
-    dd("sukses");
-})->name('testinput');
-
-
-
 
 
 
