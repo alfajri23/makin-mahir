@@ -59,14 +59,21 @@ class TransaksiController extends Controller
     public function create(Request $request){
         $buktis = $request->bukti;
 
-        //dd($request->bukti);
-
         for($i=0;$i<count($request->bukti);$i++){
-            $rules['bukti.' . $i] = 'file|mimes:jpeg,png,jpg,pdf|max:5120';
+            $rules['bukti.' . $i] = 'file|mimes:jpeg,png,jpg,pdf|max:2048';
+            $customAttributes['bukti.' . $i] = 'File';
         }
-        $rules['telepon'] = 'required|string|min:9';
 
-        $validator = Validator::make($request->all(),$rules);
+        $rules['telepon'] = 'required|string|min:9|regex:/08\d{9,10}/';
+
+        $messages = [
+            'required' => ':attribute harus diisi.',
+            'mimes' => ':attribute tipe yang diterima: :values',
+            'max' => 'Ukuran maksimal file 2 Mb'
+        ];
+
+        $validator = Validator::make($request->all(),$rules, $messages);
+        $validator->validate();
 
         if ($validator->fails()) {
             dd($validator->messages()->first()); 
@@ -113,11 +120,6 @@ class TransaksiController extends Controller
             $datas['file_tambahan'] = $file_name;
         }
 
-
-        // if(!empty($request->bukti)){
-        //     $datas = UploadFile::file($request,'bukti','storage/transaksi',$datas);
-        // }
-
         $data = Transaksi::updateOrCreate(['id'=>$request->id],$datas);
     
         return redirect()->route('transferIndex')->with(['sukses' => 'sukses']);
@@ -163,19 +165,26 @@ class TransaksiController extends Controller
     }
 
     public function pembayaranBeduk(Request $request){
-        //dd($request->all());
         $buktis = $request->bukti;
 
         for($i=0;$i<count($request->bukti);$i++){
-            $rules['bukti.' . $i] = 'file|mimes:jpeg,png,jpg,pdf|max:5120';
+            $rules['bukti.' . $i] = 'file|mimes:jpeg,png,jpg,pdf|max:2048';
+            $customAttributes['bukti.' . $i] = 'File';
         }
 
-        $rules['telepon'] = 'required|string|min:9';
+        $rules['telepon'] = 'required|string|min:9|regex:/08\d{9,10}/';
 
-        $validator = Validator::make($request->all(),$rules);
+        $messages = [
+            'required' => ':attribute harus diisi.',
+            'mimes' => ':attribute tipe yang diterima: :values',
+            'max' => 'Ukuran maksimal file 2 Mb'
+        ];
+
+        $validator = Validator::make($request->all(),$rules, $messages);
+        $validator->validate();
 
         if ($validator->fails()) {
-            dd($validator->messages()->first()); 
+            dd($validator->messages()); 
             return redirect()->back();
         }
 

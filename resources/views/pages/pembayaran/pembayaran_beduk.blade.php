@@ -70,7 +70,6 @@
             <form action="{{route('pembayaranBeduk')}}" method="post" class="payment-form" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group my-4">
-
                     <div class="form-group my-4">
                         <label for="exampleInputEmail1" class="fw-600 mb-0">Telepon</label>
                         <input type="tel" placeholder="081897234771" pattern="08\d{9,10}" maxlength="13" minlength="10" name="telepon" class="form-control" required>
@@ -80,6 +79,9 @@
                     </div>
 
                     @empty(!$pertanyaans)
+                        @php
+                            $index_bukti = 0;
+                        @endphp
                         @for ($i=0;$i<count($pertanyaans);$i++)
                             @empty(!$files[$i])
                             <img class="w-100" src="{{asset($files[$i])}}"/>
@@ -89,6 +91,18 @@
                                 
                                 @if($tipes[$i] != 'radio')
                                     <input type="{{$tipes[$i]}}" name="{{$tipes[$i] == 'file' ? 'bukti[]' : 'jawaban[]' }}" class="form-control" {{$required[$i] == 1 ? 'required' : ''}}>
+                                    @if($tipes[$i] == 'file')
+                                        @error('bukti.'.$index_bukti.'')
+                                        <span class="" role="alert alert-danger">
+                                            <small  class="text-danger">{{ $message }}</small>
+                                        </span>
+                                        @enderror
+
+                                        @php
+                                            $index_bukti++;
+                                        @endphp
+                                    @endif
+                                
                                 @else
                                     @php
                                         $pilihans = explode("/",$pilihan[$i]);
