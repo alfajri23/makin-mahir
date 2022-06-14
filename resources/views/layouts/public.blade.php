@@ -200,15 +200,6 @@
                                 </div>
 
                                 <div class="col-md-3 col-lg-2 col-sm-6 col-xs-6">
-                                    <h5 class="font-xs">Layanan</h5>
-                                    <ul>
-                                        <li><a href="{{route('faq')}}">FAQ</a></li>
-                                        <li><a href="{{route('term')}}">Syarat dan kebijakan</a></li>
-                                        <li><a href="{{route('privacy')}}">Privacy Policy</a></li>
-                                    </ul>
-                                </div>
-                                
-                                <div class="col-md-3 col-lg-2 col-sm-6 col-xs-6">
                                     <h5 class="font-xs">Bantuan</h5>
                                     <ul>
                                         <li><a href="{{route('faq')}}">FAQ</a></li>
@@ -217,6 +208,20 @@
                                     </ul>
                                 </div>
 
+                                <div class="col-md-3 col-lg-2 col-sm-6 col-xs-6">
+                                    <h5 class="font-xs">Layanan</h5>
+                                    <ul>
+                                        <li><a href="{{route('produkListEvent')}}">Event</a></li>
+                                        <li><a href="{{route('produkListKelas')}}">Kelas Online</a></li>
+                                        <li><a href="{{route('produkListKonsul')}}">Konsultasi</a></li>
+                                        <li><a href="{{route('cvIndex')}}">CV Maker</a></li>
+                                        <li><a href="{{route('produkListTemplate')}}">Template CV</a></li>
+                                        <li><a href="{{route('blog')}}">Blog</a></li>
+                                        <li><a href="{{route('ebook')}}">Ebook</a></li>
+                                        <li><a href="{{route('forumIndex')}}">Forum</a></li>
+                                    </ul>
+                                </div>
+                                
                                 <div class="col-md-3 col-lg-4 col-sm-6 col-xs-6">
                                     <h5 class="mb-3 font-xs">Kantor</h5>
                                     <p class="w-100">Jl. Raya Pringsurat - Temanggung, Kel. Kebumen,<br> Kec. Pringsurat, Temanggung</p>
