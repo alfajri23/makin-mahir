@@ -184,19 +184,7 @@
                                             <li class="mr-2"><a target="_blank" href="https://instagram.com/makinmahir_id?igshid=YmMyMTA2M2Y=" class="btn-round-md bg-instagram"><i class="font-xs ti-instagram text-white"></i></a></li>
                                             <li class="mr-2"><a target="_blank" href="https://youtube.com/c/MAKINMAHIR" class="btn-round-md bg-youtube"><i class="font-xs ti-youtube text-white"></i></a></li>
                                         </ul>
-                                    </div>
-
-                                    
-
-                                    <h5 class="my-4 pt-4 font-xs">Metode Pembayaran</h5>
-
-                                    <div class="">
-
-                                        <img src="{{asset('asset/img/program/bank.png')}}" class="img-fluid" alt="" srcset="">
-                                    </div>
-
-
-                                
+                                    </div> 
                                 </div>
 
                                 <div class="col-md-3 col-lg-2 col-sm-6 col-xs-6">
@@ -230,6 +218,15 @@
                                     <p class="mb-0">Telepon : 085856561200</p>
                                     <p class="mb-0">Whatsapp : <a href="https://api.whatsapp.com/send?phone=6285856561200">+6285856561200</a></p>
                                     <p>Email : <a href="mail:makinmahir.id@gmail.com">makinmahir.id@gmail.com</a></p>
+                                
+                                
+                                    <h5 class="my-4 pt-4 font-xs">Metode Pembayaran</h5>
+
+                                    <div class="">
+
+                                        <img src="{{asset('asset/img/program/bank.png')}}" class="img-fluid" alt="" srcset="">
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
