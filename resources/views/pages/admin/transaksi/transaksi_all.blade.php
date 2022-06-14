@@ -122,7 +122,7 @@
                     width: "5%"
                 },
                 {data: 'tipe', tipe: 'tipe'},
-                {data: 'name', name: 'name',width: "40%"},
+                {data: 'nama', name: 'nama',width: "40%"},
                 {data: 'user', name: 'user',width: "10%"},
                 {data: 'nominal', name: 'nominal'},
                 {data: 'tanggal_bayar', name: 'tanggal_bayar'},
@@ -144,7 +144,6 @@
             dataType: 'json',
             success : (data)=>{
                 let datas = data.data;
-                console.log(datas);
                 let modalBody = $('#modalBody');
                 let bukti,file_tambahan;
                 let asset,konfirmasi;
@@ -162,7 +161,6 @@
                         return `<a href="${asset}/${item}" target="_blank">File</a>`;
                     }
                     file_tambahan = file_tambahan.map(mapFile);
-                    console.log("ada");
                 }
 
 

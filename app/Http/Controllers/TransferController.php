@@ -45,7 +45,6 @@ class TransferController extends Controller
     public function transaksi(Request $request){
         
         $data = Transaksi::latest()->get();
-        //dd($data);
 
         if ($request->ajax()) {
             if($request->tipe == 'lunas'){

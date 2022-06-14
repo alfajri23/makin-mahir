@@ -483,16 +483,6 @@ Route::get('get/cookie', function(){
     dd(Cookie::get());
 });
 
-Route::get('slug', function(){
-    $data = Blog::all();
-
-    foreach ($data as $dt){
-        $dt->link = Str::slug($dt->judul, '-');
-        $dt->save();
-    }
-
-});
-
 
 
 

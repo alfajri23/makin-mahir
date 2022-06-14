@@ -69,7 +69,7 @@
 
 <body class="color-theme-blue mont-font">
     <div class="main-wrap">
-        <div class="header-wrapper pt-3 pb-3 bg-nav">
+        <div class="header-wrapper pt-3 pb-3 {{Request::segment(1) != null ? 'bg-white' : 'bg-nav' }}">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-9 navbar pt-0 pb-0">
