@@ -22,8 +22,8 @@
         <div class="row justify-content-center">
             <div class="page-title style1 col-xl-8 col-lg-8 col-md-10 text-center mb-3">
                 <h2 class="text-grey-900 fw-700 font-lg pb-3 mb-0 mt-3 d-block lh-3">Temukan Solusi Cepat Keterima Kerja</h2>
-                <p class="fw-300 font-xss lh-28 fw-500 text-grey-600">Perlu Kirim 20 CV Lamaran Kerja <br>
-                    Buat Dapat 1 Panggilan Interview. <br>
+                <p class="fw-300 font-xss lh-28 fw-400 text-grey-600"><strong>Perlu Kirim 20 CV Lamaran Kerja</strong> <br>
+                    Buat <strong>Dapat 1 Panggilan Interview. </strong><br>
                     Dengan Catatan CV Kamu Sudah Menarik Di Mata HRD</p>
             </div>
         </div>
