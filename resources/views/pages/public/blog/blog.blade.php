@@ -83,7 +83,7 @@
                 @empty
                     
                 @endforelse
-                {!! $data->links() !!}
+                {{ $data->appends(Request::except('halaman'))->links() }}
             </div>
         </div>
         <div class="col-12 col-sm-4 bg-light bg-sm-transparent py-5 p-sm-0">

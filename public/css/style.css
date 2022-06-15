@@ -173,6 +173,10 @@ background: linear-gradient(58deg, rgba(240,248,255,1) 0%, rgba(228,242,255,1) 5
   color: #0077B5 !important;
 }
 
+.text-whatsup {
+  color: #1fbc59 !important;
+}
+
 .text-skype {
   color: #00AFF0 !important;
 }

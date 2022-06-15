@@ -29,6 +29,8 @@ class BlogController extends Controller
             $data = Blog::paginate(6);
         }
 
+        $data->withPath('/blog/page');
+
         $layout = '';
 
         if (Auth::check()) {
@@ -37,21 +39,35 @@ class BlogController extends Controller
         }else{
             $layout = 'layouts.public';
         }
+        return view('pages.public.blog.blog',compact('data','layout','popular','latest'));   
+    }
 
-        //dd($data);
+    public function cek_url($slug,$slug_1 = null){
+        if(is_numeric($slug)){
+            $blog = Blog::find($slug);
+            $link = $blog == null ? 'tidak-ditemukan' : $blog->link;
 
-        return view('pages.public.blog.blog',compact('data','layout','popular','latest'));
-
-        
+            return redirect()->route('blogDetail',['id' => $slug , 'link' => $link]);
+        }else if($slug == 'detail'){
+            $blog = Blog::find($slug_1);
+            $link = $blog == null ? 'tidak-ditemukan' : $blog->link;
+            return redirect()->route('blogDetail',['id' => $slug_1 , 'link' => $link]);
+        }else{
+            return redirect('blog');
+        }
     }
 
     public function detail($id,$link){
         $datas = Blog::limit(6)->get();
         $data = Blog::find($id);
+        $komentar = null;
         
-        $data->pengunjung = empty($data->pengunjung) ? 1 : $data->pengunjung+1;
-        $data->save();
-        $komentar = KomentarBlog::where('id_blog',$data->id)->get();
+        if($data != null){
+            $data->pengunjung = empty($data->pengunjung) ? 1 : $data->pengunjung+1;
+            $data->save();
+            $komentar = KomentarBlog::where('id_blog',$data->id)->get();
+        }
+
         $layout = '';
 
         if (Auth::check()) {

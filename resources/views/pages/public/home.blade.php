@@ -75,7 +75,7 @@
                         </div>
 
                         <div class="col-lg-3 col-md-3 col-xss-6 text-center ">
-                            <h2 class="display3-size display1-sm-size fw-700 open-font text-success mb-0"><i class="fas fa-photo-video mr-2"></i>300+</h2>
+                            <h2 class="display3-size display1-sm-size fw-700 open-font text-whatsup mb-0"><i class="fas fa-photo-video mr-2"></i>300+</h2>
                             <h4 class="font-xsss text-grey-600 fw-500 mt-2">Tersedia lebih dari 300 konten edukasi dunia kerja buat teman kerja belajar</h4>
                         </div>
 
@@ -100,7 +100,6 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6">
                     <a href="{{route('produkListEvent')}}" class="hover card mb-4 w-100 border-0 pt-4 pb-4 pr-4 pl-7 shadow-xss rounded-lg aos-init" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="500">
-                        {{-- <i class="feather-layers text-success font-xl position-absolute left-15 ml-2"></i> --}}
                         <i class="fa-solid fa-calendar-day text-success font-xl position-absolute left-15 ml-2"></i>
                         <h2 class="fw-700 font-xs text-grey-900 mt-1">Event Gratis</h2>
                         <p class="fw-500 font-xssss lh-24 text-grey-600 mb-0">Daftar Event Bersertifikat Dengan Pemateri Profesional di Dunia Kerja</p>

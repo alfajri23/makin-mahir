@@ -1,8 +1,12 @@
 @extends($layout)
 
+
+@empty(!$data)
+
 @section('meta_title', $data->meta_title)
 @section('meta_keywords', $data->meta_keyword)
 @section('meta_description', $data->meta_description)
+@endempty
 
 @section('content')
 <style>
@@ -47,6 +51,8 @@
 
 
 <div class="col-12 col-sm-10 mx-auto pt-5 pt-sm-0">
+
+    @if($data != null)
     <div class="card border-0 mb-0 rounded-lg overflow-hidden pt-5 pt-sm-0">
 
         <div class="row">
@@ -102,6 +108,17 @@
         <p class="font-xs fw-500 lh-28 text-grey-700 mb-0">{!!$data->isi!!}</p>
     </div>
 
+    @else
+    <div class="spacer"></div>
+    <div class="p-5 mt-3">
+        <h6 class="display1-size"><i class="fa-solid fa-empty-set"></i>Blog tidak ditemukan</h6>
+        
+    </div>
+
+    @endif
+
+
+
     <div class="spacer"></div>
     
     {{-- Related Blog --}}
@@ -131,6 +148,7 @@
         @endforelse
     </div>
 
+    @empty(!$data)
     {{-- Komentar --}}
     <div class="card d-block border-0 rounded-lg overflow-hidden p-4 shadow-xss mt-4">
         <div class="page-title style1 col-xl-6 col-lg-6 col-md-10 pl-0">
@@ -167,6 +185,8 @@
             
         </div>
     </div>
+
+    @endempty
     
 </div>
 

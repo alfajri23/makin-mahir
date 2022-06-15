@@ -45,9 +45,10 @@ Route::get('template', [Controllers\PublicController::class,'produk_list_templat
 
 //blog
 Route::get('blog', [Controllers\BlogController::class,'index'])->name('blog');
+Route::get('blog/{slug}/{slug_1?}', [Controllers\BlogController::class,'cek_url'])->name('blogCek');
 Route::get('blog-kategori', [Controllers\BlogController::class,'by_categori'])->name('blogKategori');
-Route::post('blog/create', [Controllers\BlogController::class,'create'])->name('blogCreate');
-Route::get('blog/detail/{id}/{link}', [Controllers\BlogController::class,'detail'])->name('blogDetail');
+Route::post('blog/create/new', [Controllers\BlogController::class,'create'])->name('blogCreate');
+Route::get('blog/detail/{id}/{link?}', [Controllers\BlogController::class,'detail'])->name('blogDetail');
 
 //ebook
 Route::get('ebook', [Controllers\EbookController::class,'index'])->name('ebook');
