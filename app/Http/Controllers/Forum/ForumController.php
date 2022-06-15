@@ -8,6 +8,7 @@ use App\Helper\Layout;
 use App\Models\ForumJawaban;
 use App\Models\ForumPertanyaaan;
 use App\Models\ForumKategori;
+use Illuminate\Support\Facades\File;
 
 class ForumController extends Controller
 {
@@ -41,7 +42,6 @@ class ForumController extends Controller
     }
 
     public function create(Request $request){
-
         $this->validate($request, [
 			'gambar' => 'file|image|mimes:jpeg,png,jpg|max:2048',
 		]);
@@ -56,8 +56,8 @@ class ForumController extends Controller
         if(!empty($request->gambar)){
             $gambar = $request->file('gambar');
             $nama_file = time()."_".$gambar->getClientOriginalName();
-            $tujuan_upload_server = public_path('asset/img/forum');
-            $tujuan_upload = 'asset/img/forum';
+            $tujuan_upload_server = public_path('storage/forum');
+            $tujuan_upload = 'storage/forum';
             $files = $tujuan_upload . '/'. $nama_file;
             $gambar->move($tujuan_upload_server,$nama_file);
             $datas['gambar'] = $files;
@@ -68,16 +68,27 @@ class ForumController extends Controller
         return redirect()->back();
     }
 
+    public function delete(Request $request){
+        $data = ForumPertanyaaan::find($request->id);
+        File::delete($data->gambar);
+        //File::delete(public_path($data->gambar));
+        $data->delete();
+        return redirect()->back();
+    }
+
     public function detail($id){
         $dt = ForumPertanyaaan::find($id);
         $dt->lihat++;
         $dt->save();
+
+        $kategori = ForumKategori::all();
         $layout = Layout::layout_check();
         $komentar = ForumJawaban::where('id_pertanyaan', $id)->latest()->get();
-        return view('pages.forum.detail_forum',compact('dt','layout','komentar'));
+        return view('pages.forum.detail_forum',compact('dt','layout','komentar','kategori'));
     }
 
     public function komentar(Request $request){
+        //dd($request->jawaban);
         $data = ForumJawaban::updateOrCreate(['id'=>$request->id],[
             'id_pertanyaan' => $request->id_pertanyaan,
             'jawaban' => $request->jawaban,

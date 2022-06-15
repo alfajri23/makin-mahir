@@ -68,6 +68,7 @@ Route::get('privacy-policy', [Controllers\PublicController::class,'privacy'])->n
     Route::get('forum', [Controllers\Forum\ForumController::class,'index'])->name('forumIndex');
     Route::get('forum-show', [Controllers\Forum\ForumController::class,'show'])->name('forumDetailAjax');
     Route::get('forum/{id}', [Controllers\Forum\ForumController::class,'detail'])->name('forumDetail');
+    Route::post('forum/delete', [Controllers\Forum\ForumController::class,'delete'])->name('forumDelete');
     Route::post('forum/add', [Controllers\Forum\ForumController::class,'create'])->name('forumStore');
     Route::post('forum/jawaban', [Controllers\Forum\ForumController::class,'komentar'])->name('forumStoreKomentar');
     Route::get('jawaban/delete', [Controllers\Forum\ForumController::class,'deleteKomentar'])->name('forumDeleteKomentar');

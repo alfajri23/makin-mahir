@@ -24,6 +24,10 @@
         cursor: pointer;
     }
 
+    p{
+        color: black;
+    }
+
 </style>
 
 <div class="container mt-3 mt-sm-0">
@@ -65,33 +69,47 @@
 
                 @if ($dt->id_user == Session::get('auth.id_user'))
                 <span class="edit">
-                    <i onclick="edit({{$dt->id}})" class="fas fa-pencil"></i>
+                    <i onclick="edit({{$dt->id}})" class="fas fa-pencil mr-1"></i>
+                    <i class="fa-solid fa-trash" onclick="event.preventDefault();
+                    document.getElementById('form-delete-' + {{$dt->id}}).submit();"></i>
+
+
+                    <form id="form-delete-{{$dt->id}}" class="d-none" action="{{route('forumDelete')}}" method="post">
+                        @csrf
+                        <input type="text" name="id" value="{{$dt->id}}" hidden>
+                    </form>
                 </span>
                 @endif
 
+                <div class="mb-2">
+                    <img src="{{asset($dt->gambar)}}" class="img-responsive w-100" alt="" srcset="">
+                </div>
                 <small>{{$dt->kategori->nama}}</small>
+
                 <a href="{{route('forumDetail',$dt->id)}}" class="text-decoration-none">
-                    <h6 class="font-sm fw-600 lh-3 mb-0">{{$dt->judul}}</h6>
+                    <h6 class="font-xss fw-600 lh-3 mb-0">{{$dt->judul}}</h6>
                 </a>
 
-                {!!$dt->isi!!}
-                {{-- <p class="font-xss fw-600 lh-3 mb-3">{!!$dt->isi!!}</p> --}}
+                <div class="font-xsss font-grey-900">
+                    {!!$dt->isi!!}
+                </div>
+               
 
                 <div class="row px-3 mt-3">
                     
-                    <div class="clearfix">
-                        <small>
-                        <i class="fas fa-eye mr-1 text-success"></i>{{$dt->lihat}}  View
+                    <div class="clearfix mr-3">
+                        <small class="cursor-pointer">
+                        <i class="fas fa-eye mr-1 text-cyan"></i>{{$dt->lihat}}  View
                         </small>
                     </div>
-                    <div class="clearfix mx-4">
+                    {{-- <div class="clearfix mx-4">
                         <small>
                         <i class="fas fa-thumbs-up text-danger"></i> Like
                         </small>
-                    </div>
+                    </div> --}}
                     <div class="clearfix">
-                        <small>
-                        <i class="fas fa-comment-alt text-info"></i>
+                        <small class="cursor-pointer">
+                        <i class="fas fa-comment-alt text-twiiter"></i>
                         <a href="{{route('forumDetail',$dt->id)}}" class="text-decoration-none">{{count($dt->jawaban)}} Comment</a>
                         </small>
                     </div>
@@ -133,8 +151,8 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+          <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal" aria-label="Close">
+            <i class="fa-solid fa-xmark"></i>
           </button>
         </div>
         <div class="modal-body">
@@ -248,7 +266,6 @@
             dataType: 'json',
             success : (data)=>{
                 let datas = data.data;
-                console.log(datas);
                 $('#ids').val(datas.id);
                 $('#judul').val(datas.judul);
                 $('#id_kategori').val(datas.id_kategori);
@@ -272,7 +289,6 @@
             data : data,
             dataType: 'json',
             success : (data)=>{
-                console.log(data);
                 $('#kategoriModal').modal('hide');
                 if(data.data == 'success'){
                     swal('Berhasil','Kategori telah ditambahkan', "success");

@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\File;
 
 class EbookController extends Controller
 {
@@ -54,9 +55,6 @@ class EbookController extends Controller
         if($data == null) {
             dd("kososng");
         }
-        
-
-      
         
         $layout = '';
 
@@ -216,6 +214,8 @@ class EbookController extends Controller
 
     public function ebookDelete($id){
         $data = Ebook::find($id);
+        File::delete($data->gambar);
+        //File::delete(public_path($data->gambar));
         $data->delete();
         return redirect()->back();
     }
