@@ -243,7 +243,7 @@
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="card border-0 mb-4 bg-white shadow-xss shadow-xss rounded-lg">
-                                <div class="card-body p-5 border-top-lg border-size-lg border-primary">
+                                <div class="card-body py-5 px-sm-5 px-4 border-top-lg border-size-lg border-primary">
                                     
                                     <h1 class="display2-size fw-700">29 <span class="font-xssss text-grey-600"> / ribu</span></h1>
                                     <h2 class=" font-lg fw-700 my-3">Makin Tau</h2>
@@ -265,7 +265,7 @@
 
                         <div class="col-lg-4">
                             <div class="card border-0 mb-4 bg-white shadow-xss shadow-xss rounded-lg">
-                                <div class="card-body p-5 border-top-lg border-size-lg border-success">
+                                <div class="card-body py-5 px-sm-5 px-4 border-top-lg border-size-lg border-success">
                                     
                                     <h1 class="display2-size fw-700">49 <span class="font-xssss text-grey-600"> / ribu</span></h1>
                                     <h2 class=" font-lg fw-700 my-3">Makin Faham</h2>
@@ -289,7 +289,7 @@
 
                         <div class="col-lg-4">
                             <div class="card border-0 mb-4 bg-white shadow-xss shadow-xss rounded-lg">
-                                <div class="card-body p-5 border-top-lg border-size-lg border-warning">
+                                <div class="card-body py-5 px-sm-5 px-4 border-top-lg border-size-lg border-warning">
                                     
                                     <h1 class="display2-size fw-700">99 <span class="font-xssss text-grey-600"> / ribu</span></h1>
                                     <h2 class=" font-lg fw-700 my-3">Makin Mahir</h2>

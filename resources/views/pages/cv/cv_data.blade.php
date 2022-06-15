@@ -202,8 +202,8 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Biodata</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+          <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal" aria-label="Close">
+            <i class="fa-solid fa-xmark"></i>
           </button>
         </div>
         <div class="modal-body">
@@ -229,8 +229,8 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Pekerjaan</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+          <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal" aria-label="Close">
+            <i class="fa-solid fa-xmark"></i>
           </button>
         </div>
         <div class="modal-body">
@@ -278,8 +278,8 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Pendidikan</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+          <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal" aria-label="Close">
+            <i class="fa-solid fa-xmark"></i>
           </button>
         </div>
         <div class="modal-body">
@@ -327,8 +327,8 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Training</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+          <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal" aria-label="Close">
+            <i class="fa-solid fa-xmark"></i>
           </button>
         </div>
         <div class="modal-body">
@@ -372,8 +372,8 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Keahlian</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+          <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal" aria-label="Close">
+            <i class="fa-solid fa-xmark"></i>
           </button>
         </div>
         <div class="modal-body">
@@ -400,8 +400,8 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Prestasi</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+          <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal" aria-label="Close">
+            <i class="fa-solid fa-xmark"></i>
           </button>
         </div>
         <div class="modal-body">
@@ -437,8 +437,8 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Organisasi</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+          <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal" aria-label="Close">
+            <i class="fa-solid fa-xmark"></i>
           </button>
         </div>
         <div class="modal-body">
