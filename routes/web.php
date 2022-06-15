@@ -45,6 +45,7 @@ Route::get('template', [Controllers\PublicController::class,'produk_list_templat
 
 //blog
 Route::get('blog', [Controllers\BlogController::class,'index'])->name('blog');
+Route::get('blog/page/{$no}', [Controllers\BlogController::class,'pagination'])->name('blogPagination');
 Route::get('blog/{slug}/{slug_1?}', [Controllers\BlogController::class,'cek_url'])->name('blogCek');
 Route::get('blog-kategori', [Controllers\BlogController::class,'by_categori'])->name('blogKategori');
 Route::post('blog/create/new', [Controllers\BlogController::class,'create'])->name('blogCreate');

@@ -83,7 +83,24 @@
                 @empty
                     
                 @endforelse
-                {{ $data->links() }}
+
+                <div class="col-12 d-flex justify-content-between">
+                    @if($prevUrl)<a class="btn btn-info leftbtn" href="{{route('blogPagination',$prevUrl)}}"><i class="fa fa-angle-left" aria-hidden="true"></i> Previous</a>@endif
+                    @if($nextUrl)<a class="btn btn-info rightbtn" href="{{route('blogPagination',$nextUrl)}}">Next <i class="fa fa-angle-right" aria-hidden="true"></i> </a>@endif
+                </div>
+
+                {{-- @php
+                    $links = $data->links();
+                    $patterns = array();
+                    $patterns[] = '/'.$data->getCurrentPage().'\?page=/';
+                    $replacements = array();
+                    $replacements[] = '';
+                    // echo preg_replace($patterns, $replacements, $links);
+                @endphp --}}
+
+                {{-- {{preg_replace($patterns, $replacements, $links)}} --}}
+
+                {{-- {{ $data->links() }} --}}
             </div>
         </div>
         <div class="col-12 col-sm-4 bg-light bg-sm-transparent py-5 p-sm-0">

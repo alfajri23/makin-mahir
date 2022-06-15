@@ -9,6 +9,7 @@ use App\Models\KomentarBlog;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use App\Helper\Layout;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Str;
 
 
@@ -29,6 +30,8 @@ class BlogController extends Controller
             $data = Blog::paginate(6);
         }
 
+        //Paginate
+
         $layout = '';
 
         if (Auth::check()) {
@@ -37,13 +40,74 @@ class BlogController extends Controller
         }else{
             $layout = 'layouts.public';
         }
-        return view('pages.public.blog.blog',compact('data','layout','popular','latest'));   
+
+        $nextUrl = 2;
+        $prevUrl = 0;
+        return view('pages.public.blog.blog',compact('data','prevUrl', 'nextUrl','layout','popular','latest'));   
+    }
+
+    public function pagination($id){
+        // $per_page = 1;
+        //Blog::resolveConnection()->getPaginator()->setCurrentPage($page_number);
+
+        // Paginator::currentPageResolver(function () use ($per_page) {
+        //     return $per_page;
+        // });
+
+        // $articles = Blog::orderBy('created_at', 'desc')->paginate($per_page);
+
+        // $latest = Blog::limit(3)->latest()->get();
+        // $layout = '';
+
+        // if (Auth::check()) {
+        //     $layout = 'layouts.member';
+            
+        // }else{
+        //     $layout = 'layouts.public';
+        // }
+        
+        // return view('pages.public.blog.blog',compact('data','layout','popular','latest')); 
+        
+        
+        $paginate = 8;
+        $skip = ($id*$paginate)-$paginate;
+        $prevUrl = $nextUrl = '';
+        if($skip>0){
+            $prevUrl = $id - 1;
+        }
+        $data = Blog::orderBy('id', 'desc')->skip($skip)->take($paginate)->get();
+
+        $popular = Blog::limit(3)->orderBy('kunjungan','desc')->get();
+        $latest = Blog::limit(3)->latest()->get();
+        $layout = '';
+
+        if (Auth::check()) {
+            $layout = 'layouts.member';
+            
+        }else{
+            $layout = 'layouts.public';
+        }
+
+        if($data->count()>0){
+            if($data->count()>=$paginate){
+                $nextUrl = $id + 1;
+            }
+            return view('pages.public.blog.blog', compact('data', 'prevUrl', 'nextUrl','layout','popular','latest'));
+        }
+
+        return redirect()->route('blog');
+
     }
 
     public function cek_url($slug,$slug_1 = null){
         if(is_numeric($slug)){
             return $this->detail($slug,$slug_1);
-        }else{
+        }else if($slug == 'page'){
+            //dd("hallo");
+            return $this->pagination($slug_1);
+            //return redirect()->route('blogPagination',$slug_1);
+        }
+        else{
             return redirect('blog');
         }
     }
