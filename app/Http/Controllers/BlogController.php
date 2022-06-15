@@ -29,8 +29,6 @@ class BlogController extends Controller
             $data = Blog::paginate(6);
         }
 
-        $data->withPath('/blog/page');
-
         $layout = '';
 
         if (Auth::check()) {
@@ -44,14 +42,7 @@ class BlogController extends Controller
 
     public function cek_url($slug,$slug_1 = null){
         if(is_numeric($slug)){
-            $blog = Blog::find($slug);
-            $link = $blog == null ? 'tidak-ditemukan' : $blog->link;
-
-            return redirect()->route('blogDetail',['id' => $slug , 'link' => $link]);
-        }else if($slug == 'detail'){
-            $blog = Blog::find($slug_1);
-            $link = $blog == null ? 'tidak-ditemukan' : $blog->link;
-            return redirect()->route('blogDetail',['id' => $slug_1 , 'link' => $link]);
+            return $this->detail($slug,$slug_1);
         }else{
             return redirect('blog');
         }
@@ -66,6 +57,10 @@ class BlogController extends Controller
             $data->pengunjung = empty($data->pengunjung) ? 1 : $data->pengunjung+1;
             $data->save();
             $komentar = KomentarBlog::where('id_blog',$data->id)->get();
+
+            if($data->link != $link){
+                return redirect()->route('blogDetail',['id' => $id, 'link' =>$data->link]);
+            }
         }
 
         $layout = '';
