@@ -15,22 +15,13 @@
 
             <div class="form-group">
                 <label for="exampleFormControlInput1">Judul</label>
+                <input type="number" name="tipe" value="3" hidden>
                 <input type="hidden" name="id" value="{{$data->id}}" class="form-control" id="exampleFormControlInput1" placeholder="">
                 <input type="hidden" name="id_produk" value="{{$produk->id}}" class="form-control" id="exampleFormControlInput1" placeholder="">
                 <input type="text" name="judul" value="{{$data->judul}}" class="form-control" id="exampleFormControlInput1" placeholder="">
               </div>
 
-              <div class="form-group">
-                  <label for="exampleFormControlSelect1">Tipe</label>
-                  <select name="tipe" class="form-select" id="exampleFormControlSelect1">
-                    <option value="3" selected>Pilih tipe</option>
-                    @forelse ($tipes as $tp)
-                    <option value="{{$tp->id}}">{{$tp->nama}}</option>
-                    @empty   
-                    @endforelse
-                  </select>
-              </div>
-
+              
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Waktu</label>
                     <input type="text" name="waktu" value="{{$data->waktu}}" class="form-control" id="exampleFormControlInput1" placeholder="">

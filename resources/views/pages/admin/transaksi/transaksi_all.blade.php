@@ -39,6 +39,7 @@
                     <th>v</th>
                     <th>No</th>
                     <th>Tipe</th>
+                    <th>Vendor</th>
                     <th>Nama</th>
                     <th>Member</th>
                     <th>Nominal</th>
@@ -122,6 +123,7 @@
                     width: "5%"
                 },
                 {data: 'tipe', tipe: 'tipe'},
+                {data: 'vendor', tipe: 'vendor',width: "3%"},
                 {data: 'nama', name: 'nama',width: "40%"},
                 {data: 'user', name: 'user',width: "10%"},
                 {data: 'nominal', name: 'nominal'},

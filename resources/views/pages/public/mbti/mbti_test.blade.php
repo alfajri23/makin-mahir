@@ -120,8 +120,8 @@
               </div>
             </div>
           </div>
+
           @empty
-            
           @endforelse
   
           <div class="swiper-slide">
@@ -132,14 +132,13 @@
             <button onclick="send()" class="btn btn-md d-block btn-outline-success px-5 py-3 shadow-sm">
               Selesai
             </button>
-            
           </div>
           
         </div>
   
         <div class="swiper-container">
           <div class="btn mx-1 btn-lg btn-dark swiper-btn-prev"><i class="fa-solid fa-arrow-left"></i></div>
-          <div class="btn mx-1 btn-lg btn-dark swiper-btn-next swiper-next"><i class="fa-solid fa-arrow-right"></i></div>
+          <div class="btn mx-1 btn-lg btn-dark swiper-btn-next swiper-next btn-next disabled"><i class="fa-solid fa-arrow-right"></i></div>
         </div>
   
         <div class="swiper-pagination"></div>
@@ -152,6 +151,7 @@
     <!-- Initialize Swiper -->
     <script>
       var swiper = new Swiper(".mySwiper", {
+        allowTouchMove: false,
         navigation: {
           nextEl: ".swiper-next",
           prevEl: ".swiper-btn-prev",
@@ -172,20 +172,23 @@
       let data = [];
       let ids;
 
+                    //loop,value,(1/2)
       function change(index,value,id){
-        //Isi data
+        //Isi data test berupa value
         data[index-1] = value;
 
         ids = id == 1 ? 2 : 1;
 
         let main = document.getElementById( index +"." +id );
         let second = document.getElementById( index +"." +ids ); 
+        //let btnNext = document.getElementById( "btn-next-" +index ); 
 
         if(second.classList.contains("btn-secondary")){
           second.classList.toggle("btn-secondary");
         }
-        
         main.classList.toggle("btn-secondary"); 
+
+        //btnNext.classList.toggle("disabed"); 
       }
 
       function send(){
@@ -197,7 +200,7 @@
 
         let result_data;
 
-        console.log(data);
+    
 
         const countUnique = arr => {
           const counts = {};
@@ -208,10 +211,7 @@
         };
 
         let result = countUnique(data);
-
-        console.log(result);
         let str = JSON.stringify(result);
-        console.log(str);
         arr.setAttribute('value',str);
         
         document.getElementById('formTest').submit();

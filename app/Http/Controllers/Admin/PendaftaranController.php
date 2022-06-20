@@ -219,9 +219,8 @@ class PendaftaranController extends Controller
     public function event(Request $request){
         
         $data = EventEnroll::latest()->get();
-        //dd($data);
+
         if ($request->ajax()) {
-            $data = EventEnroll::latest()->get();
             return datatables()->of($data)
             ->addIndexColumn()
             ->addColumn('judul', function($row){

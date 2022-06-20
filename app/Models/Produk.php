@@ -43,4 +43,9 @@ class Produk extends Model
     {
         return $this->belongsTo(ProdukKategori::class, 'id_kategori', 'id');
     }
+
+    public function vendor()
+    {
+        return $this->belongsTo(Expert::class, 'id_expert', 'id');
+    }
 }

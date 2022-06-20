@@ -13,39 +13,49 @@ use Illuminate\Http\Request;
 
 class ProdukController extends Controller
 {
-
     //*Event
         public function event(Request $request){
             if ($request->ajax()) {
+                //$data = ProdukEvent::latest()->get();
                 $data = ProdukEvent::where('id_expert',$request->session()->get('auth.id_expert'))->get();
                 return datatables()->of($data)
                     ->addIndexColumn()
+                    ->addColumn('status', function($row){
+                        $actionBtn = $row->status == 1 ? '<span class="badge badge-success">Publish</span>' : '<span class="badge badge-warning">Berhenti</span>';
+                        return $actionBtn;
+                    })
                     ->addColumn('poster', function($row){
                         $image = asset($row['poster']);
                         $actionBtn = '<img src="'.$image.'" style="width:100px">';
                         return $actionBtn;
                     })
-                    ->addColumn('tanggal', function($row){
-                        
-                        $color = date_create($row['tanggal']) < now() ? "text-danger" : "text-success";
-                        $actionBtn = '
-                        <div class="'.$color.'">
-                        <div>'.date_format(date_create($row['tanggal']),"d M Y").'</div>
-                        <small>'.$row['waktu'].'</small>
-                        </div>
-                        ';
-                        return $actionBtn;
-                    })
                     ->addColumn('action', function($row){
+                        $deleteBtn = '
+                        <button onclick="deleteEvent('.$row['id'].')" class="delete btn btn-danger btn-sm">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                        ';
+
+                        $event = $row->status == 1 ? 
+                            '<button onclick="endEvent('.$row['id'].')" class="delete btn btn-warning btn-sm">
+                                <i class="fa-solid fa-ban"></i>
+                            </button>' :
+                            '<button onclick="startEvent('.$row['id'].')" class="delete btn btn-info btn-sm">
+                                <i class="fa-solid fa-check"></i>
+                            </button>';
+
                         $actionBtn = '
-                        <div class="">
-                            <a href="'.route('editEventExpert',['id' => $row['id']]).'" class="edit btn btn-success btn-sm">Edit</a> 
-                            <a href="'.route('deleteEvent',['id' => $row['id']]).'" class="delete btn btn-danger btn-sm">Delete</a>
+                        <div class="btn-group">
+                            <a href="'.route('editEventExpert',['id' => $row['id']]).'" class="edit btn btn-success btn-sm">
+                                <i class="fa-solid fa-pencil"></i>
+                            </a> 
+                            
+                            '.$event.'
                         </div>
                         ';
                         return $actionBtn;
                     })
-                    ->rawColumns(['action','poster','tanggal'])
+                    ->rawColumns(['action','poster','status'])
                     ->make(true);
             }
 

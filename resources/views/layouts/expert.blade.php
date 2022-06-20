@@ -99,7 +99,7 @@
                 </a>
             </li>
 
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link" href="{{route('konsultasiExpert')}}">
                     <i class="fa-solid fa-box-open fa-fw mx-1"></i>
                     <span>Konsultasi</span>
@@ -111,7 +111,7 @@
                     <i class="fa-solid fa-book fa-fw mx-1"></i>
                     <span>Ebook</span>
                 </a>
-            </li>
+            </li> --}}
 
             <li class="nav-item">
                 <a class="nav-link" href="{{route('pendaftaranExpert')}}">

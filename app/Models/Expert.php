@@ -21,6 +21,11 @@ class Expert extends Authenticatable
         return $this->hasMany(ProdukEvent::class, 'id_expert', 'id');
     }
 
+    public function produk()
+    {
+        return $this->hasMany(Produk::class, 'id_expert', 'id');
+    }
+
     public function konsultasi_enroll()
     {
         return $this->hasMany(KonsultasiEnroll::class, 'id_expert', 'id');

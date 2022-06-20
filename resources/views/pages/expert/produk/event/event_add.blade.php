@@ -10,17 +10,9 @@
                 @csrf
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Judul</label>
+                    <input type="number" name="id_pemateri" value="{{Request::session()->get('auth.id_expert')}}" hidden>
+                    <input type="number" name="tipe" value="3" hidden>
                     <input type="text" name="judul" class="form-control" id="exampleFormControlInput1" placeholder="">
-                </div>
-
-                <div class="form-group">
-                    <label for="exampleFormControlSelect1">Tipe</label>
-                    <select name="tipe" class="form-select" id="exampleFormControlSelect1">
-                        @forelse ($tipes as $tp)
-                        <option value="{{$tp->id}}">{{$tp->nama}}</option>
-                        @empty   
-                        @endforelse
-                    </select>
                 </div>
 
                 <div class="form-group">
@@ -55,7 +47,7 @@
 
             <div class="form-group">
                 <label for="exampleFormControlInput1">Poster</label><br>
-                <input type="file" name="file" class="" id="exampleFormControlInput1" placeholder="">
+                <input type="file" name="file" class="" id="exampleFormControlInput1" placeholder="" required>
             </div>
 
         </div>

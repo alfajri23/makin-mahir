@@ -251,7 +251,6 @@ class ProdukController extends Controller
 
     //EVENT
         public function event(Request $request){
-            //dd(ProdukEvent::latest()->get());
             if ($request->ajax()) {
                 $data = ProdukEvent::latest()->get();
                 return datatables()->of($data)
@@ -454,7 +453,8 @@ class ProdukController extends Controller
                 'id_kategori' => $request->tipe,
                 'id_produk' => $event->id,
                 'nama' => $request->judul,
-                'harga' => str_replace(",", "", $request->harga)
+                'harga' => str_replace(",", "", $request->harga),
+                'id_expert' => $event->id_expert
             ]);
 
 

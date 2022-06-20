@@ -103,6 +103,18 @@ class TransferController extends Controller
                     ';
                     return $actionBtn;
                 })
+                ->addColumn('vendor', function($row){
+                    if($row->produk->vendor != null ){
+                        $expert = '
+                            <p>'.$row->produk->vendor->nama.'</p>
+                        ';
+                    }else{
+                        $expert = '
+                            <p> kosong</p>
+                        ';
+                    }
+                    return $expert;
+                })
                 ->addColumn('tipe', function($row){
                     $actionBtn = '
                         <p>'.$row->produk->kategori->nama.'</p>
@@ -136,7 +148,7 @@ class TransferController extends Controller
                     ';
                     return $actionBtn;
                 })
-                ->rawColumns(['checkbox','aksi','bayar','name','nominal','user','tipe'])
+                ->rawColumns(['checkbox','aksi','bayar','name','nominal','user','tipe','vendor'])
                 ->make(true);
         }
        
