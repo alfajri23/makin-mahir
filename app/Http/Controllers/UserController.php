@@ -93,6 +93,10 @@ class UserController extends Controller
                 $nama = ''.count($row->riasec_result).'';
                 return $nama;
             })
+            ->addColumn('daftar', function($row){
+                $nama = ''.date_format(date_create($row->created_at),"d M Y").'';
+                return $nama;
+            })
             ->addColumn('aksi', function($row){
                 $nama = '
                 <div class="btn-group" role="group" aria-label="Basic example">
@@ -104,7 +108,7 @@ class UserController extends Controller
                 ';
                 return $nama;
             })
-            ->rawColumns(['aksi','event','konsultasi','kelas','mbti','riasec'])
+            ->rawColumns(['aksi','event','konsultasi','kelas','mbti','riasec','daftar'])
             ->make(true);
         }
 

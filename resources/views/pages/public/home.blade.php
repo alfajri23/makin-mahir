@@ -475,7 +475,7 @@
                     </div>
                 </div>
                 <div class="col-lg-5 offset-lg-1">
-                    <img src="https://images.unsplash.com/photo-1558769132-92e717d613cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="image" class="img-fluid mb-4">
+                    <img src="{{asset('asset/img/program/testi.png')}}" alt="image" class="img-fluid mb-4">
                 </div>
             </div>
         </div>

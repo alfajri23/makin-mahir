@@ -19,6 +19,7 @@
                 <tr>
                     <th>Id</th>
                     <th>Judul</th>
+                    <th>Vendor</th>
                     <th>Tipe</th>
                     <th>Tanggal</th>
                     <th>Harga</th>
@@ -53,6 +54,7 @@
                     searchable: true
                 },
                 {data: 'judul', name: 'judul'},
+                {data: 'vendor', name: 'vendor'},
                 {data: 'tipe', name: 'tipe'},
                 {data: 'tanggal', name: 'tanggal'},
                 {data: 'harga', name: 'harga'},

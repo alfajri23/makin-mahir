@@ -137,8 +137,8 @@
         </div>
   
         <div class="swiper-container">
-          <div class="btn mx-1 btn-lg btn-dark swiper-btn-prev"><i class="fa-solid fa-arrow-left"></i></div>
-          <div class="btn mx-1 btn-lg btn-dark swiper-btn-next swiper-next btn-next disabled"><i class="fa-solid fa-arrow-right"></i></div>
+          <div class="btn mx-1 btn-sm btn-primary text-white swiper-btn-prev"><i class="fa-solid fa-arrow-left"></i> sebelumnya</div>
+          {{-- <div class="btn mx-1 btn-lg btn-dark swiper-btn-next swiper-next btn-next disabled"><i class="fa-solid fa-arrow-right"></i></div> --}}
         </div>
   
         <div class="swiper-pagination"></div>

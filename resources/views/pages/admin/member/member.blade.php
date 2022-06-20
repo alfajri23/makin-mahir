@@ -25,6 +25,7 @@
                     <th>Kelas</th>
                     <th>MBTI</th>
                     <th>Riasec</th>
+                    <th>Daftar</th>
                     <th>Aksi</th>   
                 </tr>
             </thead>
@@ -124,6 +125,7 @@
                 {data: 'kelas', name: 'kelas',className: "dtCenter"},
                 {data: 'mbti', name: 'mbti',className: "dtCenter"},
                 {data: 'riasec', name: 'riasec',className: "dtCenter"},
+                {data: 'daftar', name: 'daftar'},
                 {data: 'aksi', name: 'aksi',className: "dtCenter"},
                 
             ],
@@ -135,7 +137,7 @@
                     title: '',
                     exportOptions: {
                         header : false,
-                        columns : [0, 1, 2 ,3 ,4,5,6,7,8,9,10]
+                        columns : [0, 1, 2,16 ,3 ,4,5,6,7,8,9,10]
                     },
                 },
                 {
@@ -143,7 +145,7 @@
                     title: 'Data Beduk',
                     exportOptions: {
                         header : false,
-                        columns : [0, 1, 2 ,3 ,4,5,6,7,8,9,10]
+                        columns : [0, 1, 2,16 ,3 ,4,5,6,7,8,9,10]
                     },
                 },
                 {
@@ -151,7 +153,7 @@
                     title: 'Data Beduk',
                     exportOptions: {
                         header : false,
-                        columns : [0, 1, 2 ,3 ,4,5,6,7,8,9,10]
+                        columns : [0, 1, 2,16 ,3 ,4,5,6,7,8,9,10]
                     },
                 },
                 

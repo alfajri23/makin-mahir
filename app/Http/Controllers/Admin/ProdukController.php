@@ -264,6 +264,10 @@ class ProdukController extends Controller
                         $actionBtn = '<img src="'.$image.'" style="width:100px">';
                         return $actionBtn;
                     })
+                    ->addColumn('vendor', function($row){
+                        
+                        return $expert = $row->id_expert !== null ? $row->expert->nama : '';
+                    })
                     ->addColumn('action', function($row){
                         $deleteBtn = '
                         <button onclick="deleteEvent('.$row['id'].')" class="delete btn btn-danger btn-sm">
@@ -290,7 +294,7 @@ class ProdukController extends Controller
                         ';
                         return $actionBtn;
                     })
-                    ->rawColumns(['action','poster','status'])
+                    ->rawColumns(['action','poster','status','vendor'])
                     ->make(true);
             }
 
