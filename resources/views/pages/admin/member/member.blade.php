@@ -26,6 +26,7 @@
                     <th>MBTI</th>
                     <th>Riasec</th>
                     <th>Daftar</th>
+                    <th>Login</th>
                     <th>Aksi</th>   
                 </tr>
             </thead>
@@ -126,6 +127,7 @@
                 {data: 'mbti', name: 'mbti',className: "dtCenter"},
                 {data: 'riasec', name: 'riasec',className: "dtCenter"},
                 {data: 'daftar', name: 'daftar'},
+                {data: 'last_login', name: 'last_login'},
                 {data: 'aksi', name: 'aksi',className: "dtCenter"},
                 
             ],

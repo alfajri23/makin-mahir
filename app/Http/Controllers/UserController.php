@@ -97,6 +97,15 @@ class UserController extends Controller
                 $nama = ''.date_format(date_create($row->created_at),"d M Y").'';
                 return $nama;
             })
+            ->addColumn('last_login', function($row){
+
+                if($row->last_login != null){
+                    $nama = ''.date_format(date_create($row->last_login),"d M Y").'';
+                }else{
+                    $nama = '';
+                }
+                return $nama;
+            })
             ->addColumn('aksi', function($row){
                 $nama = '
                 <div class="btn-group" role="group" aria-label="Basic example">
@@ -108,7 +117,7 @@ class UserController extends Controller
                 ';
                 return $nama;
             })
-            ->rawColumns(['aksi','event','konsultasi','kelas','mbti','riasec','daftar'])
+            ->rawColumns(['aksi','event','konsultasi','kelas','mbti','riasec','daftar','last_login'])
             ->make(true);
         }
 
