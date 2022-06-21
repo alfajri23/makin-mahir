@@ -24,6 +24,7 @@ class TransaksiController extends Controller
     public function cekForm(Request $request){
         $data = Produk::find($request->id);
         $ceks = FormSetting::where('id_produk_kategori',$data->id_kategori)->first(); //Cek apakah ada pertanyaan
+        
         if($ceks != null){
             $pertanyaans = explode(",",$ceks->pertanyaan);
             $tipes = explode(",",$ceks->tipe);
@@ -35,7 +36,6 @@ class TransaksiController extends Controller
                 return view('pages.pembayaran.pembayaran_beduk',compact('tipes','pertanyaans',
                                                                         'data','files','required','pilihan'));
             }
-
             return view('pages.member.daftar',compact('tipes','pertanyaans','data','files','required'));
 
         }elseif($data->harga == null){

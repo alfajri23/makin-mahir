@@ -82,7 +82,6 @@ class TestController extends Controller
 
     public function save_mbti(Request $request){
 
-        //dd("post");
         $this->dataTest = json_decode($request->values, true);
         $data = $this->dataTest;
         

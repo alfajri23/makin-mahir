@@ -102,20 +102,20 @@
                                             $index_bukti++;
                                         @endphp
                                     @endif
-                                
                                 @else
                                     @php
                                         $pilihans = explode("/",$pilihan[$i]);
                                     @endphp
-                                        @forelse ($pilihans as $pil)  
-                                        <div class="form-check">
-                                            <input type="radio" name="jawaban[]" value="{{$pil}}" class="form-check-input" required>
-                                            <label class="form-check-label" for="exampleRadios1">
-                                                {{$pil}}
-                                            </label>
-                                        </div>
-                                        @empty
-                                        @endforelse
+
+                                    @forelse ($pilihans as $pil)  
+                                    <div class="form-check">
+                                        <input type="radio" name="jawaban[]" value="{{$pil}}" class="form-check-input" required>
+                                        <label class="form-check-label" for="exampleRadios1">
+                                            {{$pil}}
+                                        </label>
+                                    </div>
+                                    @empty
+                                    @endforelse
                                 @endif
 
 

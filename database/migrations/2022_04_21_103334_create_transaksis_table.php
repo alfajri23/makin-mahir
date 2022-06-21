@@ -23,7 +23,6 @@ class CreateTransaksisTable extends Migration
             $table->string('bukti')->nullable();
             $table->text('jawaban')->nullable();
             $table->date('tanggal_bayar')->nullable();
-            $table->date('tenggat_bayar')->nullable();
             $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();
