@@ -64,6 +64,7 @@
                     @empty(!$pertanyaans)
                         @php
                             $index_bukti = 0;
+                            $index_pilihan = 0;
                         @endphp
                         @for ($i=0;$i<count($pertanyaans);$i++)
                             @empty(!$files[$i])
@@ -85,6 +86,7 @@
                                             $index_bukti++;
                                         @endphp
                                     @endif
+                                {{-- Jika tipenya option --}}
                                 @else
                                     @php
                                         $pilihans = explode("/",$pilihan[$i]);
@@ -92,13 +94,17 @@
 
                                     @forelse ($pilihans as $pil)  
                                     <div class="form-check">
-                                        <input type="radio" name="jawaban[]" value="{{$pil}}" class="form-check-input" required>
+                                        <input type="radio" name="pilihan[{{$index_pilihan}}]" value="{{$pil}}" class="form-check-input" required>
                                         <label class="form-check-label" for="exampleRadios1">
                                             {{$pil}}
                                         </label>
                                     </div>
                                     @empty
                                     @endforelse
+
+                                    @php
+                                        $index_pilihan++;
+                                    @endphp
                                 @endif
 
 

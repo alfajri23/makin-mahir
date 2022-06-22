@@ -33,10 +33,13 @@ class TransaksiController extends Controller
             $pilihan = explode(",",$ceks->pilihan);
 
             if($data->id_kategori == 2){                    // Jika beduk
-                return view('pages.pembayaran.pembayaran_beduk',compact('tipes','pertanyaans',
-                                                                        'data','files','required','pilihan'));
+                return view('pages.pembayaran.pembayaran_beduk',compact('tipes','pertanyaans','data',
+                                                                        'files','required','pilihan'));
             }
-            return view('pages.member.daftar',compact('tipes','pertanyaans','data','files','required'));
+
+            //dd($pilihan);
+            return view('pages.member.daftar',compact('tipes','pertanyaans','data',
+                                                        'files','pilihan','required'));
 
         }elseif($data->harga == null){
             if($data->id_kategori == 5){                                            //ebook
@@ -56,7 +59,7 @@ class TransaksiController extends Controller
 
     }
 
-    public function create(Request $request){
+    public function  create(Request $request){
         $buktis = $request->bukti;
 
         for($i=0;$i<count($request->bukti);$i++){
@@ -75,12 +78,10 @@ class TransaksiController extends Controller
         $validator = Validator::make($request->all(),$rules, $messages);
         $validator->validate();
 
-        if ($validator->fails()) {
-            dd($validator->messages()->first()); 
-            return redirect()->back();
-        }
-
+        $pilihan = $request->pilihan != null ? implode(",",$request->pilihan) : '';
         $jawaban = $request->jawaban != null ? implode(",",$request->jawaban) : '';
+
+        $jawaban = $pilihan != null ? $jawaban . ',' . $pilihan : $jawaban;
 
         $datas = [
             'id_produk' => $request->id_produk,
@@ -183,12 +184,10 @@ class TransaksiController extends Controller
         $validator = Validator::make($request->all(),$rules, $messages);
         $validator->validate();
 
-        if ($validator->fails()) {
-            dd($validator->messages()); 
-            return redirect()->back();
-        }
-
+        $pilihan = $request->pilihan != null ? implode(",",$request->pilihan) : '';
         $jawaban = $request->jawaban != null ? implode(",",$request->jawaban) : '';
+
+        $jawaban = $pilihan != null ? $jawaban . ',' . $pilihan : $jawaban;
 
         $datas = [
             'id_produk' => $request->id_produk,

@@ -43,7 +43,7 @@ class SettingFormController extends Controller
         unset($jawaban[$request->index]);
         unset($tipe[$request->index]);
         unset($file[$request->index]);
-        unset($plihan[$request->index]);
+        unset($pilihan[$request->index]);
 
         $datas = [
             'id_produk_kategori' => $filed->id_produk_kategori,
