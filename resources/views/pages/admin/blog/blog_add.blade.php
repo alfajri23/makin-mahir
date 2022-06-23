@@ -30,6 +30,13 @@
             <div class="form-group">
                 <label for="exampleFormControlInput1">Gambar</label><br>
                 <input type="file" name="file" id="exampleFormControlInput1" placeholder="" required>
+                @error('file')
+                    <div>
+                        <span class="" role="alert alert-danger">
+                            <small  class="text-danger">{{ $message }}</small>
+                        </span>
+                    </div>
+                @enderror
             </div>
 
             <div class="form-group">
@@ -97,18 +104,16 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     $(document).ready(function() {
 		 tinymce.init({
-                menubar: 'insert',
-	            selector: "textarea.isi",
+	            selector: "textarea",
 	            branding: false,
 	            width: "100%",
 	            height: "1000",
 	            plugins: [
 	                "advlist autolink lists charmap print preview anchor",
 	                "searchreplace visualblocks code fullscreen",
-	                "paste wordcount",
-                    "media"
+	                "paste wordcount link","directionality","media"
 	            ],
-	            toolbar: "undo redo | bold italic | bullist numlist outdent indent | media"
+	            toolbar: "link | undo redo | bold italic | bullist numlist outdent indent | ltr rtl"
 	    });
 	});
 

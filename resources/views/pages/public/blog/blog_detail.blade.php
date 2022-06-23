@@ -40,13 +40,14 @@
         margin-bottom: 16px;
     }
 
-    /* ol,ul{
-        margin-left: 10%;
+    ol,ul{
+        margin-left: 4%;
     }
 
     li {
         list-style: auto;
-    } */
+    }
+
 </style>
 
 
@@ -105,7 +106,7 @@
     </div>
 
     <div class="post-body p-1 mt-4">
-        <p class="font-xs fw-500 lh-28 text-grey-700 mb-0">{!!$data->isi!!}</p>
+        <div id="isi" class="font-xss fw-200 lh-28 text-grey-800 mb-0">{!!$data->isi!!}</div>
     </div>
 
     @else

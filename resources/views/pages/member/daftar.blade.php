@@ -63,7 +63,7 @@
 
                     @empty(!$pertanyaans)
                         @php
-                            $index_bukti = 0;
+                            $index_bukti = 1;
                             $index_pilihan = 0;
                         @endphp
                         @for ($i=0;$i<count($pertanyaans);$i++)
@@ -110,7 +110,7 @@
 
                                 @if($tipes[$i] == 'file')
                                     <small class="form-text text-muted">
-                                        Format file yang diterima pdf, jpg, png, jpeg | Max 5 Mb
+                                        Format file yang diterima pdf, jpg, png, jpeg | Max 2 Mb
                                     </small>
                                 @endif
                             </div>
@@ -135,6 +135,13 @@
                             <small class="form-text text-muted">
                                 Format file yang diterima pdf, jpg, png, jpeg | Max 5 Mb
                             </small>
+                            @error('bukti.0')
+                            <div>
+                                <span class="" role="alert alert-danger">
+                                    <small  class="text-danger">{{ $message }}</small>
+                                </span>
+                            </div>
+                            @enderror
                         </div>
     
                         <div>

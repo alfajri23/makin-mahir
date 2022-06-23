@@ -76,32 +76,41 @@
                             </div>
                         </div>
                     </div>
-                    <div class="d-flex justify-content-center">
-                        {{-- {!! $data->links() !!} --}}
-                    </div>
-                    
+
                 @empty
                     
                 @endforelse
 
-                <div class="col-12 d-flex justify-content-between">
-                    @if($prevUrl)<a class="btn btn-info leftbtn" href="{{route('blogPagination',$prevUrl)}}"><i class="fa fa-angle-left" aria-hidden="true"></i> Previous</a>@endif
-                    @if($nextUrl)<a class="btn btn-info rightbtn" href="{{route('blogPagination',$nextUrl)}}">Next <i class="fa fa-angle-right" aria-hidden="true"></i> </a>@endif
-                </div>
+               
 
-                {{-- @php
-                    $links = $data->links();
-                    $patterns = array();
-                    $patterns[] = '/'.$data->getCurrentPage().'\?page=/';
-                    $replacements = array();
-                    $replacements[] = '';
-                    // echo preg_replace($patterns, $replacements, $links);
-                @endphp --}}
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        @if($prevUrl)
+                        <li class="page-item">
+                            <a class="page-link" href="{{route('blogPagination',$prevUrl)}}" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        @endif
 
-                {{-- {{preg_replace($patterns, $replacements, $links)}} --}}
-
-                {{-- {{ $data->links() }} --}}
+                        @for ($i = 1 ; $i <= $lastPage ; $i++)
+                            <li class="page-item {{($currentPage) == $i ? 'active' : ''}}">
+                                <a class="page-link" 
+                                href="{{route('blogPagination',$i)}}">{{$i}}</a>
+                            </li>   
+                        @endfor
+                      
+                        @if($nextUrl)
+                        <li class="page-item">
+                            <a class="page-link" href="{{route('blogPagination',$nextUrl)}}" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                        @endif
+                    </ul>
+                </nav>
             </div>
+
         </div>
         <div class="col-12 col-sm-4 bg-light bg-sm-transparent py-5 p-sm-0">
             <h5 class="mb-0 text-grey-900 fw-700 font-xs pb-3 mb-0 d-block ml-2">Blog terpopuler</h5>

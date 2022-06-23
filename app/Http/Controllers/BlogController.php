@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use App\Helper\Layout;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
 
@@ -20,17 +21,19 @@ class BlogController extends Controller
     {
         $this->middleware('auth')->only(['create']);
     }
+
     public function index(Request $request){
+
         $popular = Blog::limit(3)->orderBy('kunjungan','desc')->get();
         $latest = Blog::limit(3)->latest()->get();
 
         if($request->key != null){
             $data = Blog::where('judul','like','%'.$request->key.'%')->paginate(6);
         }else{
-            $data = Blog::paginate(6);
+            $data = Blog::latest()->paginate(6);
         }
 
-        //Paginate
+        $lastPage = $data->lastPage();
 
         $layout = '';
 
@@ -41,35 +44,19 @@ class BlogController extends Controller
             $layout = 'layouts.public';
         }
 
+        $currentPage = 0;
+
         $nextUrl = 2;
         $prevUrl = 0;
-        return view('pages.public.blog.blog',compact('data','prevUrl', 'nextUrl','layout','popular','latest'));   
+        return view('pages.public.blog.blog',compact('data','prevUrl', 'nextUrl',
+                                                    'layout','popular','latest',
+                                                    'lastPage','currentPage'));   
     }
 
     public function pagination($id){
-        // $per_page = 1;
-        //Blog::resolveConnection()->getPaginator()->setCurrentPage($page_number);
-
-        // Paginator::currentPageResolver(function () use ($per_page) {
-        //     return $per_page;
-        // });
-
-        // $articles = Blog::orderBy('created_at', 'desc')->paginate($per_page);
-
-        // $latest = Blog::limit(3)->latest()->get();
-        // $layout = '';
-
-        // if (Auth::check()) {
-        //     $layout = 'layouts.member';
-            
-        // }else{
-        //     $layout = 'layouts.public';
-        // }
         
-        // return view('pages.public.blog.blog',compact('data','layout','popular','latest')); 
-        
-        
-        $paginate = 8;
+        $paginate = 6;
+
         $skip = ($id*$paginate)-$paginate;
         $prevUrl = $nextUrl = '';
         if($skip>0){
@@ -80,6 +67,11 @@ class BlogController extends Controller
         $popular = Blog::limit(3)->orderBy('kunjungan','desc')->get();
         $latest = Blog::limit(3)->latest()->get();
         $layout = '';
+
+        $lastPage = Blog::latest()->paginate(6);
+        $lastPage = $lastPage->lastPage();
+
+        $currentPage = $id;
 
         if (Auth::check()) {
             $layout = 'layouts.member';
@@ -92,7 +84,9 @@ class BlogController extends Controller
             if($data->count()>=$paginate){
                 $nextUrl = $id + 1;
             }
-            return view('pages.public.blog.blog', compact('data', 'prevUrl', 'nextUrl','layout','popular','latest'));
+            return view('pages.public.blog.blog', compact('data','currentPage','prevUrl',
+                                                         'nextUrl','layout','popular',
+                                                         'latest','lastPage'));
         }
 
         return redirect()->route('blog');
@@ -167,9 +161,7 @@ class BlogController extends Controller
         return redirect()->back();
     }
 
-    public function admin(Request $request){
-        
-        
+    public function admin(Request $request){ 
         if ($request->ajax()) {
             $data = Blog::latest()->get();
             return datatables()->of($data)
@@ -236,6 +228,7 @@ class BlogController extends Controller
         $this->validate($request, [
 			'file' => 'file|image|mimes:jpeg,png,jpg|max:2048',
 		]);
+
 		// menyimpan data file yang diupload ke variabel $file
 		$file = $request->file('file');
        
@@ -251,7 +244,7 @@ class BlogController extends Controller
 
             $foto = Blog::find($request->id);
             if(isset($foto)){
-                File::delete($foto->gambar);
+                File::delete(public_path($foto->gambar));
             }
         }
 
