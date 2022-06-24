@@ -24,6 +24,7 @@
       @forelse ($data as $dt)
       <tr>
         <form action="{{route('blogKategoriSave')}}" method="post">
+        @csrf
         <th scope="row"  style="width:5%">{{$loop->iteration}}</th>
         <td style="width:60%">
           <div class="show-{{$dt->id}}">{{$dt->nama}}</div>

@@ -70,33 +70,31 @@ class HomeController extends Controller
         $layout = Layout::layout_check();
 
         switch ($produk->kategori->nama){
-            case "webinar" :
-                $data = new ProdukEvent();
-                $rekomen = ProdukEvent::where('status',1)->limit(6)->latest()->get();
-
-                //dd($produk);
+            // case "webinar" :
+            //     $data = new ProdukEvent();
+            //     $rekomen = ProdukEvent::where('status',1)->limit(6)->latest()->get();
                 
-                //*check jika bundling
-                $data = $this->cek_produk_bundling($produk,$data);
+            //     //*check jika bundling
+            //     $data = $this->cek_produk_bundling($produk,$data);
 
-                if(count($data)>1){
-                    return view('pages.produk.bundling.bundling_produk',compact('rekomen','data','produk','layout'));
-                }
+            //     if(count($data)>1){
+            //         return view('pages.produk.bundling.bundling_produk',compact('rekomen','data','produk','layout'));
+            //     }
 
-                $data = $data['0']; //karena blikan fungsi cek_produk_berupa array,maka harus diambil ke-0nya
+            //     $data = $data['0']; //karena blikan fungsi cek_produk_berupa array,maka harus diambil ke-0nya
 
 
-                return view('pages.produk.event.event_detail',compact('data','layout','rekomen'));
+            //     return view('pages.produk.event.event_detail',compact('data','layout','rekomen'));
 
-                break;
+            //     break;
 
-            case "beduk" :
-                $data = ProdukEvent::find($produk->id_produk);
-                $rekomen = ProdukEvent::where('status',1)->limit(6)->latest()->get();
+            // case "beduk" :
+            //     $data = ProdukEvent::find($produk->id_produk);
+            //     $rekomen = ProdukEvent::where('status',1)->limit(6)->latest()->get();
 
-                return view('pages.produk.event.event_detail',compact('data','layout','rekomen'));
+            //     return view('pages.produk.event.event_detail',compact('data','layout','rekomen'));
 
-                break;
+            //     break;
 
             case "kelas" :
                 $data = Kelas::find($produk->id_produk);
@@ -122,6 +120,21 @@ class HomeController extends Controller
                 break;  
 
             default :
+                $data = new ProdukEvent();
+                $rekomen = ProdukEvent::where('status',1)->limit(6)->latest()->get();
+                
+                //*check jika bundling
+                $data = $this->cek_produk_bundling($produk,$data);
+
+                if(count($data)>1){
+                    return view('pages.produk.bundling.bundling_produk',compact('rekomen','data','produk','layout'));
+                }
+
+                $data = $data['0']; //karena blikan fungsi cek_produk_berupa array,maka harus diambil ke-0nya
+
+
+                return view('pages.produk.event.event_detail',compact('data','layout','rekomen'));
+                
         }; 
 
         return view('pages.member.produk_detail',compact('data','layout','rekomen','tipe'));

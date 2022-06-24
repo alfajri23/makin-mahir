@@ -161,12 +161,11 @@ class EbookController extends Controller
             $gambar = $gambar->gambar;
         }else{
             $nama_file = time()."_".$gambars->getClientOriginalName();
-            // isi dengan nama folder tempat kemana file diuploadpublic_path('\img\uploads')
-            $tujuan_upload_server = public_path('asset/img/ebook'); //untuk dihosting
-            $tujuan_upload = 'asset/img/ebook';                     //untuk local
+            $tujuan_upload_server = public_path('asset/img/ebook'); 
+            $tujuan_upload = 'asset/img/ebook';                     
             $gambar = $tujuan_upload . '/'. $nama_file;
             $gambars->move($tujuan_upload_server,$nama_file);
-            //$gambars->move($tujuan_upload,$nama_file);
+
         }
 
         //file

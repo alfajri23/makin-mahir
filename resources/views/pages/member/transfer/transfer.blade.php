@@ -14,17 +14,17 @@
 
 <div class="container">
     <div class="row px-2">
-        @if ($message = Session::get('grup'))
+        @if (Session::get('grup') && Session::get('grup') != null)
         <div class="alert alert-success alert-dismissible fade show mx-auto" role="alert">
             <strong>Selamat Kamu Sudah Jadi Peserta BEDUK !</strong><br>
-            Gabung Grup WA untuk Informasi Acara dan Bonus <a href="{{$message}}">KLIK DISINI </a>
+            Gabung Grup WA untuk Informasi Acara dan Bonus <a href="{{Session::get('grup')}}">KLIK DISINI </a>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
         </div>
         @endif
 
-        @if (Session::get('sukses'))
+        @if (Session::get('sukses') && Session::get('sukses') != null)
         <div class="alert alert-success alert-dismissible fade show mx-auto" role="alert">
             <strong>Selamat Transaksi Berhasil !</strong><br>
             Admin akan segera memproses pembayaranmu
@@ -75,6 +75,9 @@
                         </ul>
                     </div>
                     <div class="d-flex align-items-end">
+                        @if($dt->status == 'lunas')
+                        <a href="{{route('enrollProdukDetail',$dt->id_produk)}}" class="mt-3 p-1 btn lh-24 w100 ml-1 ls-3 d-inline-block btn-sm bg-messenger font-xssss fw-700 ls-lg text-white">Lihat</a>
+                        @endif
                         <a href="{{route('transferDetail',$dt->id)}}" class="mt-3 p-1 btn lh-24 w100 ml-1 ls-3 d-inline-block btn-sm bg-light font-xssss fw-700 ls-lg text-dark">Detail</a>
                        
                     </div>

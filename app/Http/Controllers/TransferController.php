@@ -37,7 +37,6 @@ class TransferController extends Controller
 
     public function detail($id){
         $data = Transaksi::find($id);
-        //dd($data);
 
         return view('pages.member.transfer.transfer_detail',compact('data'));
     }
@@ -53,8 +52,6 @@ class TransferController extends Controller
                 $data = Transaksi::where('status','pending')->get();
             }elseif($request->tipe == 'ditolak'){
                 $data = Transaksi::where('status','ditolak')->get();
-            // }elseif($request->tipe == 'belum'){
-            //     $data = Transaksi::where('status','belum bayar')->get();
             }elseif($request->tipe == 'semua'){
                 $data = Transaksi::latest()->get();
             }

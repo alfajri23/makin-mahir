@@ -104,7 +104,7 @@
     $(function (){
 
         tabel.DataTable({
-            order: [[6, 'desc']],
+            order: [[7, 'desc']],
             processing: true,
             serverSide: true,
             ajax: {

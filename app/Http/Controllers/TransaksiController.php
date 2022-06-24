@@ -32,12 +32,11 @@ class TransaksiController extends Controller
             $required = explode(",",$ceks->required);
             $pilihan = explode(",",$ceks->pilihan);
 
-            if($data->id_kategori == 2){                    // Jika beduk
-                return view('pages.pembayaran.pembayaran_beduk',compact('tipes','pertanyaans','data',
-                                                                        'files','required','pilihan'));
-            }
+            // if($data->id_kategori == 2){                    // Jika beduk
+            //     return view('pages.pembayaran.pembayaran_beduk',compact('tipes','pertanyaans','data',
+            //                                                             'files','required','pilihan'));
+            // }
 
-            //dd($pilihan);
             return view('pages.member.daftar',compact('tipes','pertanyaans','data',
                                                         'files','pilihan','required'));
 
@@ -48,8 +47,8 @@ class TransaksiController extends Controller
                     'id_ebook' => $data->id_produk,
                     'id_expert' => $data->ebook->id_expert
                 ]);
+                return redirect()->route('memberEbook');
             }
-            return redirect()->route('memberEbook');
         }elseif($data->id_kategori == 6){
             return view('pages.pembayaran.pembayaran_cvchecker',compact('data'));
         }else{
@@ -59,12 +58,14 @@ class TransaksiController extends Controller
 
     }
 
-    public function  create(Request $request){
+    public function create(Request $request){
         $buktis = $request->bukti;
 
-        for($i=0;$i<count($request->bukti);$i++){
-            $rules['bukti.' . $i] = 'file|mimes:jpeg,png,jpg,pdf|max:2048';
-            $customAttributes['bukti.' . $i] = 'File';
+        if(!empty($request->bukti)){ 
+            for($i=0;$i<count($request->bukti);$i++){
+                $rules['bukti.' . $i] = 'file|mimes:jpeg,png,jpg,pdf|max:2048';
+                $customAttributes['bukti.' . $i] = 'File';
+            }
         }
 
         $rules['telepon'] = 'required|string|min:9|regex:/08\d{9,10}/';
@@ -84,7 +85,7 @@ class TransaksiController extends Controller
         $jawaban = $pilihan != null ? $jawaban . ',' . $pilihan : $jawaban;
 
         $datas = [
-            'id_produk' => $request->id_produk,
+            'id_produk' => $request->id,
             'nama' => $request->nama,
             'harga' => $request->harga,
             'status' => 'pending',
@@ -121,9 +122,19 @@ class TransaksiController extends Controller
             $datas['file_tambahan'] = $file_name;
         }
 
-        $data = Transaksi::updateOrCreate(['id'=>$request->id],$datas);
+        if($request->id_kategori == 2 || $request->id_kategori == 3){
+            $produk = ProdukEvent::find($request->id_produk);
+            $produk = $produk->grup_wa;
+            $sukses = null;
+        }else{
+            $produk = null;
+            $sukses = 'sukses';
+        }
+
+        $data = Transaksi::create($datas);
     
-        return redirect()->route('transferIndex')->with(['sukses' => 'sukses']);
+        return redirect()->route('transferIndex')->with(['sukses' => $sukses,
+                                                        'grup' => $produk]);
     }
 
 
@@ -219,7 +230,6 @@ class TransaksiController extends Controller
                     $file->move($tujuan_upload_server,$nama_file);
                     $filed[] = $files;
                 }
-
             }
 
             $file_name = implode(",",$filed);

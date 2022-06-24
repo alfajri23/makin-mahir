@@ -118,34 +118,10 @@
                     @endempty
                   
                     <div class="form-group my-4">
-                        <label for="exampleInputPassword1" class="font-lg fw-700">Upload Bukti Pembayaran</label>
-                        
-                        <ul class="font-xssss text-grey-800 fw-600">
-                            <li>BCA : No. Rek. 8030112343 A. N. Tri Astuti</li>
-                            <li>BRI : No. Rek. 144701001148505 A. N. Tri Astuti</li>
-                            <li>BNI : No. Rek. 0850844796 A. N. Tri Astuti</li>
-                            <li>Mandiri : No. Rek. 1360010201660 A. N. Tri Astuti</li>
-                            <li>EWALLET= GOPAY, OVO, DANA : 08579993240 A.N. Tri Astuti</li>
-                        </ul>
-    
-    
-                        <div class="custom-file mt-3">
-                            {{-- <label class="custom-file-label" for="customFile">Bukti file</label> --}}
-                            <input type="file" name="bukti[]" class="" required>
-                            <small class="form-text text-muted">
-                                Format file yang diterima pdf, jpg, png, jpeg | Max 5 Mb
-                            </small>
-                            @error('bukti.0')
-                            <div>
-                                <span class="" role="alert alert-danger">
-                                    <small  class="text-danger">{{ $message }}</small>
-                                </span>
-                            </div>
-                            @enderror
-                        </div>
-    
                         <div>
-                            <input type="hidden" name="id_produk" value="{{$data->id}}">
+                            <input type="hidden" name="id" value="{{$data->id}}">
+                            <input type="hidden" name="id_produk" value="{{$data->id_produk}}">
+                            <input type="hidden" name="id_kategori" value="{{$data->id_kategori}}">
                             <input type="hidden" name="nama" value="{{$data->nama}}">
                             @if($data->harga != '#' || $data->harga != null)
                             <input type="hidden" name="harga" value="{{$data->harga}}">
@@ -197,7 +173,9 @@
                                <tr>
                                     <th class="text-grey-700 fw-600 font-xss">Status
                                     </th>
-                                    <td class="text-right text-grey-700 fw-600 font-xss">Lakukan pembayaran</td>
+                                    <td class="text-right text-grey-700 fw-600 font-xss">
+                                        {{ $data->harga == null ? 'Lengkapi formulir' : 'Lakukan pembayaran'}}
+                                    </td>
                                 </tr>
                            </tbody>
     

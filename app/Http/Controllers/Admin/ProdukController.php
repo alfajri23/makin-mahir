@@ -423,13 +423,9 @@ class ProdukController extends Controller
                 $files = $foto->poster;
             }else{
                 $nama_file = time()."_".$file->getClientOriginalName();
-                if($request->tipe == 'beduk'){
-                    $tujuan_upload = 'asset/img/produk/beduk';   
-                    $tujuan_upload_server = public_path('asset/img/produk/beduk'); 
-                }else{
-                    $tujuan_upload = 'asset/img/produk/webinar';   
-                    $tujuan_upload_server = public_path('asset/img/produk/webinar');  
-                }
+                $tujuan_upload = 'asset/img/produk/event';   
+                $tujuan_upload_server = public_path('asset/img/produk/event'); 
+                
                 $files = $tujuan_upload . '/'. $nama_file;
                 $file->move($tujuan_upload_server,$nama_file);
             }
@@ -558,7 +554,12 @@ class ProdukController extends Controller
 
                 if($request->id != null){
                     $file_lama = Template::find($request->id);
-                    $file_name = $file_name . ',' . $file_lama->file;
+                    
+                    if($file_lama != null){
+                        $file_name = $file_name . ',' . $file_lama->file;
+                    }else{
+                        $file_name = $file_name;
+                    }
                 }
 
                 $datas['file'] = $file_name;

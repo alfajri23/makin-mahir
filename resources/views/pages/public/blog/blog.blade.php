@@ -60,7 +60,7 @@
                         <div class="card w-100 p-0 border-0 overflow-hidden mr-1">
                             <div class="card-image w-100 mb-0">
                                 <div class="video-bttn position-relative d-block">
-                                    <img src="{{asset($dt->gambar)}}" alt="image" class="w-100 lozad">
+                                    <img data-src="{{asset($dt->gambar)}}" alt="image" class="w-100 lozad">
                                 </div>
                             </div>
                             <div class="card-body border-bottom pt-0 pl-0">

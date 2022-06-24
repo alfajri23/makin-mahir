@@ -47,7 +47,7 @@ class ProdukEvent extends Model
 
     public function produk(){
         return $this->belongsTo(Produk::class,'id','id_produk')
-        ->whereIn('id_kategori',[2,3]);
+        ->whereIn('id_kategori',[2,3,8]);
     }
 
     // public function produk(){

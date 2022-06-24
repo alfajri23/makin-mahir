@@ -94,6 +94,8 @@ class PublicController extends Controller
             ->get();
         }
 
+        //dd($data);
+
         $layout = Layout::layout_check();
         $meta_title = "Event Makin Mahir | MakinMahir.id";
         $tipe = 'event';
