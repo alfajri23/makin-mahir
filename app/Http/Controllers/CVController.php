@@ -20,28 +20,30 @@ class CVController extends Controller
 {
 
     public function __construct(){
-        $this->middleware('auth')->except(['index']);
+        $this->middleware('auth')->except(['index','print','printPublicCV']);
     }
 
     public function checkIndex($request,$index){
-        if($request[0][$index] != null){        //Jika input kosong
-            if($request[1][$index] == null){    //jika index ke-1 kosong,maka ambil index 0 saja
-                //dd($request);
-                array_pop($request);
-                //$data[] = $request;
-                //dd($request);
-                return $request;
+        //dd($request);
+        if(count($request)>0){
+            if($request[0][$index] != null){        //Jika input kosong
+                if($request[1][$index] == null){    //jika index ke-1 kosong,maka ambil index 0 saja
+                    array_pop($request);
+                    return $request;
 
+                }else{
+                    return $request;                //jika full
+                }
             }else{
-                return $request;                //jika full
+                return [];
             }
         }else{
-            return [];
+            return $request; 
         }
     }
 
     public function printPublicCV(Request $request){
-        //dd($request['kerja']);
+        //dd($request['edukasi']);
         //$kerja = $request['kerja'][0]['posisi'] != null ? $request['kerja'] : [];
         $kerja = $this->checkIndex($request['kerja'],'posisi');
         $skil = $this->checkIndex($request['skil'],'skil');
@@ -49,7 +51,15 @@ class CVController extends Controller
         $prestasi = $this->checkIndex($request['prestasi'],'prestasi');
         $training = $this->checkIndex($request['training'],'program');
         $organisasi = $this->checkIndex($request['organisasi'],'organisasi');
+        // $kerja = $request['kerja'];
+        // $skil = $request['skil'];
+        // $edukasi = $request['edukasi'];
+        // $prestasi = $request['prestasi'];
+        // $training = $request['training'];
+        // $organisasi = $request['organisasi'];
         $user = $request['user'];
+
+        //dd($prestasi);
 
         $pdf = PDF::loadview('pages.cv.print.cv_ats_print',compact('user','organisasi','kerja','edukasi','training','skil','prestasi'));
         return $pdf->stream();

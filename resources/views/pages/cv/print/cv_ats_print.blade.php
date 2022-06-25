@@ -16,7 +16,7 @@
     .title-section{
         font-size:14px;
         padding-bottom: 7px;
-        font-weight: 700;
+        font-weight: 500;
         border-bottom: 0.5px solid rgb(0, 0, 0);
     }
 
@@ -28,6 +28,16 @@
     @page{
         margin:0;
     }
+
+    p{
+        margin-bottom :  0px !important;
+        line-height: 1rem !important;
+    }
+
+    .list{
+
+    }
+
 </style>
 
 <body class="p-5">
@@ -55,32 +65,30 @@
         <div class="personal">
             <h6 class="text-uppercase title-section">Personal Info</h6>
             <p class="">
-                {{$user['desc']}}
+                {!!$user['desc']!!}
             </p>
         </div>
 
         <div class="skill my-4">
             <h6 class="text-uppercase title-section">Keahlian</h6>
-            @forelse ($skil as $sk)
-            <div>
-                <p class="mb-0">{{$sk['skil']}}</p>
-            </div>
-            
-            @empty
-            @endforelse
-            <p></p>
+            <ol>
+                @forelse ($skil as $sk)
+                <li >{{$sk['skil']}}</li>  
+                @empty
+                @endforelse
+            </ol>
         </div>
 
         @if(count($edukasi)>0)
         <div class="edukasi my-4">
             <h6 class="text-uppercase title-section">Edukasi</h6>
             @forelse ($edukasi as $edu)
-            <div>
+            <div class="mb-2">
                 <table style="width:100%">
                     <tbody>
                     <tr>
                     <td><p class="subtitle-section">{{$edu['sekolah']}} | {{$edu['jurusan']}} | {{$edu['gpa']}}</p></td>
-                    <td style="text-align: right;"><p class="float-right font-italic mb-0">{{$edu['masuk']}} - {{$edu['keluar']}}</p></td>
+                    <td style="text-align: right;"><p class="float-right font-italic mb-0">{{date_format(date_create($edu['masuk']),"M Y")}} - {{date_format(date_create($edu['keluar']),"M Y")}}</p></td>
                     </tr>
                     </tbody>
                 </table>
@@ -99,7 +107,7 @@
                     <tbody>
                     <tr>
                         <td><p class="subtitle-section mb-0">{{$tr['program']}}</p></td>
-                        <td style="text-align: right;"><p class="float-right font-italic mb-0">{{$tr['mulai']}} sampai {{$tr['akhir']}}</p></td>
+                        <td style="text-align: right;"><p class="float-right font-italic mb-0">{{date_format(date_create($tr['mulai']),"M Y")}} - {{date_format(date_create($tr['akhir']),"M Y")}}</p></td>
                     </tr>
                     </tbody>
                 </table>
@@ -139,13 +147,13 @@
                 <table style="width:100%">
                     <tbody>
                     <tr>
-                        <td><p class="subtitle-section mb-0">{{$kr['perusahaan']}}</p></td>
-                        <td style="text-align: right;"><p class="float-right font-italic mb-0">{{$kr['mulai']}} sampai {{$kr['akhir']}}</p></td>
+                        <td><p class="text-uppercase subtitle-section mb-0">{{$kr['perusahaan']}}</p></td>
+                        <td style="text-align: right;"><p class="float-right font-italic mb-0">{{date_format(date_create($kr['mulai']),"M Y")}} - {{date_format(date_create($kr['mulai']),"M Y")}}</p></td>
                     </tr>
                     </tbody>
                 </table>
                 <p class="mb-0">{{$kr['posisi']}}</p>
-                <p class="">{{$kr['deskripsi']}}</p>
+                <p class="">{!!$kr['deskripsi']!!}</p>
             </div>
             @empty
             @endforelse
@@ -161,12 +169,12 @@
                     <tbody>
                     <tr>
                         <td><p class="subtitle-section mb-0">{{$org['posisi']}}</p></td>
-                        <td style="text-align: right;"><p class="float-right font-italic mb-0">{{$org['mulai']}} sampai {{$org['akhir']}}</p></td>
+                        <td style="text-align: right;"><p class="float-right font-italic mb-0">{{date_format(date_create($org['mulai']),"M Y")}} - {{date_format(date_create($org['mulai']),"M Y")}}</p></td>
                     </tr>
                     </tbody>
                 </table>
                 <p class="mb-0">{{$org['organisasi']}}</p>
-                <p class="">{{$org['deskripsi']}}</p>
+                <p class="">{!!$org['deskripsi']!!}</p>
             </div>
             @empty
             @endforelse

@@ -168,7 +168,6 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     // });
 
     function addForm(){
-        console.log("data");
         $( "#formInit" ).clone().appendTo( "#form" );
     }
 
