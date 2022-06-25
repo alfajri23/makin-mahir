@@ -689,7 +689,6 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 			},
 			dataType: 'json',
 			success : (data)=>{
-                console.log(data);
                 data = data.data;
                 $('#id_acv').val(data.id);
                 $('#prestasi').val(data.prestasi);
