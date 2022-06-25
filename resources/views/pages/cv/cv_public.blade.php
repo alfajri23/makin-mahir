@@ -350,13 +350,13 @@
                         <div class="col-sm-2 col-12 my-2">
                             <span>
                                 <label for="Nomor">Tahun</label>
-                                <input type="year" name="prestasi[0][tahun]" id="tahun" value="" class="form-control bg-color-none text-grey-700">
+                                <input type="number" min="1900" max="2099" name="prestasi[0][tahun]" id="tahun" value="" class="form-control bg-color-none text-grey-700">
                             </span>
                         </div>
 
                         <div class="col-12 my-2">
                             <span>
-                                <label for="Nomor">deskripsi</label>
+                                <label for="Nomor">Deskripsi</label>
                                 <textarea name="prestasi[0][deskripsi]" id="deskripsi" value="" ></textarea>
                             </span>
                         </div>
@@ -383,7 +383,7 @@
 
 </div>
 
-<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.10.0/tinymce.min.js"
 integrity="sha512-XNYSOn0laKYg55QGFv1r3sIlQWCAyNKjCa+XXF5uliZH+8ohn327Ewr2bpEnssV9Zw3pB3pmVvPQNrnCTRZtCg=="
 crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -401,20 +401,6 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
             toolbar: "bullist numlist"
 	    });
 	});
-
-    function init() {
-        console.log('tambah');
-        tinymce.init({
-            selector: "textarea",
-            branding: false,
-            width: "100%",
-            height: "300",
-            plugins: [
-                "lists"
-            ],
-            toolbar: "bullist numlist"
-	    });
-    }
 
 
     $.ajaxSetup({

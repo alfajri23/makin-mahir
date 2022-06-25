@@ -24,7 +24,7 @@ class CVController extends Controller
     }
 
     public function checkIndex($request,$index){
-        //dd($request);
+        
         if(count($request)>0){
             if($request[0][$index] != null){        //Jika input kosong
                 if($request[1][$index] == null){    //jika index ke-1 kosong,maka ambil index 0 saja
@@ -158,6 +158,13 @@ class CVController extends Controller
         ]);
     }
 
+    public function getBio(Request $request){
+        $data = User::find($request->id);
+        return response()->json([
+            'data' => $data->desc
+        ]);
+    }
+
     public function editBio(Request $request){
         $user = User::find(auth()->user()->id); 
         $user->desc = $request->bio;
@@ -268,6 +275,7 @@ class CVController extends Controller
              'prestasi' => $request->prestasi,
              'organisasi' => $request->organisasi,
              'tahun' => $request->tahun,
+             'desc' => $request->desc,
         ]);
  
          return redirect()->back(); 

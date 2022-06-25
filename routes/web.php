@@ -109,6 +109,9 @@ Route::get('privacy-policy', [Controllers\PublicController::class,'privacy'])->n
     //Set Session
     Route::get('cv-session',[Controllers\CVController::class,'setCV'])->name('cvSet');
 
+    //bio
+    Route::get('bio-get',[Controllers\CVController::class,'getBio'])->name('getBio');
+
     //work
     Route::get('work-get',[Controllers\CVController::class,'getWork'])->name('getWork');
     Route::post('work-update',[Controllers\CVController::class,'editWork'])->name('editWork');

@@ -32,8 +32,8 @@
         <div class="col-12 my-2">
             <div class="card shadow-xss border-0 px-5 py-4 rounded-lg">
                 <h2 class="fw-700 font-sm mt-4 mb-3 text-grey-900">Biodata
-                    <a href="#" class="float-right" onclick="btnModalBio()"><i class="feather-edit text-grey-800 fw-700 font-sm"></i></a></h2>
-                <p id="bioText" class="font-xsss text-grey-600 fw-500 mb-3">{{$user->desc}}</p>
+                    <a href="#" class="float-right" onclick="btnModalBio({{$user->id}})"><i class="feather-edit text-grey-800 fw-700 font-sm"></i></a></h2>
+                <p id="bioText" class="font-xsss text-grey-600 fw-500 mb-3">{!!$user->desc!!}</p>
             </div>
         </div>
 
@@ -89,7 +89,7 @@
                         <a href="#" onclick="btnEditKerja({{$kj->id}})" class="float-right" ><i class="feather-edit text-grey-500 font-xs"></i></a></p>
                     <p class="font-xsss text-grey-600 fw-500 mb-0">{{$kj->perusahaan}}</p>
                     <p class="font-xsss text-grey-600 fw-500 mb-2">{{$kj->mulai}} sampai {{$kj->akhir}}</p>
-                    <p class="font-xsss text-grey-600 fw-500 mb-3">{{$kj->deskripsi}}</p>
+                    <p class="font-xsss text-grey-600 fw-500 mb-3">{!!$kj->deskripsi!!}</p>
                 </div>
                 @empty
                     
@@ -127,7 +127,7 @@
                         <a href="#" onclick="btnEditTrain({{$tr->id}})"  class="float-right" ><i class="feather-edit text-grey-500 font-xs"></i></a></p>
                     <p class="font-xsss text-grey-600 fw-500 mb-0">{{$tr->penyelenggara}}</p>
                     <p class="font-xsss text-grey-600 fw-500 mb-2">{{$tr->mulai}} sampai {{$tr->akhir}}</p>
-                    <p class="font-xsss text-grey-600 fw-500 mb-3">{{$tr->deskripsi}}</p>
+                    <p class="font-xsss text-grey-600 fw-500 mb-3">{!!$tr->deskripsi!!}</p>
                 </div>
                 @empty
                     
@@ -180,7 +180,7 @@
                         <a href="#" onclick="btnEditOrg('{{$org->id}}')" class="float-right" ><i class="feather-edit text-grey-500 font-xs"></i></a></p>
                     <p class="font-xsss text-grey-600 fw-500 mb-0">{{$org->mulai}} sampai {{$org->akhir}}</p>
                     <p class="font-xsss text-grey-600 fw-500 mb-0">{{$org->organisasi}}</p>
-                    <p class="font-xsss text-grey-600 fw-500 mb-2">{{$org->deskripsi}}</p>
+                    <p class="font-xsss text-grey-600 fw-500 mb-2">{!!$org->deskripsi!!}</p>
                 </div>
                 @empty
                     
@@ -252,15 +252,15 @@
                 </div> 
                 <div class="form-group mb-3">
                     <label for="">Mulai</label>
-                    <input type="date" name="mulai" id="mulai" class="form-control bg-color-none text-grey-700" value="">                        
+                    <input type="month" name="mulai" id="mulai" class="form-control bg-color-none text-grey-700" value="">                        
                 </div>
                 <div class="form-group mb-3">
                     <label for="">Akhir</label>
-                    <input type="date" name="akhir" id="akhir" class="form-control bg-color-none text-grey-700" value="">                        
+                    <input type="month" name="akhir" id="akhir" class="form-control bg-color-none text-grey-700" value="">                        
                 </div> 
                 <div class="form-group mb-3">
                     <label for="">Deskripsi</label>
-                    <input type="text" name="desc" id="desc" class="form-control bg-color-none text-grey-700" value="">                        
+                    <textarea name="desc" id="descKerja" value="" ></textarea>
                 </div> 
                 <div class="form-group">
                     <button type="submit" class="rounded-lg btn-sm float-right bg-current text-white text-center font-xsss fw-500 border-2 border-0 w100">Save</button>
@@ -301,15 +301,15 @@
                 </div> 
                 <div class="form-group mb-3">
                     <label for="">masuk</label>
-                    <input type="number" name="masuk" id="masuk" min="1900" max="2099" step="1" class="form-control bg-color-none text-grey-700" value="" />                        
+                    <input type="year" name="masuk" id="masuk" min="1900" max="2099" step="1" class="form-control bg-color-none text-grey-700" value="" />                        
                 </div>
                 <div class="form-group mb-3">
                     <label for="">keluar</label>
-                    <input type="number" name="keluar" id="keluar" min="1900" max="2099" step="1" class="form-control bg-color-none text-grey-700" value="" />                        
+                    <input type="year" name="keluar" id="keluar" min="1900" max="2099" step="1" class="form-control bg-color-none text-grey-700" value="" />                        
                 </div>
                 <div class="form-group mb-3">
                     <label for="">gpa</label>
-                    <input type="number" name="gpa" id="gpa" class="form-control bg-color-none text-grey-700" value="">                        
+                    <input type="text" name="gpa" id="gpa" class="form-control bg-color-none text-grey-700" value="">                        
                 </div> 
                 <div class="form-group">
                     <button type="submit" class="rounded-lg btn-sm float-right bg-current text-white text-center font-xsss fw-500 border-2 border-0 w100">Save</button>
@@ -346,15 +346,15 @@
                 </div> 
                 <div class="form-group mb-3">
                     <label for="">mulai</label>
-                    <input type="date" name="mulai" id="mulai_train" step="1" class="form-control bg-color-none text-grey-700" value="" />                        
+                    <input type="month" name="mulai" id="mulai_train" step="1" class="form-control bg-color-none text-grey-700" value="" />                        
                 </div>
                 <div class="form-group mb-3">
                     <label for="">akhir</label>
-                    <input type="date" name="akhir" id="akhir_train" step="1" class="form-control bg-color-none text-grey-700" value="" />                        
+                    <input type="month" name="akhir" id="akhir_train" step="1" class="form-control bg-color-none text-grey-700" value="" />                        
                 </div>
                 <div class="form-group mb-3">
                     <label for="">deskripsi</label>
-                    <input type="text" name="desc" id="desc_train" class="form-control bg-color-none text-grey-700" value="">                        
+                    <textarea name="desc" id="descTraining" value="" ></textarea>
                 </div> 
                 <div class="form-group">
                     <button type="submit" class="rounded-lg btn-sm float-right bg-current text-white text-center font-xsss fw-500 border-2 border-0 w100">Save</button>
@@ -409,17 +409,21 @@
             @csrf
             <div class="col-12 pb-4">
                 <div class="form-group mb-3">
-                    <label for="">prestasi</label>
+                    <label for="">Prestasi</label>
                     <input type="hidden" name="id" id="id_acv" class="form-control bg-color-none text-grey-700" value=""> 
                     <input type="text" name="prestasi" id="prestasi" class="form-control bg-color-none text-grey-700" value="">                        
                 </div> 
                 <div class="form-group mb-3">
-                    <label for="">organisasi</label>
+                    <label for="">Organisasi</label>
                     <input type="text" name="organisasi" id="organisasi" class="form-control bg-color-none text-grey-700" value="">                        
                 </div> 
                 <div class="form-group mb-3">
-                    <label for="">tahun</label>
+                    <label for="">Tahun</label>
                     <input type="number" name="tahun" id="tahun_acv" min="1900" max="2099" step="1" class="form-control bg-color-none text-grey-700" value="" />                        
+                </div> 
+                <div class="form-group mb-3">
+                    <label for="">Deskripsi</label>
+                    <textarea name="desc" id="descPrestasi" value="" ></textarea>             
                 </div> 
                 <div class="form-group">
                     <button type="submit" class="rounded-lg btn-sm float-right bg-current text-white text-center font-xsss fw-500 border-2 border-0 w100">Save</button>
@@ -456,15 +460,15 @@
                 </div> 
                 <div class="form-group mb-3">
                     <label for="">mulai</label>
-                    <input type="date" name="mulai" id="mulai_org" step="1" class="form-control bg-color-none text-grey-700" value="" />                        
+                    <input type="month" name="mulai" id="mulai_org" step="1" class="form-control bg-color-none text-grey-700" value="" />                        
                 </div>
                 <div class="form-group mb-3">
                     <label for="">akhir</label>
-                    <input type="date" name="akhir" id="akhir_org" step="1" class="form-control bg-color-none text-grey-700" value="" />                        
+                    <input type="month" name="akhir" id="akhir_org" step="1" class="form-control bg-color-none text-grey-700" value="" />                        
                 </div>
                 <div class="form-group mb-3">
                     <label for="">deskripsi</label>
-                    <input type="text" name="desc" id="desc_org" class="form-control bg-color-none text-grey-700" value="">                        
+                    <textarea name="desc" id="descOrganisasi" value="" ></textarea>
                 </div> 
                 <div class="form-group">
                     <button type="submit" class="rounded-lg btn-sm float-right bg-current text-white text-center font-xsss fw-500 border-2 border-0 w100">Save</button>
@@ -506,7 +510,9 @@
 </div>
 
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.10.0/tinymce.min.js"
+integrity="sha512-XNYSOn0laKYg55QGFv1r3sIlQWCAyNKjCa+XXF5uliZH+8ohn327Ewr2bpEnssV9Zw3pB3pmVvPQNrnCTRZtCg=="
+crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
 
     $.ajaxSetup({
@@ -514,6 +520,19 @@
 	          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
 	          'Authorization': `Bearer {{Session::get('token')}}`
 	      }
+	});
+
+    $(document).ready(function() {
+		tinymce.init({
+            selector: "textarea",
+            branding: false,
+            width: "100%",
+            height: "300",
+            plugins: [
+                "lists"
+            ],
+            toolbar: "bullist numlist"
+	    });
 	});
 
     function changeName(){
@@ -531,15 +550,28 @@
 			},
 			dataType: 'json',
 			success : (data)=>{
-                console.log(data.data)
                 $('#tipeCV').html(data.data);
                 $('#modalCV').modal('hide');
             }
         });
     }
 
-    function btnModalBio(){
-        $('#formBio').text($('#bioText').text()) ;
+    function btnModalBio(id){
+        $.ajax({
+			type : 'GET',
+			url  : "{{ route('getBio') }}",
+			data : {
+				id : id
+			},
+			dataType: 'json',
+			success : (data)=>{
+                data = data.data;
+
+                if(data != null){
+                    tinymce.get("formBio").setContent(data)
+                }
+            }
+        });
         $('#modalBio').modal('show');
     }
 
@@ -560,7 +592,9 @@
                 $('#alamat').val(data.alamat);
                 $('#mulai').val(data.mulai);
                 $('#akhir').val(data.akhir);
-                $('#desc').val(data.deskripsi);
+                if(data.deskripsi != null){
+                    tinymce.get("descKerja").setContent(data.deskripsi)
+                }
             }
         });
 
@@ -620,7 +654,10 @@
                 $('#penyelenggara').val(data.penyelenggara);
                 $('#mulai_train').val(data.mulai);
                 $('#akhir_train').val(data.akhir);
-                $('#desc_train').val(data.deskripsi);
+                //$('#desc_train').val(data.deskripsi);
+                if(data.deskripsi != null){
+                    tinymce.get("descTraining").setContent(data.deskripsi)
+                }
             }
         });
 
@@ -652,11 +689,15 @@
 			},
 			dataType: 'json',
 			success : (data)=>{
+                console.log(data);
                 data = data.data;
                 $('#id_acv').val(data.id);
                 $('#prestasi').val(data.prestasi);
                 $('#organisasi').val(data.organisasi);
                 $('#tahun_acv').val(data.tahun);
+                if(data.desc != null){
+                    tinymce.get("descPrestasi").setContent(data.desc)
+                }
                 $('#modalAcv').modal('show');
             }
         });
@@ -682,7 +723,9 @@
                 $('#organisasi_org').val(data.organisasi);
                 $('#mulai_org').val(data.mulai);
                 $('#akhir_org').val(data.akhir);
-                $('#desc_org').val(data.deskripsi);
+                if(data.deskripsi != null){
+                    tinymce.get("descOrganisasi").setContent(data.deskripsi)
+                }
                 $('#modalOrg').modal('show');
             }
         });
