@@ -50,7 +50,8 @@
     
             <div class="form-group">
                 <label for="exampleFormControlInput1">Link</label>
-                <input type="text" name="link" class="form-control" id="exampleFormControlInput1" placeholder="">
+                <textarea name="link"></textarea>
+                
             </div>
 
             <div class="form-group">

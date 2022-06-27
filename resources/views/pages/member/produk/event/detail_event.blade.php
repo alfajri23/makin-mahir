@@ -31,7 +31,7 @@
 
             <div class="card d-block border-0 rounded-lg overflow-hidden p-4 shadow-xss mt-4">
                 <h2 class="fw-700 font-sm mb-3 mt-1 pl-1 mb-3">Link</h2>
-                <div class="font-xs fw-500 lh-28 text-grey-600 mb-0 pl-2">{{$data->link}}</div>
+                <div class="font-xs fw-500 lh-28 text-grey-600 mb-0 pl-2">{!!$data->link!!}</div>
             </div>
 
             <div class="card d-block border-0 rounded-lg overflow-hidden p-4 shadow-xss mt-4">
