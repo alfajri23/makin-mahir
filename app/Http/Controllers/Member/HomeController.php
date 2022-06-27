@@ -216,6 +216,18 @@ class HomeController extends Controller
                 break;
 
             default :
+                $cek = EventEnroll::where([
+                    'id_user' => $request->session()->get('auth.id_user'),
+                    'id_event' => $produk->id_produk
+                ])->get();
+
+                //jika sudah daftar
+                if(count($cek) != 0){
+                    $data = ProdukEvent::find($produk->id_produk);
+                    return view('pages.member.produk.event.detail_event',compact('data'));
+                }else{
+                    return redirect()->route('memberProdukDetail',$id);
+                }
 
         };
     }
