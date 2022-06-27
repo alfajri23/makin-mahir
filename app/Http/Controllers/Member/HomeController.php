@@ -70,32 +70,6 @@ class HomeController extends Controller
         $layout = Layout::layout_check();
 
         switch ($produk->kategori->nama){
-            // case "webinar" :
-            //     $data = new ProdukEvent();
-            //     $rekomen = ProdukEvent::where('status',1)->limit(6)->latest()->get();
-                
-            //     //*check jika bundling
-            //     $data = $this->cek_produk_bundling($produk,$data);
-
-            //     if(count($data)>1){
-            //         return view('pages.produk.bundling.bundling_produk',compact('rekomen','data','produk','layout'));
-            //     }
-
-            //     $data = $data['0']; //karena blikan fungsi cek_produk_berupa array,maka harus diambil ke-0nya
-
-
-            //     return view('pages.produk.event.event_detail',compact('data','layout','rekomen'));
-
-            //     break;
-
-            // case "beduk" :
-            //     $data = ProdukEvent::find($produk->id_produk);
-            //     $rekomen = ProdukEvent::where('status',1)->limit(6)->latest()->get();
-
-            //     return view('pages.produk.event.event_detail',compact('data','layout','rekomen'));
-
-            //     break;
-
             case "kelas" :
                 $data = Kelas::find($produk->id_produk);
                 $rekomen = Kelas::where('status',1)->limit(6)->latest()->get();
@@ -253,10 +227,6 @@ class HomeController extends Controller
             'id_kelas' => $id,
             'id_bab' => $ids
         ])->first();
-
-
-        //dd($babs);
-        //dd($data);
 
         return view('pages.member.produk.kelas.materi_kelas',compact('data','babs'));
 

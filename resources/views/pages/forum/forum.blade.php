@@ -82,7 +82,7 @@
                 @endif
 
                 <div class="mb-2">
-                    <img src="{{asset($dt->gambar)}}" class="img-responsive w-100" alt="" srcset="">
+                    <img src="{{$dt->gambar != null ? asset($dt->gambar) : 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'}}" class="img-responsive w-100" alt="" srcset="">
                 </div>
                 <small>{{$dt->kategori->nama}}</small>
 
