@@ -145,8 +145,8 @@
 </div>
 
 
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
@@ -196,7 +196,7 @@
         </form>
       </div>
     </div>
-  </div>
+</div>
 
   <!-- Modal kategori -->
 <div class="modal fade" id="kategoriModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -270,8 +270,6 @@
                 $('#judul').val(datas.judul);
                 $('#id_kategori').val(datas.id_kategori);
                 tinymce.get("isi").setContent(datas.isi);
-                //tinymce.getInstanceById('#isi').setContent(datas.isi);
-                //$('#isi').val(datas.isi);
                 $('#image').html(`
                     <img src="${window.location.origin}/${datas.gambar}" style="width:200px" >
                     

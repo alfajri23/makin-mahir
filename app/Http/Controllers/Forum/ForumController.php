@@ -35,7 +35,6 @@ class ForumController extends Controller
 
         $kategori = ForumKategori::all();
         $layout = Layout::layout_check();
-        //dd($data);
 
         return view('pages.forum.forum',compact('data','layout','kategori'));
 
@@ -70,8 +69,8 @@ class ForumController extends Controller
 
     public function delete(Request $request){
         $data = ForumPertanyaaan::find($request->id);
-        File::delete($data->gambar);
-        //File::delete(public_path($data->gambar));
+        //File::delete($data->gambar);
+        File::delete(public_path($data->gambar));
         $data->delete();
         return redirect()->back();
     }
@@ -88,7 +87,7 @@ class ForumController extends Controller
     }
 
     public function komentar(Request $request){
-        //dd($request->jawaban);
+        
         $data = ForumJawaban::updateOrCreate(['id'=>$request->id],[
             'id_pertanyaan' => $request->id_pertanyaan,
             'jawaban' => $request->jawaban,

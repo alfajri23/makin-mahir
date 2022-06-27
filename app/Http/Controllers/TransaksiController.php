@@ -122,7 +122,7 @@ class TransaksiController extends Controller
             $datas['file_tambahan'] = $file_name;
         }
 
-        if($request->id_kategori == 2 || $request->id_kategori == 3){
+        if($request->id_kategori == 2 || $request->id_kategori == 3 || $request->id_kategori == 8){
             $produk = ProdukEvent::find($request->id_produk);
             $produk = $produk->grup_wa;
             $sukses = null;
