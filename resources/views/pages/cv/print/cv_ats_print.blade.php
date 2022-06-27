@@ -79,6 +79,27 @@
             </ol>
         </div>
 
+        @if(count($kerja)>0)
+        <div class="work my-4">
+            <h6 class="text-uppercase title-section">Pengalaman Kerja</h6>
+            @forelse ($kerja as $kr)
+            <div>
+                <table style="width:100%">
+                    <tbody>
+                    <tr>
+                        <td><p class="text-uppercase subtitle-section mb-0">{{$kr['perusahaan']}}</p></td>
+                        <td style="text-align: right;"><p class="float-right font-italic mb-0">{{date_format(date_create($kr['mulai']),"M Y")}} - {{date_format(date_create($kr['mulai']),"M Y")}}</p></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p class="mb-0">{{$kr['posisi']}}</p>
+                <p class="">{!!$kr['deskripsi']!!}</p>
+            </div>
+            @empty
+            @endforelse
+        </div>
+        @endif
+
         @if(count($edukasi)>0)
         <div class="edukasi my-4">
             <h6 class="text-uppercase title-section">Edukasi</h6>
@@ -92,6 +113,26 @@
                     </tr>
                     </tbody>
                 </table>
+            </div>
+            @empty
+            @endforelse
+        </div>
+        @endif
+        
+        @if(count($prestasi)>0)
+        <div class="prestasi my-4">
+            <h6 class="text-uppercase title-section">Prestasi</h6>
+            @forelse ($prestasi as $ps)
+            <div>
+                <table style="width:100%">
+                    <tbody>
+                    <tr>
+                        <td><p class="subtitle-section mb-0">{{$ps['prestasi']}}</p></td>
+                        <td style="text-align: right;"><p class="float-right font-italic mb-0">{{$ps['tahun']}}</p></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p class="">{!!$ps['organisasi']!!}</p>
             </div>
             @empty
             @endforelse
@@ -113,47 +154,6 @@
                 </table>
                 <p class="mb-0">{{$tr['penyelenggara']}}</p>
                 <p class="">{!!$tr['deskripsi']!!}</p>
-            </div>
-            @empty
-            @endforelse
-        </div>
-        @endif
-
-        @if(count($prestasi)>0)
-        <div class="prestasi my-4">
-            <h6 class="text-uppercase title-section">Prestasi</h6>
-            @forelse ($prestasi as $ps)
-            <div>
-                <table style="width:100%">
-                    <tbody>
-                    <tr>
-                        <td><p class="subtitle-section mb-0">{{$ps['prestasi']}}</p></td>
-                        <td style="text-align: right;"><p class="float-right font-italic mb-0">{{$ps['tahun']}}</p></td>
-                    </tr>
-                    </tbody>
-                </table>
-                <p class="">{!!$ps['organisasi']!!}</p>
-            </div>
-            @empty
-            @endforelse
-        </div>
-        @endif
-
-        @if(count($kerja)>0)
-        <div class="work my-4">
-            <h6 class="text-uppercase title-section">Pengalaman Kerja</h6>
-            @forelse ($kerja as $kr)
-            <div>
-                <table style="width:100%">
-                    <tbody>
-                    <tr>
-                        <td><p class="text-uppercase subtitle-section mb-0">{{$kr['perusahaan']}}</p></td>
-                        <td style="text-align: right;"><p class="float-right font-italic mb-0">{{date_format(date_create($kr['mulai']),"M Y")}} - {{date_format(date_create($kr['mulai']),"M Y")}}</p></td>
-                    </tr>
-                    </tbody>
-                </table>
-                <p class="mb-0">{{$kr['posisi']}}</p>
-                <p class="">{!!$kr['deskripsi']!!}</p>
             </div>
             @empty
             @endforelse
