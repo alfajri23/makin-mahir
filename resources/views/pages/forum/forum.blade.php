@@ -58,7 +58,7 @@
                 <div class="row ml-1 justify-content-between px-3">
                     <div class="row">
                         <figure class="avatar mr-3">
-                            <img src="{{asset($dt->user->foto)}}" alt="image" class="rounded-circle w40">
+                            <img src="{{$dt->user->foto != null ? asset($dt->user->foto) : 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'}}" alt="image" class="rounded-circle w40">
                         </figure>
                         <div>
                             <h5 class="font-xsss mb-0 fw-700">{{$dt->user->nama}}</h5>
@@ -82,7 +82,7 @@
                 @endif
 
                 <div class="mb-2">
-                    <img src="{{$dt->gambar != null ? asset($dt->gambar) : 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'}}" class="img-responsive w-100" alt="" srcset="">
+                    <img src="{{asset($dt->gambar)}}" class="img-responsive w-100" alt="" srcset="">
                 </div>
                 <small>{{$dt->kategori->nama}}</small>
 
