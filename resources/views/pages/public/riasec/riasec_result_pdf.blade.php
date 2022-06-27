@@ -16,8 +16,21 @@
         <div class="mb-5">
             <h5 class="font-weight-bold pl-3">{{$data->name}}</h5>
             <div class="card-body mb-3 pb-0">
+                <p>Deskripsi</p>
                 <p class="font-xss text-grey-700 fw-200 d-block">  
-                    {{$data->description}}
+                    {!!$data->description!!}
+                </p>
+            </div>
+            <div class="card-body mb-3 pb-0">
+                <p>Aktifitas yang cocok untuk kamu</p>
+                <p class="font-xss text-grey-700 fw-200 d-block">  
+                    {!!$data->advice_activity!!}
+                </p>
+            </div>
+            <div class="card-body mb-3 pb-0">
+                <p>Rekomendasi pekerjaan</p>
+                <p class="font-xss text-grey-700 fw-200 d-block">  
+                    {!!$data->advice_job!!}
                 </p>
             </div>
         </div>
