@@ -27,7 +27,7 @@
         <p class="display1-size fw-700 lh-28 {{$loop->first ? 'text-orange' : 'text-grey-800'}} pl-3">{{$dt->name}}</p>
         <div class="card-body mb-3 pb-0">
             <h2 class="font-xss text-grey-800 lh-28 fw-500 d-block">  
-                {{$dt->description}}
+                {!!$dt->description!!}
             </h2>
         </div>
     </div>
