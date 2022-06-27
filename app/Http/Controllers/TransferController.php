@@ -169,10 +169,9 @@ class TransferController extends Controller
         $data = Transaksi::find($request->id);
         //! Besok ganti switch aja 
 
-        if($data->produk->id_kategori == 2 || $data->produk->id_kategori == 3){
+        if($data->produk->id_kategori == 2 || $data->produk->id_kategori == 3 || $data->produk->id_kategori == 8){
             $id_produk = $this->cek_produk_bundling($data->produk);
             //JIka paket bundling maka id_expert tidak ada
-
 
             foreach($id_produk as $id){
                 if(count($id_produk)>1){
