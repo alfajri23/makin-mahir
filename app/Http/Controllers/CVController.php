@@ -25,7 +25,7 @@ class CVController extends Controller
 
     public function checkIndex($request,$index){
         
-        if(count($request)>0){
+        if(count($request)>1){
             if($request[0][$index] != null){        //Jika input kosong
                 if($request[1][$index] == null){    //jika index ke-1 kosong,maka ambil index 0 saja
                     array_pop($request);

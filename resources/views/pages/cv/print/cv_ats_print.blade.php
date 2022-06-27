@@ -112,7 +112,7 @@
                     </tbody>
                 </table>
                 <p class="mb-0">{{$tr['penyelenggara']}}</p>
-                <p class="">{{$tr['deskripsi']}}</p>
+                <p class="">{!!$tr['deskripsi']!!}</p>
             </div>
             @empty
             @endforelse
@@ -132,7 +132,7 @@
                     </tr>
                     </tbody>
                 </table>
-                <p class="">{{$ps['organisasi']}}</p>
+                <p class="">{!!$ps['organisasi']!!}</p>
             </div>
             @empty
             @endforelse
