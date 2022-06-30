@@ -54,6 +54,8 @@ class TransaksiController extends Controller
                     'id_user' => $request->session()->get('auth.id_user'),
                     'id_template' => $data->id_produk,
                 ]);
+
+                return redirect()->route('memberTemplate');
             }
         }elseif($data->id_kategori == 6){
             return view('pages.pembayaran.pembayaran_cvchecker',compact('data'));
