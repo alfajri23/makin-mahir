@@ -326,27 +326,27 @@ class PendaftaranController extends Controller
                 ';
                 return $nama;
             })
-            ->addColumn('bayar', function($row){
-                $actionBtn = '';
-                if($row->transaksi->status == 'lunas'){
-                    $actionBtn = '
-                        <span class="badge badge-success">Lunas</span>
-                    ';
-                }elseif( $row->transaksi->status == 'belum bayar' ){
-                    $actionBtn = '
-                        <span class="badge badge-warning">Belum bayar</span>
-                    ';
-                }elseif( $row->transaksi->status == 'pending' ){
-                    $actionBtn = '
-                        <span class="badge badge-info">Konfirmasi</span>
-                    ';
-                }elseif( $row->transaksi->status == 'ditolak' ){
-                    $actionBtn = '
-                        <span class="badge badge-danger">Ditolak</span>
-                    ';
-                }
-                return $actionBtn;
-            })
+            // ->addColumn('bayar', function($row){
+            //     $actionBtn = '';
+            //     if($row->transaksi->status == 'lunas'){
+            //         $actionBtn = '
+            //             <span class="badge badge-success">Lunas</span>
+            //         ';
+            //     }elseif( $row->transaksi->status == 'belum bayar' ){
+            //         $actionBtn = '
+            //             <span class="badge badge-warning">Belum bayar</span>
+            //         ';
+            //     }elseif( $row->transaksi->status == 'pending' ){
+            //         $actionBtn = '
+            //             <span class="badge badge-info">Konfirmasi</span>
+            //         ';
+            //     }elseif( $row->transaksi->status == 'ditolak' ){
+            //         $actionBtn = '
+            //             <span class="badge badge-danger">Ditolak</span>
+            //         ';
+            //     }
+            //     return $actionBtn;
+            // })
             ->addColumn('tanggal', function($row){
                 $nama = '
                 <p>'.date_format(date_create($row->created_at),"d M Y").'</p>
@@ -363,7 +363,7 @@ class PendaftaranController extends Controller
                 
                 return $actionBtn;
             })
-            ->rawColumns(['judul','email','aksi','bayar','tanggal'])
+            ->rawColumns(['judul','email','aksi','tanggal'])
             ->make(true);
         
         }

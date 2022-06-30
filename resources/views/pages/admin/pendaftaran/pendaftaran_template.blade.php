@@ -12,7 +12,6 @@
                     <th>No</th>
                     <th>Judul</th>
                     <th>Email</th>
-                    <th>Bayar</th>
                     <th>Tanggal</th>
                     <th>Aksi</th>
                 </tr>
@@ -80,7 +79,6 @@
                 },
                 {data: 'judul', name: 'judul'},
                 {data: 'email', name: 'email'},
-                {data: 'bayar', name: 'bayar'},
                 {data: 'tanggal', name: 'tanggal',className: "dtCenter"},
                 {data: 'aksi', name: 'aksi'},
             ]
