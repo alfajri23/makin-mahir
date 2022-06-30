@@ -25,16 +25,6 @@ class ProdukEvent extends Model
             'id_produk');    
     }
 
-    public function pendaftaranBeduk()
-    {
-        return $this->hasMany(PendaftaranBeduk::class, 'id_produk', 'id');
-    }
-
-    public function pendaftaranWebinar()
-    {
-        return $this->hasMany(PendaftaranWebinar::class, 'id_produk', 'id');
-    }
-
     public function enroll()
     {
         return $this->hasMany(EventEnroll::class, 'id_produk', 'id');

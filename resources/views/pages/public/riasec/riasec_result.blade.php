@@ -27,8 +27,8 @@
         Ini adalah hasil dari Tes Minat Bakat kamu menggunakan Tes Riasec.
 
         Yang ditampilkan adalah 2 Hasil tertinggi yang paling menggambarkan dirimu
-
-        Hasil ini tidak mutlak, hanya sebagai gambaran/
+        <br>
+        Hasil ini tidak mutlak, hanya sebagai gambaran
     </p>
 
     @forelse ($datas as $dt)

@@ -13,6 +13,7 @@ use App\Models\EventEnroll;
 use App\Models\KelasEnroll;
 use App\Models\KonsultasiEnroll;
 use App\Models\ProdukEvent;
+use App\Models\TemplateEnroll;
 use Illuminate\Support\Facades\Validator;
 
 class TransaksiController extends Controller
@@ -48,6 +49,11 @@ class TransaksiController extends Controller
                     'id_expert' => $data->ebook->id_expert
                 ]);
                 return redirect()->route('memberEbook');
+            }else if($data->id_kategori == 7){
+                TemplateEnroll::create([
+                    'id_user' => $request->session()->get('auth.id_user'),
+                    'id_template' => $data->id_produk,
+                ]);
             }
         }elseif($data->id_kategori == 6){
             return view('pages.pembayaran.pembayaran_cvchecker',compact('data'));

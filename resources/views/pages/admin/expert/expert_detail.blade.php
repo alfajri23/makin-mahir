@@ -3,6 +3,7 @@
 @section('content')
 
 <div class="container-fluid">
+    <div class="card shadow mb-4 p-3">
     <div class="row">
         <div class="col-4">
             <img src="{{asset($data->foto)}}" class="img-fluid rounded-start" alt="...">
@@ -15,6 +16,7 @@
                 <p class="card-text">{!!$data->tentang!!}</p>
             </div>
         </div>
+    </div>
     </div>
 
 </div>
