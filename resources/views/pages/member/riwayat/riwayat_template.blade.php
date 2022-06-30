@@ -28,7 +28,7 @@
                                 <img src="{{asset($datas['poster'])}}" alt="image" class="w-100">
                             </div>
                             <div class="card-body pt-0">
-                                <span class="font-xss fw-700 pl-3 pr-3 ls-2 lh-32 d-inline-block text-success float-right"><span class="font-xsssss">Rp.</span> {{isset($datas['harga']) ? number_format($datas['harga']) : 'gratis'}}</span>
+                                <span class="font-xss fw-700 pl-3 pr-3 ls-2 lh-32 d-inline-block text-success float-right"><span class="font-xsssss">Rp.</span> {{$datas['harga']}}</span>
                                 <h4 class="fw-700 font-xss mt-3 lh-28 mt-0">
                                     {{-- beri pembeda route --}}
                                     <a href="{{route('enrollProdukDetail',$datas->produk->id)}}" class="text-dark text-grey-900">{{$datas['judul']}}</a>
