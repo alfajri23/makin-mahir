@@ -354,12 +354,17 @@ class PendaftaranController extends Controller
                 return $nama;
             })
             ->addColumn('aksi', function($row){
-                $actionBtn = '
-                    <div class="">
-                        <a onclick="detail('.$row->transaksi->id.','.$row->id.')" class="btn btn-secondary btn-sm"><i class="fa-solid fa-circle-info"></i></a>
-                        <a href="https://wa.me/'.Telepon::changeTo62($row->transaksi->telepon).'" target="_blank" class="btn btn-success btn-sm"><i class="fa-brands fa-whatsapp"></i></a>
-                    </div>
-                ';
+                if($row->transaksi != null){
+                    $actionBtn = '
+                        <div class="">
+                            <a onclick="detail('.$row->transaksi->id.','.$row->id.')" class="btn btn-secondary btn-sm"><i class="fa-solid fa-circle-info"></i></a>
+                            <a href="https://wa.me/'.Telepon::changeTo62($row->transaksi->telepon).'" target="_blank" class="btn btn-success btn-sm"><i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                    ';
+
+                }else{
+                    $actionBtn = '';
+                }
                 
                 return $actionBtn;
             })
