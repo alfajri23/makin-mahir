@@ -76,7 +76,7 @@ class TransaksiController extends Controller
             }
         }
 
-        $rules['telepon'] = 'required|string|min:9|regex:/08\d{9,10}/';
+        $rules['telepon'] = 'required|string|min:10|regex:/08\d{9,10}/';
 
         $messages = [
             'required' => ':attribute harus diisi.',
