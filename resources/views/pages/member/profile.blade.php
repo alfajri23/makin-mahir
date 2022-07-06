@@ -8,7 +8,7 @@
             <div class="clearfix"></div>
             <div class="row">
                 <div class="col-lg-12 pl-xl-5 pt-xl-5">
-                    <figure class="avatar ml-0 mb-4 position-relative w100 z-index-1"><img src="{{asset($user->foto)}}" alt="image" class="float-right p-1 bg-white w-100"></figure>
+                    <figure class="avatar ml-0 mb-4 position-relative w100 z-index-1"><img src="{{ $user->foto != null ? asset($user->foto) : 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'}}" alt="image" class="float-right p-1 bg-white w-100"></figure>
                 </div>
                 <div class="col-xl-4 col-lg-6 pl-xl-5 pb-xl-5 pb-3">
                     
