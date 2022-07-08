@@ -27,13 +27,19 @@ class EventEnrollExport implements FromView, WithStyles, ShouldAutoSize
         $pertanyaan = explode(",",$form->pertanyaan);
         $tipe = explode(",",$form->tipe);
 
+        $radio_pertanyaan = [];
+
         foreach ($tipe as $key => $tp){
             if($tp == 'file'){
                 unset($pertanyaan[$key]);
                 $this->num_file ++;
+            }else if($tp == 'radio'){
+                $radio_pertanyaan[] = $pertanyaan[$key];
+                unset($pertanyaan[$key]);
             }
         }
-        $this->pertanyaan = $pertanyaan;
+
+        $this->pertanyaan = array_merge($pertanyaan,$radio_pertanyaan);
 
         if($id == 2){
             $this->jenis = 'beduk';

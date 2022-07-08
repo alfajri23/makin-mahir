@@ -62,13 +62,11 @@ class SettingFormController extends Controller
 
     public function store(Request $request){
 
-        //dd($request->pilihan);
         $pertanyaan = implode(",",$request->pertanyaan);
         $tipe = implode(",",$request->tipe);
         $required = implode(",",$request->required);
         $File = $request->file != null ? $request->file : [];
         $pilihan = implode(",",$request->pilihan);
-        //dd($pilihan);
 
         if($request->id != null){
             $filed = FormSetting::find($request->id);
