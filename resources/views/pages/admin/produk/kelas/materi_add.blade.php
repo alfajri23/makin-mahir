@@ -41,7 +41,7 @@
                 <div class="card w-100 text-left border-0 shadow-xss rounded-lg p-3 mb-3">
                     <label class="fw-500 text-grey-600 font-xsss">Upload materi PDF</label>
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" name="poster">
+                        <input type="file" class="custom-file-input" name="file">
                         <label class="custom-file-label" for="customFileLang">Upload disini</label>
                     </div>
                 </div>

@@ -37,7 +37,7 @@
                 <div class="card w-100 text-left border-0 shadow-xss rounded-lg p-3 mb-3">
                     <label class="fw-500 text-grey-600 font-xsss">Link URL Video</label>
                     <img id="output" src="https://image.shutterstock.com/image-vector/ui-image-placeholder-wireframes-apps-260nw-1037719204.jpg"/>
-                    <input type="text" name="link_video" value="{{$data->link_video}}" placeholder="link video" class="form-control">
+                    <input type="text" name="link_video" value="{{$data->link_video}}" class="form-control">
                 </div>
 
                 <div class="card w-100 text-left border-0 shadow-xss rounded-lg p-3 mb-3">
