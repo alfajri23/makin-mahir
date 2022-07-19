@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
+use Illuminate\Http\JsonResponse;
 
 class LoginOAuthController extends Controller{
     
@@ -25,18 +28,51 @@ class LoginOAuthController extends Controller{
 
             if($user != null){
                 \auth()->login($user, true);
-                return redirect()->route('home');
+
+                if ($this->attemptLogin($request)) {
+                    if ($request->hasSession()) {
+                        $request->session()->put('auth.password_confirmed_at', time());
+                        $request->session()->put('auth.id_user', auth()->user()->id);
+                        $user = User::find(auth()->user()->id);
+                        $user->last_login = now();
+                        $user->save();
+                    }
+        
+                    if($request->filled('remember')){
+                        Cookie::queue(Cookie::make('id_user', auth()->user()->id, 10080));
+                    }
+        
+                    return $this->sendLoginResponse($request);
+                }
+
+                //return redirect()->route('publicIndex');
             }else{
                 $create = User::Create([
                     'email'             => $user_google->getEmail(),
-                    'name'              => $user_google->getName(),
+                    'nama'              => $user_google->getName(),
                     'password'          => 0,
                     'email_verified_at' => now()
                 ]);
-        
                 
                 \auth()->login($create, true);
-                return redirect()->route('home');
+
+                if ($this->attemptLogin($request)) {
+                    if ($request->hasSession()) {
+                        $request->session()->put('auth.password_confirmed_at', time());
+                        $request->session()->put('auth.id_user', auth()->user()->id);
+                        $user = User::find(auth()->user()->id);
+                        $user->last_login = now();
+                        $user->save();
+                    }
+        
+                    if($request->filled('remember')){
+                        Cookie::queue(Cookie::make('id_user', auth()->user()->id, 10080));
+                    }
+        
+                    return $this->sendLoginResponse($request);
+                }
+
+                //return redirect()->route('publicIndex');
             }
 
         } catch (\Exception $e) {
@@ -121,4 +157,34 @@ class LoginOAuthController extends Controller{
 
 
     }
+
+    protected function attemptLogin(Request $request)
+    {
+        return $this->guard()->attempt(
+            $this->credentials($request), 
+            $request->filled('remember')
+        );
+    }
+
+
+    protected function guard()
+    {
+        return Auth::guard();
+    }
+
+    protected function sendLoginResponse(Request $request)
+    {
+        $request->session()->regenerate();
+
+        $this->clearLoginAttempts($request);
+
+        if ($response = $this->authenticated($request, $this->guard()->user())) {
+            return $response;
+        }
+
+        return $request->wantsJson()
+                    ? new JsonResponse([], 204)
+                    : redirect()->intended($this->redirectPath());
+    }
+
 }
