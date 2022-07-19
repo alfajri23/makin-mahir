@@ -54,12 +54,12 @@
 
             <div class="card d-block border-0 rounded-lg overflow-hidden p-4 shadow-xss mt-4">
                 <h2 class="fw-700 font-sm mb-3 mt-1 pl-1 mb-3">Pemateri</h2>
-                <div class="font-xs fw-500 lh-28 text-grey-600 mb-0 pl-2">{!!$data->pemateri!!}</div>
+                <div class="font-xsss fw-500 lh-28 text-grey-600 mb-0 pl-2">{!!$data->pemateri!!}</div>
             </div>
 
             <div class="card d-block border-0 rounded-lg overflow-hidden p-4 shadow-xss mt-4">
                 <h2 class="fw-700 font-sm mb-3 mt-1 pl-1 mb-3">Deskripsi</h2>
-                <div class="font-xs fw-500 lh-28 text-grey-600 mb-0 pl-2">{!!$data->deskripsi!!}</div>
+                <div class="font-xsss fw-500 lh-28 text-grey-600 mb-0 pl-2">{!!$data->deskripsi!!}</div>
             </div>
 
         </div>

@@ -95,19 +95,18 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script type="text/javascript">
 
 	$(document).ready(function() {
-		 tinymce.init({
-                menubar: 'insert',
-	            selector: "textarea.isi",
+		tinymce.init({
+	            selector: "textarea",
 	            branding: false,
 	            width: "100%",
-	            height: "1000",
+	            height: "400",
 	            plugins: [
 	                "advlist autolink lists charmap print preview anchor",
 	                "searchreplace visualblocks code fullscreen",
-	                "paste wordcount",
+	                "paste wordcount link","directionality",
                     "media image code"
 	            ],
-	            toolbar: "undo redo | bold italic | bullist numlist outdent indent | media image",
+	            toolbar: "link | undo redo | bold italic | bullist numlist outdent indent | ltr rtl | media image",
                 image_title: true,
                 /* enable automatic uploads of images represented by blob or data URIs*/
                 automatic_uploads: true,

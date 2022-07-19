@@ -23,7 +23,7 @@
               <div class="form-group">
                   <label for="exampleFormControlSelect1">Tipe</label>
                   <select name="tipe" class="form-select" id="exampleFormControlSelect1">
-                    <option value="3" selected>Pilih tipe</option>
+                    <option value="{{$produk->id_kategori}}" selected>Pilih tipe</option>
                     @forelse ($tipes as $tp)
                     <option value="{{$tp->id}}">{{$tp->nama}}</option>
                     @empty   
