@@ -24,7 +24,7 @@ class TransaksiController extends Controller
 
     public function cekForm(Request $request){
         $data = Produk::find($request->id);
-        $ceks = FormSetting::where('id_produk_kategori',$data->id_kategori)->first(); //Cek apakah ada pertanyaan
+        $ceks = FormSetting::where('id_produk_kategori',$data->id_kategori)->first(); //! Cek apakah ada pertanyaan
         
         if($ceks != null){
             $pertanyaans = explode(",",$ceks->pertanyaan);
@@ -130,7 +130,7 @@ class TransaksiController extends Controller
             $datas['file_tambahan'] = $file_name;
         }
 
-        if($request->id_kategori == 2 || $request->id_kategori == 3 || $request->id_kategori == 8){
+        if($request->id_kategori == 2){
             $produk = ProdukEvent::find($request->id_produk);
             $produk = $produk->grup_wa;
             $sukses = null;

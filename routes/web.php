@@ -186,9 +186,9 @@ Route::middleware(['auth'])->group(function () {
         Route::post('answer', [Controllers\Member\UjianController::class,'answer'])->name('answerTest');
     });
 
-    //* Pembayaran
-    Route::post('invoice', [Controllers\PembayaranController::class,'index'])->name('invoiceIndex');
-    Route::get('pembayaran', [Controllers\PembayaranController::class,'transaksiTolak'])->name('pembayaranIndex');
+    //* Pembayaran lama
+    // Route::post('invoice', [Controllers\PembayaranController::class,'index'])->name('invoiceIndex');
+    // Route::get('pembayaran', [Controllers\PembayaranController::class,'transaksiTolak'])->name('pembayaranIndex');
 
     Route::get('invoice/detail', [Controllers\PembayaranController::class,'pay_bukti_invoice'])->name('payInvoiceDetail');
     Route::post('invoice/pays-1', [Controllers\PembayaranController::class,'pay_midtrans'])->name('payInvoiceMidtrans');

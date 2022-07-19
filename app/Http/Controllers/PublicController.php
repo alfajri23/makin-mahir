@@ -24,9 +24,7 @@ class PublicController extends Controller
             'tipe'=>'beduk',
             'status'=> 1
         ])->first();
-        //dd($beduk);
-
-        //dd($event);
+      
 
         return view('pages.public.home',compact('kelas','blog','event','konsuls','beduk'));
     }

@@ -30,6 +30,7 @@ class CreateUsersTable extends Migration
             $table->string('linkedin')->nullable();
             $table->string('twitter')->nullable();
             $table->string('facebook')->nullable();
+            $table->timestamp('last_login')->nullable();
             $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();

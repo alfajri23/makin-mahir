@@ -16,7 +16,7 @@
     <div class="row px-2">
         @if (Session::get('grup') && Session::get('grup') != null)
         <div class="alert alert-success alert-dismissible fade show mx-auto" role="alert">
-            <strong>Selamat Kamu Sudah Jadi Peserta BEDUK !</strong><br>
+            <strong>Selamat Kamu Sudah Jadi Peserta !</strong><br>
             Gabung Grup WA untuk Informasi Acara dan Bonus <a href="{{Session::get('grup')}}">KLIK DISINI </a>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>

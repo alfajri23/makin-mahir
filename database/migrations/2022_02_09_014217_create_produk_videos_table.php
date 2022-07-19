@@ -13,18 +13,20 @@ class CreateProdukVideosTable extends Migration
      */
     public function up()
     {
-        Schema::create('produk_videos', function (Blueprint $table) {
+        Schema::create('produk_kelas', function (Blueprint $table) {
             $table->id();
             $table->string('judul');
-            $table->string('subjudul')->nullable();
-            $table->string('deskripsi')->nullable();
-            $table->string('pemateri')->nullable();
-            $table->integer('id_pemateri')->nullable();
-            $table->string('harga');
-            $table->string('harga_promo')->nullable();
+            $table->integer('id_status')->nullable();
+            $table->integer('id_kategori')->nullable();
+            $table->string('bahasa')->nullable();
+            $table->string('lama_kelas')->nullable();
+            $table->string('tentang')->nullable();
+            $table->text('desc')->nullable();
+            $table->text('point_produk')->nullable();   //point" yang akan dipelajari
             $table->string('poster');
-            $table->string('link')->nullable();
-            $table->integer('status');
+            $table->string('harga');
+            $table->string('harga_bias')->nullable();
+            $table->integer('status')->default(1);
             $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();
