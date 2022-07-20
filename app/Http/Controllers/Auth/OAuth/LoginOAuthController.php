@@ -28,24 +28,19 @@ class LoginOAuthController extends Controller{
 
             if($user != null){
                 \auth()->login($user, true);
-
-                if ($this->attemptLogin($request)) {
-                    if ($request->hasSession()) {
-                        $request->session()->put('auth.password_confirmed_at', time());
-                        $request->session()->put('auth.id_user', auth()->user()->id);
-                        $user = User::find(auth()->user()->id);
-                        $user->last_login = now();
-                        $user->save();
-                    }
-        
-                    if($request->filled('remember')){
-                        Cookie::queue(Cookie::make('id_user', auth()->user()->id, 10080));
-                    }
-        
-                    return $this->sendLoginResponse($request);
+                
+                if ($request->hasSession()) {
+                    $request->session()->put('auth.password_confirmed_at', time());
+                    $request->session()->put('auth.id_user', auth()->user()->id);
+                    $user = User::find(auth()->user()->id);
+                    $user->last_login = now();
+                    $user->save();
                 }
+                
+                return $request->wantsJson()
+                    ? new JsonResponse([], 204)
+                    : redirect()->intended($this->redirectPath());
 
-                //return redirect()->route('publicIndex');
             }else{
                 $create = User::Create([
                     'email'             => $user_google->getEmail(),
@@ -56,23 +51,18 @@ class LoginOAuthController extends Controller{
                 
                 \auth()->login($create, true);
 
-                if ($this->attemptLogin($request)) {
-                    if ($request->hasSession()) {
-                        $request->session()->put('auth.password_confirmed_at', time());
-                        $request->session()->put('auth.id_user', auth()->user()->id);
-                        $user = User::find(auth()->user()->id);
-                        $user->last_login = now();
-                        $user->save();
-                    }
-        
-                    if($request->filled('remember')){
-                        Cookie::queue(Cookie::make('id_user', auth()->user()->id, 10080));
-                    }
-        
-                    return $this->sendLoginResponse($request);
+                if ($request->hasSession()) {
+                    $request->session()->put('auth.password_confirmed_at', time());
+                    $request->session()->put('auth.id_user', auth()->user()->id);
+                    $user = User::find(auth()->user()->id);
+                    $user->last_login = now();
+                    $user->save();
                 }
 
-                //return redirect()->route('publicIndex');
+                return $request->wantsJson()
+                    ? new JsonResponse([], 204)
+                    : redirect()->intended($this->redirectPath());
+
             }
 
         } catch (\Exception $e) {
@@ -166,25 +156,14 @@ class LoginOAuthController extends Controller{
         );
     }
 
-
-    protected function guard()
+    public function redirectPath()
     {
-        return Auth::guard();
-    }
-
-    protected function sendLoginResponse(Request $request)
-    {
-        $request->session()->regenerate();
-
-        $this->clearLoginAttempts($request);
-
-        if ($response = $this->authenticated($request, $this->guard()->user())) {
-            return $response;
+        if (method_exists($this, 'redirectTo')) {
+            return $this->redirectTo();
         }
 
-        return $request->wantsJson()
-                    ? new JsonResponse([], 204)
-                    : redirect()->intended($this->redirectPath());
+        return property_exists($this, 'redirectTo') ? $this->redirectTo : '/home';
     }
+
 
 }

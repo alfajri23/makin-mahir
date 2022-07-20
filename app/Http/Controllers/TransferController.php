@@ -247,14 +247,14 @@ class TransferController extends Controller
 
     function transaksi_delete(Request $request){
         $data = Transaksi::find($request->id);
-        File::delete($data->bukti);
+        File::delete(public_path($data->bukti));
 
         $fileLain = $data->file_tambahan;
         if(!empty($fileLain)){
             $fileLain = explode(",",$fileLain);
 
             foreach($fileLain as $lain){
-                File::delete($lain);
+                File::delete(public_path($lain));
             }
         }
 

@@ -42,7 +42,7 @@
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Kategori</label>
                     <select name="id_kategori" class="form-control" id="exampleFormControlSelect1">
-                        <option value="">Kosong</option>
+                        <option value="{{$data->id_kategori}}">Pilih kategori</option>
                         @forelse ( $kat as $dt)
                             <option value="{{$dt->id}}">{{$dt->nama}}</option>
                         @empty

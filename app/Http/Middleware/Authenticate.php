@@ -29,7 +29,7 @@ class Authenticate extends Middleware
     {
         //dd($request);
         if (! $request->expectsJson() || ! Auth::guard('admin')->user()) {
-            return route('login');
+            return route('register');
         }
     }
 }
