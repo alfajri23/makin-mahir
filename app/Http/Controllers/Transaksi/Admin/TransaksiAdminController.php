@@ -1,46 +1,26 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Transaksi\Admin;
 
-use App\Helper\Telepon;
-use App\Models\CVCheckerEnroll;
-use App\Models\EbookEnroll;
-use Illuminate\Http\Request;
-use App\Models\User;
-use App\Models\Transaksi;
-use App\Models\PendaftaranKonsultasi;
-use App\Models\PendaftaranVideo;
-use App\Models\PendaftaranWebinar;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Http;
-use Carbon\Carbon;
+use Illuminate\Support\Facades\File;
+use Illuminate\Http\Request;
+use App\Helper\Telepon;
 
 use App\Models\EventEnroll;
 use App\Models\KelasEnroll;
 use App\Models\KonsultasiEnroll;
 use App\Models\TemplateEnroll;
+use App\Models\CVCheckerEnroll;
+use App\Models\EbookEnroll;
+use App\Models\Transaksi;
+use App\Models\PendaftaranKonsultasi;
+use App\Models\PendaftaranVideo;
+use App\Models\PendaftaranWebinar;
 
-use Illuminate\Support\Facades\File;
-
-class TransferController extends Controller
+class TransaksiAdminController extends Controller
 {
-
-    public function __construct()
-    {
-        $this->middleware('admin')->except('index','detail');
-    }
-
-    public function index(){
-        $data = Transaksi::where('id_user',auth()->user()->id)->latest()->get();
-
-        return view('pages.member.transfer.transfer',compact('data'));
-    }
-
-    public function detail($id){
-        $data = Transaksi::find($id);
-
-        return view('pages.member.transfer.transfer_detail',compact('data'));
-    }
-
     public function transaksi(Request $request){
         
         $data = Transaksi::latest()->get();
@@ -309,9 +289,4 @@ class TransferController extends Controller
 
         ]);
     }
-
-    
-
-    
-
 }

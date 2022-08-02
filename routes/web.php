@@ -53,18 +53,18 @@ Route::get('template', [Controllers\PublicController::class,'produk_list_templat
 
 
 
-//blog
-Route::get('blog', [Controllers\BlogController::class,'index'])->name('blog');
-Route::get('blog/page/{$no}', [Controllers\BlogController::class,'pagination'])->name('blogPagination');
-Route::get('blog/{slug}/{slug_1?}', [Controllers\BlogController::class,'cek_url'])->name('blogCek');
-Route::get('blog-kategori', [Controllers\BlogController::class,'by_categori'])->name('blogKategori');
-Route::post('blog/create/new', [Controllers\BlogController::class,'create'])->name('blogCreate');
-Route::get('blog/detail/{id}/{link?}', [Controllers\BlogController::class,'detail'])->name('blogDetail');
+//Blog
+Route::get('blog', [Controllers\Blog\User\BlogUserController::class,'index'])->name('blog');
+Route::get('blog/page/{$no}', [Controllers\Blog\User\BlogUserController::class,'pagination'])->name('blogPagination');
+Route::get('blog/{slug}/{slug_1?}', [Controllers\Blog\User\BlogUserController::class,'cek_url'])->name('blogCek');
+Route::get('blog-kategori', [Controllers\Blog\User\BlogUserController::class,'by_categori'])->name('blogKategori');
+Route::post('blog/create/new', [Controllers\Blog\User\BlogUserController::class,'create'])->name('blogCreate');
+Route::get('blog/detail/{id}/{link?}', [Controllers\Blog\User\BlogUserController::class,'detail'])->name('blogDetail');
 
 //ebook
-Route::get('ebook', [Controllers\EbookController::class,'index'])->name('ebook');
-Route::get('ebook-detail', [Controllers\EbookController::class,'detail'])->name('ebookDetail');
-Route::get('ebook-download', [Controllers\EbookController::class,'download_auth'])->name('ebookDownload');
+Route::get('ebook', [Controllers\Ebook\User\EbookUserController::class,'index'])->name('ebook');
+Route::get('ebook-detail', [Controllers\Ebook\User\EbookUserController::class,'detail'])->name('ebookDetail');
+Route::get('ebook-download', [Controllers\Ebook\User\EbookUserController::class,'download_auth'])->name('ebookDownload');
 
 Route::get('faq', [Controllers\PublicController::class,'faq'])->name('faq');
 Route::get('profile', [Controllers\PublicController::class,'profile'])->name('profile');
@@ -77,15 +77,15 @@ Route::get('privacy-policy', [Controllers\PublicController::class,'privacy'])->n
 //End goes to
 
 //*FORUM
-    Route::get('forum', [Controllers\Forum\ForumController::class,'index'])->name('forumIndex');
-    Route::get('forum-show', [Controllers\Forum\ForumController::class,'show'])->name('forumDetailAjax');
-    Route::get('forum/{id}', [Controllers\Forum\ForumController::class,'detail'])->name('forumDetail');
-    Route::post('forum/delete', [Controllers\Forum\ForumController::class,'delete'])->name('forumDelete');
-    Route::post('forum/add', [Controllers\Forum\ForumController::class,'create'])->name('forumStore');
-    Route::post('forum/jawaban', [Controllers\Forum\ForumController::class,'komentar'])->name('forumStoreKomentar');
-    Route::get('jawaban/delete', [Controllers\Forum\ForumController::class,'deleteKomentar'])->name('forumDeleteKomentar');
+    Route::get('forum', [Controllers\Forum\User\ForumUserController::class,'index'])->name('forumIndex');
+    Route::get('forum-show', [Controllers\Forum\User\ForumUserController::class,'show'])->name('forumDetailAjax');
+    Route::get('forum/{id}', [Controllers\Forum\User\ForumUserController::class,'detail'])->name('forumDetail');
+    Route::post('forum/delete', [Controllers\Forum\User\ForumUserController::class,'delete'])->name('forumDelete');
+    Route::post('forum/add', [Controllers\Forum\User\ForumUserController::class,'create'])->name('forumStore');
+    Route::post('forum/jawaban', [Controllers\Forum\User\ForumUserController::class,'komentar'])->name('forumStoreKomentar');
+    Route::get('jawaban/delete', [Controllers\Forum\User\ForumUserController::class,'deleteKomentar'])->name('forumDeleteKomentar');
 
-    Route::post('forum/add-kategori', [Controllers\Forum\ForumController::class,'createKategori'])->name('forumStoreKategori');
+    Route::post('forum/add-kategori', [Controllers\Forum\User\ForumUserController::class,'createKategori'])->name('forumStoreKategori');
 //End forum
 
 //*Assessment
@@ -112,44 +112,44 @@ Route::get('privacy-policy', [Controllers\PublicController::class,'privacy'])->n
 //end 
 
 //*CV
-    Route::get('cv',[Controllers\CVController::class,'index'])->name('cvIndex');
-    Route::get('cv-print',[Controllers\CVController::class,'print'])->name('cvPrint');
-    Route::get('cv-prints',[Controllers\CVController::class,'printPublicCV'])->name('printPublicCV');
+    Route::get('cv',[Controllers\CVMaker\CVMakerController::class,'index'])->name('cvIndex');
+    Route::get('cv-print',[Controllers\CVMaker\CVMakerController::class,'print'])->name('cvPrint');
+    Route::get('cv-prints',[Controllers\CVMaker\CVMakerController::class,'printPublicCV'])->name('printPublicCV');
 
     //Set Session
-    Route::get('cv-session',[Controllers\CVController::class,'setCV'])->name('cvSet');
+    Route::get('cv-session',[Controllers\CVMaker\CVMakerController::class,'setCV'])->name('cvSet');
 
     //bio
-    Route::get('bio-get',[Controllers\CVController::class,'getBio'])->name('getBio');
+    Route::get('bio-get',[Controllers\CVMaker\CVMakerController::class,'getBio'])->name('getBio');
 
     //work
-    Route::get('work-get',[Controllers\CVController::class,'getWork'])->name('getWork');
-    Route::post('work-update',[Controllers\CVController::class,'editWork'])->name('editWork');
+    Route::get('work-get',[Controllers\CVMaker\CVMakerController::class,'getWork'])->name('getWork');
+    Route::post('work-update',[Controllers\CVMaker\CVMakerController::class,'editWork'])->name('editWork');
 
     //edu
-    Route::get('edu-get',[Controllers\CVController::class,'getEdu'])->name('getEdu');
-    Route::post('edu-update',[Controllers\CVController::class,'editEdu'])->name('editEdu');
+    Route::get('edu-get',[Controllers\CVMaker\CVMakerController::class,'getEdu'])->name('getEdu');
+    Route::post('edu-update',[Controllers\CVMaker\CVMakerController::class,'editEdu'])->name('editEdu');
 
     //train
-    Route::get('train-get',[Controllers\CVController::class,'getTrain'])->name('getTrain');
-    Route::post('train-update',[Controllers\CVController::class,'editTrain'])->name('editTrain');
+    Route::get('train-get',[Controllers\CVMaker\CVMakerController::class,'getTrain'])->name('getTrain');
+    Route::post('train-update',[Controllers\CVMaker\CVMakerController::class,'editTrain'])->name('editTrain');
 
     //skil
-    Route::post('skil-update',[Controllers\CVController::class,'editSkil'])->name('editSkil');
+    Route::post('skil-update',[Controllers\CVMaker\CVMakerController::class,'editSkil'])->name('editSkil');
 
     //Prestasi
-    Route::get('acv-get',[Controllers\CVController::class,'getAcv'])->name('getAcv');
-    Route::post('acv-update',[Controllers\CVController::class,'editAcv'])->name('editAcv');
+    Route::get('acv-get',[Controllers\CVMaker\CVMakerController::class,'getAcv'])->name('getAcv');
+    Route::post('acv-update',[Controllers\CVMaker\CVMakerController::class,'editAcv'])->name('editAcv');
 
     //Organisasi
-    Route::get('org-get',[Controllers\CVController::class,'getOrg'])->name('getOrg');
-    Route::post('org-update',[Controllers\CVController::class,'editOrg'])->name('editOrg');
+    Route::get('org-get',[Controllers\CVMaker\CVMakerController::class,'getOrg'])->name('getOrg');
+    Route::post('org-update',[Controllers\CVMaker\CVMakerController::class,'editOrg'])->name('editOrg');
 
     //Kontak
-    Route::post('kontak-update',[Controllers\CVController::class,'editKontak'])->name('editKontak');
+    Route::post('kontak-update',[Controllers\CVMaker\CVMakerController::class,'editKontak'])->name('editKontak');
 
-    Route::post('bio-update',[Controllers\CVController::class,'editBio'])->name('editBio');
-    //Route::get('cv', [Controllers\CVControllers::class,'index'])->name('memberIndex');
+    Route::post('bio-update',[Controllers\CVMaker\CVMakerController::class,'editBio'])->name('editBio');
+    //Route::get('cv', [Controllers\CVMaker\CVMakerControllers::class,'index'])->name('memberIndex');
 
 //end cv
 
@@ -164,7 +164,6 @@ Route::middleware(['auth'])->group(function () {
     Route::post('daftar/webinar', [Controllers\DaftarController::class,'pendaftaran_webinar'])->name('daftarWebinar');
     Route::post('daftar/konsultasi', [Controllers\DaftarController::class,'pendaftaran_konsultasi'])->name('daftarKonsultasi');
     Route::post('daftar/video', [Controllers\DaftarController::class,'pendaftaran_video'])->name('daftarVideo');
-
 
     //*Profile dan sudah enrool
     Route::prefix('my')->group(function(){
@@ -200,16 +199,19 @@ Route::middleware(['auth'])->group(function () {
     // Route::post('invoice', [Controllers\PembayaranController::class,'index'])->name('invoiceIndex');
     // Route::get('pembayaran', [Controllers\PembayaranController::class,'transaksiTolak'])->name('pembayaranIndex');
 
-    Route::get('invoice/detail', [Controllers\PembayaranController::class,'pay_bukti_invoice'])->name('payInvoiceDetail');
-    Route::post('invoice/pays-1', [Controllers\PembayaranController::class,'pay_midtrans'])->name('payInvoiceMidtrans');
-    Route::post('invoice/pays-2', [Controllers\PembayaranController::class,'pay_bukti'])->name('payInvoiceBukti');
-    Route::post('cancel-payment', [Controllers\PembayaranController::class,'delete_transaksi'])->name('deleteTransaksi');
+    
+    //*Transaksi
+    Route::post('cancel-payment', [Controllers\Transaksi\User\TransaksiUserController::class,'delete_transaksi'])->name('deleteTransaksi');
+    Route::get('pembayaran/{id}', [Controllers\Transaksi\User\TransaksiUserController::class,'cekForm'])->name('pembayaranCek');
+    Route::post('pembayaran', [Controllers\Transaksi\User\TransaksiUserController::class,'create'])->name('pembayaranCreate');
+    Route::post('pembayaran/cv-checker', [Controllers\Transaksi\User\TransaksiUserController::class,'pembayaranCvChecker'])->name('pembayaranCvChecker');
+    Route::post('pendaftaran/beduk', [Controllers\Transaksi\User\TransaksiUserController::class,'pembayaranBeduk'])->name('pembayaranBeduk');
 
     //*Transfer
-    Route::get('riwayat-pembayaran', [Controllers\TransferController::class,'index'])->name('transferIndex');
-    Route::get('riwayat-pembayaran/detail/{id}', [Controllers\TransferController::class,'detail'])->name('transferDetail');
+    Route::get('riwayat-pembayaran', [Controllers\Transaksi\User\TransaksiUserController::class,'index'])->name('transferIndex');
+    Route::get('riwayat-pembayaran/detail/{id}', [Controllers\Transaksi\User\TransaksiUserController::class,'detail'])->name('transferDetail');
 
-    //notification
+    //*Notification
     Route::prefix('notifications')->group(function(){
         Route::get('/',[Notifications::class,'index'])->name('notifications');
         Route::get('{id}',[Notifications::class,'show'])->name('detail-notifications');
@@ -234,8 +236,8 @@ Route::middleware(['auth'])->group(function () {
         //end konsultasi
 
         //Ebook
-            Route::post('create', [Controllers\EbookController::class,'ebookCreate'])->name('ebookCreate');
-            Route::get('detail', [Controllers\EbookController::class,'adminDetail'])->name('ebookDetailAdmin');
+            Route::post('create', [Controllers\Ebook\Admin\EbookAdminController::class,'ebookCreate'])->name('ebookCreate');
+            Route::get('detail', [Controllers\Ebook\Admin\EbookAdminController::class,'adminDetail'])->name('ebookDetailAdmin');
         //end book
 
 //*End produk
@@ -332,19 +334,19 @@ Route::middleware(['admin'])->prefix('adm')->group(function () {
 
     //*Forum
         Route::prefix('forums')->group(function(){
-            Route::get('/', [Controllers\Admin\ForumController::class,'index'])->name('forumAdmin');
-            Route::post('/jawab', [Controllers\Admin\ForumController::class,'jawab'])->name('forumAdminJawab');
+            Route::get('/', [Controllers\Forum\Admin\ForumAdminController::class,'index'])->name('forumAdmin');
+            Route::post('/jawab', [Controllers\Forum\Admin\ForumAdminController::class,'jawab'])->name('forumAdminJawab');
         });
     //End forum
 
     //*Transaksi
-        Route::get('transaksi', [Controllers\TransferController::class,'transaksi'])->name('transaksiIndex');
-        Route::get('transaksi-detail', [Controllers\TransferController::class,'transaksi_detail'])->name('transaksiDetail');
-        Route::get('transaksi-delete', [Controllers\TransferController::class,'transaksi_delete'])->name('transaksiDelete');
-        Route::get('transaksi-delete-multi', [Controllers\TransferController::class,'transaksi_delete_multi'])->name('transaksiDeleteMulti');
-        Route::get('transaksi-konfirm-bank', [Controllers\TransferController::class,'transaksi_konfirmasi_bank'])->name('transaksiBankKonfirmasi');
-        Route::get('transaksi-tolak-bank', [Controllers\TransferController::class,'transaksi_tolak'])->name('transaksiTolak');
-        Route::get('transaksi-konfirm-mid', [Controllers\TransferController::class,'transaksi_konfirmasi_mid'])->name('transaksiMidKonfirmasi');
+        Route::get('transaksi', [Controllers\Transaksi\Admin\TransaksiAdminController::class,'transaksi'])->name('transaksiIndex');
+        Route::get('transaksi-detail', [Controllers\Transaksi\Admin\TransaksiAdminController::class,'transaksi_detail'])->name('transaksiDetail');
+        Route::get('transaksi-delete', [Controllers\Transaksi\Admin\TransaksiAdminController::class,'transaksi_delete'])->name('transaksiDelete');
+        Route::get('transaksi-delete-multi', [Controllers\Transaksi\Admin\TransaksiAdminController::class,'transaksi_delete_multi'])->name('transaksiDeleteMulti');
+        Route::get('transaksi-konfirm-bank', [Controllers\Transaksi\Admin\TransaksiAdminController::class,'transaksi_konfirmasi_bank'])->name('transaksiBankKonfirmasi');
+        Route::get('transaksi-tolak-bank', [Controllers\Transaksi\Admin\TransaksiAdminController::class,'transaksi_tolak'])->name('transaksiTolak');
+        Route::get('transaksi-konfirm-mid', [Controllers\Transaksi\Admin\TransaksiAdminController::class,'transaksi_konfirmasi_mid'])->name('transaksiMidKonfirmasi');
     //end 
 
     //*Pendaftaran
@@ -379,48 +381,36 @@ Route::middleware(['admin'])->prefix('adm')->group(function () {
                 Route::post('/', [Controllers\Admin\SettingFormController::class,'store'])->name('formSettingStore');
                 Route::get('/add', [Controllers\Admin\SettingFormController::class,'init'])->name('formSettingAdd');
                 Route::get('/delete', [Controllers\Admin\SettingFormController::class,'delete'])->name('formSettingDelete');
-
-                Route::get('beduk', [Controllers\Admin\SettingFormController::class,'beduk'])->name('formBeduk');
-                Route::get('beduk-detail', [Controllers\Admin\SettingFormController::class,'detail_beduk'])->name('detailBeduk');
-                Route::post('beduk-save', [Controllers\Admin\SettingFormController::class,'edit_beduk'])->name('saveBeduk');
-                Route::post('beduk-create', [Controllers\Admin\SettingFormController::class,'save_beduk'])->name('createBeduk');
-                Route::get('switch-form-beduk', [Controllers\Admin\SettingFormController::class,'switch_setting_beduk'])->name('formBedukSwitch');
-
-                Route::get('webinar', [Controllers\Admin\SettingFormController::class,'webinar'])->name('formWebinar');
-                Route::get('webinar-detail', [Controllers\Admin\SettingFormController::class,'detail_webinar'])->name('detailWebinar');
-                Route::post('webinar-save', [Controllers\Admin\SettingFormController::class,'edit_webinar'])->name('saveWebinar');
-                Route::post('webinar-create', [Controllers\Admin\SettingFormController::class,'save_webinar'])->name('createWebinar');
-                Route::get('switch-form-webinar', [Controllers\Admin\SettingFormController::class,'switch_setting_webinar'])->name('formWebinarSwitch');
             });
         });
     //end settting pendaftaran
 
     //*BLOG
-        Route::get('blog', [Controllers\BlogController::class,'admin'])->name('blogAdmin');
-        Route::get('blog/unpublish', [Controllers\BlogController::class,'admin_unpublish'])->name('blogAdminUnpublish');
-        Route::get('blog-add', [Controllers\BlogController::class,'pageAdd'])->name('blogAdd');
-        Route::get('blog-edit', [Controllers\BlogController::class,'editBlog'])->name('blogEdit');
-        Route::post('blog-save', [Controllers\BlogController::class,'createBlog'])->name('blogStore');
+        Route::get('blog', [Controllers\Blog\Admin\BlogAdminController::class,'admin'])->name('blogAdmin');
+        Route::get('blog/unpublish', [Controllers\Blog\Admin\BlogAdminController::class,'admin_unpublish'])->name('blogAdminUnpublish');
+        Route::get('blog-add', [Controllers\Blog\Admin\BlogAdminController::class,'pageAdd'])->name('blogAdd');
+        Route::get('blog-edit', [Controllers\Blog\Admin\BlogAdminController::class,'editBlog'])->name('blogEdit');
+        Route::post('blog-save', [Controllers\Blog\Admin\BlogAdminController::class,'createBlog'])->name('blogStore');
 
         //action
-        Route::get('blog-unpublish', [Controllers\BlogController::class,'unpublish'])->name('blogUnpublish');
-        Route::get('blog-publish', [Controllers\BlogController::class,'publish'])->name('blogPublish');
-        Route::get('blog-delete', [Controllers\BlogController::class,'delete'])->name('blogDelete');
+        Route::get('blog-unpublish', [Controllers\Blog\Admin\BlogAdminController::class,'unpublish'])->name('blogUnpublish');
+        Route::get('blog-publish', [Controllers\Blog\Admin\BlogAdminController::class,'publish'])->name('blogPublish');
+        Route::get('blog-delete', [Controllers\Blog\Admin\BlogAdminController::class,'delete'])->name('blogDelete');
     
         //setting
-        Route::get('blog/kategori', [Controllers\BlogController::class,'setting_kat'])->name('blogKategori');
-        Route::post('blog/kategori-add', [Controllers\BlogController::class,'saveKat'])->name('blogKategoriSave');
-        Route::get('blog/kategori-delete/{id}', [Controllers\BlogController::class,'delKat'])->name('blogKategoriDel');
+        Route::get('blog/kategori', [Controllers\Blog\Admin\BlogAdminController::class,'setting_kat'])->name('blogKategori');
+        Route::post('blog/kategori-add', [Controllers\Blog\Admin\BlogAdminController::class,'saveKat'])->name('blogKategoriSave');
+        Route::get('blog/kategori-delete/{id}', [Controllers\Blog\Admin\BlogAdminController::class,'delKat'])->name('blogKategoriDel');
 
     //End blog
 
     //*EBOOK
         Route::prefix('ebook')->group(function(){
-            Route::get('/', [Controllers\EbookController::class,'admin'])->name('ebookAdmin');
-            Route::get('delete/{id}', [Controllers\EbookController::class,'ebookDelete'])->name('ebookDelete');
+            Route::get('/', [Controllers\Ebook\Admin\EbookAdminController::class,'admin'])->name('ebookAdmin');
+            Route::get('delete/{id}', [Controllers\Ebook\Admin\EbookAdminController::class,'ebookDelete'])->name('ebookDelete');
             //! Add event dipindah diatas ke group
-            Route::get('add', [Controllers\EbookController::class,'pageAdd'])->name('ebookAdd');
-            Route::get('edit', [Controllers\EbookController::class,'pageEdit'])->name('ebookEdit');
+            Route::get('add', [Controllers\Ebook\Admin\EbookAdminController::class,'pageAdd'])->name('ebookAdd');
+            Route::get('edit', [Controllers\Ebook\Admin\EbookAdminController::class,'pageEdit'])->name('ebookEdit');
         });
     //End book
 
@@ -446,9 +436,6 @@ Route::middleware(['admin'])->prefix('adm')->group(function () {
         Route::get('reset-pass', [Controllers\Admin\ExpertController::class,'resetPass'])->name('expertAdminReset');
     });
 });
-
-
-
 
 //*Expert
 Route::get('exp/login', [Controllers\Auth\LoginExpertController::class,'index'])->name('logExpert');
@@ -483,16 +470,12 @@ Route::middleware(['expert'])->prefix('exp')->group(function () {
     });
 
     Route::get('pendaftaran', [Controllers\Expert\PendaftaranController::class,'index'])->name('pendaftaranExpert');
-
 });
 
 
 
 Route::get('formulir', [Controllers\FormulirController::class,'index'])->name('formIndex');
-Route::get('pembayaran/{id}', [Controllers\TransaksiController::class,'cekForm'])->name('pembayaranCek');
-Route::post('pembayaran', [Controllers\TransaksiController::class,'create'])->name('pembayaranCreate');
-Route::post('pembayaran/cv-checker', [Controllers\TransaksiController::class,'pembayaranCvChecker'])->name('pembayaranCvChecker');
-Route::post('pendaftaran/beduk', [Controllers\TransaksiController::class,'pembayaranBeduk'])->name('pembayaranBeduk');
+
 
 
 

@@ -1,25 +1,31 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Transaksi\User;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Transaksi;
 use App\Models\Produk;
 use App\Models\FormSetting;
-use App\Models\Transaksi;
 use App\Helper\UploadFile;
 use App\Models\CVCheckerEnroll;
 use App\Models\EbookEnroll;
-use App\Models\EventEnroll;
-use App\Models\KelasEnroll;
-use App\Models\KonsultasiEnroll;
 use App\Models\ProdukEvent;
 use App\Models\TemplateEnroll;
 use Illuminate\Support\Facades\Validator;
 
-class TransaksiController extends Controller
+class TransaksiUserController extends Controller
 {
-    public function __construct(){
-        $this->middleware('auth');
+    public function index(){
+        $data = Transaksi::where('id_user',auth()->user()->id)->latest()->get();
+
+        return view('pages.member.transfer.transfer',compact('data'));
+    }
+
+    public function detail($id){
+        $data = Transaksi::find($id);
+
+        return view('pages.member.transfer.transfer_detail',compact('data'));
     }
 
     public function cekForm(Request $request){
@@ -108,7 +114,7 @@ class TransaksiController extends Controller
 
         if(!empty($request->bukti)){    
             foreach($request->bukti as $key => $file){
-                if ($key == array_key_first($request->bukti)) {
+                if ($key == array_key_last($request->bukti)) {
                     $nama_file = time()."_".$file->getClientOriginalName();
                     $tujuan_upload_server = public_path('storage/transaksi');
                     $tujuan_upload = 'storage/transaksi';
@@ -144,7 +150,6 @@ class TransaksiController extends Controller
         return redirect()->route('transferIndex')->with(['sukses' => $sukses,
                                                         'grup' => $produk]);
     }
-
 
     public function pembayaranCvChecker(Request $request){
         $validator = Validator::make($request->all(), [
@@ -253,4 +258,10 @@ class TransaksiController extends Controller
 
     }
 
+    public function delete_transaksi(Request $request){
+        $data = Transaksi::find($request->id);
+        $data->delete();
+        
+        return redirect()->back();
+    }
 }

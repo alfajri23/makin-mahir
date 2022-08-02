@@ -1,96 +1,24 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Ebook\Admin;
+
+use App\Http\Controllers\Controller;
 use App\Models\Ebook;
-use App\Models\EbookEnroll;
 use App\Models\Expert;
 use App\Models\Produk;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
-
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Validator;
 
-class EbookController extends Controller
+class EbookAdminController extends Controller
 {
+    //*Admin
+    
     public function __construct()
     {
-        $this->middleware('auth')->only(['download_auth']);
         $this->middleware('admin')->only(['admin']);
     }
-
-    public function index(Request $request){
-        if($request->search != null){
-            $data = Ebook::where('judul','like','%'.$request->search.'%')->get();
-           
-        }else{
-            $data = Ebook::where('status',1)
-            ->get();
-
-        }
-
-        $layout = '';
-
-        if (Auth::check()) {
-            $layout = 'layouts.member';
-            
-        }else{
-            $layout = 'layouts.public';
-        }
-
-        return view('pages.public.ebook.ebook',compact('data','layout'));
-
-    }
-
-    public function detail(Request $request){
-        $datas = Ebook::limit(6)->where('status',1)
-        ->get();
-
-        $data = Ebook::where([
-            'judul' => $request->judul,
-            'status' => 1
-        ])->first();
-        
-        if($data == null) {
-            dd("kososng");
-        }
-        
-        $layout = '';
-
-        if (Auth::check()) {
-            $layout = 'layouts.member';
-            
-        }else{
-            $layout = 'layouts.public';
-        }
-
-        return view('pages.public.ebook.ebook_detail',compact('data','layout','datas'));
-    }
-
-    public function download_auth(Request $request){
-        $cek = EbookEnroll::where([
-            'id_user' => auth()->user()->id,
-        ])->get();
-
-        if(count($cek) <= 0){
-            return redirect()->route('ebookDetail',['judul' => $request->judul ]);
-        }
-
-        $headers = [
-            'Content-Type' => 'application/pdf',
-        ];
-
-        $data = Ebook::where('judul',$request->judul)->first();
-
-        $file = explode("/", $data->link);
-        $file = end($file);
-
-        return response()->download(public_path().'/'.$data->link, $file, $headers);
-        
-    }
-
-    //*Admin
 
     public function admin(Request $request){
         if ($request->ajax()) {
@@ -165,7 +93,6 @@ class EbookController extends Controller
             $tujuan_upload = 'asset/img/ebook';                     
             $gambar = $tujuan_upload . '/'. $nama_file;
             $gambars->move($tujuan_upload_server,$nama_file);
-
         }
 
         //file
@@ -213,12 +140,10 @@ class EbookController extends Controller
 
     public function ebookDelete($id){
         $data = Ebook::find($id);
-        File::delete($data->gambar);
-        //File::delete(public_path($data->gambar));
+        File::delete(public_path($data->gambar));
         $data->delete();
         return redirect()->back();
     }
-
 
     public function adminDetail(Request $request){
         $data = Ebook::find($request->id);
@@ -227,8 +152,5 @@ class EbookController extends Controller
             'data' => $data
         ]);
     }
-
-    
-
 
 }

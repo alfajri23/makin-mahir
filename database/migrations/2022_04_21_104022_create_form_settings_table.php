@@ -17,6 +17,10 @@ class CreateFormSettingsTable extends Migration
             $table->id();
             $table->integer('id_produk_kategori')->nullable();
             $table->text('pertanyaan')->nullable();
+            $table->text('pilihan')->nullable();
+            $table->text('tipe')->nullable();
+            $table->text('required')->nullable();
+            $table->text('file')->nullable();
             $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();

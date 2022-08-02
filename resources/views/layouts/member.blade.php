@@ -104,12 +104,7 @@
                     </div>
                     <ul class="mb-3">
                         <li class="logo d-none d-xl-block d-lg-block"></li>
-                        <li>
-                            <a href="{{route('memberProfile')}}" class="nav-content-bttn open-font h-auto pt-2 pb-2">
-                                <i class="font-sm feather-user mr-3 text-grey-500"></i>
-                                <span>Profile</span>
-                            </a>
-                        </li>
+
                         <li>
                             <a class="nav-content-bttn open-font h-auto pt-2 pb-2" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
@@ -122,6 +117,13 @@
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
                         </form>
+
+                        <li>
+                            <a href="{{route('memberProfile')}}" class="nav-content-bttn open-font h-auto pt-2 pb-2">
+                                <i class="font-sm feather-user mr-3 text-grey-500"></i>
+                                <span>Profile</span>
+                            </a>
+                        </li>
 
                     </ul>
                 </div>

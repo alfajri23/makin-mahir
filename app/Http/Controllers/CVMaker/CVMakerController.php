@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\CVMaker;
+
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Models\CVSkil;
 use App\Models\CVKerja;
@@ -13,12 +15,10 @@ use App\Models\CVTema;
 use App\Models\CVUser;
 use App\Models\User;
 use PDF;
-
 use Illuminate\Http\Request;
 
-class CVController extends Controller
+class CVMakerController extends Controller
 {
-
     public function __construct(){
         $this->middleware('auth')->except(['index','print','printPublicCV']);
     }
@@ -81,7 +81,7 @@ class CVController extends Controller
             $cvs = CVTema::latest()->get();
             $cv_user = CVUser::find(auth()->user()->id);
             $cv_user = $cv_user != null ? $cv_user->id : null;
-
+            
             $request->session()->put('cv', 3);
 
         
@@ -317,8 +317,4 @@ class CVController extends Controller
 
          return redirect()->back(); 
     }
-
-
-
-
 }

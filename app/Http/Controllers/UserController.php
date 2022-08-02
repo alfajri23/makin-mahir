@@ -124,7 +124,6 @@ class UserController extends Controller
 
     public function detail(Request $request){
         $data = User::find($request->id);
-        //dd($data->daftar_beduk);
 
         return response()->json([
             'data' => $data,

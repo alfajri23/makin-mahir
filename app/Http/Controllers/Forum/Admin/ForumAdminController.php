@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Forum\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\ForumJawaban;
 use App\Models\ForumPertanyaaan;
 use Illuminate\Http\Request;
 
-class ForumController extends Controller
+class ForumAdminController extends Controller
 {
     public function index(Request $request){
         $data = ForumPertanyaaan::latest()->get();
@@ -40,7 +40,6 @@ class ForumController extends Controller
     }
 
     public function jawab(Request $request){
-        //dd($request->all());
         $data = ForumPertanyaaan::find($request->id);
         $data->is_answered = 1;
         $data->save();
@@ -52,9 +51,5 @@ class ForumController extends Controller
         ]);
 
         return redirect()->back();
-
-        // return response()->json([
-        //     'data' => 'sukses'
-        // ]);
     }
 }

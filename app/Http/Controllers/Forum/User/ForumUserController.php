@@ -1,20 +1,18 @@
 <?php
 
-namespace App\Http\Controllers\Forum;
+namespace App\Http\Controllers\Forum\User;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Helper\Layout;
+use App\Http\Controllers\Controller;
 use App\Models\ForumJawaban;
-use App\Models\ForumPertanyaaan;
 use App\Models\ForumKategori;
+use App\Models\ForumPertanyaaan;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
-class ForumController extends Controller
+class ForumUserController extends Controller
 {
-
-    public function __construct()
-    {
+    public function __construct(){
         $this->middleware('auth')->only(['create','komentar','deleteKomentar','createKategori']);
     }
 
@@ -69,7 +67,6 @@ class ForumController extends Controller
 
     public function delete(Request $request){
         $data = ForumPertanyaaan::find($request->id);
-        //File::delete($data->gambar);
         File::delete(public_path($data->gambar));
         $data->delete();
         return redirect()->back();
@@ -86,8 +83,7 @@ class ForumController extends Controller
         return view('pages.forum.detail_forum',compact('dt','layout','komentar','kategori'));
     }
 
-    public function komentar(Request $request){
-        
+    public function komentar(Request $request){  
         $data = ForumJawaban::updateOrCreate(['id'=>$request->id],[
             'id_pertanyaan' => $request->id_pertanyaan,
             'jawaban' => $request->jawaban,
@@ -105,7 +101,6 @@ class ForumController extends Controller
             'data' => 'sukses'
         ]);
     }
-
 
     public function like(Request $request){
         $data = ForumPertanyaaan::find($request->id);
@@ -143,6 +138,4 @@ class ForumController extends Controller
             ]);
         }
     }
-
-
 }
