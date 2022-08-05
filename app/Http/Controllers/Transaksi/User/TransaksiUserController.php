@@ -389,8 +389,8 @@ class TransaksiUserController extends Controller
                 ]
             ],
             'fixed_va' => true,
-            'success_redirect_url' => 'https://halobahagia.com/checkgateway',
-            'failure_redirect_url' => 'https://halobahagia.com/checkgateway',
+            'success_redirect_url' => 'https://demo.makinmahir.id/callback?external_id='.$external_id.'',
+            'failure_redirect_url' => 'https://demo.makinmahir.id/callback?external_id='.$external_id.'',
             'currency' => 'IDR',
             'items' => [
                 [
