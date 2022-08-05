@@ -11,6 +11,7 @@ use App\Notifications\WelcomeEmailNotification;
 use App\Exports\EventEnrollExport;
 use App\Models\Blog;
 use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Request;
 use Maatwebsite\Excel\Facades\Excel;
 
 use Illuminate\Support\Str;
@@ -28,6 +29,8 @@ use Illuminate\Support\Str;
 
 Auth::routes();
 
+Route::post('/register/custom', [Controllers\Auth\Custom\RegisterCustomController::class, 'register'])->name('registerCustom');
+
 Route::prefix('oauth')->group(function(){
     Route::get('google/redirect', [ Controllers\Auth\OAuth\LoginOAuthController::class, 'redirectToGoogle'])->name('redirectToGoogle');
     Route::get('google/callback', [ Controllers\Auth\OAuth\LoginOAuthController::class, 'callbackToGoogle'])->name('callbackToGoogle');
@@ -39,7 +42,9 @@ Route::prefix('oauth')->group(function(){
     Route::get('twitter/callback', [ Controllers\Auth\OAuth\LoginOAuthController::class, 'callbackToTwitter'])->name('callbackToTwitter');
 });
 
-Route::get('/homes', [App\Http\Controllers\HomeController::class, 'indexs'])->name('homes');
+Route::get('pembayaran/{id}', [Controllers\Transaksi\User\TransaksiUserController::class,'cekForm'])->name('pembayaranCek');
+Route::get('callback', [Controllers\Transaksi\User\TransaksiUserController::class,'callbackSuccess'])->name('callbackSuccessXendit');
+
 
 //PUBLIC AREA
 Route::get('/', [Controllers\PublicController::class,'index'])->name('publicIndex');
@@ -202,10 +207,11 @@ Route::middleware(['auth'])->group(function () {
     
     //*Transaksi
     Route::post('cancel-payment', [Controllers\Transaksi\User\TransaksiUserController::class,'delete_transaksi'])->name('deleteTransaksi');
-    Route::get('pembayaran/{id}', [Controllers\Transaksi\User\TransaksiUserController::class,'cekForm'])->name('pembayaranCek');
-    Route::post('pembayaran', [Controllers\Transaksi\User\TransaksiUserController::class,'create'])->name('pembayaranCreate');
-    Route::post('pembayaran/cv-checker', [Controllers\Transaksi\User\TransaksiUserController::class,'pembayaranCvChecker'])->name('pembayaranCvChecker');
-    Route::post('pendaftaran/beduk', [Controllers\Transaksi\User\TransaksiUserController::class,'pembayaranBeduk'])->name('pembayaranBeduk');
+   
+    Route::post('pembayaran/bukti', [Controllers\Transaksi\User\TransaksiUserController::class,'create'])->name('pembayaranCreate');
+    Route::post('pembayaran/gateway', [Controllers\Transaksi\User\TransaksiUserController::class,'createGateway'])->name('pembayaranCreateGateway');
+    // Route::post('pembayaran/cv-checker', [Controllers\Transaksi\User\TransaksiUserController::class,'pembayaranCvChecker'])->name('pembayaranCvChecker');
+    // Route::post('pendaftaran/beduk', [Controllers\Transaksi\User\TransaksiUserController::class,'pembayaranBeduk'])->name('pembayaranBeduk');
 
     //*Transfer
     Route::get('riwayat-pembayaran', [Controllers\Transaksi\User\TransaksiUserController::class,'index'])->name('transferIndex');
@@ -374,7 +380,7 @@ Route::middleware(['admin'])->prefix('adm')->group(function () {
         });
     //end pendaftaran
 
-    //*Pendaftaran setting
+    //* Setting
         Route::prefix('setting')->group(function(){ 
             Route::prefix('form')->group(function(){ 
                 Route::get('/', [Controllers\Admin\SettingFormController::class,'index'])->name('formSetting');
@@ -382,8 +388,15 @@ Route::middleware(['admin'])->prefix('adm')->group(function () {
                 Route::get('/add', [Controllers\Admin\SettingFormController::class,'init'])->name('formSettingAdd');
                 Route::get('/delete', [Controllers\Admin\SettingFormController::class,'delete'])->name('formSettingDelete');
             });
+
+            Route::prefix('metode')->group(function(){ 
+                Route::get('pembayaran', [Controllers\Transaksi\Admin\TransaksiAdminController::class,'admin'])->name('settingPembayaranAdmin');
+                Route::get('pembayaran/detail/{id}', [Controllers\Transaksi\Admin\TransaksiAdminController::class,'detail'])->name('settingDetailPembayaranAdmin');
+                Route::get('pembayaran/switch', [Controllers\Transaksi\Admin\TransaksiAdminController::class,'switch'])->name('settingPembayaranSave');
+                Route::post('pembayaran/method', [Controllers\Transaksi\Admin\TransaksiAdminController::class,'saveMethod'])->name('settingPembayaranAdminSaveMethod');
+            });
         });
-    //end settting pendaftaran
+    //end settting 
 
     //*BLOG
         Route::get('blog', [Controllers\Blog\Admin\BlogAdminController::class,'admin'])->name('blogAdmin');
@@ -475,6 +488,7 @@ Route::middleware(['expert'])->prefix('exp')->group(function () {
 
 
 Route::get('formulir', [Controllers\FormulirController::class,'index'])->name('formIndex');
+
 
 
 

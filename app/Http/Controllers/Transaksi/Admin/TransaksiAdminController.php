@@ -18,6 +18,7 @@ use App\Models\Transaksi;
 use App\Models\PendaftaranKonsultasi;
 use App\Models\PendaftaranVideo;
 use App\Models\PendaftaranWebinar;
+use App\Models\SettingPembayaran;
 
 class TransaksiAdminController extends Controller
 {
@@ -289,4 +290,50 @@ class TransaksiAdminController extends Controller
 
         ]);
     }
+
+    //* SETTING PEMBAYRAN METHOD
+
+    public function admin(){
+        $datas = SettingPembayaran::all();
+        return view('pages.pembayaran.admin.pembayaran_metode',compact('datas'));
+    }
+
+    public function detail($id){
+        $data = SettingPembayaran::find($id);
+        return view('pages.pembayaran.admin.pembayaran_metode_edit',compact('data'));
+    }
+
+    public function switch(Request $request){
+
+        $datas = SettingPembayaran::where('id','!=',$request->id)
+                ->where('status',1)
+                ->get();
+            
+        if(count($datas) > 0){
+            return response()->json([
+                'message' => 'hanya boleh ada satu payment gateway yang aktif',
+                'status' => 'error'
+            ]);
+        }
+
+        $data = SettingPembayaran::find($request->id);
+        $data->status = $data->status == 1 ? 0 : 1;
+        $data->save();
+
+        return response()->json([
+            'message' => 'sukses mengganti',
+            'status' => 'success'
+        ]);
+    }
+
+    public function saveMethod(Request $request){
+        $data = SettingPembayaran::find($request->id);
+        $data->secret_key = $request->secret_key;
+        $data->payment_methods = implode(",",$request->payment);
+        $data->save();
+
+        return redirect()->back();
+    }
+
+
 }

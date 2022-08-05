@@ -18,6 +18,7 @@
         "maatwebsite/excel": "^3.1",
         "midtrans/midtrans-php": "^2.5",
         "pusher/pusher-php-server": "^7.0",
+        "xendit/xendit-php-clients": "^2.18",
         "yajra/laravel-datatables-oracle": "^9.19"
     },
     "require-dev": {
