@@ -412,9 +412,6 @@ class TransaksiUserController extends Controller
         $data->status_payment_gateway = 'SETTLED';
         $data->save();
 
-        return response()->json([
-            'data' => 'sukses melakukan pembayaran'
-        ]);
-
+        return redirect()->route('memberIndex');
     }
 }
