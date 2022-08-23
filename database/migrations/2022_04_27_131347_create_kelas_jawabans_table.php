@@ -13,7 +13,7 @@ class CreateKelasJawabansTable extends Migration
      */
     public function up()
     {
-        Schema::create('kelas_jawabans', function (Blueprint $table) {
+        Schema::create('produk_kelas_jawabans', function (Blueprint $table) {
             $table->id();
             $table->integer('id_soal');
             $table->integer('id_ujian');

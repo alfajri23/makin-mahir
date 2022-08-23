@@ -13,12 +13,15 @@ class CreateTemplatesTable extends Migration
      */
     public function up()
     {
-        Schema::create('templates', function (Blueprint $table) {
+        Schema::create('produk_templates', function (Blueprint $table) {
             $table->id();
-            $table->string('nama')->nullable();
+            $table->string('judul')->nullable();
             $table->string('harga')->nullable();
+            $table->string('harga_bias')->nullable();
+            $table->string('poster')->nullable();
             $table->string('desc')->nullable();
             $table->string('file')->nullable();
+            $table->integer('status')->default(1);
             $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();

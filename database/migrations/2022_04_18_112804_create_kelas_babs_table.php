@@ -13,7 +13,7 @@ class CreateKelasBabsTable extends Migration
      */
     public function up()
     {
-        Schema::create('kelas_babs', function (Blueprint $table) {
+        Schema::create('produk_kelas_babs', function (Blueprint $table) {
             $table->id();
             $table->integer('id_kelas');
             $table->string('nama');

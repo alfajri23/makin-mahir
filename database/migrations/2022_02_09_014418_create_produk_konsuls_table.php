@@ -13,17 +13,20 @@ class CreateProdukKonsulsTable extends Migration
      */
     public function up()
     {
-        Schema::create('produk_konsuls', function (Blueprint $table) {
+        Schema::create('produk_konsultasis', function (Blueprint $table) {
             $table->id();
             $table->string('judul');
+            $table->string('link');
+            $table->string('tipe')->nullable();
+            $table->string('jenis_konsultasi')->nullable();
             $table->string('deskripsi')->nullable();
-            $table->string('pemateri')->nullable();
-            $table->integer('id_pemateri')->nullable();
+            $table->text('pemateri')->nullable();
+            $table->integer('id_expert')->nullable();
             $table->string('harga');
-            $table->string('harga_promo')->nullable();
+            $table->string('harga_bias')->nullable();
             $table->string('poster');
             $table->string('video')->nullable();
-            $table->integer('status');
+            $table->integer('status')->default(1);
             $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();

@@ -12,6 +12,7 @@ class EventEnroll extends Model
     use SoftDeletes;
 
     protected $guarded =[];
+    protected $table = 'enroll_events';
 
     public function event()
     {

@@ -13,7 +13,7 @@ class CreateSubProdukVideosTable extends Migration
      */
     public function up()
     {
-        Schema::create('sub_produk_videos', function (Blueprint $table) {
+        Schema::create('produk_kelas_subs', function (Blueprint $table) {
             $table->id();
             $table->integer('id_produk');
             $table->string('judul_sub');

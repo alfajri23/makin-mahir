@@ -13,7 +13,7 @@ class ProdukEvent extends Model
 
     // protected $table = 'my_flights';
 
-    protected $table = 'events';
+    protected $table = 'produk_events';
 
     protected $guarded =[];
 
@@ -37,7 +37,7 @@ class ProdukEvent extends Model
 
     public function produk(){
         return $this->belongsTo(Produk::class,'id','id_produk')
-        ->whereIn('id_kategori',[2,3,8]);
+        ->whereIn('id_kategori',[1,2]);
     }
 
     // public function produk(){

@@ -11,10 +11,12 @@ class Template extends Model
     use HasFactory;
     use SoftDeletes;
     protected $guarded =[];
+    protected $table = 'produk_templates';
+    
 
     public function produk(){
         return $this->belongsTo(Produk::class,'id','id_produk')
-        ->where('id_kategori',7);
+        ->where('id_kategori',4);
     }
 
     public function enroll()

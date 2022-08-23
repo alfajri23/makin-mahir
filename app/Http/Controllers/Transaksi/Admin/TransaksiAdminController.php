@@ -150,54 +150,28 @@ class TransaksiAdminController extends Controller
         $data = Transaksi::find($request->id);
         //! Besok ganti switch aja 
 
-        if($data->produk->id_kategori == 2 || $data->produk->id_kategori == 3 || $data->produk->id_kategori == 8){
-            $id_produk = $this->cek_produk_bundling($data->produk);
-            //JIka paket bundling maka id_expert tidak ada
-
-            foreach($id_produk as $id){
-                if(count($id_produk)>1){
-                    $enroll = EventEnroll::create([
-                        'id_user' => $data->id_user,
-                        'id_event' => $id,
-                        'id_transaksi' => $data->id,
-                    ]);
-                }else{
-                    $enroll = EventEnroll::create([
-                        'id_user' => $data->id_user,
-                        'id_event' => $id,
-                        'id_transaksi' => $data->id,
-                        'id_expert' => $data->produk->event->id_expert
-                    ]);
-                }
-            }
-
-        }else if($data->produk->id_kategori == 4){
+        if($data->produk->id_kategori == 1 || $data->produk->id_kategori == 2){       
+            $enroll = EventEnroll::create([
+                'id_user' => $data->id_user,
+                'id_event' => $data->produk->id_produk,
+                'id_transaksi' => $data->id,
+                'id_expert' => $data->produk->event->id_expert
+            ]);
+        }else if($data->produk->id_kategori == 3){
             $enroll = KonsultasiEnroll::create([
                 'id_user' => $data->id_user,
                 'id_konsultasi' => $data->produk->id_produk,
                 'id_transaksi' => $data->id,
                 'id_expert' => $data->produk->konsultasi->id_expert
             ]);
-        }else if($data->produk->id_kategori == 1){
+        }else if($data->produk->id_kategori == 10){
             $enroll = KelasEnroll::create([
                 'id_user' => $data->id_user,
                 'id_kelas' => $data->produk->id_produk,
                 'id_transaksi' => $data->id,
                 'id_expert' => $data->produk->kelas->id_expert
             ]);
-        }else if($data->produk->id_kategori == 5){
-            $enroll = EbookEnroll::create([
-                'id_user' => $data->id_user,
-                'id_ebook' => $data->produk->id_produk,
-                'id_expert' => $data->produk->ebook->id_expert,
-                'id_transaksi' => $data->id,
-            ]);
-        }else if($data->produk->id_kategori == 6){
-            $enroll = CVCheckerEnroll::create([
-                'id_user' => $data->id_user,
-                'id_transaksi' => $data->id,
-            ]);
-        }else if($data->produk->id_kategori == 7){
+        }else if($data->produk->id_kategori == 4){
             $enroll = TemplateEnroll::create([
                 'id_user' => $data->id_user,
                 'id_transaksi' => $data->id,
@@ -257,39 +231,6 @@ class TransaksiAdminController extends Controller
         ]);
     }
 
-    public function transaksi_konfirmasi_mid(Request $request){
-        $response = Http::withHeaders([
-            'Accept' => 'application/json',
-            'Content-Type' => 'application/json',
-            'Authorization' => 'U0ItTWlkLXNlcnZlci1LdGZSOTFFVlFud091RDEzaUgwZDAxc2Y6'
-        ])->get('https://api.sandbox.midtrans.com/v2/'.$request->order_id.'/status');
-        
-        $response = $response->json();
-        //dd($response);
-        
-        //cek jika berhasil,maka akan mengubah transakasi dan pendaftaran menjadi lunas
-        if($response['transaction_status'] == 'settlement' || $response['transaction_status'] == 'settlement' ){
-            $data = Transaksi::find($request->id);
-            if($data->tipe == 'webinar'){
-                $daftar = PendaftaranWebinar::find($data->id_pendaftaran);
-            }elseif($data->tipe == 'konsultasi'){
-                $daftar = PendaftaranKonsultasi::find($data->id_pendaftaran);
-            }elseif($data->tipe == 'video'){
-                $daftar = PendaftaranVideo::find($data->id_pendaftaran);
-            }
-
-            $data->status_bayar = 'lunas';
-            $data->save();
-            $daftar->status_bayar = 'lunas';
-            $daftar->save();
-            //$status = 'succes';
-        }
-        
-        return response()->json([
-            'data' => $response,
-
-        ]);
-    }
 
     //* SETTING PEMBAYRAN METHOD
 

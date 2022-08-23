@@ -13,7 +13,7 @@ class CreateKelasMaterisTable extends Migration
      */
     public function up()
     {
-        Schema::create('kelas_materis', function (Blueprint $table) {
+        Schema::create('produk_kelas_materis', function (Blueprint $table) {
             $table->id();
             $table->string('judul')->nullable();
             $table->integer('id_bab')->nullable();

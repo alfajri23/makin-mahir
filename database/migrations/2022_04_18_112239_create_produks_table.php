@@ -18,6 +18,7 @@ class CreateProduksTable extends Migration
             $table->string('nama')->nullable();
             $table->integer('id_kategori')->nullable();
             $table->integer('id_produk')->nullable();
+            $table->integer('id_expert')->nullable();
             $table->string('harga')->nullable();
             $table->string('poster')->nullable();
             $table->softDeletes();

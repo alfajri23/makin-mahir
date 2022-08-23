@@ -34,7 +34,7 @@
                             </div>
 
                             <h4 class="fw-700 font-xsss mt-3 lh-20 mt-0">
-                                <a href="{{route('memberProdukDetail',$dt->produk->id)}}" class="text-grey-900">{{$dt->judul}}</a>
+                                <a href="{{route('memberProdukDetail',$dt->produk->id)}}" class="text-grey-900">{{$dt->judul != null ? $dt->judul : $dt->nama}}</a>
                             </h4>
                             <h6 class="font-xssss text-grey-600 fw-500 ml-0 mt-2 mb-0">
                                 @if (!empty($dt->tanggal))

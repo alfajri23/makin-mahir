@@ -12,6 +12,7 @@ class KonsultasiEnroll extends Model
     use SoftDeletes;
 
     protected $guarded =[];
+    protected $table = 'enroll_konsultasis';
 
     public function konsultasi()
     {

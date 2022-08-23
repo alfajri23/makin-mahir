@@ -13,7 +13,7 @@ class CreateTemplateEnrollsTable extends Migration
      */
     public function up()
     {
-        Schema::create('template_enrolls', function (Blueprint $table) {
+        Schema::create('enroll_templates', function (Blueprint $table) {
             $table->id();
             $table->integer('id_user');
             $table->integer('id_template');

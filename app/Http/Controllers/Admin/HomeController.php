@@ -55,15 +55,7 @@ class HomeController extends Controller
         $user_transaksi = $transaksi->groupBy('id_user')->count();
 
 
-        // foreach ($transaksi as $tr){
-        //     $data = explode("-",$tr->tanggal_bayar);
-        //     dd($data[1]);
-        //     $rentang[$index] = $tr;
-        //     dd($tr);
-
-
-        // }
-
+        //dd($events);
         return view('pages.admin.home',compact('events','konsultans',
                                                 'rentang','jumlah',
                                                 'user','user_transaksi'));

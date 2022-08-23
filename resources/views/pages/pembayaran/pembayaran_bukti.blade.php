@@ -71,7 +71,7 @@
         </div>
 
         <div class="col-10 col-md-6 mx-auto mb-4">
-            <form action="{{route('pembayaranCreate')}}" method="post" class="payment-form" enctype="multipart/form-data">
+            <form action="{{$gateway != null ? route('pembayaranCreateGateway') : route('pembayaranCreate')}}" method="post" class="payment-form" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group my-4">
 
@@ -85,27 +85,11 @@
 
                     <label for="exampleInputPassword1" class="font-lg fw-700">Upload Bukti Pembayaran</label>
                     
-                    <ul class="font-xssss text-grey-800 fw-600">
-                        <li>BCA : No. Rek. 8030112343 A. N. Tri Astuti</li>
-                        <li>BRI : No. Rek. 144701001148505 A. N. Tri Astuti</li>
-                        <li>BNI : No. Rek. 0850844796 A. N. Tri Astuti</li>
-                        <li>Mandiri : No. Rek. 1360010201660 A. N. Tri Astuti</li>
-                        <li>EWALLET= GOPAY, OVO, DANA : 08579993240 A.N. Tri Astuti</li>
-                    </ul>
-
-
-                    <div class="custom-file mt-3">
-                        <label class="font-weight-bold" for="customFile">Bukti pembayaran</label><br>
-                        <input type="file" name="bukti[]" class="" id="customFile" required>
-                        <small class="form-text text-muted">
-                            Format file yang diterima pdf, jpg, png, jpeg | Max 5 Mb
-                        </small>
-                    </div>
-
+                   
                     <div>
-                        <input type="hidden" name="id_produk" value="{{$data->id}}">
-                        <input type="hidden" name="nama" value="{{$data->nama}}">
-                        <input type="hidden" name="harga" value="{{$data->harga}}">
+                        <input type="text" name="id" value="{{$data->id}}">
+                        <input type="text" name="nama" value="{{$data->nama}}">
+                        <input type="text" name="harga" value="{{$data->harga}}">
                     </div>
 
                     <div>

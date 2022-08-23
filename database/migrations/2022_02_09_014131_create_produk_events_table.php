@@ -17,7 +17,9 @@ class CreateProdukEventsTable extends Migration
             $table->id();
             $table->string('tipe');
             $table->string('judul');
-            $table->date('tanggal');
+            $table->string('link')->nullable();
+            $table->date('tanggal_mulai')->nullable();
+            $table->date('tanggal_akhir')->nullable();
             $table->string('waktu');
             $table->text('deskripsi')->nullable();
             $table->integer('id_expert')->nullable();
@@ -25,9 +27,8 @@ class CreateProdukEventsTable extends Migration
             $table->string('harga');
             $table->string('harga_bias')->nullable();
             $table->string('poster')->nullable();
-            $table->string('link')->nullable();
             $table->string('grup_wa')->nullable();
-            $table->integer('status');
+            $table->integer('status')->default(1);
             $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();

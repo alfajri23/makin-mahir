@@ -13,7 +13,7 @@ class CreateEventEnrollsTable extends Migration
      */
     public function up()
     {
-        Schema::create('event_enrolls', function (Blueprint $table) {
+        Schema::create('enroll_events', function (Blueprint $table) {
             $table->id();
             $table->integer('id_user');
             $table->integer('id_expert')->nullable();

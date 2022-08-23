@@ -50,13 +50,8 @@ Route::get('callback', [Controllers\Transaksi\User\TransaksiUserController::clas
 Route::get('/', [Controllers\PublicController::class,'index'])->name('publicIndex');
 Route::get('event', [Controllers\PublicController::class,'produk_list_event'])->name('produkListEvent');
 Route::get('konsul', [Controllers\PublicController::class,'produk_list_detail_konsul'])->name('produkListKonsul');
-// Route::get('konsul/detail', [Controllers\PublicController::class,'produk_detail_konsul'])->name('produkDetailKonsul');
-//Route::get('konsul/tipe/{id}', [Controllers\PublicController::class,'produk_list_detail_konsul'])->name('produkListDetailKonsul');
 Route::get('kelas', [Controllers\PublicController::class,'produk_list_kelas'])->name('produkListKelas');
 Route::get('template', [Controllers\PublicController::class,'produk_list_template'])->name('produkListTemplate');
-// Route::get('video/{id}', [Controllers\PublicController::class,'produk_detail_video'])->name('produkDetailVideo');
-
-
 
 //Blog
 Route::get('blog', [Controllers\Blog\User\BlogUserController::class,'index'])->name('blog');
@@ -68,8 +63,8 @@ Route::get('blog/detail/{id}/{link?}', [Controllers\Blog\User\BlogUserController
 
 //ebook
 Route::get('ebook', [Controllers\Ebook\User\EbookUserController::class,'index'])->name('ebook');
-Route::get('ebook-detail', [Controllers\Ebook\User\EbookUserController::class,'detail'])->name('ebookDetail');
-Route::get('ebook-download', [Controllers\Ebook\User\EbookUserController::class,'download_auth'])->name('ebookDownload');
+// Route::get('ebook-detail', [Controllers\Ebook\User\EbookUserController::class,'detail'])->name('ebookDetail');
+// Route::get('ebook-download', [Controllers\Ebook\User\EbookUserController::class,'download_auth'])->name('ebookDownload');
 
 Route::get('faq', [Controllers\PublicController::class,'faq'])->name('faq');
 Route::get('profile', [Controllers\PublicController::class,'profile'])->name('profile');
@@ -227,13 +222,7 @@ Route::middleware(['auth'])->group(function () {
 //* Group Middleware Admin and Expert
 
     //Produk
-        //Event
-            Route::post('save', [Controllers\Admin\ProdukController::class,'eventSave'])->name('saveEvent');
-            Route::post('save/bundling', [Controllers\Admin\ProdukController::class,'eventBundlingSave'])->name('saveBundlingEvent');
-            Route::get('end', [Controllers\Admin\ProdukController::class,'eventEnd'])->name('endEvent');
-            Route::get('start', [Controllers\Admin\ProdukController::class,'eventStart'])->name('startEvent');
-            Route::get('delete', [Controllers\Admin\ProdukController::class,'eventDelete'])->name('deleteEvent');
-        //end event
+        
 
         //Konsultasi
             Route::post('/', [Controllers\Admin\KonsultasiController::class,'expertStore'])->name('konsultasiExpertStore');
@@ -292,48 +281,41 @@ Route::middleware(['admin'])->prefix('adm')->group(function () {
         });
 
         Route::prefix('konsultasi')->group(function(){
+            Route::get('/', [Controllers\Konsultasi\Admin\KonsultasiAdminController::class,'konsultasi'])->name('adminKonsultasi');
+            Route::get('past', [Controllers\Konsultasi\Admin\KonsultasiAdminController::class,'konsultasiPast'])->name('pastKonsultasi');
+            Route::get('restore', [Controllers\Konsultasi\Admin\KonsultasiAdminController::class,'konsultasiRestore'])->name('restoreKonsultasi');
+            Route::get('edit', [Controllers\Konsultasi\Admin\KonsultasiAdminController::class,'konsultasiEdit'])->name('editKonsultasi');
+            Route::get('add', [Controllers\Konsultasi\Admin\KonsultasiAdminController::class,'konsultasiAdd'])->name('addKonsultasi');
 
-            Route::get('/', [Controllers\Admin\KonsultasiController::class,'index'])->name('konsultasiIndex');
-            Route::get('/add', [Controllers\Admin\KonsultasiController::class,'konsultasiAdd'])->name('konsultasiAdd');
-
-            Route::prefix('tipe')->group(function(){
-                Route::get('/', [Controllers\Admin\KonsultasiController::class,'tipeIndex'])->name('konsultasiTipeIndex');
-                Route::post('/', [Controllers\Admin\KonsultasiController::class,'tipeStore'])->name('konsultasiTipeStore');
-            });
-
-            Route::prefix('expert')->group(function(){
-                Route::get('/{id}', [Controllers\Admin\KonsultasiController::class,'expertIndex'])->name('konsultasiExpertIndex');
-                Route::get('/detail/{id}', [Controllers\Admin\KonsultasiController::class,'expertDetail'])->name('konsultasiExpertDetail');
-                //! Add event dipindah diatas ke group
-            });
-        });
-
-        Route::prefix('cv-checker')->group(function(){
-            Route::get('admin', [Controllers\Admin\ProdukController::class,'cvCheckerIndex'])->name('cvCheckerIndex');
-            Route::post('admin', [Controllers\Admin\ProdukController::class,'cvCheckerSave'])->name('cvCheckerSave');
-            Route::get('check/{id}', [Controllers\Admin\ProdukController::class,'cvCheckerDetail'])->name('cvCheckerDetail');
+            Route::post('save', [Controllers\Konsultasi\Admin\KonsultasiAdminController::class,'konsultasiSave'])->name('saveKonsultasi');
+            Route::get('end', [Controllers\Konsultasi\Admin\KonsultasiAdminController::class,'konsultasiEnd'])->name('endKonsultasi');
+            Route::get('start', [Controllers\Konsultasi\Admin\KonsultasiAdminController::class,'konsultasiStart'])->name('startKonsultasi');
+            Route::get('delete', [Controllers\Konsultasi\Admin\KonsultasiAdminController::class,'konsultasiDelete'])->name('deleteKonsultasi');
         });
 
         Route::prefix('event')->group(function(){
-            Route::get('/', [Controllers\Admin\ProdukController::class,'event'])->name('eventAdmin');
-            Route::get('past', [Controllers\Admin\ProdukController::class,'eventPast'])->name('eventPast');
-            Route::get('restore', [Controllers\Admin\ProdukController::class,'eventRestore'])->name('restoreEvent');
-            Route::get('edit', [Controllers\Admin\ProdukController::class,'eventEdit'])->name('editEvent');
-            Route::get('add', [Controllers\Admin\ProdukController::class,'eventAdd'])->name('addEvent');
+            Route::get('/', [Controllers\Event\Admin\EventAdminController::class,'event'])->name('eventAdmin');
+            Route::get('past', [Controllers\Event\Admin\EventAdminController::class,'eventPast'])->name('eventPast');
+            Route::get('restore', [Controllers\Event\Admin\EventAdminController::class,'eventRestore'])->name('restoreEvent');
+            Route::get('edit', [Controllers\Event\Admin\EventAdminController::class,'eventEdit'])->name('editEvent');
+            Route::get('add', [Controllers\Event\Admin\EventAdminController::class,'eventAdd'])->name('addEvent');
 
-
-            Route::get('bundling', [Controllers\Admin\ProdukController::class,'eventBundling'])->name('eventBundling');
-            Route::get('add/bundling', [Controllers\Admin\ProdukController::class,'eventAddBundling'])->name('addEventBundling');
+            Route::post('save', [Controllers\Event\Admin\EventAdminController::class,'eventSave'])->name('saveEvent');
+            Route::get('end', [Controllers\Event\Admin\EventAdminController::class,'eventEnd'])->name('endEvent');
+            Route::get('start', [Controllers\Event\Admin\EventAdminController::class,'eventStart'])->name('startEvent');
+            Route::get('delete', [Controllers\Event\Admin\EventAdminController::class,'eventDelete'])->name('deleteEvent');
+    
             //! Store event dipindah diatas ke group
             
         });
 
         Route::prefix('template')->group(function(){
-            Route::get('/', [Controllers\Admin\ProdukController::class,'template'])->name('templateAdmin');
-            Route::get('add', [Controllers\Admin\ProdukController::class,'templateAdd'])->name('addTemplate');
-            Route::get('/{id}', [Controllers\Admin\ProdukController::class,'templateEdit'])->name('editTemplate');
-            Route::get('delete/{id}', [Controllers\Admin\ProdukController::class,'templateDelete'])->name('deleteTemplate');
-            Route::post('create', [Controllers\Admin\ProdukController::class,'templateCreate'])->name('createTemplate');
+            Route::get('/', [Controllers\Template\Admin\TemplateAdminController::class,'template'])->name('templateAdmin');
+            Route::get('add', [Controllers\Template\Admin\TemplateAdminController::class,'templateAdd'])->name('addTemplate');
+            Route::get('/{id}', [Controllers\Template\Admin\TemplateAdminController::class,'templateEdit'])->name('editTemplate');
+            Route::get('delete/{id}', [Controllers\Template\Admin\TemplateAdminController::class,'templateDelete'])->name('deleteTemplate');
+            Route::post('create', [Controllers\Template\Admin\TemplateAdminController::class,'templateCreate'])->name('createTemplate');
+            Route::get('delete/file/index', [Controllers\Template\Admin\TemplateAdminController::class,'deleteFileTemplate'])->name('deleteFileTemplate');
         });
 
     //End produk

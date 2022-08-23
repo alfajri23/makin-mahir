@@ -11,11 +11,12 @@ class ProdukVideo extends Model
     use HasFactory;
     use SoftDeletes;
     protected $guarded =[];
+    protected $table = 'produk_kelas';
 
-    public function pendaftaranWebinar()
-    {
-        return $this->hasMany(PendaftaranVideo::class, 'id_produk', 'id');
-    }
+    // public function pendaftaranWebinar()
+    // {
+    //     return $this->hasMany(PendaftaranVideo::class, 'id_produk', 'id');
+    // }
 
     public function subvideo()
     {

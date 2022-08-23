@@ -13,7 +13,7 @@ class CreateKonsultasiEnrollsTable extends Migration
      */
     public function up()
     {
-        Schema::create('konsultasi_enrolls', function (Blueprint $table) {
+        Schema::create('enroll_konsultasis', function (Blueprint $table) {
             $table->id();
             $table->integer('id_user');
             $table->integer('id_expert')->nullable();

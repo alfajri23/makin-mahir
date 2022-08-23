@@ -315,7 +315,6 @@
                                             <div class="form-group my-4">
                                                 <div>
                                                     <input type="hidden" name="id" value="{{$data->id}}">
-                                                    <input type="hidden" name="id_produk" value="{{$data->id_produk}}">
                                                     <input type="hidden" name="id_kategori" value="{{$data->id_kategori}}">
                                                     <input type="hidden" name="nama" value="{{$data->nama}}">
                                                     @if($data->harga != '#' || $data->harga != null)

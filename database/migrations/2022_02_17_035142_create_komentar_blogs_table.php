@@ -13,7 +13,7 @@ class CreateKomentarBlogsTable extends Migration
      */
     public function up()
     {
-        Schema::create('komentar_blogs', function (Blueprint $table) {
+        Schema::create('blog_komentars', function (Blueprint $table) {
             $table->id();
             $table->integer('id_user');
             $table->integer('id_blog');
@@ -33,6 +33,6 @@ class CreateKomentarBlogsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('komentar_blogs');
+        Schema::dropIfExists('blog_komentars');
     }
 }

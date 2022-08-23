@@ -12,6 +12,7 @@ class KelasEnroll extends Model
     use SoftDeletes;
 
     protected $guarded =[];
+    protected $table = 'enroll_kelas';
 
     public function kelas()
     {

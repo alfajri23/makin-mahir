@@ -80,8 +80,8 @@ class HomeController extends Controller
                 break;
 
             case "konsultasi" :
-                $data = KonsultasiExpert::find($produk->id_produk);
-                $rekomen = KonsultasiExpert::where('status',1)->limit(6)->latest()->get();
+                $data = ProdukKonsul::find($produk->id_produk);
+                $rekomen = ProdukKonsul::where('status',1)->limit(6)->latest()->get();
 
                 return view('pages.produk.konsultasi.konsultasi_detail',compact('data','layout',
                                                                         'rekomen'));

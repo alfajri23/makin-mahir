@@ -11,7 +11,6 @@ use App\Models\Kelas;
 use App\Models\Blog;
 use App\Models\Template;
 use App\Models\KonsultasiTipe;
-use App\Models\KonsultasiExpert;
 
 class PublicController extends Controller
 {
@@ -19,23 +18,17 @@ class PublicController extends Controller
         $kelas = Kelas::limit(6)->get();
         $event = ProdukEvent::limit(3)->get(); 
         $blog = Blog::limit(6)->get();
-        $konsuls = KonsultasiExpert::limit(4)->get();
-        $beduk = ProdukEvent::where([
-            'tipe'=>'beduk',
-            'status'=> 1
-        ])->first();
       
-
-        return view('pages.public.home',compact('kelas','blog','event','konsuls','beduk'));
+        return view('pages.public.home',compact('kelas','blog','event'));
     }
 
-    public function produk_detail_konsul(Request $request){         //! JSON Ajax
-        $data = KonsultasiExpert::find($request->id);
-        return response()->json([
-            'data' => $data,
-            'message' => 'sukses'
-        ]);
-    }
+    // public function produk_detail_konsul(Request $request){         //! JSON Ajax
+    //     $data = ProdukKonsul::find($request->id);
+    //     return response()->json([
+    //         'data' => $data,
+    //         'message' => 'sukses'
+    //     ]);
+    // }
 
     public function produk_detail_video($id){
         $data = ProdukVideo::find($id);
@@ -45,7 +38,7 @@ class PublicController extends Controller
     //!Sementara ini tidak terpakai
     public function produk_list_konsul(Request $request){
        
-        $data = KonsultasiTipe::all();
+        
         $meta_title = "Konsultasi Makin Mahir | MakinMahir.id";
         $layout = Layout::layout_check();
 
@@ -56,11 +49,11 @@ class PublicController extends Controller
     //public function produk_list_detail_konsul($id,Request $request){  
     public function produk_list_detail_konsul(Request $request){  
         if($request->search != null){
-            $data = KonsultasiExpert::where('judul','like','%'.$request->search.'%')->get();
+            $data = ProdukKonsul::where('judul','like','%'.$request->search.'%')->get();
 
         }else{
-            //$data = KonsultasiExpert::where('id_konsultasi',$id)->get();
-            $data = KonsultasiExpert::where('status',1)
+            //$data = ProdukKonsul::where('id_konsultasi',$id)->get();
+            $data = ProdukKonsul::where('status',1)
             ->latest()
             ->get();
         }
@@ -92,7 +85,6 @@ class PublicController extends Controller
             ->get();
         }
 
-        //dd($data);
 
         $layout = Layout::layout_check();
         $meta_title = "Event Makin Mahir | MakinMahir.id";

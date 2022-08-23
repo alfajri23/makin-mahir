@@ -12,6 +12,7 @@ class TemplateEnroll extends Model
     use SoftDeletes;
 
     protected $guarded =[];
+    protected $table = 'enroll_templates';
 
     public function template()
     {

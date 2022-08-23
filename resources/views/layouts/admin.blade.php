@@ -107,7 +107,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Daftar produk</h6>
                         <a class="collapse-item" href="{{route('kelasIndex')}}">Kelas</a>
-                        <a class="collapse-item" href="{{route('konsultasiIndex')}}">Konsultasi</a>
+                        <a class="collapse-item" href="{{route('adminKonsultasi')}}">Konsultasi</a>
                         {{-- <a class="collapse-item" href="{{route('konsultasiTipeIndex')}}">Konsultasi Tipe</a> --}}
                         <a class="collapse-item" href="{{route('eventAdmin')}}">Event</a>
                         <a class="collapse-item" href="{{route('templateAdmin')}}">Template</a>
@@ -427,31 +427,31 @@
         //SWAL
         function swalAction(routes,tabel,id,pesan){
             swal({
-            title: "Are you sure?",
-            text: pesan,
-            icon: "warning",
-            buttons: true,
-            dangerMode: true,
-            })
-            .then((willDelete) => {
-            if (willDelete) {
-                $.ajax({
-                    type : 'GET',
-                    url  : routes,
-                    data : {
-                        id : id
-                    },
-                    dataType: 'json',
-                    success : (data)=>{
-                        swal("Sukses", data.message, "warning");
-                        tabel.DataTable().ajax.reload();
-                    }
+                title: "Are you sure?",
+                text: pesan,
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
                 })
+                .then((willDelete) => {
+                if (willDelete) {
+                    $.ajax({
+                        type : 'GET',
+                        url  : routes,
+                        data : {
+                            id : id
+                        },
+                        dataType: 'json',
+                        success : (data)=>{
+                            swal("Sukses", data.message, "warning");
+                            tabel.DataTable().ajax.reload();
+                        }
+                    })
 
-            } else {
-                swal("Aman", "Tidak ada perubahan", "success");
-            }
-        });
+                } else {
+                    swal("Aman", "Tidak ada perubahan", "success");
+                }
+            });
         }
         //End swall
     </script>

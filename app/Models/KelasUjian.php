@@ -11,6 +11,7 @@ class KelasUjian extends Model
     use HasFactory;
     use SoftDeletes;
     protected $guarded =[];
+    protected $table = 'produk_kelas_ujians';
 
     public function kelas()
     {
