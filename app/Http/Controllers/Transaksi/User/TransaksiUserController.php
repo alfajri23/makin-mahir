@@ -105,33 +105,32 @@ class TransaksiUserController extends Controller
             'tanggal_bayar' => now(),
             'jawaban' => $jawaban,
             'telepon' => $request->telepon,
-            'file_tambahan' => null
         ];
 
         $filed = [];
 
-        if(!empty($request->bukti)){    
-            foreach($request->bukti as $key => $file){
-                if ($key == array_key_last($request->bukti)) {
-                    $nama_file = time()."_".$file->getClientOriginalName();
-                    $tujuan_upload_server = public_path('storage/transaksi');
-                    $tujuan_upload = 'storage/transaksi';
-                    $files = $tujuan_upload . '/'. $nama_file;
-                    $file->move($tujuan_upload_server,$nama_file);
-                    $datas['bukti'] = $files;
-                }else{
-                    $nama_file = time()."_".$file->getClientOriginalName();
-                    $tujuan_upload_server = public_path('storage/file_tambahan');
-                    $tujuan_upload = 'storage/file_tambahan';
-                    $files = $tujuan_upload . '/'. $nama_file;
-                    $file->move($tujuan_upload_server,$nama_file);
-                    $filed[] = $files;
-                }
-            }
+        // if(!empty($request->bukti)){    
+        //     foreach($request->bukti as $key => $file){
+        //         if ($key == array_key_last($request->bukti)) {
+        //             $nama_file = time()."_".$file->getClientOriginalName();
+        //             $tujuan_upload_server = public_path('storage/transaksi');
+        //             $tujuan_upload = 'storage/transaksi';
+        //             $files = $tujuan_upload . '/'. $nama_file;
+        //             $file->move($tujuan_upload_server,$nama_file);
+        //             $datas['bukti'] = $files;
+        //         }else{
+        //             $nama_file = time()."_".$file->getClientOriginalName();
+        //             $tujuan_upload_server = public_path('storage/file_tambahan');
+        //             $tujuan_upload = 'storage/file_tambahan';
+        //             $files = $tujuan_upload . '/'. $nama_file;
+        //             $file->move($tujuan_upload_server,$nama_file);
+        //             $filed[] = $files;
+        //         }
+        //     }
 
-            $file_name = implode(",",$filed);
-            $datas['file_tambahan'] = $file_name;
-        }
+        //     $file_name = implode(",",$filed);
+        //     $datas['file_tambahan'] = $file_name;
+        // }
 
 
         $produk = null;
