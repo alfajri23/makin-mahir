@@ -37,10 +37,6 @@ class TransaksiUserController extends Controller
     public function cekForm(Request $request){
         $data = Produk::find($request->id);
 
-        if($this->cekGratis($data)){
-            return redirect()->route('memberIndex');
-        }
-
         //! Cek apakah ada pertanyaan
         $ceks = FormSetting::where('id_produk_kategori',$data->id_kategori)->first(); 
 
@@ -69,8 +65,13 @@ class TransaksiUserController extends Controller
         return $gateway = SettingPembayaran::where('status',1)->get()->first();
     }
 
+    //Pembayaran Biasa
     public function create(Request $request){
-        $buktis = $request->bukti;
+        $data = Produk::find($request->id);
+
+        if($this->cekGratis($data)){
+            return redirect()->route('memberIndex');
+        }
 
         if(!empty($request->bukti)){ 
             for($i=0;$i<count($request->bukti);$i++){
@@ -129,18 +130,12 @@ class TransaksiUserController extends Controller
             }
 
             $file_name = implode(",",$filed);
-
             $datas['file_tambahan'] = $file_name;
         }
 
-        if($request->id_kategori == 2){
-            $produk = ProdukEvent::find($request->id_produk);
-            $produk = $produk->grup_wa;
-            $sukses = null;
-        }else{
-            $produk = null;
-            $sukses = 'sukses';
-        }
+
+        $produk = null;
+        $sukses = 'sukses';
 
         $data = Transaksi::create($datas);
     
@@ -148,7 +143,13 @@ class TransaksiUserController extends Controller
                                                         'grup' => $produk]);
     }
 
+    //Pembayaran Xendit
     public function createGateway(Request $request){
+        $data = Produk::find($request->id);
+
+        if($this->cekGratis($data)){
+            return redirect()->route('memberIndex');
+        }
     
         if(!empty($request->bukti)){ 
             for($i=0;$i<count($request->bukti);$i++){
@@ -220,13 +221,6 @@ class TransaksiUserController extends Controller
         return redirect($gateway['invoice_url']);
     }
 
-    public function delete_transaksi(Request $request){
-        $data = Transaksi::find($request->id);
-        $data->delete();
-        
-        return redirect()->back();
-    }
-
     public function createXenditInvoice($request){
         $api_key = SettingPembayaran::where('nama','like','%xendit%')->first();
 
@@ -292,6 +286,7 @@ class TransaksiUserController extends Controller
         return $createInvoice;
     }
 
+    //Call back jika pembayaran berhasil
     public function callbackSuccess(Request $request){
         $data = Transaksi::where('external_id',$request->external_id)->first();
         $data->status = 'lunas';
@@ -303,6 +298,7 @@ class TransaksiUserController extends Controller
         return redirect()->route('memberIndex');
     }
 
+    //Enroll produk saat pembayaran berhasil
     public function enroll($data){
         if($data->produk->id_kategori == 1 || $data->produk->id_kategori == 2){       
             $enroll = EventEnroll::create([
@@ -336,6 +332,7 @@ class TransaksiUserController extends Controller
         return $data;
     }
 
+    //KOndisi jika produk gratis
     public function cekGratis($data){
         if($data->harga == null || $data->harga == ''){
             if($data->id_kategori == 1 || $data->id_kategori == 2){       
@@ -372,5 +369,12 @@ class TransaksiUserController extends Controller
             return false;
         }
 
+    }
+
+    public function delete_transaksi(Request $request){
+        $data = Transaksi::find($request->id);
+        $data->delete();
+        
+        return redirect()->back();
     }
 }

@@ -134,7 +134,7 @@
                                 1
                             </button>
                             <div class="step-title">
-                                First Step
+                                Data diri
                             </div>
                         </div>
                         <div class="step-item">
@@ -142,18 +142,10 @@
                                 2
                             </button>
                             <div class="step-title">
-                                Second Step
+                                Pesanan
                             </div>
                         </div>
-                        <div class="step-item">
-                            <button class="step-button text-center collapsed" type="button" data-toggle="collapse"
-                                data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                3
-                            </button>
-                            <div class="step-title">
-                                Third Step
-                            </div>
-                        </div>
+                        
                     </div>
 
                     <div id="alert"></div>
@@ -163,32 +155,32 @@
                         <div  id="headingOne">
                             
                         </div>
-    
+                        
                         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                             data-parent="#accordionExample">
                             <div class="card-body">
                                 @auth
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <label for="inputNama4" class="form-label">Nama</label>
-                                        <input type="text" name="name" value="{{auth()->user()->nama}}" class="form-control" readonly>
-                                    </div>
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label for="inputNama4" class="form-label">Nama</label>
+                                            <input type="text" name="name" value="{{auth()->user()->nama}}" class="form-control" readonly>
+                                        </div>
 
-                                    <div class="col-md-6">
-                                        <label for="inputTel4" class="form-label">Telepon</label>
-                                        <input type="tel" name="telepon" value="{{auth()->user()->telepon}}" class="form-control" readonly>
-                                    </div>
+                                        <div class="col-md-6">
+                                            <label for="inputTel4" class="form-label">Telepon</label>
+                                            <input type="tel" name="telepon" value="{{auth()->user()->telepon}}" class="form-control" readonly>
+                                        </div>
 
-                                    <div class="col-md-6">
-                                        <label for="inputTel4" class="form-label">Email</label>
-                                        <input type="email" name="email" value="{{auth()->user()->email}}" class="form-control" readonly>
-                                    </div>
-                                    <div class="col-6 d-flex">
-                                        <div class="d-flex align-items-end">
-                                            <button onclick="shows()" class="btn btn-primary text-white px-3">Lanjut</button>
+                                        <div class="col-md-6">
+                                            <label for="inputTel4" class="form-label">Email</label>
+                                            <input type="email" name="email" value="{{auth()->user()->email}}" class="form-control" readonly>
+                                        </div>
+                                        <div class="col-6 d-flex">
+                                            <div class="d-flex align-items-end">
+                                                <button onclick="shows()" class="btn btn-primary text-white px-3">Lanjut</button>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
                                 @else
                                     <form class="row g-3" id="formRegister" action="javascript:void(0)" method="post">
                                         <div class="card border border-warning">
@@ -228,15 +220,12 @@
                                             </div>
                                         </div>
                                     </form>
-                                @endauth
-                                
+                                @endauth 
                             </div>
-
-                            
-                            
                         </div>
                     </div>
     
+                    {{-- FORM --}}
                     <div class="card">
                         <div  id="headingTwo">
                             
@@ -324,7 +313,7 @@
                                 
                                                 <div>
                                                     {{-- <a href="{{route('transferIndex')}}" class=" btn p-2 border-1 mt-3 font-xsss text-center btn-light text-dark text-uppercase fw-600 ls-3">Batal</a>     --}}
-                                                    <button type="submit" class="btn p-2 mt-3 font-xsss text-center text-white bg-success text-uppercase fw-600 ls-3">Upload</button>    
+                                                    <button type="submit" class="btn p-2 mt-3 font-xsss text-center text-white bg-success text-uppercase fw-600 ls-3">Pesan sekarang</button>    
                                                 </div>
                                             </div>
                                 
@@ -337,23 +326,7 @@
                         </div>
                     </div>
     
-                    <div class="card">
-                        <div  id="headingThree">
-                            
-                        </div>
-                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-                            data-parent="#accordionExample">
-                            <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
-                                squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
-                                nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
-                                single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
-                                beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
-                                lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you
-                                probably haven't heard of them accusamus labore sustainable VHS.
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>

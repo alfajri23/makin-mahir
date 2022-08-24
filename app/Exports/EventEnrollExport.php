@@ -41,9 +41,7 @@ class EventEnrollExport implements FromView, WithStyles, ShouldAutoSize
 
         $this->pertanyaan = array_merge($pertanyaan,$radio_pertanyaan);
 
-        if($id == 2){
-            $this->jenis = 'beduk';
-        }elseif($id == 3){
+        if($id == 1){
             $this->jenis = 'webinar';
         }else{
             $this->jenis = 'bootcamp';

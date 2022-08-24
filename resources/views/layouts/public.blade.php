@@ -95,7 +95,6 @@
                                         <a class="dropdown-item" href="{{route('cvIndex')}}">CV Maker</a>
                                         <a class="dropdown-item" href="{{route('produkListTemplate')}}">Template CV</a>
                                         <!--<a class="dropdown-item" href="{{route('blog')}}">Blog</a>-->
-                                        <a class="dropdown-item" href="{{route('ebook')}}">Ebook</a>
                                         <a class="dropdown-item" href="{{route('forumIndex')}}">Forum</a>
                                     </div>
                                 </li>
@@ -205,7 +204,6 @@
                                         <li><a href="{{route('cvIndex')}}">CV Maker</a></li>
                                         <li><a href="{{route('produkListTemplate')}}">Template CV</a></li>
                                         <li><a href="{{route('blog')}}">Blog</a></li>
-                                        <li><a href="{{route('ebook')}}">Ebook</a></li>
                                         <li><a href="{{route('forumIndex')}}">Forum</a></li>
                                     </ul>
                                 </div>

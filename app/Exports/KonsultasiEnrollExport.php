@@ -19,10 +19,10 @@ class KonsultasiEnrollExport implements FromView, WithStyles, ShouldAutoSize
 
     public function __construct()
     {
-        $id_produk = Produk::where('id_kategori',4)->pluck('id');
+        $id_produk = Produk::where('id_kategori',3)->pluck('id');
         $this->data = Transaksi::whereIn('id_produk',$id_produk)->get();
 
-        $form = FormSetting::where('id_produk_kategori',4)->first();
+        $form = FormSetting::where('id_produk_kategori',3)->first();
         $pertanyaan = explode(",",$form->pertanyaan);
         $tipe = explode(",",$form->tipe);
 

@@ -42,9 +42,7 @@ Route::prefix('oauth')->group(function(){
     Route::get('twitter/callback', [ Controllers\Auth\OAuth\LoginOAuthController::class, 'callbackToTwitter'])->name('callbackToTwitter');
 });
 
-Route::get('pembayaran/{id}', [Controllers\Transaksi\User\TransaksiUserController::class,'cekForm'])->name('pembayaranCek');
 Route::get('callback', [Controllers\Transaksi\User\TransaksiUserController::class,'callbackSuccess'])->name('callbackSuccessXendit');
-
 
 //PUBLIC AREA
 Route::get('/', [Controllers\PublicController::class,'index'])->name('publicIndex');
@@ -61,10 +59,6 @@ Route::get('blog-kategori', [Controllers\Blog\User\BlogUserController::class,'by
 Route::post('blog/create/new', [Controllers\Blog\User\BlogUserController::class,'create'])->name('blogCreate');
 Route::get('blog/detail/{id}/{link?}', [Controllers\Blog\User\BlogUserController::class,'detail'])->name('blogDetail');
 
-//ebook
-Route::get('ebook', [Controllers\Ebook\User\EbookUserController::class,'index'])->name('ebook');
-// Route::get('ebook-detail', [Controllers\Ebook\User\EbookUserController::class,'detail'])->name('ebookDetail');
-// Route::get('ebook-download', [Controllers\Ebook\User\EbookUserController::class,'download_auth'])->name('ebookDownload');
 
 Route::get('faq', [Controllers\PublicController::class,'faq'])->name('faq');
 Route::get('profile', [Controllers\PublicController::class,'profile'])->name('profile');
@@ -165,6 +159,9 @@ Route::middleware(['auth'])->group(function () {
     Route::post('daftar/konsultasi', [Controllers\DaftarController::class,'pendaftaran_konsultasi'])->name('daftarKonsultasi');
     Route::post('daftar/video', [Controllers\DaftarController::class,'pendaftaran_video'])->name('daftarVideo');
 
+    //* Pembaayaran
+    Route::get('pembayaran/{id}', [Controllers\Transaksi\User\TransaksiUserController::class,'cekForm'])->name('pembayaranCek');
+
     //*Profile dan sudah enrool
     Route::prefix('my')->group(function(){
         Route::get('/', [Controllers\Member\HomeController::class,'profile'])->name('memberProfile');
@@ -178,7 +175,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('kelas/detail', [Controllers\Member\HomeController::class,'detail_kelas'])->name('memberKelasDetail');
         Route::get('kelas/detail/{id}/{sub}', [Controllers\Member\HomeController::class,'detail_sub_kelas'])->name('memberKelasSubDetail');
         
-        Route::get('ebook', [Controllers\Member\HomeController::class,'ebook_saya'])->name('memberEbook');
+        
         Route::get('konsultasi', [Controllers\Member\HomeController::class,'konsultasi_saya'])->name('memberKonsultasi');
 
         Route::get('template', [Controllers\Member\HomeController::class,'template_saya'])->name('memberTemplate');
@@ -224,16 +221,12 @@ Route::middleware(['auth'])->group(function () {
     //Produk
         
 
-        //Konsultasi
-            Route::post('/', [Controllers\Admin\KonsultasiController::class,'expertStore'])->name('konsultasiExpertStore');
-            Route::get('/delete/konsultasi/{id}', [Controllers\Admin\KonsultasiController::class,'expertDelete'])->name('konsultasiExpertDelete');
-            Route::get('done', [Controllers\Admin\KonsultasiController::class,'done'])->name('konsultasiDone');
-        //end konsultasi
+    //Konsultasi
+        Route::post('/', [Controllers\Admin\KonsultasiController::class,'expertStore'])->name('konsultasiExpertStore');
+        Route::get('/delete/konsultasi/{id}', [Controllers\Admin\KonsultasiController::class,'expertDelete'])->name('konsultasiExpertDelete');
+        Route::get('done', [Controllers\Admin\KonsultasiController::class,'done'])->name('konsultasiDone');
+    //end konsultasi
 
-        //Ebook
-            Route::post('create', [Controllers\Ebook\Admin\EbookAdminController::class,'ebookCreate'])->name('ebookCreate');
-            Route::get('detail', [Controllers\Ebook\Admin\EbookAdminController::class,'adminDetail'])->name('ebookDetailAdmin');
-        //end book
 
 //*End produk
 
@@ -246,39 +239,6 @@ Route::middleware(['admin'])->prefix('adm')->group(function () {
     Route::get('home', [Controllers\Admin\HomeController::class,'index'])->name('homeAdmin');
 
     //*Produk
-        Route::prefix('kelas')->group(function(){ 
-            Route::get('/', [Controllers\Admin\ProdukController::class,'index'])->name('kelasIndex');
-            Route::get('/init', [Controllers\Admin\ProdukController::class,'init'])->name('kelasInit');
-            Route::get('/delete', [Controllers\Admin\ProdukController::class,'delete'])->name('kelasDelete');
-            Route::get('/detail/{id}', [Controllers\Admin\ProdukController::class,'detail'])->name('kelasDetail');
-            Route::post('/update', [Controllers\Admin\ProdukController::class,'update'])->name('kelasUpdate');
-
-            Route::prefix('bab')->group(function(){
-                Route::post('/add', [Controllers\Admin\KelasBabController::class,'create'])->name('babCreate');
-                Route::post('/edit', [Controllers\Admin\KelasBabController::class,'edit'])->name('babEdit');
-                Route::get('/delete/{id}', [Controllers\Admin\KelasBabController::class,'delete'])->name('babDelete');
-            });
-
-            Route::prefix('materi')->group(function(){
-                Route::get('/detail/{id}', [Controllers\Admin\KelasMateriController::class,'detail'])->name('materiDetail');
-                Route::get('/create', [Controllers\Admin\KelasMateriController::class,'index'])->name('materiCreate');
-                Route::get('/delete', [Controllers\Admin\KelasMateriController::class,'delete'])->name('materiDelete');
-                Route::post('/store', [Controllers\Admin\KelasMateriController::class,'store'])->name('materiStore');
-            });
-
-            Route::prefix('ujian')->group(function(){
-                Route::get('/init/{id}', [Controllers\Admin\KelasUjianController::class,'ujianInit'])->name('ujianInit');
-                Route::get('/{id}', [Controllers\Admin\KelasUjianController::class,'ujianDetail'])->name('ujianDetail');
-                Route::get('delete', [Controllers\Admin\KelasUjianController::class,'ujianDelete'])->name('ujianDelete');
-                Route::post('store', [Controllers\Admin\KelasUjianController::class,'ujianStore'])->name('ujianStore');
-            });
-
-            Route::prefix('soal')->group(function(){
-                Route::post('/', [Controllers\Admin\KelasUjianController::class,'soalCreate'])->name('soalCreate');
-                Route::get('detail', [Controllers\Admin\KelasUjianController::class,'soalDetail'])->name('soalDetail');
-                Route::get('delete', [Controllers\Admin\KelasUjianController::class,'soalDelete'])->name('soalDelete');
-            });
-        });
 
         Route::prefix('konsultasi')->group(function(){
             Route::get('/', [Controllers\Konsultasi\Admin\KonsultasiAdminController::class,'konsultasi'])->name('adminKonsultasi');
@@ -345,11 +305,6 @@ Route::middleware(['admin'])->prefix('adm')->group(function () {
             Route::get('event/delete', [Controllers\Admin\PendaftaranController::class,'deleteEnrollEvent'])->name('deleteEnrollEvent');
             Route::get('event/download', [Controllers\Admin\PendaftaranController::class,'downloadEvent'])->name('downloadEvent');
         
-            //KELAS
-            Route::get('kelas', [Controllers\Admin\PendaftaranController::class,'list_kelas'])->name('listKelas');
-            Route::get('kelas-detail', [Controllers\Admin\PendaftaranController::class,'kelas'])->name('pendaftaranKelas');
-            Route::get('kelas/delete', [Controllers\Admin\PendaftaranController::class,'deleteEnrollKelas'])->name('deleteEnrollKelas');
-
             //KOSULTASI
             Route::get('konsultasi', [Controllers\Admin\PendaftaranController::class,'konsultasi'])->name('pendaftaranKonsultasi');
             Route::get('konsultasi/download', [Controllers\Admin\PendaftaranController::class,'downloadKonsultasi'])->name('downloadKonsultasi');
@@ -399,16 +354,6 @@ Route::middleware(['admin'])->prefix('adm')->group(function () {
 
     //End blog
 
-    //*EBOOK
-        Route::prefix('ebook')->group(function(){
-            Route::get('/', [Controllers\Ebook\Admin\EbookAdminController::class,'admin'])->name('ebookAdmin');
-            Route::get('delete/{id}', [Controllers\Ebook\Admin\EbookAdminController::class,'ebookDelete'])->name('ebookDelete');
-            //! Add event dipindah diatas ke group
-            Route::get('add', [Controllers\Ebook\Admin\EbookAdminController::class,'pageAdd'])->name('ebookAdd');
-            Route::get('edit', [Controllers\Ebook\Admin\EbookAdminController::class,'pageEdit'])->name('ebookEdit');
-        });
-    //End book
-
     //*NOTIFIKASI
         Route::get('notifikasi', [Controllers\Admin\NotifikasiUserController::class,'index'])->name('notifikasiIndex');
         Route::get('notifikasi/add', [Controllers\Admin\NotifikasiUserController::class,'add'])->name('notifikasiAdd');
@@ -455,14 +400,6 @@ Route::middleware(['expert'])->prefix('exp')->group(function () {
         });
     });
 
-    Route::prefix('ebook')->group(function(){
-        Route::get('/', [Controllers\Expert\ProdukController::class,'ebook'])->name('ebookExpert');
-        Route::get('delete/{id}', [Controllers\Expert\ProdukController::class,'ebookDelete'])->name('ebookDeleteExpert');
-        Route::post('create', [Controllers\Expert\ProdukController::class,'ebookCreate'])->name('ebookCreateExpert');
-        Route::get('detail', [Controllers\Expert\ProdukController::class,'adminDetail'])->name('ebookDetailExpert');
-        Route::get('add', [Controllers\Expert\ProdukController::class,'ebookAdd'])->name('ebookAddExpert');
-        Route::get('edit', [Controllers\Expert\ProdukController::class,'ebookEdit'])->name('ebookEditExpert');
-    });
 
     Route::get('pendaftaran', [Controllers\Expert\PendaftaranController::class,'index'])->name('pendaftaranExpert');
 });

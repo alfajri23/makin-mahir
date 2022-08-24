@@ -106,7 +106,6 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Daftar produk</h6>
-                        <a class="collapse-item" href="{{route('kelasIndex')}}">Kelas</a>
                         <a class="collapse-item" href="{{route('adminKonsultasi')}}">Konsultasi</a>
                         {{-- <a class="collapse-item" href="{{route('konsultasiTipeIndex')}}">Konsultasi Tipe</a> --}}
                         <a class="collapse-item" href="{{route('eventAdmin')}}">Event</a>
@@ -147,26 +146,12 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header"></h6>
                         <a class="collapse-item" href="{{route('pendaftaranEvent')}}">Event</a>
-                        <a class="collapse-item" href="{{route('listKelas')}}">Kelas</a>
                         <a class="collapse-item" href="{{route('pendaftaranKonsultasi')}}">Konsultasi</a>
                         <a class="collapse-item" href="{{route('pendaftaranTemplate')}}">Template</a>
                     </div>
                 </div>
             </li>
 
-            {{-- <li class="nav-item">
-                <a class="nav-link" href="{{route('cvCheckerIndex')}}">
-                    <i class="fas fa-file-signature mx-1"></i>
-                    <span>CV Checker</span>
-                </a>
-            </li> --}}
-
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('ebookAdmin')}}">
-                    <i class="fa-solid fa-book mx-1"></i>
-                    <span>Ebook</span>
-                </a>
-            </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">

@@ -90,7 +90,6 @@
                         <li class="flex-lg-brackets"><a href="{{route('produkListKonsul')}}" data-tab="archived" class="nav-content-bttn open-font"><i class="fa-solid fa-ear-listen mr-3"></i></i><span>Konsultasi</span></a></li>
                         <li class="flex-lg-brackets"><a href="{{route('produkListKelas')}}" data-tab="archived" class="nav-content-bttn open-font"><i class="fas fa-chalkboard-teacher mr-2"></i><span>Kelas</span></a></li>
                         <li class="flex-lg-brackets"><a href="{{route('blog')}}" data-tab="archived" class="nav-content-bttn open-font"><i class="fa-solid fa-newspaper mr-3"></i><span>Blog</span></a></li>
-                        <li class="flex-lg-brackets"><a href="{{route('ebook')}}" data-tab="archived" class="nav-content-bttn open-font"><i class="feather-book mr-3"></i><span>Ebook</span></a></li>
                         <li class="flex-lg-brackets"><a href="{{route('produkListTemplate')}}" data-tab="archived" class="nav-content-bttn open-font"><i class="fas fa-box mr-3"></i></i><span>Template CV</span></a></li>
                         <li><a href="{{route('testIndex')}}" class="nav-content-bttn open-font" data-tab="favorites"><i class="feather-globe mr-3"></i><span>Assesment</span></a></li>
                         <li><a href="{{route('cvIndex')}}" class="nav-content-bttn open-font" data-tab="favorites"><i class="feather-file mr-3"></i><span>CV Maker</span></a></li>
