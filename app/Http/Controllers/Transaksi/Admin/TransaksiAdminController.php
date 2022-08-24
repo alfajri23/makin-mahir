@@ -150,6 +150,7 @@ class TransaksiAdminController extends Controller
         $data = Transaksi::find($request->id);
         //! Besok ganti switch aja 
 
+
         if($data->produk->id_kategori == 1 || $data->produk->id_kategori == 2){       
             $enroll = EventEnroll::create([
                 'id_user' => $data->id_user,

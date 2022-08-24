@@ -15,7 +15,8 @@
                 <tr>
                     <th>No</th>
                     <th>Nama</th>
-                    <th>Email</th>
+                    <th>Expert</th>
+                    <th>Nama pemesan</th>
                     <th>Jawaban</th>
                     <th>Status bayar</th>
                     <th>Status konsultasi</th>
@@ -83,7 +84,8 @@
                     width: "5%"
                 },
                 {data: 'judul', name: 'judul',width:"20%"},
-                {data: 'email', name: 'email'},
+                {data: 'vendor', name: 'vendor'},
+                {data: 'nama', name: 'nama'},
                 {data: 'jawaban', name: 'jawaban'},
                 {data: 'bayar', name: 'bayar',width: "5%"},
                 {data: 'status', name: 'status',width: "5%"},

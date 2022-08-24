@@ -7,9 +7,8 @@
 
     <h6>Download</h6>
     <div class="my-2">
-        <a href="{{route('downloadEvent',['id'=>2])}}" class="btn btn-primary btn-sm">Beduk</a>
-        <a href="{{route('downloadEvent',['id'=>3])}}" class="btn btn-secondary btn-sm">Webinar</a>
-        <a href="{{route('downloadEvent',['id'=>8])}}" class="btn btn-info btn-sm">Bootcamp</a>
+        <a href="{{route('downloadEvent',['id'=>1])}}" class="btn btn-primary btn-sm">Webinar</a>
+        <a href="{{route('downloadEvent',['id'=>2])}}" class="btn btn-info btn-sm">Bootcamp</a>
     </div>
 
     <div class="table-responsive">

@@ -28,7 +28,7 @@ class ProdukKonsul extends Model
 
     public function produk(){
         return $this->belongsTo(Produk::class,'id','id_produk')
-        ->where('id_kategori',[3]);
+        ->where('id_kategori',3);
     }
 
     public function pendaftaranKonsultasi()

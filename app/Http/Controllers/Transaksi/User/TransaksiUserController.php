@@ -8,8 +8,6 @@ use App\Models\Transaksi;
 use App\Models\Produk;
 use App\Models\FormSetting;
 use App\Helper\UploadFile;
-use App\Models\CVCheckerEnroll;
-use App\Models\EbookEnroll;
 use App\Models\EventEnroll;
 use App\Models\KelasEnroll;
 use App\Models\KonsultasiEnroll;
@@ -51,12 +49,12 @@ class TransaksiUserController extends Controller
             $required = explode(",",$ceks->required);
             $pilihan = explode(",",$ceks->pilihan);
 
-            return view('pages.member.daftar',compact('tipes','pertanyaans','data',
+            return view('pages.pembayaran.user.pembayaran_gateway',compact('tipes','pertanyaans','data',
                                                         'files','pilihan','required',
                                                         'gateway'));
         }else{
-
-            return view('pages.pembayaran.pembayaran_bukti',compact('data','gateway'));
+            $pertanyaans = null;
+            return view('pages.pembayaran.user.pembayaran_gateway',compact('pertanyaans','data','gateway'));
         }
 
     }
@@ -108,30 +106,6 @@ class TransaksiUserController extends Controller
         ];
 
         $filed = [];
-
-        // if(!empty($request->bukti)){    
-        //     foreach($request->bukti as $key => $file){
-        //         if ($key == array_key_last($request->bukti)) {
-        //             $nama_file = time()."_".$file->getClientOriginalName();
-        //             $tujuan_upload_server = public_path('storage/transaksi');
-        //             $tujuan_upload = 'storage/transaksi';
-        //             $files = $tujuan_upload . '/'. $nama_file;
-        //             $file->move($tujuan_upload_server,$nama_file);
-        //             $datas['bukti'] = $files;
-        //         }else{
-        //             $nama_file = time()."_".$file->getClientOriginalName();
-        //             $tujuan_upload_server = public_path('storage/file_tambahan');
-        //             $tujuan_upload = 'storage/file_tambahan';
-        //             $files = $tujuan_upload . '/'. $nama_file;
-        //             $file->move($tujuan_upload_server,$nama_file);
-        //             $filed[] = $files;
-        //         }
-        //     }
-
-        //     $file_name = implode(",",$filed);
-        //     $datas['file_tambahan'] = $file_name;
-        // }
-
 
         $produk = null;
         $sukses = 'sukses';
@@ -293,7 +267,6 @@ class TransaksiUserController extends Controller
         $data = $this->enroll($data); //Kirim transaksi
         $data->save();
 
-
         return redirect()->route('memberIndex');
     }
 
@@ -327,7 +300,6 @@ class TransaksiUserController extends Controller
                 'id_template' => $data->produk->id_produk,
             ]);
         }
-
         return $data;
     }
 

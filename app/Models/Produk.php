@@ -18,7 +18,7 @@ class Produk extends Model
     }
 
     public function konsultasi(){
-        return $this->hasOne(KonsultasiExpert::class,'id','id_produk');
+        return $this->hasOne(ProdukKonsul::class,'id','id_produk');
     }
 
     public function event(){

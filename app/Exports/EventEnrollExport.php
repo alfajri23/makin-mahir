@@ -24,22 +24,28 @@ class EventEnrollExport implements FromView, WithStyles, ShouldAutoSize
         $this->data = Transaksi::whereIn('id_produk',$id_produk)->get();
 
         $form = FormSetting::where('id_produk_kategori',$id)->first();
-        $pertanyaan = explode(",",$form->pertanyaan);
-        $tipe = explode(",",$form->tipe);
 
-        $radio_pertanyaan = [];
+        if(empty($form)){
+            $this->pertanyaan = [];
+            $this->num_file = 0;
+        }else{
+            $pertanyaan = explode(",",$form->pertanyaan);
+            $tipe = explode(",",$form->tipe);
 
-        foreach ($tipe as $key => $tp){
-            if($tp == 'file'){
-                unset($pertanyaan[$key]);
-                $this->num_file ++;
-            }else if($tp == 'radio'){
-                $radio_pertanyaan[] = $pertanyaan[$key];
-                unset($pertanyaan[$key]);
+            $radio_pertanyaan = [];
+
+            foreach ($tipe as $key => $tp){
+                if($tp == 'file'){
+                    unset($pertanyaan[$key]);
+                    $this->num_file ++;
+                }else if($tp == 'radio'){
+                    $radio_pertanyaan[] = $pertanyaan[$key];
+                    unset($pertanyaan[$key]);
+                }
             }
-        }
 
-        $this->pertanyaan = array_merge($pertanyaan,$radio_pertanyaan);
+            $this->pertanyaan = array_merge($pertanyaan,$radio_pertanyaan);
+        }
 
         if($id == 1){
             $this->jenis = 'webinar';

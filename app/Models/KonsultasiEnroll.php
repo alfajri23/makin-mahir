@@ -14,19 +14,14 @@ class KonsultasiEnroll extends Model
     protected $guarded =[];
     protected $table = 'enroll_konsultasis';
 
-    public function konsultasi()
-    {
-        return $this->belongsTo(KonsultasiExpert::class, 'id_konsultasi', 'id');
-    }
-
-    // public function tipe()
-    // {
-    //     return $this->belongsTo(KonsultasiTipe::class, 'id_konsultasi', 'id');
-    // }
-
     public function user()
     {
         return $this->belongsTo(User::class, 'id_user', 'id');
+    }
+
+    public function konsultasi()
+    {
+        return $this->belongsTo(ProdukKonsul::class, 'id_konsultasi', 'id');
     }
 
     public function expert()

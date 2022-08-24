@@ -20,11 +20,11 @@ class CreateProdukEventsTable extends Migration
             $table->string('link')->nullable();
             $table->date('tanggal_mulai')->nullable();
             $table->date('tanggal_akhir')->nullable();
-            $table->string('waktu');
+            $table->string('waktu')->nullable();
             $table->text('deskripsi')->nullable();
             $table->integer('id_expert')->nullable();
             $table->text('pemateri')->nullable();
-            $table->string('harga');
+            $table->string('harga')->nullable();
             $table->string('harga_bias')->nullable();
             $table->string('poster')->nullable();
             $table->string('grup_wa')->nullable();

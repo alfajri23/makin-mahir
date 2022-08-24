@@ -11,11 +11,6 @@ class Expert extends Authenticatable
     use HasFactory; 
     protected $guarded =[];
 
-    public function konsultasi()
-    {
-        return $this->hasMany(KonsultasiExpert::class, 'id_expert', 'id');
-    }
-
     public function event()
     {
         return $this->hasMany(ProdukEvent::class, 'id_expert', 'id');

@@ -4,15 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Helper\Telepon;
 use App\Http\Controllers\Controller;
-use App\Models\Kelas;
-use App\Models\KelasEnroll;
 use Illuminate\Http\Request;
-use App\Models\PendaftaranBeduk;
-//use App\Models\PendaftaranKonsultasi;
-use App\Models\PendaftaranWebinar;
-use App\Models\PendaftaranVideo;
-use App\Models\ProdukVideo;
-use App\Models\Transaksi;
 
 use App\Models\KonsultasiEnroll;
 use App\Models\EventEnroll;
@@ -198,9 +190,9 @@ class PendaftaranController extends Controller
                 ';
                 return $nama;
             })
-            ->addColumn('email', function($row){
+            ->addColumn('nama', function($row){
                 $nama = '
-                <p>'.$row->user->email.'</p>
+                <p>'.$row->user->nama.'</p>
                 ';
                 return $nama;
             })
@@ -231,6 +223,11 @@ class PendaftaranController extends Controller
                 ';
                 return $nama;
             })
+            ->addColumn('vendor', function($row){
+                return $expert = '
+                        <p>'.$row->expert->nama.'</p>
+                    ';
+            })
             ->addColumn('status', function($row){
                 switch($row->is_done){
                     case 1:
@@ -259,9 +256,8 @@ class PendaftaranController extends Controller
                 
                 return $actionBtn;
             })
-            ->rawColumns(['judul','email','jawaban','aksi','bayar','status'])
+            ->rawColumns(['judul','nama','jawaban','aksi','bayar','status','vendor'])
             ->make(true);
-        
         }
 
         return view('pages.admin.pendaftaran.pendaftaran_konsultasi');

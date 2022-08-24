@@ -23,16 +23,23 @@ class KonsultasiEnrollExport implements FromView, WithStyles, ShouldAutoSize
         $this->data = Transaksi::whereIn('id_produk',$id_produk)->get();
 
         $form = FormSetting::where('id_produk_kategori',3)->first();
-        $pertanyaan = explode(",",$form->pertanyaan);
-        $tipe = explode(",",$form->tipe);
 
-        foreach ($tipe as $key => $tp){
-            if($tp == 'file'){
-                unset($pertanyaan[$key]);
-                $this->num_file ++;
+        if(empty($form)){
+            $this->pertanyaan = [];
+            $this->num_file = 0;
+        }else{
+            $pertanyaan = explode(",",$form->pertanyaan);
+            $tipe = explode(",",$form->tipe);
+
+            foreach ($tipe as $key => $tp){
+                if($tp == 'file'){
+                    unset($pertanyaan[$key]);
+                    $this->num_file ++;
+                }
             }
+            $this->pertanyaan = $pertanyaan;
         }
-        $this->pertanyaan = $pertanyaan;
+        
 
     }
 

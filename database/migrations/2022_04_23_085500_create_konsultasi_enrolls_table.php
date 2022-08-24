@@ -19,6 +19,7 @@ class CreateKonsultasiEnrollsTable extends Migration
             $table->integer('id_expert')->nullable();
             $table->integer('id_konsultasi');
             $table->integer('id_transaksi')->nullable();
+            $table->integer('is_done')->default(0);
             $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();
