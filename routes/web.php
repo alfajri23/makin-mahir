@@ -147,6 +147,9 @@ Route::get('privacy-policy', [Controllers\PublicController::class,'privacy'])->n
 
 //end cv
 
+//* Pembaayaran
+Route::get('pembayaran/{id}', [Controllers\Transaksi\User\TransaksiUserController::class,'cekForm'])->name('pembayaranCek');
+
 
 //*MEMBER AREA
 Route::middleware(['auth'])->group(function () {
@@ -158,9 +161,6 @@ Route::middleware(['auth'])->group(function () {
     Route::post('daftar/webinar', [Controllers\DaftarController::class,'pendaftaran_webinar'])->name('daftarWebinar');
     Route::post('daftar/konsultasi', [Controllers\DaftarController::class,'pendaftaran_konsultasi'])->name('daftarKonsultasi');
     Route::post('daftar/video', [Controllers\DaftarController::class,'pendaftaran_video'])->name('daftarVideo');
-
-    //* Pembaayaran
-    Route::get('pembayaran/{id}', [Controllers\Transaksi\User\TransaksiUserController::class,'cekForm'])->name('pembayaranCek');
 
     //*Profile dan sudah enrool
     Route::prefix('my')->group(function(){
