@@ -344,9 +344,6 @@
                 cek(data);
             });
 
-            // console.log(priors);
-            // console.log(hasil);
-
             document.getElementById('hasil').value = JSON.stringify(hasil);
             document.getElementById('prior_form').value = JSON.stringify(priors);
             document.getElementById('formRias').submit();

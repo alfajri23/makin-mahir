@@ -3,12 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Helper\Layout;
-use App\Models\KonsultasiExpert;
+use App\Models\ProdukKonsul;
 use Illuminate\Http\Request;
 use App\Models\MbtiQuestion;
 use App\Models\MbtiResult;
 use App\Models\MbtiType;
-use App\Models\ProdukKonsul;
 use App\Models\RiasecQuestion;
 use App\Models\RiasecResult;
 use App\Models\RiasecType;
@@ -45,7 +44,7 @@ class TestController extends Controller
         
         //cek apakah ada data tes sebelumnya
         if($cek){
-            $data = KonsultasiExpert::latest()->limit(3)->get();
+            $data = ProdukKonsul::latest()->limit(3)->get();
             $title = 'produk pilihan';
             $tipe = 'konsultasi';
 
@@ -108,7 +107,7 @@ class TestController extends Controller
             ]); 
             $layout = 'layouts.member';
         }else{
-            $data = KonsultasiExpert::latest()->limit(3)->get();
+            $data = ProdukKonsul::latest()->limit(3)->get();
             $title = 'produk pilihan';
             $tipe = 'konsutasi';
 
@@ -141,7 +140,7 @@ class TestController extends Controller
         
         //cek apakah ada data tes sebelumnya
         if($cek){
-            $data = KonsultasiExpert::where('status',1)->latest()->limit(3)->get();
+            $data = ProdukKonsul::where('status',1)->latest()->limit(3)->get();
             $title = 'produk pilihan';
             $tipe = 'konsutasi';
 
@@ -177,7 +176,6 @@ class TestController extends Controller
 
         arsort($hasil);
 
-
         if(array_slice($hasil, 0, 1, true) == array_slice($hasil, 1, 1, true)){
             if(array_search(array_keys($hasil)[0],$prior) < array_search(array_keys($hasil)[1],$prior) ){
                 $first = array_keys($hasil)[0];
@@ -205,7 +203,7 @@ class TestController extends Controller
                 'result' => $result
             ]);  
         }else{
-            $data = KonsultasiExpert::latest()->limit(3)->get();
+            $data = ProdukKonsul::latest()->limit(3)->get();
             $title = 'produk pilihan';
             $tipe = 'konsutasi';
 
