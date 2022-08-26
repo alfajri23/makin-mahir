@@ -17,6 +17,7 @@ use App\Models\TemplateEnroll;
 use Illuminate\Support\Facades\Validator;
 use Xendit\Xendit;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Crypt;
 
 class TransaksiUserController extends Controller
 {
@@ -32,8 +33,12 @@ class TransaksiUserController extends Controller
         return view('pages.member.transfer.transfer_detail',compact('data'));
     }
 
-    public function cekForm(Request $request){
-        $data = Produk::find($request->id);
+    public function cekForm($link){
+        //$data = Produk::find($request->id);
+        $data = Produk::where([
+            'link' => $link,
+        ])->first();
+
 
         //! Cek apakah ada pertanyaan
         $ceks = FormSetting::where('id_produk_kategori',$data->id_kategori)->first(); 
@@ -203,6 +208,7 @@ class TransaksiUserController extends Controller
         $gateway = explode(",",$gateway->payment_methods);
 
         $external_id = 'MM_' . rand() . '_' .Carbon::now()->timestamp;
+        $encrypted_external_id = Crypt::encryptString($external_id);
 
         $params = [ 
             'user_id' => auth()->user()->id,
@@ -242,8 +248,8 @@ class TransaksiUserController extends Controller
                 ]
             ],
             'fixed_va' => true,
-            'success_redirect_url' => 'https://demo.makinmahir.id/callback?external_id='.$external_id.'',
-            'failure_redirect_url' => 'https://demo.makinmahir.id/callback?external_id='.$external_id.'',
+            'success_redirect_url' => 'https://demo.makinmahir.id/callback?external_id='.$encrypted_external_id.'',
+            'failure_redirect_url' => 'https://demo.makinmahir.id/callback?external_id='.$encrypted_external_id.'',
             'currency' => 'IDR',
             'items' => [
                 [
@@ -261,7 +267,8 @@ class TransaksiUserController extends Controller
 
     //Call back jika pembayaran berhasil
     public function callbackSuccess(Request $request){
-        $data = Transaksi::where('external_id',$request->external_id)->first();
+        $external_id = Crypt::decryptString($request->external_id);
+        $data = Transaksi::where('external_id',$external_id)->first();
         $data->status = 'lunas';
         $data->status_payment_gateway = 'SETTLED';
         $data = $this->enroll($data); //Kirim transaksi

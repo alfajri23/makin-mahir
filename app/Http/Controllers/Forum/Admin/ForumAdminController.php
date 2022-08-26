@@ -46,7 +46,7 @@ class ForumAdminController extends Controller
 
         $jawaban = ForumJawaban::create([
             'id_pertanyaan' => $request->id,
-            'id_user' => 20,
+            'id_user' => 1,
             'jawaban' => $request->jawaban,
         ]);
 

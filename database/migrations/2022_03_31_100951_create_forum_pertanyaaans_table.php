@@ -21,6 +21,7 @@ class CreateForumPertanyaaansTable extends Migration
             $table->string('gambar')->nullable();
             $table->integer('id_kategori')->nullable();
             $table->integer('lihat')->default(0);
+            $table->integer('is_answered')->default(0);
             $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();

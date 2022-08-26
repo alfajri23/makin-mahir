@@ -23,8 +23,7 @@
                     <th>Event</th>
                     <th>Konsultasi</th>
                     <th>Kelas</th>
-                    <th>MBTI</th>
-                    <th>Riasec</th>
+                    <th>Assesment</th>
                     <th>Daftar</th>
                     <th>Login</th>
                     <th>Aksi</th>   
@@ -124,8 +123,7 @@
                 {data: 'event', name: 'event',className: "dtCenter" },
                 {data: 'konsultasi', name: 'konsultasi',className: "dtCenter"},
                 {data: 'kelas', name: 'kelas',className: "dtCenter"},
-                {data: 'mbti', name: 'mbti',className: "dtCenter"},
-                {data: 'riasec', name: 'riasec',className: "dtCenter"},
+                {data: 'assesment', name: 'assesment',className: "dtCenter"},
                 {data: 'daftar', name: 'daftar'},
                 {data: 'last_login', name: 'last_login'},
                 {data: 'aksi', name: 'aksi',className: "dtCenter"},

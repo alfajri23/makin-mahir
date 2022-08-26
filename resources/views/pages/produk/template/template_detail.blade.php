@@ -40,7 +40,7 @@
                                 Rp. {{number_format($data->harga)}}
                             @endif
                         </h1>
-                        <a href="{{route('pembayaranCek',$data->produk->id)}}" class="btn btn-block border-0 w-100 bg-success p-3 text-white fw-600 rounded-lg d-inline-block font-xssss btn-light">{{$data->harga == null ? 'Daftar' : 'Beli sekarang'}}</a>
+                        <a href="{{route('pembayaranCek',$data->produk->link)}}" class="btn btn-block border-0 w-100 bg-success p-3 text-white fw-600 rounded-lg d-inline-block font-xssss btn-light">{{$data->harga == null ? 'Daftar' : 'Beli sekarang'}}</a>
                     </div>
                 </div>
             </div>

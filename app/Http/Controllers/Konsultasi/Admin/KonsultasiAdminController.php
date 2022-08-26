@@ -212,6 +212,7 @@ class KonsultasiAdminController extends Controller
             'id_kategori' => $request->tipe,
             'id_produk' => $konsultasi->id,
             'nama' => $request->judul,
+            'link' => Str::slug($request->judul, '-'),
             'harga' => str_replace(",", "", $request->harga),
             'id_expert' => $konsultasi->id_expert
         ]);

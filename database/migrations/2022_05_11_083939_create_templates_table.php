@@ -16,6 +16,7 @@ class CreateTemplatesTable extends Migration
         Schema::create('produk_templates', function (Blueprint $table) {
             $table->id();
             $table->string('judul')->nullable();
+            $table->string('link')->nullable();
             $table->string('harga')->nullable();
             $table->string('harga_bias')->nullable();
             $table->string('poster')->nullable();

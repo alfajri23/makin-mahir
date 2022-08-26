@@ -214,6 +214,7 @@ class EventAdminController extends Controller
             'id_kategori' => $request->tipe,
             'id_produk' => $event->id,
             'nama' => $request->judul,
+            'link' => Str::slug($request->judul, '-'),
             'harga' => str_replace(",", "", $request->harga),
             'id_expert' => $event->id_expert
         ]);

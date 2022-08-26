@@ -79,16 +79,8 @@ class UserController extends Controller
                 $nama = ''.count($row->kelas_enroll).'';
                 return $nama;
             })
-            ->addColumn('cv', function($row){
-                $nama = ''.count($row->cv_checker_enroll).'';
-                return $nama;
-            })
-            ->addColumn('mbti', function($row){
-                $nama = ''.count($row->mbti_result).'';
-                return $nama;
-            })
-            ->addColumn('riasec', function($row){
-                $nama = ''.count($row->riasec_result).'';
+            ->addColumn('assesment', function($row){
+                $nama = ''.count($row->mbti_result) + count($row->riasec_result).'';
                 return $nama;
             })
             ->addColumn('daftar', function($row){
@@ -115,7 +107,7 @@ class UserController extends Controller
                 ';
                 return $nama;
             })
-            ->rawColumns(['aksi','event','konsultasi','kelas','mbti','riasec','daftar','last_login'])
+            ->rawColumns(['aksi','event','konsultasi','kelas','assesment','daftar','last_login'])
             ->make(true);
         }
 

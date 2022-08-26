@@ -1,20 +1,12 @@
 <?php
 
-use App\Helper\Telepon;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
 use App\Http\Controllers\Notifications;
-use App\Models\User;
+
 use App\Notifications\WelcomeEmailNotification;
 
-
-use App\Exports\EventEnrollExport;
-use App\Models\Blog;
-use Illuminate\Support\Facades\Cookie;
-use Illuminate\Support\Facades\Request;
-use Maatwebsite\Excel\Facades\Excel;
-
-use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -97,9 +89,9 @@ Route::get('privacy-policy', [Controllers\PublicController::class,'privacy'])->n
 //end assesment
 
 //* Untuk detail belum beli
-    Route::get('produk/detail/{id}', [Controllers\Member\HomeController::class,'produk_detail'])->name('memberProdukDetail');
+    Route::get('produk/{link}', [Controllers\Member\HomeController::class,'produk_detail'])->name('memberProdukDetail');
     Route::get('produk/enroll/{id}', [Controllers\Member\HomeController::class,'produk_detail_enroll'])->name('enrollProdukDetail');
-    Route::get('course/{id}/materi/{ids}', [Controllers\Member\HomeController::class,'detail_kelas_materi'])->name('enrollMateriKelas');
+    //Route::get('course/{id}/materi/{ids}', [Controllers\Member\HomeController::class,'detail_kelas_materi'])->name('enrollMateriKelas');
 
     // Route::get('formulir', [Controllers\DaftarController::class,'form_member'])->name('memberForm');
     // Route::post('pendaftaran', [Controllers\Auth\RegisterDaftarController::class,'register'])->name('registerDaftar');
@@ -148,7 +140,7 @@ Route::get('privacy-policy', [Controllers\PublicController::class,'privacy'])->n
 //end cv
 
 //* Pembaayaran
-Route::get('pembayaran/{id}', [Controllers\Transaksi\User\TransaksiUserController::class,'cekForm'])->name('pembayaranCek');
+Route::get('pembayaran/{link}', [Controllers\Transaksi\User\TransaksiUserController::class,'cekForm'])->name('pembayaranCek');
 
 
 //*MEMBER AREA
@@ -407,6 +399,7 @@ Route::middleware(['expert'])->prefix('exp')->group(function () {
 
 
 Route::get('formulir', [Controllers\FormulirController::class,'index'])->name('formIndex');
+
 
 
 

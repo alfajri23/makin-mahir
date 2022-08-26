@@ -5,6 +5,7 @@
 <div class="container">
     <h2 class="text-center h1 font-weight-bold text-gray-800 mb-4">Tambah Konsultasi</h2>
     <div class="row">
+        @include('component.error.error_message')
         <div class="col-6">
             <form action="{{route('saveKonsultasi')}}" method="post" enctype="multipart/form-data">
                 @csrf

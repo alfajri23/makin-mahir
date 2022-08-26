@@ -6,6 +6,7 @@
     <h2 class="text-center h1 font-weight-bold text-gray-800 mb-4">Tambah Event</h2>
     <div class="row">
         <div class="col-6">
+            @include('component.error.error_message')
             <form action="{{route('saveEvent')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">

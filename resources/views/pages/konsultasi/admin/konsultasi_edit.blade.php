@@ -9,6 +9,7 @@
         </div>
     </div>
     <div class="row">
+        @include('component.error.error_message')
         <div class="col-6">
         <form action="{{route('saveKonsultasi')}}" method="post" enctype="multipart/form-data">
             @csrf

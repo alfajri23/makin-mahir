@@ -113,15 +113,15 @@ class User extends Authenticatable
         return $this->hasMany(EventEnroll::class, 'id_user', 'id');
     }
 
-    public function ebook_enroll()
-    {
-        return $this->hasMany(EbookEnroll::class, 'id_user', 'id');
-    }
+    // public function ebook_enroll()
+    // {
+    //     return $this->hasMany(EbookEnroll::class, 'id_user', 'id');
+    // }
 
-    public function cv_checker_enroll()
-    {
-        return $this->hasMany(CVCheckerEnroll::class, 'id_user', 'id');
-    }
+    // public function cv_checker_enroll()
+    // {
+    //     return $this->hasMany(CVCheckerEnroll::class, 'id_user', 'id');
+    // }
 
 
 }

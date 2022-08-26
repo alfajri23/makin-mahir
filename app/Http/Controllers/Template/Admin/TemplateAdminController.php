@@ -9,6 +9,7 @@ use App\Models\Template;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class TemplateAdminController extends Controller
 {
@@ -43,6 +44,7 @@ class TemplateAdminController extends Controller
 
         $datas = [
             'judul' => $request->judul,
+            'link' => Str::slug($request->judul, '-'),
             'harga' => str_replace(",", "", $request->harga),
             'harga_bias' => str_replace(",", "", $request->harga_bias),
             'desc' => $request->desc,
@@ -90,6 +92,7 @@ class TemplateAdminController extends Controller
 
         $produk = Produk::updateOrCreate(['id'=>$request->id_produk],[
             'nama' => $request->judul,
+            'link' => Str::slug($request->judul, '-'),
             'harga' => str_replace(",", "", $request->harga),
             'id_kategori' => 4,
             'id_produk' => $data->id,
