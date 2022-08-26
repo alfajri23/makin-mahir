@@ -20,7 +20,7 @@
                         <h4 class=" fw-500 mb-4 lh-30 font-xsss text-grey-600 mt-3 os-init">
                             {{$data['tentang']}}
                         </h4>
-                        <a href="{{route('pembayaranCek',$data->produk->id)}}" class="btn border-0 btn-primary px-5 fw-400 font-xs os-init">Beli kelas</a>
+                        <a href="{{route('pembayaranCek',$data->produk->link)}}" class="btn border-0 btn-primary px-5 fw-400 font-xs os-init">Beli kelas</a>
                     </div>
                 </div>
             </div>

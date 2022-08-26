@@ -72,10 +72,6 @@ class TransaksiUserController extends Controller
     public function create(Request $request){
         $data = Produk::find($request->id);
 
-        if($this->cekGratis($data)){
-            return redirect()->route('memberIndex');
-        }
-
         if(!empty($request->bukti)){ 
             for($i=0;$i<count($request->bukti);$i++){
                 $rules['bukti.' . $i] = 'file|mimes:jpeg,png,jpg,pdf|max:2048';
@@ -96,8 +92,12 @@ class TransaksiUserController extends Controller
 
         $pilihan = $request->pilihan != null ? implode(",",$request->pilihan) : '';
         $jawaban = $request->jawaban != null ? implode(",",$request->jawaban) : '';
-
         $jawaban = $pilihan != null ? $jawaban . ',' . $pilihan : $jawaban;
+
+        //Mengirim data produk, request dan jawaban
+        if($this->cekGratis($data,$request,$jawaban)){
+            return redirect()->route('memberIndex');
+        }
 
         $datas = [
             'id_produk' => $request->id,
@@ -112,6 +112,29 @@ class TransaksiUserController extends Controller
 
         $filed = [];
 
+        // if(!empty($request->bukti)){    
+        //     foreach($request->bukti as $key => $file){
+        //         if ($key == array_key_last($request->bukti)) {
+        //             $nama_file = time()."_".$file->getClientOriginalName();
+        //             $tujuan_upload_server = public_path('storage/transaksi');
+        //             $tujuan_upload = 'storage/transaksi';
+        //             $files = $tujuan_upload . '/'. $nama_file;
+        //             $file->move($tujuan_upload_server,$nama_file);
+        //             $datas['bukti'] = $files;
+        //         }else{
+        //             $nama_file = time()."_".$file->getClientOriginalName();
+        //             $tujuan_upload_server = public_path('storage/file_tambahan');
+        //             $tujuan_upload = 'storage/file_tambahan';
+        //             $files = $tujuan_upload . '/'. $nama_file;
+        //             $file->move($tujuan_upload_server,$nama_file);
+        //             $filed[] = $files;
+        //         }
+        //     }
+
+        //     $file_name = implode(",",$filed);
+        //     $datas['file_tambahan'] = $file_name;
+        // }
+
         $produk = null;
         $sukses = 'sukses';
 
@@ -124,10 +147,6 @@ class TransaksiUserController extends Controller
     //Pembayaran Xendit
     public function createGateway(Request $request){
         $data = Produk::find($request->id);
-
-        if($this->cekGratis($data)){
-            return redirect()->route('memberIndex');
-        }
     
         if(!empty($request->bukti)){ 
             for($i=0;$i<count($request->bukti);$i++){
@@ -149,8 +168,12 @@ class TransaksiUserController extends Controller
 
         $pilihan = $request->pilihan != null ? implode(",",$request->pilihan) : '';
         $jawaban = $request->jawaban != null ? implode(",",$request->jawaban) : '';
-
         $jawaban = $pilihan != null ? $jawaban . ',' . $pilihan : $jawaban;
+
+        //Mengirim data produk, request dan jawaban
+        if($this->cekGratis($data,$request,$jawaban)){
+            return redirect()->route('memberIndex');
+        }
 
         $gateway = $this->createXenditInvoice($request);
 
@@ -277,7 +300,7 @@ class TransaksiUserController extends Controller
         return redirect()->route('memberIndex');
     }
 
-    //Enroll produk saat pembayaran berhasil
+    //Enroll produk saat pembayaran xendit berhasil -> mengirim model transkasi
     public function enroll($data){
         if($data->produk->id_kategori == 1 || $data->produk->id_kategori == 2){       
             $enroll = EventEnroll::create([
@@ -310,35 +333,49 @@ class TransaksiUserController extends Controller
         return $data;
     }
 
-    //KOndisi jika produk gratis
-    public function cekGratis($data){
-        if($data->harga == null || $data->harga == ''){
-            if($data->id_kategori == 1 || $data->id_kategori == 2){       
+    //KOndisi jika produk gratis, 
+    public function cekGratis($dataProduk,$request,$jawaban){ 
+        if($dataProduk->harga == null || $dataProduk->harga == ''){
+            $datas = [
+                'id_produk' => $request->id,
+                'nama' => $request->nama,
+                'harga' => null,
+                'status' => 'lunas',
+                'id_user' => $request->session()->get('auth.id_user'),
+                'tanggal_bayar' => now(),
+                'jawaban' => $jawaban,
+                'telepon' => $request->telepon,
+            ];
+
+            $transaksi = Transaksi::create($datas);
+            
+            
+            if($dataProduk->id_kategori == 1 || $dataProduk->id_kategori == 2){       
                 $enroll = EventEnroll::create([
                     'id_user' => auth()->user()->id,
-                    'id_event' => $data->id_produk,
-                    'id_transaksi' => $data->id,
-                    'id_expert' => $data->event->id_expert
+                    'id_event' => $dataProduk->id_produk,
+                    'id_transaksi' => $transaksi->id,
+                    'id_expert' => $dataProduk->event->id_expert
                 ]);
-            }else if($data->id_kategori == 3){
+            }else if($dataProduk->id_kategori == 3){
                 $enroll = KonsultasiEnroll::create([
                     'id_user' => auth()->user()->id,
-                    'id_konsultasi' => $data->id_produk,
-                    'id_transaksi' => $data->id,
-                    'id_expert' => $data->konsultasi->id_expert
+                    'id_konsultasi' => $dataProduk->id_produk,
+                    'id_transaksi' => $transaksi->id,
+                    'id_expert' => $dataProduk->konsultasi->id_expert
                 ]);
-            }else if($data->id_kategori == 10){
+            }else if($dataProduk->id_kategori == 10){
                 $enroll = KelasEnroll::create([
                     'id_user' => auth()->user()->id,
-                    'id_kelas' => $data->id_produk,
-                    'id_transaksi' => $data->id,
-                    'id_expert' => $data->kelas->id_expert
+                    'id_kelas' => $dataProduk->id_produk,
+                    'id_transaksi' => $transaksi->id,
+                    'id_expert' => $dataProduk->kelas->id_expert
                 ]);
-            }else if($data->id_kategori == 4){
+            }else if($dataProduk->id_kategori == 4){
                 $enroll = TemplateEnroll::create([
                     'id_user' => auth()->user()->id,
-                    'id_transaksi' => $data->id,
-                    'id_template' => $data->id_produk,
+                    'id_transaksi' => $transaksi->id,
+                    'id_template' => $dataProduk->id_produk,
                 ]);
             }
 

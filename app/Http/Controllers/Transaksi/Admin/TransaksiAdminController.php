@@ -100,10 +100,18 @@ class TransaksiAdminController extends Controller
                     return $actionBtn;
                 })
                 ->addColumn('nominal', function($row){
-                    $actionBtn = '
-                    <div>Rp. '.$row['harga'].'</div>
-                    ';
+
+                    $actionBtn = $row['harga'] != null ?
+                    '
+                        <div>Rp. '.$row['harga'].'</div>
+                    ' : '<span class="badge bg-success">Gratis</span>';
                     return $actionBtn;
+                })
+                ->addColumn('tanggal', function($row){
+                    $nama = '
+                    <p>'.date_format(date_create($row->tanggal_bayar),"d M Y").'</p>
+                    ';
+                    return $nama;
                 })
                 ->addColumn('aksi', function($row){
 
@@ -126,7 +134,7 @@ class TransaksiAdminController extends Controller
                     ';
                     return $actionBtn;
                 })
-                ->rawColumns(['checkbox','aksi','bayar','name','nominal','user','tipe','vendor'])
+                ->rawColumns(['checkbox','tanggal','aksi','bayar','name','nominal','user','tipe','vendor'])
                 ->make(true);
         }
        

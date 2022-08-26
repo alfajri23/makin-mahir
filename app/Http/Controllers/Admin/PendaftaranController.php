@@ -39,6 +39,7 @@ class PendaftaranController extends Controller
             })
             ->addColumn('bayar', function($row){
                 $actionBtn = '';
+                
                 if($row->transaksi->status == 'lunas'){
                     $actionBtn = '
                         <span class="badge badge-success">Lunas</span>
@@ -56,6 +57,7 @@ class PendaftaranController extends Controller
                         <span class="badge badge-danger">Ditolak</span>
                     ';
                 }
+                
                 return $actionBtn;
             })
             ->addColumn('tipe', function($row){
@@ -71,15 +73,14 @@ class PendaftaranController extends Controller
                 return $nama;
             })
             ->addColumn('aksi', function($row){
-                $actionBtn = '
+                return $actionBtn = '
                     <div class="">
-                        <a onclick="detail('.$row->transaksi->id.','.$row->id.')" class="btn btn-secondary btn-sm"><i class="fa-solid fa-circle-info"></i></a>
+                    <a onclick="detail('.$row->transaksi->id.','.$row->id.')" class="btn btn-secondary btn-sm"><i class="fa-solid fa-circle-info"></i></a>
                         <a href="https://wa.me/'.Telepon::changeTo62($row->transaksi->telepon).'" target="_blank" class="btn btn-success btn-sm"><i class="fa-brands fa-whatsapp"></i></a>
                     </div>
                 ';
-                
-                return $actionBtn;
             })
+
             ->rawColumns(['judul','email','tipe','aksi','bayar','tanggal'])
             ->make(true);
         

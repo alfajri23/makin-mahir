@@ -51,7 +51,7 @@
                                 </div>
 
                                 <h4 class="fw-700 font-xss mt-3 lh-1 mt-0">
-                                    <a href="{{route('enrollProdukDetail',$datas->produk->id)}}" class="text-dark text-grey-900">{{$datas['judul']}}</a>
+                                    <a href="{{route('enrollProdukDetail',$datas->produk->link)}}" class="text-dark text-grey-900">{{$datas['judul']}}</a>
                                 </h4>
                                 {{-- <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2 mb-0">Tanggal beli : {{$dt->tanggal_beli}} </h6> --}}
                                 <h6 class="font-xssss text-grey-600 fw-600 ml-0 mt-2 mb-0"> {{!empty($datas['tanggal']) ? $datas['tanggal'] : ''}} </h6>

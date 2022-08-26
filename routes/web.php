@@ -90,7 +90,7 @@ Route::get('privacy-policy', [Controllers\PublicController::class,'privacy'])->n
 
 //* Untuk detail belum beli
     Route::get('produk/{link}', [Controllers\Member\HomeController::class,'produk_detail'])->name('memberProdukDetail');
-    Route::get('produk/enroll/{id}', [Controllers\Member\HomeController::class,'produk_detail_enroll'])->name('enrollProdukDetail');
+    Route::get('produk/enroll/{link}', [Controllers\Member\HomeController::class,'produk_detail_enroll'])->name('enrollProdukDetail');
     //Route::get('course/{id}/materi/{ids}', [Controllers\Member\HomeController::class,'detail_kelas_materi'])->name('enrollMateriKelas');
 
     // Route::get('formulir', [Controllers\DaftarController::class,'form_member'])->name('memberForm');
@@ -149,11 +149,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('produk', [Controllers\Member\HomeController::class,'produk_list'])->name('memberProdukList');
     Route::get('cv-checker', [Controllers\Member\HomeController::class,'cv_checker'])->name('memberChecker');
 
-    Route::post('daftar/beduk', [Controllers\DaftarController::class,'pendaftaran_beduk'])->name('daftarBeduk');
-    Route::post('daftar/webinar', [Controllers\DaftarController::class,'pendaftaran_webinar'])->name('daftarWebinar');
-    Route::post('daftar/konsultasi', [Controllers\DaftarController::class,'pendaftaran_konsultasi'])->name('daftarKonsultasi');
-    Route::post('daftar/video', [Controllers\DaftarController::class,'pendaftaran_video'])->name('daftarVideo');
-
     //*Profile dan sudah enrool
     Route::prefix('my')->group(function(){
         Route::get('/', [Controllers\Member\HomeController::class,'profile'])->name('memberProfile');
@@ -167,16 +162,8 @@ Route::middleware(['auth'])->group(function () {
         Route::get('kelas/detail', [Controllers\Member\HomeController::class,'detail_kelas'])->name('memberKelasDetail');
         Route::get('kelas/detail/{id}/{sub}', [Controllers\Member\HomeController::class,'detail_sub_kelas'])->name('memberKelasSubDetail');
         
-        
         Route::get('konsultasi', [Controllers\Member\HomeController::class,'konsultasi_saya'])->name('memberKonsultasi');
-
         Route::get('template', [Controllers\Member\HomeController::class,'template_saya'])->name('memberTemplate');
-
-        //Checker
-        Route::post('saveCheck', [Controllers\CVCheckerController::class,'saveChecker'])->name('saveChecker');
-        Route::get('cv-checker/riwayat', [Controllers\Member\HomeController::class,'cv_checker_riwayat'])->name('memberCheckerRiwayat');
-        Route::get('cv-checker/detail/{id}', [Controllers\Member\HomeController::class,'cv_checker_detail'])->name('memberCheckerDetail');
-        
 
         //Ujian
         Route::get('ujian/{id}', [Controllers\Member\UjianController::class,'index'])->name('memberAttemptTest');

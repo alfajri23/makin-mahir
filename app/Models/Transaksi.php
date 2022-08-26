@@ -35,13 +35,13 @@ class Transaksi extends Model
         return $this->belongsTo(ProdukEvent::class,'id','id_transaksi');
     }
 
-    public function ebook_enroll(){
-        return $this->belongsTo(Ebook::class,'id','id_transaksi');
-    }
+    // public function ebook_enroll(){
+    //     return $this->belongsTo(Ebook::class,'id','id_transaksi');
+    // }
 
-    public function cv_enroll(){
-        return $this->belongsTo(CVCheckerEnroll::class,'id','id_transaksi');
-    }
+    // public function cv_enroll(){
+    //     return $this->belongsTo(CVCheckerEnroll::class,'id','id_transaksi');
+    // }
 
     public function template_enroll(){
         return $this->belongsTo(TemplateEnroll::class,'id','id_transaksi');

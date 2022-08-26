@@ -127,7 +127,7 @@
                 {data: 'nama', name: 'nama',width: "40%"},
                 {data: 'user', name: 'user',width: "10%"},
                 {data: 'nominal', name: 'nominal'},
-                {data: 'tanggal_bayar', name: 'tanggal_bayar'},
+                {data: 'tanggal', name: 'tanggal'},
                 {data: 'bayar', name: 'bayar',width: "5%"},
                 {data: 'aksi', name: 'aksi',width: "15%"},
             ],
