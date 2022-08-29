@@ -90,7 +90,6 @@
 
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="{{route('produkListEvent')}}">Event</a>
-                                        <a class="dropdown-item" href="{{route('produkListKelas')}}">Kelas Online</a>
                                         <a class="dropdown-item" href="{{route('produkListKonsul')}}">Konsultasi</a>
                                         <a class="dropdown-item" href="{{route('cvIndex')}}">CV Maker</a>
                                         <a class="dropdown-item" href="{{route('produkListTemplate')}}">Template CV</a>
@@ -109,9 +108,9 @@
                                 <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Tentang kami <i class="ti-angle-down"></i></a>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="{{route('profile')}}">Profil</a>
-                                        <!--<a class="dropdown-item" href="{{route('goes_sekolah')}}">Goes to sekolah</a>-->
-                                        <!--<a class="dropdown-item" href="{{route('goes_campus')}}">Goes to campus</a>-->
-                                        <!--<a class="dropdown-item" href="">Kontak</a>-->
+                                        <a class="dropdown-item" href="{{route('goes_sekolah')}}">Goes to sekolah</a>
+                                        <a class="dropdown-item" href="{{route('goes_campus')}}">Goes to campus</a>
+                                       
                                     </div>
                                 </li>
 
@@ -122,7 +121,12 @@
                                 {{-- AUTH --}}
                                 @if (Route::has('login'))
                                     @auth
-                                    <li class="nav-item d-block d-sm-none"><a class="nav-link" href="{{ route('memberIndex') }}">Home</a></li>
+                                    <li class="nav-item d-block d-sm-none"><a class="nav-link" href="{{ route('memberProfile') }}">Profile</a></li>
+                                    <li class="nav-item d-block d-sm-none"><a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">Logout</a></li>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
                                     @else
                                     <li class="nav-item d-block d-sm-none"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
                                         @if (Route::has('register'))
@@ -136,9 +140,11 @@
                     <div class="col-lg-3 text-right d-lg-block d-none">
                         @if (Route::has('login'))
                             @auth
-                                <a href="{{ route('memberIndex') }}" class="header-btn bg-dark fw-500 text-white font-xssss lh-32 w100 text-center d-inline-block rounded-xl mt-1">Home</a>
+                                <a href="{{ route('memberProfile') }}" class="header-btn bg-dark fw-500 text-white font-xssss lh-32 w100 text-center d-inline-block rounded-xl mt-1">Home</a>
+                                <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();" class="header-btn btn btn-outline-danger fw-500 text-danger font-xssss lh-32 w100 text-center d-inline-block rounded-xl mt-1">Logout</a>
                             @else
-                                <a href="{{ route('login') }}" class="header-btn bg-dark fw-500 text-white font-xssss lh-32 w100 text-center d-inline-block rounded-xl mt-1">Login</a>
+                                <a href="{{ route('login') }}" class="header-btn bg-dark fw-500 text-white font-xssss lh-32 w100 text-center d-inline-block rounded-xl mt-1">Profile</a>
                                 @if (Route::has('register'))
                                     <a href="{{ route('register') }}" class="header-btn bg-current fw-500 text-white font-xssss lh-32 w100 text-center d-inline-block rounded-xl mt-1">Register</a>
                                 @endif
@@ -199,7 +205,6 @@
                                     <h5 class="font-xs">Layanan</h5>
                                     <ul>
                                         <li><a href="{{route('produkListEvent')}}">Event</a></li>
-                                        <li><a href="{{route('produkListKelas')}}">Kelas Online</a></li>
                                         <li><a href="{{route('produkListKonsul')}}">Konsultasi</a></li>
                                         <li><a href="{{route('cvIndex')}}">CV Maker</a></li>
                                         <li><a href="{{route('produkListTemplate')}}">Template CV</a></li>

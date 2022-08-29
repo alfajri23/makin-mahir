@@ -40,8 +40,8 @@ Route::get('callback', [Controllers\Transaksi\User\TransaksiUserController::clas
 Route::get('/', [Controllers\PublicController::class,'index'])->name('publicIndex');
 Route::get('event', [Controllers\Event\User\EventUserController::class,'list'])->name('produkListEvent');
 Route::get('konsul', [Controllers\Konsultasi\User\KonsultasiUserController::class,'list'])->name('produkListKonsul');
-Route::get('kelas', [Controllers\PublicController::class,'produk_list_kelas'])->name('produkListKelas');
-Route::get('template', [Controllers\PublicController::class,'produk_list_template'])->name('produkListTemplate');
+//Route::get('kelas', [Controllers\PublicController::class,'produk_list_kelas'])->name('produkListKelas');
+Route::get('template', [Controllers\Template\User\TemplateUserController::class,'list'])->name('produkListTemplate');
 
 
 
@@ -149,7 +149,6 @@ Route::get('pembayaran/{link}', [Controllers\Transaksi\User\TransaksiUserControl
 Route::middleware(['auth'])->group(function () {
     Route::get('home', [Controllers\Member\HomeController::class,'index'])->name('memberIndex');
     Route::get('produk', [Controllers\Member\HomeController::class,'produk_list'])->name('memberProdukList');
-    Route::get('cv-checker', [Controllers\Member\HomeController::class,'cv_checker'])->name('memberChecker');
 
     //*Profile dan sudah enrool
     Route::prefix('my')->group(function(){

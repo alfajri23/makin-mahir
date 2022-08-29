@@ -74,7 +74,7 @@ class HomeController extends Controller
                 $rekomen = Kelas::where('status',1)->limit(6)->latest()->get();
                 $babs = KelasBab::where('id_kelas',$produk->id_produk)->get();
 
-                return view('pages.produk.kelas.kelas_detail',compact('data','layout',
+                return view('pages.kelas.user.kelas_detail',compact('data','layout',
                                                                         'babs','rekomen'));
                 break;
 
@@ -82,21 +82,21 @@ class HomeController extends Controller
                 $data = ProdukKonsul::find($produk->id_produk);
                 $rekomen = ProdukKonsul::where('status',1)->limit(6)->latest()->get();
 
-                return view('pages.produk.konsultasi.konsultasi_detail',compact('data','layout',
+                return view('pages.konsultasi.user.konsultasi_detail',compact('data','layout',
                                                                         'rekomen'));
                 break;  
                 
             case "template" :
                 $data = Template::find($produk->id_produk);
 
-                return view('pages.produk.template.template_detail',compact('data','layout'));
+                return view('pages.template.user.template_detail',compact('data','layout'));
                 break;  
 
             default :
                 $data = ProdukEvent::find($produk->id_produk);
                 $rekomen = ProdukEvent::where('status',1)->limit(6)->latest()->get();
 
-                return view('pages.produk.event.event_detail',compact('data','layout','rekomen'));
+                return view('pages.event.user.event_detail',compact('data','layout','rekomen'));
                 
         }; 
 

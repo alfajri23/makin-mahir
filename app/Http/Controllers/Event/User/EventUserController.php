@@ -25,7 +25,7 @@ class EventUserController extends Controller
         $tipe = 'event';
         $route = 'produkListEvent';
         $riwayat = 'memberEventHistori';
-        return view('pages.event.user.event_list');
+        return view('pages.event.user.event_list',compact('data'));
         // return view('pages.public.list_produk',compact('riwayat','data',
         //                                                 'tipe','route',
         //                                                 'meta_title','layout'));

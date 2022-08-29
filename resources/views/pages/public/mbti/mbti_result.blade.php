@@ -26,19 +26,19 @@
 
 <div class="container">
     <div class="spacer"></div>
-    <div class="card d-block w-100 border-0 shadow-xss rounded-lg overflow-hidden p-4" id="printableArea">
+    <div class="" id="printableArea">
         <div class="w-100 mb-5">
             <img class="img-banner w-100" src="https://images.unsplash.com/photo-1619431843665-54babc76ac8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=942&q=80" alt="">
         </div>
 
         <p class="font-xssss fw-700 lh-28 text-grey-600 pl-0 float-right">{{!empty($history->created_at) ? $history->created_at : ''}}</p>
-        <div class="card-body mb-3 pb-0">
+        <div class="mb-3 pb-0">
             <h2 class="display1-size fw-400 font-lg d-block">  
                 <b>{{$datas->code}}</b> 
             </h2>
             <p class="font-xs fw-700 lh-28 text-grey-700 pl-0">{{$datas->name}}</p>
         </div>
-        <div class="card-body pb-0">
+        <div class="pb-0">
             <div class="row">
 
                 <div class="col-xl-12">
@@ -63,7 +63,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 mt-5">
+                <div class="mt-5">
                     @include('component.produk.produk_carousel')
                 </div> 
 

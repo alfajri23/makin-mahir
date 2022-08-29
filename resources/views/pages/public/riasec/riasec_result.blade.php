@@ -18,23 +18,28 @@
 </style>
 <div class="container">
     <div class="spacer"></div>
-    <div class="card d-block w-100 border-0 shadow-xss rounded-lg overflow-hidden p-4 my-3">
+    <div class="">
+
     <div class="w-100 mb-5">
         <img class="img-banner w-100" src="https://images.unsplash.com/photo-1617704716378-4022638c56e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt="">
     </div>
-    <p class="display1-size fw-700 lh-28 text-grey-800 pl-3">Selamat, {{auth()->user()->nama}}</p>
-    <p class="font-xss text-grey-800 fw-500 pl-3 mb-5">
-        Ini adalah hasil dari Tes Minat Bakat kamu menggunakan Tes Riasec.
 
-        Yang ditampilkan adalah 2 Hasil tertinggi yang paling menggambarkan dirimu
-        <br>
-        Hasil ini tidak mutlak, hanya sebagai gambaran
-    </p>
+    <div class="mb-5">
+
+        <p class="display1-size fw-700 lh-28 text-grey-800">Selamat, {{auth()->user()->nama}}</p>
+        <p class="font-xss text-grey-800 fw-500 mb-5">
+            Ini adalah hasil dari Tes Minat Bakat kamu menggunakan Tes Riasec.
+    
+            Yang ditampilkan adalah 2 Hasil tertinggi yang paling menggambarkan dirimu
+            <br>
+            Hasil ini tidak mutlak, hanya sebagai gambaran
+        </p>
+    </div>
 
     @forelse ($datas as $dt)
     <div class="mb-5">
-        <p class="display1-size fw-700 lh-28 {{$loop->first ? 'text-orange' : 'text-grey-800'}} pl-3">{{$dt->name}}</p>
-        <div class="card-body mb-3 pb-0">
+        <p class="display1-size fw-700 lh-28 {{$loop->first ? 'text-orange' : 'text-grey-800'}}">{{$dt->name}}</p>
+        <div class="mb-3 pb-0">
             <h2 class="font-xss text-grey-800 lh-28 fw-500 d-block">  
                 {!!$dt->description!!}
             </h2>
@@ -52,7 +57,7 @@
         </div>
     </div>
 
-    <div class="col-12 my-5">
+    <div class="row my-5">
         @include('component.produk.produk_carousel')
     </div> 
 

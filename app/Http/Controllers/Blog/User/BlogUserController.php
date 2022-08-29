@@ -23,14 +23,8 @@ class BlogUserController extends Controller
 
         $lastPage = $data->lastPage();
 
-        $layout = '';
-
-        if (Auth::check()) {
-            $layout = 'layouts.member';
-            
-        }else{
-            $layout = 'layouts.public';
-        }
+       
+        $layout = 'layouts.public';
 
         $currentPage = 0;
 

@@ -1,7 +1,13 @@
-@extends('layouts.member')
+@extends('layouts.public')
 @section('content')
-<div class="spacer"></div>
 <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+            <h2 class="fw-700 text-grey-900 display4-size display4-xs-size lh-1 mb-3 pt-5 aos-init" data-aos="fade-up" data-aos-delay="200" data-aos-duration="400">Assesment</h2>
+            <p class="fw-300 font-xss lh-28 text-grey-700 pl-lg--5 pr-lg--5 aos-init" data-aos="fade-up" data-aos-delay="300" data-aos-duration="500">Ikuti Test Assesment Buat Tau Potensi, Minat dan Bakat Kamu</p>
+        </div>
+    </div>
+
     <div class="spacer"></div>
 
     <div>

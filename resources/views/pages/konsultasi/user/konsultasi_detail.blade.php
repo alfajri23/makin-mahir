@@ -1,7 +1,14 @@
 @extends($layout)
 
 @section('content')
-    <div class="spacer"></div>
+
+    <style>
+        .owl-carousel {
+        -ms-touch-action: pan-y;
+        touch-action: pan-y;
+        }
+    </style>
+    {{-- <div class="spacer-sm"></div> --}}
     <div class="container-fluid">
 
         <div class="spacer-sm"></div>
@@ -35,26 +42,38 @@
                             @if ($data->harga == '#')
                                 Bayar<br> suka-suka
                             @elseif ($data->harga == null)
-                                gratis
+                                GRATIS
                             @else
                                 Rp. {{number_format($data->harga)}}
                             @endif
                         </h1>
-                        <a href="{{route('pembayaranCek',$data->produk->link)}}" class="btn btn-block border-0 w-100 bg-success p-3 text-white fw-600 rounded-lg d-inline-block font-xssss btn-light">{{$data->harga == null ? 'Daftar' : 'Beli sekarang'}}</a>
+                        <a href="{{route('pembayaranCek',$data->produk->link)}}" class="btn btn-block border-0 w-100 bg-success p-3 text-white fw-600 rounded-lg d-inline-block font-xs btn-light">{{$data->harga == null ? 'Daftar' : 'Beli sekarang'}}</a>
                     </div>
                 </div>
             </div>
 
             <div class="card d-block border-0 rounded-lg overflow-hidden p-4 shadow-xss mt-4">
+                <h2 class="fw-700 font-sm mb-3 mt-1 pl-1 mb-3">Pemateri</h2>
+                <div class="font-xs fw-500 lh-28 text-grey-600 mb-0 pl-2">{!!$data->pemateri!!}</div>
+            </div>
+
+            <div class="card d-block border-0 rounded-lg overflow-hidden p-4 shadow-xss mt-4">
                 <h2 class="fw-700 font-sm mb-3 mt-1 pl-1 mb-3">Deskripsi</h2>
-                <div class="font-xs fw-500 lh-28 text-grey-600 mb-0 pl-2">{!!$data->desc!!}</div>
+                <div class="font-xs fw-500 lh-28 text-grey-600 mb-0 pl-2">{!! $data->jadwal !!}</div>
             </div>
 
         </div>
 
         <div class="spacer"></div>
     </div>    
-    <div class="spacer"></div>
 
+    @php
+        $data = $rekomen;
+        $title = 'rekomendasi lainnya';
+    @endphp
+
+    <div class="row bg-light py-4 w__100">
+        @include('component.produk.produk_carousel')
+    </div>
 
 @endsection

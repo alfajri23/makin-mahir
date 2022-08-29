@@ -22,10 +22,11 @@ class TemplateUserController extends Controller
         $route = 'produkListTemplate';
         $riwayat = 'memberTemplate';
         $meta_title = "Paket CV Makin Mahir | MakinMahir.id";
-        $layout = Layout::layout_check();
 
-        return view('pages.public.list_produk',compact('data','tipe',
-                                                        'route','layout',
-                                                        'meta_title','riwayat'));
+        return view('pages.template.user.template_list',compact('data'));
+
+        // return view('pages.public.list_produk',compact('data','tipe',
+        //                                                 'route','layout',
+        //                                                 'meta_title','riwayat'));
     }
 }

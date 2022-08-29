@@ -112,54 +112,58 @@
             </div>
 
         </div>
-        <div class="col-12 col-sm-4 bg-light bg-sm-transparent py-5 p-sm-0">
-            <h5 class="mb-0 text-grey-900 fw-700 font-xs pb-3 mb-0 d-block ml-2">Blog terpopuler</h5>
-            <div class="blog-responsive">
-                @forelse ($popular as $dt)
-                    <div class="item w300 mb-4 blog-responsive-item owl-items">
-                        <div class="card w300 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1">
-                            <div class="card-image w-100 mb-3">
-                                <div class="video-bttn position-relative d-block"><img src="{{asset($dt->gambar)}}" alt="image" class="w-100"></div>
+        <div class="col-12 col-sm-4 bg-transparent py-5 p-sm-5">
+            @empty($popular)   
+                <h5 class="mb-0 text-grey-900 fw-700 font-xs pb-3 mb-0 d-block ml-2">Blog terpopuler</h5>
+                <div class="blog-responsive">
+                    @forelse ($popular as $dt)
+                        <div class="item w300 mb-4 blog-responsive-item owl-items">
+                            <div class="card w300 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1">
+                                <div class="card-image w-100 mb-3">
+                                    <div class="video-bttn position-relative d-block"><img src="{{asset($dt->gambar)}}" alt="image" class="w-100"></div>
+                                </div>
+                                <div class="card-body pt-0">
+                                    <h4 class="fw-700 font-xss mt-3 lh-28 mt-0">
+                                        {{-- beri pembeda route --}}
+                                        <a href="{{route('blogDetail',['id' => $dt->id, 'link' => $dt->link ])}}" class="text-dark text-grey-900">{{$dt->judul}}</a>  
+                                    </h4>
+                                    <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2 mb-0"> {{$dt->penulis}} </h6>
+                                    <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-0"> {{$dt->created_at}} </h6>
+                                </div>
                             </div>
-                            <div class="card-body pt-0">
-                                <h4 class="fw-700 font-xss mt-3 lh-28 mt-0">
-                                    {{-- beri pembeda route --}}
-                                    <a href="{{route('blogDetail',['id' => $dt->id, 'link' => $dt->link ])}}" class="text-dark text-grey-900">{{$dt->judul}}</a>  
-                                </h4>
-                                <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2 mb-0"> {{$dt->penulis}} </h6>
-                                <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-0"> {{$dt->created_at}} </h6>
-                            </div>
+        
                         </div>
-    
-                    </div>
-                @empty      
-                @endforelse
-            </div>
+                    @empty      
+                    @endforelse
+                </div>
+            @endempty
 
-            <h5 class="mb-0 text-grey-900 fw-700 font-xs pb-3 mb-0 d-block ml-2">Terbaru</h5>
-            
-            <div class="blog-responsive">
-                @forelse ($latest as $dt)
-                    <div class="item w300 mb-4 blog-responsive-item owl-items">
-                        <div class="card w300 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1">
-                            <div class="card-image w-100 mb-3">
-                                <div class="video-bttn position-relative d-block"><img src="{{asset($dt->gambar)}}" alt="image" class="w-100"></div>
+            @empty($latest) 
+                <h5 class="mb-0 text-grey-900 fw-700 font-xs pb-3 mb-0 d-block ml-2">Terbaru</h5>
+                <div class="blog-responsive">
+                    @forelse ($latest as $dt)
+                        <div class="item w300 mb-4 blog-responsive-item owl-items">
+                            <div class="card w300 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1">
+                                <div class="card-image w-100 mb-3">
+                                    <div class="video-bttn position-relative d-block"><img src="{{asset($dt->gambar)}}" alt="image" class="w-100"></div>
+                                </div>
+                                <div class="card-body pt-0">
+                                    <h4 class="fw-700 font-xss mt-3 lh-28 mt-0">
+                                        {{-- beri pembeda route --}}
+                                        <a href="{{route('blogDetail',['id' => $dt->id, 'link' => $dt->link ])}}" class="text-dark text-grey-900">{{$dt->judul}}</a>
+                                        
+                                    </h4>
+                                    <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2 mb-0"> {{$dt->penulis}} </h6>
+                                    <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-0"> {{$dt->created_at}} </h6>  
+                                </div>
                             </div>
-                            <div class="card-body pt-0">
-                                <h4 class="fw-700 font-xss mt-3 lh-28 mt-0">
-                                    {{-- beri pembeda route --}}
-                                    <a href="{{route('blogDetail',['id' => $dt->id, 'link' => $dt->link ])}}" class="text-dark text-grey-900">{{$dt->judul}}</a>
-                                    
-                                </h4>
-                                <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2 mb-0"> {{$dt->penulis}} </h6>
-                                <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-0"> {{$dt->created_at}} </h6>  
-                            </div>
+
                         </div>
+                    @empty      
+                    @endforelse
+                </div>
+            @endempty
 
-                    </div>
-                @empty      
-                @endforelse
-            </div>
         </div>
     </div>
 </div>

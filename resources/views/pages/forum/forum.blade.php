@@ -37,7 +37,7 @@
         <div class="col-12 col-sm-9">
 
             <div class="row justify-content-between px-3 mb-4">
-                <div class="clearfix col-12 col-sm-8">
+                <div class="">
                     <form action="{{route('forumIndex')}}" method="GET" class="float-left header-search border-1 rounded-sm">
                         <div class="form-group mb-0 icon-input d-flex">
                             <i class="feather-search font-lg text-grey-400"></i>
@@ -46,7 +46,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="col-12 col-sm-4 mt-2 clearfix">
+                <div class="mt-3 mt-sm-0">
                     <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">
                         Tambah pertanyaan
                     </button>

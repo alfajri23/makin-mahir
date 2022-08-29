@@ -12,7 +12,7 @@ class Layout {
             $layout = 'layouts.public';
         }
 
-        return $layout = Auth::check() ? 'layouts.member' : 'layouts.public';
+        return $layout = 'layouts.public';
     }
 }
 

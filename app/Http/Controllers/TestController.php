@@ -71,7 +71,7 @@ class TestController extends Controller
 
         //return view('pages.public.mbti.mbti_result_pdf',compact('datas'));
         $pdf = PDF::loadview('pages.public.mbti.mbti_result_pdf',['datas'=>$datas]);
-        return $pdf->download('laporan-test-mbti'.auth()->user()->nama.'pdf');
+        return $pdf->download('test-mbti-'.auth()->user()->nama.'.pdf');
     }
 
     //fungsi untuk cek apakah ada variabel key dari hasil tes atau tidak, jika tidak ada maka diisi 0
@@ -223,7 +223,7 @@ class TestController extends Controller
         $datas = RiasecType::whereIn('code',$ceks)->get();
 
         $pdf = PDF::loadview('pages.public.riasec.riasec_result_pdf',['datas'=>$datas]);
-        return $pdf->download('riasec-resut.pdf');
+        return $pdf->download('test-riasec-'.auth()->user()->nama.'.pdf');
         
     }
 }

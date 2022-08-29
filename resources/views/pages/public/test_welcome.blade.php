@@ -1,49 +1,62 @@
-@extends($layout)
+@extends('layouts.public')
 
 @section('content')
 
-<div class="container">
-    <div class="spacer-sm"></div>
+<div class="banner-wrapper bg-lightblue pb-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center pt-lg--10 pt-7">
+                <h2 class="fw-700 text-grey-900 display4-size display4-xs-size lh-1 mb-3 pt-5 aos-init" data-aos="fade-up" data-aos-delay="200" data-aos-duration="400">Assesment</h2>
+                <p class="fw-300 font-xss lh-28 text-grey-700 pl-lg--5 pr-lg--5 aos-init" data-aos="fade-up" data-aos-delay="300" data-aos-duration="500">Ikuti Test Assesment Buat Tau Potensi, Minat dan Bakat Kamu</p>
+            </div>
+        </div>
+    </div>
 
-    <div class="row">
-        <div class="col-12 mb-3">
-            <div class="card w-100 p-lg-5 p-4 rounded-xxl border-0" style="background: #faece3;">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10 text-center">
-                        <h2 class="fw-700 text-grey-700 display1-size display1-md-size lh-3 mb-3">Pahami Kepribadian</h2>
-                    </div>
-                    <div class="col-lg-8 text-center">
-                        <p class="fw-400 font-xss lh-28 text-grey-600">Ambil tesnya dan dapatkan salah satu gambaran kepribadianmu dari 16 kepribadian dalam Tes MBTI (Tes Kepribadian paling populer saat ini).</p>
-                    </div>
-                    <div class="col-lg-6 text-center mt-md-4 mb-3">
-                        <button type="button" class="header-btn bg-dark fw-600 text-white font-xssss p-2 lh-32 w100 text-center d-inline-block rounded-xl mt-1" data-toggle="modal" data-target="#mbtiModal">
-                            Ikuti test
-                        </button>
+    <div class="spacer"></div>
+</div>
+
+<div class="banner-wrapper bg-lightblue pb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-12 mb-3">
+                <div class="card w-100 p-5 rounded-xxl border-0" style="background: #faece3;">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h2 class="fw-700 text-grey-700 font-lg lh-3 mb-3">Pahami Kepribadian</h2>
+                        </div>
+                        <div class="col-lg-12">
+                            <p class="fw-400 font-xss lh-28 text-grey-600">Ambil tesnya dan dapatkan salah satu gambaran kepribadianmu dari 16 kepribadian dalam Tes MBTI (Tes Kepribadian paling populer saat ini).</p>
+                        </div>
+                        <div class="col-lg-6">
+                            <button type="button" class="btn btn-info fw-600 text-white font-xssss w100 text-center rounded-xl mt-1 p-2" data-toggle="modal" data-target="#mbtiModal">
+                                Ikuti test
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="col-12 mb-0 mb-sm-5">
-            <div class="card w-100 p-lg-5 p-4 rounded-xxl border-0" style="background: #8bd2db;">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10 text-center">
-                        <h2 class="fw-700 text-grey-700 display1-size display1-md-size lh-3 mb-3">Kenali Minatmu</h2>
-                    </div>
-                    <div class="col-lg-8 text-center">
-                        <p class="fw-400 font-xss lh-28 text-grey-800">Ambil tesnya dan dapatkan analisa minat serta keinginan agar kamu bisa merencanakan karir sesuai passionmu</p>
-                    </div>
-                    <div class="col-lg-6 text-center mt-md-4 mb-3">
-                        <button type="button" class="header-btn bg-dark fw-600 text-white font-xssss p-2 lh-32 w100 text-center d-inline-block rounded-xl mt-1" data-toggle="modal" data-target="#riasecModal">
-                            Ikuti test
-                        </button>
+    
+            <div class="col-sm-6 col-12 mb-0 mb-sm-5">
+                <div class="card w-100 p-5 rounded-xxl border-0" style="background: #8bd2db;">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h2 class="fw-700 text-grey-700 font-lg lh-3 mb-3">Kenali Minatmu</h2>
+                        </div>
+                        <div class="col-lg-12">
+                            <p class="fw-400 font-xss lh-28 text-grey-800">Ambil tesnya dan dapatkan analisa minat serta keinginan agar kamu bisa merencanakan karir sesuai passionmu</p>
+                        </div>
+                        <div class="col-lg-6">
+                            <button type="button" class="btn btn-info fw-600 text-white font-xssss w100 text-center rounded-xl mt-1 p-2" data-toggle="modal" data-target="#riasecModal">
+                                Ikuti test
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 </div>
+
 
 <!-- Button trigger modal -->
 
