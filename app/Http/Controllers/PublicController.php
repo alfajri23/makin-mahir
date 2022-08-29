@@ -35,44 +35,6 @@ class PublicController extends Controller
         return view('pages.public.produk_detail',compact('data'));
     }
 
-    //!Sementara ini tidak terpakai
-    public function produk_list_konsul(Request $request){
-       
-        
-        $meta_title = "Konsultasi Makin Mahir | MakinMahir.id";
-        $layout = Layout::layout_check();
-
-        return view('pages.produk.konsultasi.konsultasi_list',compact('data','layout','meta_title'));
-    }
-
-    //* Unutk sementara konsultasi ditampilkan semua tidak pertipe 
-    //public function produk_list_detail_konsul($id,Request $request){  
-    public function produk_list_detail_konsul(Request $request){  
-        if($request->search != null){
-            $data = ProdukKonsul::where('judul','like','%'.$request->search.'%')->get();
-
-        }else{
-            //$data = ProdukKonsul::where('id_konsultasi',$id)->get();
-            $data = ProdukKonsul::where('status',1)
-            ->latest()
-            ->get();
-        }
-
-        $layout = Layout::layout_check();
-
-        $meta_title = "Konsultasi Makin Mahir | MakinMahir.id";
-        $tipe = 'konsultasi';
-        $route = 'produkListKonsul';
-        $riwayat = 'memberKonsultasi';
-        // return view('pages.produk.konsultasi.konsultasi_list_detail',compact('data','tipe',
-        //                                                                     'meta_title','route',
-        //                                                                     'layout','riwayat'));
-
-        return view('pages.public.list_produk',compact('data','tipe',
-                        'meta_title','route',
-                        'layout','riwayat'));
-    }
-
     public function produk_list_event(Request $request){
         if($request->search != null){
             $data = ProdukEvent::where('judul','like','%'.$request->search.'%')

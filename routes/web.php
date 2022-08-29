@@ -36,12 +36,14 @@ Route::prefix('oauth')->group(function(){
 
 Route::get('callback', [Controllers\Transaksi\User\TransaksiUserController::class,'callbackSuccess'])->name('callbackSuccessXendit');
 
-//PUBLIC AREA
+//PRODUK AREA
 Route::get('/', [Controllers\PublicController::class,'index'])->name('publicIndex');
-Route::get('event', [Controllers\PublicController::class,'produk_list_event'])->name('produkListEvent');
-Route::get('konsul', [Controllers\PublicController::class,'produk_list_detail_konsul'])->name('produkListKonsul');
+Route::get('event', [Controllers\Event\User\EventUserController::class,'list'])->name('produkListEvent');
+Route::get('konsul', [Controllers\Konsultasi\User\KonsultasiUserController::class,'list'])->name('produkListKonsul');
 Route::get('kelas', [Controllers\PublicController::class,'produk_list_kelas'])->name('produkListKelas');
 Route::get('template', [Controllers\PublicController::class,'produk_list_template'])->name('produkListTemplate');
+
+
 
 //Blog
 Route::get('blog', [Controllers\Blog\User\BlogUserController::class,'index'])->name('blog');

@@ -1,4 +1,4 @@
-@extends($layout)
+@extends('layouts.public')
 @section('meta_title', $meta_title)
 @section('content')
 <style>
