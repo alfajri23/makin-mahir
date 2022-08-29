@@ -35,6 +35,7 @@ Route::prefix('oauth')->group(function(){
 });
 
 Route::get('callback', [Controllers\Transaksi\User\TransaksiUserController::class,'callbackSuccess'])->name('callbackSuccessXendit');
+Route::get('callback-expired', [Controllers\Transaksi\User\TransaksiUserController::class,'callbackExpired'])->name('callbackExpiredXendit');
 
 //PRODUK AREA
 Route::get('/', [Controllers\PublicController::class,'index'])->name('publicIndex');

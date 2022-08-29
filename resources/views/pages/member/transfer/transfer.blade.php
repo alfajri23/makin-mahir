@@ -1,4 +1,4 @@
-@extends('layouts.member')
+@extends('layouts.public')
 
 @section('content')
 
@@ -78,7 +78,7 @@
                         @if($dt->status == 'lunas')
                         <a href="{{route('enrollProdukDetail',$dt->id_produk)}}" class="mt-3 p-1 btn lh-24 w100 ml-1 ls-3 d-inline-block btn-sm bg-messenger font-xssss fw-700 ls-lg text-white">Lihat</a>
                         @endif
-                        <a href="{{route('transferDetail',$dt->id)}}" class="mt-3 p-1 btn lh-24 w100 ml-1 ls-3 d-inline-block btn-sm bg-light font-xssss fw-700 ls-lg text-dark">Detail</a>
+                        <a href="{{route('transferDetail',base64_encode($dt->id))}}" class="mt-3 p-1 btn lh-24 w100 ml-1 ls-3 d-inline-block btn-sm bg-light font-xssss fw-700 ls-lg text-dark">Detail</a>
                        
                     </div>
                 </div>

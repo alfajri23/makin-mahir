@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Validator;
 use Xendit\Xendit;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class TransaksiUserController extends Controller
 {
@@ -28,7 +29,12 @@ class TransaksiUserController extends Controller
     }
 
     public function detail($id){
-        $data = Transaksi::find($id);
+        $id = base64_decode($id);
+        $data = Transaksi::where([
+            'id'=>$id,
+            'id_user' => auth()->user()->id
+        ])->first();
+        
 
         return view('pages.member.transfer.transfer_detail',compact('data'));
     }
@@ -272,7 +278,7 @@ class TransaksiUserController extends Controller
             ],
             'fixed_va' => true,
             'success_redirect_url' => 'https://demo.makinmahir.id/callback?external_id='.$encrypted_external_id.'',
-            'failure_redirect_url' => 'https://demo.makinmahir.id/callback?external_id='.$encrypted_external_id.'',
+            'failure_redirect_url' => 'https://demo.makinmahir.id/callback-expired?external_id='.$encrypted_external_id.'',
             'currency' => 'IDR',
             'items' => [
                 [
@@ -298,6 +304,13 @@ class TransaksiUserController extends Controller
         $data->save();
 
         return redirect()->route('memberIndex');
+    }
+
+    //Call back jika pembayaran berhasil
+    public function callbackExpired(Request $request){
+        $external_id = Crypt::decryptString($request->external_id);
+        $data = Transaksi::where('external_id',$external_id)->first();
+        $data->forceDelete();
     }
 
     //Enroll produk saat pembayaran xendit berhasil -> mengirim model transkasi

@@ -12,6 +12,7 @@ class KomentarBlog extends Model
     use SoftDeletes;
 
     protected $guarded =[];
+    protected $table = 'blog_komentars';
 
     public function user()
     {

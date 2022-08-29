@@ -122,6 +122,7 @@
                                 @if (Route::has('login'))
                                     @auth
                                     <li class="nav-item d-block d-sm-none"><a class="nav-link" href="{{ route('memberProfile') }}">Profile</a></li>
+                                    <li class="nav-item d-block d-sm-none"><a class="nav-link" href="{{ route('transferIndex') }}">Riwayat transaksi</a></li>
                                     <li class="nav-item d-block d-sm-none"><a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">Logout</a></li>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -137,17 +138,26 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-3 text-right d-lg-block d-none">
+                    <div class="col-lg-3 text-right d-lg-flex d-none align-items-center justify-content-end">
                         @if (Route::has('login'))
                             @auth
-                                <a href="{{ route('memberProfile') }}" class="header-btn bg-dark fw-500 text-white font-xssss lh-32 w100 text-center d-inline-block rounded-xl mt-1">Home</a>
-                                <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();" class="header-btn btn btn-outline-danger fw-500 text-danger font-xssss lh-32 w100 text-center d-inline-block rounded-xl mt-1">Logout</a>
+                            <ul class="navbar-nav navbar-dark nav-menu float-none text-center">
+                                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">{{auth()->user()->nama}} <i class="ti-angle-down"></i></a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="{{route('memberProfile')}}">Akun</a>
+                                        <a class="dropdown-item" href="{{route('transferIndex')}}">Riwayat transaksi</a>  
+                                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();" class="dropdown-item">Logout</a> 
+                                    </div>
+                                </li>
+                                </ul>
                             @else
+                            <div>
                                 <a href="{{ route('login') }}" class="header-btn bg-dark fw-500 text-white font-xssss lh-32 w100 text-center d-inline-block rounded-xl mt-1">Profile</a>
                                 @if (Route::has('register'))
                                     <a href="{{ route('register') }}" class="header-btn bg-current fw-500 text-white font-xssss lh-32 w100 text-center d-inline-block rounded-xl mt-1">Register</a>
                                 @endif
+                            </div>
                             @endauth
                         @endif
                     </div>

@@ -1,9 +1,10 @@
-@extends('layouts.member')
+@extends('layouts.public')
 
 @section('content')
 
     <div class="container">
         <div class="col-xl-10 col-lg-8 col-md-8 col-sm-8 mt-5 mx-auto">
+            @if(!empty($data))
             <div class="order-details pt-5 pt-sm-0">
                 <div class="table-content table-responsive mb-5 card border border-dark p-2 p-sm-5">
                    <table class="table order-table order-table-2 mb-0">
@@ -58,6 +59,14 @@
                    </table>
                </div>
             </div>
+            @else
+            <div class="spacer"></div>
+            <h5 class="text-center my-4 font-lg">
+                Data tidak ditemukan
+            </h5>
+            <div class="spacer"></div>
+            @endif
+            
             
         </div>
     </div>
