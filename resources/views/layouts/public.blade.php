@@ -225,7 +225,7 @@
 
                                     <div class="">
 
-                                        <img src="{{asset('asset/img/program/bank.png')}}" class="img-fluid" alt="" srcset="">
+                                        <img src="{{asset('asset/home/bank.png')}}" class="img-fluid" alt="" srcset="">
                                     </div>
 
                                     <h5 class="mb-3 font-xs mt-4">Kantor</h5>
