@@ -396,7 +396,10 @@ Route::post('callback-test',function(){
     // This section is to get the callback Token from the header request, 
     // which will then later to be compared with our xendit callback verification token
     $reqHeaders = getallheaders();
-    $xIncomingCallbackTokenHeader = isset($reqHeaders['x-callback-token']) ? $reqHeaders['x-callback-token'] : "";
+    $xIncomingCallbackTokenHeader = isset($reqHeaders['X-CALLBACK-TOKEN']) ? $reqHeaders['X-CALLBACK-TOKEN'] : "";
+    // return response()->json([
+    //     'nama' => $xIncomingCallbackTokenHeader
+    // ]);
 
     // In order to ensure the request is coming from xendit
     // You must compare the incoming token is equal with your xendit callback verification token
@@ -421,28 +424,21 @@ Route::post('callback-test',function(){
     $_paymentChannel = $arrRequestInput['payment_channel'];
     $_paymentDestination = $arrRequestInput['payment_destination'];
     
-    $arrRequestInput = $arrRequestInput !== null ? $arrRequestInput : 'tidak adalah';
 
     Admin::updateOrCreate(['id'=>2],[
-        'nama' => $arrRequestInput
+        'nama' => $arrRequestInput['external_id']
     ]);
-
-    return response()->json([
-        'nama' => $arrRequestInput
-    ]);
+    
+    // return response()->json([
+    //     'nama' => $arrRequestInput
+    // ]);
 
     // You can then retrieve the information from the object array and use it for your application requirement checking
         
     }else{
     // Request is not from xendit, reject and throw http status forbidden
         http_response_code(403);
-        Admin::updateOrCreate(['id'=>2],[
-            'nama' => 'gagal'
-        ]);
-
-        return response()->json([
-            'nama' => $arrRequestInput
-        ]);
+        
     }
 })->name('callback-test');
 
