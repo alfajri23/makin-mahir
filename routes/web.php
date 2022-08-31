@@ -420,6 +420,8 @@ Route::get('callback-test',function(){
     $_paidAt = $arrRequestInput['paid_at'];
     $_paymentChannel = $arrRequestInput['payment_channel'];
     $_paymentDestination = $arrRequestInput['payment_destination'];
+    
+    $arrRequestInput = $arrRequestInput !== null ? $arrRequestInput : 'tidak adalah';
 
     Admin::updateOrCreate(['id'=>2],[
         'nama' => $arrRequestInput
@@ -429,7 +431,10 @@ Route::get('callback-test',function(){
         
     }else{
     // Request is not from xendit, reject and throw http status forbidden
-    http_response_code(403);
+        http_response_code(403);
+        Admin::updateOrCreate(['id'=>2],[
+            'nama' => 'gagal'
+        ]);
     }
 });
 
