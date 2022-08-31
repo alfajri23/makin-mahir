@@ -427,6 +427,10 @@ Route::post('callback-test',function(){
         'nama' => $arrRequestInput
     ]);
 
+    return response()->json([
+        'nama' => $arrRequestInput
+    ]);
+
     // You can then retrieve the information from the object array and use it for your application requirement checking
         
     }else{
@@ -434,6 +438,10 @@ Route::post('callback-test',function(){
         http_response_code(403);
         Admin::updateOrCreate(['id'=>2],[
             'nama' => 'gagal'
+        ]);
+
+        return response()->json([
+            'nama' => $arrRequestInput
         ]);
     }
 })->name('callback-test');
