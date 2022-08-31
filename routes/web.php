@@ -390,7 +390,7 @@ Route::middleware(['expert'])->prefix('exp')->group(function () {
 Route::get('formulir', [Controllers\FormulirController::class,'index'])->name('formIndex');
 
 
-Route::get('callback-test',function(){
+Route::post('callback-test',function(){
     $xenditXCallbackToken = 'hPADmzWZEo5cdkrbmjkDXtZQhw5cTSAzJ2zYVAGZiJzEnxzB';
 
     // This section is to get the callback Token from the header request, 
@@ -410,7 +410,7 @@ Route::get('callback-test',function(){
     $rawRequestInput = file_get_contents("php://input");
     // This line is to format the raw input into associative array
     $arrRequestInput = json_decode($rawRequestInput, true);
-    //print_r($arrRequestInput);
+    print_r($arrRequestInput);
     
     $_id = $arrRequestInput['id'];
     $_externalId = $arrRequestInput['external_id'];
