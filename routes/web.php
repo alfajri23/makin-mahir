@@ -436,7 +436,7 @@ Route::post('callback-test',function(){
             'nama' => 'gagal'
         ]);
     }
-});
+})->name('callback-test');
 
 
 
