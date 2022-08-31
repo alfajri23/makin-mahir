@@ -69,53 +69,50 @@
 
 <body class="color-theme-blue mont-font">
     <div class="main-wrap">
-        <div class="header-wrapper pt-3 pb-3 {{Request::segment(1) != null ? 'bg-white' : 'bg-nav' }}">
+        <div class="header-wrapper py-2 bg-white">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-9 navbar pt-0 pb-0">
                         <a class="" href="{{route('publicIndex')}}">
-                            <h1 class="ls-3 fw-700 poppins font-xs text-white mb-0 bg-primary rounded-xxl p-2 px-3">MakinMahir.id
+                            <h1 class="ls-3 fw-700 poppins font-xs text-primary mb-0 rounded-xxl p-2 px-3">MakinMahir.id
                             </h1>
-                            <span class="d-block fw-700 font-xsssss ls-1 text-grey-600 open-font text-center">Berkembang dan Makin Mahir !</span>
+                            
                         </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavDropdown">
                             <ul class="navbar-nav navbar-dark nav-menu float-none text-center">
-
-
-                                {{-- <li class="nav-item"><div class="nav-link" href="{{route('ebook')}}">Ebook</a></li> --}}
-                                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Layanan<i class="ti-angle-down"></i></a>
+                                <li class="nav-item dropdown "><a class="nav-link dropdown-toggle fw-500 text-grey-900 font-xssss" data-toggle="dropdown" href="#">Layanan<i class="ti-angle-down"></i></a>
 
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="{{route('produkListEvent')}}">Event</a>
-                                        <a class="dropdown-item" href="{{route('produkListKonsul')}}">Konsultasi</a>
-                                        <a class="dropdown-item" href="{{route('cvIndex')}}">CV Maker</a>
-                                        <a class="dropdown-item" href="{{route('produkListTemplate')}}">Template CV</a>
-                                        <!--<a class="dropdown-item" href="{{route('blog')}}">Blog</a>-->
-                                        <a class="dropdown-item" href="{{route('forumIndex')}}">Forum</a>
+                                        <a class="dropdown-item fw-400" href="{{route('produkListEvent')}}">Event</a>
+                                        <a class="dropdown-item fw-400" href="{{route('produkListKonsul')}}">Konsultasi</a>
+                                        <a class="dropdown-item fw-400" href="{{route('cvIndex')}}">CV Maker</a>
+                                        <a class="dropdown-item fw-400" href="{{route('produkListTemplate')}}">Template CV</a>
+                                        <!--<a class="dropdown-item fw-400" href="{{route('blog')}}">Blog</a>-->
+                                        <a class="dropdown-item fw-400" href="{{route('forumIndex')}}">Forum</a>
                                     </div>
                                 </li>
 
-                                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Tes Siap Kerja<i class="ti-angle-down"></i></a>
+                                <li class="nav-item dropdown "><a class="nav-link dropdown-toggle fw-500 text-grey-900 font-xssss" data-toggle="dropdown" href="#">Tes Siap Kerja<i class="ti-angle-down"></i></a>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="{{route('testIndex')}}">Tes kepribadian</a>
-                                        <a class="dropdown-item" href="{{route('testIndex')}}">Tes minat bakat</a>
+                                        <a class="dropdown-item fw-400" href="{{route('testIndex')}}">Tes kepribadian</a>
+                                        <a class="dropdown-item fw-400" href="{{route('testIndex')}}">Tes minat bakat</a>
                                     </div>
                                 </li>
 
-                                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Tentang kami <i class="ti-angle-down"></i></a>
+                                <li class="nav-item dropdown "><a class="nav-link dropdown-toggle fw-500 text-grey-900 font-xssss" data-toggle="dropdown" href="#">Tentang kami <i class="ti-angle-down"></i></a>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="{{route('profile')}}">Profil</a>
-                                        <a class="dropdown-item" href="{{route('goes_sekolah')}}">Goes to sekolah</a>
-                                        <a class="dropdown-item" href="{{route('goes_campus')}}">Goes to campus</a>
+                                        <a class="dropdown-item fw-400" href="{{route('profile')}}">Profil</a>
+                                        <a class="dropdown-item fw-400" href="{{route('goes_sekolah')}}">Goes to sekolah</a>
+                                        <a class="dropdown-item fw-400" href="{{route('goes_campus')}}">Goes to campus</a>
                                        
                                     </div>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{route('blog')}}">Blog</a>
+                                    <a class="nav-link font-xssss fw-400" href="{{route('blog')}}">Blog</a>
                                 </li>
 
                                 {{-- AUTH --}}
@@ -153,9 +150,9 @@
                                 </ul>
                             @else
                             <div>
-                                <a href="{{ route('login') }}" class="header-btn bg-dark fw-500 text-white font-xssss lh-32 w100 text-center d-inline-block rounded-xl mt-1">Profile</a>
+                                <a href="{{ route('login') }}" class="btn btn-primary fw-500 text-white font-xssss lh-32 w100 text-center d-inline-block rounded-sm mt-1">Login</a>
                                 @if (Route::has('register'))
-                                    <a href="{{ route('register') }}" class="header-btn bg-current fw-500 text-white font-xssss lh-32 w100 text-center d-inline-block rounded-xl mt-1">Register</a>
+                                    <a href="{{ route('register') }}" class="btn btn-outline-primary fw-500 font-xssss lh-32 w100 text-center d-inline-block rounded-sm mt-1">Register</a>
                                 @endif
                             </div>
                             @endauth
@@ -179,7 +176,7 @@
             </div>
         </a>
         
-        <div class="footer-wrapper layer-after bg-dark mt-0">
+        <div class="footer-wrapper layer-after bg-light mt-0">
             <div class="container">
                 <div class="row">
 

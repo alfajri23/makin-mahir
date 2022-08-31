@@ -275,7 +275,14 @@
 
 
       var swiper = new Swiper(".mySwiper", {
+        // direction: 'horizontal',
+        // simulateTouch: false,
+        // mousewheel: true,
+        freeMode: false,
+        // freeModeMomentum: false,
+        // freeModeSticky: true,
         cssMode : true,
+        allowTouchMove: false,
         navigation: {
           nextEl: ".swiper-next",
           prevEl: ".swiper-btn-prev",

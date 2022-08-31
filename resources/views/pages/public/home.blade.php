@@ -27,41 +27,301 @@
         top: 90% !important;
     }
 
-    /* .owl-item{
-        width:400px !important;
-    } */
+    .owl-item.active.center{
+        transform: scale(1.15);
+    }
+
+    .vh-banner{
+        height: 70vh;
+    }
+
+    .border-no-1{
+        border-bottom: 1px solid #E1E1F0;
+        border-right: 1px solid #E1E1F0
+    }
+
+    .border-no-2{
+
+    }
+
+    .border-no-3{
+        
+    }
+
+    .border-no-4{
+        border-top: 1px solid #E1E1F0;
+        border-left: 1px solid #E1E1F0
+    }
+
+    .layanan-card-mobile{
+        width: 70px !important;
+    }
+
+    /* MOBILE */
+    @media screen and (max-width: 767px) {
+        .border-no-1{
+            border-bottom: 1px solid #E1E1F0;
+            border-right: none;
+        }
+
+        .border-no-2{
+            border-bottom: 1px solid #E1E1F0;
+        }
+
+        .border-no-3{
+            border-bottom: 1px solid #E1E1F0;
+        }
+
+        .border-no-4{
+            border : none ;
+        }
+
+        
+        .vh-banner{
+            height: 60vh;
+        }
+    }
 
 
 </style>
     
 
-    <div class="banner-wrapper vh-md-100 layer-after app-shape bg-nav">
+    <div class="banner-wrapper vh-banner layer-after app-shape bg-home position-relative">
         <div class="container">
             <div class="row">
-                <div class="col-xxxl-7 col-xl-7 vh-md-100 pt-5 pt-sm-7 pb-2 pt-sm-7 mt-sm-5 mt-2 d-flex">
+                <div class="col-md-6 col-12 pt-5 pt-sm-7 pb-2 pt-sm-7 mt-sm-5 mt-2 d-flex">
                     <div class="card w-100 border-0 bg-transparent">
-
-                        <h2 class="poppins fw-600 text-grey-800 display3-size display4-md-size">Cuma Disini Kamu Diajarin</h2>
-                        <h2 class="poppins fw-600 text-primary display3-size display4-md-size typewrite" data-period="1000" data-type='[ "Cara Bikin CV Terbaik", "Latihan Interview Kerja", "Belajar Psikotes Kerja"]'>
-                              <span class="wrap"></span>
-                        </h2>
-                        <h2 class="poppins fw-600 text-grey-800 display3-size display4-md-size">Langsung Sama HRD</h2>
-
-                        <div class="w200">
-                            <a href="{{route('produkListKonsul')}}" class="btn btn-block border-0 w-100 bg-primary p-3 text-white fw-600 rounded-lg d-inline-block font-xssss btn-light mt-3">Konsultasi Sekarang</a>
-                        </div>
+                        <h2 class="poppins fw-600 text-white display3-size display4-md-size">Makin Mahir</h2>
+                        <p class="font-xss text-white">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Libero adipiscing quis pretium morbi morbi. Amet quam id sed diam non 
+                        </p>
                     </div>
                 </div>
-                <div class="col-xxxl-5 col-xl-4 vh-md-100 mt-5 mt-sm-0 align-items-center justify-content-center d-flex home-phone">
-                    <div class="card w-75 border-0 bg-transparent text-center d-block">
-                        <img src="{{asset('asset/img/program/phone.png')}}" alt="app-bg" class="w-100 d-lg-block" >    
+
+                <div class="col-md-5 col-10 mt-5 mt-sm-0 p-0 align-items-center justify-content-end d-flex position-absolute bottom-0 right-0">
+                    <div class="card w-100 border-0 bg-transparent text-center d-block">
+                        <img src="{{asset('asset/home/home-banner.png')}}" style="filter: opacity(0.2);"  alt="app-bg" class="w-100 d-lg-block" >    
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-12">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    {{-- Layanan mobile --}}
+    <div class="search-wrap position-relative d-block d-sm-none" style="top:-130px; ">
+        <div class="container">
+
+            <div class="row">
+                <div class="loop-home owl-carousel owl-theme owl-loaded owl-drag">  
+                   
+                    <div class="layanan-card-mobile text-center mx-2">
+                        <div class="card text-left border shadow-xs rounded-lg">
+                            <div class="card-body p-1">
+                                {{-- <a href="#" class="btn-round-xl bg-white text-center ml-2"> --}}
+                                    <img src="{{asset('asset/home/icon-event.png')}}" class="ml-2" alt="icon" style="width:40px" class="">
+                                {{-- </a> --}}
+                                <h4 class="fw-600 font-xsssss mb-2 mt-0 text-center">Event</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="layanan-card-mobile text-center mx-2">
+                        <div class="card text-left border shadow-xs rounded-lg">
+                            <div class="card-body p-1">
+                                {{-- <a href="#" class="btn-round-xl bg-white text-center ml-2"> --}}
+                                    <img src="{{asset('asset/home/icon-konsul.png')}}" class="ml-2" alt="icon" style="width:40px" class="">
+                                {{-- </a> --}}
+                                <h4 class="fw-600 font-xsssss mb-2 mt-0 text-center">Konsultasi</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="layanan-card-mobile text-center mx-2">
+                        <div class="card text-left border shadow-xs rounded-lg">
+                            <div class="card-body p-1">
+                                {{-- <a href="#" class="btn-round-xl bg-white text-center ml-2"> --}}
+                                    <img src="{{asset('asset/home/icon-test.png')}}" class="ml-2" alt="icon" style="width:40px" class="">
+                                {{-- </a> --}}
+                                <h4 class="fw-600 font-xsssss mb-2 mt-0 text-center">Assesment</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="layanan-card-mobile text-center mx-2">
+                        <div class="card text-left border shadow-xs rounded-lg">
+                            <div class="card-body p-1">
+                                {{-- <a href="#" class="btn-round-xl bg-white text-center ml-2"> --}}
+                                    <img src="{{asset('asset/home/icon-cv.png')}}" class="ml-2" alt="icon" style="width:40px" class="">
+                                {{-- </a> --}}
+                                <h4 class="fw-600 font-xsssss mb-2 mt-0 text-center">CV Maker</h4>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- card layanan --}}
+    <div class="search-wrap position-relative d-none d-sm-block" style="top:-100px; ">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 col-10 mx-auto mb-4">
+                    <div class="card rounded-lg p-4 border-0 bg-no-repeat bg-white shadow-lg">
+                        <div class="card-body w-100 p-0">
+                            <h4 class="font-sm fw-600 text-center mb-3">Nikmati Berbagai Layanan Terbaik</h4>
+                            <div class="container-fluid mb-4">
+                                <div class="row justify-content-around">
+                                   
+                                    <div class="col-3">
+                                        <div class="">
+                                            <div class="card w140 p-0 rounded-lg text-center border">
+                                                <div class="card-body">
+                                                    <a href="#" class="btn-round-xl bg-white">
+                                                        <img src="{{asset('asset/home/icon-event.png')}}" alt="icon" style="width:40px" class="">
+                                                    </a>
+                                                    <h4 class="fw-600 font-xsss mt-3 mb-0">Event</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-3">
+                                        <div class="">
+                                            <div class="card w140 p-0 rounded-lg text-center border">
+                                                <div class="card-body">
+                                                    <a href="#" class="btn-round-xl bg-white">
+                                                        <img src="{{asset('asset/home/icon-konsul.png')}}" alt="icon" class="">
+                                                    </a>
+                                                    <h4 class="fw-600 font-xsss mt-3 mb-0">Konsultasi</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-3">
+                                        <div class="">
+                                            <div class="card w140 p-0 rounded-lg text-center border">
+                                                <div class="card-body">
+                                                    <a href="#" class="btn-round-xl bg-white">
+                                                        <img src="{{asset('asset/home/icon-test.png')}}" alt="icon" class="">
+                                                    </a>
+                                                    <h4 class="fw-600 font-xsss mt-3 mb-0">Assesment</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-3">
+                                        <div class="">
+                                            <div class="card w140 p-0 rounded-lg text-center border">
+                                                <div class="card-body">
+                                                    <a href="#" class="btn-round-xl bg-white">
+                                                        <img src="{{asset('asset/home/icon-cv.png')}}" alt="icon" class="">
+                                                    </a>
+                                                    <h4 class="fw-600 font-xsss mt-3 mb-0">CV Maker</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="feature-wrapper layer-after my-5 pb-lg--7 pb-5">
+    {{-- tentang kami --}}
+    <div class="feature-wrapper layer-after my-5 pt-lg--7">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-3 order-lg-1 offset-lg-1">
+                    <img src="{{asset('asset/home/logo-main-lg.png')}}" alt="image" class="img-fluid">
+                </div>
+
+                <div class="col-lg-6 order-lg-2 offset-lg-1">
+                    <h2 class="poppins text-grey-900 fw-700 font-lg pb-3 mb-0 mt-3 d-block lh-3 aos-init" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">Kami adalah Platform Profesional 
+                        Dalam Pelatihan Persiapan Kerja</h2>
+                    <p class="fw-400 font-xss lh-28 text-grey-600 aos-init" data-aos="fade-up" data-aos-delay="300" data-aos-duration="500">Kami Membantu persiapan kamu agar siap dan layak masuk kedalam dunia kerja. Bergabung dengan kami maka kamu akan mendapatkan mentor terbaik kami, Assesment dan CV terbaik </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- why chose me --}}
+    <div class="service-wrapper layer-after my-5 pt-lg--7 pt-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="page-title style1 col-xl-6 col-lg-8 col-md-10 text-center mb-5">
+                    <h2 class="poppins text-grey-900 fw-700 font-xl pb-3 mb-0 mt-3 d-block lh-3">Tumbuh Bareng<br>Mahir Bareng</h2>
+                    <p class="fw-300 font-xss lh-28 text-grey-600">Inilah cara kami membantu Teman Cari Kerja untuk mempersiapkan diri memasuki dunia kerja</p>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-sm-6 col-12 border-no-1">
+                        <div class="card shadow-none bg-transparent border-0 my-3">
+                            <div class="row">
+                                <div class="col-3"><img src="https://via.placeholder.com/100x100.png" alt="blog-image" class="img-fluid rounded-lg"></div>
+                                <div class="col-8 pl-1">
+                                    <h2 class="fw-600 text-grey-800 font-xsss lh-3">Lorem Ipsum</h2>
+                                    <h6 class="font-xssss text-grey-500 fw-500 mt-0">The simplest but robust technology to accompany with you</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-12 border-no-2">
+                        <div class="card shadow-none bg-transparent border-0 my-3">
+                            <div class="row">
+                                <div class="col-3"><img src="https://via.placeholder.com/100x100.png" alt="blog-image" class="img-fluid rounded-lg"></div>
+                                <div class="col-8 pl-1">
+                                    <h2 class="fw-600 text-grey-800 font-xsss lh-3">Lorem Ipsum</h2>
+                                    <h6 class="font-xssss text-grey-500 fw-500 mt-0">The simplest but robust technology to accompany with you</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-12 border-no-3">
+                        <div class="card shadow-none bg-transparent border-0 my-3">
+                            <div class="row">
+                                <div class="col-3"><img src="https://via.placeholder.com/100x100.png" alt="blog-image" class="img-fluid rounded-lg"></div>
+                                <div class="col-8 pl-1">
+                                    <h2 class="fw-600 text-grey-800 font-xsss lh-3">Lorem Ipsum</h2>
+                                    <h6 class="font-xssss text-grey-500 fw-500 mt-0">The simplest but robust technology to accompany with you</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-12 border-no-4">
+                        <div class="card shadow-none bg-transparent border-0 my-3">
+                            <div class="row">
+                                <div class="col-3"><img src="https://via.placeholder.com/100x100.png" alt="blog-image" class="img-fluid rounded-lg"></div>
+                                <div class="col-8 pl-1">
+                                    <h2 class="fw-600 text-grey-800 font-xsss lh-3">Lorem Ipsum</h2>
+                                    <h6 class="font-xssss text-grey-500 fw-500 mt-0">The simplest but robust technology to accompany with you</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- layanan old --}}
+    {{-- <div class="feature-wrapper layer-after my-5 pb-lg--7 pb-5">
         <div class="row justify-content-center">
             <div class="page-title style1 col-xl-6 col-lg-8 col-md-10 text-center mb-5">
                 <h2 class="poppins text-grey-900 fw-700 display1-size display1-sm-size pb-3 mb-0 mt-3 d-block lh-3">Yang Kamu Dapatkan<br> Di Makin Mahir</h2>
@@ -85,14 +345,6 @@
                     </a>
                 </div>
 
-                {{-- <div class="col-lg-3 col-md-6">
-                    <a href="{{route('produkListTemplate')}}" class="hover card mb-4 w-100 border-0 pt-4 pb-4 pr-4 pl-7 shadow-xss rounded-lg aos-init" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="500">
-                        <i class="fa-solid fa-check-to-slot text-secondary font-xl position-absolute left-15 ml-2"></i>
-                        <h2 class="fw-700 font-xs text-grey-900 mt-1">Template CV</h2>
-                        <p class="fw-500 font-xssss lh-24 text-grey-600 mb-0">Buat kamu, ini rekomendasi template CV langsung dari HRD</p>
-                    </a>
-                </div> --}}
-
                 <div class="col-lg-3 col-md-6">
                     <a href="{{route('testIndex')}}" class="hover card mb-4 w-100 border-0 pt-4 pb-4 pr-4 pl-7 shadow-xss rounded-lg aos-init" data-aos="zoom-in" data-aos-delay="500" data-aos-duration="500">
                         <i class="fa-solid fa-file-signature text-success font-xl position-absolute left-15 ml-2"></i>
@@ -110,21 +362,13 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="service-wrapper layer-after my-5 ">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="page-title style1 col-xl-6 col-lg-8 col-md-10 text-center mb-5">
-                    <h2 class="poppins text-grey-900 fw-700 display1-size display1-sm-size pb-3 mb-0 mt-3 d-block lh-3">Tumbuh Bareng<br>Mahir Bareng</h2>
-                    <p class="fw-300 font-xss lh-28 text-grey-600">Inilah cara kami membantu Teman Cari Kerja untuk mempersiapkan diri memasuki dunia kerja</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    </div> --}}
 
 
-    <div class="feature-wrapper layer-after my-5  pt-lg--7 pt-5 mt-4">
+
+
+
+    {{-- <div class="feature-wrapper layer-after my-5  pt-lg--7 pt-5 mt-4">
         <div class="container">
               <div class="row">
                 <div class="col-lg-6 order-lg-2 offset-lg-1">
@@ -144,10 +388,6 @@
                            
                     </div>
                 </div>
-
-                {{-- <div class="col-lg-7 order-lg-2 offset-lg-1">
-                    <img src="{{asset('asset/img/program/zoom_konsul.jpeg')}}" alt="image" class="w-100 aos-init" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="500">
-                </div> --}}
                 
                 <div class="col-lg-4 order-lg-1">
                     <span class="font-xsssss mt-2 fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-xl ls-2 alert-success d-inline-block text-success aos-init" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">Konsultasi</span>
@@ -158,142 +398,123 @@
                 
               </div>
         </div>
-    </div>
+    </div> --}}
 
+    <div class="spacer"></div>
 
+    {{-- Testomoni --}}
     <div class="feedback-wrapper layer-after pb-lg--7 pb-5">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="page-title style1 col-xl-6 col-lg-8 col-md-10 text-center mb-5">
-                    <h2 class="poppins text-grey-900 fw-700 font-xxl pb-3 mb-0 mt-3 d-block lh-3">Testimoni</h2>
+                    <h2 class="text-grey-900 fw-600 font-lg pb-3 mb-0 mt-3 d-block lh-3">Here is what our Clients are saying About us</h2>
                 </div>
             </div>
-            <div class="row flex-column-reverse flex-sm-row">
-                <div class="col-lg-6">
-                    <div class="owl-testimoni banner-slider owl-carousel owl-theme owl-nav-link rounded-lg overflow-hidden">
+
+            <div class="col-lg-12">
+                <div class="loop owl-carousel owl-theme owl-loaded owl-drag">
+                    @for ($i=0;$i<5;$i++)
                         
-                        <div class="owl-items" >
-                            <h4 class="fw-500 lh-5 font-md mb-3 text-grey-700">“Saya jadi paham terkait pembuatan CV, baik yang ATS ataupun CV Kreatif. Terimakasih Makin Mahir”</h4>
-                             
-                            <div class="clearfix"></div>
-                            <div class="card-body pl-0 pt-0 mt-4 mb-5 pb-4 d-block">
-                                <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Veronica Yolanda</h4>    
-                                <h5 class="font-xssss fw-600 mb-1 text-grey-500">( UII Yogyakarta )</h5>
+                    <div class="owl-items text-center my-5">
+                        <div class="card w-100 p-4 p-md--5 text-left border shadow-xs rounded-lg">
+                            <div class="card-body pl-0 pt-0">
+                                <img src="https://via.placeholder.com/50x50.png" alt="user" class="w45 float-left mr-3">
+                                <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Goria {{$i}}</h4>    
+                                <h5 class="font-xssss fw-500 mb-1 text-grey-500">Digital Marketing Executive</h5>
                             </div>
+                            <p class="font-xsss fw-400 text-grey-500 lh-28 mt-0 mb-0 ">Human coronaviruses are common and are typically associated with mild illnesses, similar to the common cold.</p>
                         </div>
-
-                        <div class="owl-items" >
-                            <h4 class="fw-500 lh-5 font-md mb-3 text-grey-700">"Jadi karena ngikutin Kelas Bedah CV ini, aku jadi lebih tau mana yang harus aku masukin ke CV, mana yang enggak. Jadi bikin CV aku lebih ATS Friendly. Nah, walaupun ini berbayar, tapi menurut aku tuh ini worth it banget, kalian ga bakal nyesel gitu loh"</h4>
-                             
-                            <div class="clearfix"></div>
-                            <div class="card-body pl-0 pt-0 mt-4 mb-5 pb-4 d-block">
-                                <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Alya Raihanna</h4>    
-                                <h5 class="font-xssss fw-600 mb-1 text-grey-500"></h5>
-                            </div>
-                        </div>
-
-                        <div class="owl-items" >
-                            <h4 class="fw-500 lh-5 font-md mb-3 text-grey-700">"Kita tuh butuh prakteknya juga, gak cuma teorinya doank. Sekarang kan teorinya udah banyak, di google udah ada, di buku udah ada, kita butuh prakteknya juga. Kalo yang kaya gini saya baru pertama kali nih saya ikut yang kaya gini. Kalau menurut saya, yang kaya gini tuh cukup membantu sih mas"</h4>
-                             
-                            <div class="clearfix"></div>
-                            <div class="card-body pl-0 pt-0 mt-4 mb-5 pb-4 d-block">
-                                <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Yola Yulliana</h4>    
-                                <h5 class="font-xssss fw-600 mb-1 text-grey-500"></h5>
-                            </div>
-                        </div>
-
-                        <div class="owl-items" >
-                            <h4 class="fw-500 lh-5 font-md mb-3 text-grey-700">“Setelah mengikuti kelas konsul ini saya jadi lebih paham cara membuat CV untuk membuat personal branding lebih menonjol dibandingkan kandidat lain. Selain itu masukan dari kak Aldino terkait portofolio sangat membantu saya.”</h4>
-                             
-                            <div class="clearfix"></div>
-                            <div class="card-body pl-0 pt-0 mt-4 mb-5 pb-4 d-block">
-                                <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Ibnu Hari Winartomo</h4>    
-                                <h5 class="font-xssss fw-600 mb-1 text-grey-500">(Universitas Budi Luhur) </h5>
-                            </div>
-                        </div>
-
-                        <div class="owl-items" >
-                            <h4 class="fw-500 lh-5 font-md mb-3 text-grey-700">“Insighfull banget yah, jadi pikiran yang sebelumnya menurut saya sudah benar ternyata menurut HR ini kurang tepat. Jadi kelas bedah CV ini sangat membantu saya”</h4>
-                             
-                            <div class="clearfix"></div>
-                            <div class="card-body pl-0 pt-0 mt-4 mb-5 pb-4 d-block">
-                                <h4 class="text-grey-900 fw-700 font-xsss mt-0 pt-1">Dalil AF</h4>    
-                                <h5 class="font-xssss fw-600 mb-1 text-grey-500">( ISI Denpasar, Bali )</h5>
-                            </div>
-                        </div>
-
                     </div>
+                    @endfor
                 </div>
-                <div class="col-lg-5 offset-lg-1">
-                    <img src="{{asset('asset/img/program/testi.png')}}" alt="image" class="img-fluid mb-4">
+            </div>
+
+           
+        </div>
+    </div>
+
+    {{-- CTA --}}
+    <div class="subscribe-wrapper pt-3 pt-lg--7 pb-3 pb-lg--5 position-relative">
+        <div class="row">
+            <div class="col-12">
+                <div class="card w-100 p-4 p-lg--5 rounded-xxl bg-current border-0">
+                    <div class="container py-1">
+                        <div class="row ">
+                            <div class="col-lg-7 text-left">
+                                <h2 class="fw-600 text-white font-xl font-md-xs lh-3 mb-2 ">Jika Ada Pertanyaan Tim Kami siap Memberi pelayanan yang Terbaik</h2>
+                            </div>
+
+                            <div class="col-12 text-center mt-3 position-relative" style="z-index: 3;">
+                                <div>
+                                    <a href="#" class="btn border-0 p-2 px-4 text-primary fw-600 rounded-md font-xssss bg-white mt-3">Subscribe</a>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-10 mt-5 mt-sm-0 p-0 align-items-center justify-content-end d-md-flex position-absolute bottom-0 right-0">
+                                <div class="card w-100 border-0 bg-transparent text-center d-block">
+                                    <img src="{{asset('asset/home/call-banner.png')}}" style="filter: opacity(0.2);"  alt="app-bg" class="w-100 d-lg-block" >    
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    {{-- <div class="brand-wrapper pt-5 pb-lg--7 pb-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-6">
-                    <h2 class="text-grey-900 fw-500 font-xss pb-3 mb-1 d-block">Ikuti Kami</h2>
-                    <div class="container">
-                        <div class="row">
-                            <a href="https://www.linkedin.com/company/makinmahir-id/" class="text-linkedin">
-                                <i class="fa-brands fa-linkedin fa-2x mx-1"></i>
-                            </a>
-                            <a href="https://www.instagram.com/makinmahir_id/?hl=en" class="text-instagram">
-                                <i class="fa-brands fa-instagram fa-2x mx-1"></i>
-                            </a>
-                            <a href="https://www.youtube.com/c/MAKINMAHIR" class="text-pinterest">
-                                <i class="fa-brands fa-youtube fa-2x mx-1"></i>
-                            </a>
-                            <a href="https://www.tiktok.com/@makinmahir">
-                                <i class="fa-brands fa-tiktok fa-2x mx-1"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <h2 class="text-grey-900 fw-500 font-xss pb-3 mb-1 d-block">Metode Pembayaran</h2>
-                    <div class="container">
-                    <div class="row">
-                        <div class="text-center mx-2"><img src="{{asset('asset/img/program/bni.png')}}" alt="icon" class="w50 ml-auto mr-auto"></div>
-                        <div class="text-center mx-2"><img src="{{asset('asset/img/program/bri.png')}}" alt="icon" class="w50 ml-auto mr-auto"></div>
-                        <div class="text-center mx-2"><img src="{{asset('asset/img/program/mandiri.png')}}" alt="icon" class="w50 ml-auto mr-auto"></div>
-                        <div class="text-center mx-2"><img src="{{asset('asset/img/program/bca.png')}}" alt="icon" class="w50 ml-auto mr-auto"></div>
-                    </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
 
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script>
     var owl = $('.owl-carousel');
-    var testi = $('.owl-testimoni');
-    //console.log(owl);
-    owl.owlCarousel({
-        items:1,
-        loop:true,
-        center:true,
-        //autoWidth:true,
-        margin:15,
-        autoplay:true,
-        autoplayTimeout:3000,
-        //autoplayHoverPause:true
+    
+    // owl.owlCarousel({
+    //     items:3,
+    //     loop:true,
+    //     center:true, 
+    //     margin:15,
+    //     autoplay:true,
+    //     autoplayTimeout:3000,
+    // });
+
+    $('.loop-home').owlCarousel({
+        items:5,
+        
+        margin:7,
+        loop:false,
+        responsive:{
+            0:{
+                items:4,
+            },
+            600:{
+                items:2,
+            },
+            1200:{
+                items:3,
+            }
+        }
     });
 
-    testi.owlCarousel({
-        //items:5,
+    $('.loop').owlCarousel({
+        center: true,
+        items:3,
         loop:true,
-        //center:true,
-        //autoWidth:true,
-        //margin:15,
-        autoplay:true,
-        autoplayTimeout:3000,
-        //autoplayHoverPause:true
+        margin:50,
+        autoplay:true,  
+        dots:true,
+        responsive:{
+            0:{
+                items:1,
+            },
+            600:{
+                items:2,
+            },
+            1200:{
+                items:3,
+            }
+        }
     });
 
     var TxtType = function(el, toRotate, period) {

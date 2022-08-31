@@ -92,10 +92,11 @@ $(document).ready(function() {
 
      $('.feedback-slider').owlCarousel({
         loop:true,
-        margin:15,
+        center:true,
+        margin:25,
         nav:true,
-        autoplay:false,  
-        dots:false,
+        autoplay:true,  
+        dots:true,
         items:5,
         navText:['<i class="ti-angle-left"></i>','<i class="ti-angle-right"></i>'],
         responsive:{

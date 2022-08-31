@@ -101,8 +101,8 @@ background: linear-gradient(90deg, rgba(240,248,255,1) 0%, rgba(228,242,255,1) 5
 }
 
 .bg-home{
-  background: rgb(240,248,255);
-background: linear-gradient(58deg, rgba(240,248,255,1) 0%, rgba(228,242,255,1) 50%, rgba(192,226,255,1) 100%);
+  background: rgb(32,91,249);
+  background: linear-gradient(135deg, rgba(32,91,249,1) 0%, rgba(32,91,249,0.7) 100%);
 }
 
 .bg-aliceblue{
@@ -7902,7 +7902,7 @@ button.bg-dark:focus {
 }
 
 .rounded-lg {
-  border-radius: 0.3rem !important;
+  border-radius: 1rem !important;
 }
 
 .rounded-circle {
@@ -9267,6 +9267,10 @@ button.bg-dark:focus {
 
 .vw-100 {
   width: 100vw !important;
+}
+
+.vh-70 {
+  height: 70vh !important;
 }
 
 .vh-100 {
