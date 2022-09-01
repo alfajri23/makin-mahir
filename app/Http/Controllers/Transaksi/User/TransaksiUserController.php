@@ -102,7 +102,7 @@ class TransaksiUserController extends Controller
 
         //Mengirim data produk, request dan jawaban
         if($this->cekGratis($data,$request,$jawaban)){
-            return redirect()->route('memberIndex');
+            return redirect()->route('publicIndex');
         }
 
         $datas = [
@@ -178,7 +178,7 @@ class TransaksiUserController extends Controller
 
         //Mengirim data produk, request dan jawaban
         if($this->cekGratis($data,$request,$jawaban)){
-            return redirect()->route('memberIndex');
+            return redirect()->route('publicIndex');
         }
 
         $gateway = $this->createXenditInvoice($request);
@@ -303,7 +303,7 @@ class TransaksiUserController extends Controller
         $data = $this->enroll($data); //Kirim transaksi
         $data->save();
 
-        return redirect()->route('memberIndex');
+        return redirect()->route('transferIndex');
     }
 
     //Call back jika pembayaran berhasil
