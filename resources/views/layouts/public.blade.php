@@ -81,7 +81,7 @@
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-                        <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavDropdown">
+                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
                             <ul class="navbar-nav navbar-dark nav-menu float-none text-center">
                                 <li class="nav-item dropdown "><a class="nav-link dropdown-toggle fw-500 text-grey-900 font-xssss" data-toggle="dropdown" href="#">Layanan<i class="ti-angle-down"></i></a>
 
