@@ -340,16 +340,33 @@ class TransaksiUserController extends Controller
         $_paidAt = $arrRequestInput['paid_at'];
         $_paymentChannel = $arrRequestInput['payment_channel'];
         $_paymentDestination = $arrRequestInput['payment_destination'];
-        
-        $data = Transaksi::where('external_id',$arrRequestInput['external_id'])->first();
-        $data->status = 'lunas';
-        $data->status_payment_gateway = 'SETTLED';
-        $data = $this->enroll($data); //Kirim transaksi
-        $data->save();
 
-        Admin::updateOrCreate(['id'=>2],[
-            'nama' => $arrRequestInput['external_id']
-        ]);
+        if($arrRequestInput['status'] == 'paid' || $arrRequestInput['status'] == 'PAID'){
+            $data = Transaksi::where('external_id',$arrRequestInput['external_id'])->first();
+            $data->status = 'lunas';
+            $data->status_payment_gateway = 'SETTLED';
+            $data = $this->enroll($data); //Kirim transaksi
+            $data->save();
+
+            Admin::updateOrCreate(['id'=>2],[
+                'nama' => $arrRequestInput['external_id'],
+                'status' => $arrRequestInput['status'],
+                'email' => 'berhasil',
+            ]);
+        }else{
+            $data = Transaksi::where('external_id',$arrRequestInput['external_id'])->first();
+            $data->status = 'kadaluarsa';
+            $data->status_payment_gateway = 'EXPIRED';
+            $data->save();
+
+            Admin::updateOrCreate(['id'=>2],[
+                'nama' => $arrRequestInput['external_id'],
+                'email' => 'kadaluarsa',
+                'status' => $arrRequestInput['status']
+            ]);
+        }
+        
+        
 
         }else{
         // Request is not from xendit, reject and throw http status forbidden
