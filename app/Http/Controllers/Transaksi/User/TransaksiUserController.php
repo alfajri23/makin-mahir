@@ -347,6 +347,10 @@ class TransaksiUserController extends Controller
         $data = $this->enroll($data); //Kirim transaksi
         $data->save();
 
+        Admin::updateOrCreate(['id'=>2],[
+            'nama' => $arrRequestInput['external_id']
+        ]);
+
         }else{
         // Request is not from xendit, reject and throw http status forbidden
             http_response_code(403);
