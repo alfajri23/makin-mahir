@@ -1,7 +1,7 @@
 <div class="container">
 
     <div class="col-lg-12 pt-2">
-        <h2 class="fw-400 font-lg">Daftar <b>{{$title}}</b> 
+        <h2 class="fw-400 font-lg text-md-center text-start">Daftar <b>{{$title}}</b> 
         </h2>
     </div>
 

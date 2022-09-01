@@ -19,7 +19,7 @@
     }
 
     .hover:hover{
-        background-color:#fee6b5;
+        background-color:#E2F3FF;
 
     }
 
@@ -182,9 +182,9 @@
                                    
                                     <div class="col-3">
                                         <div class="">
-                                            <a href="{{route('produkListEvent')}}" class="card w140 p-0 rounded-lg text-center border">
+                                            <a href="{{route('produkListEvent')}}" class="hover card w140 p-0 rounded-lg text-center border">
                                                 <div class="card-body">
-                                                    <div class="btn-round-xl bg-white">
+                                                    <div class="btn-round-xl">
                                                         <img src="{{asset('asset/home/icon-event.png')}}" alt="icon" style="width:40px" class="">
                                                     </div>
                                                     <h4 class="fw-600 font-xsss mt-3 mb-0">Event</h4>
@@ -195,9 +195,9 @@
 
                                     <div class="col-3">
                                         <div class="">
-                                            <a href="{{route('produkListEvent')}}" class="card w140 p-0 rounded-lg text-center border">
+                                            <a href="{{route('produkListEvent')}}" class="hover card w140 p-0 rounded-lg text-center border">
                                                 <div class="card-body">
-                                                    <div class="btn-round-xl bg-white">
+                                                    <div class="btn-round-xl">
                                                         <img src="{{asset('asset/home/icon-konsul.png')}}" alt="icon" class="">
                                                     </div>
                                                     <h4 class="fw-600 font-xsss mt-3 mb-0">Konsultasi</h4>
@@ -208,9 +208,9 @@
 
                                     <div class="col-3">
                                         <div class="">
-                                            <a href="{{route('produkListEvent')}}" class="card w140 p-0 rounded-lg text-center border">
+                                            <a href="{{route('produkListEvent')}}" class="hover card w140 p-0 rounded-lg text-center border">
                                                 <div class="card-body">
-                                                    <div class="btn-round-xl bg-white">
+                                                    <div class="btn-round-xl">
                                                         <img src="{{asset('asset/home/icon-test.png')}}" alt="icon" class="">
                                                     </div>
                                                     <h4 class="fw-600 font-xsss mt-3 mb-0">Assesment</h4>
@@ -221,9 +221,9 @@
 
                                     <div class="col-3">
                                         <div class="">
-                                            <a href="{{route('produkListEvent')}}" class="card w140 p-0 rounded-lg text-center border">
+                                            <a href="{{route('produkListEvent')}}" class="hover card w140 p-0 rounded-lg text-center border">
                                                 <div class="card-body">
-                                                    <div class="btn-round-xl bg-white">
+                                                    <div class="btn-round-xl">
                                                         <img src="{{asset('asset/home/icon-cv.png')}}" alt="icon" class="">
                                                     </div>
                                                     <h4 class="fw-600 font-xsss mt-3 mb-0">CV Maker</h4>
