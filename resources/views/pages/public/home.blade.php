@@ -242,7 +242,7 @@
     </div>
 
     {{-- tentang kami --}}
-    <div class="feature-wrapper layer-after my-5 pt-lg--7">
+    <div class="feature-wrapper layer-after my-5 pt-lg--7 position-relative">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-3 order-lg-1 offset-lg-1">
@@ -256,10 +256,18 @@
                 </div>
             </div>
         </div>
+        <div class="ornamen position-absolute top-0" style="left: -70px;">
+            <img src="{{asset('asset/home/ornamen-circle-1.png')}}" alt="">
+        </div>
     </div>
 
+
     {{-- why chose me --}}
-    <div class="service-wrapper layer-after my-5 pt-lg--7 pt-5">
+    <div class="service-wrapper layer-after my-5 pt-lg--7 pt-5 position-relative">
+        <div class="ornamen position-absolute top-0" style="right: -70px;">
+            <img src="{{asset('asset/home/ornamen-1.png')}}" alt="">
+        </div>
+
         <div class="container">
             <div class="row justify-content-center">
                 <div class="page-title style1 col-xl-6 col-lg-8 col-md-10 text-center mb-5">
@@ -318,6 +326,10 @@
                 </div>
             </div>
         </div>
+
+        <div class="ornamen position-absolute " style="left: -70px;">
+            <img src="{{asset('asset/home/ornamen-1.png')}}" alt="">
+        </div>
     </div>
 
     {{-- layanan old --}}
@@ -366,8 +378,6 @@
 
 
 
-
-
     {{-- <div class="feature-wrapper layer-after my-5  pt-lg--7 pt-5 mt-4">
         <div class="container">
               <div class="row">
@@ -403,7 +413,13 @@
     <div class="spacer"></div>
 
     {{-- Testomoni --}}
-    <div class="feedback-wrapper layer-after pb-lg--7 pb-5">
+    <div class="feedback-wrapper layer-after pb-lg--7 pb-5 position-relative">
+        <div class="ornamen position-absolute top-0 right-0">
+            <img src="{{asset('asset/home/ornamen-2.png')}}" alt="">
+        </div>
+        <div class="ornamen position-absolute" style="right: 10%; top: 20%;">
+            <img src="{{asset('asset/home/ornamen-3.png')}}" alt="">
+        </div>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="page-title style1 col-xl-6 col-lg-8 col-md-10 text-center mb-5">
@@ -437,7 +453,10 @@
     <div class="subscribe-wrapper pt-3 pt-lg--7 pb-3 pb-lg--5 position-relative">
         <div class="row">
             <div class="col-12">
-                <div class="card w-100 p-4 p-lg--5 rounded-xxl bg-current border-0">
+                <div class="card w-100 p-4 p-lg--5 rounded-xxl bg-current border-0 position-relative">
+                    <div class="ornamen position-absolute top-0" style="left: -70px;">
+                        <img src="{{asset('asset/home/ornamen-circle-1.png')}}" alt="">
+                    </div>
                     <div class="container py-1">
                         <div class="row ">
                             <div class="col-lg-7 text-left">
