@@ -87,6 +87,9 @@
     
 
     <div class="banner-wrapper vh-banner layer-after app-shape bg-home position-relative">
+        <div class="ornamen position-absolute d-md-block d-none" style="top:-70%; left: -50px;">
+            <img src="{{asset('asset/home/ornamen-circle-1.png')}}" alt="">
+        </div>
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-12 pt-5 pt-sm-7 pb-2 pt-sm-7 mt-sm-5 mt-2 d-flex">
@@ -195,7 +198,7 @@
 
                                     <div class="col-3">
                                         <div class="">
-                                            <a href="{{route('produkListEvent')}}" class="hover card w140 p-0 rounded-lg text-center border">
+                                            <a href="{{route('produkListKonsul')}}" class="hover card w140 p-0 rounded-lg text-center border">
                                                 <div class="card-body">
                                                     <div class="btn-round-xl">
                                                         <img src="{{asset('asset/home/icon-konsul.png')}}" alt="icon" class="">
@@ -208,7 +211,7 @@
 
                                     <div class="col-3">
                                         <div class="">
-                                            <a href="{{route('produkListEvent')}}" class="hover card w140 p-0 rounded-lg text-center border">
+                                            <a href="{{route('testIndex')}}" class="hover card w140 p-0 rounded-lg text-center border">
                                                 <div class="card-body">
                                                     <div class="btn-round-xl">
                                                         <img src="{{asset('asset/home/icon-test.png')}}" alt="icon" class="">
@@ -221,7 +224,7 @@
 
                                     <div class="col-3">
                                         <div class="">
-                                            <a href="{{route('produkListEvent')}}" class="hover card w140 p-0 rounded-lg text-center border">
+                                            <a href="{{route('cvIndex')}}" class="hover card w140 p-0 rounded-lg text-center border">
                                                 <div class="card-body">
                                                     <div class="btn-round-xl">
                                                         <img src="{{asset('asset/home/icon-cv.png')}}" alt="icon" class="">

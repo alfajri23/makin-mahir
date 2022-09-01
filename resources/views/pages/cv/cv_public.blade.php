@@ -45,7 +45,7 @@
         <div class="col-12 my-3">
             <div class="card shadow-md border-0 p-md-5 p-3 rounded-lg">
                 <h2 class="fw-700 font-sm mt-4 mb-3 text-grey-900">Kontak</h2>
-                <div class="row">
+                <div class="">
                     <div class="col-md-3 col-12 my-2">
                         <span>
                             <label for="Nomor">Nomor</label>
@@ -81,7 +81,7 @@
         {{-- KEAHLIAN --}}
         <div class="col-12 my-3">
             <div class="card shadow-md border-0 p-md-5 p-3 rounded-lg" x-data="{ open: false }">
-                <div class="row">
+                <div class="">
                     <h2 class="fw-700 font-sm mt-4 mb-3 text-grey-900">Keahlian</h2>
                 </div>
 
@@ -105,7 +105,7 @@
         {{-- KERJA --}}
         <div class="col-12 my-3">
             <div class="card shadow-md border-0 p-md-5 p-3 rounded-lg">
-                <div class="row ">
+                <div class="">
                     <h2 class="fw-700 font-sm mt-4 mb-3 text-grey-900">Pengalaman Kerja</h2>
                 </div>
 
@@ -164,7 +164,7 @@
         {{-- PENDIDIKAN --}}
         <div class="col-12 my-3">
             <div class="card shadow-md border-0 p-md-5 p-3 rounded-lg">
-                <div class="row">
+                <div class="">
                     <h2 class="fw-700 font-sm mt-4 mb-3 text-grey-900">Sekolah</h2>
                 </div>
                 
@@ -274,7 +274,7 @@
         {{-- ORGANISASI --}}
         <div class="col-12 my-3">
             <div class="card shadow-md border-0 p-md-5 p-3 rounded-lg">
-                <div class="row">
+                <div class="">
                     <h2 class="fw-700 font-sm mt-4 mb-3 text-grey-900">Organisasi</h2>
                 </div>
 
