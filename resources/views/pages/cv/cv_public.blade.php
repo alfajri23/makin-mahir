@@ -8,8 +8,8 @@
 
 </style>
 
-<div class="spacer"></div>
-<div class="container">
+
+<div class="col-md-10 col-11 mx-auto">
     <div class="spacer"></div>
 
     <div class="row">
@@ -25,7 +25,7 @@
     <div class="row">
         
         <div class="col-12 my-3">
-            <div class="card shadow-lg border-0 px-5 py-4 rounded-lg">
+            <div class="card shadow-md border-0 p-md-5 p-3 rounded-lg">
                 <h2 class="fw-700 font-sm mt-4 mb-3 text-grey-900">Nama</h2>
                 <input type="text" name="user[nama]" value="" class="form-control bg-color-none text-grey-700" placeholder="nama">
             </div>
@@ -33,7 +33,7 @@
 
         {{-- PERSONAL --}}
         <div class="col-12 my-3">
-            <div class="card shadow-lg border-0 px-5 py-4 rounded-lg">
+            <div class="card shadow-md border-0 p-md-5 p-3 rounded-lg">
                 <h2 class="fw-700 font-sm mt-4 mb-3 text-grey-900">Personal info</h2>
                 <textarea class="" name="user[desc]">
 
@@ -43,7 +43,7 @@
 
         {{-- KONTAK --}}
         <div class="col-12 my-3">
-            <div class="card shadow-lg border-0 px-5 py-4 rounded-lg">
+            <div class="card shadow-md border-0 p-md-5 p-3 rounded-lg">
                 <h2 class="fw-700 font-sm mt-4 mb-3 text-grey-900">Kontak</h2>
                 <div class="row">
                     <div class="col-md-3 col-12 my-2">
@@ -80,7 +80,7 @@
 
         {{-- KEAHLIAN --}}
         <div class="col-12 my-3">
-            <div class="card shadow-lg border-0 px-5 py-4 rounded-lg" x-data="{ open: false }">
+            <div class="card shadow-md border-0 p-md-5 p-3 rounded-lg" x-data="{ open: false }">
                 <div class="row">
                     <h2 class="fw-700 font-sm mt-4 mb-3 text-grey-900">Keahlian</h2>
                 </div>
@@ -104,7 +104,7 @@
 
         {{-- KERJA --}}
         <div class="col-12 my-3">
-            <div class="card shadow-lg border-0 px-5 py-4 rounded-lg">
+            <div class="card shadow-md border-0 p-md-5 p-3 rounded-lg">
                 <div class="row ">
                     <h2 class="fw-700 font-sm mt-4 mb-3 text-grey-900">Pengalaman Kerja</h2>
                 </div>
@@ -163,7 +163,7 @@
 
         {{-- PENDIDIKAN --}}
         <div class="col-12 my-3">
-            <div class="card shadow-lg border-0 px-5 py-4 rounded-lg">
+            <div class="card shadow-md border-0 p-md-5 p-3 rounded-lg">
                 <div class="row">
                     <h2 class="fw-700 font-sm mt-4 mb-3 text-grey-900">Sekolah</h2>
                 </div>
@@ -221,8 +221,8 @@
 
         {{-- TRAINING --}}
         <div class="col-12 my-3">
-            <div class="card shadow-lg border-0 px-5 py-4 rounded-lg">
-                <div class="row justify-content-between align-items-center">
+            <div class="card shadow-md border-0 p-md-5 p-3 rounded-lg">
+                <div class="">
                     <h2 class="fw-700 font-sm mt-4 mb-3 text-grey-900">Training</h2>
                 </div>
                 
@@ -273,7 +273,7 @@
 
         {{-- ORGANISASI --}}
         <div class="col-12 my-3">
-            <div class="card shadow-lg border-0 px-5 py-4 rounded-lg">
+            <div class="card shadow-md border-0 p-md-5 p-3 rounded-lg">
                 <div class="row">
                     <h2 class="fw-700 font-sm mt-4 mb-3 text-grey-900">Organisasi</h2>
                 </div>
@@ -326,8 +326,8 @@
 
         {{-- PRESTASI --}}
         <div class="col-12 my-3">
-            <div class="card shadow-lg border-0 px-5 py-4 rounded-lg">
-                <div class="row justify-content-between align-items-center"> 
+            <div class="card shadow-md border-0 p-md-5 p-3 rounded-lg">
+                <div class=""> 
                     <h2 class="fw-700 font-sm mt-4 mb-3 text-grey-900">Prestasi</h2>
                 </div>
                 
@@ -369,8 +369,10 @@
             </div>
         </div>
 
-        <div>
-            <button type="submit" class="btn btn-success font-weight-bold">Download <span id="tipeCV"></span></button>
+        <div class="col-12 d-flex justify-content-center mt-5">
+            <div>
+                <button type="submit" class="btn btn-success font-weight-bold">Download CV<span id="tipeCV"></span></button>
+            </div>
         </div>
 
 
