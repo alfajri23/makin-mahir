@@ -59,9 +59,6 @@ class HomeController extends Controller
 
     //Untuk detail belum beli
     public function produk_detail($link){
-
-        //$produk = Produk::find($link);
-        //$produk = Produk::find($link);
         $produk = Produk::where([
             'link' => $link,
         ])->first();

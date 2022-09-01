@@ -44,12 +44,6 @@ class RegisterCustomController extends Controller
             $request->session()->put('auth.id_user', auth()->user()->id);
         }
 
-        // if ($response = $this->registered($request, $user)) {
-        //     return $response;
-        // }
-
-        $request->session()->put('auth.password_confirmed_at', time());
-        $request->session()->put('auth.id_user', auth()->user()->id);
 
         return response()->json([
             'message' => 'sukses',

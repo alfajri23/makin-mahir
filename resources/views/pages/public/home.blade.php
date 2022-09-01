@@ -427,7 +427,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-12">
+            <div class="row justify-content-center">
                 <div class="loop owl-carousel owl-theme owl-loaded owl-drag">
                     @for ($i=0;$i<5;$i++)
                         

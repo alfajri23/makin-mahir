@@ -22,6 +22,7 @@ use App\Notifications\WelcomeEmailNotification;
 Auth::routes();
 
 Route::post('/register/custom', [Controllers\Auth\Custom\RegisterCustomController::class, 'register'])->name('registerCustom');
+Route::post('/login/custom', [Controllers\Auth\Custom\LoginCustomController::class, 'login'])->name('loginCustom');
 
 Route::prefix('oauth')->group(function(){
     Route::get('google/redirect', [ Controllers\Auth\OAuth\LoginOAuthController::class, 'redirectToGoogle'])->name('redirectToGoogle');
