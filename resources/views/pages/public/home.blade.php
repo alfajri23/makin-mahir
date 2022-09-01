@@ -120,47 +120,47 @@
                 <div class="loop-home owl-carousel owl-theme owl-loaded owl-drag">  
                    
                     <div class="layanan-card-mobile text-center mx-2">
-                        <div class="card text-left border shadow-xs rounded-lg">
+                        <a href="{{route('produkListEvent')}}" class="card text-left border shadow-xs rounded-lg">
                             <div class="card-body p-1">
                                 {{-- <a href="#" class="btn-round-xl bg-white text-center ml-2"> --}}
                                     <img src="{{asset('asset/home/icon-event.png')}}" class="ml-2" alt="icon" style="width:40px" class="">
                                 {{-- </a> --}}
                                 <h4 class="fw-600 font-xsssss mb-2 mt-0 text-center">Event</h4>
                             </div>
-                        </div>
+                        </a>
                     </div>
 
                     <div class="layanan-card-mobile text-center mx-2">
-                        <div class="card text-left border shadow-xs rounded-lg">
+                        <a href="{{route('produkListKonsul')}}" class="card text-left border shadow-xs rounded-lg">
                             <div class="card-body p-1">
                                 {{-- <a href="#" class="btn-round-xl bg-white text-center ml-2"> --}}
                                     <img src="{{asset('asset/home/icon-konsul.png')}}" class="ml-2" alt="icon" style="width:40px" class="">
                                 {{-- </a> --}}
                                 <h4 class="fw-600 font-xsssss mb-2 mt-0 text-center">Konsultasi</h4>
                             </div>
-                        </div>
+                        </a>
                     </div>
 
                     <div class="layanan-card-mobile text-center mx-2">
-                        <div class="card text-left border shadow-xs rounded-lg">
+                        <a href="{{route('testIndex')}}" class="card text-left border shadow-xs rounded-lg">
                             <div class="card-body p-1">
                                 {{-- <a href="#" class="btn-round-xl bg-white text-center ml-2"> --}}
                                     <img src="{{asset('asset/home/icon-test.png')}}" class="ml-2" alt="icon" style="width:40px" class="">
                                 {{-- </a> --}}
                                 <h4 class="fw-600 font-xsssss mb-2 mt-0 text-center">Assesment</h4>
                             </div>
-                        </div>
+                        </a>
                     </div>
 
                     <div class="layanan-card-mobile text-center mx-2">
-                        <div class="card text-left border shadow-xs rounded-lg">
+                        <a href="{{route('cvIndex')}}" class="card text-left border shadow-xs rounded-lg">
                             <div class="card-body p-1">
                                 {{-- <a href="#" class="btn-round-xl bg-white text-center ml-2"> --}}
                                     <img src="{{asset('asset/home/icon-cv.png')}}" class="ml-2" alt="icon" style="width:40px" class="">
                                 {{-- </a> --}}
                                 <h4 class="fw-600 font-xsssss mb-2 mt-0 text-center">CV Maker</h4>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     
                     
@@ -182,53 +182,53 @@
                                    
                                     <div class="col-3">
                                         <div class="">
-                                            <div class="card w140 p-0 rounded-lg text-center border">
+                                            <a href="{{route('produkListEvent')}}" class="card w140 p-0 rounded-lg text-center border">
                                                 <div class="card-body">
-                                                    <a href="#" class="btn-round-xl bg-white">
+                                                    <div class="btn-round-xl bg-white">
                                                         <img src="{{asset('asset/home/icon-event.png')}}" alt="icon" style="width:40px" class="">
-                                                    </a>
+                                                    </div>
                                                     <h4 class="fw-600 font-xsss mt-3 mb-0">Event</h4>
                                                 </div>
-                                            </div>
+                                            </a>
                                         </div>
                                     </div>
 
                                     <div class="col-3">
                                         <div class="">
-                                            <div class="card w140 p-0 rounded-lg text-center border">
+                                            <a href="{{route('produkListEvent')}}" class="card w140 p-0 rounded-lg text-center border">
                                                 <div class="card-body">
-                                                    <a href="#" class="btn-round-xl bg-white">
+                                                    <div class="btn-round-xl bg-white">
                                                         <img src="{{asset('asset/home/icon-konsul.png')}}" alt="icon" class="">
-                                                    </a>
+                                                    </div>
                                                     <h4 class="fw-600 font-xsss mt-3 mb-0">Konsultasi</h4>
                                                 </div>
-                                            </div>
+                                            </a>
                                         </div>
                                     </div>
 
                                     <div class="col-3">
                                         <div class="">
-                                            <div class="card w140 p-0 rounded-lg text-center border">
+                                            <a href="{{route('produkListEvent')}}" class="card w140 p-0 rounded-lg text-center border">
                                                 <div class="card-body">
-                                                    <a href="#" class="btn-round-xl bg-white">
+                                                    <div class="btn-round-xl bg-white">
                                                         <img src="{{asset('asset/home/icon-test.png')}}" alt="icon" class="">
-                                                    </a>
+                                                    </div>
                                                     <h4 class="fw-600 font-xsss mt-3 mb-0">Assesment</h4>
                                                 </div>
-                                            </div>
+                                            </a>
                                         </div>
                                     </div>
 
                                     <div class="col-3">
                                         <div class="">
-                                            <div class="card w140 p-0 rounded-lg text-center border">
+                                            <a href="{{route('produkListEvent')}}" class="card w140 p-0 rounded-lg text-center border">
                                                 <div class="card-body">
-                                                    <a href="#" class="btn-round-xl bg-white">
+                                                    <div class="btn-round-xl bg-white">
                                                         <img src="{{asset('asset/home/icon-cv.png')}}" alt="icon" class="">
-                                                    </a>
+                                                    </div>
                                                     <h4 class="fw-600 font-xsss mt-3 mb-0">CV Maker</h4>
                                                 </div>
-                                            </div>
+                                            </a>
                                         </div>
                                     </div>
                                     
