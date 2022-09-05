@@ -46,6 +46,7 @@
                     <th>Nominal</th>
                     <th>Tanggal</th>
                     <th>Status bayar</th>
+                    <th>File</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -76,6 +77,7 @@
                         <p>Tanggal bayar</p>
                         <p>Bukti</p>
                         <p>File tambahan</p>
+                        <p>Link Invoice</p>
                     </div>
                     <div class="col-8" id="modalBody">
                     </div>
@@ -131,6 +133,7 @@
                 {data: 'nominal', name: 'nominal'},
                 {data: 'tanggal', name: 'tanggal'},
                 {data: 'bayar', name: 'bayar',width: "5%"},
+                {data: 'file_tambahan', name: 'file_tambahan',visible: false},
                 {data: 'aksi', name: 'aksi',width: "15%"},
             ],
             dom: 'Bfrtlip',
@@ -156,7 +159,7 @@
                 asset = window.location.origin;
         
                 //Bukti bayar
-                bukti = `<a target="_blank" href="${asset}/${datas.bukti}">Bukti</a>`;
+                bukti = `<a target="_blank" href="${datas.bukti}">Bukti</a>`;
 
                 //JIka ada file tambahan
                 if(datas.file_tambahan != null && datas.file_tambahan != ""){
@@ -191,6 +194,7 @@
                     <p>:  ${datas.tanggal_bayar}</p>
                     <p>:  ${bukti}</p>
                     <p>:  ${file_tambahan}</p>
+                    <p>:  ${datas.invoice_url}</p>
                     <p>:  ${konfirmasi}</p>
                 `;
             

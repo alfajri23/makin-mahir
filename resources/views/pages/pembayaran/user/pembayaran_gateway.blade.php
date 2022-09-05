@@ -375,7 +375,7 @@
                             </div>
 
                             <div class="d-grid gap-3">
-                                <a onclick="loginCustom()" class="btn btn-primary text-white">hallo</a>
+                                <a onclick="loginCustom()" class="btn btn-success text-white">Login</a>
 
                                 <hr>
 
@@ -490,11 +490,9 @@
             data : datas,
             dataType: 'json',
             success : (data)=>{
-                console.log(data);
                 shows();
             },
             error : (data)=>{
-                    console.log(data);
                     let alert = `
                     <div class="alert alert-danger alert-dismissible fade show" id="alert" role="alert">
                         <strong>Gagal !</strong> ${data.responseJSON.message}

@@ -120,28 +120,20 @@ class TransaksiUserController extends Controller
 
         $filed = [];
 
-        // if(!empty($request->bukti)){    
-        //     foreach($request->bukti as $key => $file){
-        //         if ($key == array_key_last($request->bukti)) {
-        //             $nama_file = time()."_".$file->getClientOriginalName();
-        //             $tujuan_upload_server = public_path('storage/transaksi');
-        //             $tujuan_upload = 'storage/transaksi';
-        //             $files = $tujuan_upload . '/'. $nama_file;
-        //             $file->move($tujuan_upload_server,$nama_file);
-        //             $datas['bukti'] = $files;
-        //         }else{
-        //             $nama_file = time()."_".$file->getClientOriginalName();
-        //             $tujuan_upload_server = public_path('storage/file_tambahan');
-        //             $tujuan_upload = 'storage/file_tambahan';
-        //             $files = $tujuan_upload . '/'. $nama_file;
-        //             $file->move($tujuan_upload_server,$nama_file);
-        //             $filed[] = $files;
-        //         }
-        //     }
-
-        //     $file_name = implode(",",$filed);
-        //     $datas['file_tambahan'] = $file_name;
-        // }
+        if(!empty($request->bukti)){    
+            $googleUpload = new UploadDriveController();
+            foreach($request->bukti as $key => $file){
+                if ($key == array_key_first($request->bukti)) {     
+                    $tipe = 'cv';                            //Jika bukan bukti
+                    $url_file = $googleUpload->googleDriveFileUpload($tipe,$file,$request->nama);
+                    $datas['file_tambahan'] = $url_file;
+                }else{       
+                    $tipe = 'bukti';                                                                      //Jika bukti
+                    $url_file = $googleUpload->googleDriveFileUpload($tipe,$file,$request->nama);
+                    $datas['bukti'] = $url_file;
+                }
+            }
+        }
 
         $produk = null;
         $sukses = 'sukses';
@@ -203,11 +195,26 @@ class TransaksiUserController extends Controller
 
         $filed = [];
 
+        // if(!empty($request->bukti)){    
+        //     foreach($request->bukti as $key => $file){
+        //         $url_file = new UploadDriveController();
+        //         $url_file = $url_file->googleDriveFileUpload('cv',$file,$request->nama);
+        //         $datas['file_tambahan'] = $url_file;
+        //     }
+        // }
+
         if(!empty($request->bukti)){    
+            $googleUpload = new UploadDriveController();
             foreach($request->bukti as $key => $file){
-                $url_file = new UploadDriveController();
-                $url_file = $url_file->googleDriveFileUpload($file,$request->nama);
-                $datas['file_tambahan'] = $url_file;
+                if ($key == array_key_first($request->bukti)) {     
+                    $tipe = 'cv';                            //Jika bukan bukti
+                    $url_file = $googleUpload->googleDriveFileUpload($tipe,$file,$request->nama);
+                    $datas['file_tambahan'] = $url_file;
+                }else{       
+                    $tipe = 'bukti';                                                                      //Jika bukti
+                    $url_file = $googleUpload->googleDriveFileUpload($tipe,$file,$request->nama);
+                    $datas['bukti'] = $url_file;
+                }
             }
         }
 
@@ -257,8 +264,8 @@ class TransaksiUserController extends Controller
             'merchant_profile_picture_url' => 'https://cdn.logo.com/hotlink-ok/logo-social.png',
             'amount' => $request->harga,
             'description' => 'Pembayaran',
-            //'invoice_duration' => 300,
-            'expiration_date' => Carbon::now()->addDays(3)->toISOString(),
+            'invoice_duration' => 259200,
+            //'expiration_date' => Carbon::now()->addDays(3)->toISOString(),
             'payment_methods' => $gateway,
             'customer' => [
                 'given_names' => auth()->user()->nama,
@@ -390,7 +397,7 @@ class TransaksiUserController extends Controller
     public function callbackExpired(Request $request){
         $external_id = Crypt::decryptString($request->external_id);
         $data = Transaksi::where('external_id',$external_id)->first();
-        $data->status = 'kadaluarsa';
+        $data->status = 'expired';
         $data->status_payment_gateway = 'EXPIRED';
         $data->save();
     }
