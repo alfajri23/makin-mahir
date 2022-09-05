@@ -197,8 +197,8 @@
 
     <div>
         <div class="col-12 col-sm-5 mx-auto row justify-content-center my-4">
-            <a href="{{route('cvPrint',['bahasa'=>'id'])}}" class="btn btn-primary btn-sm m-1">Download Indonesia</a>
-            <a href="{{route('cvPrint',['bahasa'=>'en'])}}" class="btn btn-secondary btn-sm m-1">Download English</a>
+            <a href="{{route('cvPrint',['bahasa'=>'id'])}}" class="btn btn-success btn-sm m-1 font-xs fw-500">Download Indonesia</a>
+            <a href="{{route('cvPrint',['bahasa'=>'en'])}}" class="btn btn-info btn-sm m-1 font-xs fw-500">Download English</a>
         </div>
 
         {{-- <button type="button" class="btn btn-primary font-weight-bold" data-toggle="modal" data-target="#modalCV">

@@ -1,7 +1,7 @@
 @extends('layouts.public')
 
 @section('content')
-    <div class="card d-block w-100 border-0 shadow-xss rounded-lg overflow-hidden mb-3 pt-5 pt-sm-0" style="background-image: url(https://images.unsplash.com/photo-1526538964379-c7f71c1d7983?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);">
+    <div class="card d-block w-100 border-0 shadow-xss rounded-lg overflow-hidden mb-3 pt-5 pt-sm-0" style="">
         <div class="card-body p-lg-5 p-4 bg-black-08">
             <div class="clearfix"></div>
             <div class="row">
@@ -33,8 +33,8 @@
     </div>
 
     <div class="card d-block w-100 border-0 shadow-xss rounded-lg overflow-hidden mb-4">
-        <ul class="nav nav-tabs xs-p-4 d-flex align-items-center justify-content-start product-info-tab border-bottom-0" id="pills-tab" role="tablist">
-            <li class="active list-inline-item"><a class="fw-700 pb-sm-5 pt-sm-5 xs-mb-2 ml-sm-5 font-xssss text-grey-500 ls-3 d-inline-block text-uppercase active" href="#navtabs0" data-toggle="tab">About</a></li>
+        <ul class="nav nav-tabs xs-p-4 d-flex align-items-center justify-content-center product-info-tab border-bottom-0" id="pills-tab" role="tablist">
+            <li class="active list-inline-item"><a class="fw-700 pb-sm-5 pt-sm-5 xs-mb-2 font-xssss text-grey-500 ls-3 d-inline-block text-uppercase active" href="#navtabs0" data-toggle="tab">About</a></li>
             <li class="list-inline-item"><a class="fw-700 pb-sm-5 pt-sm-5 xs-mb-2 font-xssss text-grey-500 ls-3 d-inline-block text-uppercase" href="#tab-edit" data-toggle="tab">Profil</a></li>
             
         </ul>
