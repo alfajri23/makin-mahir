@@ -102,7 +102,7 @@ class UploadDriveController extends Controller
         // }
         
         $fileMetadata = new \Google_Service_Drive_DriveFile(array(
-            'name' => 'CV-'. auth()->user()->nama .'-'. date('d/m/Y'),             // ADD YOUR GOOGLE DRIVE FOLDER NAME
+            'name' => $nama. '- CV -'. auth()->user()->nama .'-'. date('d/m/Y'),             // ADD YOUR GOOGLE DRIVE FOLDER NAME
             'parents' => array('125guea0280wXH1Sfj9kvHgK9ByKPxceS'),
             //'mimeType' => 'application/vnd.google-apps.folder'
         ));

@@ -33,19 +33,22 @@ class HomeController extends Controller
         $transaksi = collect(Transaksi::where('status','like','%lunas%')
         ->where('harga','!=','NULL')->get());
         $transaksi_display = $transaksi->groupBy('tanggal_bayar');
+        //dd($transaksi_display);
 
         $rentang = [];
         $jumlah = [];
         $index = 0;
+        $harga_item = 0;
 
         foreach ($transaksi_display as $key => $tr){
             $data = explode("-",$key);
             $rentang[$index] = $key;
 
             foreach ($tr as $trs){
-                $jumlah[$index] = $trs->harga;
+                $harga_item += $trs->harga;
+                $jumlah[$index] = $harga_item;
             }
-
+            $harga_item = 0;
             $index++;
         }
 
