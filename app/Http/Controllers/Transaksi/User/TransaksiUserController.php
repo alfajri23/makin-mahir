@@ -257,8 +257,8 @@ class TransaksiUserController extends Controller
             'merchant_profile_picture_url' => 'https://cdn.logo.com/hotlink-ok/logo-social.png',
             'amount' => $request->harga,
             'description' => 'Pembayaran',
-            'invoice_duration' => 300,
-            //'expiration_date' => Carbon::now()->addDays(1)->toISOString(),
+            //'invoice_duration' => 300,
+            'expiration_date' => Carbon::now()->addDays(3)->toISOString(),
             'payment_methods' => $gateway,
             'customer' => [
                 'given_names' => auth()->user()->nama,
