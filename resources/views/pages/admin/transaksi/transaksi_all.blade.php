@@ -78,6 +78,7 @@
                         <p>Bukti</p>
                         <p>File tambahan</p>
                         <p>Link Invoice</p>
+                        <p>Jawaban</p>
                     </div>
                     <div class="col-8" id="modalBody">
                     </div>
@@ -196,6 +197,7 @@
                     <p>:  ${file_tambahan}</p>
                     <p>:  ${datas.invoice_url}</p>
                     <p>:  ${konfirmasi}</p>
+                    <p>:  ${datas.jawaban}</p>
                 `;
             
                 modalBody[0].innerHTML = element;
