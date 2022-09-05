@@ -196,8 +196,8 @@
                     <p>:  ${bukti}</p>
                     <p>:  ${file_tambahan}</p>
                     <p>:  ${datas.invoice_url}</p>
-                    <p>:  ${konfirmasi}</p>
                     <p>:  ${datas.jawaban}</p>
+                    <p>:  ${konfirmasi}</p>
                 `;
             
                 modalBody[0].innerHTML = element;
