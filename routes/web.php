@@ -204,11 +204,7 @@ Route::middleware(['auth'])->group(function () {
     //Produk
         
 
-    //Konsultasi
-        Route::post('/', [Controllers\Admin\KonsultasiController::class,'expertStore'])->name('konsultasiExpertStore');
-        Route::get('/delete/konsultasi/{id}', [Controllers\Admin\KonsultasiController::class,'expertDelete'])->name('konsultasiExpertDelete');
-        Route::get('done', [Controllers\Admin\KonsultasiController::class,'done'])->name('konsultasiDone');
-    //end konsultasi
+    
 
 
 //*End produk
@@ -234,6 +230,12 @@ Route::middleware(['admin'])->prefix('adm')->group(function () {
             Route::get('end', [Controllers\Konsultasi\Admin\KonsultasiAdminController::class,'konsultasiEnd'])->name('endKonsultasi');
             Route::get('start', [Controllers\Konsultasi\Admin\KonsultasiAdminController::class,'konsultasiStart'])->name('startKonsultasi');
             Route::get('delete', [Controllers\Konsultasi\Admin\KonsultasiAdminController::class,'konsultasiDelete'])->name('deleteKonsultasi');
+        
+            //Konsultasi
+                Route::post('/', [Controllers\Admin\KonsultasiController::class,'expertStore'])->name('konsultasiExpertStore');
+                Route::get('/delete/konsultasi/{id}', [Controllers\Admin\KonsultasiController::class,'expertDelete'])->name('konsultasiExpertDelete');
+                Route::get('done', [Controllers\Admin\KonsultasiController::class,'done'])->name('konsultasiDone');
+            //end konsultasi
         });
 
         Route::prefix('event')->group(function(){
@@ -391,11 +393,9 @@ Route::middleware(['expert'])->prefix('exp')->group(function () {
 
 Route::get('formulir', [Controllers\FormulirController::class,'index'])->name('formIndex');
 
-
-
-
-
-
+Route::get('test-gdrive1',[Controllers\Upload\UploadDriveController::class,'index'])->name('testDrive1');
+Route::get('test-gdrive',[Controllers\Upload\UploadDriveController::class,'googleDriveFileUpload'])->name('testDrive');
+Route::get('google/login',[Controllers\Upload\UploadDriveController::class,'googleLogin'])->name('google.login');
 
 
 

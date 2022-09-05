@@ -149,10 +149,6 @@ class TransaksiAdminController extends Controller
         ]);
     }
 
-    public function cek_produk_bundling($produk){
-        return $idsProduk = explode(",",$produk->id_produk);
-        
-    }
 
     public function transaksi_konfirmasi_bank(Request $request){
         $data = Transaksi::find($request->id);

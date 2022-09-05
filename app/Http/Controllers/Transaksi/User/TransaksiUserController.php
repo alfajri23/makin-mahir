@@ -8,6 +8,7 @@ use App\Models\Transaksi;
 use App\Models\Produk;
 use App\Models\FormSetting;
 use App\Helper\UploadFile;
+use App\Http\Controllers\Upload\UploadDriveController;
 use App\Models\Admin;
 use App\Models\EventEnroll;
 use App\Models\KelasEnroll;
@@ -202,6 +203,14 @@ class TransaksiUserController extends Controller
 
         $filed = [];
 
+        if(!empty($request->bukti)){    
+            foreach($request->bukti as $key => $file){
+                $url_file = new UploadDriveController();
+                $url_file = $url_file->googleDriveFileUpload($file,$request->nama);
+                $datas['file_tambahan'] = $url_file;
+            }
+        }
+
         // if(!empty($request->bukti)){    
         //     foreach($request->bukti as $key => $file){
         //         if ($key == array_key_first($request->bukti)) {
@@ -223,6 +232,7 @@ class TransaksiUserController extends Controller
         //     $file_name = implode(",",$filed);
         //     $datas['file_tambahan'] = $file_name;
         // }
+        //dd($datas);
 
         $data = Transaksi::create($datas);
 
