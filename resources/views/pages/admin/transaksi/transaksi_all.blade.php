@@ -38,6 +38,7 @@
                 <tr>
                     <th>v</th>
                     <th>No</th>
+                    <th>Id</th>
                     <th>Tipe</th>
                     <th>Vendor</th>
                     <th>Nama</th>
@@ -104,7 +105,7 @@
     $(function (){
 
         tabel.DataTable({
-            order: [[7, 'desc']],
+            order: [[2, 'desc']],
             processing: true,
             serverSide: true,
             ajax: {
@@ -122,6 +123,7 @@
                     searchable: true,
                     width: "5%"
                 },
+                {data: 'id', tipe: 'id',visible: false},
                 {data: 'tipe', tipe: 'tipe'},
                 {data: 'vendor', tipe: 'vendor',width: "3%"},
                 {data: 'nama', name: 'nama',width: "40%"},
@@ -160,7 +162,7 @@
                 if(datas.file_tambahan != null && datas.file_tambahan != ""){
                     file_tambahan = datas.file_tambahan.split(",");
                     function mapFile(item) {
-                        return `<a href="${asset}/${item}" target="_blank">File</a>`;
+                        return `<a href="${item}" target="_blank">File</a>`;
                     }
                     file_tambahan = file_tambahan.map(mapFile);
                 }

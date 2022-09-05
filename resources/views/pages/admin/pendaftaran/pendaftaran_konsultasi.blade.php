@@ -18,6 +18,7 @@
                     <th>Expert</th>
                     <th>Nama pemesan</th>
                     <th>Jawaban</th>
+                    <th>File</th>
                     <th>Status bayar</th>
                     <th>Status konsultasi</th>
                     <th>Aksi</th>
@@ -87,6 +88,7 @@
                 {data: 'vendor', name: 'vendor'},
                 {data: 'nama', name: 'nama'},
                 {data: 'jawaban', name: 'jawaban'},
+                {data: 'file', name: 'file'},
                 {data: 'bayar', name: 'bayar',width: "5%"},
                 {data: 'status', name: 'status',width: "5%"},
                 {data: 'aksi', name: 'aksi'},
@@ -99,21 +101,21 @@
                     title: '',
                     exportOptions: {
                         header : false,
-                        columns : [ 1,2,3,4,5,6,8,9]
+                        columns : [ 0,1,2,3,4,5,6,7,8]
                     },
                 },
                 {
                     extend: 'excelHtml5',
                     title: 'Data Konsultasi',
                     exportOptions: {
-                        columns : [ 1,2,3,4,5,6,8,9]
+                        columns : [ 0,1,2,3,4,5,6,7,8]
                     },
                 },
                 {
                     extend: 'csvHtml5',
                     title: 'Data Konsultasi',
                     exportOptions: {
-                        columns : [ 1,2,3,4,5,6,8,9]
+                        columns : [ 0,1,2,3,4,5,6,7,8]
                     },
                 },
             ]

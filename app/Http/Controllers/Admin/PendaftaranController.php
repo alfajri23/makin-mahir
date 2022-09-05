@@ -224,6 +224,12 @@ class PendaftaranController extends Controller
                 ';
                 return $nama;
             })
+            ->addColumn('file', function($row){
+                $nama = '
+                <a href="'.$row->transaksi->file_tambahan.'">CV</a>
+                ';
+                return $nama;
+            })
             ->addColumn('vendor', function($row){
                 return $expert = '
                         <p>'.$row->expert->nama.'</p>
@@ -257,7 +263,7 @@ class PendaftaranController extends Controller
                 
                 return $actionBtn;
             })
-            ->rawColumns(['judul','nama','jawaban','aksi','bayar','status','vendor'])
+            ->rawColumns(['judul','nama','jawaban','aksi','bayar','status','vendor','file'])
             ->make(true);
         }
 
