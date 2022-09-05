@@ -14359,11 +14359,11 @@ body:not(.theme-full) .main-content .middle-sidebar-bottom.header-padding {
 .form-group.icon-input {
   position: relative;
 }
-/* .form-group.icon-input i {
+.form-group.icon-input i {
   position: absolute;
   left: 15px;
   top: 19px;
-} */
+}
 .form-group.icon-input input {
   padding-left: 35px;
 }

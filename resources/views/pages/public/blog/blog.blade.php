@@ -15,11 +15,9 @@
         border: 1px solid #dedede;
     }
 
-    /* .form-group.icon-input i {
-        position: absolute;
-        left: 15px;
-        top: 8px;
-    } */
+    .form-group.icon-input i {
+        position: static !important;
+    }
 
     .kat{
         margin-top: 2px;

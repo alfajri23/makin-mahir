@@ -43,6 +43,18 @@ class CVMakerController extends Controller
     }
 
     public function printPublicCV(Request $request){
+        switch($request->bahasa){
+            case 'id':
+                $label = ['Data Diri','Keahlian','Pengalaman','Pendidikan','Prestasi','Pelatihan','Organisasi'];
+                break;
+
+            case 'en':
+                $label = ['Personal Info','Skill','Experience','Education','Achivement','Training','Organization'];
+                break;
+
+            default:
+                $label = ['Data Diri','Keahlian','Pengalaman','Pendidikan','Prestasi','Pelatihan','Organisasi'];
+        }
         //dd($request['edukasi']);
         //$kerja = $request['kerja'][0]['posisi'] != null ? $request['kerja'] : [];
         $kerja = $this->checkIndex($request['kerja'],'posisi');
@@ -61,7 +73,7 @@ class CVMakerController extends Controller
 
         //dd($prestasi);
 
-        $pdf = PDF::loadview('pages.cv.print.cv_ats_print',compact('user','organisasi','kerja','edukasi','training','skil','prestasi'));
+        $pdf = PDF::loadview('pages.cv.print.cv_ats_print',compact('label','user','organisasi','kerja','edukasi','training','skil','prestasi'));
         return $pdf->stream();
         return $pdf->download('cv-ats.pdf');
     }
@@ -96,6 +108,19 @@ class CVMakerController extends Controller
 
     public function print(Request $request){
 
+        switch($request->bahasa){
+            case 'id':
+                $label = ['Data Diri','Keahlian','Pengalaman','Pendidikan','Prestasi','Pelatihan','Organisasi'];
+                break;
+
+            case 'en':
+                $label = ['Personal Info','Skill','Experience','Education','Achivement','Training','Organization'];
+                break;
+
+            default:
+                $label = ['Data Diri','Keahlian','Pengalaman','Pendidikan','Prestasi','Pelatihan','Organisasi'];
+        }
+
         $kerja = CVKerja::where('id_user',auth()->user()->id)->get();
         $skil = CVSkil::where('id_user',auth()->user()->id)->get();
         $edukasi = CVEdukasi::where('id_user',auth()->user()->id)->get();
@@ -104,13 +129,14 @@ class CVMakerController extends Controller
         $training = CVTraining::where('id_user',auth()->user()->id)->get();
         $organisasi = CVOrganisasi::where('id_user',auth()->user()->id)->get();
         $user = User::find(auth()->user()->id); 
+       
 
         $request->id = $request->id == null ? 0 : $request->id;
         $cvUser = CVUser::updateOrCreate(['id_user' => auth()->user()->id],[
             'id_tema' => $request->session()->get('cv'),
         ]);
 
-        $pdf = PDF::loadview('pages.cv.print.cv_ats_print',compact('user','organisasi','kerja','edukasi','training','skil','prestasi'));
+        $pdf = PDF::loadview('pages.cv.print.cv_ats_print',compact('label','user','organisasi','kerja','edukasi','training','skil','prestasi'));
         return $pdf->stream();
         return $pdf->download('cv-ats.pdf');
 

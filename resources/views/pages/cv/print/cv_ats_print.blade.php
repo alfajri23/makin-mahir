@@ -63,14 +63,14 @@
 
     <main class="px-2">
         <div class="personal">
-            <h6 class="text-uppercase title-section">Personal Info</h6>
+            <h6 class="text-uppercase title-section">{{$label[0]}}</h6>
             <p class="">
                 {!!$user['desc']!!}
             </p>
         </div>
 
         <div class="skill my-4">
-            <h6 class="text-uppercase title-section">Keahlian</h6>
+            <h6 class="text-uppercase title-section">{{$label[1]}}</h6>
             <ol>
                 @forelse ($skil as $sk)
                 <li >{{$sk['skil']}}</li>  
@@ -81,7 +81,7 @@
 
         @if(count($kerja)>0)
         <div class="work my-4">
-            <h6 class="text-uppercase title-section">Pengalaman Kerja</h6>
+            <h6 class="text-uppercase title-section">{{$label[2]}}</h6>
             @forelse ($kerja as $kr)
             <div>
                 <table style="width:100%">
@@ -102,7 +102,7 @@
 
         @if(count($edukasi)>0)
         <div class="edukasi my-4">
-            <h6 class="text-uppercase title-section">Edukasi</h6>
+            <h6 class="text-uppercase title-section">{{$label[3]}}</h6>
             @forelse ($edukasi as $edu)
             <div class="mb-2">
                 <table style="width:100%">
@@ -121,7 +121,7 @@
         
         @if(count($prestasi)>0)
         <div class="prestasi my-4">
-            <h6 class="text-uppercase title-section">Prestasi</h6>
+            <h6 class="text-uppercase title-section">{{$label[4]}}</h6>
             @forelse ($prestasi as $ps)
             <div>
                 <table style="width:100%">
@@ -141,7 +141,7 @@
 
         @if(count($training)>0)
         <div class="training my-4">
-            <h6 class="text-uppercase title-section">Training</h6>
+            <h6 class="text-uppercase title-section">{{$label[5]}}</h6>
             @forelse ($training as $tr)
             <div>
                 <table style="width:100%">
@@ -162,7 +162,7 @@
 
         @if(count($organisasi)>0)
         <div class="work my-4">
-            <h6 class="text-uppercase title-section">Organisasi</h6>
+            <h6 class="text-uppercase title-section">{{$label[6]}}</h6>
             @forelse ($organisasi as $org)
             <div>
                 <table style="width:100%">

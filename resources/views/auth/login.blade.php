@@ -46,6 +46,8 @@
                             </div>
                         @enderror
 
+                        @include('component.error.error_message')
+
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
                             

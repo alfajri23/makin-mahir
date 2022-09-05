@@ -196,10 +196,15 @@
     </div>
 
     <div>
+        <div class="col-12 col-sm-5 mx-auto row justify-content-center my-4">
+            <a href="{{route('cvPrint',['bahasa'=>'id'])}}" class="btn btn-primary btn-sm m-1">Download Indonesia</a>
+            <a href="{{route('cvPrint',['bahasa'=>'en'])}}" class="btn btn-secondary btn-sm m-1">Download English</a>
+        </div>
+
         {{-- <button type="button" class="btn btn-primary font-weight-bold" data-toggle="modal" data-target="#modalCV">
             Pilih CV
         </button> --}}
-        <a href="{{route('cvPrint')}}" type="button" class="btn btn-success font-weight-bold btn-block mt-4">Download <span id="tipeCV"></span></a>
+        {{-- <a href="{{route('cvPrint')}}" type="button" class="btn btn-success font-weight-bold btn-block mt-4">Download <span id="tipeCV"></span></a> --}}
     </div>
 
     <div class="spacer"></div>

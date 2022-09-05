@@ -369,7 +369,23 @@
             </div>
         </div>
 
-        <div class="col-12 d-flex justify-content-center mt-5">
+        <div class="col-12 d-flex justify-content-center mt-5 flex-column align-items-center">
+            <h3 class="font-weight-bolder">Bahasa</h3>
+            <div class="form-row mb-3 col-3">
+                <div class="col-12 col-sm-6 text-center">
+                    <input class="form-check-input" type="radio" name="bahasa" id="bahasa1" value="id" checked required>
+                    <label class="form-check-label" for="bahasa1">
+                    Indonesia
+                    </label>
+                </div>
+              
+                <div class="col-12 col-sm-6 text-center">
+                    <input class="form-check-input" type="radio" name="bahasa" id="bahasa1" value="en" required>
+                    <label class="form-check-label" for="bahasa1">
+                    English
+                    </label>
+                </div>
+            </div>
             <div>
                 <button type="submit" class="btn btn-success font-weight-bold">Download CV<span id="tipeCV"></span></button>
             </div>
