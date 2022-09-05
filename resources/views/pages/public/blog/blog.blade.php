@@ -116,7 +116,7 @@
 
         </div>
         <div class="col-12 col-sm-4 bg-transparent py-5 p-sm-5">
-            @empty($popular)   
+            @if(count($popular)>0)   
                 <h5 class="mb-0 text-grey-900 fw-700 font-xs pb-3 mb-0 d-block ml-2">Blog terpopuler</h5>
                 <div class="blog-responsive">
                     @forelse ($popular as $dt)
@@ -139,9 +139,9 @@
                     @empty      
                     @endforelse
                 </div>
-            @endempty
+            @endif
 
-            @empty($latest) 
+            @if(count($latest)>0) 
                 <h5 class="mb-0 text-grey-900 fw-700 font-xs pb-3 mb-0 d-block ml-2">Terbaru</h5>
                 <div class="blog-responsive">
                     @forelse ($latest as $dt)
@@ -165,7 +165,7 @@
                     @empty      
                     @endforelse
                 </div>
-            @endempty
+            @endif
 
         </div>
     </div>
