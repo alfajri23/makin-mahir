@@ -60,9 +60,9 @@ class TransaksiAdminController extends Controller
                         $actionBtn = '
                             <span class="badge badge-success">Lunas</span>
                         ';
-                    }elseif( $row['status'] == 'belum bayar' ){
+                    }elseif( $row['status'] == 'expired' ){
                         $actionBtn = '
-                            <span class="badge badge-warning">Belum bayar</span>
+                            <span class="badge badge-danger">Expired</span>
                         ';
                     }elseif( $row['status'] == 'pending' ){
                         $actionBtn = '

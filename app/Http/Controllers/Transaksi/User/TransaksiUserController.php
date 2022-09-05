@@ -366,7 +366,7 @@ class TransaksiUserController extends Controller
             ]);
         }else{
             $data = Transaksi::where('external_id',$arrRequestInput['external_id'])->first();
-            $data->status = 'kadaluarsa';
+            $data->status = 'expired';
             $data->status_payment_gateway = 'EXPIRED';
             $data->save();
 
@@ -390,7 +390,9 @@ class TransaksiUserController extends Controller
     public function callbackExpired(Request $request){
         $external_id = Crypt::decryptString($request->external_id);
         $data = Transaksi::where('external_id',$external_id)->first();
-        $data->forceDelete();
+        $data->status = 'kadaluarsa';
+        $data->status_payment_gateway = 'EXPIRED';
+        $data->save();
     }
 
     //Enroll produk saat pembayaran xendit berhasil -> mengirim model transkasi
