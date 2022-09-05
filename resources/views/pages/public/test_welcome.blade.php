@@ -16,7 +16,7 @@
 </div>
 
 <div class="banner-wrapper bg-lightblue pb-5">
-    <div class="container">
+    <div class="col-12 col-sm-10 mx-auto">
         <div class="row">
             <div class="col-sm-6 col-12 mb-3">
                 <div class="card w-100 p-5 rounded-xxl border-0" style="background: #faece3;">

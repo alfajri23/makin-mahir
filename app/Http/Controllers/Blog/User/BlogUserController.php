@@ -12,9 +12,9 @@ class BlogUserController extends Controller
 {
     public function index(Request $request){
 
-        $popular = Blog::limit(3)->orderBy('kunjungan','desc')->get();
+        $popular = Blog::limit(3)->orderBy('pengunjung','desc')->get();
         $latest = Blog::limit(3)->latest()->get();
-
+        
         if($request->key != null){
             $data = Blog::where('judul','like','%'.$request->key.'%')->paginate(6);
         }else{

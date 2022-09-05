@@ -1,25 +1,22 @@
 @extends('layouts.public')
 @section('content')
-<div class="container">
+
+
+<div class="col-12 col-sm-10 mx-auto">
+    <div class="spacer"></div>
     <div class="row justify-content-center">
         <div class="col-lg-8 text-center">
-            <h2 class="fw-700 text-grey-900 display4-size display4-xs-size lh-1 mb-3 pt-5 aos-init" data-aos="fade-up" data-aos-delay="200" data-aos-duration="400">Assesment</h2>
-            <p class="fw-300 font-xss lh-28 text-grey-700 pl-lg--5 pr-lg--5 aos-init" data-aos="fade-up" data-aos-delay="300" data-aos-duration="500">Ikuti Test Assesment Buat Tau Potensi, Minat dan Bakat Kamu</p>
+            <h2 class="fw-700 text-grey-900 display4-size display4-xs-size lh-1 mb-3 pt-5 aos-init" data-aos="fade-up" data-aos-delay="200" data-aos-duration="400"><span class="text-primary">CV</span> Maker</h2>
+            <p class="fw-300 font-xss lh-28 text-grey-700 pl-lg--5 pr-lg--5 aos-init" data-aos="fade-up" data-aos-delay="300" data-aos-duration="500">Buat CV online Anda
+                dengan cepat dan mudah</p>
         </div>
     </div>
 
     <div class="spacer"></div>
 
-    <div>
-        {{-- <button type="button" class="btn btn-primary font-weight-bold" data-toggle="modal" data-target="#modalCV">
-            Pilih CV
-        </button> --}}
-        <a href="{{route('cvPrint' )}}" type="button" class="btn btn-success font-weight-bold">Download <span id="tipeCV"></span></a>
-    </div>
-
     <div class="row">
         <div class="col-12 my-2">
-            <div class="card shadow-xss border-0 p-5 rounded-lg">
+            <div class="card shadow-md border-0 p-5 rounded-lg">
                 <div class="mt-3">
                     <span class="float-right"><i class="fa-solid fa-pencil" onclick="changeName()"></i></span>
                     <h2 class="fw-700 font-lg text-grey-900" id="showNama">{{$user->nama}}</h2>                           
@@ -36,7 +33,7 @@
         </div>
 
         <div class="col-12 my-2">
-            <div class="card shadow-xss border-0 px-5 py-4 rounded-lg">
+            <div class="card shadow-md border-0 px-5 py-4 rounded-lg">
                 <h2 class="fw-700 font-sm mt-4 mb-3 text-grey-900">Biodata
                     <a href="#" class="float-right" onclick="btnModalBio({{$user->id}})"><i class="feather-edit text-grey-800 fw-700 font-sm"></i></a></h2>
                 <p id="bioText" class="font-xsss text-grey-600 fw-500 mb-3">{!!$user->desc!!}</p>
@@ -44,7 +41,7 @@
         </div>
 
         <div class="col-12 my-2">
-            <div class="card shadow-xss border-0 px-5 py-4 rounded-lg">
+            <div class="card shadow-md border-0 px-5 py-4 rounded-lg">
                 <h2 class="fw-700 font-sm mt-4 mb-3 text-grey-900">Kontak</h2>
                     <div class="row">
                         <form action="{{route('editKontak')}}" method="post" style="width:100%">
@@ -86,7 +83,7 @@
         </div>
 
         <div class="col-12 my-2">
-            <div class="card shadow-xss border-0 px-5 py-4 rounded-lg">
+            <div class="card shadow-md border-0 px-5 py-4 rounded-lg">
                 <h2 class="fw-700 font-sm mt-4 mb-3 text-grey-900">Pengalaman Kerja
                     <a href="#" onclick="btnModalKerja()" class="float-right" ><i class="feather-plus text-grey-800 fw-700 font-sm"></i></a></h2>
                 @forelse ($kerja as $kj)
@@ -105,7 +102,7 @@
         </div>
 
         <div class="col-12 my-2">
-            <div class="card shadow-xss border-0 px-5 py-4 rounded-lg">
+            <div class="card shadow-md border-0 px-5 py-4 rounded-lg">
                 <h2 class="fw-700 font-sm mt-4 mb-3 text-grey-900">Pendidikan
                     <a href="#" onclick="btnModalEdu()" class="float-right" ><i class="feather-plus text-grey-800 fw-700 font-sm"></i></a></h2>
                 @forelse ($edukasi as $edu)
@@ -124,7 +121,7 @@
         </div>
 
         <div class="col-12 my-2">
-            <div class="card shadow-xss border-0 px-5 py-4 rounded-lg">
+            <div class="card shadow-md border-0 px-5 py-4 rounded-lg">
                 <h2 class="fw-700 font-sm mt-4 mb-3 text-grey-900">Pelatihan
                     <a href="#" onclick="btnModalTrain()" class="float-right" ><i class="feather-plus text-grey-800 fw-700 font-sm"></i></a></h2>
                 @forelse ($training as $tr)
@@ -144,7 +141,7 @@
         </div>
 
         <div class="col-12 my-2">
-            <div class="card shadow-xss border-0 px-5 py-4 rounded-lg">
+            <div class="card shadow-md border-0 px-5 py-4 rounded-lg">
                 <h2 class="fw-700 font-sm mt-4 mb-3 text-grey-900">Keahlian
                     <a href="#" onclick="btnModalSkill()" class="float-right" ><i class="feather-plus text-grey-800 fw-700 font-sm"></i></a></h2>
                 @forelse ($skil as $sk)
@@ -160,7 +157,7 @@
         </div>
 
         <div class="col-12 my-2">
-            <div class="card shadow-xss border-0 px-5 py-4 rounded-lg">
+            <div class="card shadow-md border-0 px-5 py-4 rounded-lg">
                 <h2 class="fw-700 font-sm mt-4 mb-3 text-grey-900">Prestasi
                     <a href="#" onclick="btnModalAcv()"  class="float-right" ><i class="feather-plus text-grey-800 fw-700 font-sm"></i></a></h2>
                 @forelse ($prestasi as $acv)
@@ -177,7 +174,7 @@
         </div>
 
         <div class="col-12 my-2">
-            <div class="card shadow-xss border-0 px-5 py-4 rounded-lg">
+            <div class="card shadow-md border-0 px-5 py-4 rounded-lg">
                 <h2 class="fw-700 font-sm mt-4 mb-3 text-grey-900">Organisasi
                     <a href="#" onclick="btnModalOrg()"  class="float-right" ><i class="feather-plus text-grey-800 fw-700 font-sm"></i></a></h2>
                 @forelse ($organisasi as $org)
@@ -198,6 +195,13 @@
 
     </div>
 
+    <div>
+        {{-- <button type="button" class="btn btn-primary font-weight-bold" data-toggle="modal" data-target="#modalCV">
+            Pilih CV
+        </button> --}}
+        <a href="{{route('cvPrint')}}" type="button" class="btn btn-success font-weight-bold btn-block mt-4">Download <span id="tipeCV"></span></a>
+    </div>
+
     <div class="spacer"></div>
 
 </div>
@@ -208,7 +212,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Biodata</h5>
-          <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal" aria-label="Close">
+          <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal" aria-label="Close">
             <i class="fa-solid fa-xmark"></i>
           </button>
         </div>
@@ -220,7 +224,7 @@
                     <textarea id="formBio" name="bio" class="w-100 h125 style2-textarea p-3 form-control"></textarea>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="rounded-lg btn-sm float-right bg-current text-white text-center font-xsss fw-500 border-2 border-0 w100">Save</button>
+                    <button type="submit" class="btn bg-current text-white text-center font-xsss fw-500 btn-block">Simpan</button>
                 </div>
             </div>
             </form>
@@ -235,7 +239,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Pekerjaan</h5>
-          <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal" aria-label="Close">
+          <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal" aria-label="Close">
             <i class="fa-solid fa-xmark"></i>
           </button>
         </div>
@@ -269,7 +273,7 @@
                     <textarea name="desc" id="descKerja" value="" ></textarea>
                 </div> 
                 <div class="form-group">
-                    <button type="submit" class="rounded-lg btn-sm float-right bg-current text-white text-center font-xsss fw-500 border-2 border-0 w100">Save</button>
+                    <button type="submit" class="btn bg-current text-white text-center font-xsss fw-500 btn-block">Simpan</button>
                 </div>
             </div>
             </form>
@@ -284,7 +288,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Pendidikan</h5>
-          <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal" aria-label="Close">
+          <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal" aria-label="Close">
             <i class="fa-solid fa-xmark"></i>
           </button>
         </div>
@@ -318,7 +322,7 @@
                     <input type="text" name="gpa" id="gpa" class="form-control bg-color-none text-grey-700" value="">                        
                 </div> 
                 <div class="form-group">
-                    <button type="submit" class="rounded-lg btn-sm float-right bg-current text-white text-center font-xsss fw-500 border-2 border-0 w100">Save</button>
+                    <button type="submit" class="btn bg-current text-white text-center font-xsss fw-500 btn-block">Simpan</button>
                 </div>
             </div>
             </form>
@@ -333,7 +337,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Training</h5>
-          <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal" aria-label="Close">
+          <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal" aria-label="Close">
             <i class="fa-solid fa-xmark"></i>
           </button>
         </div>
@@ -363,7 +367,7 @@
                     <textarea name="desc" id="descTraining" value="" ></textarea>
                 </div> 
                 <div class="form-group">
-                    <button type="submit" class="rounded-lg btn-sm float-right bg-current text-white text-center font-xsss fw-500 border-2 border-0 w100">Save</button>
+                    <button type="submit" class="btn bg-current text-white text-center font-xsss fw-500 btn-block">Simpan</button>
                 </div>
             </div>
             </form>
@@ -378,7 +382,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Keahlian</h5>
-          <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal" aria-label="Close">
+          <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal" aria-label="Close">
             <i class="fa-solid fa-xmark"></i>
           </button>
         </div>
@@ -391,7 +395,7 @@
                     <input type="text" id="formSkill" name="skil" class="form-control bg-color-none text-grey-700" value=""/>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="rounded-lg btn-sm float-right bg-current text-white text-center font-xsss fw-500 border-2 border-0 w100">Save</button>
+                    <button type="submit" class="btn bg-current text-white text-center font-xsss fw-500 btn-block">Simpan</button>
                 </div>
             </div>
             </form>
@@ -406,7 +410,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Prestasi</h5>
-          <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal" aria-label="Close">
+          <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal" aria-label="Close">
             <i class="fa-solid fa-xmark"></i>
           </button>
         </div>
@@ -432,7 +436,7 @@
                     <textarea name="desc" id="descPrestasi" value="" ></textarea>             
                 </div> 
                 <div class="form-group">
-                    <button type="submit" class="rounded-lg btn-sm float-right bg-current text-white text-center font-xsss fw-500 border-2 border-0 w100">Save</button>
+                    <button type="submit" class="btn bg-current text-white text-center font-xsss fw-500 btn-block">Simpan</button>
                 </div>
             </div>
             </form>
@@ -447,7 +451,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Organisasi</h5>
-          <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal" aria-label="Close">
+          <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal" aria-label="Close">
             <i class="fa-solid fa-xmark"></i>
           </button>
         </div>
@@ -477,7 +481,7 @@
                     <textarea name="desc" id="descOrganisasi" value="" ></textarea>
                 </div> 
                 <div class="form-group">
-                    <button type="submit" class="rounded-lg btn-sm float-right bg-current text-white text-center font-xsss fw-500 border-2 border-0 w100">Save</button>
+                    <button type="submit" class="btn bg-current text-white text-center font-xsss fw-500 btn-block">Simpan</button>
                 </div>
             </div>
             </form>

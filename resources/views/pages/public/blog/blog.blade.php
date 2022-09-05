@@ -15,11 +15,11 @@
         border: 1px solid #dedede;
     }
 
-    .form-group.icon-input i {
+    /* .form-group.icon-input i {
         position: absolute;
         left: 15px;
         top: 8px;
-    }
+    } */
 
     .kat{
         margin-top: 2px;
@@ -33,16 +33,19 @@
 
 
 <div class="container mt-5 mt-sm-0">
-    <div class="row align-items-center flex-column pt-4">
+    <div class="spacer-sm"></div>
+    <div class="row align-items-center flex-column">
         <div class="page-title style1 col-xl-6 col-lg-6 col-md-10 text-center">
             <h2 class="text-grey-900 fw-700 display1-size display2-md-size pb-3 mb-0 d-block">Blog</h2>
         </div>
         <div class="mb-5">
             <form action="{{route('blog')}}" method="GET" class="float-left header-search border-1 rounded-sm">
                 <div class="form-group mb-0 icon-input">
-                    <i class="feather-search font-lg text-grey-400"></i>
-                    <input name="key" type="text" placeholder="Start typing to search.." class="bg-transparent border-0 lh-32 pt-1 pb-1 pl-5 pr-3 font-xsss fw-500 rounded-xl">
-                    <button type="submit" class="btn btn-info">Search</button>
+                    
+                    <input name="key" type="text" placeholder="Start typing to search.." class="bg-transparent border-0 lh-32 pt-1 pb-1 px-0 font-xsss fw-500 rounded-xl pl-4">
+                    <button type="submit" class="btn btn-info">
+                        <i class="feather-search font-md text-grey-400"></i>
+                    </button>
                 </div>
             </form>
 
@@ -51,9 +54,9 @@
     </div>
 </div>
 
-<div class="container">
+<div class="col-11 col-sm-10 mx-auto">
     <div class="row">
-        <div class="col-12 col-sm-8">
+        <div class="col-12 col-sm-8 pb-5">
             <div class="row">
                 @forelse ($data as $dt)
                     <div class="col-12 mb-4 my-4">
