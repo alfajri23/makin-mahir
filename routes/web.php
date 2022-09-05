@@ -6,7 +6,7 @@ use App\Http\Controllers;
 use App\Http\Controllers\Notifications;
 use App\Models\Admin;
 use App\Notifications\WelcomeEmailNotification;
-
+use Carbon\Carbon;
 
 /*
 |--------------------------------------------------------------------------
@@ -397,6 +397,8 @@ Route::get('test-gdrive1',[Controllers\Upload\UploadDriveController::class,'inde
 Route::get('test-gdrive',[Controllers\Upload\UploadDriveController::class,'googleDriveFileUpload'])->name('testDrive');
 Route::get('google/login',[Controllers\Upload\UploadDriveController::class,'googleLogin'])->name('google.login');
 
-
+Route::get('my-test',function(){
+    dd(Carbon::now()->addDays(1)->toISOString());
+});
 
 

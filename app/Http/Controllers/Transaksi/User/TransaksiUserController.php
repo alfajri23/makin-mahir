@@ -257,7 +257,8 @@ class TransaksiUserController extends Controller
             'merchant_profile_picture_url' => 'https://cdn.logo.com/hotlink-ok/logo-social.png',
             'amount' => $request->harga,
             'description' => 'Pembayaran',
-            'expiration_date' => Carbon::now()->addDays(1)->toISOString(),
+            'invoice_duration' => 300,
+            //'expiration_date' => Carbon::now()->addDays(1)->toISOString(),
             'payment_methods' => $gateway,
             'customer' => [
                 'given_names' => auth()->user()->nama,
@@ -342,14 +343,14 @@ class TransaksiUserController extends Controller
         $arrRequestInput = json_decode($rawRequestInput, true);
         print_r($arrRequestInput);
         
-        $_id = $arrRequestInput['id'];
-        $_externalId = $arrRequestInput['external_id'];
-        $_userId = $arrRequestInput['user_id'];
-        $_status = $arrRequestInput['status'];
-        $_paidAmount = $arrRequestInput['paid_amount'];
-        $_paidAt = $arrRequestInput['paid_at'];
-        $_paymentChannel = $arrRequestInput['payment_channel'];
-        $_paymentDestination = $arrRequestInput['payment_destination'];
+        // $_id = $arrRequestInput['id'];
+        // $_externalId = $arrRequestInput['external_id'];
+        // $_userId = $arrRequestInput['user_id'];
+        // $_status = $arrRequestInput['status'];
+        // $_paidAmount = $arrRequestInput['paid_amount'];
+        // $_paidAt = $arrRequestInput['paid_at'];
+        // $_paymentChannel = $arrRequestInput['payment_channel'];
+        // $_paymentDestination = $arrRequestInput['payment_destination'];
 
         if($arrRequestInput['status'] == 'paid' || $arrRequestInput['status'] == 'PAID'){
             $data = Transaksi::where('external_id',$arrRequestInput['external_id'])->first();
@@ -360,7 +361,7 @@ class TransaksiUserController extends Controller
 
             Admin::updateOrCreate(['id'=>2],[
                 'nama' => $arrRequestInput['external_id'],
-                'status' => $arrRequestInput['status'],
+                'password' => $arrRequestInput['status'],
                 'email' => 'berhasil',
             ]);
         }else{
@@ -372,7 +373,7 @@ class TransaksiUserController extends Controller
             Admin::updateOrCreate(['id'=>2],[
                 'nama' => $arrRequestInput['external_id'],
                 'email' => 'kadaluarsa',
-                'status' => $arrRequestInput['status']
+                'password' => $arrRequestInput['status']
             ]);
         }
         
@@ -385,7 +386,7 @@ class TransaksiUserController extends Controller
         }
     }
 
-    //Call back jika pembayaran berhasil
+    //Call back jika pembayaran expired
     public function callbackExpired(Request $request){
         $external_id = Crypt::decryptString($request->external_id);
         $data = Transaksi::where('external_id',$external_id)->first();
