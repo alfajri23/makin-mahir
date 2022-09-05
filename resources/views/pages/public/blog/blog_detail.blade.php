@@ -1,4 +1,4 @@
-@extends($layout)
+@extends('layouts.public')
 
 @empty(!$data)
     @section('meta_title', $data->meta_title)
