@@ -110,11 +110,9 @@ class HomeController extends Controller
 
     public function produk_detail_enroll($link,Request $request){
     
-        $produk = Produk::where([
+        $produk = Produk::with('kategori')->where([
             'link' => $link,
         ])->first();
-
-
 
         switch ($produk->kategori->nama){
             case "webinar" :

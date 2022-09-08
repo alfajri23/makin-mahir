@@ -45,8 +45,11 @@
                     <h6 class="font-xsss fw-500 text-grey-600 ls-2">{{$data->waktu}}</h6>
                     <h6 class="font-xsss fw-500 text-grey-600 ls-2">
                         {{date_format(date_create($data->tanggal_mulai),"d M Y")}}
+                        @if ($data->tanggal_akhir != null)
+                            
                         <span>sampai</span> 
                         {{date_format(date_create($data->tanggal_akhir),"d M Y")}}
+                        @endif
                     </h6>
 
                     <a href="{{route('pembayaranCek',$data->produk->link)}}" class="btn btn-success mt-3">{{$data->harga == null ? 'Daftar' : 'Beli sekarang'}}</a>
