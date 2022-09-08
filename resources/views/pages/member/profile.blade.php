@@ -91,6 +91,7 @@
                 <div class="card-body pb-0">
                     <div class="row">
                         <div class="col-xl-12">
+                            @include('component.error.error_message')
                             <form action="{{route('memberUpdate')}}" method="POST" enctype="multipart/form-data">
                                 @csrf
 

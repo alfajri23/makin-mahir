@@ -1,4 +1,4 @@
-@extends('layouts.member')
+@extends('layouts.public')
 
 @section('content')
     <div class="spacer"></div>

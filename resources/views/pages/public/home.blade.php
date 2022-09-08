@@ -78,7 +78,7 @@
 
         
         .vh-banner{
-            height: 60vh;
+            height: 70vh;
         }
     }
 
@@ -92,11 +92,13 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-12 pt-5 pt-sm-7 pb-2 pt-sm-7 mt-sm-5 mt-2 d-flex">
+                <div class="col-md-10 col-12 pt-5 pt-sm-7 pb-2 pt-sm-7 mt-sm-5 mt-2 d-flex">
                     <div class="card w-100 border-0 bg-transparent">
-                        <h2 class="poppins fw-600 text-white display3-size display4-md-size">Makin Mahir</h2>
-                        <p class="font-xss text-white">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Libero adipiscing quis pretium morbi morbi. Amet quam id sed diam non 
+                        <h2 class="poppins fw-600 text-white display3-size display2-md-size">Wujudkan Karier Impianmu
+                            Bersama Makin Mahir
+                        </h2>
+                        <p class="font-xss font-md-xsss text-white">
+                            Setiap orang memiliki kesempatan yang sama untuk bisa bekerja, Makin Mahir hadir sebagai platform ekosistem untuk membantu persiapan karir Anda.
                         </p>
                     </div>
                 </div>
@@ -249,13 +251,16 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-3 order-lg-1 offset-lg-1">
-                    <img src="{{asset('asset/home/logo-main-lg.png')}}" alt="image" class="img-fluid">
+                    <img src="{{asset('asset/logo/square.png')}}" alt="image" class="img-fluid">
                 </div>
 
                 <div class="col-lg-6 order-lg-2 offset-lg-1">
-                    <h2 class="poppins text-grey-900 fw-700 font-lg pb-3 mb-0 mt-3 d-block lh-3 aos-init" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">Kami adalah Platform Profesional 
-                        Dalam Pelatihan Persiapan Kerja</h2>
-                    <p class="fw-400 font-xss lh-28 text-grey-600 aos-init" data-aos="fade-up" data-aos-delay="300" data-aos-duration="500">Kami Membantu persiapan kamu agar siap dan layak masuk kedalam dunia kerja. Bergabung dengan kami maka kamu akan mendapatkan mentor terbaik kami, Assesment dan CV terbaik </p>
+                    <h2 class="poppins text-grey-900 fw-700 font-lg pb-3 mb-0 mt-3 d-block lh-3 aos-init" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">
+                        Selayang Pandang tentang Makin Mahir 
+                    </h2>
+                    <p class="fw-400 font-xss lh-28 text-grey-600 aos-init" data-aos="fade-up" data-aos-delay="300" data-aos-duration="500">
+                        Sudah mengirimkan lamaran kerja ratusan kali namun tidak ada yang diterima, pasti ada yang salah di CV, Interview atau minat karir Anda. Makin Mahir menjadi ruang yang tepat jadi <span class="text-primary fw-600">#TemanCariKerja</span> untuk jobseekers didampingi HR Specialist Recruiter dan Mentor Profesional. Nikmati beberapa fitur andalan Konsultasi Private, Assesment Test dan Event Edukasi Gratis. 
+                    </p>
                 </div>
             </div>
         </div>
@@ -274,8 +279,9 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="page-title style1 col-xl-6 col-lg-8 col-md-10 text-center mb-5">
-                    <h2 class="poppins text-grey-900 fw-700 font-xl pb-3 mb-0 mt-3 d-block lh-3">Tumbuh Bareng<br>Mahir Bareng</h2>
-                    <p class="fw-300 font-xss lh-28 text-grey-600">Inilah cara kami membantu Teman Cari Kerja untuk mempersiapkan diri memasuki dunia kerja</p>
+                    <h2 class="poppins text-grey-900 fw-700 font-xl pb-3 mb-0 mt-3 d-block lh-3">Kenapa Memilih Konsultasi Bimbingan Karir di Makin Mahir ?</h2>
+                    <p class="fw-300 font-xss lh-28 text-grey-600">Inilah beberapa hal yang menjadi keunikan kami dan kamu harus tahu
+                    </p>
                 </div>
             </div>
 
@@ -287,7 +293,7 @@
                             <div class="row">
                                 <div class="col-3"><img src="https://via.placeholder.com/100x100.png" alt="blog-image" class="img-fluid rounded-lg"></div>
                                 <div class="col-8 pl-1">
-                                    <h2 class="fw-600 text-grey-800 font-xsss lh-3">Lorem Ipsum</h2>
+                                    <h2 class="fw-600 text-grey-800 font-xsss lh-3">Bimbingan Intens Sampai dapat Kerja</h2>
                                     <h6 class="font-xssss text-grey-500 fw-500 mt-0">The simplest but robust technology to accompany with you</h6>
                                 </div>
                             </div>
@@ -334,84 +340,6 @@
             <img src="{{asset('asset/home/ornamen-1.png')}}" alt="">
         </div>
     </div>
-
-    {{-- layanan old --}}
-    {{-- <div class="feature-wrapper layer-after my-5 pb-lg--7 pb-5">
-        <div class="row justify-content-center">
-            <div class="page-title style1 col-xl-6 col-lg-8 col-md-10 text-center mb-5">
-                <h2 class="poppins text-grey-900 fw-700 display1-size display1-sm-size pb-3 mb-0 mt-3 d-block lh-3">Yang Kamu Dapatkan<br> Di Makin Mahir</h2>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <a href="{{route('produkListEvent')}}" class="hover card mb-4 w-100 border-0 pt-4 pb-4 pr-4 pl-7 shadow-xss rounded-lg aos-init" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="500">
-                        <i class="fa-solid fa-calendar-day text-success font-xl position-absolute left-15 ml-2"></i>
-                        <h2 class="fw-700 font-xs text-grey-900 mt-1">Event Gratis</h2>
-                        <p class="fw-500 font-xssss lh-24 text-grey-600 mb-0">Daftar Event Bersertifikat Dengan Pemateri Profesional di Dunia Kerja</p>
-                    </a>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <a href="{{route('produkListKonsul')}}" class="hover card mb-4 w-100 border-0 pt-4 pb-4 pr-4 pl-7 shadow-xss rounded-lg aos-init" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="500">
-                        <i class="fas fa-headset text-info font-xl position-absolute left-15 ml-2"></i>
-                        <h2 class="fw-700 font-xs text-grey-900 mt-1">Konsultasi HRD</h2>
-                        <p class="fw-500 font-xssss lh-24 text-grey-600 mb-0">Konsultasi Langsung Dengan HRD Buat Bedah CV, Interview Kerja & Psikotes</p>
-                    </a>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <a href="{{route('testIndex')}}" class="hover card mb-4 w-100 border-0 pt-4 pb-4 pr-4 pl-7 shadow-xss rounded-lg aos-init" data-aos="zoom-in" data-aos-delay="500" data-aos-duration="500">
-                        <i class="fa-solid fa-file-signature text-success font-xl position-absolute left-15 ml-2"></i>
-                        <h2 class="fw-700 font-xs text-grey-900 mt-1">Assesment Test</h2>
-                        <p class="fw-500 font-xssss lh-24 text-grey-600 mb-0">Ikuti Test Assesment Buat Tau Potensi, Minat dan Bakat Kamu</p>
-                    </a>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <a href="{{route('cvIndex')}}" class="hover card mb-4 w-100 border-0 pt-4 pb-4 pr-4 pl-7 shadow-xss rounded-lg aos-init" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="500">
-                        <i class="fa-solid fa-file-code text-warning font-xl position-absolute left-15 ml-2"></i>
-                        <h2 class="fw-700 font-xs text-grey-900 mt-1">CV Maker</h2>
-                        <p class="fw-500 font-xssss lh-24 text-grey-600 mb-0">Buat CV ATS Kamu Langsung di Sini via Online, GRATIS</p>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div> --}}
-
-
-
-    {{-- <div class="feature-wrapper layer-after my-5  pt-lg--7 pt-5 mt-4">
-        <div class="container">
-              <div class="row">
-                <div class="col-lg-6 order-lg-2 offset-lg-1">
-                    <div class="banner-slider owl-carousel owl-theme owl-nav-link rounded-lg overflow-hidden">
-                          
-                        <div class="owl-items" >
-                            <img src="{{asset('asset/img/program/konsul-1.png')}}" alt="image" class="img-fluid">
-                        </div>
-                        
-                        <div class="owl-items" >
-                            <img src="{{asset('asset/img/program/konsul-2.png')}}" alt="image" class="img-fluid">
-                        </div>
-                        
-                        <div class="owl-items" >
-                            <img src="{{asset('asset/img/program/konsul-3.png')}}" alt="image" class="img-fluid">
-                        </div>
-                           
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 order-lg-1">
-                    <span class="font-xsssss mt-2 fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-xl ls-2 alert-success d-inline-block text-success aos-init" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">Konsultasi</span>
-                    <h2 class="poppins text-grey-900 fw-700 display1-size display1-sm-size pb-3 mb-0 mt-3 d-block lh-3 aos-init" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">Konsultasi Private Dengan HRD</h2>
-                    <p class="fw-400 font-xss lh-28 text-grey-600 aos-init" data-aos="fade-up" data-aos-delay="300" data-aos-duration="500">Kamu Bisa Ngobrol Langsung Sama HRD Buat Bedah CV, Latihan Interview Kerja dan Psikotes</p>
-                    <a href="{{route('produkListKonsul')}}" class="btn border-0 bg-warning p-2 text-white fw-600 rounded-lg d-inline-block font-xssss btn-light mt-3 w150 aos-init" data-aos="fade-up" data-aos-delay="100" data-aos-duration="200">Daftar sekarang</a>
-                </div>
-                
-              </div>
-        </div>
-    </div> --}}
 
     <div class="spacer"></div>
 

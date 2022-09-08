@@ -73,9 +73,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-9 navbar pt-0 pb-0">
-                        <a class="" href="{{route('publicIndex')}}">
-                            <h1 class="ls-3 fw-700 poppins font-xs text-primary mb-0 rounded-xxl p-2 px-3">MakinMahir.id
-                            </h1>
+                        <a class="/" href="{{route('publicIndex')}}">
+                            <img src="{{asset('asset/logo/logo_hor.png')}}" style="width:130px" alt="">
+                            
                             
                         </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -83,26 +83,25 @@
                         </button>
                         <div class="collapse navbar-collapse" id="navbarNavDropdown">
                             <ul class="navbar-nav navbar-dark nav-menu float-none text-center">
-                                <li class="nav-item dropdown "><a class="nav-link dropdown-toggle fw-500 text-grey-900 font-xssss" data-toggle="dropdown" href="#">Layanan<i class="ti-angle-down"></i></a>
+                                <li class="nav-item dropdown "><a class="nav-link dropdown-toggle fw-500 text-grey-900 font-xssss pb-0" data-toggle="dropdown" href="#">Layanan<i class="ti-angle-down"></i></a>
 
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item fw-400" href="{{route('produkListEvent')}}">Event</a>
                                         <a class="dropdown-item fw-400" href="{{route('produkListKonsul')}}">Konsultasi</a>
                                         <a class="dropdown-item fw-400" href="{{route('cvIndex')}}">CV Maker</a>
                                         <a class="dropdown-item fw-400" href="{{route('produkListTemplate')}}">Template CV</a>
-                                        <!--<a class="dropdown-item fw-400" href="{{route('blog')}}">Blog</a>-->
                                         <a class="dropdown-item fw-400" href="{{route('forumIndex')}}">Forum</a>
                                     </div>
                                 </li>
 
-                                <li class="nav-item dropdown "><a class="nav-link dropdown-toggle fw-500 text-grey-900 font-xssss" data-toggle="dropdown" href="#">Tes Siap Kerja<i class="ti-angle-down"></i></a>
+                                <li class="nav-item dropdown "><a class="nav-link dropdown-toggle fw-500 text-grey-900 font-xssss pb-0" data-toggle="dropdown" href="#">Tes Siap Kerja<i class="ti-angle-down"></i></a>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item fw-400" href="{{route('testIndex')}}">Tes kepribadian</a>
                                         <a class="dropdown-item fw-400" href="{{route('testIndex')}}">Tes minat bakat</a>
                                     </div>
                                 </li>
 
-                                <li class="nav-item dropdown "><a class="nav-link dropdown-toggle fw-500 text-grey-900 font-xssss" data-toggle="dropdown" href="#">Tentang kami <i class="ti-angle-down"></i></a>
+                                <li class="nav-item dropdown "><a class="nav-link dropdown-toggle fw-500 text-grey-900 font-xssss pb-0" data-toggle="dropdown" href="#">Tentang kami <i class="ti-angle-down"></i></a>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item fw-400" href="{{route('profile')}}">Profil</a>
                                         <a class="dropdown-item fw-400" href="{{route('goes_sekolah')}}">Goes to sekolah</a>
@@ -112,7 +111,7 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link font-xssss fw-400" href="{{route('blog')}}">Blog</a>
+                                    <a class="nav-link font-xssss fw-500 pb-0" href="{{route('blog')}}">Blog</a>
                                 </li>
 
                                 {{-- AUTH --}}
@@ -126,9 +125,9 @@
                                         @csrf
                                     </form>
                                     @else
-                                    <li class="nav-item d-block d-sm-none"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
+                                    <li class="nav-item d-block d-sm-none"><a class="nav-link font-xssss fw-500 pb-0" href="{{ route('login') }}">Login</a></li>
                                         @if (Route::has('register'))
-                                        <li class="nav-item d-block d-sm-none"><a class="nav-link" href="{{ route('register') }}">Register</a></li>
+                                        <li class="nav-item d-block d-sm-none"><a class="nav-link font-xssss fw-500 pb-0" href="{{ route('register') }}">Register</a></li>
                                         @endif
                                     @endauth
                                 @endif

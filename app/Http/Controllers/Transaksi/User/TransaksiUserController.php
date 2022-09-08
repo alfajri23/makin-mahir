@@ -25,7 +25,11 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 class TransaksiUserController extends Controller
 {
     public function index(){
-        $data = Transaksi::where('id_user',auth()->user()->id)->latest()->get();
+
+        $data = Transaksi::join('produks','transaksis.id_produk','=','produks.id')
+            ->where('transaksis.id_user',auth()->user()->id)
+            ->get(['transaksis.*','produks.link AS link']);
+        
 
         return view('pages.member.transfer.transfer',compact('data'));
     }

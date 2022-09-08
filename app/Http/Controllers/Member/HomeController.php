@@ -44,7 +44,7 @@ class HomeController extends Controller
         $data = ProdukVideo::limit(6)->get(); 
         $tipe = 'video';
         $title = 'Event';
-        //$data = ProdukVideo::limit(6)->get(); 
+        
         return view('pages.member.home',compact('data','tipe','title'));
     }
 
@@ -109,15 +109,17 @@ class HomeController extends Controller
     // }
 
     public function produk_detail_enroll($link,Request $request){
-        //$produk = Produk::find($id);
+    
         $produk = Produk::where([
             'link' => $link,
         ])->first();
 
+
+
         switch ($produk->kategori->nama){
             case "webinar" :
                 $cek = EventEnroll::where([
-                    'id_user' => $request->session()->get('auth.id_user'),
+                    'id_user' => auth()->user()->id,
                     'id_event' => $produk->id_produk
                 ])->get();
 
@@ -133,7 +135,7 @@ class HomeController extends Controller
 
             case "beduk" :
                 $cek = EventEnroll::where([
-                    'id_user' => $request->session()->get('auth.id_user'),
+                    'id_user' => auth()->user()->id,
                     'id_event' => $produk->id_produk
                 ])->get();
 
@@ -149,7 +151,7 @@ class HomeController extends Controller
 
             case "kelas" :
                 $cek = KelasEnroll::where([
-                    'id_user' => $request->session()->get('auth.id_user'),
+                    'id_user' => auth()->user()->id,
                     'id_kelas' => $produk->id_produk
                 ])->get();
                 
@@ -160,7 +162,7 @@ class HomeController extends Controller
 
                     //hasil test
                     $hasilTest = KelasJawaban::where([
-                        'id_user' => $request->session()->get('auth.id_user'),
+                        'id_user' => auth()->user()->id,
                         'id_ujian' => $ujian->id,
                         'benar' => '1'
                     ])->get();
@@ -190,7 +192,7 @@ class HomeController extends Controller
                 
             case "template" :
                 $cek = TemplateEnroll::where([
-                    'id_user' => $request->session()->get('auth.id_user'),
+                    'id_user' => auth()->user()->id,
                     'id_template' => $produk->id_produk
                 ])->get();
 
@@ -206,7 +208,7 @@ class HomeController extends Controller
 
             default :
                 $cek = EventEnroll::where([
-                    'id_user' => $request->session()->get('auth.id_user'),
+                    'id_user' => auth()->user()->id,
                     'id_event' => $produk->id_produk
                 ])->get();
 
