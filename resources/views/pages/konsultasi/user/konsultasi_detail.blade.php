@@ -11,9 +11,9 @@
     {{-- <div class="spacer-sm"></div> --}}
     <div class="banner-wrapper bg-lightblue">
 
-        <div class="spacer-sm"></div>
+        {{-- <div class="spacer-sm"></div> --}}
 
-        <div class="col-12 col-sm-11 mx-auto pb-5">
+        <div class="col-12 col-sm-11 mx-auto py-5">
             <div class="row">
                 <div class="col-md-5 col-10 mx-auto">
                     <div class="card-image w-100 mb-3">

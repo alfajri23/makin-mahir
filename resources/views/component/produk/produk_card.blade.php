@@ -2,7 +2,7 @@
 <div class="col-xl-4 col-xxxl-3 col-lg-6 col-md-6 col-sm-6 mb-4">
     <div class="card w-100 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1">
         <div class="card-image w-100 mb-3">
-            <img src="{{$dt->poster != null ? asset($dt->poster) : 'https://via.placeholder.com/400x300.png'}}" alt="image" class="w-100">
+            <img data-src="{{$dt->poster != null ? asset($dt->poster) : 'https://via.placeholder.com/400x300.png'}}" alt="image" class="w-100 lozad">
         </div>
         <div class="card-body pt-0">
             <div class="row justify-content-around">
@@ -40,3 +40,9 @@
 </div>
 @empty             
 @endforelse
+
+<script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+<script>
+    const observer = lozad();
+    observer.observe();
+</script>

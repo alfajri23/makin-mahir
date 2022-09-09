@@ -111,7 +111,7 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link font-xssss fw-500 pb-0" href="{{route('blog')}}">Blog</a>
+                                    <a class="nav-link font-xssss text-grey-900 fw-500 pb-0" href="{{route('blog')}}">Blog</a>
                                 </li>
 
                                 {{-- AUTH --}}
@@ -175,7 +175,7 @@
             </div>
         </a>
         
-        <div class="footer-wrapper layer-after bg-light mt-0">
+        <div class="footer-wrapper layer-after bg-light mt-0 position-relative">
             <div class="container">
                 <div class="row">
 
