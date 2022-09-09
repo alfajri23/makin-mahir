@@ -298,7 +298,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="page-title style1 col-xl-6 col-lg-8 col-md-10 text-center mb-5">
-                    <h2 class="poppins text-mainblue fw-700 font-xl pb-3 mb-0 mt-3 d-block lh-3">Kenapa Memilih Konsultasi Bimbingan Karir di Makin Mahir ?</h2>
+                    <h2 class="poppins text-mainblue fw-700 font-xl pb-3 mb-0 mt-3 d-block lh-3">Kenapa Pilih Konsultasi <br> di Makin Mahir</h2>
                     <p class="fw-300 font-xss lh-28 text-grey-600">Inilah beberapa hal yang menjadi keunikan kami dan kamu harus tahu
                     </p>
                 </div>
@@ -414,7 +414,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="page-title style1 col-xl-6 col-lg-8 col-md-10 text-center mb-5">
-                    <h2 class="text-mainblue fw-600 font-lg pb-3 mb-0 mt-3 d-block lh-3">Testimoni Mereka</h2>
+                    <h2 class="text-mainblue fw-600 font-lg pb-3 mb-0 mt-3 d-block lh-3">Apa Kata Alumni ?</h2>
                 </div>
             </div>
 
@@ -545,7 +545,9 @@
                     <div class="container py-1">
                         <div class="row ">
                             <div class="col-lg-7 text-left">
-                                <h2 class="fw-600 text-white font-xl font-md-xs lh-3 mb-2 ">Jika Ada Pertanyaan Tim Kami siap Memberi pelayanan yang Terbaik</h2>
+                                <h2 class="fw-600 text-white font-xl font-md-xs lh-3 mb-2 ">Siap untuk merancang masa depan kariermu ?
+                                    Tenang, ada Makin Mahir di sisimu 
+                                    </h2>
                             </div>
 
                             <div class="col-12 text-center mt-3 position-relative" style="z-index: 3;">

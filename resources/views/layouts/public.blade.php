@@ -183,12 +183,14 @@
                         <div class="middle-footer mt-0">
                             <div class="row">
                                 <div class="col-sm-4 col-xs-12 sm-mb-4">
-                                    <h5 class="mb-4 font-xs">Makin mahir</h5>
-                                    <p class="w-100">platform perencana karir yang meberikan layanan yang di dalamnya berisi informasi seputar dunia kerja, membantu fresh graduate mengenali potensi dirinya dan memberikan rekomendasi yang dapat dijadikan pertimbangan dalam merencanakan karir terbaik mereka.</p>  
+                                    <h5 class="mb-4 font-lg">Makin mahir</h5>
+                                    <p class="w-100 text-grey-700">Ayo persiapkan masa depan kariermu dari sekarang!
+                                        Nikmati berbagai layanan konsultasi di Makin Mahir. Perbaiki CV, Caramu Interview dan Lakukan Assesment untuk tahu pekerjaan yang cocok buat kamu apa. 
+                                        </p>  
                                     
                                     <div class="clearfix">
 
-                                        <ul class="d-flex align-items-center mt-2 float-left xs-mb-2">
+                                        <ul class="d-flex align-items-center mt-2 float-left xs-mb-2 ">
                                             <li class="mr-2"><a target="_blank" href="https://www.facebook.com/makinmahirID/" class="btn-round-md bg-facebook"><i class="font-xs ti-facebook text-white"></i></a></li>
                                             <li class="mr-2"><a target="_blank" href="https://vt.tiktok.com/ZSdgqkhgU/" class="btn-round-md bg-white"><i class="font-xs fa-brands fa-tiktok text-info"></i></a></li>
                                             <li class="mr-2"><a target="_blank" href="https://www.linkedin.com/company/makinmahir-id/" class="btn-round-md bg-linkedin"><i class="font-xs ti-linkedin text-white"></i></a></li>
@@ -198,24 +200,24 @@
                                     </div> 
                                 </div>
 
-                                <div class="col-md-3 col-lg-2 col-sm-6 col-xs-6">
+                                <div class="col-md-3 col-lg-2 col-sm-6 col-xs-6 ">
                                     <h5 class="font-xs">Bantuan</h5>
-                                    <ul>
-                                        <li><a href="{{route('faq')}}">FAQ</a></li>
-                                        <li><a href="{{route('term')}}">Syarat dan kebijakan</a></li>
-                                        <li><a href="{{route('privacy')}}">Privacy Policy</a></li>
+                                    <ul class="">
+                                        <li><a class="text-grey-600" href="{{route('faq')}}">FAQ</a></li>
+                                        <li><a class="text-grey-600" href="{{route('term')}}">Syarat dan kebijakan</a></li>
+                                        <li><a class="text-grey-600" href="{{route('privacy')}}">Privacy Policy</a></li>
                                     </ul>
                                 </div>
 
                                 <div class="col-md-3 col-lg-2 col-sm-6 col-xs-6 mb-4">
                                     <h5 class="font-xs">Layanan</h5>
                                     <ul>
-                                        <li><a href="{{route('produkListEvent')}}">Event</a></li>
-                                        <li><a href="{{route('produkListKonsul')}}">Konsultasi</a></li>
-                                        <li><a href="{{route('cvIndex')}}">CV Maker</a></li>
-                                        <li><a href="{{route('produkListTemplate')}}">Template CV</a></li>
-                                        <li><a href="{{route('blog')}}">Blog</a></li>
-                                        <li><a href="{{route('forumIndex')}}">Forum</a></li>
+                                        <li><a class="text-grey-600" href="{{route('produkListEvent')}}">Event</a></li>
+                                        <li><a class="text-grey-600" href="{{route('produkListKonsul')}}">Konsultasi</a></li>
+                                        <li><a class="text-grey-600" href="{{route('cvIndex')}}">CV Maker</a></li>
+                                        <li><a class="text-grey-600" href="{{route('produkListTemplate')}}">Template CV</a></li>
+                                        <li><a class="text-grey-600" href="{{route('blog')}}">Blog</a></li>
+                                        <li><a class="text-grey-600" href="{{route('forumIndex')}}">Forum</a></li>
                                     </ul>
                                 </div>
                                 
@@ -228,12 +230,12 @@
                                     </div>
 
                                     <h5 class="mb-3 font-xs mt-4">Kantor</h5>
-                                    <p class="w-100">Jl. Raya Pringsurat - Temanggung, Kel. Kebumen,<br> Kec. Pringsurat, Temanggung</p>
+                                    <p class="w-100 text-grey-600">Jl. Raya Pringsurat - Temanggung, Kel. Kebumen,<br> Kec. Pringsurat, Temanggung</p>
                                 
                                     <h5 class="mb-3 font-xs">Kontak</h5>
-                                    <p class="mb-0">Telepon : 085856561200</p>
-                                    <p class="mb-0">Whatsapp : <a href="https://api.whatsapp.com/send?phone=6285856561200">+6285856561200</a></p>
-                                    <p>Email : <a href="mail:makinmahir.id@gmail.com">makinmahir.id@gmail.com</a></p>
+                                    <p class="mb-0 text-grey-600">Telepon : 085856561200</p>
+                                    <p class="mb-0 text-grey-600">Whatsapp : <a href="https://api.whatsapp.com/send?phone=6285856561200">+6285856561200</a></p>
+                                    <div class="font-xsss font-grey-500">Email : <a class="text-dark fw-600" href="mail:makinmahir.id@gmail.com">makinmahir.id@gmail.com</a></div>
 
                                 </div>
                             </div>
