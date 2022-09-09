@@ -10,7 +10,7 @@
                 </div>
                 <div class="col-xl-4 col-lg-6 pl-xl-5 pb-xl-5 pb-3">
                     
-                    <h4 class="fw-700 font-md text-white mt-3 mb-1">{{$user->nama}}<i class="ti-check font-xssss btn-round-xs bg-success text-white ml-1"></i></h4>
+                    <h4 class="fw-700 font-xxl text-white mt-3 mb-1">{{$user->nama}}<i class="ti-check font-xssss btn-round-xs bg-success text-white ml-1"></i></h4>
                     <span class="font-xssss fw-600 text-grey-500 d-inline-block ml-0">{{$user->email}}</span>
                     <span class="dot ml-2 mr-2 d-inline-block btn-round-xss bg-grey"></span>
                     <span class="font-xssss fw-600 text-grey-500 d-inline-block">{{$user->pendidikan}}</span>
@@ -18,8 +18,8 @@
                     
                 </div>
                 <div class="col-xl-4 col-lg-6 d-block">
-                    <h2 class="display5-size text-white fw-700 lh-1 mr-3">99 % <i class="feather-arrow-up-right text-success font-xl"></i></h2>
-                    <h4 class="text-white font-sm fw-600 mt-0 lh-3">"Tinggal sedikit lagi jangan menyerah"</h4>
+                    <h2 class="display5-size text-white fw-700 lh-1 mr-3"> <i class="feather-arrow-up-right text-success font-xl"></i></h2>
+                    <h4 class="text-white font-sm fw-600 mt-0 lh-3"></h4>
 
                 </div>
                 <div class="col-xl-3 mt-4">
@@ -47,13 +47,15 @@
                 <div class="card-body mb-3 pb-0">
                     <h2 class="fw-400 font-lg d-block">  
                         <b>About Me</b> 
-                        {{-- <a href="#" class="float-right"><i class="feather-edit text-grey-500 font-xs"></i></a> --}}
+                        
                     </h2>
                 </div>
                 <div class="card-body pb-0">
                     <div class="row">
                         <div class="col-xl-12">
-                            <p class="font-xssss fw-600 lh-28 text-grey-500 pl-0">{{$user->desc}}</p>
+                            <p class="font-xss fw-500 lh-28 text-grey-700 pl-0">
+                                {{$user->desc != null ? $user->desc : 'isi data diri Anda'}}
+                            </p>
                             
                         </div>
                     </div>

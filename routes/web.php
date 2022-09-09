@@ -95,7 +95,7 @@ Route::get('privacy-policy', [Controllers\PublicController::class,'privacy'])->n
 
 //* Untuk detail belum beli
     Route::get('produk/{link}', [Controllers\Member\HomeController::class,'produk_detail'])->name('memberProdukDetail');
-    Route::get('produk/enroll/{link}', [Controllers\Member\HomeController::class,'produk_detail_enroll'])->name('enrollProdukDetail');
+    
     //Route::get('course/{id}/materi/{ids}', [Controllers\Member\HomeController::class,'detail_kelas_materi'])->name('enrollMateriKelas');
 
     // Route::get('formulir', [Controllers\DaftarController::class,'form_member'])->name('memberForm');
@@ -152,6 +152,7 @@ Route::get('pembayaran/{link}', [Controllers\Transaksi\User\TransaksiUserControl
 Route::middleware(['auth'])->group(function () {
     Route::get('home', [Controllers\Member\HomeController::class,'index'])->name('memberIndex');
     Route::get('produk', [Controllers\Member\HomeController::class,'produk_list'])->name('memberProdukList');
+    Route::get('produk/enroll/{link}', [Controllers\Member\HomeController::class,'produk_detail_enroll'])->name('enrollProdukDetail');
 
     //*Profile dan sudah enrool
     Route::prefix('my')->group(function(){

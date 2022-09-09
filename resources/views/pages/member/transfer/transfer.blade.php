@@ -6,13 +6,13 @@
     <div class="spacer"></div>
     <div class="row justify-content-center">
         <div class="page-title style1 col-xl-6 col-lg-6 col-md-10 text-center mb-5">
-            <h2 class="text-grey-900 fw-700 display1-size display2-md-size pb-3 mb-0 d-block">Transfer</h2>
-            <p class="fw-300 font-xs lh-28 text-grey-500">Daftar riwayat transfer</p>
+            <h2 class="text-grey-900 fw-700 display1-size display2-md-size pb-3 mb-0 d-block">Transaksi</h2>
+            <p class="fw-300 font-xs lh-28 text-grey-500">Daftar riwayat transaksi</p>
         </div>
     </div>
 </div>
 
-<div class="container">
+<div class="col-11 col-8 mx-auto">
     <div class="row px-2">
         @if (Session::get('grup') && Session::get('grup') != null)
         <div class="alert alert-success alert-dismissible fade show mx-auto" role="alert">
@@ -39,13 +39,13 @@
             <div class="card mb-4 d-block w-100 shadow-xss rounded-lg p-4 border-0">
                 <div class="d-flex justify-content-between">
                     @if($dt->status == 'lunas')
-                    <a href="{{route('enrollProdukDetail',$dt->id_produk)}}" class="text-dark fw-700 font-lg mt-3 mb-1">{{$dt->nama}}</a>
+                    <a href="{{route('enrollProdukDetail',$dt->id_produk)}}" class="text-dark fw-700 font-lg font-md-xsss mt-3 mb-1">{{$dt->nama}}</a>
                     @else
                     <h4 class="fw-700 font-lg mt-3 mb-1">{{$dt->nama}}</h4>
                    
                     @endif
                     <p class="fw-600 font-xs text-grey-500 mt-0 mb-2">
-                        @if ($dt->status == 'ditolak')
+                        @if ($dt->status == 'ditolak' || $dt->status == 'expired')
                             <span class="badge badge-pill badge-danger p-2 px-3">{{$dt->status}}</span>
                         @elseif ($dt->status == 'pending')
                             <span class="badge badge-pill badge-warning p-2 px-3">{{$dt->status}}</span>
