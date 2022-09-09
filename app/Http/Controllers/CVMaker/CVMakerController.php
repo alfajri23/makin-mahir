@@ -49,7 +49,7 @@ class CVMakerController extends Controller
                 break;
 
             case 'en':
-                $label = ['Personal Info','Skill','Experience','Education','Achivement','Training','Organization'];
+                $label = ['Personal Info','Skill','Experience','Education','ACHIEVEMENT','Training','Organization'];
                 break;
 
             default:
@@ -114,7 +114,7 @@ class CVMakerController extends Controller
                 break;
 
             case 'en':
-                $label = ['Personal Info','Skill','Experience','Education','Achivement','Training','Organization'];
+                $label = ['Personal Info','Skill','Experience','Education','ACHIEVEMENT','Training','Organization'];
                 break;
 
             default:
