@@ -117,9 +117,9 @@
                                 {{-- AUTH --}}
                                 @if (Route::has('login'))
                                     @auth
-                                    <li class="nav-item d-block d-sm-none"><a class="nav-link" href="{{ route('memberProfile') }}">Profile</a></li>
-                                    <li class="nav-item d-block d-sm-none"><a class="nav-link" href="{{ route('transferIndex') }}">Riwayat transaksi</a></li>
-                                    <li class="nav-item d-block d-sm-none"><a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                    <li class="nav-item d-block d-sm-none"><a class="nav-link font-xssss text-grey-900 fw-500" href="{{ route('memberProfile') }}">Profile</a></li>
+                                    <li class="nav-item d-block d-sm-none"><a class="nav-link font-xssss text-grey-900 fw-500" href="{{ route('transferIndex') }}">Riwayat transaksi</a></li>
+                                    <li class="nav-item d-block d-sm-none"><a class="nav-link font-xssss text-grey-900 fw-500" href="{{ route('logout') }}" onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">Logout</a></li>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
