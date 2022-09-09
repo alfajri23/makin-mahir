@@ -69,7 +69,7 @@
 
 <body class="color-theme-blue mont-font">
     <div class="main-wrap">
-        <div class="header-wrapper py-2 bg-white">
+        <div class="header-wrapper py-2 bg-white position-relative" style="z-index:5">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-9 navbar pt-0 pb-0">
