@@ -22,7 +22,7 @@
 <body class="color-theme-blue mont-font">
     <div class="main-wrap">
         <div class="row">
-            <div class="col-xl-5 d-none d-xl-block p-0 vh-100 bg-image-cover bg-no-repeat" style="background-image: url({{asset('asset/img/program/login.png')}});"></div>
+            <div class="col-xl-5 d-none d-xl-block p-0 vh-100 bg-image-cover bg-no-repeat" style="background-image: url({{asset('asset/login/login.png')}});"></div>
             <div class="col-xl-7 vh-100 align-items-center d-flex bg-white rounded-lg overflow-hidden">
                 <div class="card shadow-none border-0 ml-auto mr-auto login-card">
                     <div class="card-body rounded-0 text-left">

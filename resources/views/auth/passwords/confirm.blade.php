@@ -3,11 +3,17 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Confirm Password') }}</div>
+        <div class="col-10 col-md-8">
 
-                <div class="card-body">
+            <div class="text-center">
+
+                <img src="https://img.icons8.com/fluency/96/000000/user-credentials.png"/>
+                <h3 class="fw-bold mt-3">Konfirmasi Password</h3>
+            </div>
+
+            <div class="">
+
+                <div class="">
                     {{ __('Please confirm your password before continuing.') }}
 
                     <form method="POST" action="{{ route('password.confirm') }}">

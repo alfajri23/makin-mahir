@@ -8,13 +8,11 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link rel="stylesheet" href="{{ asset('css/themify-icons.css') }}">
-
     <link rel="stylesheet" href="{{ asset('css/feather.css') }}">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/aos.min.css') }}">
     @yield('css')
 
     <style>
@@ -28,7 +26,7 @@
 <body class="color-theme-blue mont-font">
     <div class="main-wrap">
         <div class="row">
-            <div class="col-xl-5 d-none d-xl-block p-0 vh-100 bg-image-cover bg-no-repeat background-image" style="background-image: url({{asset('asset/img/program/login.png')}});"></div>
+            <div class="col-xl-5 d-none d-xl-block p-0 vh-100 bg-image-cover bg-no-repeat background-image" style="background-image: url({{asset('asset/login/login.png')}});"></div>
             <div class="col-xl-7 vh-lg-100 align-items-center d-flex bg-white rounded-lg overflow-hidden">
                 <div class="card shadow-none border-0 ml-auto mr-auto login-card">
                     <div class="card-body rounded-0 text-left">
@@ -103,7 +101,7 @@
 
 
 <script src="{{ asset('js/scripts.js') }}"></script>
-<script src="{{ asset('js/plugin.js') }}"></script>
+{{-- <script src="{{ asset('js/plugin.js') }}"></script> --}}
 </body>
 
 </html>
