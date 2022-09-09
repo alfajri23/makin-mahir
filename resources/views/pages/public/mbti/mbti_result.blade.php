@@ -59,7 +59,7 @@
                 <div class="col-12 my-5 pt-5 help-konsul">
                     <div class="text-center">
                         <p class="font-lg fw-700 lh-28 text-grey-700 pl-0">Butuh bantuan konsultasi untuk <br> mengetahui potensi kamu ?</p>
-                        <a href="https://wa.me/+6289619119692?text=Saya%20tertarik%20untuk%20konsultasi" class="btn btn-warning fw-600 text-white font-xss p-2 lh-32 text-center rounded-xl d-inline-block mt-1 px-3" id="btn-replay">Temukan solusi</a>
+                        <a href="https://wa.me/+6285856561200?text=Saya%20tertarik%20untuk%20konsultasi" class="btn btn-warning fw-600 text-white font-xss p-2 lh-32 text-center rounded-xl d-inline-block mt-1 px-3" id="btn-replay">Temukan solusi</a>
                     </div>
                 </div>
 
