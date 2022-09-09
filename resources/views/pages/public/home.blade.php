@@ -544,7 +544,7 @@
                     </div>
                     <div class="container py-1">
                         <div class="row ">
-                            <div class="col-lg-7 text-left">
+                            <div class="col-lg-10 text-left">
                                 <h2 class="fw-600 text-white font-xl font-md-xs lh-3 mb-2 ">Siap untuk merancang masa depan kariermu ?
                                     Tenang, ada Makin Mahir di sisimu 
                                     </h2>
