@@ -105,7 +105,8 @@ class EventAdminController extends Controller
 
         $tipe = ProdukKategori::where('nama',$data->tipe)->pluck('id')->first();
         
-        $tipes = ProdukKategori::latest()->get();
+        //$tipes = ProdukKategori::latest()->get();
+        $tipes = ProdukKategori::whereIn('id',[1,2])->get();
         $pemateri = Expert::latest()->get();
 
         $produk = Produk::where([
@@ -162,7 +163,8 @@ class EventAdminController extends Controller
 
     public function eventAdd(){
         $pemateri = Expert::latest()->get();
-        $tipes = ProdukKategori::latest()->get();
+        //$tipes = ProdukKategori::latest()->get();
+        $tipes = ProdukKategori::whereIn('id',[1,2])->get();
         return view('pages.event.admin.event_add',compact('pemateri','tipes'));
     }
 

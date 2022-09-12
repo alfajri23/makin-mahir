@@ -105,7 +105,7 @@ class KonsultasiAdminController extends Controller
 
         $tipe = ProdukKategori::where('nama',$data->tipe)->pluck('id')->first();
         
-        $tipes = ProdukKategori::latest()->get();
+        $tipes = ProdukKategori::where('id',3)->get();
         $pemateri = Expert::latest()->get();
 
         $produk = Produk::where([
@@ -162,7 +162,7 @@ class KonsultasiAdminController extends Controller
 
     public function konsultasiAdd(){
         $pemateri = Expert::latest()->get();
-        $tipes = ProdukKategori::latest()->get();
+        $tipes = ProdukKategori::where('id',3)->get();
         return view('pages.konsultasi.admin.konsultasi_add',compact('pemateri','tipes'));
     }
 
