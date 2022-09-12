@@ -92,13 +92,11 @@ class TransaksiUserController extends Controller
         }
 
         $rules['telepon'] = 'required|string|min:10|regex:/08\d{9,10}/';
-        $rules['id_user'] = 'required';
 
         $messages = [
             'required' => ':attribute harus diisi.',
             'mimes' => ':attribute tipe yang diterima: :values',
             'max' => 'Ukuran maksimal file 2 Mb',
-            'id_user.required' => 'Harap login terlebih dahulu'
         ];
 
         $validator = Validator::make($request->all(),$rules, $messages);
@@ -118,7 +116,7 @@ class TransaksiUserController extends Controller
             'nama' => $request->nama,
             'harga' => $request->harga,
             'status' => 'pending',
-            'id_user' => $request->session()->get('auth.id_user'),
+            'id_user' => auth()->user()->id,
             'tanggal_bayar' => now(),
             'jawaban' => $jawaban,
             'telepon' => $request->telepon,
@@ -162,13 +160,11 @@ class TransaksiUserController extends Controller
         }
 
         $rules['telepon'] = 'required|string|min:10|regex:/08\d{9,10}/';
-        $rules['id_user'] = 'required';
 
         $messages = [
             'required' => ':attribute harus diisi.',
             'mimes' => ':attribute tipe yang diterima: :values',
             'max' => 'Ukuran maksimal file 2 Mb',
-            'id_user.required' => 'Harap login terlebih dahulu'
         ];
 
         $validator = Validator::make($request->all(),$rules, $messages);
@@ -191,7 +187,7 @@ class TransaksiUserController extends Controller
             'metode' => 'payment_gateway',
             'harga' => $request->harga,
             'status' => 'pending',
-            'id_user' => $request->session()->get('auth.id_user'),
+            'id_user' => auth()->user()->id,
             'tanggal_bayar' => now(),
             'jawaban' => $jawaban,
             'telepon' => $request->telepon,
@@ -451,7 +447,7 @@ class TransaksiUserController extends Controller
                 'nama' => $request->nama,
                 'harga' => null,
                 'status' => 'lunas',
-                'id_user' => $request->session()->get('auth.id_user'),
+                'id_user' => auth()->user()->id,
                 'tanggal_bayar' => now(),
                 'jawaban' => $jawaban,
                 'telepon' => $request->telepon,
