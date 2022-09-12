@@ -92,11 +92,13 @@ class TransaksiUserController extends Controller
         }
 
         $rules['telepon'] = 'required|string|min:10|regex:/08\d{9,10}/';
+        $rules['id_user'] = 'required';
 
         $messages = [
             'required' => ':attribute harus diisi.',
             'mimes' => ':attribute tipe yang diterima: :values',
-            'max' => 'Ukuran maksimal file 2 Mb'
+            'max' => 'Ukuran maksimal file 2 Mb',
+            'id_user.required' => 'Harap login terlebih dahulu'
         ];
 
         $validator = Validator::make($request->all(),$rules, $messages);
@@ -160,11 +162,13 @@ class TransaksiUserController extends Controller
         }
 
         $rules['telepon'] = 'required|string|min:10|regex:/08\d{9,10}/';
+        $rules['id_user'] = 'required';
 
         $messages = [
             'required' => ':attribute harus diisi.',
             'mimes' => ':attribute tipe yang diterima: :values',
-            'max' => 'Ukuran maksimal file 2 Mb'
+            'max' => 'Ukuran maksimal file 2 Mb',
+            'id_user.required' => 'Harap login terlebih dahulu'
         ];
 
         $validator = Validator::make($request->all(),$rules, $messages);

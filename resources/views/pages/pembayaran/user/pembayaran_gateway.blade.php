@@ -159,6 +159,7 @@
                             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                 data-parent="#accordionExample">
                                 <div class="card-body">
+                                    @include('component.error.error_message')
                                     @auth
                                         <div class="row g-3">
                                             <div class="col-md-6">
