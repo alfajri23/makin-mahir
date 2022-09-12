@@ -173,7 +173,7 @@
 
             <div class="form-group">
                 <p class="mb-0 fw-700">Kategori</p>
-                <select class="form-control" name="id_kategori" id="id_kat">
+                <select class="form-control" name="id_kategori" id="id_kat" required>
                     @foreach ($kategori as $kt)
                     <option value="{{$kt->id}}">{{$kt->nama}}</option>
                     @endforeach

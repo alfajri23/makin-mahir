@@ -41,6 +41,7 @@ class ForumUserController extends Controller
     public function create(Request $request){
         $this->validate($request, [
 			'gambar' => 'file|image|mimes:jpeg,png,jpg|max:2048',
+            'id_kategori' => 'required'
 		]);
 
         $datas = [

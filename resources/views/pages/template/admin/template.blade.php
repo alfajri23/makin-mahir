@@ -14,6 +14,7 @@
     </div>
     
     <div class="container d-flex mt-3">
+       
         @forelse ($data as $dt) 
         <a href="{{route('editTemplate',$dt->id)}}" class="card mx-2" style="width: 14rem;">
             <div class="card-image w-100 mb-3">
@@ -29,8 +30,7 @@
               {{-- <a href="{{route('produkDetail',$dt->id)}}" class="btn btn-primary">Go somewhere</a> --}}
             </div>
         </a>
-        @empty
-            
+        @empty    
         @endforelse
     </div>
 </div>
