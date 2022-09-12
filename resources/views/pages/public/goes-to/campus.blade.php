@@ -15,27 +15,48 @@
         </div>
     </div>
 
-    <div class="row text-justify">
+    <div class="row">
         <div class="col-12 col-sm-8 mx-auto pb-5">
             <p class="fw-400 font-xss lh-28 text-grey-700 mt-0 ml-0 pl-3 w-100 w-xs-90">
-                Proses pembelajaran di sekolah merupakan salah satu faktor yang berkontribusi terhadap perkembangan siswa. 
-                Namun, untuk menghadapi tahap pendidikan selanjutnya, siswa memerlukan keterampilan lebih dari apa yang 
-                sudah diajarkan di bangku sekolah. Ketika memasuki perkuliahan, mereka akan dituntut untuk memahami diri 
-                mereka secara mendalam, mampu untuk berpikir kritis, serta menerapkan bermacam soft skills.
+                Dalam Peraturan Ristekdikti, keberhasilan lulusan di dunia kerja menjadi salah satu kriteria penilaian Akreditasi perguruan tinggi. Ini bukti bahwa alumni menjadi komponen penting yang harus diperhatikan oleh seluruh perguruan tinggi, karena kemajuan kampus/almamater dapat dilihat dari alumninya terjun kemana.
             </p>
 
             <p class="fw-400 font-xss lh-28 text-grey-700 mt-0 ml-0 pl-3 w-100 w-xs-90">
-                Selain itu, isu kesehatan mental di kalangan siswa juga menjadi salah satu permasalahan yang harus diselesaikan. 
-                Kementerian Kesehatan menyebutkan bahwa pada 2018 lalu, hampir 8.000.000 anak muda berusia 15 tahun ke atas 
-                mengalami gangguan mental emosional. Adanya gangguan mental dapat memberikan dampak negatif terhadap perkembangan 
-                seseorang apabila tidak ditangani dengan tepat. Lalu, bagaimana cara mengatasinya?
+                Hadirnya penawaran kerjasama Makin Mahir & Universitas utamanya di bagian CDC dan/atau BEM, HM Universitas diharapkan mampu menjadi pusat pelatihan serta media penghubung antara perguruan tinggi dengan mahasiswa & alumninya, melalui beberapa program dan sistem yang sudah kami siapkan.
             </p>
+
+            <p class="fw-400 font-xss lh-28 text-grey-700 mt-0 ml-0 pl-3 w-100 w-xs-90">
+                Evaluasi capaian ini bisa dilihat dari tingkat relevansi lulusan terhadap bidang kerja yang didapat, berapa banyak lulusan yang terserap kedunia kerja, dan apakah lulusan yang dihasilkan telah memenuhi kebutuhan industri di lapangan. Bersama Makin Mahir ID ( PT Bumi Tekno Indonesia ) kami menghadirkan layanan yang memiliki mimpi yang besar untuk mewujudkan generasi yang unggul.
+            </p>
+
+            <p class="fw-400 font-xss lh-28 text-grey-700 mt-0 ml-0 pl-3 w-100 w-xs-90">
+                Make competence, membekali peserta didik dan alumninya dengan kompetensi yang sesuai dengan kebutuhan dunia kerja.
+            </p>
+
+            <p class="fw-400 font-xss lh-28 text-grey-700 mt-0 ml-0 pl-3 w-100 w-xs-90">
+                Make confidence, meningkatkan kepercayaan diri peserta didik dan alumni akan bekal keterampilan yang sudah diterima selama di kampus dapat digunakan untuk bersaing di dunia kerja.
+            </p>
+
+            <p class="fw-400 font-xss lh-28 text-grey-700 mt-0 ml-0 pl-3 w-100 w-xs-90">
+                Make connected, menghubungkan antara kampus dengan dunia kerja, antara mahasiswa dengan dunia kerja.
+            </p>
+
+
         </div>
 
         <div class="col-12 col-sm-8 mx-auto pb-5">
-            <h2 class="fw-700 text-grey-800 font-xl ml-0 pl-3 lh-3 pt-lg--5">Cara kolaborasi</h2>
+            <h2 class="fw-700 text-grey-800 font-xl ml-0 pl-3 lh-3 pt-lg--5">Program yang menjadi penawaran kami adalah</h2>
+            <div class="fw-600 font-xss lh-28 text-grey-700 mt-0 ml-0 pl-3 w-100 w-xs-90">
+                <ol class="ml-3">
+                    <li>CDC / UPT	:  Website CDC System , Tracer Study , LMS
+                    </li>
+                    <li>BEM/HM	: Webinar Beduk Goes to Campus</li>
+                </ol>
+            </div>
+
+            <h2 class="fw-700 text-grey-800 font-xl ml-0 pl-3 lh-3 pt-lg--5 mt-4">Cara Kerjasama</h2>
             <p class="fw-400 font-xss lh-28 text-grey-700 mt-0 ml-0 pl-3 w-100 w-xs-90">
-                Silakan hubungi contact person Satu Persen atau isi formulir tertera untuk mengajukan ide kolaborasimu. Bersama Satu Persen, mari ciptakan masyarakat yang dapat #HidupSeutuhnya.
+                Silakan hubungi admin Makin Mahir untuk mendapatkan proposal penawaran. Mari kita ciptakan ekosistem persiapan karier yang competence, confidence and connected.
             </p>
 
             <h2 class="fw-700 text-success font-md ml-0 pl-3 lh-3 pt-lg--5">Kontak</h2>

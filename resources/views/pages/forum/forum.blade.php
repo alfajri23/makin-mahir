@@ -52,6 +52,8 @@
                     </button>
                 </div>
             </div>
+
+            @include('component.error.error_message')
             
             @forelse ($data as $dt)           
             <div class="card w-100 p-3 rounded-md border-1 my-3 position-relative">
