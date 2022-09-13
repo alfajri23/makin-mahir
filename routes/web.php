@@ -42,7 +42,7 @@ Route::get('callback-expired', [Controllers\Transaksi\User\TransaksiUserControll
 //PRODUK AREA
 Route::get('/', [Controllers\PublicController::class,'index'])->name('publicIndex');
 Route::get('event', [Controllers\Event\User\EventUserController::class,'list'])->name('produkListEvent');
-Route::get('konsul', [Controllers\Konsultasi\User\KonsultasiUserController::class,'list'])->name('produkListKonsul');
+Route::get('konsultasi', [Controllers\Konsultasi\User\KonsultasiUserController::class,'list'])->name('produkListKonsul');
 //Route::get('kelas', [Controllers\PublicController::class,'produk_list_kelas'])->name('produkListKelas');
 Route::get('template', [Controllers\Template\User\TemplateUserController::class,'list'])->name('produkListTemplate');
 

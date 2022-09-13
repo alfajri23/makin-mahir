@@ -5,6 +5,7 @@
   <div class="ornamen position-absolute bottom-0" style="right: -70px;">
       <img src="{{asset('asset/home/ornamen-1.png')}}" alt="">
   </div>
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8 text-center pt-lg--10 pt-7">
