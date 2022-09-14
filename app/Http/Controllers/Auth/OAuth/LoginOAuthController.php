@@ -18,7 +18,7 @@ class LoginOAuthController extends Controller{
     }
 
     public function callbackToGoogle(Request $request){
-        dd("halo");
+        
         try {
             $user_google    = Socialite::driver('google')->user();
             $user           = User::where('email', $user_google->getEmail())->first();
