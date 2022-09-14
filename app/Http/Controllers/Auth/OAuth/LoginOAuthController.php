@@ -18,6 +18,7 @@ class LoginOAuthController extends Controller{
     }
 
     public function callbackToGoogle(Request $request){
+        dd("halo");
         try {
             $user_google    = Socialite::driver('google')->user();
             $user           = User::where('email', $user_google->getEmail())->first();
@@ -89,7 +90,7 @@ class LoginOAuthController extends Controller{
 
             if($user != null){
                 \auth()->login($user, true);
-                return redirect()->route('home');
+                return redirect()->route('publicIndex');
             }else{
                 $create = User::Create([
                     'email'             => $user_facebook->getEmail(),
@@ -100,7 +101,7 @@ class LoginOAuthController extends Controller{
         
                 
                 \auth()->login($create, true);
-                return redirect()->route('home');
+                return redirect()->route('publicIndex');
             }
 
         } catch (\Exception $e) {
@@ -127,7 +128,7 @@ class LoginOAuthController extends Controller{
 
             if($user != null){
                 \auth()->login($user, true);
-                return redirect()->route('home');
+                return redirect()->route('publicIndex');
             }else{
                 $create = User::Create([
                     'email'             => $user_twitter->getEmail(),
@@ -138,7 +139,7 @@ class LoginOAuthController extends Controller{
         
                 
                 \auth()->login($create, true);
-                return redirect()->route('home');
+                return redirect()->route('publicIndex');
             }
 
         } catch (\Exception $e) {
