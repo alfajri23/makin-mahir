@@ -45,7 +45,7 @@
         </div>
 
         <div class="col-12 col-sm-8 mx-auto pb-5">
-            <h2 class="fw-700 text-grey-800 font-xl ml-0 pl-3 lh-3 pt-lg--5">Program yang menjadi penawaran kami adalah</h2>
+            <h2 class="fw-600 text-grey-800 font-md ml-0 pl-3 lh-3 pt-lg--5">Program yang menjadi penawaran kami adalah</h2>
             <div class="fw-600 font-xss lh-28 text-grey-700 mt-0 ml-0 pl-3 w-100 w-xs-90">
                 <ol class="ml-3">
                     <li>CDC / UPT	:  Website CDC System , Tracer Study , LMS
@@ -54,7 +54,7 @@
                 </ol>
             </div>
 
-            <h2 class="fw-700 text-grey-800 font-xl ml-0 pl-3 lh-3 pt-lg--5 mt-4">Cara Kerjasama</h2>
+            <h2 class="fw-700 text-grey-800 font-md ml-0 pl-3 lh-3 pt-lg--5 mt-4">Cara Kerjasama</h2>
             <p class="fw-400 font-xss lh-28 text-grey-700 mt-0 ml-0 pl-3 w-100 w-xs-90">
                 Silakan hubungi admin Makin Mahir untuk mendapatkan proposal penawaran. Mari kita ciptakan ekosistem persiapan karier yang competence, confidence and connected.
             </p>
