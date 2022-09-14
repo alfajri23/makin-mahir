@@ -29,7 +29,7 @@
     </div>
 </div>
 
-<div class="how-to-work pb-lg--7 pt-5 pb-5 pt-lg--7">
+{{-- <div class="how-to-work pb-lg--7 pt-5 pb-5 pt-lg--7">
     <div class="container">
         <div class="row justify-content-center">
             <div class="page-title style1 col-xl-6 col-lg-10 col-md-10 text-center mb-5">
@@ -133,7 +133,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 
 
 <div class="feedback-wrapper pt-lg--7 pb-lg--7 pb-5 pt-5">
