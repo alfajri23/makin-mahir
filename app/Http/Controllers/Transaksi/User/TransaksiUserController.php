@@ -300,8 +300,8 @@ class TransaksiUserController extends Controller
                 ]
             ],
             'fixed_va' => true,
-            'success_redirect_url' => 'https://demo.makinmahir.id/callback?external_id='.$encrypted_external_id.'',
-            'failure_redirect_url' => 'https://demo.makinmahir.id/callback-expired?external_id='.$encrypted_external_id.'',
+            'success_redirect_url' => 'https://makinmahir.id/callback?external_id='.$encrypted_external_id.'',
+            'failure_redirect_url' => 'https://makinmahir.id/callback-expired?external_id='.$encrypted_external_id.'',
             'currency' => 'IDR',
             'items' => [
                 [
