@@ -224,6 +224,12 @@ class CVMakerController extends Controller
         return redirect()->back(); 
     }
 
+    public function delWork($id){
+        $data = CVKerja::find(base64_decode($id))->forceDelete();
+        return redirect()->back();
+    }
+
+
     //EDU HERE 
     public function getEdu(Request $request){
         $data = CVEdukasi::find($request->id);
@@ -246,6 +252,11 @@ class CVMakerController extends Controller
         ]);
  
          return redirect()->back(); 
+    }
+
+    public function delEdu($id){
+        $data = CVEdukasi::find(base64_decode($id))->forceDelete();
+        return redirect()->back();
     }
 
     //TRAIN HERE 
@@ -272,6 +283,11 @@ class CVMakerController extends Controller
 
     }
 
+    public function delTrain($id){
+        $data = CVTraining::find(base64_decode($id))->forceDelete();
+        return redirect()->back();
+    }
+
     //SKILL
     public function editSkil(Request $request){
 
@@ -283,6 +299,11 @@ class CVMakerController extends Controller
  
          return redirect()->back(); 
 
+    }
+
+    public function delSkil($id){
+        $data = CVSkil::find(base64_decode($id))->forceDelete();
+        return redirect()->back();
     }
 
     //PRESTASI
@@ -308,6 +329,11 @@ class CVMakerController extends Controller
 
     }
 
+    public function delAcv($id){
+        $data = CVPrestasi::find(base64_decode($id))->forceDelete();
+        return redirect()->back();
+    }
+
     //ORG HERE 
     public function getOrg(Request $request){
         $data = CVOrganisasi::find($request->id);
@@ -331,6 +357,13 @@ class CVMakerController extends Controller
          return redirect()->back(); 
 
     }
+
+    public function delOrg($id){
+        $data = CVOrganisasi::find(base64_decode($id))->forceDelete();
+        return redirect()->back();
+    }
+
+
 
     public function editKontak(Request $request){
 

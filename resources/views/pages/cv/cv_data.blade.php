@@ -18,7 +18,7 @@
         <div class="col-12 my-2">
             <div class="card shadow-md border-0 p-5 rounded-lg">
                 <div class="mt-3">
-                    <span class="float-right"><i class="fa-solid fa-pencil" onclick="changeName()"></i></span>
+                    <span class="float-right"><i class="fa-solid fa-pencil" onclick="changeName()"></i></span>  
                     <h2 class="fw-700 font-lg text-grey-900" id="showNama">{{$user->nama}}</h2>                           
                     <div id="inputNama" style="display: none">
                         <form class="form-inline" action="{{route('memberUpdateNama')}}" method="post">
@@ -85,11 +85,14 @@
         <div class="col-12 my-2">
             <div class="card shadow-md border-0 px-5 py-4 rounded-lg">
                 <h2 class="fw-700 font-sm mt-4 mb-3 text-grey-900">Pengalaman Kerja
-                    <a href="#" onclick="btnModalKerja()" class="float-right" ><i class="feather-plus text-grey-800 fw-700 font-sm"></i></a></h2>
+                    <a href="#" onclick="btnModalKerja()" class="float-right" ><i class="feather-plus text-grey-800 fw-700 font-sm"></i></a>
+                </h2>
                 @forelse ($kerja as $kj)
                 <div class="my-2">
                     <p class="font-xss fw-700 text-grey-800 fw-500 mb-1">{{$kj->posisi}}
-                        <a href="#" onclick="btnEditKerja({{$kj->id}})" class="float-right" ><i class="feather-edit text-grey-500 font-xs"></i></a></p>
+                        <a href="#" onclick="btnEditKerja({{$kj->id}})" class="float-right" ><i class="feather-edit text-grey-500 font-xs"></i></a>
+                        <a href="{{route('delWork',base64_encode($kj->id))}}" class="float-right" ><i class="feather-trash text-danger font-xs mx-2"></i></a>
+                    </p>
                     <p class="font-xsss text-grey-600 fw-500 mb-0">{{$kj->perusahaan}}</p>
                     <p class="font-xsss text-grey-600 fw-500 mb-2">{{$kj->mulai}} sampai {{$kj->akhir}}</p>
                     <p class="font-xsss text-grey-600 fw-500 mb-3">{!!$kj->deskripsi!!}</p>
@@ -108,7 +111,9 @@
                 @forelse ($edukasi as $edu)
                 <div class="my-2">
                     <p class="font-xss fw-700 text-grey-800 fw-500 mb-1">{{$edu->sekolah}}
-                        <a href="#" onclick="btnEditEdu({{$edu->id}})" class="float-right" ><i class="feather-edit text-grey-500 font-xs"></i></a></p>
+                        <a href="#" onclick="btnEditEdu({{$edu->id}})" class="float-right" ><i class="feather-edit text-grey-500 font-xs"></i></a>
+                        <a href="{{route('delEdu',base64_encode($edu->id))}}" class="float-right" ><i class="feather-trash text-danger font-xs mx-2"></i></a>
+                    </p>
                     <p class="font-xsss text-grey-600 fw-500 mb-0">{{$edu->jurusan}}</p>
                     <p class="font-xsss text-grey-600 fw-500 mb-2">{{$edu->masuk}} - {{$edu->keluar}}</p>
                     <p class="font-xsss text-grey-600 fw-500 mb-3">Index nilai : {{$edu->gpa}}</p>
@@ -127,7 +132,9 @@
                 @forelse ($training as $tr)
                 <div class="my-2">
                     <p class="font-xss fw-700 text-grey-800 fw-500 mb-1">{{$tr->program}}
-                        <a href="#" onclick="btnEditTrain({{$tr->id}})"  class="float-right" ><i class="feather-edit text-grey-500 font-xs"></i></a></p>
+                        <a href="#" onclick="btnEditTrain({{$tr->id}})"  class="float-right" ><i class="feather-edit text-grey-500 font-xs"></i></a>
+                        <a href="{{route('delTrain',base64_encode($tr->id))}}" class="float-right" ><i class="feather-trash text-danger font-xs mx-2"></i></a>
+                    </p>
                     <p class="font-xsss text-grey-600 fw-500 mb-0">{{$tr->penyelenggara}}</p>
                     <p class="font-xsss text-grey-600 fw-500 mb-2">{{$tr->mulai}} sampai {{$tr->akhir}}</p>
                     <p class="font-xsss text-grey-600 fw-500 mb-3">{!!$tr->deskripsi!!}</p>
@@ -147,7 +154,9 @@
                 @forelse ($skil as $sk)
                     <div class="my-2">
                         <p class="font-xss fw-700 text-grey-800 fw-500 mb-1">{{$sk->skil}}
-                            <a href="#" onclick="btnEditSkill('{{$sk->skil}}','{{$sk->id}}')" class="float-right" ><i class="feather-edit text-grey-500 font-xs"></i></a></p>
+                            <a href="#" onclick="btnEditSkill('{{$sk->skil}}','{{$sk->id}}')" class="float-right" ><i class="feather-edit text-grey-500 font-xs"></i></a>
+                            <a href="{{route('delSkil',base64_encode($sk->id))}}" class="float-right" ><i class="feather-trash text-danger font-xs mx-2"></i></a>
+                        </p>
                     </div>    
                 @empty
                     
@@ -163,7 +172,9 @@
                 @forelse ($prestasi as $acv)
                 <div class="my-2">
                     <p class="font-xss fw-700 text-grey-800 fw-500 mb-1">{{$acv->prestasi}}
-                        <a href="#" onclick="btnEditAcv('{{$acv->id}}')" class="float-right" ><i class="feather-edit text-grey-500 font-xs"></i></a></p>
+                        <a href="#" onclick="btnEditAcv('{{$acv->id}}')" class="float-right" ><i class="feather-edit text-grey-500 font-xs"></i></a>
+                        <a href="{{route('delAcv',base64_encode($acv->id))}}" class="float-right" ><i class="feather-trash text-danger font-xs mx-2"></i></a>
+                    </p>
                     <p class="font-xsss text-grey-600 fw-500 mb-0">{{$acv->organisasi}}</p>
                     <p class="font-xsss text-grey-600 fw-500 mb-2">{{$acv->tahun}}</p>
                 </div>
@@ -180,7 +191,9 @@
                 @forelse ($organisasi as $org)
                 <div class="my-2">
                     <p class="font-xss fw-700 text-grey-800 fw-500 mb-1">{{$org->posisi}}
-                        <a href="#" onclick="btnEditOrg('{{$org->id}}')" class="float-right" ><i class="feather-edit text-grey-500 font-xs"></i></a></p>
+                        <a href="#" onclick="btnEditOrg('{{$org->id}}')" class="float-right" ><i class="feather-edit text-grey-500 font-xs"></i></a>
+                        <a href="{{route('delOrg',base64_encode($org->id))}}" class="float-right" ><i class="feather-trash text-danger font-xs mx-2"></i></a>
+                    </p>
                     <p class="font-xsss text-grey-600 fw-500 mb-0">{{$org->mulai}} sampai {{$org->akhir}}</p>
                     <p class="font-xsss text-grey-600 fw-500 mb-0">{{$org->organisasi}}</p>
                     <p class="font-xsss text-grey-600 fw-500 mb-2">{!!$org->deskripsi!!}</p>
@@ -635,7 +648,6 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 			dataType: 'json',
 			success : (data)=>{
                 data = data.data;
-                console.log(data);
                 $('#id_edu').val(data.id);
                 $('#sekolah').val(data.sekolah);
                 $('#jurusan').val(data.jurusan);

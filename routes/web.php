@@ -116,25 +116,31 @@ Route::get('privacy-policy', [Controllers\PublicController::class,'privacy'])->n
     //work
     Route::get('work-get',[Controllers\CVMaker\CVMakerController::class,'getWork'])->name('getWork');
     Route::post('work-update',[Controllers\CVMaker\CVMakerController::class,'editWork'])->name('editWork');
+    Route::get('work-delete/{id}',[Controllers\CVMaker\CVMakerController::class,'delWork'])->name('delWork');
 
     //edu
     Route::get('edu-get',[Controllers\CVMaker\CVMakerController::class,'getEdu'])->name('getEdu');
     Route::post('edu-update',[Controllers\CVMaker\CVMakerController::class,'editEdu'])->name('editEdu');
+    Route::get('edu-delete/{id}',[Controllers\CVMaker\CVMakerController::class,'delEdu'])->name('delEdu');
 
     //train
     Route::get('train-get',[Controllers\CVMaker\CVMakerController::class,'getTrain'])->name('getTrain');
     Route::post('train-update',[Controllers\CVMaker\CVMakerController::class,'editTrain'])->name('editTrain');
+    Route::get('train-delete/{id}',[Controllers\CVMaker\CVMakerController::class,'delTrain'])->name('delTrain');
 
     //skil
     Route::post('skil-update',[Controllers\CVMaker\CVMakerController::class,'editSkil'])->name('editSkil');
+    Route::get('skil-delete/{id}',[Controllers\CVMaker\CVMakerController::class,'delSkil'])->name('delSkil');
 
     //Prestasi
     Route::get('acv-get',[Controllers\CVMaker\CVMakerController::class,'getAcv'])->name('getAcv');
     Route::post('acv-update',[Controllers\CVMaker\CVMakerController::class,'editAcv'])->name('editAcv');
+    Route::get('acv-delete/{id}',[Controllers\CVMaker\CVMakerController::class,'delAcv'])->name('delAcv');
 
     //Organisasi
     Route::get('org-get',[Controllers\CVMaker\CVMakerController::class,'getOrg'])->name('getOrg');
     Route::post('org-update',[Controllers\CVMaker\CVMakerController::class,'editOrg'])->name('editOrg');
+    Route::get('org-delete/{id}',[Controllers\CVMaker\CVMakerController::class,'delOrg'])->name('delOrg');
 
     //Kontak
     Route::post('kontak-update',[Controllers\CVMaker\CVMakerController::class,'editKontak'])->name('editKontak');
