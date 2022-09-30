@@ -18,7 +18,7 @@ class KonsultasiAdminController extends Controller
     //Konsultasi
     public function konsultasi(Request $request){
         if ($request->ajax()) {
-            $data = ProdukKonsul::latest()->get();
+            $data = ProdukKonsul::orderBy('sort')->get();
             return datatables()->of($data)
                 ->addIndexColumn()
                 ->addColumn('status', function($row){
@@ -224,6 +224,30 @@ class KonsultasiAdminController extends Controller
         }else{
             return redirect()->route('konsultasiExpert');
         }
+    }
+
+    public function konsultasiSort(Request $request){
+        $first = ProdukKonsul::where('sort',$request->start)->first();
+        $second = ProdukKonsul::where('sort',$request->end)->first();
+
+        if($first == null || $second == null){
+            return response()->json([
+                'message' => 'sukses merubah urutan',
+                'status' => false
+            ],302);
+        }
+
+        $first->sort = $request->end;
+        $second->sort = $request->start;
+
+        $first->save();
+        $second->save();
+
+
+        return response()->json([
+            'message' => 'sukses merubah urutan',
+            'status' => true
+        ],200);
     }
 
    

@@ -225,6 +225,7 @@ Route::middleware(['admin'])->prefix('adm')->group(function () {
             Route::get('restore', [Controllers\Konsultasi\Admin\KonsultasiAdminController::class,'konsultasiRestore'])->name('restoreKonsultasi');
             Route::get('edit', [Controllers\Konsultasi\Admin\KonsultasiAdminController::class,'konsultasiEdit'])->name('editKonsultasi');
             Route::get('add', [Controllers\Konsultasi\Admin\KonsultasiAdminController::class,'konsultasiAdd'])->name('addKonsultasi');
+            Route::get('sort', [Controllers\Konsultasi\Admin\KonsultasiAdminController::class,'konsultasiSort'])->name('sortKonsultasi');
 
             Route::post('save', [Controllers\Konsultasi\Admin\KonsultasiAdminController::class,'konsultasiSave'])->name('saveKonsultasi');
             Route::get('end', [Controllers\Konsultasi\Admin\KonsultasiAdminController::class,'konsultasiEnd'])->name('endKonsultasi');
@@ -397,28 +398,28 @@ Route::get('test-gdrive1',[Controllers\Upload\UploadDriveController::class,'inde
 Route::get('test-gdrive',[Controllers\Upload\UploadDriveController::class,'googleDriveFileUpload'])->name('testDrive');
 Route::get('google/login',[Controllers\Upload\UploadDriveController::class,'googleLogin'])->name('google.login');
 
-Route::get('sort',function(){
-    $datas = ProdukEvent::where('status',1)->get();
-    $no = 1;
-    foreach($datas as $data){
-        $data->sort = $no++;
-        $data->save();
-    }
+// Route::get('sort',function(){
+//     $datas = ProdukEvent::where('status',1)->get();
+//     $no = 1;
+//     foreach($datas as $data){
+//         $data->sort = $no++;
+//         $data->save();
+//     }
 
-    $datax = ProdukKonsul::where('status',1)->get();
-    $no = 1;
-    foreach($datax as $data){
-        $data->sort = $no++;
-        $data->save();
-    }
+//     $datax = ProdukKonsul::where('status',1)->get();
+//     $no = 1;
+//     foreach($datax as $data){
+//         $data->sort = $no++;
+//         $data->save();
+//     }
 
-    $dataz = Template::where('status',1)->get();
-    $no = 1;
-    foreach($dataz as $data){
-        $data->sort = $no++;
-        $data->save();
-    }
+//     $dataz = Template::where('status',1)->get();
+//     $no = 1;
+//     foreach($dataz as $data){
+//         $data->sort = $no++;
+//         $data->save();
+//     }
 
-});
+// });
 
 

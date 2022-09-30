@@ -22,6 +22,7 @@
             <thead>
                 <tr>
                     <th>Id</th>
+                    <th>Sort</th>
                     <th>Judul</th>
                     <th>Expert</th>
                     <th>Tipe</th>
@@ -79,7 +80,7 @@
         let tabel = 
             $('.tableKonsultasi').DataTable({
                 rowReorder: {
-                    dataSrc: 'judul',
+                    dataSrc: 'sort',
                     selector: 'tr'
                 },
                 processing: true,
@@ -92,6 +93,7 @@
                         nameorderable: true, 
                         searchable: true
                     },
+                    {data: 'sort', name: 'sort', visible: true},
                     {data: 'judul', name: 'judul'},
                     {data: 'vendor', name: 'vendor'},
                     {data: 'tipe', name: 'tipe'},
@@ -104,22 +106,45 @@
             })
 
         tabel.on( 'row-reorder', function ( e, diff, edit ) {
-            console.log(diff)
-            for ( var i=0, ien=diff.length ; i<ien ; i++ ) {
-                // get id row
-                let idQ = diff[i].node.id;
-                //console.log(diff[i]);
-                let idNewQ = idQ.replace("row_", "");
-                //console.log(idNewQ);
-                // get position
-                let position = diff[i].newPosition+1;
-                //call funnction to update data
-                updateOrder(idNewQ, position);
-            }
+            console.log(diff[0].oldData);
+            console.log(diff[1].oldData);
+
+            $.ajax({
+                type : 'GET',
+                url  : "{{ route('sortKonsultasi') }}",
+                data : {
+                    start : diff[0].oldData,
+                    end : diff[1].oldData
+                },
+                dataType: 'json',
+                success : (data)=>{
+                    if(data.status){
+                        tabel.ajax.reload();
+                    }else{
+                        alert(data.message);
+                    }
+                },
+                error : (data)=>{
+
+                }
+            });
+            // for ( var i=0, ien=diff.length ; i<ien ; i++ ) {
+            //     // get id row
+            //     let idQ = diff[i].node.id;
+            //     //console.log(diff[i]);
+            //     let idNewQ = idQ.replace("row_", "");
+            //     //console.log(idNewQ);
+            //     // get position
+            //     let position = diff[i].newPosition+1;
+            //     //call funnction to update data
+            //     updateOrder(idNewQ, position);
+            // }
+
+
         });
 
         function updateOrder(idNewQ, position){
-            console.log('asal : '+idNewQ, 'akhir : '+position)
+            //console.log('asal : '+idNewQ, 'akhir : '+position)
         }
 
         //const tabel = $('.tableKonsultasi');
