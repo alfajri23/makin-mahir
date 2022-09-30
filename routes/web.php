@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
 use App\Http\Controllers\Notifications;
 use App\Models\Admin;
+use App\Models\ProdukEvent;
+use App\Models\ProdukKonsul;
+use App\Models\Template;
 use App\Notifications\WelcomeEmailNotification;
 use Carbon\Carbon;
 
@@ -206,16 +209,6 @@ Route::middleware(['auth'])->group(function () {
     });
 });
 
-//* Group Middleware Admin and Expert
-
-    //Produk
-        
-
-    
-
-
-//*End produk
-
 
 //*Admin 
 Route::get('adm/login', [Controllers\Auth\LoginAdminController::class,'index'])->name('logAdmin');
@@ -404,8 +397,28 @@ Route::get('test-gdrive1',[Controllers\Upload\UploadDriveController::class,'inde
 Route::get('test-gdrive',[Controllers\Upload\UploadDriveController::class,'googleDriveFileUpload'])->name('testDrive');
 Route::get('google/login',[Controllers\Upload\UploadDriveController::class,'googleLogin'])->name('google.login');
 
-Route::get('my-test',function(){
-    dd(Carbon::now()->addDays(1)->toISOString());
+Route::get('sort',function(){
+    $datas = ProdukEvent::where('status',1)->get();
+    $no = 1;
+    foreach($datas as $data){
+        $data->sort = $no++;
+        $data->save();
+    }
+
+    $datax = ProdukKonsul::where('status',1)->get();
+    $no = 1;
+    foreach($datax as $data){
+        $data->sort = $no++;
+        $data->save();
+    }
+
+    $dataz = Template::where('status',1)->get();
+    $no = 1;
+    foreach($dataz as $data){
+        $data->sort = $no++;
+        $data->save();
+    }
+
 });
 
 

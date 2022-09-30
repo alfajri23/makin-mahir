@@ -39,7 +39,7 @@
     {{-- bootstrap select for notifikasi --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
     
-    
+    @stack('styles')
     
     <script>
         $.ajaxSetup({
@@ -334,7 +334,7 @@
     </div>
 
     {{-- Pusher --}}
-    <script src="https://js.pusher.com/3.1/pusher.min.js"></script>
+    {{-- <script src="https://js.pusher.com/3.1/pusher.min.js"></script> --}}
 
     <!-- Bootstrap core JavaScript-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
@@ -353,7 +353,7 @@
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
 
-    <script>
+    {{-- <script>
         //PUSHER
             let notificationsWrapper   = $('.dropdown-notifications');
             //let notificationsToggle    = notificationsWrapper.find('a[data-toggle]');
@@ -439,8 +439,8 @@
             });
         }
         //End swall
-    </script>
-
+    </script> --}}
+    @stack('scripts')
 </body>
 
 </html>
