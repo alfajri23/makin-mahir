@@ -45,24 +45,6 @@ h1,h2,h3,h4,h5,h6{
     height: 70px;
 }
 
-/* Desktop -> 576 ke atas */
-@media screen and (min-width: 576px) {
-    .spacer-sm{
-        height: 150px;
-    }
-
-    .spacer-md{
-        height: 100px;
-    }
-}
-
-/* Desktop -> 576 ke bawah */
-@media screen and (max-width: 576px) {
-    .card-image-main > img{
-        height: 165px !important;
-    }
-}
-
 .item >.card{ 
     min-height: 320px !important;
 }
@@ -121,6 +103,30 @@ h1,h2,h3,h4,h5,h6{
     color: #0C9;
 }
 
+/* Desktop -> 576 ke atas */
+@media screen and (min-width: 576px) {
+    .spacer-sm{
+        height: 150px;
+    }
+
+    .spacer-md{
+        height: 100px;
+    }
+
+    .position-landing{
+        position: absolute !important;
+        width: 45% !important;
+    }
+}
+
+/* Desktop -> 576 ke bawah */
+@media screen and (max-width: 576px) {
+    .card-image-main > img{
+        height: 165px !important;
+    }
+}
+
+
 /* Desktop -> 960 ke atas */ 
 @media screen and (min-width: 960px) {  
     .share-member{
@@ -149,4 +155,12 @@ h1,h2,h3,h4,h5,h6{
 
 .text-mainblue{
     color: #1f5a96;
+}
+
+
+/* Landing page image */
+
+.position-landing{
+    position: relative;
+    width: 50%;
 }

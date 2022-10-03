@@ -24,7 +24,7 @@
             </h6>
             <h6 class="font-xssss text-grey-600 fw-500 ml-0 mt-0"> {{$dt->waktu}} </h6>
 
-            <div class="row justify-content-around">
+            <div class="row">
                 {{-- <div>
                     <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-danger d-inline-block text-danger mr-1">{{$dt->tipe}}</span>
                 </div> --}}
