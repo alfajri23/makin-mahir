@@ -353,44 +353,7 @@
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
 
-    {{-- <script>
-        //PUSHER
-            let notificationsWrapper   = $('.dropdown-notifications');
-            //let notificationsToggle    = notificationsWrapper.find('a[data-toggle]');
-            let notificationsCountElem = $('.notification-count');
-            let notificationsCount     = parseInt(notificationsCountElem.data('count'));
-            let notifications          = $('.notification-menu');
-            let newNotificationHtml;
-            let existingNotifications;
-        
-            var pusher = new Pusher('151f9b18e61c87d5d423', {
-                cluster: 'ap1',
-                encrypted: true
-            });
-
-            var channel = pusher.subscribe('buy-notification');
-
-            channel.bind('App\\Events\\BuyNotification', function(data) {
-                existingNotifications = notifications.html();
-                newNotificationHtml = `
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                    <div class="mr-3">
-                        <div class="icon-circle bg-primary">
-                            <i class="fas fa-file-alt text-white"></i>
-                        </div>
-                    </div>
-                    <div>
-                        <span class="font-weight-bold">${data.produk}</span>
-                    </div>
-                </a>
-                `;
-                notifications.html(newNotificationHtml + existingNotifications);
-                notificationsCount += 1;
-                notificationsCountElem.attr('data-count', notificationsCount);
-                notificationsCountElem.html(notificationsCount);
-            });
-        //End pusher
-
+    <script>
         //Number format
             String.prototype.reverse = function() {
                 return this.split("").reverse().join("");
@@ -439,7 +402,7 @@
             });
         }
         //End swall
-    </script> --}}
+    </script>
     @stack('scripts')
 </body>
 

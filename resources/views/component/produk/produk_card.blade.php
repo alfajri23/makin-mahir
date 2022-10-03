@@ -5,17 +5,37 @@
             <img data-src="{{$dt->poster != null ? asset($dt->poster) : 'https://via.placeholder.com/400x300.png'}}" alt="image" class="w-100 lozad">
         </div>
         <div class="card-body pt-0">
+           
+
+            <h4 class="fw-700 font-xss mt-3 lh-20 mb-0">
+                <a href="{{route('memberProdukDetail',$dt->produk->link)}}" class="text-grey-900">{{$dt->judul != null ? $dt->judul : $dt->nama}}</a>
+            </h4>
+
+            <div class="font-xsss text-grey-500 fw-400">
+                {{$dt->expert->nama}}
+            </div>
+
+
+            <h6 class="font-xssss text-grey-600 fw-500 ml-0 mt-2 mb-0">
+                @if (!empty($dt->tanggal))
+                    {{date_format(date_create($dt->tanggal),"d M Y")}} 
+                @else
+                @endif
+            </h6>
+            <h6 class="font-xssss text-grey-600 fw-500 ml-0 mt-0"> {{$dt->waktu}} </h6>
+
             <div class="row justify-content-around">
-                <div>
+                {{-- <div>
                     <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-danger d-inline-block text-danger mr-1">{{$dt->tipe}}</span>
-                </div>
+                </div> --}}
+                
                 <div class="lh-2">
                     @if($dt->harga_bias)
                     <p class="font-xssss fw-400 pl-3 pr-3 text-muted text-right mb-0">
                         <del>Rp. {{number_format($dt->harga_bias)}}</del>
                     </p>
                     @endif
-                    <p class="font-xss fw-700 pl-3 pr-3 lh-1 d-inline-block text-success mb-0">
+                    <p class="font-xssss fw-700 pl-3 pr-3 lh-1 d-inline-block text-success mb-0">
                         @if ($dt->harga == null)
                             GRATIS
                         @else
@@ -24,17 +44,6 @@
                     </p>
                 </div>
             </div>
-
-            <h4 class="fw-700 font-xsss mt-3 lh-20 mt-0">
-                <a href="{{route('memberProdukDetail',$dt->produk->link)}}" class="text-grey-900">{{$dt->judul != null ? $dt->judul : $dt->nama}}</a>
-            </h4>
-            <h6 class="font-xssss text-grey-600 fw-500 ml-0 mt-2 mb-0">
-                @if (!empty($dt->tanggal))
-                    {{date_format(date_create($dt->tanggal),"d M Y")}} 
-                @else
-                @endif
-            </h6>
-            <h6 class="font-xssss text-grey-600 fw-500 ml-0 mt-0"> {{$dt->waktu}} </h6>
         </div>
     </div>
 </div>

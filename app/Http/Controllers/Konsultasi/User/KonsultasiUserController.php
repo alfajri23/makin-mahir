@@ -24,7 +24,12 @@ class KonsultasiUserController extends Controller
         $tipe = 'konsultasi';
         $route = 'produkListkonsultasi';
         $riwayat = 'memberkonsultasiHistori';
+
+        //dd($data);
+
         return view('pages.konsultasi.user.konsultasi_list',compact('data'));
+
+
         // return view('pages.public.list_produk',compact('riwayat','data',
         //                                                 'tipe','route',
         //                                                 'meta_title','layout'));
