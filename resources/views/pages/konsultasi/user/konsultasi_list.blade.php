@@ -43,23 +43,23 @@
         <div class="row">
             
             <div class="col-6 col-md-4 my-2">
-              <img class="w-100" src="{{asset('asset/landing/step-1.png')}}" alt="">
+              <img class="w-100" src="{{asset('asset/landing/step-konsultasi-1.png')}}" alt="">
             </div>
   
             <div class="col-6 col-md-4 my-2">
-              <img class="w-100" src="{{asset('asset/landing/step-2.png')}}" alt="">
+              <img class="w-100" src="{{asset('asset/landing/step-konsultasi-2.png')}}" alt="">
             </div>
   
             <div class="col-6 col-md-4 my-2">
-              <img class="w-100" src="{{asset('asset/landing/step-3.png')}}" alt="">
+              <img class="w-100" src="{{asset('asset/landing/step-konsultasi-3.png')}}" alt="">
             </div>
   
             <div class="col-6 col-md-4 my-2">
-              <img class="w-100" src="{{asset('asset/landing/step-4.png')}}" alt="">
+              <img class="w-100" src="{{asset('asset/landing/step-konsultasi-4.png')}}" alt="">
             </div>
   
             <div class="col-6 col-md-4 my-2">
-              <img class="w-100" src="{{asset('asset/landing/step-5.png')}}" alt="">
+              <img class="w-100" src="{{asset('asset/landing/step-konsultasi-5.png')}}" alt="">
             </div>
         </div>
     </div>
