@@ -12,7 +12,7 @@
             </h4>
 
             <div class="font-xsss text-grey-500 fw-400">
-                {{$dt->expert->nama}}
+                {{$dt->expert != null ? $dt->expert->nama : ''}}
             </div>
 
 
