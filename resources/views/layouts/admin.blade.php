@@ -392,7 +392,7 @@
                         dataType: 'json',
                         success : (data)=>{
                             swal("Sukses", data.message, "warning");
-                            tabel.DataTable().ajax.reload();
+                            tabel.ajax.reload();
                         }
                     })
 
