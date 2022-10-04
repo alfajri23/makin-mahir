@@ -49,10 +49,10 @@
 
         let tabel = 
             $('.tableKonsultasi').DataTable({
-                rowReorder: {
-                    dataSrc: 'sort',
-                    selector: 'tr'
-                },
+                // rowReorder: {
+                //     dataSrc: 'sort',
+                //     selector: 'tr'
+                // },
                 processing: true,
                 serverSide: true,
                 ajax: "{{ route('adminKonsultasi') }}",
