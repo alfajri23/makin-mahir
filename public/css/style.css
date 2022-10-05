@@ -249,8 +249,12 @@ background: linear-gradient(90deg, rgba(240,248,255,1) 0%, rgba(228,242,255,1) 5
   background-color: #eee !important;
 }
 
-.bg-lightblue {
+/* .bg-lightblue {
   background-color: #e8f1fa !important;
+} */
+
+.bg-lightblue {
+  background-color: #cdeeff !important;
 }
 
 .bg-lightgreen {
