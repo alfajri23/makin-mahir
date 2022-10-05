@@ -8,7 +8,7 @@
 
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-8 text-center pt-lg--10 pt-7">
+            <div class="col-lg-8 text-center pt-lg--10 pt-7 bg-light">
                 <h2 class="fw-700 text-grey-900 display4-size display4-xs-size lh-1 mb-3 pt-5 aos-init" data-aos="fade-up" data-aos-delay="200" data-aos-duration="400">Event kami</h2>
                 <p class="fw-300 font-xss lh-28 text-grey-700 pl-lg--5 pr-lg--5 aos-init" data-aos="fade-up" data-aos-delay="300" data-aos-duration="500">Daftar Event Bersertifikat Dengan Pemateri Profesional di Dunia Kerja</p>
             </div>
