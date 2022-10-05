@@ -17,3 +17,5 @@ yarn-error.log
 /.vscode
 /public/*
 /public1
+index.php
+.htaccess

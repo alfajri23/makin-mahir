@@ -42,14 +42,6 @@
                                 @endif
                             </h1>
         
-                            <h6 class="font-xss fw-500 text-grey-700 mb-2">Tanggal dan waktu</h6>
-                            <h6 class="font-xsss fw-500 text-grey-600 ls-2">{{$data->waktu}}</h6>
-                            <h6 class="font-xsss fw-500 text-grey-600 ls-2">
-                                {{date_format(date_create($data->tanggal_mulai),"d M Y")}}
-                                <span>sampai</span> 
-                                {{date_format(date_create($data->tanggal_akhir),"d M Y")}}
-                            </h6>
-        
                             <a href="{{route('pembayaranCek',$data->produk->link)}}" class="btn btn-success mt-3">{{$data->harga == null ? 'Daftar' : 'Beli sekarang'}}</a>
                             {{-- <a href="{{route('pembayaranCek',$data->produk->link)}}" class="btn btn-block border-0 w-100 bg-success p-3 text-white fw-600 rounded-lg d-inline-block font-xs btn-light">{{$data->harga == null ? 'Daftar' : 'Beli sekarang'}}</a> --}}
                         </div>
@@ -71,7 +63,7 @@
         
                     <div class="card d-block border-0 rounded-lg overflow-hidden p-4 mt-4">
                         <h2 class="fw-700 font-sm mb-3 mt-1 pl-1 mb-3">Deskripsi</h2>
-                        <div class="font-xsss fw-500 lh-28 text-grey-600 mb-0 pl-2">{!!$data->deskripsi!!}</div>
+                        <div class="font-xsss fw-500 lh-28 text-grey-600 mb-0 pl-2">{!!$data->desc!!}</div>
                     </div>
                 </div>
             </div>

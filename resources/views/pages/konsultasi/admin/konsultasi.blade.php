@@ -46,43 +46,13 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script>
-        // $(function (){
-        //     let tabel = $('.tableKonsultasi');
-
-        //     tabel.DataTable({
-        //         rowReorder: {
-        //             dataSrc: 'judul',
-        //             selector: 'tr'
-        //         },
-        //         processing: true,
-        //         serverSide: true,
-        //         ajax: "{{ route('adminKonsultasi') }}",
-        //         columns: [
-        //             {
-        //                 data: 'DT_RowIndex', 
-        //                 name: 'DT_RowIndex', 
-        //                 nameorderable: true, 
-        //                 searchable: true
-        //             },
-        //             {data: 'judul', name: 'judul'},
-        //             {data: 'vendor', name: 'vendor'},
-        //             {data: 'tipe', name: 'tipe'},
-        //             {data: 'tanggal', name: 'tanggal'},
-        //             {data: 'harga', name: 'harga'},
-        //             {data: 'poster', name: 'poster'},
-        //             {data: 'status', name: 'status'},
-        //             {data: 'action', name: 'action'},
-        //         ],
-        //     })
-            
-        // })
 
         let tabel = 
             $('.tableKonsultasi').DataTable({
-                rowReorder: {
-                    dataSrc: 'sort',
-                    selector: 'tr'
-                },
+                // rowReorder: {
+                //     dataSrc: 'sort',
+                //     selector: 'tr'
+                // },
                 processing: true,
                 serverSide: true,
                 ajax: "{{ route('adminKonsultasi') }}",
@@ -105,47 +75,47 @@
                 ],
             })
 
-        tabel.on( 'row-reorder', function ( e, diff, edit ) {
-            console.log(diff[0].oldData);
-            console.log(diff[1].oldData);
+        // tabel.on( 'row-reorder', function ( e, diff, edit ) {
+        //     console.log(diff[0].oldData);
+        //     console.log(diff[1].oldData);
 
-            $.ajax({
-                type : 'GET',
-                url  : "{{ route('sortKonsultasi') }}",
-                data : {
-                    start : diff[0].oldData,
-                    end : diff[1].oldData
-                },
-                dataType: 'json',
-                success : (data)=>{
-                    if(data.status){
-                        tabel.ajax.reload();
-                    }else{
-                        alert(data.message);
-                    }
-                },
-                error : (data)=>{
+        //     $.ajax({
+        //         type : 'GET',
+        //         url  : "{{ route('sortKonsultasi') }}",
+        //         data : {
+        //             start : diff[0].oldData,
+        //             end : diff[1].oldData
+        //         },
+        //         dataType: 'json',
+        //         success : (data)=>{
+        //             if(data.status){
+        //                 tabel.ajax.reload();
+        //             }else{
+        //                 alert(data.message);
+        //             }
+        //         },
+        //         error : (data)=>{
 
-                }
-            });
-            // for ( var i=0, ien=diff.length ; i<ien ; i++ ) {
-            //     // get id row
-            //     let idQ = diff[i].node.id;
-            //     //console.log(diff[i]);
-            //     let idNewQ = idQ.replace("row_", "");
-            //     //console.log(idNewQ);
-            //     // get position
-            //     let position = diff[i].newPosition+1;
-            //     //call funnction to update data
-            //     updateOrder(idNewQ, position);
-            // }
+        //         }
+        //     });
+        //     // for ( var i=0, ien=diff.length ; i<ien ; i++ ) {
+        //     //     // get id row
+        //     //     let idQ = diff[i].node.id;
+        //     //     //console.log(diff[i]);
+        //     //     let idNewQ = idQ.replace("row_", "");
+        //     //     //console.log(idNewQ);
+        //     //     // get position
+        //     //     let position = diff[i].newPosition+1;
+        //     //     //call funnction to update data
+        //     //     updateOrder(idNewQ, position);
+        //     // }
 
 
-        });
+        // });
 
-        function updateOrder(idNewQ, position){
-            //console.log('asal : '+idNewQ, 'akhir : '+position)
-        }
+        // function updateOrder(idNewQ, position){
+        //     //console.log('asal : '+idNewQ, 'akhir : '+position)
+        // }
 
         //const tabel = $('.tableKonsultasi');
 
