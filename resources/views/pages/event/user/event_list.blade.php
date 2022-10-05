@@ -2,9 +2,6 @@
 @section('content')
 
 <div class="banner-wrapper py-5 position-relative">
-  <div class="ornamen position-absolute bottom-0" style="right: -70px;">
-      <img src="{{asset('asset/home/ornamen-1.png')}}" alt="">
-  </div>
 
     <div class="container">
         <div class="row mt-5 rounded-xl bg-lightblue">
