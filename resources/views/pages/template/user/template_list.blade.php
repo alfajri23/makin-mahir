@@ -8,7 +8,7 @@
               <div class="col-lg-4 order-lg-1 order-2 position-relative ">
                 <div class="">
                   <img class="position-landing bottom-0" src="{{asset('asset/landing/mbak-2.png')}}" alt="">
-                  <img class="position-absolute bottom-0 ml-n5 ml-sm-5" style="width:70%" src="{{asset('asset/landing/mbak-1.png')}}" alt="">
+                  <img class="landing-banner-2 bottom-0 ml-n5 ml-sm-5" src="{{asset('asset/landing/mbak-1.png')}}" alt="">
                 </div>
               </div>
               <div class="col-lg-8 order-lg-2 order-1 rounded-xl pb-5 px-4">
@@ -98,12 +98,13 @@
         @endphp
 
         <div class="row justify-content-center">
-            <div class="col-xl-8">
+            <div class="col-xl-10">
                 <div id="accordion" class="accordion">
                   @foreach($dataFaq as $data)
                   <div class="card border-0 mb-0">
-                    <div class="card-header border-bottom mb-0" id="heading-{{$loop->iteration}}">
+                    <div class="card-header {{!$loop->first ? 'border-top' : ''}} mb-0" id="heading-{{$loop->iteration}}">
                       <h5 class="mb-0">
+                        <i class="far fa-question-circle fa-lg mr-2"></i>
                         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-{{$loop->iteration}}" aria-expanded="false" aria-controls="collapse-{{$loop->iteration}}">
                           {{$data['pertanyaan']}}
                         </button>
@@ -111,7 +112,7 @@
                     </div>
 
                     <div id="collapse-{{$loop->iteration}}" class="collapse" aria-labelledby="heading-{{$loop->iteration}}" data-parent="#accordion">
-                      <div class="card-body">
+                      <div class="card-body pt-0">
                         <p>{{$data['jawaban']}}</p>
                       </div>
                     </div>

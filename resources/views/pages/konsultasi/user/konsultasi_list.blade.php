@@ -8,7 +8,7 @@
               <div class="col-lg-4 order-lg-1 order-2 position-relative ">
                 <div class="">
                   <img class="position-landing bottom-0" src="{{asset('asset/landing/mbak-2.png')}}" alt="">
-                  <img class="landing-banner-2 bottom-0 ml-n5 ml-sm-5" style="width:70%" src="{{asset('asset/landing/mbak-1.png')}}" alt="">
+                  <img class="landing-banner-2 bottom-0 ml-n5 ml-sm-5" src="{{asset('asset/landing/mbak-1.png')}}" alt="">
                 </div>
               </div>
               <div class="col-lg-8 order-lg-2 order-1 rounded-xl pb-5 px-4 pt-3">
@@ -72,12 +72,13 @@
             </div>
         </div>
 
-        <div class="row justify-content-center">
-            <div class="col-xl-8">
+        <div class="row justify-content-center position-relative">
+            <div class="col-xl-10">
                 <div id="accordion" class="accordion">
                   <div class="card border-0 mb-0">
-                    <div class="card-header border-bottom mb-0" id="headingOne">
+                    <div class="card-header mb-0" id="headingOne">
                       <h5 class="mb-0">
+                        <i class="far fa-question-circle fa-lg mr-2"></i>
                         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                           Apa itu kelas konsultasi private ?
                         </button>
@@ -85,28 +86,30 @@
                     </div>
 
                     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                      <div class="card-body">
+                      <div class="card-body pt-0">
                         <p>Kelas yang dilakukan secara private dengan sistem 1 on 1, mempertemukan antara jobseekers dengan mentor profesional, membahas topik dan melakukan praktik menyesuaikan dengan kebutuhan jobseekers</p>
                       </div>
                     </div>
                   </div>
                   <div class="card border-0 mb-0">
-                    <div class="card-header border-bottom mb-0" id="headingTwo">
+                    <div class="card-header border-top mb-0" id="headingTwo">
                       <h5 class="mb-0">
+                        <i class="far fa-question-circle fa-lg mr-2"></i>
                         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                           Bagaimana cara mendaftar kelas konsultasi private ?
                         </button>
                       </h5>
                     </div>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                      <div class="card-body">
+                      <div class="card-body pt-0">
                         <p>Anda bisa melakukan transaksi melalui platform website yang mana sudah disediakan varian produk. Agar anda bisa melakukan transaksi, harus membuat akun terlebih dahulu kemudian pilih produk yang Anda inginkan, lakukan pembelian dan transaksi.</p>
                       </div>
                     </div>
                   </div>
                   <div class="card border-0 mb-0">
-                    <div class="card-header border-bottom mb-0" id="headingFour">
+                    <div class="card-header border-top mb-0" id="headingFour">
                       <h5 class="mb-0">
+                        <i class="far fa-question-circle fa-lg mr-2"></i>
                         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                           Apakah bisa memilih sendiri jadwal kelas konsultasi private ?
                         </button>
@@ -114,14 +117,15 @@
                     </div>
 
                     <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-                      <div class="card-body">
+                      <div class="card-body pt-0">
                         <p>Untuk melakukan penjadwalan kelas dengan menyesuaikan waktu Anda, terlebih dahulu harus konfirmasi ke Admin agar bisa di tindaklanjuti. Jadwal kelas selalu dibuka setiap hari senin s.d jum’at pukul 09.00 s.d 15.30 WIB</p>
                       </div>
                     </div>
                   </div>
                   <div class="card border-0 mb-0">
-                    <div class="card-header border-bottom mb-0" id="headingFive">
+                    <div class="card-header border-top mb-0" id="headingFive">
                       <h5 class="mb-0">
+                        <i class="far fa-question-circle fa-lg mr-2"></i>
                         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                           Bagaimana alur pelaksanaan kelas ?
                         </button>
@@ -129,14 +133,15 @@
                     </div>
 
                     <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
-                      <div class="card-body">
+                      <div class="card-body pt-0">
                         <p>Setelah melakukan transaksi, anda akan langsung dihubungi oleh Admin. Kemudian melakukan negosiasi jadwal. Setelah itu Anda bisa memberikan akses CV kepada admin untuk melakukan kelas konsultasi.</p>
                       </div>
                     </div>
                   </div>
                   <div class="card border-0 mb-0">
-                    <div class="card-header border-bottom mb-0" id="headingSix">
+                    <div class="card-header border-top mb-0" id="headingSix">
                       <h5 class="mb-0">
+                        <i class="far fa-question-circle fa-lg mr-2"></i>
                         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
                           Apa benefit yang bisa saya dapatkan setelah ikut konsultasi ?
                         </button>
@@ -144,65 +149,69 @@
                     </div>
 
                     <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
-                      <div class="card-body">
+                      <div class="card-body pt-0">
                         <p>Anda akan mendapatkan berbagai manfaat sesuai dengan produk yang anda pilih, namun secara umum benefit yang kami hadirkan ada berbagai macam : knowledge, template cv, template cover letter, buku panduan persiapan kerja, jawaban interview, jaminan dicarikan kerja sampai dapat kerja</p>
                       </div>
                     </div>
                   </div>
                   <div class="card border-0 mb-0">
-                    <div class="card-header border-bottom mb-0" id="headingThree">
+                    <div class="card-header border-top mb-0" id="headingThree">
                       <h5 class="mb-0">
+                        <i class="far fa-question-circle fa-lg mr-2"></i>
                         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                           Siapakah mentor dalam kelas konsultasi private ?
                         </button>
                       </h5>
                     </div>
                     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                      <div class="card-body">
+                      <div class="card-body pt-0">
                         <p>Mentor kelas konsultasi private di makin mahir merupakan mentor profesional yang sudah tersertifikasi BNSP dan memiliki pengalaman 5 tahun lebih dalam bidangnya.</p>
                       </div>
                     </div>
                   </div>
                   <div class="card border-0 mb-0">
-                    <div class="card-header border-bottom mb-0" id="heading-6">
+                    <div class="card-header border-top mb-0" id="heading-6">
                       <h5 class="mb-0">
+                        <i class="far fa-question-circle fa-lg mr-2"></i>
                         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                           Apa saja materi dalam kelas konsultasi ?
                         </button>
                       </h5>
                     </div>
                     <div id="collapseThree" class="collapse" aria-labelledby="heading-6" data-parent="#accordion">
-                      <div class="card-body">
+                      <div class="card-body pt-0">
                         <p>Materi yang di bahas pada pelaksanaan kelas seputar pembuatan CV, cara menjawab interview, psikotes dan persoalan karier path.
                         </p>
                       </div>
                     </div>
                   </div>
                   <div class="card border-0 mb-0">
-                    <div class="card-header border-bottom mb-0" id="heading-7">
+                    <div class="card-header border-top mb-0" id="heading-7">
                       <h5 class="mb-0">
+                        <i class="far fa-question-circle fa-lg mr-2"></i>
                         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                           Metode apa yang dipakai dalam kelas konsultasi ?
                         </button>
                       </h5>
                     </div>
                     <div id="collapseThree" class="collapse" aria-labelledby="heading-7" data-parent="#accordion">
-                      <div class="card-body">
+                      <div class="card-body pt-0">
                         <p>Pembelajaran dua arah, dengan fokus pada permasalahan yang dialami oleh jobseekers. 
                         </p>
                       </div>
                     </div>
                   </div>
                   <div class="card border-0 mb-0">
-                    <div class="card-header border-bottom mb-0" id="heading-7">
+                    <div class="card-header border-top mb-0" id="heading-7">
                       <h5 class="mb-0">
+                        <i class="far fa-question-circle fa-lg mr-2"></i>
                         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                           Berapa yang harus saya persiapan untuk membeli kelas  ?
                         </button>
                       </h5>
                     </div>
                     <div id="collapseThree" class="collapse" aria-labelledby="heading-7" data-parent="#accordion">
-                      <div class="card-body">
+                      <div class="card-body pt-0">
                         <p>Kelas konsultasi ini kami siapkan dengan menyesuaikan kondisi jobseekers. Anda bisa memilih kelas konsultasi mulai di angka 20ribuan  dengan menyesuaikan kebutuhan Anda.
                         </p>
                       </div>

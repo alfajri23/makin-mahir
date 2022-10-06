@@ -106,28 +106,31 @@
         @endphp
 
         <div class="row justify-content-center">
-            <div class="col-xl-8">
-                <div id="accordion" class="accordion">
-                  @foreach($dataFaq as $data)
-                  <div class="card border-0 mb-0">
-                    <div class="card-header border-bottom mb-0" id="heading-{{$loop->iteration}}">
-                      <h5 class="mb-0">
-                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-{{$loop->iteration}}" aria-expanded="false" aria-controls="collapse-{{$loop->iteration}}">
-                          {{$data['pertanyaan']}}
-                        </button>
-                      </h5>
-                    </div>
+          <div class="col-xl-10">
+              <div id="accordion" class="accordion">
+                @foreach($dataFaq as $data)
+                <div class="card border-0 mb-0">
+                  <div class="card-header {{!$loop->first ? 'border-top' : ''}} mb-0" id="heading-{{$loop->iteration}}">
+                    <h5 class="mb-0">
+                      <i class="far fa-question-circle fa-lg mr-2"></i>
+                      <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-{{$loop->iteration}}" aria-expanded="false" aria-controls="collapse-{{$loop->iteration}}">
+                        {{$data['pertanyaan']}}
+                      </button>
+                    </h5>
+                  </div>
 
-                    <div id="collapse-{{$loop->iteration}}" class="collapse" aria-labelledby="heading-{{$loop->iteration}}" data-parent="#accordion">
-                      <div class="card-body">
-                        <p>{{$data['jawaban']}}</p>
-                      </div>
+                  <div id="collapse-{{$loop->iteration}}" class="collapse" aria-labelledby="heading-{{$loop->iteration}}" data-parent="#accordion">
+                    <div class="card-body pt-0">
+                      <p>{{$data['jawaban']}}</p>
                     </div>
                   </div>
-                  @endforeach
                 </div>
-            </div>
+                @endforeach
+              </div>
+          </div>
         </div>
+
+
     </div>
 </div>
 
