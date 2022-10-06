@@ -8,7 +8,7 @@
             <div class="col-lg-4 order-lg-1 order-2 position-relative ">
               <div class="">
                 <img class="position-landing bottom-0" src="{{asset('asset/landing/mbak-2.png')}}" alt="">
-                <img class="position-absolute bottom-0 ml-n5 ml-sm-5" style="width:70%" src="{{asset('asset/landing/mbak-1.png')}}" alt="">
+                <img class="landing-banner-2 bottom-0 ml-n5 ml-sm-5" src="{{asset('asset/landing/mbak-1.png')}}" alt="">
               </div>
             </div>
             <div class="col-lg-8 order-lg-2 order-1 rounded-xl pb-5 px-4">
