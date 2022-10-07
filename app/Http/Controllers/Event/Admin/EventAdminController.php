@@ -173,11 +173,14 @@ class EventAdminController extends Controller
         $messages = [
             'required' => ':attribute harus diisi.',
             'mimes' => ':attribute tipe yang diterima: :values',
-            'max' => 'Ukuran maksimal file 2 Mb'
+            'max' => 'Ukuran maksimal file :max',
+            'harga.regex' => 'Format harga tidak sesuai, masukkan angka saja',
         ];
 
         $this->validate($request, [
             'file' => 'file|image|mimes:jpeg,png,jpg|max:2048',
+            'harga' => ['nullable','regex:/(?:^|\s)(?=.)((?:0|(?:[1-9](?:\d*|\d{0,2}(?:,\d{3})*)))?(?:\.\d*[1-9])?)(?!\S)/'],
+            'harga_bias' => ['nullable','regex:/(?:^|\s)(?=.)((?:0|(?:[1-9](?:\d*|\d{0,2}(?:,\d{3})*)))?(?:\.\d*[1-9])?)(?!\S)/'],
         ],$messages);
 
         $datas = [

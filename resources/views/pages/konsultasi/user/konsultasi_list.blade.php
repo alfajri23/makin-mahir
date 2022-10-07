@@ -2,6 +2,8 @@
 @section('content')
 
 <div class="banner-wrapper py-5 position-relative">
+
+  <div class="spacer-md"></div>
   
       <div class="container">
           <div class="row mt-5 rounded-xl bg-lightblue">
@@ -19,8 +21,7 @@
           </div>
       </div>
   
-      <div class="spacer"></div>
-      <div class="spacer"></div>
+      
    
 </div>
 

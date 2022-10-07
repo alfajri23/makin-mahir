@@ -11,7 +11,7 @@
                 @csrf
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Judul</label>
-                    <input type="text" name="judul" class="form-control" id="exampleFormControlInput1" placeholder="">
+                    <input type="text" name="judul" value="{{old('jadwal')}}" class="form-control" id="exampleFormControlInput1" placeholder="">
                 </div>
 
                 <div class="form-group">
@@ -28,14 +28,14 @@
                     <div class="col">
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Tanggal mulai</label>
-                            <input type="date" name="tanggal_mulai" value="" class="form-control">
+                            <input type="date" name="tanggal_mulai" value="{{old('tanggal_mulai')}}" class="form-control">
                         </div>
                     </div>
     
                     <div class="col">
                        <div class="form-group">
                             <label for="exampleFormControlInput1">Tanggal akhir</label>
-                            <input type="date" name="tanggal_akhir" value="" class="form-control">
+                            <input type="date" name="tanggal_akhir" value="{{old('tanggal_akhir')}}" class="form-control">
                         </div>
                     </div>
                 </div>
@@ -43,7 +43,7 @@
 
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Waktu</label>
-                    <input type="text" name="waktu" class="form-control" id="exampleFormControlInput1" placeholder="">
+                    <input type="text" name="waktu" value="{{old('waktu')}}" class="form-control" id="exampleFormControlInput1" placeholder="">
                 </div>
         
         </div>
@@ -67,7 +67,7 @@
 
             <div class="form-group">
                 <label for="exampleFormControlInput1">Grub WA</label>
-                <input type="text" name="grup_wa" class="form-control" id="exampleFormControlInput1" placeholder="">
+                <input type="text" name="grup_wa" value="{{old('grup_wa')}}" class="form-control" id="exampleFormControlInput1" placeholder="">
             </div>
 
             <div class="form-group">

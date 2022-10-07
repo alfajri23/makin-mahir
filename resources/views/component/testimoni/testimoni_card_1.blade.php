@@ -1,5 +1,6 @@
-<div class="feedback-slider2 owl-carousel owl-theme overflow-visible dot-none right-nav pb-4 nav-xs-none">
-    
+<div class="feedback-slider2 owl-carousel owl-theme overflow-visible right-nav pb-4 nav-xs-none">
+{{-- <div class="feedback-slider2 owl-carousel owl-theme owl-nav-link dot-style3 text-left-dot rounded-lg overflow-visible nav-none"> --}}
+
     <div class="owl-items bg-transparent">
         <div class="card w-100 p-0 bg-transparent text-left border-0">
             <div class="card-body p-5 bg-white shadow-xss rounded-lg triangle-after">

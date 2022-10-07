@@ -3,6 +3,8 @@
 
 <div class="banner-wrapper py-5 position-relative">
 
+    <div class="spacer-md"></div>
+
     <div class="container">
         <div class="row mt-5 rounded-xl bg-lightblue">
             <div class="col-lg-4 order-lg-1 order-2 position-relative ">
@@ -19,9 +21,6 @@
             </div>
         </div>
     </div>
-
-    <div class="spacer"></div>
-    <div class="spacer"></div>
  
 </div>
 

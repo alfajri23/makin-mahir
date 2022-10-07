@@ -173,3 +173,7 @@ h1,h2,h3,h4,h5,h6{
     position: absolute;
     width:70%;
 }
+
+.spacer-md{
+    height: 10px;
+}
