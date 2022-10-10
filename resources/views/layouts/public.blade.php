@@ -55,7 +55,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset('asset/img/program/favicon.png')}}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('asset/img/program/favicon.png')}}">
 
-    {{-- <link rel="manifest" href="/site.webmanifest"> --}}
+    @stack('styles')
 
 
     <!-- Custom Stylesheet -->

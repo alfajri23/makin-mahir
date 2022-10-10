@@ -7,13 +7,12 @@
   
       <div class="container">
           <div class="row mt-5 rounded-xl bg-lightblue">
-              <div class="col-lg-4 order-lg-1 order-2 position-relative ">
-                <div class="">
-                  <img class="position-landing bottom-0" src="{{asset('asset/landing/mbak-2.png')}}" alt="">
-                  <img class="landing-banner-2 bottom-0 ml-n5 ml-sm-5" src="{{asset('asset/landing/mbak-1.png')}}" alt="">
-                </div>
+            <div class="col-lg-4 order-lg-1 order-2 position-relative ">
+              <div class="">
+                <img class="position-landing bottom-0" src="{{asset('asset/landing/events.png')}}" alt="">
               </div>
-              <div class="col-lg-8 order-lg-2 order-1 rounded-xl pb-5 px-4 pt-3">
+            </div>
+            <div class="col-lg-8 order-lg-2 order-1 rounded-xl pb-5 pl-5">
                   <h2 class="fw-700 text-grey-900 font-xl lh-2 mb-3 pt-5 aos-init" data-aos="fade-up" data-aos-delay="200" data-aos-duration="400">Jadilah Jobseekers yang Siap di Rekrut oleh Perusahaan Bersama Makin Mahir</h2>
                   <p class="fw-300 font-xss lh-28 text-grey-700 aos-init" data-aos="fade-up" data-aos-delay="300" data-aos-duration="500">Persiapkan kariermu dengan mengikuti kelas konsultasi secara private membahas CV, Interview, Psikotest dan Karier Path </p>
                   <a href="" class="btn btn-primary fw-500 text-white font-xssss text-center d-inline-block rounded-sm">Lihat Selengkapnya</a>
