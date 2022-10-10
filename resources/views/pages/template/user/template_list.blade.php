@@ -1,13 +1,23 @@
 @extends('layouts.public')
 @section('content')
 
+@push('styles')
+    <style>
+        .bg-lightpurple{
+          background-color: #DEC9DB;
+        }
+
+    </style>
+
+@endpush
+
 
 <div class="banner-wrapper py-5 position-relative">
 
   <div class="spacer-md"></div>
     
   <div class="container">
-      <div class="row mt-5 rounded-xl bg-lightblue">
+      <div class="row mt-5 rounded-xl bg-lightpurple">
         <div class="col-lg-4 order-lg-1 order-2 position-relative ">
           <div class="">
             <img class="position-landing bottom-0" src="{{asset('asset/landing/events.png')}}" alt="">
@@ -16,7 +26,7 @@
         <div class="col-lg-8 order-lg-2 order-1 rounded-xl pb-5 pl-5">
               <h2 class="fw-700 text-grey-900 font-xl lh-2 mb-3 pt-5 aos-init" data-aos="fade-up" data-aos-delay="200" data-aos-duration="400">Upgrade CV sesuai dengan kebutuhanmu bersama Makin Mahir</h2>
               <p class="fw-300 font-xss lh-28 text-grey-700 aos-init" data-aos="fade-up" data-aos-delay="300" data-aos-duration="500">Makin Mahir menghadirkan ribuan template CV Profesional yang bisa di customize sesuai dengan keinginan dan kebutuhan Anda.</p>
-              <a href="" class="btn btn-primary fw-500 text-white font-xssss text-center d-inline-block rounded-sm">Lihat Selengkapnya</a>
+              <a href="" class="btn btn-dark fw-500 text-white font-xssss text-center d-inline-block rounded-sm">Lihat Selengkapnya</a>
           </div>
       </div>
   </div>
