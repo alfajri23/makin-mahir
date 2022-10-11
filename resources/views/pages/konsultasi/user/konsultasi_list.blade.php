@@ -9,7 +9,7 @@
           <div class="row mt-5 rounded-xl bg-lightblue">
             <div class="col-lg-4 order-lg-1 order-2 position-relative ">
               <div class="">
-                <img class="position-landing bottom-0" src="{{asset('asset/landing/events.png')}}" alt="">
+                <img class="position-landing bottom-0" src="{{asset('asset/landing/home-konsultasi.png')}}" alt="">
               </div>
             </div>
             <div class="col-lg-8 order-lg-2 order-1 rounded-xl pb-5 pl-5">

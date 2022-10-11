@@ -1,33 +1,25 @@
 @extends('layouts.public')
 @section('content')
 
-@push('styles')
-    <style>
-        .bg-lightgreens{
-          background-color: #DEF2CD;
-        }
-
-    </style>
-
-@endpush
 
 <div class="banner-wrapper py-5 position-relative">
 
     <div class="spacer-md"></div>
 
     <div class="container">
-        <div class="row mt-5 rounded-xl bg-lightgreens">
-            <div class="col-lg-4 order-lg-1 order-2 position-relative ">
-              <div class="">
-                <img class="position-landing bottom-0" src="{{asset('asset/landing/events.png')}}" alt="">
-              </div>
-            </div>
-            <div class="col-lg-8 order-lg-2 order-1 rounded-xl pb-5 pl-5">
+        <div class="row mt-5 rounded-xl bg-lightblue">
+            <div class="col-lg-8  rounded-xl pb-5 pl-5">
                 <h2 class="fw-700 text-grey-900 font-xl lh-2 mb-3 pt-5 aos-init" data-aos="fade-up" data-aos-delay="200" data-aos-duration="400">Temukan ruang persiapan kariermu di berbagai Event Bedah Dunia Kerja</h2>
                 <p class="fw-300 font-xss lh-28 text-grey-700 aos-init" data-aos="fade-up" data-aos-delay="300" data-aos-duration="500">Kami menghadirkan berbagai event bedah dunia kerja rutin setiap bulan. Mempermudah proses Anda untuk diterima kerja dengan didampingi narasumber profesional
                 </p>
                 <a href="" class="btn btn-dark fw-500 text-white font-xssss text-center d-inline-block rounded-sm">Lihat Selengkapnya</a>
             </div>
+            <div class="col-lg-4 position-relative ">
+              <div class="">
+                <img class="position-landing bottom-0 ml-3 ml-sm-0" src="{{asset('asset/landing/home-event.png')}}" alt="">
+              </div>
+            </div>
+            
         </div>
     </div>
  
