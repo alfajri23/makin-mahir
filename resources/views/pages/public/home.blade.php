@@ -117,7 +117,7 @@
             <div class="row">
                 <div class="col-md-10 col-12 pt-5 pt-sm-7 pb-2 pt-sm-7 mt-sm-5 mt-2 d-flex">
                     <div class="card w-100 border-0 bg-transparent">
-                        <h2 class="poppins fw-600 text-white display3-size display2-md-size">Wujudkan Karier Impianmu
+                        <h2 class="fw-600 text-white display3-size display2-md-size">Wujudkan Karier Impianmu
                             Bersama Makin Mahir
                         </h2>
                         <p class="font-xss font-md-xsss text-white">
@@ -274,7 +274,7 @@
                 </div>
 
                 <div class="col-lg-6 order-lg-2 offset-lg-1">
-                    <h2 class="poppins text-mainblue fw-700 font-xl pb-3 mb-0 mt-3 d-block lh-3 aos-init" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">
+                    <h2 class="text-mainblue fw-700 font-xl pb-3 mb-0 mt-3 d-block lh-3 aos-init" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">
                         Selayang Pandang tentang Makin Mahir 
                     </h2>
                     <p class="fw-400 font-xss lh-28 text-grey-600 aos-init" data-aos="fade-up" data-aos-delay="300" data-aos-duration="500">
@@ -298,7 +298,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="page-title style1 col-xl-6 col-lg-8 col-md-10 text-center mb-5">
-                    <h2 class="poppins text-mainblue fw-700 font-xl pb-3 mb-0 mt-3 d-block lh-3">Kenapa Pilih Konsultasi <br> di Makin Mahir</h2>
+                    <h2 class="text-mainblue fw-700 font-xl pb-3 mb-0 mt-3 d-block lh-3">Kenapa Pilih Konsultasi <br> di Makin Mahir</h2>
                     <p class="fw-300 font-xss lh-28 text-grey-600">Inilah beberapa hal yang menjadi keunikan kami dan kamu harus tahu
                     </p>
                 </div>
