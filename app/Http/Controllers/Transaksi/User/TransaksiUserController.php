@@ -151,6 +151,10 @@ class TransaksiUserController extends Controller
     //Pembayaran Xendit
     public function createGateway(Request $request){
         $data = Produk::find($request->id);
+
+        if($data == null){
+            return redirect()->back()->withErrors(['error' => 'Produk tidak ditemukan']);
+        }
     
         if(!empty($request->bukti)){ 
             for($i=0;$i<count($request->bukti);$i++){
@@ -185,7 +189,7 @@ class TransaksiUserController extends Controller
             'id_produk' => $request->id,
             'nama' => $request->nama,
             'metode' => 'payment_gateway',
-            'harga' => $request->harga,
+            'harga' => $data->harga,
             'status' => 'pending',
             'id_user' => auth()->user()->id,
             'tanggal_bayar' => now(),

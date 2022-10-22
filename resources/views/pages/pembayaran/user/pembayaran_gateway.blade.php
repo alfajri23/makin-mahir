@@ -309,9 +309,9 @@
                                                         <input type="hidden" name="id" value="{{$data->id}}">
                                                         <input type="hidden" name="id_kategori" value="{{$data->id_kategori}}">
                                                         <input type="hidden" name="nama" value="{{$data->nama}}">
-                                                        @if($data->harga != '#' || $data->harga != null)
+                                                        {{-- @if($data->harga != '#' || $data->harga != null)
                                                         <input type="hidden" name="harga" value="{{$data->harga}}">
-                                                        @endif
+                                                        @endif --}}
                                                     </div>
                                     
                                                     <div>
